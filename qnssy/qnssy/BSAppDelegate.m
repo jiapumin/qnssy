@@ -20,6 +20,8 @@
     [_leftvc release];
     [_viewController release];
     [super dealloc];
+    
+    
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
