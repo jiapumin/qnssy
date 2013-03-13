@@ -8,13 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@class DefaultLoadViewController_iPhone;
+
 @class BSRootLeftViewController_iPhone;
 
 @interface BSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
-@property (strong, nonatomic) BSViewController *viewController;
+@property (strong, nonatomic) DefaultLoadViewController_iPhone *viewController;
 
 @property (retain, nonatomic) BSRootLeftViewController_iPhone *leftvc;
 
