@@ -31,7 +31,8 @@
         self.viewController = [[[DefaultLoadViewController_iPhone alloc] initWithNibName:@"DefaultLoadViewController_iPhone" bundle:nil] autorelease];
 
     } else {
-        self.viewController = [[[BSViewController alloc] initWithNibName:@"BSViewController_iPad" bundle:nil] autorelease];
+        self.viewController = [[[DefaultLoadViewController_iPhone alloc] initWithNibName:@"DefaultLoadViewController_iPhone" bundle:nil] autorelease];
+        
     }
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
