@@ -1,0 +1,664 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D87A04EE16EF639A0052328E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04ED16EF639A0052328E /* UIKit.framework */; };
+		D87A04F016EF639A0052328E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04EF16EF639A0052328E /* Foundation.framework */; };
+		D87A04F216EF639A0052328E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04F116EF639A0052328E /* CoreGraphics.framework */; };
+		D87A04F816EF639A0052328E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D87A04F616EF639A0052328E /* InfoPlist.strings */; };
+		D87A04FA16EF639A0052328E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A04F916EF639A0052328E /* main.m */; };
+		D87A04FE16EF639A0052328E /* BSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A04FD16EF639A0052328E /* BSAppDelegate.m */; };
+		D87A050016EF639A0052328E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = D87A04FF16EF639A0052328E /* Default.png */; };
+		D87A050216EF639A0052328E /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D87A050116EF639A0052328E /* Default@2x.png */; };
+		D87A050416EF639A0052328E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D87A050316EF639A0052328E /* Default-568h@2x.png */; };
+		D87A054116EF69700052328E /* DataParseUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A052C16EF69700052328E /* DataParseUtil.m */; };
+		D87A054216EF69700052328E /* UIImage+Scale.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A052F16EF69700052328E /* UIImage+Scale.m */; };
+		D87A054316EF69700052328E /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A053216EF69700052328E /* GDataXMLNode.m */; };
+		D87A054416EF69700052328E /* FTAnimation+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A053516EF69700052328E /* FTAnimation+UIView.m */; };
+		D87A054516EF69700052328E /* FTAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A053816EF69700052328E /* FTAnimationManager.m */; };
+		D87A054616EF69700052328E /* FTUtils+NSObject.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A053A16EF69700052328E /* FTUtils+NSObject.m */; };
+		D87A054716EF69700052328E /* FTUtils+UIGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A053C16EF69700052328E /* FTUtils+UIGestureRecognizer.m */; };
+		D87A054816EF69700052328E /* PPRevealSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A054016EF69700052328E /* PPRevealSideViewController.m */; };
+		D87A054F16EF69DE0052328E /* BSRootLeftViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A054A16EF69DE0052328E /* BSRootLeftViewController_iPhone.m */; };
+		D87A055016EF69DE0052328E /* BSSuperCentreViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A054B16EF69DE0052328E /* BSSuperCentreViewController_iPhone.m */; };
+		D87A055116EF69DE0052328E /* BSRootLeftViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87A054C16EF69DE0052328E /* BSRootLeftViewController_iPhone.xib */; };
+		D87A055316EF6A7A0052328E /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A055216EF6A7A0052328E /* libxml2.dylib */; };
+		D87A055516EF6A970052328E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A055416EF6A970052328E /* MobileCoreServices.framework */; };
+		D87A055A16EF6B660052328E /* DefaultLoadViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A055816EF6B660052328E /* DefaultLoadViewController_iPhone.m */; };
+		D87A055B16EF6B660052328E /* DefaultLoadViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87A055916EF6B660052328E /* DefaultLoadViewController_iPhone.xib */; };
+		D87A055F16EF6D3C0052328E /* BSMyInfoViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A055D16EF6D3C0052328E /* BSMyInfoViewController_iPhone.m */; };
+		D87A056016EF6D3C0052328E /* BSMyInfoViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87A055E16EF6D3C0052328E /* BSMyInfoViewController_iPhone.xib */; };
+		D87A056416EF6D640052328E /* BSRecommendViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A056216EF6D640052328E /* BSRecommendViewController_iPhone.m */; };
+		D87A056516EF6D640052328E /* BSRecommendViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87A056316EF6D640052328E /* BSRecommendViewController_iPhone.xib */; };
+		D87A056916EF6D950052328E /* BSMessageViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A056716EF6D950052328E /* BSMessageViewController_iPhone.m */; };
+		D87A056A16EF6D950052328E /* BSMessageViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87A056816EF6D950052328E /* BSMessageViewController_iPhone.xib */; };
+		D87A056E16EF6DAD0052328E /* BSSaysayViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A056C16EF6DAD0052328E /* BSSaysayViewController_iPhone.m */; };
+		D87A056F16EF6DAD0052328E /* BSSaysayViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87A056D16EF6DAD0052328E /* BSSaysayViewController_iPhone.xib */; };
+		D87A057316EF6DC90052328E /* BSSearchViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A057116EF6DC90052328E /* BSSearchViewController_iPhone.m */; };
+		D87A057416EF6DC90052328E /* BSSearchViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87A057216EF6DC90052328E /* BSSearchViewController_iPhone.xib */; };
+		D87A057816EF6DDF0052328E /* BSBuyViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A057616EF6DDF0052328E /* BSBuyViewController_iPhone.m */; };
+		D87A057916EF6DDF0052328E /* BSBuyViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87A057716EF6DDF0052328E /* BSBuyViewController_iPhone.xib */; };
+		D87A057D16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A057B16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.m */; };
+		D87A057E16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87A057C16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.xib */; };
+		D87A058216EF6E100052328E /* BSMatchmakerViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A058016EF6E100052328E /* BSMatchmakerViewController_iPhone.m */; };
+		D87A058316EF6E100052328E /* BSMatchmakerViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87A058116EF6E100052328E /* BSMatchmakerViewController_iPhone.xib */; };
+		D87A058B16EF758D0052328E /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A058A16EF758D0052328E /* QuartzCore.framework */; };
+		D87A058D16EF75A20052328E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A058C16EF75A10052328E /* CFNetwork.framework */; };
+		D87A058F16EF75AB0052328E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A058E16EF75AA0052328E /* SystemConfiguration.framework */; };
+		D87A059516EF77F90052328E /* 左栏_button_03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D87A059316EF77F90052328E /* 左栏_button_03@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D87A04E916EF639A0052328E /* qnssy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qnssy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D87A04ED16EF639A0052328E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D87A04EF16EF639A0052328E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D87A04F116EF639A0052328E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D87A04F516EF639A0052328E /* qnssy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "qnssy-Info.plist"; sourceTree = "<group>"; };
+		D87A04F716EF639A0052328E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		D87A04F916EF639A0052328E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D87A04FB16EF639A0052328E /* qnssy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "qnssy-Prefix.pch"; sourceTree = "<group>"; };
+		D87A04FC16EF639A0052328E /* BSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BSAppDelegate.h; sourceTree = "<group>"; };
+		D87A04FD16EF639A0052328E /* BSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BSAppDelegate.m; sourceTree = "<group>"; };
+		D87A04FF16EF639A0052328E /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		D87A050116EF639A0052328E /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		D87A050316EF639A0052328E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		D87A052B16EF69700052328E /* DataParseUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataParseUtil.h; sourceTree = "<group>"; };
+		D87A052C16EF69700052328E /* DataParseUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataParseUtil.m; sourceTree = "<group>"; };
+		D87A052E16EF69700052328E /* UIImage+Scale.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Scale.h"; sourceTree = "<group>"; };
+		D87A052F16EF69700052328E /* UIImage+Scale.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Scale.m"; sourceTree = "<group>"; };
+		D87A053116EF69700052328E /* GDataXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDataXMLNode.h; sourceTree = "<group>"; };
+		D87A053216EF69700052328E /* GDataXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GDataXMLNode.m; sourceTree = "<group>"; };
+		D87A053416EF69700052328E /* FTAnimation+UIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTAnimation+UIView.h"; sourceTree = "<group>"; };
+		D87A053516EF69700052328E /* FTAnimation+UIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTAnimation+UIView.m"; sourceTree = "<group>"; };
+		D87A053616EF69700052328E /* FTAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAnimation.h; sourceTree = "<group>"; };
+		D87A053716EF69700052328E /* FTAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTAnimationManager.h; sourceTree = "<group>"; };
+		D87A053816EF69700052328E /* FTAnimationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FTAnimationManager.m; sourceTree = "<group>"; };
+		D87A053916EF69700052328E /* FTUtils+NSObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTUtils+NSObject.h"; sourceTree = "<group>"; };
+		D87A053A16EF69700052328E /* FTUtils+NSObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTUtils+NSObject.m"; sourceTree = "<group>"; };
+		D87A053B16EF69700052328E /* FTUtils+UIGestureRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FTUtils+UIGestureRecognizer.h"; sourceTree = "<group>"; };
+		D87A053C16EF69700052328E /* FTUtils+UIGestureRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FTUtils+UIGestureRecognizer.m"; sourceTree = "<group>"; };
+		D87A053D16EF69700052328E /* FTUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FTUtils.h; sourceTree = "<group>"; };
+		D87A053F16EF69700052328E /* PPRevealSideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PPRevealSideViewController.h; sourceTree = "<group>"; };
+		D87A054016EF69700052328E /* PPRevealSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPRevealSideViewController.m; sourceTree = "<group>"; };
+		D87A054916EF69DE0052328E /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
+		D87A054A16EF69DE0052328E /* BSRootLeftViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRootLeftViewController_iPhone.m; sourceTree = "<group>"; };
+		D87A054B16EF69DE0052328E /* BSSuperCentreViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSuperCentreViewController_iPhone.m; sourceTree = "<group>"; };
+		D87A054C16EF69DE0052328E /* BSRootLeftViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSRootLeftViewController_iPhone.xib; sourceTree = "<group>"; };
+		D87A054D16EF69DE0052328E /* BSRootLeftViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRootLeftViewController_iPhone.h; sourceTree = "<group>"; };
+		D87A054E16EF69DE0052328E /* BSSuperCentreViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSuperCentreViewController_iPhone.h; sourceTree = "<group>"; };
+		D87A055216EF6A7A0052328E /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		D87A055416EF6A970052328E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		D87A055716EF6B660052328E /* DefaultLoadViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultLoadViewController_iPhone.h; sourceTree = "<group>"; };
+		D87A055816EF6B660052328E /* DefaultLoadViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultLoadViewController_iPhone.m; sourceTree = "<group>"; };
+		D87A055916EF6B660052328E /* DefaultLoadViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultLoadViewController_iPhone.xib; sourceTree = "<group>"; };
+		D87A055C16EF6D3C0052328E /* BSMyInfoViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMyInfoViewController_iPhone.h; sourceTree = "<group>"; };
+		D87A055D16EF6D3C0052328E /* BSMyInfoViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMyInfoViewController_iPhone.m; sourceTree = "<group>"; };
+		D87A055E16EF6D3C0052328E /* BSMyInfoViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMyInfoViewController_iPhone.xib; sourceTree = "<group>"; };
+		D87A056116EF6D640052328E /* BSRecommendViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRecommendViewController_iPhone.h; sourceTree = "<group>"; };
+		D87A056216EF6D640052328E /* BSRecommendViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRecommendViewController_iPhone.m; sourceTree = "<group>"; };
+		D87A056316EF6D640052328E /* BSRecommendViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSRecommendViewController_iPhone.xib; sourceTree = "<group>"; };
+		D87A056616EF6D950052328E /* BSMessageViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMessageViewController_iPhone.h; sourceTree = "<group>"; };
+		D87A056716EF6D950052328E /* BSMessageViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMessageViewController_iPhone.m; sourceTree = "<group>"; };
+		D87A056816EF6D950052328E /* BSMessageViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMessageViewController_iPhone.xib; sourceTree = "<group>"; };
+		D87A056B16EF6DAD0052328E /* BSSaysayViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSaysayViewController_iPhone.h; sourceTree = "<group>"; };
+		D87A056C16EF6DAD0052328E /* BSSaysayViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSaysayViewController_iPhone.m; sourceTree = "<group>"; };
+		D87A056D16EF6DAD0052328E /* BSSaysayViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSSaysayViewController_iPhone.xib; sourceTree = "<group>"; };
+		D87A057016EF6DC90052328E /* BSSearchViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSearchViewController_iPhone.h; sourceTree = "<group>"; };
+		D87A057116EF6DC90052328E /* BSSearchViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSearchViewController_iPhone.m; sourceTree = "<group>"; };
+		D87A057216EF6DC90052328E /* BSSearchViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSSearchViewController_iPhone.xib; sourceTree = "<group>"; };
+		D87A057516EF6DDF0052328E /* BSBuyViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBuyViewController_iPhone.h; sourceTree = "<group>"; };
+		D87A057616EF6DDF0052328E /* BSBuyViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBuyViewController_iPhone.m; sourceTree = "<group>"; };
+		D87A057716EF6DDF0052328E /* BSBuyViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBuyViewController_iPhone.xib; sourceTree = "<group>"; };
+		D87A057A16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEveryDayMiaiViewController_iPhone.h; sourceTree = "<group>"; };
+		D87A057B16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEveryDayMiaiViewController_iPhone.m; sourceTree = "<group>"; };
+		D87A057C16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSEveryDayMiaiViewController_iPhone.xib; sourceTree = "<group>"; };
+		D87A057F16EF6E100052328E /* BSMatchmakerViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMatchmakerViewController_iPhone.h; sourceTree = "<group>"; };
+		D87A058016EF6E100052328E /* BSMatchmakerViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMatchmakerViewController_iPhone.m; sourceTree = "<group>"; };
+		D87A058116EF6E100052328E /* BSMatchmakerViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMatchmakerViewController_iPhone.xib; sourceTree = "<group>"; };
+		D87A058816EF757D0052328E /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		D87A058A16EF758D0052328E /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D87A058C16EF75A10052328E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D87A058E16EF75AA0052328E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D87A059316EF77F90052328E /* 左栏_button_03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "左栏_button_03@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D87A04E616EF639A0052328E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D87A058F16EF75AB0052328E /* SystemConfiguration.framework in Frameworks */,
+				D87A058D16EF75A20052328E /* CFNetwork.framework in Frameworks */,
+				D87A058B16EF758D0052328E /* QuartzCore.framework in Frameworks */,
+				D87A055516EF6A970052328E /* MobileCoreServices.framework in Frameworks */,
+				D87A055316EF6A7A0052328E /* libxml2.dylib in Frameworks */,
+				D87A04EE16EF639A0052328E /* UIKit.framework in Frameworks */,
+				D87A04F016EF639A0052328E /* Foundation.framework in Frameworks */,
+				D87A04F216EF639A0052328E /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D87A04DE16EF639A0052328E = {
+			isa = PBXGroup;
+			children = (
+				D87A04F316EF639A0052328E /* qnssy */,
+				D87A04EC16EF639A0052328E /* Frameworks */,
+				D87A04EA16EF639A0052328E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D87A04EA16EF639A0052328E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D87A04E916EF639A0052328E /* qnssy.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D87A04EC16EF639A0052328E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D87A058E16EF75AA0052328E /* SystemConfiguration.framework */,
+				D87A058C16EF75A10052328E /* CFNetwork.framework */,
+				D87A058A16EF758D0052328E /* QuartzCore.framework */,
+				D87A058816EF757D0052328E /* OpenGLES.framework */,
+				D87A055416EF6A970052328E /* MobileCoreServices.framework */,
+				D87A055216EF6A7A0052328E /* libxml2.dylib */,
+				D87A04ED16EF639A0052328E /* UIKit.framework */,
+				D87A04EF16EF639A0052328E /* Foundation.framework */,
+				D87A04F116EF639A0052328E /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D87A04F316EF639A0052328E /* qnssy */ = {
+			isa = PBXGroup;
+			children = (
+				D87A04FC16EF639A0052328E /* BSAppDelegate.h */,
+				D87A04FD16EF639A0052328E /* BSAppDelegate.m */,
+				D87A051316EF63EE0052328E /* framework */,
+				D87A051416EF63EE0052328E /* class */,
+				D87A059016EF77F80052328E /* Resource */,
+				D87A04F416EF639A0052328E /* Supporting Files */,
+			);
+			path = qnssy;
+			sourceTree = "<group>";
+		};
+		D87A04F416EF639A0052328E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D87A04F516EF639A0052328E /* qnssy-Info.plist */,
+				D87A04F616EF639A0052328E /* InfoPlist.strings */,
+				D87A04F916EF639A0052328E /* main.m */,
+				D87A04FB16EF639A0052328E /* qnssy-Prefix.pch */,
+				D87A04FF16EF639A0052328E /* Default.png */,
+				D87A050116EF639A0052328E /* Default@2x.png */,
+				D87A050316EF639A0052328E /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D87A051316EF63EE0052328E /* framework */ = {
+			isa = PBXGroup;
+			children = (
+				D87A052916EF69700052328E /* Util */,
+				D87A053316EF69700052328E /* BSAnimation */,
+				D87A053E16EF69700052328E /* PPRevealSideviewController */,
+			);
+			path = framework;
+			sourceTree = "<group>";
+		};
+		D87A051416EF63EE0052328E /* class */ = {
+			isa = PBXGroup;
+			children = (
+				D87A051E16EF68A50052328E /* iPhone */,
+				D87A052816EF68A50052328E /* iPad */,
+			);
+			path = class;
+			sourceTree = "<group>";
+		};
+		D87A051E16EF68A50052328E /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				D87A055616EF6B660052328E /* LoadView */,
+				D87A052516EF68A50052328E /* RootController */,
+				D87A052316EF68A50052328E /* MyInfo */,
+				D87A052416EF68A50052328E /* recommend */,
+				D87A052116EF68A50052328E /* massage */,
+				D87A052616EF68A50052328E /* saysay */,
+				D87A052716EF68A50052328E /* search */,
+				D87A051F16EF68A50052328E /* buy */,
+				D87A052016EF68A50052328E /* everyDayMiai */,
+				D87A052216EF68A50052328E /* Matchmaker */,
+			);
+			path = iPhone;
+			sourceTree = "<group>";
+		};
+		D87A051F16EF68A50052328E /* buy */ = {
+			isa = PBXGroup;
+			children = (
+				D87A057516EF6DDF0052328E /* BSBuyViewController_iPhone.h */,
+				D87A057616EF6DDF0052328E /* BSBuyViewController_iPhone.m */,
+				D87A057716EF6DDF0052328E /* BSBuyViewController_iPhone.xib */,
+			);
+			path = buy;
+			sourceTree = "<group>";
+		};
+		D87A052016EF68A50052328E /* everyDayMiai */ = {
+			isa = PBXGroup;
+			children = (
+				D87A057A16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.h */,
+				D87A057B16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.m */,
+				D87A057C16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.xib */,
+			);
+			path = everyDayMiai;
+			sourceTree = "<group>";
+		};
+		D87A052116EF68A50052328E /* massage */ = {
+			isa = PBXGroup;
+			children = (
+				D87A056616EF6D950052328E /* BSMessageViewController_iPhone.h */,
+				D87A056716EF6D950052328E /* BSMessageViewController_iPhone.m */,
+				D87A056816EF6D950052328E /* BSMessageViewController_iPhone.xib */,
+			);
+			path = massage;
+			sourceTree = "<group>";
+		};
+		D87A052216EF68A50052328E /* Matchmaker */ = {
+			isa = PBXGroup;
+			children = (
+				D87A057F16EF6E100052328E /* BSMatchmakerViewController_iPhone.h */,
+				D87A058016EF6E100052328E /* BSMatchmakerViewController_iPhone.m */,
+				D87A058116EF6E100052328E /* BSMatchmakerViewController_iPhone.xib */,
+			);
+			path = Matchmaker;
+			sourceTree = "<group>";
+		};
+		D87A052316EF68A50052328E /* MyInfo */ = {
+			isa = PBXGroup;
+			children = (
+				D87A055C16EF6D3C0052328E /* BSMyInfoViewController_iPhone.h */,
+				D87A055D16EF6D3C0052328E /* BSMyInfoViewController_iPhone.m */,
+				D87A055E16EF6D3C0052328E /* BSMyInfoViewController_iPhone.xib */,
+			);
+			path = MyInfo;
+			sourceTree = "<group>";
+		};
+		D87A052416EF68A50052328E /* recommend */ = {
+			isa = PBXGroup;
+			children = (
+				D87A056116EF6D640052328E /* BSRecommendViewController_iPhone.h */,
+				D87A056216EF6D640052328E /* BSRecommendViewController_iPhone.m */,
+				D87A056316EF6D640052328E /* BSRecommendViewController_iPhone.xib */,
+			);
+			path = recommend;
+			sourceTree = "<group>";
+		};
+		D87A052516EF68A50052328E /* RootController */ = {
+			isa = PBXGroup;
+			children = (
+				D87A054916EF69DE0052328E /* AppConstants.h */,
+				D87A054D16EF69DE0052328E /* BSRootLeftViewController_iPhone.h */,
+				D87A054A16EF69DE0052328E /* BSRootLeftViewController_iPhone.m */,
+				D87A054C16EF69DE0052328E /* BSRootLeftViewController_iPhone.xib */,
+				D87A054E16EF69DE0052328E /* BSSuperCentreViewController_iPhone.h */,
+				D87A054B16EF69DE0052328E /* BSSuperCentreViewController_iPhone.m */,
+			);
+			path = RootController;
+			sourceTree = "<group>";
+		};
+		D87A052616EF68A50052328E /* saysay */ = {
+			isa = PBXGroup;
+			children = (
+				D87A056B16EF6DAD0052328E /* BSSaysayViewController_iPhone.h */,
+				D87A056C16EF6DAD0052328E /* BSSaysayViewController_iPhone.m */,
+				D87A056D16EF6DAD0052328E /* BSSaysayViewController_iPhone.xib */,
+			);
+			path = saysay;
+			sourceTree = "<group>";
+		};
+		D87A052716EF68A50052328E /* search */ = {
+			isa = PBXGroup;
+			children = (
+				D87A057016EF6DC90052328E /* BSSearchViewController_iPhone.h */,
+				D87A057116EF6DC90052328E /* BSSearchViewController_iPhone.m */,
+				D87A057216EF6DC90052328E /* BSSearchViewController_iPhone.xib */,
+			);
+			path = search;
+			sourceTree = "<group>";
+		};
+		D87A052816EF68A50052328E /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = iPad;
+			sourceTree = "<group>";
+		};
+		D87A052916EF69700052328E /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				D87A052A16EF69700052328E /* DataParseUtil */,
+				D87A052D16EF69700052328E /* image */,
+				D87A053016EF69700052328E /* xmlUtil */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		D87A052A16EF69700052328E /* DataParseUtil */ = {
+			isa = PBXGroup;
+			children = (
+				D87A052B16EF69700052328E /* DataParseUtil.h */,
+				D87A052C16EF69700052328E /* DataParseUtil.m */,
+			);
+			path = DataParseUtil;
+			sourceTree = "<group>";
+		};
+		D87A052D16EF69700052328E /* image */ = {
+			isa = PBXGroup;
+			children = (
+				D87A052E16EF69700052328E /* UIImage+Scale.h */,
+				D87A052F16EF69700052328E /* UIImage+Scale.m */,
+			);
+			path = image;
+			sourceTree = "<group>";
+		};
+		D87A053016EF69700052328E /* xmlUtil */ = {
+			isa = PBXGroup;
+			children = (
+				D87A053116EF69700052328E /* GDataXMLNode.h */,
+				D87A053216EF69700052328E /* GDataXMLNode.m */,
+			);
+			path = xmlUtil;
+			sourceTree = "<group>";
+		};
+		D87A053316EF69700052328E /* BSAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				D87A053416EF69700052328E /* FTAnimation+UIView.h */,
+				D87A053516EF69700052328E /* FTAnimation+UIView.m */,
+				D87A053616EF69700052328E /* FTAnimation.h */,
+				D87A053716EF69700052328E /* FTAnimationManager.h */,
+				D87A053816EF69700052328E /* FTAnimationManager.m */,
+				D87A053916EF69700052328E /* FTUtils+NSObject.h */,
+				D87A053A16EF69700052328E /* FTUtils+NSObject.m */,
+				D87A053B16EF69700052328E /* FTUtils+UIGestureRecognizer.h */,
+				D87A053C16EF69700052328E /* FTUtils+UIGestureRecognizer.m */,
+				D87A053D16EF69700052328E /* FTUtils.h */,
+			);
+			path = BSAnimation;
+			sourceTree = "<group>";
+		};
+		D87A053E16EF69700052328E /* PPRevealSideviewController */ = {
+			isa = PBXGroup;
+			children = (
+				D87A053F16EF69700052328E /* PPRevealSideViewController.h */,
+				D87A054016EF69700052328E /* PPRevealSideViewController.m */,
+			);
+			path = PPRevealSideviewController;
+			sourceTree = "<group>";
+		};
+		D87A055616EF6B660052328E /* LoadView */ = {
+			isa = PBXGroup;
+			children = (
+				D87A055716EF6B660052328E /* DefaultLoadViewController_iPhone.h */,
+				D87A055816EF6B660052328E /* DefaultLoadViewController_iPhone.m */,
+				D87A055916EF6B660052328E /* DefaultLoadViewController_iPhone.xib */,
+			);
+			path = LoadView;
+			sourceTree = "<group>";
+		};
+		D87A059016EF77F80052328E /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				D87A059116EF77F90052328E /* iPad */,
+				D87A059216EF77F90052328E /* iPhone */,
+				D87A059416EF77F90052328E /* Public */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		D87A059116EF77F90052328E /* iPad */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = iPad;
+			sourceTree = "<group>";
+		};
+		D87A059216EF77F90052328E /* iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				D87A059316EF77F90052328E /* 左栏_button_03@2x.png */,
+			);
+			path = iPhone;
+			sourceTree = "<group>";
+		};
+		D87A059416EF77F90052328E /* Public */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D87A04E816EF639A0052328E /* qnssy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D87A051016EF639B0052328E /* Build configuration list for PBXNativeTarget "qnssy" */;
+			buildPhases = (
+				D87A04E516EF639A0052328E /* Sources */,
+				D87A04E616EF639A0052328E /* Frameworks */,
+				D87A04E716EF639A0052328E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = qnssy;
+			productName = qnssy;
+			productReference = D87A04E916EF639A0052328E /* qnssy.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D87A04E016EF639A0052328E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = BS;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = jpm;
+			};
+			buildConfigurationList = D87A04E316EF639A0052328E /* Build configuration list for PBXProject "qnssy" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D87A04DE16EF639A0052328E;
+			productRefGroup = D87A04EA16EF639A0052328E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D87A04E816EF639A0052328E /* qnssy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D87A04E716EF639A0052328E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D87A04F816EF639A0052328E /* InfoPlist.strings in Resources */,
+				D87A050016EF639A0052328E /* Default.png in Resources */,
+				D87A050216EF639A0052328E /* Default@2x.png in Resources */,
+				D87A050416EF639A0052328E /* Default-568h@2x.png in Resources */,
+				D87A055116EF69DE0052328E /* BSRootLeftViewController_iPhone.xib in Resources */,
+				D87A055B16EF6B660052328E /* DefaultLoadViewController_iPhone.xib in Resources */,
+				D87A056016EF6D3C0052328E /* BSMyInfoViewController_iPhone.xib in Resources */,
+				D87A056516EF6D640052328E /* BSRecommendViewController_iPhone.xib in Resources */,
+				D87A056A16EF6D950052328E /* BSMessageViewController_iPhone.xib in Resources */,
+				D87A056F16EF6DAD0052328E /* BSSaysayViewController_iPhone.xib in Resources */,
+				D87A057416EF6DC90052328E /* BSSearchViewController_iPhone.xib in Resources */,
+				D87A057916EF6DDF0052328E /* BSBuyViewController_iPhone.xib in Resources */,
+				D87A057E16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.xib in Resources */,
+				D87A058316EF6E100052328E /* BSMatchmakerViewController_iPhone.xib in Resources */,
+				D87A059516EF77F90052328E /* 左栏_button_03@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D87A04E516EF639A0052328E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D87A04FA16EF639A0052328E /* main.m in Sources */,
+				D87A04FE16EF639A0052328E /* BSAppDelegate.m in Sources */,
+				D87A054116EF69700052328E /* DataParseUtil.m in Sources */,
+				D87A054216EF69700052328E /* UIImage+Scale.m in Sources */,
+				D87A054316EF69700052328E /* GDataXMLNode.m in Sources */,
+				D87A054416EF69700052328E /* FTAnimation+UIView.m in Sources */,
+				D87A054516EF69700052328E /* FTAnimationManager.m in Sources */,
+				D87A054616EF69700052328E /* FTUtils+NSObject.m in Sources */,
+				D87A054716EF69700052328E /* FTUtils+UIGestureRecognizer.m in Sources */,
+				D87A054816EF69700052328E /* PPRevealSideViewController.m in Sources */,
+				D87A054F16EF69DE0052328E /* BSRootLeftViewController_iPhone.m in Sources */,
+				D87A055016EF69DE0052328E /* BSSuperCentreViewController_iPhone.m in Sources */,
+				D87A055A16EF6B660052328E /* DefaultLoadViewController_iPhone.m in Sources */,
+				D87A055F16EF6D3C0052328E /* BSMyInfoViewController_iPhone.m in Sources */,
+				D87A056416EF6D640052328E /* BSRecommendViewController_iPhone.m in Sources */,
+				D87A056916EF6D950052328E /* BSMessageViewController_iPhone.m in Sources */,
+				D87A056E16EF6DAD0052328E /* BSSaysayViewController_iPhone.m in Sources */,
+				D87A057316EF6DC90052328E /* BSSearchViewController_iPhone.m in Sources */,
+				D87A057816EF6DDF0052328E /* BSBuyViewController_iPhone.m in Sources */,
+				D87A057D16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.m in Sources */,
+				D87A058216EF6E100052328E /* BSMatchmakerViewController_iPhone.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D87A04F616EF639A0052328E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D87A04F716EF639A0052328E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D87A050E16EF639B0052328E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D87A050F16EF639B0052328E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D87A051116EF639B0052328E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "qnssy/qnssy-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				INFOPLIST_FILE = "qnssy/qnssy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D87A051216EF639B0052328E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "qnssy/qnssy-Prefix.pch";
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
+				INFOPLIST_FILE = "qnssy/qnssy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D87A04E316EF639A0052328E /* Build configuration list for PBXProject "qnssy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D87A050E16EF639B0052328E /* Debug */,
+				D87A050F16EF639B0052328E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D87A051016EF639B0052328E /* Build configuration list for PBXNativeTarget "qnssy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D87A051116EF639B0052328E /* Debug */,
+				D87A051216EF639B0052328E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D87A04E016EF639A0052328E /* Project object */;
+}
