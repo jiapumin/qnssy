@@ -20,7 +20,7 @@
     [_leftvc release];
     [_viewController release];
     [super dealloc];
-    
+    //测试哦测试
     
 }
 
