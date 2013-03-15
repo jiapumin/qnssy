@@ -8,7 +8,9 @@
 
 #import "BSUserLoginViewController.h"
 
-@interface BSUserLoginViewController ()
+@interface BSUserLoginViewController (){
+    BOOL isTextFieldMoved;
+}
 
 @end
 
@@ -27,6 +29,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.userAccount.delegate  = self;
+    self.userPassword.delegate = self;
+    self.userPassword.secureTextEntry = YES;
+    isTextFieldMoved = NO;
     [self configLoginBackgroundView];
 }
 
@@ -41,6 +47,40 @@
     
 }
 
+#pragma mark - TextField Delegate
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    if (isTextFieldMoved == NO) {
+        NSTimeInterval animationDuration = 0.5f;
+        CGRect frame = self.view.frame;
+        frame.origin.y -=216;
+        frame.size.height +=216;
+        self.view.frame = frame;
+        [UIView beginAnimations:@"ResizeView" context:nil];
+        [UIView setAnimationDuration:animationDuration];
+        self.view.frame = frame;
+        [UIView commitAnimations];
+    }
+    isTextFieldMoved = YES;
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    if (isTextFieldMoved == YES) {
+        NSTimeInterval animationDuration = 0.5f;
+        CGRect frame = self.view.frame;
+        frame.origin.y +=216;
+        frame.size. height -=216;
+        self.view.frame = frame;
+        [UIView beginAnimations:@"ResizeView" context:nil];
+        [UIView setAnimationDuration:animationDuration];
+        self.view.frame = frame;
+        [UIView commitAnimations];
+        [textField resignFirstResponder];
+    }
+    isTextFieldMoved = NO;
+    return YES;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -50,11 +90,15 @@
 - (void)dealloc {
     [_userLogoImage_1 release];
     [_loginBackgroundView release];
+    [_userAccount release];
+    [_userPassword release];
     [super dealloc];
 }
 - (void)viewDidUnload {
     [self setUserLogoImage_1:nil];
     [self setLoginBackgroundView:nil];
+    [self setUserAccount:nil];
+    [self setUserPassword:nil];
     [super viewDidUnload];
 }
 @end
