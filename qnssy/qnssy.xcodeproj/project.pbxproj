@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A3DD27F16F3448D00D91786 /* login_btn_bkimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3DD27E16F3448D00D91786 /* login_btn_bkimg.png */; };
+		5A3DD28116F3461200D91786 /* login_btn_bkimg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3DD28016F3461200D91786 /* login_btn_bkimg2.png */; };
+		5A3DD28316F3467200D91786 /* login_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3DD28216F3467200D91786 /* login_selected.png */; };
+		5A64EBE616F2F93400F4E576 /* BSUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */; };
+		5A64EBE716F2F93400F4E576 /* BSUserLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBE516F2F93400F4E576 /* BSUserLoginViewController.xib */; };
+		5A64EBED16F3091B00F4E576 /* login_input.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBEC16F3091B00F4E576 /* login_input.png */; };
+		5A64EBF716F30BAF00F4E576 /* login_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBF616F30BAF00F4E576 /* login_logo.png */; };
 		D87A04EE16EF639A0052328E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04ED16EF639A0052328E /* UIKit.framework */; };
 		D87A04F016EF639A0052328E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04EF16EF639A0052328E /* Foundation.framework */; };
 		D87A04F216EF639A0052328E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04F116EF639A0052328E /* CoreGraphics.framework */; };
@@ -54,6 +61,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5A3DD27E16F3448D00D91786 /* login_btn_bkimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_btn_bkimg.png; sourceTree = "<group>"; };
+		5A3DD28016F3461200D91786 /* login_btn_bkimg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_btn_bkimg2.png; sourceTree = "<group>"; };
+		5A3DD28216F3467200D91786 /* login_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_selected.png; sourceTree = "<group>"; };
+		5A64EBE316F2F93400F4E576 /* BSUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserLoginViewController.h; sourceTree = "<group>"; };
+		5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserLoginViewController.m; sourceTree = "<group>"; };
+		5A64EBE516F2F93400F4E576 /* BSUserLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserLoginViewController.xib; sourceTree = "<group>"; };
+		5A64EBEC16F3091B00F4E576 /* login_input.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_input.png; sourceTree = "<group>"; };
+		5A64EBF616F30BAF00F4E576 /* login_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_logo.png; sourceTree = "<group>"; };
 		D87A04E916EF639A0052328E /* qnssy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qnssy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87A04ED16EF639A0052328E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D87A04EF16EF639A0052328E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -146,6 +161,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A64EBE216F2F8EF00F4E576 /* register */ = {
+			isa = PBXGroup;
+			children = (
+				5A64EBE316F2F93400F4E576 /* BSUserLoginViewController.h */,
+				5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */,
+				5A64EBE516F2F93400F4E576 /* BSUserLoginViewController.xib */,
+			);
+			path = register;
+			sourceTree = "<group>";
+		};
 		D87A04DE16EF639A0052328E = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +253,7 @@
 		D87A051E16EF68A50052328E /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				5A64EBE216F2F8EF00F4E576 /* register */,
 				D87A055616EF6B660052328E /* LoadView */,
 				D87A052516EF68A50052328E /* RootController */,
 				D87A052316EF68A50052328E /* MyInfo */,
@@ -435,6 +461,11 @@
 		D87A059216EF77F90052328E /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				5A3DD28216F3467200D91786 /* login_selected.png */,
+				5A3DD28016F3461200D91786 /* login_btn_bkimg2.png */,
+				5A3DD27E16F3448D00D91786 /* login_btn_bkimg.png */,
+				5A64EBF616F30BAF00F4E576 /* login_logo.png */,
+				5A64EBEC16F3091B00F4E576 /* login_input.png */,
 				D87A059316EF77F90052328E /* 左栏_button_03@2x.png */,
 			);
 			path = iPhone;
@@ -514,6 +545,12 @@
 				D87A057E16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.xib in Resources */,
 				D87A058316EF6E100052328E /* BSMatchmakerViewController_iPhone.xib in Resources */,
 				D87A059516EF77F90052328E /* 左栏_button_03@2x.png in Resources */,
+				5A64EBE716F2F93400F4E576 /* BSUserLoginViewController.xib in Resources */,
+				5A64EBED16F3091B00F4E576 /* login_input.png in Resources */,
+				5A64EBF716F30BAF00F4E576 /* login_logo.png in Resources */,
+				5A3DD27F16F3448D00D91786 /* login_btn_bkimg.png in Resources */,
+				5A3DD28116F3461200D91786 /* login_btn_bkimg2.png in Resources */,
+				5A3DD28316F3467200D91786 /* login_selected.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +582,7 @@
 				D87A057816EF6DDF0052328E /* BSBuyViewController_iPhone.m in Sources */,
 				D87A057D16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.m in Sources */,
 				D87A058216EF6E100052328E /* BSMatchmakerViewController_iPhone.m in Sources */,
+				5A64EBE616F2F93400F4E576 /* BSUserLoginViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +695,7 @@
 				D87A051216EF639B0052328E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

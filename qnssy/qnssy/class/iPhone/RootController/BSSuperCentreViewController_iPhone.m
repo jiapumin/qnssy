@@ -7,6 +7,7 @@
 //
 
 #import "BSSuperCentreViewController_iPhone.h"
+#import "BSUserLoginViewController.h"
 
 @interface BSSuperCentreViewController_iPhone ()
 
@@ -90,6 +91,8 @@
     
     
 	// Do any additional setup after loading the view.
+    BSUserLoginViewController *userLoginView = [[BSUserLoginViewController alloc] initWithNibName:@"BSUserLoginViewController" bundle:nil];
+    [self.view addSubview:userLoginView.view];
 }
 
 - (void)didReceiveMemoryWarning
