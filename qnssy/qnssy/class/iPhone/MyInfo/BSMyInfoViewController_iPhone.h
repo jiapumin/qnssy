@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface BSMyInfoViewController_iPhone : BSSuperCentreViewController_iPhone
+@property (retain, nonatomic) IBOutlet UIImageView *testImgeView;
 
 @end
