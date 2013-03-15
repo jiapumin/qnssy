@@ -10,6 +10,8 @@
 		5A3DD27F16F3448D00D91786 /* login_btn_bkimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3DD27E16F3448D00D91786 /* login_btn_bkimg.png */; };
 		5A3DD28116F3461200D91786 /* login_btn_bkimg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3DD28016F3461200D91786 /* login_btn_bkimg2.png */; };
 		5A3DD28316F3467200D91786 /* login_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3DD28216F3467200D91786 /* login_selected.png */; };
+		5A3DD28C16F3551D00D91786 /* BSUserRegisterStepOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3DD28A16F3551D00D91786 /* BSUserRegisterStepOneViewController.m */; };
+		5A3DD28D16F3551D00D91786 /* BSUserRegisterStepOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A3DD28B16F3551D00D91786 /* BSUserRegisterStepOneViewController.xib */; };
 		5A64EBE616F2F93400F4E576 /* BSUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */; };
 		5A64EBE716F2F93400F4E576 /* BSUserLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBE516F2F93400F4E576 /* BSUserLoginViewController.xib */; };
 		5A64EBED16F3091B00F4E576 /* login_input.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBEC16F3091B00F4E576 /* login_input.png */; };
@@ -79,6 +81,9 @@
 		5A3DD27E16F3448D00D91786 /* login_btn_bkimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_btn_bkimg.png; sourceTree = "<group>"; };
 		5A3DD28016F3461200D91786 /* login_btn_bkimg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_btn_bkimg2.png; sourceTree = "<group>"; };
 		5A3DD28216F3467200D91786 /* login_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_selected.png; sourceTree = "<group>"; };
+		5A3DD28916F3551D00D91786 /* BSUserRegisterStepOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserRegisterStepOneViewController.h; sourceTree = "<group>"; };
+		5A3DD28A16F3551D00D91786 /* BSUserRegisterStepOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserRegisterStepOneViewController.m; sourceTree = "<group>"; };
+		5A3DD28B16F3551D00D91786 /* BSUserRegisterStepOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserRegisterStepOneViewController.xib; sourceTree = "<group>"; };
 		5A64EBE316F2F93400F4E576 /* BSUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserLoginViewController.h; sourceTree = "<group>"; };
 		5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserLoginViewController.m; sourceTree = "<group>"; };
 		5A64EBE516F2F93400F4E576 /* BSUserLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserLoginViewController.xib; sourceTree = "<group>"; };
@@ -217,6 +222,9 @@
 				5A64EBE316F2F93400F4E576 /* BSUserLoginViewController.h */,
 				5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */,
 				5A64EBE516F2F93400F4E576 /* BSUserLoginViewController.xib */,
+				5A3DD28916F3551D00D91786 /* BSUserRegisterStepOneViewController.h */,
+				5A3DD28A16F3551D00D91786 /* BSUserRegisterStepOneViewController.m */,
+				5A3DD28B16F3551D00D91786 /* BSUserRegisterStepOneViewController.xib */,
 			);
 			path = register;
 			sourceTree = "<group>";
@@ -672,6 +680,7 @@
 				5A3DD27F16F3448D00D91786 /* login_btn_bkimg.png in Resources */,
 				5A3DD28116F3461200D91786 /* login_btn_bkimg2.png in Resources */,
 				5A3DD28316F3467200D91786 /* login_selected.png in Resources */,
+				5A3DD28D16F3551D00D91786 /* BSUserRegisterStepOneViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,6 +713,7 @@
 				D87A057D16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.m in Sources */,
 				D87A058216EF6E100052328E /* BSMatchmakerViewController_iPhone.m in Sources */,
 				5A64EBE616F2F93400F4E576 /* BSUserLoginViewController.m in Sources */,
+				5A3DD28C16F3551D00D91786 /* BSUserRegisterStepOneViewController.m in Sources */,
 				D8888FA816F34E7A00C14922 /* KBBreakpointTransmission.m in Sources */,
 				D8888FA916F34E7A00C14922 /* KBBTFileInfoVo.m in Sources */,
 				D8888FC516F34EEB00C14922 /* ASIAuthenticationDialog.m in Sources */,

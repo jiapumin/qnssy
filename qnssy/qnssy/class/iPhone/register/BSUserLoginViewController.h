@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BSUserLoginViewController : UIViewController
+@interface BSUserLoginViewController : UIViewController <UITextFieldDelegate>
 
 @property (retain, nonatomic) IBOutlet UIImageView *userLogoImage_1;
 @property (retain, nonatomic) IBOutlet UIImageView *userLogoImage_2;
@@ -20,6 +20,8 @@
 @property (retain, nonatomic) IBOutlet UIImageView *userLogoImage_8;
 @property (retain, nonatomic) IBOutlet UIImageView *userLogoImage_9;
 @property (retain, nonatomic) IBOutlet UIImageView *userLogoImage_10;
+@property (retain, nonatomic) IBOutlet UITextField *userAccount;
+@property (retain, nonatomic) IBOutlet UITextField *userPassword;
 
 @property (retain, nonatomic) IBOutlet UIView *loginBackgroundView;
 
