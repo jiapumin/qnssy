@@ -12,27 +12,27 @@
 
 //#define WEBSERVICE_PREFIX @"http://webservice.36wu.com/ExpressService.asmx"
 
-#define WEBSERVICE_URL @"http://www.51hlife.com/HPPWebService/ServiceForBobile.asmx"//远程WebService的地址
+//#define WEBSERVICE_URL @"http://www.51hlife.com/HPPWebService/ServiceForBobile.asmx"//远程WebService的地址
 //#define WEBSERVICE_SUFFIX @"ServiceForBobile.asmx"//参数 webServiceFile
-
+#define WEBSERVICE_URL @"http://demo2.qnssy.com/app/app.php"
 #import "BSContainer.h"
 #import "BSServiceAgent.h"
 
 @implementation BSContainer
-@synthesize serviceAgent;
-@synthesize serviceHttpURLString;
-@synthesize noticeNum;
+//@synthesize serviceAgent;
+//@synthesize serviceHttpURLString;
+//@synthesize noticeNum;
 
 -(id)init
 {
     if(self = [super init]){
 
         //初始化service
-        if (self.serviceAgent==nil) {
-            BSServiceAgent * tempServiceAgent = [[BSServiceAgent alloc] init];
-            self.serviceAgent = tempServiceAgent;
-            [tempServiceAgent release];
-        }
+//        if (self.serviceAgent==nil) {
+            self.serviceAgent = [[[BSServiceAgent alloc] init] autorelease];
+//            self.serviceAgent = tempServiceAgent;
+//            [tempServiceAgent release];
+//        }
 //        if (self.userInfo == nil) {
 //            UserInfo *tempUserInfo = [[UserInfo alloc]init];
 //            self.userInfo = tempUserInfo;
@@ -55,8 +55,8 @@
 }
 
 -(void) dealloc{
-    [serviceAgent release];
-    [serviceHttpURLString release];
+    [_serviceAgent release];
+    [_serviceHttpURLString release];
 //    [userInfo release];
     [super dealloc];
 }

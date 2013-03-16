@@ -12,15 +12,15 @@
 @class BSServiceAgent;
 @interface BSContainer : NSObject <UIAlertViewDelegate>
 {
-    BSServiceAgent * serviceAgent;
-    NSString *serviceHttpURLString;
+//    BSServiceAgent * serviceAgent;
+//    NSString *serviceHttpURLString;
 //    UserInfo *userInfo;
 }
 
 @property (nonatomic,retain) BSServiceAgent * serviceAgent;
 @property (nonatomic,retain) NSString *serviceHttpURLString;
 //@property (nonatomic,retain) UserInfo *userInfo;
-@property (nonatomic, retain) NSString *noticeNum;
+//@property (nonatomic, retain) NSString *noticeNum;
 
 +(BSContainer * ) instance;
 

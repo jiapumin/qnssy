@@ -20,26 +20,26 @@
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "qnssy/framework/Network/BSHttpAgent.m"
-         timestampString = "385093940.44902"
+         filePath = "qnssy/class/iPhone/buy/BSBuyViewController_iPhone.m"
+         timestampString = "385136451.484142"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "32"
-         endingLineNumber = "32"
-         landmarkName = "-startWebAsyRequest:succussFunction:failFunction:"
+         startingLineNumber = "53"
+         endingLineNumber = "53"
+         landmarkName = "-loginSucceess:data:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "qnssy/framework/Network/BSHttpAgent.m"
-         timestampString = "385094028.479619"
+         filePath = "qnssy/class/vo/response/LoginResponseVo.m"
+         timestampString = "385136459.435938"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "112"
-         endingLineNumber = "112"
-         landmarkName = "-webAsySuccess:"
+         startingLineNumber = "17"
+         endingLineNumber = "17"
+         landmarkName = "-initWithDic:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

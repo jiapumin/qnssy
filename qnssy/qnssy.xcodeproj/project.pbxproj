@@ -104,6 +104,9 @@
 		D8CA7D7E16F40A2100B4CE67 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D7816F40A2100B4CE67 /* TPKeyboardAvoidingScrollView.m */; };
 		D8CA7D7F16F40A2100B4CE67 /* TPKeyboardAvoidingTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D7A16F40A2100B4CE67 /* TPKeyboardAvoidingTableView.m */; };
 		D8CA7D8016F40A2100B4CE67 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D7D16F40A2100B4CE67 /* MBProgressHUD.m */; };
+		D8CA7D9616F4B19E00B4CE67 /* SuperRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D9516F4B19E00B4CE67 /* SuperRequestVo.m */; };
+		D8CA7D9916F4B29400B4CE67 /* LoginRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D9816F4B29400B4CE67 /* LoginRequestVo.m */; };
+		D8CA7D9C16F4B3FB00B4CE67 /* LoginResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D9A16F4B3FB00B4CE67 /* LoginResponseVo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -271,6 +274,12 @@
 		D8CA7D7A16F40A2100B4CE67 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		D8CA7D7C16F40A2100B4CE67 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		D8CA7D7D16F40A2100B4CE67 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		D8CA7D9416F4B19E00B4CE67 /* SuperRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SuperRequestVo.h; sourceTree = "<group>"; };
+		D8CA7D9516F4B19E00B4CE67 /* SuperRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SuperRequestVo.m; sourceTree = "<group>"; };
+		D8CA7D9716F4B29400B4CE67 /* LoginRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginRequestVo.h; sourceTree = "<group>"; };
+		D8CA7D9816F4B29400B4CE67 /* LoginRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequestVo.m; sourceTree = "<group>"; };
+		D8CA7D9A16F4B3FB00B4CE67 /* LoginResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginResponseVo.m; sourceTree = "<group>"; };
+		D8CA7D9B16F4B3FB00B4CE67 /* LoginResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginResponseVo.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -417,6 +426,7 @@
 		D87A051416EF63EE0052328E /* class */ = {
 			isa = PBXGroup;
 			children = (
+				D8CA7D9016F4B15E00B4CE67 /* vo */,
 				D87A051E16EF68A50052328E /* iPhone */,
 				D87A052816EF68A50052328E /* iPad */,
 			);
@@ -786,6 +796,35 @@
 			path = MBSProgressHUD;
 			sourceTree = "<group>";
 		};
+		D8CA7D9016F4B15E00B4CE67 /* vo */ = {
+			isa = PBXGroup;
+			children = (
+				D8CA7D9116F4B15E00B4CE67 /* request */,
+				D8CA7D9216F4B15E00B4CE67 /* response */,
+			);
+			path = vo;
+			sourceTree = "<group>";
+		};
+		D8CA7D9116F4B15E00B4CE67 /* request */ = {
+			isa = PBXGroup;
+			children = (
+				D8CA7D9716F4B29400B4CE67 /* LoginRequestVo.h */,
+				D8CA7D9816F4B29400B4CE67 /* LoginRequestVo.m */,
+				D8CA7D9416F4B19E00B4CE67 /* SuperRequestVo.h */,
+				D8CA7D9516F4B19E00B4CE67 /* SuperRequestVo.m */,
+			);
+			path = request;
+			sourceTree = "<group>";
+		};
+		D8CA7D9216F4B15E00B4CE67 /* response */ = {
+			isa = PBXGroup;
+			children = (
+				D8CA7D9B16F4B3FB00B4CE67 /* LoginResponseVo.h */,
+				D8CA7D9A16F4B3FB00B4CE67 /* LoginResponseVo.m */,
+			);
+			path = response;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -933,6 +972,9 @@
 				D8CA7D8016F40A2100B4CE67 /* MBProgressHUD.m in Sources */,
 				5AD6531E16F448D000FD80D8 /* UIImage+SplitImageIntoTwoParts.m in Sources */,
 				5AD6531F16F448D300FD80D8 /* ViewController.m in Sources */,
+				D8CA7D9616F4B19E00B4CE67 /* SuperRequestVo.m in Sources */,
+				D8CA7D9916F4B29400B4CE67 /* LoginRequestVo.m in Sources */,
+				D8CA7D9C16F4B3FB00B4CE67 /* LoginResponseVo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
