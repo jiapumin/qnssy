@@ -7,6 +7,7 @@
 //
 
 #import "BSUserRegisterStepOneViewController.h"
+#import "BSValidatePhoneNumberViewController.h"
 
 @interface BSUserRegisterStepOneViewController (){
     BOOL isTextFieldMoved;
@@ -55,6 +56,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self hiddenKeyBoardFromView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -87,7 +89,9 @@
     NSString *phoneNumber = self.userAccount.text;
     BOOL isPhoneNumber = [self isMobileNumber:phoneNumber];
     if (isPhoneNumber) {
-        
+        BSValidatePhoneNumberViewController *validatePhoneNumber = [[BSValidatePhoneNumberViewController alloc] initWithNibName:@"BSValidatePhoneNumberViewController" bundle:nil];
+        [self presentModalViewController:validatePhoneNumber animated:YES];
+        [validatePhoneNumber release];
     } else {
         UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示信息" message:@"请输入正确的手机号码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alter show];
@@ -138,6 +142,17 @@
     } else {
         return NO;
     }
+}
+
+- (void) hiddenKeyBoardFromView{
+    self.view.userInteractionEnabled = YES;
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenKeyBoard:)];
+    [self.view addGestureRecognizer:tapGesture];
+}
+
+- (void) hiddenKeyBoard:(id) sender{
+    [self.userAccount resignFirstResponder];
+    [self.userPassword resignFirstResponder];
 }
 
 @end

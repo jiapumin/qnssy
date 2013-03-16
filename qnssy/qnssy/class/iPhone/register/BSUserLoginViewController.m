@@ -35,6 +35,7 @@
     self.userPassword.secureTextEntry = YES;
     isTextFieldMoved = NO;
     [self configLoginBackgroundView];
+    [self hiddenKeyBoardFromView];
 }
 
 - (void) configLoginBackgroundView {
@@ -44,6 +45,17 @@
     CGColorRef colorref = [color CGColor];
     layer.borderColor = colorref;
     layer.borderWidth = 2.0;
+}
+
+- (void) hiddenKeyBoardFromView{
+    self.view.userInteractionEnabled = YES;
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenKeyBoard:)];
+    [self.view addGestureRecognizer:tapGesture];
+}
+
+- (void) hiddenKeyBoard:(id) sender{
+    [self.userAccount resignFirstResponder];
+    [self.userPassword resignFirstResponder];
 }
 
 #pragma mark - TextField Delegate
