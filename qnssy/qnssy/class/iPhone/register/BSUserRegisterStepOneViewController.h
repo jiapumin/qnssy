@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BSUserRegisterStepOneViewController : UIViewController
+@interface BSUserRegisterStepOneViewController : UIViewController <UITextFieldDelegate>
+@property (retain, nonatomic) UITextField *userAccount;
+@property (retain, nonatomic) UITextField *userPassword;
+- (IBAction)tiaokuanAction:(id)sender;
+- (IBAction)zhengceAction:(id)sender;
 
 @end
