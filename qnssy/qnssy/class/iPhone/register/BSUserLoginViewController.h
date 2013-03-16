@@ -24,5 +24,6 @@
 @property (retain, nonatomic) IBOutlet UITextField *userPassword;
 
 @property (retain, nonatomic) IBOutlet UIView *loginBackgroundView;
+- (IBAction)toRegister:(id)sender;
 
 @end
