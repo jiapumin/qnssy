@@ -66,7 +66,9 @@
 
     [self.navigationItem setLeftBarButtonItems:itemArray animated:YES];
     [itemArray release];
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+//    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
+    
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbkimg.png"] forBarMetrics:UIBarMetricsDefault];
     
     //自定义头部标题
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 150, 33)];
@@ -91,8 +93,8 @@
     
     
 	// Do any additional setup after loading the view.
-//    BSUserLoginViewController *userLoginView = [[BSUserLoginViewController alloc] initWithNibName:@"BSUserLoginViewController" bundle:nil];
-//    [self.view addSubview:userLoginView.view];
+    BSUserLoginViewController *userLoginView = [[BSUserLoginViewController alloc] initWithNibName:@"BSUserLoginViewController" bundle:nil];
+    [self.view addSubview:userLoginView.view];
 }
 
 - (void)didReceiveMemoryWarning
