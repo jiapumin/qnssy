@@ -8,6 +8,9 @@
 
 #import "BSBuyViewController_iPhone.h"
 
+#import "LoginRequestVo.h"
+#import "LoginResponseVo.h"
+
 @interface BSBuyViewController_iPhone ()
 
 @end
@@ -29,25 +32,16 @@
     // Do any additional setup after loading the view from its nib.
     
     //请求网络数据
-    NSMutableDictionary *requestData = [[[NSMutableDictionary alloc] init] autorelease];
-//    [requestData setObject:APPOINTMENT_SUBITEM_SERVICE_NAME forKey:@"wsName"];
-//    [requestData setObject:WEBSERVICE_NAMESPACE forKey:@"xmlNS"];
-//    
-    NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
     
-    [data setObject:@"jiapumin@163.com" forKey:@"username"];
-    [data setObject:@"jiapumin" forKey:@"password"];
+    LoginRequestVo *vo = [[LoginRequestVo alloc] initWithUsername:@"jiapumin@163.com" password:@"jiapumin"];
     
-    [requestData setObject:data forKey:@"data"];
+    [[BSContainer instance].serviceAgent callServletWithObject:self
+                                                   requestDict:vo.mReqDic
+                                                        target:self
+                                               successCallBack:@selector(loginSucceess: data:)
+                                                  failCallBack:@selector(loginFailed: data:)];
     
-    [[BSContainer instance].serviceAgent callWebServiceWithObject:self
-                                                      requestDict:requestData
-                                                           target:self
-                                                  successCallBack:@selector(loginSucceess: data:)
-                                                     failCallBack:@selector(loginFailed: data:)];
-    
-    
-    [data release];
+    [vo release];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,7 +50,10 @@
     // Dispose of any resources that can be recreated.
 }
 - (void)loginSucceess:(id)sender data:(NSDictionary *)dic {
-    NSLog(@"%@",dic);
+    LoginResponseVo *vo = [[LoginResponseVo alloc] initWithDic:dic];
+    
+    
+    NSLog(@"用户id:%@--登录消息:%@",vo.userId,vo.message);
 }
 
 - (void)loginFailed:(id)sender data:(NSDictionary *)dic {

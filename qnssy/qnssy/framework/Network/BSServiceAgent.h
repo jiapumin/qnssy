@@ -15,6 +15,11 @@
 @property (nonatomic,retain) BSHttpAgent *httpAgent;
 @property (nonatomic,retain) NSMutableDictionary *serviceInfo;
 
+- (void)callServletWithObject:(id)sender
+                  requestDict:(NSMutableDictionary *)requestDic
+                       target:(id)delegate
+              successCallBack:(SEL)sucAction
+                 failCallBack:(SEL)failAction;
 
 - (void)callWebServiceWithObject:(id)sender
                      requestDict:(NSMutableDictionary *)requestDic 

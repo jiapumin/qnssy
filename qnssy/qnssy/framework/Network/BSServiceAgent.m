@@ -33,6 +33,40 @@
     }
     return self;
 }
+#pragma mark -  Servlet
+
+- (void)callServletWithObject:(id)sender
+                  requestDict:(NSMutableDictionary *)requestDic
+                       target:(id)delegate
+              successCallBack:(SEL)sucAction
+                 failCallBack:(SEL)failAction{
+    if (delegate==nil||sender==nil) {
+        return;
+    }
+    if (requestDic == nil) {
+        requestDic = [[[NSMutableDictionary alloc] init] autorelease];
+    }
+    _httpAgent.bsASIHttpDelegate = self;
+    NSString * guid = [self generateUuidString];
+    [_serviceInfo setObject:delegate forKey:guid];
+    if (sender!=nil) {
+        [_serviceInfo setObject:sender
+                         forKey:[NSString stringWithFormat:@"%@_%@", guid, NETWORK_SENDER]];
+    }
+    if (sucAction!=nil) {
+        [_serviceInfo setObject:NSStringFromSelector(sucAction)
+                         forKey:[NSString stringWithFormat:@"%@_%@", guid, NETWORK_SUCCESS]];
+    }
+    if (failAction!=nil) {
+        [_serviceInfo setObject:NSStringFromSelector(failAction)
+                         forKey:[NSString stringWithFormat:@"%@_%@", guid, NETWORK_FAIL]];
+    }
+    [requestDic setObject:guid forKey:@"guid"];
+    
+    [_httpAgent startServletAsyRequest:requestDic
+                       succussFunction:@selector(callWebServiceWithObjectSuccessed:)
+                          failFunction:@selector(callWebServiceWithObjectFailed:)];
+}
 
 #pragma mark -  WebService
 

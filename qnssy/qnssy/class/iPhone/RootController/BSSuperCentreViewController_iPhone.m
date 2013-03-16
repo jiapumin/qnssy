@@ -39,37 +39,51 @@
     [super viewDidLoad];
 
     NSMutableArray *itemArray = [[NSMutableArray alloc] init];
-
+    UIButton *topLeftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    //按钮大小
+    CGRect btnFrame = CGRectMake(5.0, 7.0, 40.0, 30.0);
+    topLeftButton.frame =btnFrame;
     //判断当前页面是否是根目录
-    if (![[self.navigationController.viewControllers objectAtIndex:0]  isEqual:self]) {
-        UIBarButtonItem *leftBarButtonItem2 =
-        [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemReply
-                                                      target:self
-                                                      action:@selector(popViewContoller)];
+    if ([[self.navigationController.viewControllers objectAtIndex:0]  isEqual:self]) {
+        //设置根目录的侧滑图片和方法
+
+        [topLeftButton setImage:[UIImage imageNamed:@"左栏_button_03"]
+                       forState:UIControlStateNormal];
         
-        [itemArray addObject:leftBarButtonItem2];
+        [topLeftButton addTarget:self
+                          action:@selector(showLeft:)
+                forControlEvents:UIControlEventTouchUpInside];
         
-        [leftBarButtonItem2 release];
-    }else{
-        UIBarButtonItem *leftBarButtonItem1 =
-        [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"左栏_button_03"]
-                                         style:UIBarButtonItemStyleBordered
-                                        target:self
-                                        action:@selector(showLeft:)];
-        leftBarButtonItem1.width = 25;
-        [itemArray addObject:leftBarButtonItem1];
-        
-        [leftBarButtonItem1 release];
         //默认偏移
         [self showLeft:nil];
-    }
+    }else{
+        //设置返回按钮图片和方法
+        [topLeftButton setImage:[UIImage imageNamed:@"左栏_button_03"]
+                       forState:UIControlStateNormal];
+        
+        [topLeftButton addTarget:self
+                          action:@selector(popViewContoller:)
+                forControlEvents:UIControlEventTouchUpInside];
+        
+        
+        UIBarButtonItem * topLeftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:topLeftButton];
+        
+        [itemArray addObject:topLeftBarButtonItem];
+        
+        [topLeftBarButtonItem release];
 
+    }
+    UIBarButtonItem * topLeftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:topLeftButton];
+    [itemArray addObject:topLeftBarButtonItem];
+    [topLeftBarButtonItem release];
+    
     [self.navigationItem setLeftBarButtonItems:itemArray animated:YES];
     [itemArray release];
 //    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     
+    //设置背景图片
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbkimg.png"] forBarMetrics:UIBarMetricsDefault];
-    
+   
     //自定义头部标题
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 150, 33)];
     

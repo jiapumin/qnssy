@@ -40,6 +40,9 @@
 - (void)startWebAsyRequest:(id)request  
            succussFunction:(SEL)suAction 
               failFunction:(SEL)faAction;
+- (void)startServletAsyRequest:(id)requestDict
+               succussFunction:(SEL)suAction
+                  failFunction:(SEL)faAction;
 
 
 @end
