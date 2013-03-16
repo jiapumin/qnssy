@@ -16,7 +16,6 @@
 		5A64EBE716F2F93400F4E576 /* BSUserLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBE516F2F93400F4E576 /* BSUserLoginViewController.xib */; };
 		5A64EBED16F3091B00F4E576 /* login_input.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBEC16F3091B00F4E576 /* login_input.png */; };
 		5A64EBF716F30BAF00F4E576 /* login_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBF616F30BAF00F4E576 /* login_logo.png */; };
-		5AD6530716F423B600FD80D8 /* navbkimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6530616F423B600FD80D8 /* navbkimg.png */; };
 		5AD6531116F4482600FD80D8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6531016F4482600FD80D8 /* ViewController.xib */; };
 		5AD6531816F4485800FD80D8 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6531316F4485800FD80D8 /* 1.jpg */; };
 		5AD6531916F4485800FD80D8 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6531416F4485800FD80D8 /* 2.jpg */; };
@@ -27,6 +26,14 @@
 		5AD6531F16F448D300FD80D8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6530C16F4480300FD80D8 /* ViewController.m */; };
 		5AD6532216F4886400FD80D8 /* register_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6532116F4886400FD80D8 /* register_selected.png */; };
 		5AD6532416F48B0000FD80D8 /* register_next.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6532316F48B0000FD80D8 /* register_next.png */; };
+		5AD6532816F4AAAB00FD80D8 /* BSValidatePhoneNumberViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6532616F4AAAB00FD80D8 /* BSValidatePhoneNumberViewController.m */; };
+		5AD6532916F4AAAB00FD80D8 /* BSValidatePhoneNumberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6532716F4AAAB00FD80D8 /* BSValidatePhoneNumberViewController.xib */; };
+		5AD6532D16F4AF5100FD80D8 /* resend.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6532C16F4AF5100FD80D8 /* resend.png */; };
+		5AD6532F16F4B1B300FD80D8 /* register_submit.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6532E16F4B1B300FD80D8 /* register_submit.png */; };
+		5AD6533216F4BF1F00FD80D8 /* navbkimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6533016F4BF1F00FD80D8 /* navbkimg.png */; };
+		5AD6533316F4BF1F00FD80D8 /* navbkimg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6533116F4BF1F00FD80D8 /* navbkimg@2x.png */; };
+		5AD6533616F4BF4E00FD80D8 /* backbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6533416F4BF4E00FD80D8 /* backbtn.png */; };
+		5AD6533716F4BF4E00FD80D8 /* backbtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6533516F4BF4E00FD80D8 /* backbtn@2x.png */; };
 		D87A04EE16EF639A0052328E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04ED16EF639A0052328E /* UIKit.framework */; };
 		D87A04F016EF639A0052328E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04EF16EF639A0052328E /* Foundation.framework */; };
 		D87A04F216EF639A0052328E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04F116EF639A0052328E /* CoreGraphics.framework */; };
@@ -121,7 +128,6 @@
 		5A64EBE516F2F93400F4E576 /* BSUserLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserLoginViewController.xib; sourceTree = "<group>"; };
 		5A64EBEC16F3091B00F4E576 /* login_input.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_input.png; sourceTree = "<group>"; };
 		5A64EBF616F30BAF00F4E576 /* login_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_logo.png; sourceTree = "<group>"; };
-		5AD6530616F423B600FD80D8 /* navbkimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbkimg.png; sourceTree = "<group>"; };
 		5AD6530916F447D200FD80D8 /* UIImage+SplitImageIntoTwoParts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SplitImageIntoTwoParts.h"; sourceTree = "<group>"; };
 		5AD6530A16F447D200FD80D8 /* UIImage+SplitImageIntoTwoParts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SplitImageIntoTwoParts.m"; sourceTree = "<group>"; };
 		5AD6530B16F4480300FD80D8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -134,6 +140,15 @@
 		5AD6531716F4485800FD80D8 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
 		5AD6532116F4886400FD80D8 /* register_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = register_selected.png; path = UserGuidImage/register_selected.png; sourceTree = "<group>"; };
 		5AD6532316F48B0000FD80D8 /* register_next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = register_next.png; sourceTree = "<group>"; };
+		5AD6532516F4AAAB00FD80D8 /* BSValidatePhoneNumberViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSValidatePhoneNumberViewController.h; sourceTree = "<group>"; };
+		5AD6532616F4AAAB00FD80D8 /* BSValidatePhoneNumberViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSValidatePhoneNumberViewController.m; sourceTree = "<group>"; };
+		5AD6532716F4AAAB00FD80D8 /* BSValidatePhoneNumberViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSValidatePhoneNumberViewController.xib; sourceTree = "<group>"; };
+		5AD6532C16F4AF5100FD80D8 /* resend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = resend.png; sourceTree = "<group>"; };
+		5AD6532E16F4B1B300FD80D8 /* register_submit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = register_submit.png; path = UserGuidImage/register_submit.png; sourceTree = "<group>"; };
+		5AD6533016F4BF1F00FD80D8 /* navbkimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = navbkimg.png; path = UserGuidImage/navbkimg.png; sourceTree = "<group>"; };
+		5AD6533116F4BF1F00FD80D8 /* navbkimg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navbkimg@2x.png"; path = "UserGuidImage/navbkimg@2x.png"; sourceTree = "<group>"; };
+		5AD6533416F4BF4E00FD80D8 /* backbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbtn.png; sourceTree = "<group>"; };
+		5AD6533516F4BF4E00FD80D8 /* backbtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbtn@2x.png"; sourceTree = "<group>"; };
 		D87A04E916EF639A0052328E /* qnssy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qnssy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87A04ED16EF639A0052328E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D87A04EF16EF639A0052328E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -314,6 +329,9 @@
 				5A3DD28916F3551D00D91786 /* BSUserRegisterStepOneViewController.h */,
 				5A3DD28A16F3551D00D91786 /* BSUserRegisterStepOneViewController.m */,
 				5A3DD28B16F3551D00D91786 /* BSUserRegisterStepOneViewController.xib */,
+				5AD6532516F4AAAB00FD80D8 /* BSValidatePhoneNumberViewController.h */,
+				5AD6532616F4AAAB00FD80D8 /* BSValidatePhoneNumberViewController.m */,
+				5AD6532716F4AAAB00FD80D8 /* BSValidatePhoneNumberViewController.xib */,
 			);
 			path = register;
 			sourceTree = "<group>";
@@ -646,11 +664,16 @@
 			isa = PBXGroup;
 			children = (
 				5AD6531216F4485200FD80D8 /* UserGuidImage */,
-				5AD6530616F423B600FD80D8 /* navbkimg.png */,
+				5AD6533016F4BF1F00FD80D8 /* navbkimg.png */,
+				5AD6533116F4BF1F00FD80D8 /* navbkimg@2x.png */,
+				5AD6533416F4BF4E00FD80D8 /* backbtn.png */,
+				5AD6533516F4BF4E00FD80D8 /* backbtn@2x.png */,
+				5AD6532C16F4AF5100FD80D8 /* resend.png */,
 				5AD6532116F4886400FD80D8 /* register_selected.png */,
 				5A3DD28216F3467200D91786 /* login_selected.png */,
 				5A3DD28016F3461200D91786 /* login_btn_bkimg2.png */,
 				5AD6532316F48B0000FD80D8 /* register_next.png */,
+				5AD6532E16F4B1B300FD80D8 /* register_submit.png */,
 				5A3DD27E16F3448D00D91786 /* login_btn_bkimg.png */,
 				5A64EBF616F30BAF00F4E576 /* login_logo.png */,
 				5A64EBEC16F3091B00F4E576 /* login_input.png */,
@@ -899,7 +922,6 @@
 				5A3DD28116F3461200D91786 /* login_btn_bkimg2.png in Resources */,
 				5A3DD28316F3467200D91786 /* login_selected.png in Resources */,
 				5A3DD28D16F3551D00D91786 /* BSUserRegisterStepOneViewController.xib in Resources */,
-				5AD6530716F423B600FD80D8 /* navbkimg.png in Resources */,
 				5AD6531116F4482600FD80D8 /* ViewController.xib in Resources */,
 				5AD6531816F4485800FD80D8 /* 1.jpg in Resources */,
 				5AD6531916F4485800FD80D8 /* 2.jpg in Resources */,
@@ -908,6 +930,13 @@
 				5AD6531C16F4485800FD80D8 /* default.png in Resources */,
 				5AD6532216F4886400FD80D8 /* register_selected.png in Resources */,
 				5AD6532416F48B0000FD80D8 /* register_next.png in Resources */,
+				5AD6532916F4AAAB00FD80D8 /* BSValidatePhoneNumberViewController.xib in Resources */,
+				5AD6532D16F4AF5100FD80D8 /* resend.png in Resources */,
+				5AD6532F16F4B1B300FD80D8 /* register_submit.png in Resources */,
+				5AD6533216F4BF1F00FD80D8 /* navbkimg.png in Resources */,
+				5AD6533316F4BF1F00FD80D8 /* navbkimg@2x.png in Resources */,
+				5AD6533616F4BF4E00FD80D8 /* backbtn.png in Resources */,
+				5AD6533716F4BF4E00FD80D8 /* backbtn@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -972,6 +1001,7 @@
 				D8CA7D8016F40A2100B4CE67 /* MBProgressHUD.m in Sources */,
 				5AD6531E16F448D000FD80D8 /* UIImage+SplitImageIntoTwoParts.m in Sources */,
 				5AD6531F16F448D300FD80D8 /* ViewController.m in Sources */,
+				5AD6532816F4AAAB00FD80D8 /* BSValidatePhoneNumberViewController.m in Sources */,
 				D8CA7D9616F4B19E00B4CE67 /* SuperRequestVo.m in Sources */,
 				D8CA7D9916F4B29400B4CE67 /* LoginRequestVo.m in Sources */,
 				D8CA7D9C16F4B3FB00B4CE67 /* LoginResponseVo.m in Sources */,

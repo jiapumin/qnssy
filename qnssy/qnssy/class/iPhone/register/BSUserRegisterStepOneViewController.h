@@ -13,5 +13,6 @@
 @property (retain, nonatomic) UITextField *userPassword;
 - (IBAction)tiaokuanAction:(id)sender;
 - (IBAction)zhengceAction:(id)sender;
+- (IBAction)registerNextAction:(id)sender;
 
 @end
