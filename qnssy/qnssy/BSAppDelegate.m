@@ -7,10 +7,9 @@
 //
 
 #import "BSAppDelegate.h"
-
 #import "BSRootLeftViewController_iPhone.h"
-
 #import "DefaultLoadViewController_iPhone.h"
+#import "ViewController.h"
 
 @implementation BSAppDelegate
 
@@ -28,15 +27,30 @@
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        
-        self.viewController = [[[DefaultLoadViewController_iPhone alloc] initWithNibName:@"DefaultLoadViewController_iPhone" bundle:nil] autorelease];
-
-    } else {
-        self.viewController = [[[DefaultLoadViewController_iPhone alloc] initWithNibName:@"DefaultLoadViewController_iPhone" bundle:nil] autorelease];
-        
+//    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+//        
+//        self.viewController = [[[DefaultLoadViewController_iPhone alloc] initWithNibName:@"DefaultLoadViewController_iPhone" bundle:nil] autorelease];
+//
+//    } else {
+//        self.viewController = [[[DefaultLoadViewController_iPhone alloc] initWithNibName:@"DefaultLoadViewController_iPhone" bundle:nil] autorelease];
+//        
+//    }
+//    self.window.rootViewController = self.viewController;
+    //增加标识，用于判断是否是第一次启动应用...
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunched"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"everLaunched"];
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"firstLaunch"];
     }
-    self.window.rootViewController = self.viewController;
+
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:@"firstLaunch"]) {
+        ViewController *appStartController = [[ViewController alloc] init];
+        self.window.rootViewController = appStartController;
+        [appStartController release];
+    }else {
+        self.viewController = [[[DefaultLoadViewController_iPhone alloc] initWithNibName:@"DefaultLoadViewController_iPhone" bundle:nil] autorelease];
+        self.window.rootViewController=self.viewController;
+        [self.viewController release];
+    }
     [self.window makeKeyAndVisible];
     return YES;
 }
