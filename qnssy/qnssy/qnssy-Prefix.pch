@@ -22,4 +22,5 @@
     #import "BSNetWork.h"
     #import "SBJson.h"
     #import "MBProgressHUD.h"
+    #import <QuickDialog/QuickDialog.h>
 #endif

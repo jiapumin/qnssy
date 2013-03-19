@@ -7,8 +7,12 @@
 //
 
 #import "BSValidatePhoneNumberViewController.h"
+#import "BSUserBasicInfoViewController.h"
+#import "BSUserInfoViewController.h"
 
-@interface BSValidatePhoneNumberViewController ()
+@interface BSValidatePhoneNumberViewController (){
+    int second;
+}
 
 @end
 
@@ -35,17 +39,29 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [self hiddenKeyBoardFromView];
+    [self.resendButton setEnabled:NO];
+    [self beginTimer];
+}
+
+- (void) beginTimer {
+    second = 60;
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(handlerTimer:) userInfo:nil repeats:YES];
+}
+
+- (void) handlerTimer:(NSTimer *) timer {
+    if (second > 0) {
+        second --;
+        self.resendButton.titleLabel.text = [NSString stringWithFormat:@"%d秒后重新发送",second];
+    } else {
+        [self.resendButton setEnabled:YES];
+        self.resendButton.titleLabel.text = @"重新发送验证码";
+        [self.timer invalidate];
+    }
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void) dealloc {
-    [_validateNumber release];
-    [super dealloc];
 }
 
 - (void) hiddenKeyBoardFromView{
@@ -57,4 +73,30 @@
 - (void) hiddenKeyBoard:(id) sender{
     [self.validateNumber resignFirstResponder];
 }
+- (void)viewDidUnload {
+    [self setResendButton:nil];
+    [super viewDidUnload];
+}
+- (IBAction)resendAction:(id)sender {
+    [self.timer invalidate];
+    second = 60;
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(handlerTimer:) userInfo:nil repeats:YES];
+    [self.resendButton setEnabled: NO];
+}
+
+#pragma mark - 提交注册
+- (IBAction)submitAction:(id)sender {
+    QRootElement *root = [[QRootElement alloc] init];
+    
+    BSUserInfoViewController *userInfoController = (BSUserInfoViewController *)[[BSUserInfoViewController alloc] initWithRoot:root];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:userInfoController];
+    [self presentModalViewController:nav animated:YES];
+}
+
+- (void) dealloc {
+    [_validateNumber release];
+    [_resendButton release];
+    [super dealloc];
+}
+
 @end
