@@ -8,9 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BSOtherCell : UITableViewCell
+#define kBirthdayIndentifier        @"Birthday"
+#define kWorkAreaIndentifier        @"WorkArea"
+#define kMatrimonyIndentifier       @"Matrimony"
+#define kEducationIndentifier       @"Education"
+#define kMonthlyProfitIndentifier   @"MonthlyProfit"
+#define kHeightIndentifier          @"Height"
+
+#define kYearComponent      0
+#define kMonthComponent     1
+
+@interface BSOtherCell : UITableViewCell <UIPickerViewDelegate, UIPickerViewDataSource>
 
 @property (retain, nonatomic) UILabel *detailsLabel;
 @property (retain, nonatomic) UILabel *lableName;
+@property (retain, nonatomic) NSString *identifier;
+@property (retain, nonatomic) UIPickerView *birthdayPicker;
+
+- (void) setSelectedItemIdentifier:(NSString *) indentifier;
 
 @end

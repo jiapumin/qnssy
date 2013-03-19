@@ -8,6 +8,13 @@
 
 #import "BSOtherCell.h"
 
+@interface BSOtherCell() {
+    NSMutableArray *yearArray;
+    NSMutableArray *monthArray;
+}
+
+@end
+
 @implementation BSOtherCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
@@ -46,6 +53,86 @@
         [self.detailsLabel release];
     }
     return self;
+}
+
+- (void) setSelectedItemIdentifier:(NSString *) indentifier {
+    
+    if ([indentifier isEqualToString:kBirthdayIndentifier]) {
+        NSLog(@"%@",kBirthdayIndentifier);
+    } else if ([indentifier isEqualToString:kWorkAreaIndentifier]) {
+        NSLog(@"%@",kWorkAreaIndentifier);
+    } else if ([indentifier isEqualToString:kMatrimonyIndentifier]) {
+        NSLog(@"%@",kMatrimonyIndentifier);
+    } else if ([indentifier isEqualToString:kEducationIndentifier]) {
+        NSLog(@"%@",kEducationIndentifier);
+    } else if ([indentifier isEqualToString:kMonthlyProfitIndentifier]) {
+        NSLog(@"%@",kMonthlyProfitIndentifier);
+    } else if ([indentifier isEqualToString:kHeightIndentifier]) {
+        NSLog(@"%@",kHeightIndentifier);
+    }
+}
+
+- (void) configBirthdayData {
+    yearArray = [[NSMutableArray alloc] init];
+    for (int i=1980; i < 1995; i++) {
+        [yearArray addObject:[NSString stringWithFormat:@"%d",i]];
+    }
+    
+    monthArray = [[NSMutableArray alloc] init];
+    for (int i=1; i<=12; i++) {
+        if (i < 10) {
+            [monthArray addObject:[NSString stringWithFormat:@"0%d",i]];
+        } else {
+            [monthArray addObject:[NSString stringWithFormat:@"%d",i]];
+        }
+    }
+}
+
+- (id) init {
+    self = [super init];
+    if (self) {
+        [self configBirthdayData];
+        self.birthdayPicker = [[UIPickerView alloc] init];
+        self.birthdayPicker.delegate = self;
+        self.birthdayPicker.dataSource = self;
+        self.birthdayPicker.showsSelectionIndicator = YES;
+        [self.contentView addSubview:self.birthdayPicker];
+    }
+    return self;
+}
+
+#pragma mark - picker view datasource
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 2;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    if (component == kYearComponent) {
+        return [yearArray count];
+    } else {
+        return [monthArray count];
+    }
+}
+
+#pragma mark picker view delegate
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    if (component == kYearComponent) {
+        return [yearArray objectAtIndex:row];
+    } else {
+        return [monthArray objectAtIndex:row];
+    }
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+}
+
+- (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
+    if (component == kYearComponent) {
+        return 150;
+    } else {
+        return 100;
+    }
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BSOtherCell.h"
 
 @interface BSUserBasicInfoViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
