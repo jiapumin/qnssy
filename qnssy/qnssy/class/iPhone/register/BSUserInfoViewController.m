@@ -61,18 +61,24 @@
         QSection *section8 = [[QSection alloc] init];
         
         QEntryElement *nickEntry = [[QEntryElement alloc] initWithTitle:@"昵称" Value:nil Placeholder:@"请输入昵称"];
-        QEntryElement *sexEntry = [[QEntryElement alloc] initWithTitle:@"性别" Value:nil Placeholder:@"请输入性别"];
-        NSArray *array = [NSArray arrayWithObjects:@"1990",@"1991", nil];
-        QPickerElement *picker = [[QPickerElement alloc] initWithTitle:@"Birthday" items:array value:nil];
+//        QEntryElement *sexEntry = [[QEntryElement alloc] initWithTitle:@"性别" Value:nil Placeholder:@"请输入性别"];
+        QSegmentedElement *sexEntry = [[QSegmentedElement alloc] init];
+        sexEntry.items = [[NSArray alloc] initWithObjects:@"男", @"女", nil];
+        sexEntry.title = @"性别";
+        sexEntry.image = nil;
+
+        NSArray *yearArray = [NSArray arrayWithObjects:@"1990",@"1991", nil];
+        NSArray *monthArray = [NSArray arrayWithObjects:@"01",@"02", nil];
+        QPickerElement *birthdayPicker = [[QPickerElement alloc] initWithTitle:@"生日" items:@[yearArray, monthArray] value:nil];
         
         
         [section addElement:nickEntry];
         [section2 addElement:sexEntry];
-//        [section3 addElement:picker];
+        [section3 addElement:birthdayPicker];
         
         [self.root addSection:section];
         [self.root addSection:section2];
-//        [self.root addSection:section3];
+        [self.root addSection:section3];
     }
     return self;
 }
