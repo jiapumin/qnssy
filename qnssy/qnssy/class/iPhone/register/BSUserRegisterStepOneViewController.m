@@ -28,6 +28,7 @@
         self.userAccount.keyboardType = UIKeyboardTypePhonePad;
         self.userAccount.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         self.userAccount.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+        self.userAccount.text = @"15666666666";
         self.userPassword = [[UITextField alloc] initWithFrame:CGRectMake(20, 138, 280, 40)];
         self.userPassword.borderStyle = UITextBorderStyleRoundedRect;
         self.userPassword.placeholder = @"密码（6-20位）";
