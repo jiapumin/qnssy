@@ -11,5 +11,9 @@
 @interface BSValidatePhoneNumberViewController : UIViewController
 
 @property (retain, nonatomic) UITextField *validateNumber;
+@property (retain, nonatomic) IBOutlet UIButton *resendButton;
+@property (retain, nonatomic) NSTimer *timer;;
+- (IBAction)resendAction:(id)sender;
+- (IBAction)submitAction:(id)sender;
 
 @end

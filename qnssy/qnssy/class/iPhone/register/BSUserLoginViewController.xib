@@ -826,10 +826,10 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="login_btn_bkimg.png">{16, 16}</string>
-			<string key="login_btn_bkimg2.png">{16, 16}</string>
-			<string key="login_logo.png">{16, 16}</string>
-			<string key="login_selected.png">{16, 16}</string>
+			<string key="login_btn_bkimg.png">{125, 64}</string>
+			<string key="login_btn_bkimg2.png">{126, 63}</string>
+			<string key="login_logo.png">{296, 216}</string>
+			<string key="login_selected.png">{26, 26}</string>
 		</dictionary>
 		<string key="IBCocoaTouchPluginVersion">2083</string>
 	</data>
