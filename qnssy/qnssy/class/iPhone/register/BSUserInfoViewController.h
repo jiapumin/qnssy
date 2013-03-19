@@ -8,6 +8,9 @@
 
 #import "QuickDialogController.h"
 
-@interface BSUserInfoViewController : QuickDialogController
+@interface BSUserInfoViewController : QuickDialogController <QuickDialogStyleProvider, QuickDialogEntryElementDelegate>
+
+@property (nonatomic, retain) QRootElement * root;
+@property (nonatomic, retain) QuickDialogTableView *quickDialogTableView;
 
 @end

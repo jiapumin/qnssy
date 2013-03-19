@@ -8,6 +8,7 @@
 
 #import "BSValidatePhoneNumberViewController.h"
 #import "BSUserBasicInfoViewController.h"
+#import "BSUserInfoViewController.h"
 
 @interface BSValidatePhoneNumberViewController (){
     int second;
@@ -85,10 +86,11 @@
 
 #pragma mark - 提交注册
 - (IBAction)submitAction:(id)sender {
-    BSUserBasicInfoViewController *basicInfo = [[BSUserBasicInfoViewController alloc] initWithNibName:@"BSUserBasicInfoViewController" bundle:nil];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:basicInfo];
+    QRootElement *root = [[QRootElement alloc] init];
+    
+    BSUserInfoViewController *userInfoController = (BSUserInfoViewController *)[[BSUserInfoViewController alloc] initWithRoot:root];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:userInfoController];
     [self presentModalViewController:nav animated:YES];
-    [basicInfo release];
 }
 
 - (void) dealloc {

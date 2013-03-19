@@ -8,25 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "qnssy/class/iPhone/register/BSValidatePhoneNumberViewController.m"
-         timestampString = "385188721.837806"
+         timestampString = "385387806.847321"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "51"
-         endingLineNumber = "51"
+         startingLineNumber = "52"
+         endingLineNumber = "52"
          landmarkName = "-handlerTimer:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "Yes"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "qnssy/class/iPhone/register/customCells/BSOtherCell.m"
-         timestampString = "385368923.393388"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "106"
-         endingLineNumber = "106"
-         landmarkName = "-numberOfComponentsInPickerView:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

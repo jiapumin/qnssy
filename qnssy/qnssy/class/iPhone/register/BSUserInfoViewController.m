@@ -29,6 +29,54 @@
     // Do any additional setup after loading the view from its nib.
 }
 
+- (void)setQuickDialogTableView:(QuickDialogTableView *)aQuickDialogTableView {
+    [super setQuickDialogTableView:aQuickDialogTableView];
+    
+    self.quickDialogTableView.backgroundView = nil;
+    self.quickDialogTableView.backgroundColor = [UIColor colorWithRed:0.968 green:0.878 blue:0.909 alpha:1];
+    self.quickDialogTableView.bounces = NO;
+    self.quickDialogTableView.styleProvider = self;
+    
+    ((QEntryElement *)[self.root elementWithKey:@"login"]).delegate = self;
+}
+
+-(void) cell:(UITableViewCell *)cell willAppearForElement:(QElement *)element atIndexPath:(NSIndexPath *)indexPath{
+    cell.textLabel.textColor = [UIColor grayColor];
+}
+
+- (QuickDialogController *) initWithRoot:(QRootElement *)rootElement {
+    self = [super init];
+    if (self) {
+        self.root = rootElement;
+        self.resizeWhenKeyboardPresented =YES;
+        self.root.title = @"注册";
+        self.root.grouped = YES;
+        QSection *section = [[QSection alloc] init];
+        QSection *section2 = [[QSection alloc] init];
+        QSection *section3 = [[QSection alloc] init];
+        QSection *section4 = [[QSection alloc] init];
+        QSection *section5 = [[QSection alloc] init];
+        QSection *section6 = [[QSection alloc] init];
+        QSection *section7 = [[QSection alloc] init];
+        QSection *section8 = [[QSection alloc] init];
+        
+        QEntryElement *nickEntry = [[QEntryElement alloc] initWithTitle:@"昵称" Value:nil Placeholder:@"请输入昵称"];
+        QEntryElement *sexEntry = [[QEntryElement alloc] initWithTitle:@"性别" Value:nil Placeholder:@"请输入性别"];
+        NSArray *array = [NSArray arrayWithObjects:@"1990",@"1991", nil];
+        QPickerElement *picker = [[QPickerElement alloc] initWithTitle:@"Birthday" items:array value:nil];
+        
+        
+        [section addElement:nickEntry];
+        [section2 addElement:sexEntry];
+//        [section3 addElement:picker];
+        
+        [self.root addSection:section];
+        [self.root addSection:section2];
+//        [self.root addSection:section3];
+    }
+    return self;
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

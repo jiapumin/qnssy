@@ -39,6 +39,11 @@
 		5AD6533616F4BF4E00FD80D8 /* backbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6533416F4BF4E00FD80D8 /* backbtn.png */; };
 		5AD6533716F4BF4E00FD80D8 /* backbtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6533516F4BF4E00FD80D8 /* backbtn@2x.png */; };
 		5AF21B3A16F7DFD300EEB6EA /* BSOtherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF21B3916F7DFD300EEB6EA /* BSOtherCell.m */; };
+		5AF21B4616F8558500EEB6EA /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF21B4316F8554300EEB6EA /* libQuickDialog.a */; };
+		5AF21B4816F8559900EEB6EA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF21B4716F8559900EEB6EA /* MapKit.framework */; };
+		5AF21B4A16F8559F00EEB6EA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF21B4916F8559F00EEB6EA /* CoreLocation.framework */; };
+		5AF21B4E16F8581000EEB6EA /* BSUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF21B4C16F8581000EEB6EA /* BSUserInfoViewController.m */; };
+		5AF21B4F16F8581000EEB6EA /* BSUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AF21B4D16F8581000EEB6EA /* BSUserInfoViewController.xib */; };
 		D87A04EE16EF639A0052328E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04ED16EF639A0052328E /* UIKit.framework */; };
 		D87A04F016EF639A0052328E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04EF16EF639A0052328E /* Foundation.framework */; };
 		D87A04F216EF639A0052328E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04F116EF639A0052328E /* CoreGraphics.framework */; };
@@ -121,6 +126,30 @@
 		D8CA7D9C16F4B3FB00B4CE67 /* LoginResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D9A16F4B3FB00B4CE67 /* LoginResponseVo.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5AF21B4016F8554300EEB6EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AF21B3B16F8554300EEB6EA /* QuickDialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D80B0E3313E052DF00FA85CA;
+			remoteInfo = QuickDialogExample;
+		};
+		5AF21B4216F8554300EEB6EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AF21B3B16F8554300EEB6EA /* QuickDialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2C542393145ADEBD0026A152;
+			remoteInfo = QuickDialog;
+		};
+		5AF21B4416F8556B00EEB6EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AF21B3B16F8554300EEB6EA /* QuickDialog.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C542392145ADEBD0026A152;
+			remoteInfo = QuickDialog;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		5A3DD27E16F3448D00D91786 /* login_btn_bkimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_btn_bkimg.png; sourceTree = "<group>"; };
 		5A3DD28016F3461200D91786 /* login_btn_bkimg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_btn_bkimg2.png; sourceTree = "<group>"; };
@@ -163,6 +192,12 @@
 		5AD6533516F4BF4E00FD80D8 /* backbtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbtn@2x.png"; sourceTree = "<group>"; };
 		5AF21B3816F7DFD300EEB6EA /* BSOtherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSOtherCell.h; sourceTree = "<group>"; };
 		5AF21B3916F7DFD300EEB6EA /* BSOtherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSOtherCell.m; sourceTree = "<group>"; };
+		5AF21B3B16F8554300EEB6EA /* QuickDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuickDialog.xcodeproj; path = ../QuickDialog/QuickDialog.xcodeproj; sourceTree = "<group>"; };
+		5AF21B4716F8559900EEB6EA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		5AF21B4916F8559F00EEB6EA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		5AF21B4B16F8580F00EEB6EA /* BSUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserInfoViewController.h; sourceTree = "<group>"; };
+		5AF21B4C16F8581000EEB6EA /* BSUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserInfoViewController.m; sourceTree = "<group>"; };
+		5AF21B4D16F8581000EEB6EA /* BSUserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserInfoViewController.xib; sourceTree = "<group>"; };
 		D87A04E916EF639A0052328E /* qnssy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qnssy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87A04ED16EF639A0052328E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D87A04EF16EF639A0052328E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -316,6 +351,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AF21B4A16F8559F00EEB6EA /* CoreLocation.framework in Frameworks */,
+				5AF21B4816F8559900EEB6EA /* MapKit.framework in Frameworks */,
+				5AF21B4616F8558500EEB6EA /* libQuickDialog.a in Frameworks */,
 				D8888FD816F3504B00C14922 /* libz.1.2.5.dylib in Frameworks */,
 				D8888FD416F3500A00C14922 /* ImageIO.framework in Frameworks */,
 				D8888FD216F34FF800C14922 /* MessageUI.framework in Frameworks */,
@@ -350,6 +388,9 @@
 				5A47247916F5D7D4005E0893 /* BSUserBasicInfoViewController.h */,
 				5A47247A16F5D7D5005E0893 /* BSUserBasicInfoViewController.m */,
 				5A47247B16F5D7D5005E0893 /* BSUserBasicInfoViewController.xib */,
+				5AF21B4B16F8580F00EEB6EA /* BSUserInfoViewController.h */,
+				5AF21B4C16F8581000EEB6EA /* BSUserInfoViewController.m */,
+				5AF21B4D16F8581000EEB6EA /* BSUserInfoViewController.xib */,
 			);
 			path = register;
 			sourceTree = "<group>";
@@ -391,6 +432,15 @@
 			path = customCells;
 			sourceTree = "<group>";
 		};
+		5AF21B3C16F8554300EEB6EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5AF21B4116F8554300EEB6EA /* QuickDialogExample.app */,
+				5AF21B4316F8554300EEB6EA /* libQuickDialog.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D87A04DE16EF639A0052328E = {
 			isa = PBXGroup;
 			children = (
@@ -411,7 +461,10 @@
 		D87A04EC16EF639A0052328E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5AF21B3B16F8554300EEB6EA /* QuickDialog.xcodeproj */,
 				D8888FD716F3504A00C14922 /* libz.1.2.5.dylib */,
+				5AF21B4916F8559F00EEB6EA /* CoreLocation.framework */,
+				5AF21B4716F8559900EEB6EA /* MapKit.framework */,
 				D8888FD516F3502200C14922 /* MediaPlayer.framework */,
 				D8888FD316F3500A00C14922 /* ImageIO.framework */,
 				D8888FD116F34FF800C14922 /* MessageUI.framework */,
@@ -893,6 +946,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				5AF21B4516F8556B00EEB6EA /* PBXTargetDependency */,
 			);
 			name = qnssy;
 			productName = qnssy;
@@ -919,12 +973,35 @@
 			mainGroup = D87A04DE16EF639A0052328E;
 			productRefGroup = D87A04EA16EF639A0052328E /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 5AF21B3C16F8554300EEB6EA /* Products */;
+					ProjectRef = 5AF21B3B16F8554300EEB6EA /* QuickDialog.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D87A04E816EF639A0052328E /* qnssy */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		5AF21B4116F8554300EEB6EA /* QuickDialogExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = QuickDialogExample.app;
+			remoteRef = 5AF21B4016F8554300EEB6EA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		5AF21B4316F8554300EEB6EA /* libQuickDialog.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libQuickDialog.a;
+			remoteRef = 5AF21B4216F8554300EEB6EA /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D87A04E716EF639A0052328E /* Resources */ = {
@@ -969,6 +1046,7 @@
 				5AD6533616F4BF4E00FD80D8 /* backbtn.png in Resources */,
 				5AD6533716F4BF4E00FD80D8 /* backbtn@2x.png in Resources */,
 				5A47247D16F5D7D5005E0893 /* BSUserBasicInfoViewController.xib in Resources */,
+				5AF21B4F16F8581000EEB6EA /* BSUserInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1041,10 +1119,19 @@
 				5A47248316F5E460005E0893 /* BSNickNameCell.m in Sources */,
 				5A80D63716F61B5D00A86311 /* BSUserSexCell.m in Sources */,
 				5AF21B3A16F7DFD300EEB6EA /* BSOtherCell.m in Sources */,
+				5AF21B4E16F8581000EEB6EA /* BSUserInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5AF21B4516F8556B00EEB6EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = QuickDialog;
+			targetProxy = 5AF21B4416F8556B00EEB6EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D87A04F616EF639A0052328E /* InfoPlist.strings */ = {
@@ -1111,12 +1198,15 @@
 		D87A051116EF639B0052328E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "qnssy/qnssy-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "qnssy/qnssy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/../QuickDialog/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1124,12 +1214,15 @@
 		D87A051216EF639B0052328E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "qnssy/qnssy-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "qnssy/qnssy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/../QuickDialog/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
