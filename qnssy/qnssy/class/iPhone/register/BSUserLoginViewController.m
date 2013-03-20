@@ -118,6 +118,7 @@
     BSUserRegisterStepOneViewController *stepOne = [[BSUserRegisterStepOneViewController alloc] initWithNibName:@"BSUserRegisterStepOneViewController" bundle:nil];
     stepOne.title = @"注册";
     [self presentModalViewController:stepOne animated:YES];
+//    [self.navigationController pushViewController:stepOne animated:YES];
     [stepOne release];
 }
 @end
