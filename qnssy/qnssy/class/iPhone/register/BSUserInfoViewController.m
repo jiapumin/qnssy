@@ -54,18 +54,15 @@
         QSection *section = [[QSection alloc] init];
         QSection *section2 = [[QSection alloc] init];
         QSection *section3 = [[QSection alloc] init];
-        QSection *section4 = [[QSection alloc] init];
-        QSection *section5 = [[QSection alloc] init];
-        QSection *section6 = [[QSection alloc] init];
-        QSection *section7 = [[QSection alloc] init];
-        QSection *section8 = [[QSection alloc] init];
+//        QSection *section4 = [[QSection alloc] init];
+//        QSection *section5 = [[QSection alloc] init];
+//        QSection *section6 = [[QSection alloc] init];
+//        QSection *section7 = [[QSection alloc] init];
+//        QSection *section8 = [[QSection alloc] init];
         
         QEntryElement *nickEntry = [[QEntryElement alloc] initWithTitle:@"昵称" Value:nil Placeholder:@"请输入昵称"];
-//        QEntryElement *sexEntry = [[QEntryElement alloc] initWithTitle:@"性别" Value:nil Placeholder:@"请输入性别"];
-        QSegmentedElement *sexEntry = [[QSegmentedElement alloc] init];
-        sexEntry.items = [[NSArray alloc] initWithObjects:@"男", @"女", nil];
-        sexEntry.title = @"性别";
-        sexEntry.image = nil;
+        
+        QSegmentedElement *sexEntry = [[QSegmentedElement alloc] initWithItems:[[NSArray alloc] initWithObjects:@"男", @"女", nil] selected:0 title:@"性别"];
 
         NSArray *yearArray = [NSArray arrayWithObjects:@"1990",@"1991", nil];
         NSArray *monthArray = [NSArray arrayWithObjects:@"01",@"02", nil];
