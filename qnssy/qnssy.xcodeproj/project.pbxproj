@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5A046AB916F9AE7F00782A83 /* BSSexElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A046AB816F9AE7F00782A83 /* BSSexElement.m */; };
 		5A3DD27F16F3448D00D91786 /* login_btn_bkimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3DD27E16F3448D00D91786 /* login_btn_bkimg.png */; };
 		5A3DD28116F3461200D91786 /* login_btn_bkimg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3DD28016F3461200D91786 /* login_btn_bkimg2.png */; };
 		5A3DD28316F3467200D91786 /* login_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3DD28216F3467200D91786 /* login_selected.png */; };
@@ -151,6 +152,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5A046AB716F9AE7F00782A83 /* BSSexElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSexElement.h; sourceTree = "<group>"; };
+		5A046AB816F9AE7F00782A83 /* BSSexElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSexElement.m; sourceTree = "<group>"; };
 		5A3DD27E16F3448D00D91786 /* login_btn_bkimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_btn_bkimg.png; sourceTree = "<group>"; };
 		5A3DD28016F3461200D91786 /* login_btn_bkimg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_btn_bkimg2.png; sourceTree = "<group>"; };
 		5A3DD28216F3467200D91786 /* login_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_selected.png; sourceTree = "<group>"; };
@@ -428,6 +431,8 @@
 				5A80D63616F61B5D00A86311 /* BSUserSexCell.m */,
 				5AF21B3816F7DFD300EEB6EA /* BSOtherCell.h */,
 				5AF21B3916F7DFD300EEB6EA /* BSOtherCell.m */,
+				5A046AB716F9AE7F00782A83 /* BSSexElement.h */,
+				5A046AB816F9AE7F00782A83 /* BSSexElement.m */,
 			);
 			path = customCells;
 			sourceTree = "<group>";
@@ -1120,6 +1125,7 @@
 				5A80D63716F61B5D00A86311 /* BSUserSexCell.m in Sources */,
 				5AF21B3A16F7DFD300EEB6EA /* BSOtherCell.m in Sources */,
 				5AF21B4E16F8581000EEB6EA /* BSUserInfoViewController.m in Sources */,
+				5A046AB916F9AE7F00782A83 /* BSSexElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
