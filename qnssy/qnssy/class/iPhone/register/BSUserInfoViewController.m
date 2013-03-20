@@ -7,6 +7,7 @@
 //
 
 #import "BSUserInfoViewController.h"
+#import "BSSexElement.h"
 
 @interface BSUserInfoViewController ()
 
@@ -56,23 +57,44 @@
         QSection *section3 = [[QSection alloc] init];
         QSection *section4 = [[QSection alloc] init];
         QSection *section5 = [[QSection alloc] init];
-        QSection *section6 = [[QSection alloc] init];
-        QSection *section7 = [[QSection alloc] init];
-        QSection *section8 = [[QSection alloc] init];
+//        QSection *section6 = [[QSection alloc] init];
+//        QSection *section7 = [[QSection alloc] init];
+//        QSection *section8 = [[QSection alloc] init];
+        
+        QAppearance *appearance = [[QAppearance alloc] init];
+        [appearance setValueColorEnabled:[UIColor colorWithRed:0.8 green:0.058 blue:0.325 alpha:1]];
         
         QEntryElement *nickEntry = [[QEntryElement alloc] initWithTitle:@"昵称" Value:nil Placeholder:@"请输入昵称"];
-        QEntryElement *sexEntry = [[QEntryElement alloc] initWithTitle:@"性别" Value:nil Placeholder:@"请输入性别"];
-        NSArray *array = [NSArray arrayWithObjects:@"1990",@"1991", nil];
-        QPickerElement *picker = [[QPickerElement alloc] initWithTitle:@"Birthday" items:array value:nil];
         
+        BSSexElement *sexEntry = [[BSSexElement alloc] initWithItems:[[NSArray alloc] initWithObjects:@"男", @"女", nil] selected:0 title:@"性别"];
+
+        NSArray *yearArray = [NSArray arrayWithObjects:@"1990",@"1991", nil];
+        NSArray *monthArray = [NSArray arrayWithObjects:@"01",@"02", nil];
+        QPickerElement *birthdayPicker = [[QPickerElement alloc] initWithTitle:@"生日" items:@[yearArray, monthArray] value:@"请选择"];
+        birthdayPicker.appearance = appearance;
+        birthdayPicker.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
+        NSArray *workAreaArray = [[NSArray alloc] initWithObjects:@"北京", @"上海", nil];
+        QPickerElement *workAreaElement = [[QPickerElement alloc] initWithTitle:@"婚姻状况" items: @[workAreaArray] value:@"请选择"];
+        workAreaElement.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        workAreaElement.appearance = appearance;
+        
+        NSArray *hunyinArray = [[NSArray alloc] initWithObjects:@"已婚", @"未婚", nil];
+        QPickerElement *hunyin = [[QPickerElement alloc] initWithTitle:@"婚姻状况" items: @[hunyinArray] value:@"请选择"];
+        hunyin.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        hunyin.appearance = appearance;
         
         [section addElement:nickEntry];
         [section2 addElement:sexEntry];
-//        [section3 addElement:picker];
+        [section3 addElement:birthdayPicker];
+        [section4 addElement:workAreaElement];
+        [section5 addElement:hunyin];
         
         [self.root addSection:section];
         [self.root addSection:section2];
-//        [self.root addSection:section3];
+        [self.root addSection:section3];
+        [self.root addSection:section4];
+        [self.root addSection:section5];
     }
     return self;
 }
