@@ -21,6 +21,7 @@
 		5A64EBED16F3091B00F4E576 /* login_input.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBEC16F3091B00F4E576 /* login_input.png */; };
 		5A64EBF716F30BAF00F4E576 /* login_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBF616F30BAF00F4E576 /* login_logo.png */; };
 		5A80D63716F61B5D00A86311 /* BSUserSexCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A80D63616F61B5D00A86311 /* BSUserSexCell.m */; };
+		5AAE6E4F16FAAF79006FDFB7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AAE6E4E16FAAF79006FDFB7 /* area.plist */; };
 		5AD6531116F4482600FD80D8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6531016F4482600FD80D8 /* ViewController.xib */; };
 		5AD6531816F4485800FD80D8 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6531316F4485800FD80D8 /* 1.jpg */; };
 		5AD6531916F4485800FD80D8 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6531416F4485800FD80D8 /* 2.jpg */; };
@@ -172,6 +173,7 @@
 		5A64EBF616F30BAF00F4E576 /* login_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_logo.png; sourceTree = "<group>"; };
 		5A80D63516F61B5D00A86311 /* BSUserSexCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserSexCell.h; sourceTree = "<group>"; };
 		5A80D63616F61B5D00A86311 /* BSUserSexCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserSexCell.m; sourceTree = "<group>"; };
+		5AAE6E4E16FAAF79006FDFB7 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		5AD6530916F447D200FD80D8 /* UIImage+SplitImageIntoTwoParts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SplitImageIntoTwoParts.h"; sourceTree = "<group>"; };
 		5AD6530A16F447D200FD80D8 /* UIImage+SplitImageIntoTwoParts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SplitImageIntoTwoParts.m"; sourceTree = "<group>"; };
 		5AD6530B16F4480300FD80D8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -774,6 +776,7 @@
 		D87A059416EF77F90052328E /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				5AAE6E4E16FAAF79006FDFB7 /* area.plist */,
 			);
 			path = Public;
 			sourceTree = "<group>";
@@ -1052,6 +1055,7 @@
 				5AD6533716F4BF4E00FD80D8 /* backbtn@2x.png in Resources */,
 				5A47247D16F5D7D5005E0893 /* BSUserBasicInfoViewController.xib in Resources */,
 				5AF21B4F16F8581000EEB6EA /* BSUserInfoViewController.xib in Resources */,
+				5AAE6E4F16FAAF79006FDFB7 /* area.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,7 +8,16 @@
 
 #import "QuickDialogController.h"
 
-@interface BSUserInfoViewController : QuickDialogController <QuickDialogStyleProvider, QuickDialogEntryElementDelegate>
+#define kPleaseSelect @"请选择"
+
+@interface BSUserInfoViewController : QuickDialogController <QuickDialogStyleProvider, QuickDialogEntryElementDelegate>{
+    NSDictionary *areaDic;
+    NSArray *province;
+    NSArray *city;
+    NSArray *district;
+    
+    NSString *selectedProvince;
+}
 
 @property (nonatomic, retain) QRootElement * root;
 @property (nonatomic, retain) QuickDialogTableView *quickDialogTableView;
