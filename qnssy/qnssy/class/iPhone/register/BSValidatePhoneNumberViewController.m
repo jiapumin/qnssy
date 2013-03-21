@@ -7,7 +7,6 @@
 //
 
 #import "BSValidatePhoneNumberViewController.h"
-#import "BSUserBasicInfoViewController.h"
 #import "BSUserInfoViewController.h"
 
 @interface BSValidatePhoneNumberViewController (){

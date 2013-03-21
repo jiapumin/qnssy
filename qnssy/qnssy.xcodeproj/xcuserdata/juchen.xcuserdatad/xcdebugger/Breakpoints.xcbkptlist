@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "qnssy/class/iPhone/register/BSValidatePhoneNumberViewController.m"
-         timestampString = "385387806.847321"
+         timestampString = "385572090.921726"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "52"
-         endingLineNumber = "52"
+         startingLineNumber = "51"
+         endingLineNumber = "51"
          landmarkName = "-handlerTimer:"
          landmarkType = "5">
       </FileBreakpoint>
