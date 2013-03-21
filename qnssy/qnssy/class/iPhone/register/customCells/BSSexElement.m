@@ -40,6 +40,7 @@
     UILabel *title = [[UILabel alloc] init];
     title.frame = CGRectMake(9, 0, 80, frame.size.height);
     title.text = @"性别";
+    title.textColor = [UIColor colorWithRed:0.294 green:0.294 blue:0.294 alpha:1];;
     title.backgroundColor = [UIColor clearColor];
     
     UISegmentedControl *control = [[UISegmentedControl alloc] initWithItems:item];
