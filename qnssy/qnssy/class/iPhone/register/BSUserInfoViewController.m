@@ -29,7 +29,7 @@
     //头部nav背景
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"2顶部条状背景"] forBarMetrics:UIBarMetricsDefault];
     selectedProvince = [province objectAtIndex: 0];
-    self.wantsFullScreenLayout = NO;
+    self.wantsFullScreenLayout = YES;
 }
 
 - (void) configCityAndArea {
