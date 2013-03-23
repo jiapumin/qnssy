@@ -27,9 +27,9 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     //头部nav背景
-    [self.myNavigationBar setBackgroundImage:[UIImage imageNamed:@"2顶部条状背景"] forBarMetrics:UIBarMetricsDefault];
-    // Do any additional setup after loading the view from its nib.
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"2顶部条状背景"] forBarMetrics:UIBarMetricsDefault];
     selectedProvince = [province objectAtIndex: 0];
+    self.wantsFullScreenLayout = NO;
 }
 
 - (void) configCityAndArea {
@@ -84,6 +84,12 @@
 
 -(void) cell:(UITableViewCell *)cell willAppearForElement:(QElement *)element atIndexPath:(NSIndexPath *)indexPath{
     cell.textLabel.textColor = [UIColor grayColor];
+    if ([element isKindOfClass:[QButtonElement class]]) {
+        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"2下一步背景@2x.png"]];
+        cell.textLabel.textColor = [UIColor whiteColor];
+        cell.textLabel.font = [UIFont fontWithName:@"" size:14];
+        cell.backgroundView = imageView;
+    }
 }
 
 - (QuickDialogController *) initWithRoot:(QRootElement *)rootElement {
@@ -92,8 +98,9 @@
         [self configCityAndArea];
         self.root = rootElement;
         self.resizeWhenKeyboardPresented =YES;
-        self.root.title = @"注册";
+        self.root.title = @"基本资料";
         self.root.grouped = YES;
+        
         QSection *section = [[QSection alloc] init];
         QSection *section2 = [[QSection alloc] init];
         QSection *section3 = [[QSection alloc] init];
@@ -102,6 +109,7 @@
         QSection *section6 = [[QSection alloc] init];
         QSection *section7 = [[QSection alloc] init];
         QSection *section8 = [[QSection alloc] init];
+        QSection *section9 = [[QSection alloc] init];
         
         QAppearance *appearance = [[QAppearance alloc] init];
         [appearance setValueColorEnabled:[UIColor colorWithRed:0.8 green:0.058 blue:0.325 alpha:1]];
@@ -138,6 +146,10 @@
         heightElement.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         heightElement.appearance = appearance;
         
+        //下一步按钮
+        QButtonElement *buttonElement = [[QButtonElement alloc] init];
+        buttonElement.title = @"下一步";
+        
         [section addElement:nickEntry];
         [section2 addElement:sexEntry];
         [section3 addElement:birthdayPicker];
@@ -146,6 +158,7 @@
         [section6 addElement:eduElement];
         [section7 addElement:moneyElement];
         [section8 addElement:heightElement];
+        [section9 addElement:buttonElement];
         
         [nickEntry release];
         [sexEntry release];
@@ -162,6 +175,7 @@
         [self.root addSection:section6];
         [self.root addSection:section7];
         [self.root addSection:section8];
+        [self.root addSection:section9];
         
         [section release];
         [section2 release];

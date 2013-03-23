@@ -91,8 +91,8 @@
     QRootElement *root = [[QRootElement alloc] init];
     
     BSUserInfoViewController *userInfoController = (BSUserInfoViewController *)[[BSUserInfoViewController alloc] initWithRoot:root];
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:userInfoController];
-    [self.navigationController pushViewController:userInfoController animated:YES];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:userInfoController];
+    [self presentModalViewController:nav animated:YES];
 }
 - (IBAction)clickBackButton:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];

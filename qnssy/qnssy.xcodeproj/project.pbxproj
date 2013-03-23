@@ -12,12 +12,12 @@
 		5A3DD28116F3461200D91786 /* login_btn_bkimg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3DD28016F3461200D91786 /* login_btn_bkimg2.png */; };
 		5A3DD28316F3467200D91786 /* login_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3DD28216F3467200D91786 /* login_selected.png */; };
 		5A3DD28C16F3551D00D91786 /* BSUserRegisterStepOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3DD28A16F3551D00D91786 /* BSUserRegisterStepOneViewController.m */; };
-		5A3DD28D16F3551D00D91786 /* BSUserRegisterStepOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A3DD28B16F3551D00D91786 /* BSUserRegisterStepOneViewController.xib */; };
+		5A4CCBA116FD6A7D002FA2E5 /* BSUserLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A4CCBA016FD6A7D002FA2E5 /* BSUserLoginViewController.xib */; };
 		5A64EBE616F2F93400F4E576 /* BSUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */; };
-		5A64EBE716F2F93400F4E576 /* BSUserLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBE516F2F93400F4E576 /* BSUserLoginViewController.xib */; };
 		5A64EBED16F3091B00F4E576 /* login_input.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBEC16F3091B00F4E576 /* login_input.png */; };
 		5A64EBF716F30BAF00F4E576 /* login_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBF616F30BAF00F4E576 /* login_logo.png */; };
 		5AAE6E4F16FAAF79006FDFB7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AAE6E4E16FAAF79006FDFB7 /* area.plist */; };
+		5ACDD68116FDB67A00D2885F /* BSUserRegisterStepOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ACDD68016FDB67A00D2885F /* BSUserRegisterStepOneViewController.xib */; };
 		5AD6531116F4482600FD80D8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6531016F4482600FD80D8 /* ViewController.xib */; };
 		5AD6531816F4485800FD80D8 /* 1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6531316F4485800FD80D8 /* 1.jpg */; };
 		5AD6531916F4485800FD80D8 /* 2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6531416F4485800FD80D8 /* 2.jpg */; };
@@ -36,11 +36,6 @@
 		5AD6533316F4BF1F00FD80D8 /* navbkimg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6533116F4BF1F00FD80D8 /* navbkimg@2x.png */; };
 		5AD6533616F4BF4E00FD80D8 /* backbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6533416F4BF4E00FD80D8 /* backbtn.png */; };
 		5AD6533716F4BF4E00FD80D8 /* backbtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6533516F4BF4E00FD80D8 /* backbtn@2x.png */; };
-
-		5AF21B4616F8558500EEB6EA /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF21B4316F8554300EEB6EA /* libQuickDialog.a */; };
-		5AF21B3A16F7DFD300EEB6EA /* BSOtherCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF21B3916F7DFD300EEB6EA /* BSOtherCell.m */; };
-
-
 		5AF21B4816F8559900EEB6EA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF21B4716F8559900EEB6EA /* MapKit.framework */; };
 		5AF21B4A16F8559F00EEB6EA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF21B4916F8559F00EEB6EA /* CoreLocation.framework */; };
 		5AF21B4E16F8581000EEB6EA /* BSUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF21B4C16F8581000EEB6EA /* BSUserInfoViewController.m */; };
@@ -237,13 +232,13 @@
 		5A3DD28216F3467200D91786 /* login_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_selected.png; sourceTree = "<group>"; };
 		5A3DD28916F3551D00D91786 /* BSUserRegisterStepOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserRegisterStepOneViewController.h; sourceTree = "<group>"; };
 		5A3DD28A16F3551D00D91786 /* BSUserRegisterStepOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserRegisterStepOneViewController.m; sourceTree = "<group>"; };
-		5A3DD28B16F3551D00D91786 /* BSUserRegisterStepOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserRegisterStepOneViewController.xib; sourceTree = "<group>"; };
+		5A4CCBA016FD6A7D002FA2E5 /* BSUserLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserLoginViewController.xib; sourceTree = "<group>"; };
 		5A64EBE316F2F93400F4E576 /* BSUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserLoginViewController.h; sourceTree = "<group>"; };
 		5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserLoginViewController.m; sourceTree = "<group>"; };
-		5A64EBE516F2F93400F4E576 /* BSUserLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserLoginViewController.xib; sourceTree = "<group>"; };
 		5A64EBEC16F3091B00F4E576 /* login_input.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_input.png; sourceTree = "<group>"; };
 		5A64EBF616F30BAF00F4E576 /* login_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_logo.png; sourceTree = "<group>"; };
 		5AAE6E4E16FAAF79006FDFB7 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
+		5ACDD68016FDB67A00D2885F /* BSUserRegisterStepOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserRegisterStepOneViewController.xib; sourceTree = "<group>"; };
 		5AD6530916F447D200FD80D8 /* UIImage+SplitImageIntoTwoParts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SplitImageIntoTwoParts.h"; sourceTree = "<group>"; };
 		5AD6530A16F447D200FD80D8 /* UIImage+SplitImageIntoTwoParts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SplitImageIntoTwoParts.m"; sourceTree = "<group>"; };
 		5AD6530B16F4480300FD80D8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -265,10 +260,6 @@
 		5AD6533116F4BF1F00FD80D8 /* navbkimg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navbkimg@2x.png"; path = "UserGuidImage/navbkimg@2x.png"; sourceTree = "<group>"; };
 		5AD6533416F4BF4E00FD80D8 /* backbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbtn.png; sourceTree = "<group>"; };
 		5AD6533516F4BF4E00FD80D8 /* backbtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbtn@2x.png"; sourceTree = "<group>"; };
-		5AF21B3B16F8554300EEB6EA /* QuickDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuickDialog.xcodeproj; path = ../QuickDialog/QuickDialog.xcodeproj; sourceTree = "<group>"; };
-		5AF21B3816F7DFD300EEB6EA /* BSOtherCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSOtherCell.h; sourceTree = "<group>"; };
-		5AF21B3916F7DFD300EEB6EA /* BSOtherCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSOtherCell.m; sourceTree = "<group>"; };
-
 		5AF21B4716F8559900EEB6EA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5AF21B4916F8559F00EEB6EA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5AF21B4B16F8580F00EEB6EA /* BSUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserInfoViewController.h; sourceTree = "<group>"; };
@@ -535,10 +526,10 @@
 				5AD6533D16F58D1000FD80D8 /* customCells */,
 				5A64EBE316F2F93400F4E576 /* BSUserLoginViewController.h */,
 				5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */,
-				5A64EBE516F2F93400F4E576 /* BSUserLoginViewController.xib */,
+				5A4CCBA016FD6A7D002FA2E5 /* BSUserLoginViewController.xib */,
 				5A3DD28916F3551D00D91786 /* BSUserRegisterStepOneViewController.h */,
 				5A3DD28A16F3551D00D91786 /* BSUserRegisterStepOneViewController.m */,
-				5A3DD28B16F3551D00D91786 /* BSUserRegisterStepOneViewController.xib */,
+				5ACDD68016FDB67A00D2885F /* BSUserRegisterStepOneViewController.xib */,
 				5AD6532516F4AAAB00FD80D8 /* BSValidatePhoneNumberViewController.h */,
 				5AD6532616F4AAAB00FD80D8 /* BSValidatePhoneNumberViewController.m */,
 				5AD6532716F4AAAB00FD80D8 /* BSValidatePhoneNumberViewController.xib */,
@@ -1262,13 +1253,11 @@
 				D87A057E16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.xib in Resources */,
 				D87A058316EF6E100052328E /* BSMatchmakerViewController_iPhone.xib in Resources */,
 				D87A059516EF77F90052328E /* 左栏_button_03@2x.png in Resources */,
-				5A64EBE716F2F93400F4E576 /* BSUserLoginViewController.xib in Resources */,
 				5A64EBED16F3091B00F4E576 /* login_input.png in Resources */,
 				5A64EBF716F30BAF00F4E576 /* login_logo.png in Resources */,
 				5A3DD27F16F3448D00D91786 /* login_btn_bkimg.png in Resources */,
 				5A3DD28116F3461200D91786 /* login_btn_bkimg2.png in Resources */,
 				5A3DD28316F3467200D91786 /* login_selected.png in Resources */,
-				5A3DD28D16F3551D00D91786 /* BSUserRegisterStepOneViewController.xib in Resources */,
 				5AD6531116F4482600FD80D8 /* ViewController.xib in Resources */,
 				5AD6531816F4485800FD80D8 /* 1.jpg in Resources */,
 				5AD6531916F4485800FD80D8 /* 2.jpg in Resources */,
@@ -1329,6 +1318,7 @@
 				D8A6879F16FD41E7005245C8 /* 18搜索右上方按钮@2x.png in Resources */,
 				D8A687A616FD4EE9005245C8 /* BSRootLeftTableCell_iPhone.xib in Resources */,
 				D8A687B116FD6465005245C8 /* BSOnePackageServiceViewController_iPhone.xib in Resources */,
+				5A4CCBA116FD6A7D002FA2E5 /* BSUserLoginViewController.xib in Resources */,
 				D8F02A3916FD8F660023FB0A /* 7问候@2x.png in Resources */,
 				D8F02A3A16FD8F660023FB0A /* 7写信@2x.png in Resources */,
 				D8F02A3B16FD8F660023FB0A /* 9发送按钮@2x.png in Resources */,
@@ -1360,6 +1350,7 @@
 				D8F02A5516FD8F660023FB0A /* 26红娘服务按钮@2x.png in Resources */,
 				D8F02A5616FD8F660023FB0A /* 28签到背景@2x.png in Resources */,
 				D8F02A5716FD8F660023FB0A /* 28设置按钮@2x.png in Resources */,
+				5ACDD68116FDB67A00D2885F /* BSUserRegisterStepOneViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
