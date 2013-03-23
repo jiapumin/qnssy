@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <TencentOpenAPI/TencentOAuth.h>
+
 @class TPKeyboardAvoidingScrollView;
 
-@interface BSUserLoginViewController : UIViewController <UITextFieldDelegate>
+@interface BSUserLoginViewController : UIViewController <UITextFieldDelegate, TencentSessionDelegate>{
+    TencentOAuth* _tencentOAuth;
+	NSMutableArray* _permissions;
+}
 @property (retain, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
 
 //@property (retain, nonatomic) IBOutlet UIImageView *userLogoImage_1;
@@ -30,6 +35,7 @@
 
 @property (retain, nonatomic) IBOutlet UIView *loginBackgroundView;
 
+- (IBAction)autoLogin:(id)sender;
 - (IBAction)toRegister:(id)sender;
 - (IBAction)clickLoginButton:(id)sender;
 - (IBAction)clickQQLoginButton:(id)sender;

@@ -46,7 +46,7 @@
     self.navigationItem.leftBarButtonItem = topLeftBarButtonItem;
 
     selectedProvince = [province objectAtIndex: 0];
-    self.wantsFullScreenLayout = NO;
+    self.wantsFullScreenLayout = YES;
 }
 
 - (void) configCityAndArea {
@@ -90,7 +90,6 @@
 
 - (void)setQuickDialogTableView:(QuickDialogTableView *)aQuickDialogTableView {
     [super setQuickDialogTableView:aQuickDialogTableView];
-    
     self.quickDialogTableView.backgroundView = nil;
     self.quickDialogTableView.backgroundColor = [UIColor colorWithRed:0.968 green:0.878 blue:0.909 alpha:1];
     self.quickDialogTableView.bounces = NO;
