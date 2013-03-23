@@ -24,12 +24,9 @@
 //@property (retain, nonatomic) IBOutlet UIImageView *userLogoImage_10;
 @property (retain, nonatomic) IBOutlet UITextField *userAccount;
 @property (retain, nonatomic) IBOutlet UITextField *userPassword;
-<<<<<<< HEAD
 //@property (retain, nonatomic) IBOutlet UIButton *registerButton;
-=======
 @property (retain, nonatomic) IBOutlet UIButton *loginButton;
 @property (retain, nonatomic) IBOutlet UIButton *loginQQButton;
->>>>>>> e7a9ad5153495ebe4ebf420f0f1da0acaef602ad
 
 @property (retain, nonatomic) IBOutlet UIView *loginBackgroundView;
 

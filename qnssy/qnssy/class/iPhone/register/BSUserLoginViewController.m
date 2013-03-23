@@ -36,16 +36,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-<<<<<<< HEAD
     self.userAccount.delegate  = self;
     self.userPassword.delegate = self;
     self.userPassword.secureTextEntry = YES;
     isTextFieldMoved = NO;
-    [self configLoginBackgroundView];
-    [self hiddenKeyBoardFromView];
-//    
+//    [self configLoginBackgroundView];
+//    [self hiddenKeyBoardFromView];
+//
 //    [self.registerButton addTarget:self action:@selector(toRegister:) forControlEvents:UIControlEventTouchUpInside];
-=======
 //    self.userAccount.delegate  = self;
 //    self.userPassword.delegate = self;
 //    self.userPassword.secureTextEntry = YES;
@@ -67,8 +65,6 @@
         [self loginRequestData];
         
     }
-    
->>>>>>> e7a9ad5153495ebe4ebf420f0f1da0acaef602ad
 }
 - (void)loginRequestData{
     [progressHUD show:YES];
