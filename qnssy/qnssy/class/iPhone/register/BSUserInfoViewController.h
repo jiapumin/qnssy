@@ -10,7 +10,7 @@
 
 #define kPleaseSelect @"请选择"
 
-@interface BSUserInfoViewController : QuickDialogController <QuickDialogStyleProvider, QuickDialogEntryElementDelegate>{
+@interface BSUserInfoViewController : QuickDialogController <QuickDialogStyleProvider, QuickDialogEntryElementDelegate, QuickDialogStyleProvider>{
     NSDictionary *areaDic;
     NSArray *province;
     NSArray *city;
