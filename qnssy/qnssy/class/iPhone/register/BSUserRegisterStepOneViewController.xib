@@ -325,13 +325,9 @@
 						<string key="label">zhengceAction:</string>
 						<reference key="source" ref="1034703905"/>
 						<reference key="destination" ref="372490531"/>
-						<int key="IBEventType">1</int>
+						<int key="IBEventType">7</int>
 					</object>
-<<<<<<< HEAD
-					<int key="connectionID">27</int>
-=======
 					<int key="connectionID">45</int>
->>>>>>> e7a9ad5153495ebe4ebf420f0f1da0acaef602ad
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchEventConnection" key="connection">
@@ -487,9 +483,6 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-<<<<<<< HEAD
-			<int key="maxID">27</int>
-=======
 			<int key="maxID">56</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
@@ -549,7 +542,6 @@
 					</object>
 				</object>
 			</array>
->>>>>>> e7a9ad5153495ebe4ebf420f0f1da0acaef602ad
 		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
