@@ -7,6 +7,7 @@
 //
 
 #import "BSRootLeftViewController_iPhone.h"
+#import "BSRootLeftTableCell_iPhone.h"
 
 @interface BSRootLeftViewController_iPhone ()
 {
@@ -17,6 +18,8 @@
 @implementation BSRootLeftViewController_iPhone
 
 - (void)dealloc {
+    [_selectedLeftImageArrays release];
+    [_noSelectedLeftImageArrays release];
     [_vcArrays release];
     [_leftTableView release];
     [_vcNameArrays release];
@@ -26,6 +29,8 @@
     [super dealloc];
 }
 - (void)viewDidUnload {
+    [self setSelectedLeftImageArrays:nil];
+    [self setNoSelectedLeftImageArrays:nil];
     [self setVcArrays:nil];
     [self setVcNameArrays:nil];
     [self setLeftTableView:nil];
@@ -35,13 +40,19 @@
     [super viewDidUnload];
 }
 
-- (id)initWithNibName:(NSString *)nibNameOrNil vcs:(NSMutableArray *)vcs vcName:(NSMutableArray *)vcName
+- (id)initWithNibName:(NSString *)nibNameOrNil
+                  vcs:(NSMutableArray *)vcs
+               vcName:(NSMutableArray *)vcName
+selectedLeftImageArray:(NSMutableArray *)select
+noSelectedLeftImageArray:(NSMutableArray *)noSelected
 {
     self = [super initWithNibName:nibNameOrNil bundle:nil];
     if (self) {
         // Custom initialization
         self.vcArrays = vcs;
         self.vcNameArrays = vcName;
+        self.selectedLeftImageArrays = select;
+        self.noSelectedLeftImageArrays = noSelected;
     }
     return self;
 }
@@ -76,32 +87,43 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BSRootLeftTableCell_iPhone" owner:tableView options:nil];
+    BSRootLeftTableCell_iPhone *cell = [nib objectAtIndex:0];
     
-    if (!cell) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-    }
+    cell.menuLabel.text = [self.vcNameArrays objectAtIndex:indexPath.row];
     
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.noSelectedLeftImageName = [self.noSelectedLeftImageArrays objectAtIndex:indexPath.row];
     
-    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    cell.selectedLeftImageName =[self.selectedLeftImageArrays objectAtIndex:indexPath.row];
     
-    cell.textLabel.text = [self.vcNameArrays objectAtIndex:indexPath.row];
+    cell.noSelectedBgImageName = @"5其他选项未选中背景";
     
-    if (indexPath.row == 0) {
-        cell.imageView.image = [UIImage imageNamed:@"left_ht_noselected"];
-    }else if(indexPath.row == 1){
-        cell.imageView.image = [UIImage imageNamed:@"left_wl_noselected"];
-    }else if(indexPath.row == 2){
-        cell.imageView.image = [UIImage imageNamed:@"left_zj_noselected"];
-    }
+    cell.selectedBgImageName = @"5其他选项选中背景";
     
+    cell.leftImage.image = [UIImage imageNamed:cell.noSelectedLeftImageName];
+    
+    cell.bgImage.image = [UIImage imageNamed:cell.noSelectedBgImageName];
     
     return cell;
 }
 
 #pragma mark - Table view delegate
+- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    BSRootLeftTableCell_iPhone *cell = (BSRootLeftTableCell_iPhone *)[tableView cellForRowAtIndexPath:indexPath];
+    cell.bgImage.image = [UIImage imageNamed:cell.selectedBgImageName];
+    cell.leftImage.image = [UIImage imageNamed:cell.selectedLeftImageName];
+    cell.menuLabel.textColor = [UIColor colorWithRed:223.f/255 green:42.f/255 blue:106.f/255 alpha:1.f];
+    
+    return indexPath;
+    
+}
+- (NSIndexPath *)tableView:(UITableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    BSRootLeftTableCell_iPhone *cell = (BSRootLeftTableCell_iPhone *)[tableView cellForRowAtIndexPath:indexPath];
+    cell.bgImage.image = [UIImage imageNamed:cell.noSelectedBgImageName];
+    cell.leftImage.image = [UIImage imageNamed:cell.noSelectedLeftImageName];
+    cell.menuLabel.textColor = [UIColor blackColor];
+    return indexPath;
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

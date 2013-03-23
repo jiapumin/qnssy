@@ -177,7 +177,8 @@
 }
 
 - (IBAction)clickLoginButton:(id)sender {
-    [self loginRequestData];
+//    [self loginRequestData];
+    [self.view addSubview:app.revealSideViewController.view];
 }
 
 - (IBAction)clickQQLoginButton:(id)sender {
