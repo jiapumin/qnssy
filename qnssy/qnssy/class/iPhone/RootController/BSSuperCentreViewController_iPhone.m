@@ -105,10 +105,6 @@
     
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     
-    
-	// Do any additional setup after loading the view.
-    BSUserLoginViewController *userLoginView = [[BSUserLoginViewController alloc] initWithNibName:@"BSUserLoginViewController" bundle:nil];
-    [self.view addSubview:userLoginView.view];
 }
 
 - (void)didReceiveMemoryWarning

@@ -9,8 +9,14 @@
 #import "BSUserLoginViewController.h"
 #import "BSUserRegisterStepOneViewController.h"
 
+#import "TPKeyboardAvoidingScrollView.h"
+
+#import "LoginRequestVo.h"
+#import "LoginResponseVo.h"
+
 @interface BSUserLoginViewController (){
     BOOL isTextFieldMoved;
+    MBProgressHUD *progressHUD;
 }
 
 @end
@@ -30,95 +36,175 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.userAccount.delegate  = self;
-    self.userPassword.delegate = self;
-    self.userPassword.secureTextEntry = YES;
-    isTextFieldMoved = NO;
-    [self configLoginBackgroundView];
-    [self hiddenKeyBoardFromView];
+//    self.userAccount.delegate  = self;
+//    self.userPassword.delegate = self;
+//    self.userPassword.secureTextEntry = YES;
+//    isTextFieldMoved = NO;
+//    [self configLoginBackgroundView];
+//    [self hiddenKeyBoardFromView];
+    //隐藏键盘处理
+    CGRect contentRect = CGRectZero;
+    for ( UIView *subview in self.scrollView.subviews ) {
+        contentRect = CGRectUnion(contentRect, subview.frame);
+    }
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width, CGRectGetMaxY(contentRect)+10);
+    //出事化加载框
+    [self initHUDView];
+    //此处检测本地是否自动登录，如果自动登录则请求服务器进行登录，否则进入登录界面
+    BOOL isAutoLogin = NO;
+    if (isAutoLogin) {
+        
+        [self loginRequestData];
+        
+    }
+    
+}
+- (void)loginRequestData{
+    [progressHUD show:YES];
+    
+    //请求服务器
+    LoginRequestVo *vo = [[LoginRequestVo alloc] initWithUsername:@"jiapumin@163.com" password:@"jiapumin"];
+    
+    [[BSContainer instance].serviceAgent callServletWithObject:self
+                                                   requestDict:vo.mReqDic
+                                                        target:self
+                                               successCallBack:@selector(loginSucceess:data:)
+                                                  failCallBack:@selector(loginFailed:data:)];
+    
+    [vo release];
+}
+- (void)initHUDView{
+    //-------加载框
+    progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
+    
+    [self.view addSubview:progressHUD];
+    
+    progressHUD.labelText = @"数据加载中...";
+    
 }
 
-- (void) configLoginBackgroundView {
-    CALayer *layer = self.loginBackgroundView.layer;
-    layer.cornerRadius = 8.0;
-    UIColor *color = [UIColor colorWithRed:0.843 green:0.027 blue:0.16 alpha:1];
-    CGColorRef colorref = [color CGColor];
-    layer.borderColor = colorref;
-    layer.borderWidth = 2.0;
-}
+//- (void) configLoginBackgroundView {
+//    CALayer *layer = self.loginBackgroundView.layer;
+//    layer.cornerRadius = 8.0;
+//    UIColor *color = [UIColor colorWithRed:0.843 green:0.027 blue:0.16 alpha:1];
+//    CGColorRef colorref = [color CGColor];
+//    layer.borderColor = colorref;
+//    layer.borderWidth = 2.0;
+//}
 
-- (void) hiddenKeyBoardFromView{
-    self.view.userInteractionEnabled = YES;
-    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenKeyBoard:)];
-    [self.view addGestureRecognizer:tapGesture];
-}
+//- (void) hiddenKeyBoardFromView{
+//    self.view.userInteractionEnabled = YES;
+////    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenKeyBoard:)];
+////    [self.view addGestureRecognizer:tapGesture];
+//}
 
-- (void) hiddenKeyBoard:(id) sender{
-    [self.userAccount resignFirstResponder];
-    [self.userPassword resignFirstResponder];
-}
+//- (void) hiddenKeyBoard:(id) sender{
+//    [self.userAccount resignFirstResponder];
+//    [self.userPassword resignFirstResponder];
+//}
 
 #pragma mark - TextField Delegate
-
-- (void)textFieldDidBeginEditing:(UITextField *)textField {
-    if (isTextFieldMoved == NO) {
-        NSTimeInterval animationDuration = 0.5f;
-        CGRect frame = self.view.frame;
-        frame.origin.y -=216;
-        frame.size.height +=216;
-        self.view.frame = frame;
-        [UIView beginAnimations:@"ResizeView" context:nil];
-        [UIView setAnimationDuration:animationDuration];
-        self.view.frame = frame;
-        [UIView commitAnimations];
-    }
-    isTextFieldMoved = YES;
-}
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    if (isTextFieldMoved == YES) {
-        NSTimeInterval animationDuration = 0.5f;
-        CGRect frame = self.view.frame;
-        frame.origin.y +=216;
-        frame.size. height -=216;
-        self.view.frame = frame;
-        [UIView beginAnimations:@"ResizeView" context:nil];
-        [UIView setAnimationDuration:animationDuration];
-        self.view.frame = frame;
-        [UIView commitAnimations];
-        [textField resignFirstResponder];
-    }
-    isTextFieldMoved = NO;
-    return YES;
-}
+//
+//- (void)textFieldDidBeginEditing:(UITextField *)textField {
+//    if (isTextFieldMoved == NO) {
+//        NSTimeInterval animationDuration = 0.5f;
+//        CGRect frame = self.view.frame;
+//        frame.origin.y -=216;
+//        frame.size.height +=216;
+//        self.view.frame = frame;
+//        [UIView beginAnimations:@"ResizeView" context:nil];
+//        [UIView setAnimationDuration:animationDuration];
+//        self.view.frame = frame;
+//        [UIView commitAnimations];
+//    }
+//    isTextFieldMoved = YES;
+//}
+//
+//- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+//    if (isTextFieldMoved == YES) {
+//        NSTimeInterval animationDuration = 0.5f;
+//        CGRect frame = self.view.frame;
+//        frame.origin.y +=216;
+//        frame.size. height -=216;
+//        self.view.frame = frame;
+//        [UIView beginAnimations:@"ResizeView" context:nil];
+//        [UIView setAnimationDuration:animationDuration];
+//        self.view.frame = frame;
+//        [UIView commitAnimations];
+//        [textField resignFirstResponder];
+//    }
+//    isTextFieldMoved = NO;
+//    return YES;
+//}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+}
 - (void)dealloc {
-    [_userLogoImage_1 release];
+//    [_userLogoImage_1 release];
     [_loginBackgroundView release];
     [_userAccount release];
     [_userPassword release];
+    [_scrollView release];
+    [_loginButton release];
+    [_loginQQButton release];
     [super dealloc];
 }
 - (void)viewDidUnload {
-    [self setUserLogoImage_1:nil];
+//    [self setUserLogoImage_1:nil];
     [self setLoginBackgroundView:nil];
     [self setUserAccount:nil];
     [self setUserPassword:nil];
+    [self setScrollView:nil];
+    [self setLoginButton:nil];
+    [self setLoginQQButton:nil];
     [super viewDidUnload];
 }
 
 #pragma mark - 注册事件
 - (IBAction)toRegister:(id)sender {
+   
     BSUserRegisterStepOneViewController *stepOne = [[BSUserRegisterStepOneViewController alloc] initWithNibName:@"BSUserRegisterStepOneViewController" bundle:nil];
+    NSLog(@"aaaaaaa");
     stepOne.title = @"注册";
-    [self presentModalViewController:stepOne animated:YES];
-//    [self.navigationController pushViewController:stepOne animated:YES];
+//    [self presentModalViewController:stepOne animated:YES];
+    [self.navigationController pushViewController:stepOne animated:YES];
     [stepOne release];
+     [self.navigationController setNavigationBarHidden:NO animated:NO];
+}
+
+- (IBAction)clickLoginButton:(id)sender {
+    [self loginRequestData];
+}
+
+- (IBAction)clickQQLoginButton:(id)sender {
+}
+
+#pragma mark - 服务器回调
+- (void)loginSucceess:(id)sender data:(NSDictionary *)dic {
+    LoginResponseVo *vo = [[LoginResponseVo alloc] initWithDic:dic];
+    
+    
+    NSLog(@"用户id:%@--登录消息:%@",vo.userId,vo.message);
+    //登录成功，保存用户信息
+    
+    
+    //进入主界面
+    [self.view addSubview:app.revealSideViewController.view];
+    
+    [progressHUD hide:YES];
+}
+
+- (void)loginFailed:(id)sender data:(NSDictionary *)dic {
+    //登录失败，取消加载框
+    NSLog(@"%@",dic);
+    //???
+    [progressHUD hide:YES];
 }
 @end

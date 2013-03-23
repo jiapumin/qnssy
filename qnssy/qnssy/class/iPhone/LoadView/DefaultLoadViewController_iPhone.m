@@ -44,9 +44,17 @@
 }
 - (void)viewWillAppear:(BOOL)animated{
     //本方法有数据获取完成执行
-    NSTimer *myTimer = [NSTimer timerWithTimeInterval:1.0 target:self selector:@selector(viewUpdate) userInfo:nil repeats:NO];
-    [[NSRunLoop currentRunLoop] addTimer:myTimer forMode:NSDefaultRunLoopMode];
+    [self performSelector:@selector(viewUpdate) withObject:self afterDelay:0.1];
     
+    //此处检测本地是否自动登录，如果自动登录则请求服务器进行登录，否则进入登录界面
+    BOOL isAutoLogin = NO;
+    if (isAutoLogin) {
+        //请求服务器
+        
+    }else{
+        //加载登录界面
+        
+    }
 }
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
@@ -161,8 +169,8 @@
     
     //遍历一级目录
     NSMutableArray *arrControllers = [[[NSMutableArray alloc] init] autorelease];
-    NSMutableArray *normalImages = [[[NSMutableArray alloc] init] autorelease];
-    NSMutableArray *selectImages = [[[NSMutableArray alloc] init] autorelease];
+//    NSMutableArray *normalImages = [[[NSMutableArray alloc] init] autorelease];
+//    NSMutableArray *selectImages = [[[NSMutableArray alloc] init] autorelease];
     
     NSMutableArray *vcNameArrays = [[[NSMutableArray alloc] init] autorelease];
     
@@ -228,6 +236,10 @@
     [revealSideViewController release];
     
 	[app.window.layer addAnimation:transition forKey:nil];
+    
+    // Do any additional setup after loading the view.
+//    BSUserLoginViewController *userLoginView = [[BSUserLoginViewController alloc] initWithNibName:@"BSUserLoginViewController" bundle:nil];
+//    [self.view addSubview:userLoginView.view];
 
 }
 

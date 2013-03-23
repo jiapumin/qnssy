@@ -5,12 +5,9 @@
 //  Copyright 2011 A Tasty Pixel. All rights reserved.
 //
 
-@interface TPKeyboardAvoidingTableView : UITableView {
-    UIEdgeInsets    _priorInset;
-    BOOL            _priorInsetSaved;
-    BOOL            _keyboardVisible;
-    CGRect          _keyboardRect;
-}
+#import <UIKit/UIKit.h>
 
-- (void)adjustOffsetToIdealIfNeeded;
+@interface TPKeyboardAvoidingTableView : UITableView
+- (BOOL)focusNextTextField;
+- (void)scrollToActiveTextField;
 @end
