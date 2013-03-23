@@ -39,6 +39,7 @@
     [request setPostValue:@"true" forKey:@"do_upload_file"];
     [request setFile: filePath forKey: @"uploadedfile"];
     [request buildRequestHeaders];
+    [request setDefaultResponseEncoding:NSUTF8StringEncoding];
     NSLog(@"header: %@", request.requestHeaders);
     [request startSynchronous];
     NSLog(@"responseString = %@", request.responseString);

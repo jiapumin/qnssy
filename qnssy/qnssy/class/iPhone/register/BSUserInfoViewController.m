@@ -28,6 +28,23 @@
     [super viewDidLoad];
     //头部nav背景
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"2顶部条状背景"] forBarMetrics:UIBarMetricsDefault];
+    //自定义头部按钮
+    UIButton *topLeftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    //按钮大小
+    CGRect btnFrame = CGRectMake(5, 5, 40, 33);
+    topLeftButton.frame =btnFrame;
+    [topLeftButton setImage:[UIImage imageNamed:@"2向左返回箭头@2x"]
+                   forState:UIControlStateNormal];
+    
+    [topLeftButton addTarget:self
+                      action:@selector(popViewContoller)
+            forControlEvents:UIControlEventTouchUpInside];
+    
+    
+    UIBarButtonItem * topLeftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:topLeftButton];
+    
+    self.navigationItem.leftBarButtonItem = topLeftBarButtonItem;
+
     selectedProvince = [province objectAtIndex: 0];
     self.wantsFullScreenLayout = YES;
 }
@@ -308,7 +325,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)viewWillAppear:(BOOL)animated  {
+    [super viewWillAppear:YES];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    
+}
 - (void)dealloc {
     [_myNavigationBar release];
     [super dealloc];
@@ -318,6 +339,11 @@
     [super viewDidUnload];
 }
 - (IBAction)clickBackButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+#pragma mark - pop
+- (void)popViewContoller{
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
     [self.navigationController popViewControllerAnimated:YES];
 }
 @end
