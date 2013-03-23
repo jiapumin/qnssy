@@ -49,7 +49,7 @@
 -(void)dealloc
 {   
     [_gotoMainViewBtn release];
-    [_defaultViewController release];
+//    [_defaultViewController release];
     [self.imageView release];
     [self.left release];
     [self.right release];
@@ -90,8 +90,9 @@
         
         [self.left removeFromSuperview];
         [self.right removeFromSuperview];
-        self.defaultViewController = [[[DefaultLoadViewController_iPhone alloc] initWithNibName:@"DefaultLoadViewController_iPhone" bundle:nil] autorelease];
-        [self presentModalViewController:self.defaultViewController animated:YES];
+        app.viewController = [[[DefaultLoadViewController_iPhone alloc] initWithNibName:@"DefaultLoadViewController_iPhone" bundle:nil] autorelease];
+        app.window.rootViewController = app.viewController;
+//        [self presentModalViewController:self.defaultViewController animated:YES];
     }
 }
 

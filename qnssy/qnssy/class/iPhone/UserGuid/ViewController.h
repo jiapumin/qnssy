@@ -11,7 +11,7 @@
 #import "DefaultLoadViewController_iPhone.h"
 @interface ViewController : UIViewController<UIScrollViewDelegate>
 
-@property (retain, nonatomic) DefaultLoadViewController_iPhone *defaultViewController;
+//@property (retain, nonatomic) DefaultLoadViewController_iPhone *defaultViewController;
 @property (nonatomic,retain) IBOutlet UIImageView *imageView;
 @property (nonatomic,retain) UIImageView *left;
 @property (nonatomic,retain) UIImageView *right;

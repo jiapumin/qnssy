@@ -26,6 +26,8 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
+    //头部nav背景
+    [self.myNavigationBar setBackgroundImage:[UIImage imageNamed:@"2顶部条状背景"] forBarMetrics:UIBarMetricsDefault];
     // Do any additional setup after loading the view from its nib.
     selectedProvince = [province objectAtIndex: 0];
 }
@@ -294,4 +296,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)dealloc {
+    [_myNavigationBar release];
+    [super dealloc];
+}
+- (void)viewDidUnload {
+    [self setMyNavigationBar:nil];
+    [super viewDidUnload];
+}
+- (IBAction)clickBackButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 @end

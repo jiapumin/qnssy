@@ -16,12 +16,22 @@
 
 @property (retain, nonatomic) NSMutableArray *vcNameArrays;
 
+@property (retain, nonatomic) NSMutableArray *noSelectedLeftImageArrays;
+
+
+@property (retain, nonatomic) NSMutableArray *selectedLeftImageArrays;
+
+
 @property (retain, nonatomic) IBOutlet UINavigationBar *navBar;
 @property (retain, nonatomic) IBOutlet UINavigationItem *navItem;
 
 @property (retain, nonatomic) IBOutlet UIToolbar *toolBar;
 
 
-- (id)initWithNibName:(NSString *)nibNameOrNil vcs:(NSMutableArray *)vcs vcName:(NSMutableArray *)vcName;
+- (id)initWithNibName:(NSString *)nibNameOrNil
+                  vcs:(NSMutableArray *)vcs
+               vcName:(NSMutableArray *)vcName
+selectedLeftImageArray:(NSMutableArray *)select
+noSelectedLeftImageArray:(NSMutableArray *)noSelected;
 
 @end

@@ -12,6 +12,10 @@
 
 @class BSRootLeftViewController_iPhone;
 
+@class PPRevealSideViewController;
+
+@class BSUserLoginViewController;
+
 @interface BSAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
@@ -19,5 +23,9 @@
 @property (strong, nonatomic) DefaultLoadViewController_iPhone *viewController;
 
 @property (retain, nonatomic) BSRootLeftViewController_iPhone *leftvc;
+
+@property (retain, nonatomic) PPRevealSideViewController * revealSideViewController;
+
+@property (retain, nonatomic) BSUserLoginViewController *userLoginView;
 
 @end

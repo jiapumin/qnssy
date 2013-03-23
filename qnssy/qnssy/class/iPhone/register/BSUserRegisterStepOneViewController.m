@@ -9,6 +9,8 @@
 #import "BSUserRegisterStepOneViewController.h"
 #import "BSValidatePhoneNumberViewController.h"
 
+#import "TPKeyboardAvoidingScrollView.h"
+
 @interface BSUserRegisterStepOneViewController (){
     BOOL isTextFieldMoved;
 }
@@ -22,25 +24,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         
-        self.userAccount = [[UITextField alloc] initWithFrame:CGRectMake(20, 74, 280, 40)];
-        self.userAccount.borderStyle = UITextBorderStyleRoundedRect;
-        self.userAccount.placeholder = @"请输入您的手机号码";
-        self.userAccount.keyboardType = UIKeyboardTypePhonePad;
-        self.userAccount.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-        self.userAccount.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-        self.userAccount.text = @"15666666666";
-        self.userPassword = [[UITextField alloc] initWithFrame:CGRectMake(20, 138, 280, 40)];
-        self.userPassword.borderStyle = UITextBorderStyleRoundedRect;
-        self.userPassword.placeholder = @"密码（6-20位）";
-        self.userPassword.keyboardType = UIKeyboardTypeDefault;
-        self.userPassword.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-        self.userPassword.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-        
-        self.userAccount.delegate = self;
-        self.userPassword.delegate = self;
-        
-        [self.view addSubview:self.userAccount];
-        [self.view addSubview:self.userPassword];
+
     }
     return self;
 }
@@ -56,8 +40,36 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    [self hiddenKeyBoardFromView];
+    
+    //隐藏键盘处理
+    CGRect contentRect = CGRectZero;
+    for ( UIView *subview in self.scrollView.subviews ) {
+        contentRect = CGRectUnion(contentRect, subview.frame);
+    }
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width, CGRectGetMaxY(contentRect)+10);
+    //头部nav背景
+    [self.myNavigationBar setBackgroundImage:[UIImage imageNamed:@"2顶部条状背景"] forBarMetrics:UIBarMetricsDefault];
+
+    //初始化控件
+    self.userAccount = [[UITextField alloc] initWithFrame:CGRectMake(20, 20, 280, 40)];
+    self.userAccount.borderStyle = UITextBorderStyleRoundedRect;
+    self.userAccount.placeholder = @"请输入您的手机号码";
+    self.userAccount.keyboardType = UIKeyboardTypePhonePad;
+    self.userAccount.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    self.userAccount.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+    self.userAccount.text = @"15666666666";
+    self.userPassword = [[UITextField alloc] initWithFrame:CGRectMake(20, 80, 280, 40)];
+    self.userPassword.borderStyle = UITextBorderStyleRoundedRect;
+    self.userPassword.placeholder = @"密码（6-20位）";
+    self.userPassword.keyboardType = UIKeyboardTypeDefault;
+    self.userPassword.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    self.userPassword.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+    
+    self.userAccount.delegate = self;
+    self.userPassword.delegate = self;
+    
+    [self.scrollView addSubview:self.userAccount];
+    [self.scrollView addSubview:self.userPassword];
 }
 
 - (void)didReceiveMemoryWarning
@@ -69,11 +81,15 @@
 - (void)dealloc {
     [_userAccount release];
     [_userPassword release];
+    [_scrollView release];
+    [_myNavigationBar release];
     [super dealloc];
 }
 - (void)viewDidUnload {
     [self setUserAccount:nil];
     [self setUserPassword:nil];
+    [self setScrollView:nil];
+    [self setMyNavigationBar:nil];
     [super viewDidUnload];
 }
 - (IBAction)tiaokuanAction:(id)sender {
@@ -91,13 +107,17 @@
     BOOL isPhoneNumber = [self isMobileNumber:phoneNumber];
     if (isPhoneNumber) {
         BSValidatePhoneNumberViewController *validatePhoneNumber = [[BSValidatePhoneNumberViewController alloc] initWithNibName:@"BSValidatePhoneNumberViewController" bundle:nil];
-        [self presentModalViewController:validatePhoneNumber animated:YES];
+        [self.navigationController pushViewController:validatePhoneNumber animated:YES];
         [validatePhoneNumber release];
     } else {
         UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示信息" message:@"请输入正确的手机号码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alter show];
         [alter release];
     }
+}
+
+- (IBAction)clickBackButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 // 正则判断手机号码地址格式
@@ -144,16 +164,16 @@
         return NO;
     }
 }
-
-- (void) hiddenKeyBoardFromView{
-    self.view.userInteractionEnabled = YES;
-    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenKeyBoard:)];
-    [self.view addGestureRecognizer:tapGesture];
-}
-
-- (void) hiddenKeyBoard:(id) sender{
-    [self.userAccount resignFirstResponder];
-    [self.userPassword resignFirstResponder];
-}
+//
+//- (void) hiddenKeyBoardFromView{
+//    self.view.userInteractionEnabled = YES;
+//    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenKeyBoard:)];
+//    [self.view addGestureRecognizer:tapGesture];
+//}
+//
+//- (void) hiddenKeyBoard:(id) sender{
+//    [self.userAccount resignFirstResponder];
+//    [self.userPassword resignFirstResponder];
+//}
 
 @end

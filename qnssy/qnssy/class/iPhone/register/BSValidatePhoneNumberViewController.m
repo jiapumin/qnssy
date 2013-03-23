@@ -37,9 +37,11 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self hiddenKeyBoardFromView];
+//    [self hiddenKeyBoardFromView];
     [self.resendButton setEnabled:NO];
     [self beginTimer];
+    //头部nav背景
+    [self.myNavigationBar setBackgroundImage:[UIImage imageNamed:@"2顶部条状背景"] forBarMetrics:UIBarMetricsDefault];
 }
 
 - (void) beginTimer {
@@ -63,17 +65,18 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void) hiddenKeyBoardFromView{
-    self.view.userInteractionEnabled = YES;
-    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenKeyBoard:)];
-    [self.view addGestureRecognizer:tapGesture];
-}
-
-- (void) hiddenKeyBoard:(id) sender{
-    [self.validateNumber resignFirstResponder];
-}
+//- (void) hiddenKeyBoardFromView{
+//    self.view.userInteractionEnabled = YES;
+//    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenKeyBoard:)];
+//    [self.view addGestureRecognizer:tapGesture];
+//}
+//
+//- (void) hiddenKeyBoard:(id) sender{
+//    [self.validateNumber resignFirstResponder];
+//}
 - (void)viewDidUnload {
     [self setResendButton:nil];
+    [self setMyNavigationBar:nil];
     [super viewDidUnload];
 }
 - (IBAction)resendAction:(id)sender {
@@ -88,13 +91,16 @@
     QRootElement *root = [[QRootElement alloc] init];
     
     BSUserInfoViewController *userInfoController = (BSUserInfoViewController *)[[BSUserInfoViewController alloc] initWithRoot:root];
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:userInfoController];
-    [self presentModalViewController:nav animated:YES];
+//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:userInfoController];
+    [self.navigationController pushViewController:userInfoController animated:YES];
 }
-
+- (IBAction)clickBackButton:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (void) dealloc {
     [_validateNumber release];
     [_resendButton release];
+    [_myNavigationBar release];
     [super dealloc];
 }
 

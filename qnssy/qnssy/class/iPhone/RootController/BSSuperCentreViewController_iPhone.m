@@ -41,13 +41,13 @@
     NSMutableArray *itemArray = [[NSMutableArray alloc] init];
     UIButton *topLeftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     //按钮大小
-    CGRect btnFrame = CGRectMake(5.0, 7.0, 40.0, 30.0);
+    CGRect btnFrame = CGRectMake(5.0, 7.0, 28.0, 18.0);
     topLeftButton.frame =btnFrame;
     //判断当前页面是否是根目录
     if ([[self.navigationController.viewControllers objectAtIndex:0]  isEqual:self]) {
         //设置根目录的侧滑图片和方法
 
-        [topLeftButton setImage:[UIImage imageNamed:@"左栏_button_03"]
+        [topLeftButton setImage:[UIImage imageNamed:@"5菜单列表图片"]
                        forState:UIControlStateNormal];
         
         [topLeftButton addTarget:self
@@ -58,7 +58,7 @@
         [self showLeft:nil];
     }else{
         //设置返回按钮图片和方法
-        [topLeftButton setImage:[UIImage imageNamed:@"左栏_button_03"]
+        [topLeftButton setImage:[UIImage imageNamed:@"2向左返回箭头"]
                        forState:UIControlStateNormal];
         
         [topLeftButton addTarget:self
@@ -79,11 +79,11 @@
     
     [self.navigationItem setLeftBarButtonItems:itemArray animated:YES];
     [itemArray release];
-//    self.navigationController.navigationBar.barStyle = UIBarStyleBlackOpaque;
     
     //设置背景图片
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"navbkimg.png"] forBarMetrics:UIBarMetricsDefault];
-   
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"2顶部条状背景"] forBarMetrics:UIBarMetricsDefault];
+    //头部nav背景
+    
     //自定义头部标题
     UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 150, 33)];
     
@@ -105,10 +105,6 @@
     
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     
-    
-	// Do any additional setup after loading the view.
-    BSUserLoginViewController *userLoginView = [[BSUserLoginViewController alloc] initWithNibName:@"BSUserLoginViewController" bundle:nil];
-    [self.view addSubview:userLoginView.view];
 }
 
 - (void)didReceiveMemoryWarning

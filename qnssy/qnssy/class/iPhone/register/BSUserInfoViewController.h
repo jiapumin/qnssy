@@ -21,5 +21,7 @@
 
 @property (nonatomic, retain) QRootElement * root;
 @property (nonatomic, retain) QuickDialogTableView *quickDialogTableView;
+@property (retain, nonatomic) IBOutlet UINavigationBar *myNavigationBar;
 
+- (IBAction)clickBackButton:(id)sender;
 @end

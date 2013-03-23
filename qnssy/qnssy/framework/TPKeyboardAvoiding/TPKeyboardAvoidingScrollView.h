@@ -5,12 +5,9 @@
 //  Copyright 2011 A Tasty Pixel. All rights reserved.
 //
 
-@interface TPKeyboardAvoidingScrollView : UIScrollView {
-    UIEdgeInsets    _priorInset;
-    BOOL            _keyboardVisible;
-    CGRect          _keyboardRect;
-    CGSize          _originalContentSize;
-}
+#import <UIKit/UIKit.h>
 
-- (void)adjustOffsetToIdealIfNeeded;
+@interface TPKeyboardAvoidingScrollView : UIScrollView
+- (BOOL)focusNextTextField;
+- (void)scrollToActiveTextField;
 @end

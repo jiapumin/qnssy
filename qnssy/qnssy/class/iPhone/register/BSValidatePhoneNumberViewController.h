@@ -13,6 +13,7 @@
 @property (retain, nonatomic) UITextField *validateNumber;
 @property (retain, nonatomic) IBOutlet UIButton *resendButton;
 @property (retain, nonatomic) NSTimer *timer;;
+@property (retain, nonatomic) IBOutlet UINavigationBar *myNavigationBar;
 - (IBAction)resendAction:(id)sender;
 - (IBAction)submitAction:(id)sender;
 
