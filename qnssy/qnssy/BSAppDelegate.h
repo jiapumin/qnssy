@@ -26,6 +26,6 @@
 
 @property (retain, nonatomic) PPRevealSideViewController * revealSideViewController;
 
-@property (retain, nonatomic) BSUserLoginViewController *userLoginView;
+@property (retain, nonatomic) UINavigationController *loginNav;
 
 @end

@@ -8,16 +8,19 @@
 
 #import "BSRootLeftViewController_iPhone.h"
 #import "BSRootLeftTableCell_iPhone.h"
+#import "BSMyInfoViewController_iPhone.h"
 
 @interface BSRootLeftViewController_iPhone ()
 {
     
 }
+@property (retain, nonatomic) UINavigationController *myInfoVcNav;
 @end
 
 @implementation BSRootLeftViewController_iPhone
 
 - (void)dealloc {
+    [_myInfoVcNav release];
     [_selectedLeftImageArrays release];
     [_noSelectedLeftImageArrays release];
     [_vcArrays release];
@@ -29,6 +32,7 @@
     [super dealloc];
 }
 - (void)viewDidUnload {
+    [self setMyInfoVcNav:nil];
     [self setSelectedLeftImageArrays:nil];
     [self setNoSelectedLeftImageArrays:nil];
     [self setVcArrays:nil];
@@ -57,12 +61,21 @@ noSelectedLeftImageArray:(NSMutableArray *)noSelected
     return self;
 }
 
+- (IBAction)clickTopMyInfo:(id)sender {
+    if (self.myInfoVcNav == nil){
+        BSMyInfoViewController_iPhone *myInfoVc = [[[BSMyInfoViewController_iPhone alloc] initWithNibName:@"BSMyInfoViewController_iPhone" bundle:nil] autorelease];
+        self.myInfoVcNav = [[[UINavigationController alloc] initWithRootViewController:myInfoVc] autorelease];
+    }
+    
+    [self.revealSideViewController popViewControllerWithNewCenterController:self.myInfoVcNav
+                                                                   animated:YES];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
-    
+    self.view.backgroundColor = [UIColor colorWithRed:247.f/255 green:232.f/255 blue:232.f/255 alpha:1.f];
     
 }
 
@@ -134,4 +147,7 @@ noSelectedLeftImageArray:(NSMutableArray *)noSelected
 
 }
 
+- (IBAction)clickLogOut:(id)sender {
+    app.window.rootViewController = app.loginNav;
+}
 @end

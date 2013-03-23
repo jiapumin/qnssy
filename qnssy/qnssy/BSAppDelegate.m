@@ -30,6 +30,13 @@
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
     //加载界面
     [self viewUpdate];
+    
+    BSUserLoginViewController *userLoginView = [[[BSUserLoginViewController alloc] initWithNibName:@"BSUserLoginViewController" bundle:nil] autorelease];
+    
+    self.loginNav = [[UINavigationController alloc] initWithRootViewController:userLoginView];
+
+    self.window.backgroundColor = [UIColor colorWithRed:247.f/255 green:232.f/255 blue:232.f/255 alpha:1.f];
+
 
     //增加标识，用于判断是否是第一次启动应用...
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"everLaunched"]) {
@@ -42,14 +49,7 @@
         self.window.rootViewController = appStartController;
         [appStartController release];
     }else {
-//        self.viewController = [[[DefaultLoadViewController_iPhone alloc] initWithNibName:@"DefaultLoadViewController_iPhone" bundle:nil] autorelease];
-        self.userLoginView = [[[BSUserLoginViewController alloc] initWithNibName:@"BSUserLoginViewController" bundle:nil] autorelease];
-        
-        UINavigationController *loginNav = [[UINavigationController alloc] initWithRootViewController:self.userLoginView];
-        
-
-        
-        self.window.rootViewController = loginNav;
+        self.window.rootViewController = self.loginNav;
         
     }
     [self.window makeKeyAndVisible];

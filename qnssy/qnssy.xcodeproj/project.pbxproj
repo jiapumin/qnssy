@@ -145,8 +145,6 @@
 		D8A687A116FD41E7005245C8 /* 写信@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6877616FD41E7005245C8 /* 写信@2x.png */; };
 		D8A687A516FD4EE9005245C8 /* BSRootLeftTableCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A687A316FD4EE8005245C8 /* BSRootLeftTableCell_iPhone.m */; };
 		D8A687A616FD4EE9005245C8 /* BSRootLeftTableCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A687A416FD4EE9005245C8 /* BSRootLeftTableCell_iPhone.xib */; };
-		D8A687AA16FD55FF005245C8 /* BSViewControllertest.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A687A816FD55FE005245C8 /* BSViewControllertest.m */; };
-		D8A687AB16FD55FF005245C8 /* BSViewControllertest.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A687A916FD55FF005245C8 /* BSViewControllertest.xib */; };
 		D8A687B016FD6465005245C8 /* BSOnePackageServiceViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A687AE16FD6465005245C8 /* BSOnePackageServiceViewController_iPhone.m */; };
 		D8A687B116FD6465005245C8 /* BSOnePackageServiceViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A687AF16FD6465005245C8 /* BSOnePackageServiceViewController_iPhone.xib */; };
 		D8CA7D4C16F4083200B4CE67 /* BSContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D4616F4083200B4CE67 /* BSContainer.m */; };
@@ -385,9 +383,6 @@
 		D8A687A216FD4EE8005245C8 /* BSRootLeftTableCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRootLeftTableCell_iPhone.h; sourceTree = "<group>"; };
 		D8A687A316FD4EE8005245C8 /* BSRootLeftTableCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRootLeftTableCell_iPhone.m; sourceTree = "<group>"; };
 		D8A687A416FD4EE9005245C8 /* BSRootLeftTableCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSRootLeftTableCell_iPhone.xib; sourceTree = "<group>"; };
-		D8A687A716FD55FE005245C8 /* BSViewControllertest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSViewControllertest.h; sourceTree = "<group>"; };
-		D8A687A816FD55FE005245C8 /* BSViewControllertest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSViewControllertest.m; sourceTree = "<group>"; };
-		D8A687A916FD55FF005245C8 /* BSViewControllertest.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSViewControllertest.xib; sourceTree = "<group>"; };
 		D8A687AD16FD6465005245C8 /* BSOnePackageServiceViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSOnePackageServiceViewController_iPhone.h; sourceTree = "<group>"; };
 		D8A687AE16FD6465005245C8 /* BSOnePackageServiceViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSOnePackageServiceViewController_iPhone.m; sourceTree = "<group>"; };
 		D8A687AF16FD6465005245C8 /* BSOnePackageServiceViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSOnePackageServiceViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -694,18 +689,15 @@
 		D87A052516EF68A50052328E /* RootController */ = {
 			isa = PBXGroup;
 			children = (
-				D8A687A216FD4EE8005245C8 /* BSRootLeftTableCell_iPhone.h */,
-				D8A687A316FD4EE8005245C8 /* BSRootLeftTableCell_iPhone.m */,
-				D8A687A416FD4EE9005245C8 /* BSRootLeftTableCell_iPhone.xib */,
 				D87A054916EF69DE0052328E /* AppConstants.h */,
 				D87A054D16EF69DE0052328E /* BSRootLeftViewController_iPhone.h */,
 				D87A054A16EF69DE0052328E /* BSRootLeftViewController_iPhone.m */,
 				D87A054C16EF69DE0052328E /* BSRootLeftViewController_iPhone.xib */,
+				D8A687A216FD4EE8005245C8 /* BSRootLeftTableCell_iPhone.h */,
+				D8A687A316FD4EE8005245C8 /* BSRootLeftTableCell_iPhone.m */,
+				D8A687A416FD4EE9005245C8 /* BSRootLeftTableCell_iPhone.xib */,
 				D87A054E16EF69DE0052328E /* BSSuperCentreViewController_iPhone.h */,
 				D87A054B16EF69DE0052328E /* BSSuperCentreViewController_iPhone.m */,
-				D8A687A716FD55FE005245C8 /* BSViewControllertest.h */,
-				D8A687A816FD55FE005245C8 /* BSViewControllertest.m */,
-				D8A687A916FD55FF005245C8 /* BSViewControllertest.xib */,
 			);
 			path = RootController;
 			sourceTree = "<group>";
@@ -1237,7 +1229,6 @@
 				D8A687A016FD41E7005245C8 /* 问候@2x.png in Resources */,
 				D8A687A116FD41E7005245C8 /* 写信@2x.png in Resources */,
 				D8A687A616FD4EE9005245C8 /* BSRootLeftTableCell_iPhone.xib in Resources */,
-				D8A687AB16FD55FF005245C8 /* BSViewControllertest.xib in Resources */,
 				D8A687B116FD6465005245C8 /* BSOnePackageServiceViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1310,7 +1301,6 @@
 				5AF21B4E16F8581000EEB6EA /* BSUserInfoViewController.m in Sources */,
 				5A046AB916F9AE7F00782A83 /* BSSexElement.m in Sources */,
 				D8A687A516FD4EE9005245C8 /* BSRootLeftTableCell_iPhone.m in Sources */,
-				D8A687AA16FD55FF005245C8 /* BSViewControllertest.m in Sources */,
 				D8A687B016FD6465005245C8 /* BSOnePackageServiceViewController_iPhone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1391,6 +1381,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer: jia pumin (M3N7ERC736)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jia pumin (M3N7ERC736)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "qnssy/qnssy-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
@@ -1398,6 +1390,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "E3FAB381-E165-45F8-853B-B6E8C25AA675";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E3FAB381-E165-45F8-853B-B6E8C25AA675";
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/QuickDialog/**";
 				WRAPPER_EXTENSION = app;
 			};
@@ -1407,6 +1401,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: BAOSTEEL GROUP CORPORATION";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BAOSTEEL GROUP CORPORATION";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "qnssy/qnssy-Prefix.pch";
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
@@ -1414,6 +1410,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7CDDAE5A-8E5B-4BC1-A0D9-33B5F816C30B";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7CDDAE5A-8E5B-4BC1-A0D9-33B5F816C30B";
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/QuickDialog/**";
 				WRAPPER_EXTENSION = app;
 			};
