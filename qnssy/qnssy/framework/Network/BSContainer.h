@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-//#import "UserInfo.h"
+#import "UserInfo.h"
 
 @class BSServiceAgent;
 @interface BSContainer : NSObject <UIAlertViewDelegate>
@@ -19,7 +19,7 @@
 
 @property (nonatomic,retain) BSServiceAgent * serviceAgent;
 @property (nonatomic,retain) NSString *serviceHttpURLString;
-//@property (nonatomic,retain) UserInfo *userInfo;
+@property (nonatomic,retain) UserInfo *userInfo;
 //@property (nonatomic, retain) NSString *noticeNum;
 
 +(BSContainer * ) instance;

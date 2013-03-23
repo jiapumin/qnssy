@@ -17,6 +17,7 @@
 @property (retain, nonatomic) NSMutableArray *vcNameArrays;
 
 @property (retain, nonatomic) NSMutableArray *noSelectedLeftImageArrays;
+- (IBAction)clickLogOut:(id)sender;
 
 
 @property (retain, nonatomic) NSMutableArray *selectedLeftImageArrays;
@@ -33,5 +34,6 @@
                vcName:(NSMutableArray *)vcName
 selectedLeftImageArray:(NSMutableArray *)select
 noSelectedLeftImageArray:(NSMutableArray *)noSelected;
+- (IBAction)clickTopMyInfo:(id)sender;
 
 @end

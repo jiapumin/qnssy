@@ -180,12 +180,11 @@
     BSUserRegisterStepOneViewController *stepOne = [[BSUserRegisterStepOneViewController alloc] initWithNibName:@"BSUserRegisterStepOneViewController" bundle:nil];
     [self.navigationController pushViewController:stepOne animated:YES];
     [stepOne release];
-//    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 - (IBAction)clickLoginButton:(id)sender {
 //    [self loginRequestData];
-    [self.view addSubview:app.revealSideViewController.view];
+    app.window.rootViewController = app.revealSideViewController;
 }
 
 - (IBAction)clickQQLoginButton:(id)sender {

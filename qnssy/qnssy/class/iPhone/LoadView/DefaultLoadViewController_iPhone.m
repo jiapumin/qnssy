@@ -220,14 +220,14 @@
     transition.subtype = kCATransitionFromTop;
  
     
-    BSRootLeftViewController_iPhone *leftvc  =
-    [[BSRootLeftViewController_iPhone alloc] initWithNibName:@"BSRootLeftViewController_iPhone"
-                                                         vcs:arrControllers
-                                                      vcName:vcNameArrays];
+//    BSRootLeftViewController_iPhone *leftvc  =
+//    [[BSRootLeftViewController_iPhone alloc] initWithNibName:@"BSRootLeftViewController_iPhone"
+//                                                         vcs:arrControllers
+//                                                      vcName:vcNameArrays];
+//    
+//    app.leftvc = leftvc;
     
-    app.leftvc = leftvc;
-    
-    [leftvc release];
+//    [leftvc release];
 
     PPRevealSideViewController * revealSideViewController = [[PPRevealSideViewController alloc] initWithRootViewController:[arrControllers objectAtIndex:0]];
 
