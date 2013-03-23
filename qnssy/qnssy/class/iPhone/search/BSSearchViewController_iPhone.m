@@ -27,8 +27,22 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [self update];
 }
-
+- (void)update{
+    //测试上传图片
+    NSString *filePath = [[[KBBreakpointTransmission instance] getTargetFloderPath:@"image"] stringByAppendingPathComponent:@"index2.jpg"];
+    
+    NSString *url = @"http://demo2.qnssy.com/demo/upload_demo.php";
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL: [NSURL URLWithString: url]];
+    [request setPostValue: @"true" forKey: @"is_phone"];
+    [request setPostValue:@"true" forKey:@"do_upload_file"];
+    [request setFile: filePath forKey: @"uploadedfile"];
+    [request buildRequestHeaders];
+    NSLog(@"header: %@", request.requestHeaders);
+    [request startSynchronous];
+    NSLog(@"responseString = %@", request.responseString);
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

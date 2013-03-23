@@ -34,7 +34,7 @@
 //            [tempServiceAgent release];
 //        }
 //        if (self.userInfo == nil) {
-//            UserInfo *tempUserInfo = [[UserInfo alloc]init];
+            self.userInfo = [[UserInfo alloc]init];
 //            self.userInfo = tempUserInfo;
 //            [tempUserInfo release];
 //        }
@@ -57,7 +57,7 @@
 -(void) dealloc{
     [_serviceAgent release];
     [_serviceHttpURLString release];
-//    [userInfo release];
+    [_userInfo release];
     [super dealloc];
 }
 
