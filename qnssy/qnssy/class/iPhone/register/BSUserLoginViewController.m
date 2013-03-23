@@ -171,12 +171,9 @@
 - (IBAction)toRegister:(id)sender {
    
     BSUserRegisterStepOneViewController *stepOne = [[BSUserRegisterStepOneViewController alloc] initWithNibName:@"BSUserRegisterStepOneViewController" bundle:nil];
-    NSLog(@"aaaaaaa");
-    stepOne.title = @"注册";
-//    [self presentModalViewController:stepOne animated:YES];
     [self.navigationController pushViewController:stepOne animated:YES];
     [stepOne release];
-     [self.navigationController setNavigationBarHidden:NO animated:NO];
+//    [self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 - (IBAction)clickLoginButton:(id)sender {

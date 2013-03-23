@@ -100,6 +100,49 @@
 		D8888FD416F3500A00C14922 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8888FD316F3500A00C14922 /* ImageIO.framework */; };
 		D8888FD816F3504B00C14922 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8888FD716F3504A00C14922 /* libz.1.2.5.dylib */; };
 		D8A6874916FD3D92005245C8 /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8CEEF5616F8C15E00E7C63F /* libQuickDialog.a */; };
+		D8A6877716FD41E7005245C8 /* 1背景+logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6874C16FD41E7005245C8 /* 1背景+logo@2x.png */; };
+		D8A6877816FD41E7005245C8 /* 1登录背景@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6874D16FD41E7005245C8 /* 1登录背景@2x.png */; };
+		D8A6877916FD41E7005245C8 /* 1复选框未选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6874E16FD41E7005245C8 /* 1复选框未选中@2x.png */; };
+		D8A6877A16FD41E7005245C8 /* 1复选框选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6874F16FD41E7005245C8 /* 1复选框选中@2x.png */; };
+		D8A6877B16FD41E7005245C8 /* 1输入框背景@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6875016FD41E7005245C8 /* 1输入框背景@2x.png */; };
+		D8A6877C16FD41E7005245C8 /* 1输入框背景2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6875116FD41E7005245C8 /* 1输入框背景2@2x.png */; };
+		D8A6877D16FD41E7005245C8 /* 2顶部条状背景@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6875216FD41E7005245C8 /* 2顶部条状背景@2x.png */; };
+		D8A6877E16FD41E7005245C8 /* 2输入框背景@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6875316FD41E7005245C8 /* 2输入框背景@2x.png */; };
+		D8A6877F16FD41E7005245C8 /* 2下一步背景@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6875416FD41E7005245C8 /* 2下一步背景@2x.png */; };
+		D8A6878016FD41E7005245C8 /* 2向左返回箭头@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6875516FD41E7005245C8 /* 2向左返回箭头@2x.png */; };
+		D8A6878116FD41E7005245C8 /* 3右箭头@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6875616FD41E7005245C8 /* 3右箭头@2x.png */; };
+		D8A6878216FD41E7005245C8 /* 4倒计时按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6875716FD41E7005245C8 /* 4倒计时按钮@2x.png */; };
+		D8A6878316FD41E7005245C8 /* 4输入框@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6875816FD41E7005245C8 /* 4输入框@2x.png */; };
+		D8A6878416FD41E7005245C8 /* 5菜单列表图片@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6875916FD41E7005245C8 /* 5菜单列表图片@2x.png */; };
+		D8A6878516FD41E7005245C8 /* 5购买ico未选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6875A16FD41E7005245C8 /* 5购买ico未选中@2x.png */; };
+		D8A6878616FD41E7005245C8 /* 5购买ico选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6875B16FD41E7005245C8 /* 5购买ico选中@2x.png */; };
+		D8A6878716FD41E7005245C8 /* 5红娘ico未选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6875C16FD41E7005245C8 /* 5红娘ico未选中@2x.png */; };
+		D8A6878816FD41E7005245C8 /* 5红娘ico选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6875D16FD41E7005245C8 /* 5红娘ico选中@2x.png */; };
+		D8A6878916FD41E7005245C8 /* 5其他选项未选中背景@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6875E16FD41E7005245C8 /* 5其他选项未选中背景@2x.png */; };
+		D8A6878A16FD41E7005245C8 /* 5其他选项选中背景@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6875F16FD41E7005245C8 /* 5其他选项选中背景@2x.png */; };
+		D8A6878B16FD41E7005245C8 /* 5说说ico未选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6876016FD41E7005245C8 /* 5说说ico未选中@2x.png */; };
+		D8A6878C16FD41E7005245C8 /* 5说说ico选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6876116FD41E7005245C8 /* 5说说ico选中@2x.png */; };
+		D8A6878D16FD41E7005245C8 /* 5搜索ico未选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6876216FD41E7005245C8 /* 5搜索ico未选中@2x.png */; };
+		D8A6878E16FD41E7005245C8 /* 5搜索ico选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6876316FD41E7005245C8 /* 5搜索ico选中@2x.png */; };
+		D8A6878F16FD41E7005245C8 /* 5天天相亲ico未选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6876416FD41E7005245C8 /* 5天天相亲ico未选中@2x.png */; };
+		D8A6879016FD41E7005245C8 /* 5天天相亲ico选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6876516FD41E7005245C8 /* 5天天相亲ico选中@2x.png */; };
+		D8A6879116FD41E7005245C8 /* 5头像位置背景@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6876616FD41E7005245C8 /* 5头像位置背景@2x.png */; };
+		D8A6879216FD41E7005245C8 /* 5推荐ico未选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6876716FD41E7005245C8 /* 5推荐ico未选中@2x.png */; };
+		D8A6879316FD41E7005245C8 /* 5推荐ico选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6876816FD41E7005245C8 /* 5推荐ico选中@2x.png */; };
+		D8A6879416FD41E7005245C8 /* 5消息ico未选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6876916FD41E7005245C8 /* 5消息ico未选中@2x.png */; };
+		D8A6879516FD41E7005245C8 /* 5消息ico选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6876A16FD41E7005245C8 /* 5消息ico选中@2x.png */; };
+		D8A6879616FD41E7005245C8 /* 5一站式服务ico未选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6876B16FD41E7005245C8 /* 5一站式服务ico未选中@2x.png */; };
+		D8A6879716FD41E7005245C8 /* 5一站式服务ico选中@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6876C16FD41E7005245C8 /* 5一站式服务ico选中@2x.png */; };
+		D8A6879816FD41E7005245C8 /* 5暂无照片头像@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6876D16FD41E7005245C8 /* 5暂无照片头像@2x.png */; };
+		D8A6879916FD41E7005245C8 /* 6距离图标@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6876E16FD41E7005245C8 /* 6距离图标@2x.png */; };
+		D8A6879A16FD41E7005245C8 /* 7标题背景@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6876F16FD41E7005245C8 /* 7标题背景@2x.png */; };
+		D8A6879B16FD41E7005245C8 /* 7关注@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6877016FD41E7005245C8 /* 7关注@2x.png */; };
+		D8A6879C16FD41E7005245C8 /* 7开通会员服务可见图标@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6877116FD41E7005245C8 /* 7开通会员服务可见图标@2x.png */; };
+		D8A6879D16FD41E7005245C8 /* 7图片背景@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6877216FD41E7005245C8 /* 7图片背景@2x.png */; };
+		D8A6879E16FD41E7005245C8 /* 7推荐@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6877316FD41E7005245C8 /* 7推荐@2x.png */; };
+		D8A6879F16FD41E7005245C8 /* 18搜索右上方按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6877416FD41E7005245C8 /* 18搜索右上方按钮@2x.png */; };
+		D8A687A016FD41E7005245C8 /* 问候@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6877516FD41E7005245C8 /* 问候@2x.png */; };
+		D8A687A116FD41E7005245C8 /* 写信@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6877616FD41E7005245C8 /* 写信@2x.png */; };
 		D8CA7D4C16F4083200B4CE67 /* BSContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D4616F4083200B4CE67 /* BSContainer.m */; };
 		D8CA7D4D16F4083200B4CE67 /* BSHttpAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D4816F4083200B4CE67 /* BSHttpAgent.m */; };
 		D8CA7D4E16F4083200B4CE67 /* BSServiceAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D4B16F4083200B4CE67 /* BSServiceAgent.m */; };
@@ -290,6 +333,49 @@
 		D8888FD316F3500A00C14922 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		D8888FD516F3502200C14922 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D8888FD716F3504A00C14922 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		D8A6874C16FD41E7005245C8 /* 1背景+logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1背景+logo@2x.png"; sourceTree = "<group>"; };
+		D8A6874D16FD41E7005245C8 /* 1登录背景@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1登录背景@2x.png"; sourceTree = "<group>"; };
+		D8A6874E16FD41E7005245C8 /* 1复选框未选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1复选框未选中@2x.png"; sourceTree = "<group>"; };
+		D8A6874F16FD41E7005245C8 /* 1复选框选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1复选框选中@2x.png"; sourceTree = "<group>"; };
+		D8A6875016FD41E7005245C8 /* 1输入框背景@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1输入框背景@2x.png"; sourceTree = "<group>"; };
+		D8A6875116FD41E7005245C8 /* 1输入框背景2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1输入框背景2@2x.png"; sourceTree = "<group>"; };
+		D8A6875216FD41E7005245C8 /* 2顶部条状背景@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2顶部条状背景@2x.png"; sourceTree = "<group>"; };
+		D8A6875316FD41E7005245C8 /* 2输入框背景@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2输入框背景@2x.png"; sourceTree = "<group>"; };
+		D8A6875416FD41E7005245C8 /* 2下一步背景@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2下一步背景@2x.png"; sourceTree = "<group>"; };
+		D8A6875516FD41E7005245C8 /* 2向左返回箭头@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2向左返回箭头@2x.png"; sourceTree = "<group>"; };
+		D8A6875616FD41E7005245C8 /* 3右箭头@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3右箭头@2x.png"; sourceTree = "<group>"; };
+		D8A6875716FD41E7005245C8 /* 4倒计时按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4倒计时按钮@2x.png"; sourceTree = "<group>"; };
+		D8A6875816FD41E7005245C8 /* 4输入框@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "4输入框@2x.png"; sourceTree = "<group>"; };
+		D8A6875916FD41E7005245C8 /* 5菜单列表图片@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5菜单列表图片@2x.png"; sourceTree = "<group>"; };
+		D8A6875A16FD41E7005245C8 /* 5购买ico未选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5购买ico未选中@2x.png"; sourceTree = "<group>"; };
+		D8A6875B16FD41E7005245C8 /* 5购买ico选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5购买ico选中@2x.png"; sourceTree = "<group>"; };
+		D8A6875C16FD41E7005245C8 /* 5红娘ico未选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5红娘ico未选中@2x.png"; sourceTree = "<group>"; };
+		D8A6875D16FD41E7005245C8 /* 5红娘ico选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5红娘ico选中@2x.png"; sourceTree = "<group>"; };
+		D8A6875E16FD41E7005245C8 /* 5其他选项未选中背景@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5其他选项未选中背景@2x.png"; sourceTree = "<group>"; };
+		D8A6875F16FD41E7005245C8 /* 5其他选项选中背景@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5其他选项选中背景@2x.png"; sourceTree = "<group>"; };
+		D8A6876016FD41E7005245C8 /* 5说说ico未选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5说说ico未选中@2x.png"; sourceTree = "<group>"; };
+		D8A6876116FD41E7005245C8 /* 5说说ico选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5说说ico选中@2x.png"; sourceTree = "<group>"; };
+		D8A6876216FD41E7005245C8 /* 5搜索ico未选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5搜索ico未选中@2x.png"; sourceTree = "<group>"; };
+		D8A6876316FD41E7005245C8 /* 5搜索ico选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5搜索ico选中@2x.png"; sourceTree = "<group>"; };
+		D8A6876416FD41E7005245C8 /* 5天天相亲ico未选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5天天相亲ico未选中@2x.png"; sourceTree = "<group>"; };
+		D8A6876516FD41E7005245C8 /* 5天天相亲ico选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5天天相亲ico选中@2x.png"; sourceTree = "<group>"; };
+		D8A6876616FD41E7005245C8 /* 5头像位置背景@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5头像位置背景@2x.png"; sourceTree = "<group>"; };
+		D8A6876716FD41E7005245C8 /* 5推荐ico未选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5推荐ico未选中@2x.png"; sourceTree = "<group>"; };
+		D8A6876816FD41E7005245C8 /* 5推荐ico选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5推荐ico选中@2x.png"; sourceTree = "<group>"; };
+		D8A6876916FD41E7005245C8 /* 5消息ico未选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5消息ico未选中@2x.png"; sourceTree = "<group>"; };
+		D8A6876A16FD41E7005245C8 /* 5消息ico选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5消息ico选中@2x.png"; sourceTree = "<group>"; };
+		D8A6876B16FD41E7005245C8 /* 5一站式服务ico未选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5一站式服务ico未选中@2x.png"; sourceTree = "<group>"; };
+		D8A6876C16FD41E7005245C8 /* 5一站式服务ico选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5一站式服务ico选中@2x.png"; sourceTree = "<group>"; };
+		D8A6876D16FD41E7005245C8 /* 5暂无照片头像@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "5暂无照片头像@2x.png"; sourceTree = "<group>"; };
+		D8A6876E16FD41E7005245C8 /* 6距离图标@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "6距离图标@2x.png"; sourceTree = "<group>"; };
+		D8A6876F16FD41E7005245C8 /* 7标题背景@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7标题背景@2x.png"; sourceTree = "<group>"; };
+		D8A6877016FD41E7005245C8 /* 7关注@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7关注@2x.png"; sourceTree = "<group>"; };
+		D8A6877116FD41E7005245C8 /* 7开通会员服务可见图标@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7开通会员服务可见图标@2x.png"; sourceTree = "<group>"; };
+		D8A6877216FD41E7005245C8 /* 7图片背景@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7图片背景@2x.png"; sourceTree = "<group>"; };
+		D8A6877316FD41E7005245C8 /* 7推荐@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7推荐@2x.png"; sourceTree = "<group>"; };
+		D8A6877416FD41E7005245C8 /* 18搜索右上方按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "18搜索右上方按钮@2x.png"; sourceTree = "<group>"; };
+		D8A6877516FD41E7005245C8 /* 问候@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "问候@2x.png"; sourceTree = "<group>"; };
+		D8A6877616FD41E7005245C8 /* 写信@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "写信@2x.png"; sourceTree = "<group>"; };
 		D8CA7D4516F4083200B4CE67 /* BSContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSContainer.h; sourceTree = "<group>"; };
 		D8CA7D4616F4083200B4CE67 /* BSContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSContainer.m; sourceTree = "<group>"; };
 		D8CA7D4716F4083200B4CE67 /* BSHttpAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHttpAgent.h; sourceTree = "<group>"; };
@@ -722,6 +808,49 @@
 		D87A059216EF77F90052328E /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				D8A6874C16FD41E7005245C8 /* 1背景+logo@2x.png */,
+				D8A6874D16FD41E7005245C8 /* 1登录背景@2x.png */,
+				D8A6874E16FD41E7005245C8 /* 1复选框未选中@2x.png */,
+				D8A6874F16FD41E7005245C8 /* 1复选框选中@2x.png */,
+				D8A6875016FD41E7005245C8 /* 1输入框背景@2x.png */,
+				D8A6875116FD41E7005245C8 /* 1输入框背景2@2x.png */,
+				D8A6875216FD41E7005245C8 /* 2顶部条状背景@2x.png */,
+				D8A6875316FD41E7005245C8 /* 2输入框背景@2x.png */,
+				D8A6875416FD41E7005245C8 /* 2下一步背景@2x.png */,
+				D8A6875516FD41E7005245C8 /* 2向左返回箭头@2x.png */,
+				D8A6875616FD41E7005245C8 /* 3右箭头@2x.png */,
+				D8A6875716FD41E7005245C8 /* 4倒计时按钮@2x.png */,
+				D8A6875816FD41E7005245C8 /* 4输入框@2x.png */,
+				D8A6875916FD41E7005245C8 /* 5菜单列表图片@2x.png */,
+				D8A6875A16FD41E7005245C8 /* 5购买ico未选中@2x.png */,
+				D8A6875B16FD41E7005245C8 /* 5购买ico选中@2x.png */,
+				D8A6875C16FD41E7005245C8 /* 5红娘ico未选中@2x.png */,
+				D8A6875D16FD41E7005245C8 /* 5红娘ico选中@2x.png */,
+				D8A6875E16FD41E7005245C8 /* 5其他选项未选中背景@2x.png */,
+				D8A6875F16FD41E7005245C8 /* 5其他选项选中背景@2x.png */,
+				D8A6876016FD41E7005245C8 /* 5说说ico未选中@2x.png */,
+				D8A6876116FD41E7005245C8 /* 5说说ico选中@2x.png */,
+				D8A6876216FD41E7005245C8 /* 5搜索ico未选中@2x.png */,
+				D8A6876316FD41E7005245C8 /* 5搜索ico选中@2x.png */,
+				D8A6876416FD41E7005245C8 /* 5天天相亲ico未选中@2x.png */,
+				D8A6876516FD41E7005245C8 /* 5天天相亲ico选中@2x.png */,
+				D8A6876616FD41E7005245C8 /* 5头像位置背景@2x.png */,
+				D8A6876716FD41E7005245C8 /* 5推荐ico未选中@2x.png */,
+				D8A6876816FD41E7005245C8 /* 5推荐ico选中@2x.png */,
+				D8A6876916FD41E7005245C8 /* 5消息ico未选中@2x.png */,
+				D8A6876A16FD41E7005245C8 /* 5消息ico选中@2x.png */,
+				D8A6876B16FD41E7005245C8 /* 5一站式服务ico未选中@2x.png */,
+				D8A6876C16FD41E7005245C8 /* 5一站式服务ico选中@2x.png */,
+				D8A6876D16FD41E7005245C8 /* 5暂无照片头像@2x.png */,
+				D8A6876E16FD41E7005245C8 /* 6距离图标@2x.png */,
+				D8A6876F16FD41E7005245C8 /* 7标题背景@2x.png */,
+				D8A6877016FD41E7005245C8 /* 7关注@2x.png */,
+				D8A6877116FD41E7005245C8 /* 7开通会员服务可见图标@2x.png */,
+				D8A6877216FD41E7005245C8 /* 7图片背景@2x.png */,
+				D8A6877316FD41E7005245C8 /* 7推荐@2x.png */,
+				D8A6877416FD41E7005245C8 /* 18搜索右上方按钮@2x.png */,
+				D8A6877516FD41E7005245C8 /* 问候@2x.png */,
+				D8A6877616FD41E7005245C8 /* 写信@2x.png */,
 				5AD6531216F4485200FD80D8 /* UserGuidImage */,
 				5AD6533016F4BF1F00FD80D8 /* navbkimg.png */,
 				5AD6533116F4BF1F00FD80D8 /* navbkimg@2x.png */,
@@ -1032,6 +1161,49 @@
 				5AD6533716F4BF4E00FD80D8 /* backbtn@2x.png in Resources */,
 				5AF21B4F16F8581000EEB6EA /* BSUserInfoViewController.xib in Resources */,
 				5AAE6E4F16FAAF79006FDFB7 /* area.plist in Resources */,
+				D8A6877716FD41E7005245C8 /* 1背景+logo@2x.png in Resources */,
+				D8A6877816FD41E7005245C8 /* 1登录背景@2x.png in Resources */,
+				D8A6877916FD41E7005245C8 /* 1复选框未选中@2x.png in Resources */,
+				D8A6877A16FD41E7005245C8 /* 1复选框选中@2x.png in Resources */,
+				D8A6877B16FD41E7005245C8 /* 1输入框背景@2x.png in Resources */,
+				D8A6877C16FD41E7005245C8 /* 1输入框背景2@2x.png in Resources */,
+				D8A6877D16FD41E7005245C8 /* 2顶部条状背景@2x.png in Resources */,
+				D8A6877E16FD41E7005245C8 /* 2输入框背景@2x.png in Resources */,
+				D8A6877F16FD41E7005245C8 /* 2下一步背景@2x.png in Resources */,
+				D8A6878016FD41E7005245C8 /* 2向左返回箭头@2x.png in Resources */,
+				D8A6878116FD41E7005245C8 /* 3右箭头@2x.png in Resources */,
+				D8A6878216FD41E7005245C8 /* 4倒计时按钮@2x.png in Resources */,
+				D8A6878316FD41E7005245C8 /* 4输入框@2x.png in Resources */,
+				D8A6878416FD41E7005245C8 /* 5菜单列表图片@2x.png in Resources */,
+				D8A6878516FD41E7005245C8 /* 5购买ico未选中@2x.png in Resources */,
+				D8A6878616FD41E7005245C8 /* 5购买ico选中@2x.png in Resources */,
+				D8A6878716FD41E7005245C8 /* 5红娘ico未选中@2x.png in Resources */,
+				D8A6878816FD41E7005245C8 /* 5红娘ico选中@2x.png in Resources */,
+				D8A6878916FD41E7005245C8 /* 5其他选项未选中背景@2x.png in Resources */,
+				D8A6878A16FD41E7005245C8 /* 5其他选项选中背景@2x.png in Resources */,
+				D8A6878B16FD41E7005245C8 /* 5说说ico未选中@2x.png in Resources */,
+				D8A6878C16FD41E7005245C8 /* 5说说ico选中@2x.png in Resources */,
+				D8A6878D16FD41E7005245C8 /* 5搜索ico未选中@2x.png in Resources */,
+				D8A6878E16FD41E7005245C8 /* 5搜索ico选中@2x.png in Resources */,
+				D8A6878F16FD41E7005245C8 /* 5天天相亲ico未选中@2x.png in Resources */,
+				D8A6879016FD41E7005245C8 /* 5天天相亲ico选中@2x.png in Resources */,
+				D8A6879116FD41E7005245C8 /* 5头像位置背景@2x.png in Resources */,
+				D8A6879216FD41E7005245C8 /* 5推荐ico未选中@2x.png in Resources */,
+				D8A6879316FD41E7005245C8 /* 5推荐ico选中@2x.png in Resources */,
+				D8A6879416FD41E7005245C8 /* 5消息ico未选中@2x.png in Resources */,
+				D8A6879516FD41E7005245C8 /* 5消息ico选中@2x.png in Resources */,
+				D8A6879616FD41E7005245C8 /* 5一站式服务ico未选中@2x.png in Resources */,
+				D8A6879716FD41E7005245C8 /* 5一站式服务ico选中@2x.png in Resources */,
+				D8A6879816FD41E7005245C8 /* 5暂无照片头像@2x.png in Resources */,
+				D8A6879916FD41E7005245C8 /* 6距离图标@2x.png in Resources */,
+				D8A6879A16FD41E7005245C8 /* 7标题背景@2x.png in Resources */,
+				D8A6879B16FD41E7005245C8 /* 7关注@2x.png in Resources */,
+				D8A6879C16FD41E7005245C8 /* 7开通会员服务可见图标@2x.png in Resources */,
+				D8A6879D16FD41E7005245C8 /* 7图片背景@2x.png in Resources */,
+				D8A6879E16FD41E7005245C8 /* 7推荐@2x.png in Resources */,
+				D8A6879F16FD41E7005245C8 /* 18搜索右上方按钮@2x.png in Resources */,
+				D8A687A016FD41E7005245C8 /* 问候@2x.png in Resources */,
+				D8A687A116FD41E7005245C8 /* 写信@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
