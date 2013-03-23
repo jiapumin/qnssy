@@ -36,6 +36,8 @@
     isTextFieldMoved = NO;
     [self configLoginBackgroundView];
     [self hiddenKeyBoardFromView];
+//    
+//    [self.registerButton addTarget:self action:@selector(toRegister:) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void) configLoginBackgroundView {

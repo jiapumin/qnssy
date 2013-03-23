@@ -145,6 +145,13 @@
         [section7 addElement:moneyElement];
         [section8 addElement:heightElement];
         
+        [nickEntry release];
+        [sexEntry release];
+        [birthdayPicker release];
+        [eduElement release];
+        [moneyElement release];
+        [heightElement release];
+        
         [self.root addSection:section];
         [self.root addSection:section2];
         [self.root addSection:section3];
@@ -153,6 +160,15 @@
         [self.root addSection:section6];
         [self.root addSection:section7];
         [self.root addSection:section8];
+        
+        [section release];
+        [section2 release];
+        [section3 release];
+        [section4 release];
+        [section5 release];
+        [section6 release];
+        [section7 release];
+        [section8 release];
     }
     return self;
 }

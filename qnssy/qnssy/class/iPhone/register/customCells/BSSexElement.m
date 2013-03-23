@@ -45,10 +45,10 @@
     
     UISegmentedControl *control = [[UISegmentedControl alloc] initWithItems:item];
     [control addTarget:self action:@selector(handleSegmentedControlValueChanged:) forControlEvents:UIControlEventValueChanged];
-    frame.origin.x = frame.size.width - 100 - 10;
-    frame.size.width = 100;
-    frame.origin.y = 5;
-    frame.size.height -= 10;
+    frame.origin.x = frame.size.width - 90 - 10;
+    frame.size.width = 90;
+    frame.origin.y = 8;
+    frame.size.height -= 14;
     control.frame = frame;
     control.autoresizingMask = UIViewAutoresizingFlexibleWidth;
     control.segmentedControlStyle = UISegmentedControlStylePlain;
@@ -56,6 +56,9 @@
     control.tag = 4321;
     [container addSubview:title];
     [container addSubview:control];
+    [title release];
+    [control release];
+    [container release];
     return cell;
 }
 
