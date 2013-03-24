@@ -38,8 +38,8 @@
     [[BSContainer instance].serviceAgent callServletWithObject:self
                                                    requestDict:vo.mReqDic
                                                         target:self
-                                               successCallBack:@selector(loginSucceess: data:)
-                                                  failCallBack:@selector(loginFailed: data:)];
+                                               successCallBack:@selector(loginSucceess:data:)
+                                                  failCallBack:@selector(loginFailed:data:)];
     
     [vo release];
 }

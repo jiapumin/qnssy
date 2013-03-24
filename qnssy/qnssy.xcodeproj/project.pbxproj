@@ -201,6 +201,9 @@
 		D8F02A5516FD8F660023FB0A /* 26红娘服务按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F02A3616FD8F660023FB0A /* 26红娘服务按钮@2x.png */; };
 		D8F02A5616FD8F660023FB0A /* 28签到背景@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F02A3716FD8F660023FB0A /* 28签到背景@2x.png */; };
 		D8F02A5716FD8F660023FB0A /* 28设置按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F02A3816FD8F660023FB0A /* 28设置按钮@2x.png */; };
+		D8FE147616FEA283006405F1 /* SignInRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE147516FEA283006405F1 /* SignInRequestVo.m */; };
+		D8FE147B16FEA5E4006405F1 /* BSMyInfoTableCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE147816FEA5E3006405F1 /* BSMyInfoTableCell_iPhone.m */; };
+		D8FE147C16FEA5E4006405F1 /* BSMyInfoTableCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FE147916FEA5E3006405F1 /* BSMyInfoTableCell_iPhone.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -498,6 +501,11 @@
 		D8F02A3616FD8F660023FB0A /* 26红娘服务按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "26红娘服务按钮@2x.png"; sourceTree = "<group>"; };
 		D8F02A3716FD8F660023FB0A /* 28签到背景@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "28签到背景@2x.png"; sourceTree = "<group>"; };
 		D8F02A3816FD8F660023FB0A /* 28设置按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "28设置按钮@2x.png"; sourceTree = "<group>"; };
+		D8FE147416FEA283006405F1 /* SignInRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInRequestVo.h; sourceTree = "<group>"; };
+		D8FE147516FEA283006405F1 /* SignInRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInRequestVo.m; sourceTree = "<group>"; };
+		D8FE147716FEA5E2006405F1 /* BSMyInfoTableCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMyInfoTableCell_iPhone.h; sourceTree = "<group>"; };
+		D8FE147816FEA5E3006405F1 /* BSMyInfoTableCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMyInfoTableCell_iPhone.m; sourceTree = "<group>"; };
+		D8FE147916FEA5E3006405F1 /* BSMyInfoTableCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMyInfoTableCell_iPhone.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -741,6 +749,10 @@
 		D87A052316EF68A50052328E /* MyInfo */ = {
 			isa = PBXGroup;
 			children = (
+				D8FE147716FEA5E2006405F1 /* BSMyInfoTableCell_iPhone.h */,
+				D8FE147816FEA5E3006405F1 /* BSMyInfoTableCell_iPhone.m */,
+				D8FE147916FEA5E3006405F1 /* BSMyInfoTableCell_iPhone.xib */,
+				D8FE147A16FEA5E4006405F1 /* subView */,
 				D87A055C16EF6D3C0052328E /* BSMyInfoViewController_iPhone.h */,
 				D87A055D16EF6D3C0052328E /* BSMyInfoViewController_iPhone.m */,
 				D87A055E16EF6D3C0052328E /* BSMyInfoViewController_iPhone.xib */,
@@ -1147,6 +1159,7 @@
 		D8CA7D9116F4B15E00B4CE67 /* request */ = {
 			isa = PBXGroup;
 			children = (
+				D8FE147316FEA282006405F1 /* SignIn */,
 				D8CA7D9716F4B29400B4CE67 /* LoginRequestVo.h */,
 				D8CA7D9816F4B29400B4CE67 /* LoginRequestVo.m */,
 				D8CA7D9416F4B19E00B4CE67 /* SuperRequestVo.h */,
@@ -1171,6 +1184,22 @@
 				D8CEEF5616F8C15E00E7C63F /* libQuickDialog.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D8FE147316FEA282006405F1 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				D8FE147416FEA283006405F1 /* SignInRequestVo.h */,
+				D8FE147516FEA283006405F1 /* SignInRequestVo.m */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		D8FE147A16FEA5E4006405F1 /* subView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = subView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1363,6 +1392,7 @@
 				D8F02A5616FD8F660023FB0A /* 28签到背景@2x.png in Resources */,
 				D8F02A5716FD8F660023FB0A /* 28设置按钮@2x.png in Resources */,
 				5ACDD68116FDB67A00D2885F /* BSUserRegisterStepOneViewController.xib in Resources */,
+				D8FE147C16FEA5E4006405F1 /* BSMyInfoTableCell_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1436,6 +1466,8 @@
 				D8A687A516FD4EE9005245C8 /* BSRootLeftTableCell_iPhone.m in Sources */,
 				D8A687B016FD6465005245C8 /* BSOnePackageServiceViewController_iPhone.m in Sources */,
 				D8A687B416FD85F5005245C8 /* UserInfo.m in Sources */,
+				D8FE147616FEA283006405F1 /* SignInRequestVo.m in Sources */,
+				D8FE147B16FEA5E4006405F1 /* BSMyInfoTableCell_iPhone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

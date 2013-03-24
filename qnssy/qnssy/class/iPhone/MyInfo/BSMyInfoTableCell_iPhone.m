@@ -6,9 +6,9 @@
 //  Copyright (c) 2012年 baosight. All rights reserved.
 //
 
-#import "BSRootLeftTableCell_iPhone.h"
+#import "BSMyInfoTableCell_iPhone.h"
 
-@implementation BSRootLeftTableCell_iPhone
+@implementation BSMyInfoTableCell_iPhone
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event{
     
@@ -26,7 +26,6 @@
     self.menuLabel.textColor = [UIColor blackColor];
     [super touchesEnded:touches withEvent:event];
 }
-
 - (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event{
     self.bgImage.image = [UIImage imageNamed:self.noSelectedBgImageName];
     self.leftImage.image = [UIImage imageNamed:self.noSelectedLeftImageName];

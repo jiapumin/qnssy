@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BSMyInfoViewController_iPhone : BSSuperCentreViewController_iPhone
+@interface BSMyInfoViewController_iPhone : BSSuperCentreViewController_iPhone<UITableViewDataSource,UITableViewDelegate>
 @property (retain, nonatomic) IBOutlet UIImageView *testImgeView;
+@property (retain, nonatomic) IBOutlet UIImageView *headImage;
+@property (retain, nonatomic) IBOutlet UILabel *nickname;
+@property (retain, nonatomic) IBOutlet UILabel *myInfo;
+@property (retain, nonatomic) IBOutlet UITableView *contextTableView;
+
+@property (retain, nonatomic) NSArray *textNameArrays;
+@property (retain, nonatomic) NSArray *noSelectedLeftImageArrays;
+@property (retain, nonatomic) NSArray *selectedLeftImageArrays;
+
+- (IBAction)clickRegister:(id)sender;
 
 @end
