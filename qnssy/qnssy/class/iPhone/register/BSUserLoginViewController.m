@@ -41,16 +41,7 @@
     self.userPassword.delegate = self;
     self.userPassword.secureTextEntry = YES;
     isTextFieldMoved = NO;
-//    [self configLoginBackgroundView];
-//    [self hiddenKeyBoardFromView];
-//
-//    [self.registerButton addTarget:self action:@selector(toRegister:) forControlEvents:UIControlEventTouchUpInside];
-//    self.userAccount.delegate  = self;
-//    self.userPassword.delegate = self;
-//    self.userPassword.secureTextEntry = YES;
-//    isTextFieldMoved = NO;
-//    [self configLoginBackgroundView];
-//    [self hiddenKeyBoardFromView];
+    [self configLoginBackgroundView];
     //隐藏键盘处理
     CGRect contentRect = CGRectZero;
     for ( UIView *subview in self.scrollView.subviews ) {
@@ -123,59 +114,14 @@
     
 }
 
-//- (void) configLoginBackgroundView {
-//    CALayer *layer = self.loginBackgroundView.layer;
-//    layer.cornerRadius = 8.0;
-//    UIColor *color = [UIColor colorWithRed:0.843 green:0.027 blue:0.16 alpha:1];
-//    CGColorRef colorref = [color CGColor];
-//    layer.borderColor = colorref;
-//    layer.borderWidth = 2.0;
-//}
-
-//- (void) hiddenKeyBoardFromView{
-//    self.view.userInteractionEnabled = YES;
-////    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenKeyBoard:)];
-////    [self.view addGestureRecognizer:tapGesture];
-//}
-
-//- (void) hiddenKeyBoard:(id) sender{
-//    [self.userAccount resignFirstResponder];
-//    [self.userPassword resignFirstResponder];
-//}
-
-#pragma mark - TextField Delegate
-//
-//- (void)textFieldDidBeginEditing:(UITextField *)textField {
-//    if (isTextFieldMoved == NO) {
-//        NSTimeInterval animationDuration = 0.5f;
-//        CGRect frame = self.view.frame;
-//        frame.origin.y -=216;
-//        frame.size.height +=216;
-//        self.view.frame = frame;
-//        [UIView beginAnimations:@"ResizeView" context:nil];
-//        [UIView setAnimationDuration:animationDuration];
-//        self.view.frame = frame;
-//        [UIView commitAnimations];
-//    }
-//    isTextFieldMoved = YES;
-//}
-//
-//- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-//    if (isTextFieldMoved == YES) {
-//        NSTimeInterval animationDuration = 0.5f;
-//        CGRect frame = self.view.frame;
-//        frame.origin.y +=216;
-//        frame.size. height -=216;
-//        self.view.frame = frame;
-//        [UIView beginAnimations:@"ResizeView" context:nil];
-//        [UIView setAnimationDuration:animationDuration];
-//        self.view.frame = frame;
-//        [UIView commitAnimations];
-//        [textField resignFirstResponder];
-//    }
-//    isTextFieldMoved = NO;
-//    return YES;
-//}
+- (void) configLoginBackgroundView {
+    CALayer *layer = self.loginBackgroundView.layer;
+    layer.cornerRadius = 8.0;
+    UIColor *color = [UIColor colorWithRed:0.843 green:0.027 blue:0.16 alpha:1];
+    CGColorRef colorref = [color CGColor];
+    layer.borderColor = colorref;
+    layer.borderWidth = 2.0;
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -187,7 +133,6 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 - (void)dealloc {
-//    [_userLogoImage_1 release];
     [_loginBackgroundView release];
     [_userAccount release];
     [_userPassword release];
@@ -197,7 +142,6 @@
     [super dealloc];
 }
 - (void)viewDidUnload {
-//    [self setUserLogoImage_1:nil];
     [self setLoginBackgroundView:nil];
     [self setUserAccount:nil];
     [self setUserPassword:nil];
@@ -224,7 +168,29 @@
     [_tencentOAuth authorize:_permissions inSafari:NO];
 }
 
+#pragma mark - 腾讯登录Delegate
 
+- (void)tencentDidLogin {
+    if (_tencentOAuth.accessToken && 0 != [_tencentOAuth.accessToken length]) {
+        // 记录登录用户的OpenID、Token以及过期时间
+        //_labelAccessToken.text = _tencentOAuth.accessToken;
+        app.window.rootViewController = app.revealSideViewController;
+    } else {
+        //@"登录不成功 没有获取accesstoken";
+    }
+}
+
+-(void)tencentDidNotLogin:(BOOL)cancelled {
+    if (cancelled)  {
+        //_labelTitle.text = @"用户取消登录";
+    } else {
+        //_labelTitle.text = @"登录失败";
+    }
+}
+
+-(void)tencentDidNotNetWork {
+    //_labelTitle.text=@"无网络连接，请设置网络";
+}
 
 #pragma mark - 服务器回调
 - (void)loginSucceess:(id)sender data:(NSDictionary *)dic {
