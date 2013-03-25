@@ -192,6 +192,21 @@
     //_labelTitle.text=@"无网络连接，请设置网络";
 }
 
+/**
+ * Get user info.
+ */
+- (void)onClickGetUserInfo {
+//	_labelTitle.text = @"开始获取用户基本信息";
+	if(![_tencentOAuth getUserInfo]){
+        [self showInvalidTokenOrOpenIDMessage];
+    }
+}
+
+- (void)showInvalidTokenOrOpenIDMessage{
+    UIAlertView *alert = [[[UIAlertView alloc]initWithTitle:@"api调用失败" message:@"可能授权已过期，请重新获取" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] autorelease];
+    [alert show];
+}
+
 #pragma mark - 服务器回调
 - (void)loginSucceess:(id)sender data:(NSDictionary *)dic {
     LoginResponseVo *vo = [[LoginResponseVo alloc] initWithDic:dic];
