@@ -10,6 +10,6 @@
 
 @interface BSSuperCentreViewController_iPhone : UIViewController
 
-@property (retain, nonatomic)  UILabel *titleLabel;
+//@property (retain, nonatomic)  UILabel *titleLabel;
 
 @end

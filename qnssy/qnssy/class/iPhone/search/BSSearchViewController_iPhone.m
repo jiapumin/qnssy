@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self update];
+//    [self update];
 }
 - (void)update{
     //测试上传图片

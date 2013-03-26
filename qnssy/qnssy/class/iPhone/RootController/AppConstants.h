@@ -45,7 +45,7 @@
 #define WIDTH_IPHONE_VERTIVAL          320.0       //竖屏宽
 #define HEIGHT_IPHONE_VERTIVAL         480.0      //竖屏高
 
-
+#define publicColor [UIColor colorWithRed:247.f/255 green:232.f/255 blue:232.f/255 alpha:1.f]
 //同步定时器的时间
 #define SYS_TIME 60
 

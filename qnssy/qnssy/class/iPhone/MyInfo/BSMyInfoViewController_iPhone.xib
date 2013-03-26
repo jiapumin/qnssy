@@ -41,7 +41,7 @@
 					<object class="IBUIImageView" id="814350677">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">290</int>
-						<string key="NSFrameSize">{320, 166}</string>
+						<string key="NSFrameSize">{320, 147}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="881252290"/>
@@ -50,13 +50,13 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
 							<string key="NSClassName">NSImage</string>
-							<string key="NSResourceName">1背景+logo@2x.png</string>
+							<string key="NSResourceName">28头像背景图@2x.png</string>
 						</object>
 					</object>
 					<object class="IBUIImageView" id="881252290">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{116, 5}, {60, 60}}</string>
+						<string key="NSFrame">{{123, 5}, {60, 60}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="766926109"/>
@@ -71,7 +71,7 @@
 					<object class="IBUITableView" id="374262992">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
-						<string key="NSFrame">{{0, 165}, {320, 295}}</string>
+						<string key="NSFrame">{{0, 147}, {320, 313}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -93,7 +93,7 @@
 					<object class="IBUILabel" id="766926109">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{90, 73}, {126, 21}}</string>
+						<string key="NSFrame">{{90, 67}, {126, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="678424577"/>
@@ -111,13 +111,14 @@
 						</object>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="556098715">
+						<int key="IBUITextAlignment">1</int>
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="431921906">
 							<int key="type">1</int>
-							<double key="pointSize">17</double>
+							<double key="pointSize">14</double>
 						</object>
-						<object class="NSFont" key="IBUIFont" id="882796229">
+						<object class="NSFont" key="IBUIFont" id="361591632">
 							<string key="NSName">Helvetica</string>
-							<double key="NSSize">17</double>
+							<double key="NSSize">14</double>
 							<int key="NSfFlags">16</int>
 						</object>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
@@ -125,7 +126,7 @@
 					<object class="IBUILabel" id="678424577">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{61, 102}, {184, 21}}</string>
+						<string key="NSFrame">{{61, 90}, {184, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="979708381"/>
@@ -139,14 +140,15 @@
 						<reference key="IBUITextColor" ref="301406398"/>
 						<nil key="IBUIHighlightedColor"/>
 						<int key="IBUIBaselineAdjustment">0</int>
-						<reference key="IBUIFontDescription" ref="556098715"/>
-						<reference key="IBUIFont" ref="882796229"/>
+						<int key="IBUITextAlignment">1</int>
+						<reference key="IBUIFontDescription" ref="431921906"/>
+						<reference key="IBUIFont" ref="361591632"/>
 						<bool key="IBUIAdjustsFontSizeToFit">NO</bool>
 					</object>
 					<object class="IBUIButton" id="979708381">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{116, 127}, {60, 25}}</string>
+						<string key="NSFrame">{{130, 114}, {60, 25}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="374262992"/>
@@ -281,8 +283,8 @@
 							<reference ref="814350677"/>
 							<reference ref="374262992"/>
 							<reference ref="881252290"/>
-							<reference ref="766926109"/>
 							<reference ref="678424577"/>
+							<reference ref="766926109"/>
 							<reference ref="979708381"/>
 						</array>
 						<reference key="parent" ref="0"/>
@@ -414,7 +416,7 @@
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
 		<dictionary class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
-			<string key="1背景+logo@2x.png">{640, 530}</string>
+			<string key="28头像背景图@2x.png">{640, 340}</string>
 			<string key="28签到背景@2x.png">{117, 43}</string>
 			<string key="5暂无照片头像@2x.png">{137, 139}</string>
 		</dictionary>

@@ -10,6 +10,7 @@
 #import "UserInfo.h"
 #import "SignInRequestVo.h"
 #import "BSMyInfoTableCell_iPhone.h"
+#import "BSSettingViewController_iPhone.h"
 
 @interface BSMyInfoViewController_iPhone ()
 
@@ -41,6 +42,18 @@
         [self requestMyImage:myUserInfo.imageUrl];
     }
     
+    //右上角设置按钮
+    UIButton *topRightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    CGRect btnFrame = CGRectMake(0.0, 0.0, 40.0, 27.0);
+    topRightButton.frame =btnFrame;
+    [topRightButton setImage:[UIImage imageNamed:@"28设置按钮"]
+                   forState:UIControlStateNormal];
+    [topRightButton addTarget:self
+                      action:@selector(rightSetting)
+            forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:topRightButton] ;
+    
+    self.title = @"我的资料";
     
 }
 
@@ -69,17 +82,17 @@
     [self setContextTableView:nil];
     [super viewDidUnload];
 }
-#pragma mark - 请求图片
+#pragma mark - 初始化数据
 - (void)initData{
     self.textNameArrays = [NSArray arrayWithObjects:
                            [NSArray arrayWithObjects:@"我的说说",@"我的照片",@"我的关注",@"看过我的", nil],
                            [NSArray arrayWithObjects:@"基本资料",@"高级资料",@"择偶条件",@"自我介绍", nil], nil];
     self.selectedLeftImageArrays =  [NSArray arrayWithObjects:
-                                    [NSArray arrayWithObjects:@"5说说ico选中",@"5说说ico选中",@"5说说ico选中",@"5说说ico选中", nil],
-                                    [NSArray arrayWithObjects:@"5说说ico选中",@"5说说ico选中",@"5说说ico选中",@"5说说ico选中", nil], nil];
+                                    [NSArray arrayWithObjects:@"28我的说说",@"28我的照片",@"28我的关注",@"28看过我的", nil],
+                                    [NSArray arrayWithObjects:@"28基本资料",@"28高级资料",@"28择偶条件",@"28自我介绍", nil], nil];
     self.noSelectedLeftImageArrays = [NSArray arrayWithObjects:
-                                     [NSArray arrayWithObjects:@"5说说ico未选中",@"5说说ico未选中",@"5说说ico未选中",@"5说说ico未选中", nil],
-                                     [NSArray arrayWithObjects:@"5说说ico未选中",@"5说说ico未选中",@"5说说ico未选中",@"5说说ico未选中", nil], nil];
+                                      [NSArray arrayWithObjects:@"28我的说说",@"28我的照片",@"28我的关注",@"28看过我的", nil],
+                                      [NSArray arrayWithObjects:@"28基本资料",@"28高级资料",@"28择偶条件",@"28自我介绍", nil], nil];
 }
 #pragma mark - 请求图片
 - (void)requestMyImage:(NSString *)imageUrl{
@@ -168,6 +181,11 @@
     [vo release];
     
 }
+- (void)rightSetting{
+    
+    BSSettingViewController_iPhone *svc = [[[BSSettingViewController_iPhone alloc] initWithNibName:@"BSSettingViewController_iPhone" bundle:nil] autorelease];
+    [self.navigationController pushViewController:svc animated:YES];
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -193,9 +211,13 @@
     
     cell.selectedLeftImageName =[[self.selectedLeftImageArrays objectAtIndex:indexPath.section] objectAtIndex:indexPath.row];
     
-    cell.noSelectedBgImageName = @"5其他选项未选中背景";
+//    cell.noSelectedBgImageName = @"5其他选项未选中背景";
+//    
+//    cell.selectedBgImageName = @"5其他选项选中背景";
     
-    cell.selectedBgImageName = @"5其他选项选中背景";
+    cell.noSelectedBgImageName = @"";
+    
+    cell.selectedBgImageName =  @"";
     
     cell.leftImage.image = [UIImage imageNamed:cell.noSelectedLeftImageName];
     
@@ -247,6 +269,7 @@
 - (void)signInSucceess:(id)sender data:(NSDictionary *)dic {
     
 }
+
 
 - (void)signInFailed:(id)sender data:(NSDictionary *)dic {
 
