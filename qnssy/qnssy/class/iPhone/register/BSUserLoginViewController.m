@@ -8,11 +8,10 @@
 
 #import "BSUserLoginViewController.h"
 #import "BSUserRegisterStepOneViewController.h"
-
 #import "TPKeyboardAvoidingScrollView.h"
-
 #import "LoginRequestVo.h"
 #import "LoginResponseVo.h"
+#import "BSBindUserAccountViewController.h"
 
 @interface BSUserLoginViewController (){
     BOOL isTextFieldMoved;
@@ -36,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     // Do any additional setup after loading the view from its nib.
     self.userAccount.delegate  = self;
     self.userPassword.delegate = self;
@@ -93,16 +93,30 @@
 - (void)loginRequestData{
     [progressHUD show:YES];
     
-    //请求服务器
-    LoginRequestVo *vo = [[LoginRequestVo alloc] initWithUsername:@"jiapumin@163.com" password:@"jiapumin"];
-    
-    [[BSContainer instance].serviceAgent callServletWithObject:self
-                                                   requestDict:vo.mReqDic
-                                                        target:self
-                                               successCallBack:@selector(loginSucceess:data:)
-                                                  failCallBack:@selector(loginFailed:data:)];
-    
-    [vo release];
+    NSString *userName = self.userAccount.text;
+    NSString *userPassword = self.userPassword.text;
+    if (userName == nil || [userName isEqualToString:@""]) {
+        UIAlertView *alterView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请填写用户名" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alterView show];
+        [alterView release];
+        [progressHUD hide:YES];
+    } else if (userPassword == nil || [userPassword isEqualToString:@""]) {
+        UIAlertView *alterView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请填写密码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alterView show];
+        [alterView release];
+        [progressHUD hide:YES];
+    } else {
+        //请求服务器
+        LoginRequestVo *vo = [[LoginRequestVo alloc] initWithUsername:userName password:userPassword];
+        
+        [[BSContainer instance].serviceAgent callServletWithObject:self
+                                                       requestDict:vo.mReqDic
+                                                            target:self
+                                                   successCallBack:@selector(loginSucceess:data:)
+                                                      failCallBack:@selector(loginFailed:data:)];
+        
+        [vo release];
+    }
 }
 - (void)initHUDView{
     //-------加载框
@@ -159,11 +173,14 @@
     [stepOne release];
 }
 
+#pragma mark - 登录事件
 - (IBAction)clickLoginButton:(id)sender {
-//    [self loginRequestData];
-    app.window.rootViewController = app.revealSideViewController;
+    [self loginRequestData];
+    [self.userAccount resignFirstResponder];
+    [self.userPassword resignFirstResponder];
 }
 
+#pragma mark - QQ登录
 - (IBAction)clickQQLoginButton:(id)sender {
     [_tencentOAuth authorize:_permissions inSafari:NO];
 }
@@ -174,7 +191,11 @@
     if (_tencentOAuth.accessToken && 0 != [_tencentOAuth.accessToken length]) {
         // 记录登录用户的OpenID、Token以及过期时间
         //_labelAccessToken.text = _tencentOAuth.accessToken;
-        app.window.rootViewController = app.revealSideViewController;
+        QRootElement *root = [[QRootElement alloc] init];
+        root.presentationMode = QPresentationModeNormal;
+        BSBindUserAccountViewController *bindUserAccountVC = [[BSBindUserAccountViewController alloc] initWithNibName:@"BSBindUserAccountViewController" bundle:nil];
+        [self.navigationController pushViewController:bindUserAccountVC animated:YES];
+        [bindUserAccountVC release];
     } else {
         //@"登录不成功 没有获取accesstoken";
     }

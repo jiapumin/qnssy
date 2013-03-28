@@ -21,7 +21,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.validateNumber = [[UITextField alloc] initWithFrame:CGRectMake(20, 104, 170, 40)];
+        self.validateNumber = [[UITextField alloc] initWithFrame:CGRectMake(20, 97, 170, 40)];
         self.validateNumber.borderStyle = UITextBorderStyleRoundedRect;
         self.validateNumber.placeholder = @"请输入验证码";
         self.validateNumber.keyboardType = UIKeyboardTypePhonePad;
@@ -91,7 +91,6 @@
     QRootElement *root = [[QRootElement alloc] init];
     
     BSUserInfoViewController *userInfoController = (BSUserInfoViewController *)[[BSUserInfoViewController alloc] initWithRoot:root];
-//    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:userInfoController];
     [self.navigationController pushViewController:userInfoController animated:YES];
 }
 - (IBAction)clickBackButton:(id)sender {
