@@ -35,7 +35,7 @@
     
     self.loginNav = [[UINavigationController alloc] initWithRootViewController:userLoginView];
 
-    self.window.backgroundColor = [UIColor colorWithRed:247.f/255 green:232.f/255 blue:232.f/255 alpha:1.f];
+    self.window.backgroundColor = publicColor;
 
 
     //增加标识，用于判断是否是第一次启动应用...

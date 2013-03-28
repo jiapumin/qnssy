@@ -17,8 +17,6 @@
 @property (retain, nonatomic) NSMutableArray *vcNameArrays;
 
 @property (retain, nonatomic) NSMutableArray *noSelectedLeftImageArrays;
-- (IBAction)clickLogOut:(id)sender;
-
 
 @property (retain, nonatomic) NSMutableArray *selectedLeftImageArrays;
 
@@ -28,6 +26,7 @@
 
 @property (retain, nonatomic) IBOutlet UIToolbar *toolBar;
 
+- (IBAction)clickLogOut:(id)sender;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil
                   vcs:(NSMutableArray *)vcs

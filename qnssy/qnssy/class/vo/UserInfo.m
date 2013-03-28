@@ -11,6 +11,10 @@
 @implementation UserInfo
 
 - (void)dealloc{
+    [_nickName release];
+    [_age release];
+    [_address release];
+    [_imageUrl release];
     [_userId release];
     [_vipLevel release];
     [super dealloc];

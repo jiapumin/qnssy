@@ -17,11 +17,11 @@
 
 
 - (void)dealloc {
-    [_titleLabel release];
+//    [_titleLabel release];
     [super dealloc];
 }
 - (void)viewDidUnload{
-    [self setTitleLabel:nil];
+//    [self setTitleLabel:nil];
     [super viewDidUnload];
     
 }
@@ -41,7 +41,7 @@
     NSMutableArray *itemArray = [[NSMutableArray alloc] init];
     UIButton *topLeftButton = [UIButton buttonWithType:UIButtonTypeCustom];
     //按钮大小
-    CGRect btnFrame = CGRectMake(5.0, 7.0, 28.0, 18.0);
+    CGRect btnFrame = CGRectMake(0.0, 4.0, 29.0, 25.0);
     topLeftButton.frame =btnFrame;
     //判断当前页面是否是根目录
     if ([[self.navigationController.viewControllers objectAtIndex:0]  isEqual:self]) {
@@ -62,15 +62,8 @@
                        forState:UIControlStateNormal];
         
         [topLeftButton addTarget:self
-                          action:@selector(popViewContoller:)
+                          action:@selector(popViewContoller)
                 forControlEvents:UIControlEventTouchUpInside];
-        
-        
-        UIBarButtonItem * topLeftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:topLeftButton];
-        
-        [itemArray addObject:topLeftBarButtonItem];
-        
-        [topLeftBarButtonItem release];
 
     }
     UIBarButtonItem * topLeftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:topLeftButton];
@@ -82,28 +75,28 @@
     
     //设置背景图片
     [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"2顶部条状背景"] forBarMetrics:UIBarMetricsDefault];
-    //头部nav背景
     
-    //自定义头部标题
-    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 150, 33)];
-    
-    titleView.backgroundColor = [UIColor clearColor];
-    
-    self.navigationItem.titleView = titleView;
-    
-    [titleView release];
-    
-    self.titleLabel = [[[UILabel alloc] initWithFrame:CGRectMake(0, 7, 150, 21)] autorelease];
-    
-    [self.navigationItem.titleView addSubview:self.titleLabel];
-    
-    self.titleLabel.backgroundColor = [UIColor clearColor];
-    
-    self.titleLabel.font = [UIFont systemFontOfSize:14];
-    
-    self.titleLabel.textColor = [UIColor whiteColor];
-    
-    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+//    //自定义头部标题
+//    UIView *titleView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 220, 33)];
+//    
+//    titleView.backgroundColor = [UIColor clearColor];
+//    
+//    self.navigationItem.titleView = titleView;
+//    
+//    [titleView release];
+//    
+//    self.titleLabel = [[[UILabel alloc] initWithFrame:CGRectMake(0, 0, 220, 33)] autorelease];
+//    
+//    [self.navigationItem.titleView addSubview:self.titleLabel];
+//    
+//    self.titleLabel.backgroundColor = [UIColor clearColor];
+//    
+//    self.titleLabel.font = [UIFont systemFontOfSize:16];
+//    
+//    self.titleLabel.textColor = [UIColor whiteColor];
+//    
+//    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.view.backgroundColor = publicColor;
     
 }
 
