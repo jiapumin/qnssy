@@ -14,6 +14,8 @@
 @property (retain, nonatomic) UITextField *userPassword;
 @property (retain, nonatomic) IBOutlet UINavigationBar *myNavigationBar;
 @property (retain, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
+@property (retain, nonatomic) IBOutlet UIButton *agreementButton;
+- (IBAction) toggleAgreementButtonStatus:(id) sender;
 - (IBAction)tiaokuanAction:(id)sender;
 - (IBAction)zhengceAction:(id)sender;
 - (IBAction)registerNextAction:(id)sender;

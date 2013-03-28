@@ -12,7 +12,8 @@
 #import "TPKeyboardAvoidingScrollView.h"
 
 @interface BSUserRegisterStepOneViewController (){
-    BOOL isTextFieldMoved;
+//    BOOL isTextFieldMoved;
+    BOOL isAgreement;//是否同意条款协议
 }
 
 @end
@@ -40,6 +41,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    isAgreement = NO;
     
     //隐藏键盘处理
     CGRect contentRect = CGRectZero;
@@ -70,6 +73,18 @@
     
     [self.scrollView addSubview:self.userAccount];
     [self.scrollView addSubview:self.userPassword];
+    [self.userAccount release];
+    [self.userPassword release];
+}
+
+- (IBAction) toggleAgreementButtonStatus:(id) sender {
+    if (!isAgreement) {
+        isAgreement = YES;
+        [self.agreementButton setBackgroundImage:[UIImage imageNamed:@"1复选框选中@2x.png"] forState:UIControlStateNormal];
+    } else {
+        isAgreement = NO;
+        [self.agreementButton setBackgroundImage:[UIImage imageNamed:@"1复选框未选中@2x.png"] forState:UIControlStateNormal];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,6 +98,7 @@
     [_userPassword release];
     [_scrollView release];
     [_myNavigationBar release];
+    [_agreementButton release];
     [super dealloc];
 }
 - (void)viewDidUnload {
@@ -90,6 +106,7 @@
     [self setUserPassword:nil];
     [self setScrollView:nil];
     [self setMyNavigationBar:nil];
+    [self setAgreementButton:nil];
     [super viewDidUnload];
 }
 - (IBAction)tiaokuanAction:(id)sender {
@@ -103,14 +120,33 @@
 }
 
 - (IBAction)registerNextAction:(id)sender {
-    NSString *phoneNumber = self.userAccount.text;
-    BOOL isPhoneNumber = [self isMobileNumber:phoneNumber];
-    if (isPhoneNumber) {
-        BSValidatePhoneNumberViewController *validatePhoneNumber = [[BSValidatePhoneNumberViewController alloc] initWithNibName:@"BSValidatePhoneNumberViewController" bundle:nil];
-        [self.navigationController pushViewController:validatePhoneNumber animated:YES];
-        [validatePhoneNumber release];
+    if (isAgreement) {
+        NSString *phoneNumber = self.userAccount.text;
+        NSString *password = self.userPassword.text;
+        BOOL isPhoneNumber = [self isMobileNumber:phoneNumber];
+        if (phoneNumber == nil || phoneNumber.length<11) {
+            UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"您输入的手机号码不正确" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alter show];
+            [alter release];
+            return;
+        }
+        if (password == nil || password.length < 6 || password.length > 12) {
+            UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"您输入的密码不正确" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alter show];
+            [alter release];
+            return;
+        }
+        if (isPhoneNumber) {
+            BSValidatePhoneNumberViewController *validatePhoneNumber = [[BSValidatePhoneNumberViewController alloc] initWithNibName:@"BSValidatePhoneNumberViewController" bundle:nil];
+            [self.navigationController pushViewController:validatePhoneNumber animated:YES];
+            [validatePhoneNumber release];
+        } else {
+            UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示信息" message:@"请输入正确的手机号码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alter show];
+            [alter release];
+        }
     } else {
-        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示信息" message:@"请输入正确的手机号码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请先同意条款服务" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alter show];
         [alter release];
     }
@@ -164,16 +200,5 @@
         return NO;
     }
 }
-//
-//- (void) hiddenKeyBoardFromView{
-//    self.view.userInteractionEnabled = YES;
-//    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenKeyBoard:)];
-//    [self.view addGestureRecognizer:tapGesture];
-//}
-//
-//- (void) hiddenKeyBoard:(id) sender{
-//    [self.userAccount resignFirstResponder];
-//    [self.userPassword resignFirstResponder];
-//}
 
 @end
