@@ -8,8 +8,9 @@
 
 #import "BSUserRegisterStepOneViewController.h"
 #import "BSValidatePhoneNumberViewController.h"
-
 #import "TPKeyboardAvoidingScrollView.h"
+#import "ValidatePhoneRequestVo.h"
+#import "ValidatePhoneResponseVo.h"
 
 @interface BSUserRegisterStepOneViewController (){
 //    BOOL isTextFieldMoved;
@@ -139,6 +140,15 @@
         if (isPhoneNumber) {
             BSValidatePhoneNumberViewController *validatePhoneNumber = [[BSValidatePhoneNumberViewController alloc] initWithNibName:@"BSValidatePhoneNumberViewController" bundle:nil];
             [self.navigationController pushViewController:validatePhoneNumber animated:YES];
+            
+            ValidatePhoneRequestVo *vo = [[ValidatePhoneRequestVo alloc] initWithPhoneNumAndPassword:phoneNumber password:password];
+            [[BSContainer instance].serviceAgent callServletWithObject:self
+                                                           requestDict:vo.mReqDic
+                                                                target:self
+                                                       successCallBack:@selector(validateSucceess:data:)
+                                                          failCallBack:@selector(validateFailed:data:)];
+            [vo release];
+            
             [validatePhoneNumber release];
         } else {
             UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示信息" message:@"请输入正确的手机号码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
@@ -150,6 +160,17 @@
         [alter show];
         [alter release];
     }
+}
+
+#pragma mark - 服务器回调
+
+- (void) validateSucceess:(id) sender data:(NSDictionary *) dic{
+    ValidatePhoneResponseVo *vo = [[ValidatePhoneResponseVo alloc] initWithDic:dic];
+    
+}
+
+- (void) validateFailed:(id) sender data:(NSDictionary *) dic{
+    NSLog(@"-----  %@",dic);
 }
 
 - (IBAction)clickBackButton:(id)sender {

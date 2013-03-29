@@ -18,6 +18,8 @@
 		5A64EBF716F30BAF00F4E576 /* login_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBF616F30BAF00F4E576 /* login_logo.png */; };
 		5A7891ED170347C800E2B238 /* BSBindUserAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7891EB170347C800E2B238 /* BSBindUserAccountViewController.m */; };
 		5A7891EE170347C800E2B238 /* BSBindUserAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7891EC170347C800E2B238 /* BSBindUserAccountViewController.xib */; };
+		5A7892191704791C00E2B238 /* ValidatePhoneResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7892181704791C00E2B238 /* ValidatePhoneResponseVo.m */; };
+		5A78921D17047B8C00E2B238 /* ValidatePhoneRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A78921C17047B8C00E2B238 /* ValidatePhoneRequestVo.m */; };
 		5AAE6E4F16FAAF79006FDFB7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AAE6E4E16FAAF79006FDFB7 /* area.plist */; };
 		5ABA042316FE03EB0099BA74 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABA042216FE03EB0099BA74 /* TencentOpenAPI.framework */; };
 		5ABA042616FE046C0099BA74 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABA042516FE046C0099BA74 /* libiconv.dylib */; };
@@ -260,6 +262,10 @@
 		5A7891EA170347C800E2B238 /* BSBindUserAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBindUserAccountViewController.h; sourceTree = "<group>"; };
 		5A7891EB170347C800E2B238 /* BSBindUserAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBindUserAccountViewController.m; sourceTree = "<group>"; };
 		5A7891EC170347C800E2B238 /* BSBindUserAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBindUserAccountViewController.xib; sourceTree = "<group>"; };
+		5A7892171704791C00E2B238 /* ValidatePhoneResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidatePhoneResponseVo.h; sourceTree = "<group>"; };
+		5A7892181704791C00E2B238 /* ValidatePhoneResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatePhoneResponseVo.m; sourceTree = "<group>"; };
+		5A78921B17047B8C00E2B238 /* ValidatePhoneRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidatePhoneRequestVo.h; sourceTree = "<group>"; };
+		5A78921C17047B8C00E2B238 /* ValidatePhoneRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatePhoneRequestVo.m; sourceTree = "<group>"; };
 		5AAE6E4E16FAAF79006FDFB7 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		5ABA042216FE03EB0099BA74 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		5ABA042516FE046C0099BA74 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
@@ -1225,6 +1231,8 @@
 				D8CA7D9816F4B29400B4CE67 /* LoginRequestVo.m */,
 				D8CA7D9416F4B19E00B4CE67 /* SuperRequestVo.h */,
 				D8CA7D9516F4B19E00B4CE67 /* SuperRequestVo.m */,
+				5A78921B17047B8C00E2B238 /* ValidatePhoneRequestVo.h */,
+				5A78921C17047B8C00E2B238 /* ValidatePhoneRequestVo.m */,
 			);
 			path = request;
 			sourceTree = "<group>";
@@ -1234,6 +1242,8 @@
 			children = (
 				D8CA7D9B16F4B3FB00B4CE67 /* LoginResponseVo.h */,
 				D8CA7D9A16F4B3FB00B4CE67 /* LoginResponseVo.m */,
+				5A7892171704791C00E2B238 /* ValidatePhoneResponseVo.h */,
+				5A7892181704791C00E2B238 /* ValidatePhoneResponseVo.m */,
 			);
 			path = response;
 			sourceTree = "<group>";
@@ -1546,6 +1556,8 @@
 				D8FE147B16FEA5E4006405F1 /* BSMyInfoTableCell_iPhone.m in Sources */,
 				D8A706B31701031A00B24213 /* BSSettingViewController_iPhone.m in Sources */,
 				D8A706C11701084900B24213 /* BSPublicTableCell_iPhone.m in Sources */,
+				5A7892191704791C00E2B238 /* ValidatePhoneResponseVo.m in Sources */,
+				5A78921D17047B8C00E2B238 /* ValidatePhoneRequestVo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
