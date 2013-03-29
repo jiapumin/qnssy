@@ -16,6 +16,8 @@
 		5A64EBE616F2F93400F4E576 /* BSUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */; };
 		5A64EBED16F3091B00F4E576 /* login_input.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBEC16F3091B00F4E576 /* login_input.png */; };
 		5A64EBF716F30BAF00F4E576 /* login_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBF616F30BAF00F4E576 /* login_logo.png */; };
+		5A7891ED170347C800E2B238 /* BSBindUserAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7891EB170347C800E2B238 /* BSBindUserAccountViewController.m */; };
+		5A7891EE170347C800E2B238 /* BSBindUserAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7891EC170347C800E2B238 /* BSBindUserAccountViewController.xib */; };
 		5AAE6E4F16FAAF79006FDFB7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AAE6E4E16FAAF79006FDFB7 /* area.plist */; };
 		5ABA042316FE03EB0099BA74 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABA042216FE03EB0099BA74 /* TencentOpenAPI.framework */; };
 		5ABA042616FE046C0099BA74 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABA042516FE046C0099BA74 /* libiconv.dylib */; };
@@ -255,6 +257,9 @@
 		5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserLoginViewController.m; sourceTree = "<group>"; };
 		5A64EBEC16F3091B00F4E576 /* login_input.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_input.png; sourceTree = "<group>"; };
 		5A64EBF616F30BAF00F4E576 /* login_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_logo.png; sourceTree = "<group>"; };
+		5A7891EA170347C800E2B238 /* BSBindUserAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBindUserAccountViewController.h; sourceTree = "<group>"; };
+		5A7891EB170347C800E2B238 /* BSBindUserAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBindUserAccountViewController.m; sourceTree = "<group>"; };
+		5A7891EC170347C800E2B238 /* BSBindUserAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBindUserAccountViewController.xib; sourceTree = "<group>"; };
 		5AAE6E4E16FAAF79006FDFB7 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		5ABA042216FE03EB0099BA74 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		5ABA042516FE046C0099BA74 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
@@ -578,8 +583,18 @@
 				5AF21B4B16F8580F00EEB6EA /* BSUserInfoViewController.h */,
 				5AF21B4C16F8581000EEB6EA /* BSUserInfoViewController.m */,
 				5AF21B4D16F8581000EEB6EA /* BSUserInfoViewController.xib */,
+				5A7891EA170347C800E2B238 /* BSBindUserAccountViewController.h */,
+				5A7891EB170347C800E2B238 /* BSBindUserAccountViewController.m */,
+				5A7891EC170347C800E2B238 /* BSBindUserAccountViewController.xib */,
 			);
 			path = register;
+			sourceTree = "<group>";
+		};
+		5ABAC63D16FFF1200028A3ED /* system */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = system;
 			sourceTree = "<group>";
 		};
 		5AD6530816F447BB00FD80D8 /* UserGuid */ = {
@@ -714,6 +729,7 @@
 		D87A051E16EF68A50052328E /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				5ABAC63D16FFF1200028A3ED /* system */,
 				5AD6530816F447BB00FD80D8 /* UserGuid */,
 				5A64EBE216F2F8EF00F4E576 /* register */,
 				D87A055616EF6B660052328E /* LoadView */,
@@ -1439,6 +1455,7 @@
 				D8F02A5616FD8F660023FB0A /* 28签到背景@2x.png in Resources */,
 				D8F02A5716FD8F660023FB0A /* 28设置按钮@2x.png in Resources */,
 				5ACDD68116FDB67A00D2885F /* BSUserRegisterStepOneViewController.xib in Resources */,
+				5A7891EE170347C800E2B238 /* BSBindUserAccountViewController.xib in Resources */,
 				D8FE147C16FEA5E4006405F1 /* BSMyInfoTableCell_iPhone.xib in Resources */,
 				D8A706A71700FF4B00B24213 /* 28高级资料@2x.png in Resources */,
 				D8A706A81700FF4B00B24213 /* 28基本资料@2x.png in Resources */,
@@ -1524,6 +1541,7 @@
 				D8A687A516FD4EE9005245C8 /* BSRootLeftTableCell_iPhone.m in Sources */,
 				D8A687B016FD6465005245C8 /* BSOnePackageServiceViewController_iPhone.m in Sources */,
 				D8A687B416FD85F5005245C8 /* UserInfo.m in Sources */,
+				5A7891ED170347C800E2B238 /* BSBindUserAccountViewController.m in Sources */,
 				D8FE147616FEA283006405F1 /* SignInRequestVo.m in Sources */,
 				D8FE147B16FEA5E4006405F1 /* BSMyInfoTableCell_iPhone.m in Sources */,
 				D8A706B31701031A00B24213 /* BSSettingViewController_iPhone.m in Sources */,

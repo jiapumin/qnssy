@@ -8,11 +8,10 @@
 
 #import "BSUserLoginViewController.h"
 #import "BSUserRegisterStepOneViewController.h"
-
 #import "TPKeyboardAvoidingScrollView.h"
-
 #import "LoginRequestVo.h"
 #import "LoginResponseVo.h"
+#import "BSBindUserAccountViewController.h"
 
 @interface BSUserLoginViewController (){
     BOOL isTextFieldMoved;
@@ -36,21 +35,13 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
     // Do any additional setup after loading the view from its nib.
     self.userAccount.delegate  = self;
     self.userPassword.delegate = self;
     self.userPassword.secureTextEntry = YES;
     isTextFieldMoved = NO;
-//    [self configLoginBackgroundView];
-//    [self hiddenKeyBoardFromView];
-//
-//    [self.registerButton addTarget:self action:@selector(toRegister:) forControlEvents:UIControlEventTouchUpInside];
-//    self.userAccount.delegate  = self;
-//    self.userPassword.delegate = self;
-//    self.userPassword.secureTextEntry = YES;
-//    isTextFieldMoved = NO;
-//    [self configLoginBackgroundView];
-//    [self hiddenKeyBoardFromView];
+    [self configLoginBackgroundView];
     //隐藏键盘处理
     CGRect contentRect = CGRectZero;
     for ( UIView *subview in self.scrollView.subviews ) {
@@ -102,16 +93,30 @@
 - (void)loginRequestData{
     [progressHUD show:YES];
     
-    //请求服务器
-    LoginRequestVo *vo = [[LoginRequestVo alloc] initWithUsername:@"jiapumin@163.com" password:@"jiapumin"];
-    
-    [[BSContainer instance].serviceAgent callServletWithObject:self
-                                                   requestDict:vo.mReqDic
-                                                        target:self
-                                               successCallBack:@selector(loginSucceess:data:)
-                                                  failCallBack:@selector(loginFailed:data:)];
-    
-    [vo release];
+    NSString *userName = self.userAccount.text;
+    NSString *userPassword = self.userPassword.text;
+    if (userName == nil || [userName isEqualToString:@""]) {
+        UIAlertView *alterView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请填写用户名" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alterView show];
+        [alterView release];
+        [progressHUD hide:YES];
+    } else if (userPassword == nil || [userPassword isEqualToString:@""]) {
+        UIAlertView *alterView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"请填写密码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alterView show];
+        [alterView release];
+        [progressHUD hide:YES];
+    } else {
+        //请求服务器
+        LoginRequestVo *vo = [[LoginRequestVo alloc] initWithUsername:userName password:userPassword];
+        
+        [[BSContainer instance].serviceAgent callServletWithObject:self
+                                                       requestDict:vo.mReqDic
+                                                            target:self
+                                                   successCallBack:@selector(loginSucceess:data:)
+                                                      failCallBack:@selector(loginFailed:data:)];
+        
+        [vo release];
+    }
 }
 - (void)initHUDView{
     //-------加载框
@@ -123,59 +128,14 @@
     
 }
 
-//- (void) configLoginBackgroundView {
-//    CALayer *layer = self.loginBackgroundView.layer;
-//    layer.cornerRadius = 8.0;
-//    UIColor *color = [UIColor colorWithRed:0.843 green:0.027 blue:0.16 alpha:1];
-//    CGColorRef colorref = [color CGColor];
-//    layer.borderColor = colorref;
-//    layer.borderWidth = 2.0;
-//}
-
-//- (void) hiddenKeyBoardFromView{
-//    self.view.userInteractionEnabled = YES;
-////    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenKeyBoard:)];
-////    [self.view addGestureRecognizer:tapGesture];
-//}
-
-//- (void) hiddenKeyBoard:(id) sender{
-//    [self.userAccount resignFirstResponder];
-//    [self.userPassword resignFirstResponder];
-//}
-
-#pragma mark - TextField Delegate
-//
-//- (void)textFieldDidBeginEditing:(UITextField *)textField {
-//    if (isTextFieldMoved == NO) {
-//        NSTimeInterval animationDuration = 0.5f;
-//        CGRect frame = self.view.frame;
-//        frame.origin.y -=216;
-//        frame.size.height +=216;
-//        self.view.frame = frame;
-//        [UIView beginAnimations:@"ResizeView" context:nil];
-//        [UIView setAnimationDuration:animationDuration];
-//        self.view.frame = frame;
-//        [UIView commitAnimations];
-//    }
-//    isTextFieldMoved = YES;
-//}
-//
-//- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-//    if (isTextFieldMoved == YES) {
-//        NSTimeInterval animationDuration = 0.5f;
-//        CGRect frame = self.view.frame;
-//        frame.origin.y +=216;
-//        frame.size. height -=216;
-//        self.view.frame = frame;
-//        [UIView beginAnimations:@"ResizeView" context:nil];
-//        [UIView setAnimationDuration:animationDuration];
-//        self.view.frame = frame;
-//        [UIView commitAnimations];
-//        [textField resignFirstResponder];
-//    }
-//    isTextFieldMoved = NO;
-//    return YES;
-//}
+- (void) configLoginBackgroundView {
+    CALayer *layer = self.loginBackgroundView.layer;
+    layer.cornerRadius = 8.0;
+    UIColor *color = [UIColor colorWithRed:0.843 green:0.027 blue:0.16 alpha:1];
+    CGColorRef colorref = [color CGColor];
+    layer.borderColor = colorref;
+    layer.borderWidth = 2.0;
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -187,7 +147,6 @@
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
 - (void)dealloc {
-//    [_userLogoImage_1 release];
     [_loginBackgroundView release];
     [_userAccount release];
     [_userPassword release];
@@ -197,7 +156,6 @@
     [super dealloc];
 }
 - (void)viewDidUnload {
-//    [self setUserLogoImage_1:nil];
     [self setLoginBackgroundView:nil];
     [self setUserAccount:nil];
     [self setUserPassword:nil];
@@ -215,16 +173,60 @@
     [stepOne release];
 }
 
+#pragma mark - 登录事件
 - (IBAction)clickLoginButton:(id)sender {
-//    [self loginRequestData];
-    app.window.rootViewController = app.revealSideViewController;
+    [self loginRequestData];
+    [self.userAccount resignFirstResponder];
+    [self.userPassword resignFirstResponder];
 }
 
+#pragma mark - QQ登录
 - (IBAction)clickQQLoginButton:(id)sender {
     [_tencentOAuth authorize:_permissions inSafari:NO];
 }
 
+#pragma mark - 腾讯登录Delegate
 
+- (void)tencentDidLogin {
+    if (_tencentOAuth.accessToken && 0 != [_tencentOAuth.accessToken length]) {
+        // 记录登录用户的OpenID、Token以及过期时间
+        //_labelAccessToken.text = _tencentOAuth.accessToken;
+        QRootElement *root = [[QRootElement alloc] init];
+        root.presentationMode = QPresentationModeNormal;
+        BSBindUserAccountViewController *bindUserAccountVC = [[BSBindUserAccountViewController alloc] initWithNibName:@"BSBindUserAccountViewController" bundle:nil];
+        [self.navigationController pushViewController:bindUserAccountVC animated:YES];
+        [bindUserAccountVC release];
+    } else {
+        //@"登录不成功 没有获取accesstoken";
+    }
+}
+
+-(void)tencentDidNotLogin:(BOOL)cancelled {
+    if (cancelled)  {
+        //_labelTitle.text = @"用户取消登录";
+    } else {
+        //_labelTitle.text = @"登录失败";
+    }
+}
+
+-(void)tencentDidNotNetWork {
+    //_labelTitle.text=@"无网络连接，请设置网络";
+}
+
+/**
+ * Get user info.
+ */
+- (void)onClickGetUserInfo {
+//	_labelTitle.text = @"开始获取用户基本信息";
+	if(![_tencentOAuth getUserInfo]){
+        [self showInvalidTokenOrOpenIDMessage];
+    }
+}
+
+- (void)showInvalidTokenOrOpenIDMessage{
+    UIAlertView *alert = [[[UIAlertView alloc]initWithTitle:@"api调用失败" message:@"可能授权已过期，请重新获取" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] autorelease];
+    [alert show];
+}
 
 #pragma mark - 服务器回调
 - (void)loginSucceess:(id)sender data:(NSDictionary *)dic {
