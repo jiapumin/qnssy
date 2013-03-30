@@ -14,17 +14,18 @@
     self=[super init];
     if(self){
         NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
-        //设置请求服务器的方法名
-        [data setObject:@"login" forKey:@"c"];
-        
         //此处设置参数及参数所需要的key-value
-
         [data setObject:username forKey:@"username"];
         [data setObject:password forKey:@"password"];
-        
         [self.mReqDic setObject:data forKey:@"data"];
         
+        
+        NSMutableDictionary *method = [[NSMutableDictionary alloc] init];
+        //设置请求服务器的方法名
+        [method setObject:@"login" forKey:@"c"];
+        [self.mReqDic setObject:method forKey:@"method"];
         [data release];
+
        
     }
     return self;
