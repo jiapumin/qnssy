@@ -238,7 +238,8 @@
     
     
     //进入主界面
-    [self.view addSubview:app.revealSideViewController.view];
+//    [self.view addSubview:app.revealSideViewController.view];
+    app.window.rootViewController = app.revealSideViewController;
     
     [progressHUD hide:YES];
 }
