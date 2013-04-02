@@ -191,11 +191,11 @@
         NSString *urlParas = [[NSString alloc] init];
         urlParas = @"";
         
-        NSDictionary *data = [requestDict objectForKey:@"data"];
-        if (![data isEqual:nil]) {
+        NSDictionary *method = [requestDict objectForKey:@"method"];
+        if (![method isEqual:nil]) {
             urlParas = [urlParas stringByAppendingFormat:@"?"];
-            for (NSString *key in [data.allKeys objectEnumerator]) {
-                urlParas = [urlParas stringByAppendingFormat:@"%@=%@&",key,[data objectForKey:key]];
+            for (NSString *key in [method.allKeys objectEnumerator]) {
+                urlParas = [urlParas stringByAppendingFormat:@"%@=%@&",key,[method objectForKey:key]];
             }
             urlParas = [urlParas substringToIndex:(urlParas.length -1)];
             
@@ -205,9 +205,14 @@
         NSLog(@"请求服务器地址:%@",urlString);
         NSURL* url = [NSURL URLWithString:urlString];
         
-        ASIHTTPRequest * theRequest = [ASIHTTPRequest requestWithURL:url];
+        ASIFormDataRequest * theRequest = [ASIFormDataRequest requestWithURL:url];
 
         [theRequest setRequestMethod:@"POST"];
+        //要向服务器发送的参数数据
+        NSDictionary *data = [requestDict objectForKey:@"data"];
+        for (NSString *key in [data.allKeys objectEnumerator]) {
+            [theRequest setPostValue:[data objectForKey:key] forKey:key];
+        }
         
         [theRequest setDefaultResponseEncoding:NSUTF8StringEncoding];
         

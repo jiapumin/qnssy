@@ -186,6 +186,9 @@
 		D8CA7D9616F4B19E00B4CE67 /* SuperRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D9516F4B19E00B4CE67 /* SuperRequestVo.m */; };
 		D8CA7D9916F4B29400B4CE67 /* LoginRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D9816F4B29400B4CE67 /* LoginRequestVo.m */; };
 		D8CA7D9C16F4B3FB00B4CE67 /* LoginResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D9A16F4B3FB00B4CE67 /* LoginResponseVo.m */; };
+		D8ED9B6517080C0900C7FA38 /* DMLazyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9B6417080C0900C7FA38 /* DMLazyScrollView.m */; };
+		D8ED9B69170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9B67170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.m */; };
+		D8ED9B6A170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8ED9B68170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.xib */; };
 		D8F02A3916FD8F660023FB0A /* 7问候@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F02A1A16FD8F660023FB0A /* 7问候@2x.png */; };
 		D8F02A3A16FD8F660023FB0A /* 7写信@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F02A1B16FD8F660023FB0A /* 7写信@2x.png */; };
 		D8F02A3B16FD8F660023FB0A /* 9发送按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F02A1C16FD8F660023FB0A /* 9发送按钮@2x.png */; };
@@ -507,6 +510,11 @@
 		D8CA7D9A16F4B3FB00B4CE67 /* LoginResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginResponseVo.m; sourceTree = "<group>"; };
 		D8CA7D9B16F4B3FB00B4CE67 /* LoginResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginResponseVo.h; sourceTree = "<group>"; };
 		D8CEEF4A16F8C15E00E7C63F /* QuickDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuickDialog.xcodeproj; path = QuickDialog/QuickDialog.xcodeproj; sourceTree = "<group>"; };
+		D8ED9B6317080C0900C7FA38 /* DMLazyScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLazyScrollView.h; sourceTree = "<group>"; };
+		D8ED9B6417080C0900C7FA38 /* DMLazyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLazyScrollView.m; sourceTree = "<group>"; };
+		D8ED9B66170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRecommendImageViewController_iPhone.h; sourceTree = "<group>"; };
+		D8ED9B67170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRecommendImageViewController_iPhone.m; sourceTree = "<group>"; };
+		D8ED9B68170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSRecommendImageViewController_iPhone.xib; sourceTree = "<group>"; };
 		D8F02A1A16FD8F660023FB0A /* 7问候@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7问候@2x.png"; sourceTree = "<group>"; };
 		D8F02A1B16FD8F660023FB0A /* 7写信@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7写信@2x.png"; sourceTree = "<group>"; };
 		D8F02A1C16FD8F660023FB0A /* 9发送按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "9发送按钮@2x.png"; sourceTree = "<group>"; };
@@ -709,6 +717,7 @@
 		D87A051316EF63EE0052328E /* framework */ = {
 			isa = PBXGroup;
 			children = (
+				D8ED9B6217080C0900C7FA38 /* DMLazyScrollView */,
 				D8CA7D7616F40A2100B4CE67 /* TPKeyboardAvoiding */,
 				D8CA7D7B16F40A2100B4CE67 /* MBSProgressHUD */,
 				D8CA7D5016F409B500B4CE67 /* JSON */,
@@ -813,6 +822,9 @@
 				D87A056116EF6D640052328E /* BSRecommendViewController_iPhone.h */,
 				D87A056216EF6D640052328E /* BSRecommendViewController_iPhone.m */,
 				D87A056316EF6D640052328E /* BSRecommendViewController_iPhone.xib */,
+				D8ED9B66170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.h */,
+				D8ED9B67170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.m */,
+				D8ED9B68170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.xib */,
 			);
 			path = recommend;
 			sourceTree = "<group>";
@@ -1257,6 +1269,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		D8ED9B6217080C0900C7FA38 /* DMLazyScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				D8ED9B6317080C0900C7FA38 /* DMLazyScrollView.h */,
+				D8ED9B6417080C0900C7FA38 /* DMLazyScrollView.m */,
+			);
+			path = DMLazyScrollView;
+			sourceTree = "<group>";
+		};
 		D8FE147316FEA282006405F1 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -1478,6 +1499,7 @@
 				D8A706AF1700FF4B00B24213 /* 28自我介绍@2x.png in Resources */,
 				D8A706B41701031A00B24213 /* BSSettingViewController_iPhone.xib in Resources */,
 				D8A706C21701084900B24213 /* BSPublicTableCell_iPhone.xib in Resources */,
+				D8ED9B6A170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1557,7 +1579,8 @@
 				D8A706B31701031A00B24213 /* BSSettingViewController_iPhone.m in Sources */,
 				D8A706C11701084900B24213 /* BSPublicTableCell_iPhone.m in Sources */,
 				5A7892191704791C00E2B238 /* ValidatePhoneResponseVo.m in Sources */,
-				5A78921D17047B8C00E2B238 /* ValidatePhoneRequestVo.m in Sources */,
+				D8ED9B6517080C0900C7FA38 /* DMLazyScrollView.m in Sources */,
+				D8ED9B69170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

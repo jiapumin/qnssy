@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DMLazyScrollView.h"
 
 @interface BSRecommendViewController_iPhone : BSSuperCentreViewController_iPhone
 
