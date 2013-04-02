@@ -13,13 +13,24 @@
 - (id)initWithDic:(NSDictionary *)result {
     self = [super init];
     if (self) {
-        int recCode = [result objectForKey:@"ResCode"];
-        if (recCode == 0) {
-            
+        NSArray *resultData = [result objectForKey:@"ResData"];
+        int status = [resultData valueForKey:@"status"];
+        if (status == 0) {
+            self.md5code = [resultData valueForKey:@"code"];
+            self.isSuccess = [NSNumber numberWithBool:YES];
+        } else {
+            self.message = [resultData valueForKey:@"Message"];
+            self.isSuccess = [NSNumber numberWithBool:NO];
         }
-        
     }
     return self;
+}
+
+- (void)dealloc {
+    [_md5code release];
+    [_isSuccess release];
+    [_message release];
+    [super dealloc];
 }
 
 @end

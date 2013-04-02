@@ -14,18 +14,19 @@
     self = [super init];
     if (self) {
         NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
+        NSMutableDictionary *method = [[NSMutableDictionary alloc] init];
         //设置请求服务器的方法名
-        [data setObject:@"userRegister" forKey:@"c"];
-        
-        //此处设置参数及参数所需要的key-value
-        
-        [data setObject:phoneNum forKey:@"phoneNum"];
-        [data setObject:password forKey:@"password"];
-        
-        [self.mReqDic setObject:data forKey:@"data"];
-        
-        [data release];
+        [method setObject:@"register" forKey:@"c"];
+        [method setObject:@"sendmsg" forKey:@"a"];
+        [self.mReqDic setObject:method forKey:@"method"];
 
+        //设置参数及参数所需要的key-value
+        [data setObject:phoneNum forKey:@"mobile"];
+        [data setObject:password forKey:@"password"];
+        [self.mReqDic setObject:data forKey:@"data"];
+
+        [data release];
+        [method release];
     }
     return self;
 }

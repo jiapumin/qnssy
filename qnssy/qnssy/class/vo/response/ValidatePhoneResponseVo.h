@@ -10,8 +10,9 @@
 
 @interface ValidatePhoneResponseVo : NSObject
 
-@property (retain, nonatomic) NSString *phoneNum;
-@property (retain, nonatomic) NSString *password;
+@property (retain, nonatomic) NSString *md5code;
+@property (retain, nonatomic) NSNumber *isSuccess;
+@property (retain, nonatomic) NSString *message;
 
 - (id)initWithDic:(NSDictionary *)result;
 
