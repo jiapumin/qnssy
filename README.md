@@ -1,5 +1,2 @@
 ## README FILE
-
-___This is read me file___,it a fk file.
-test modify.123.
-我日，
+一个IOS版的交友客户端。

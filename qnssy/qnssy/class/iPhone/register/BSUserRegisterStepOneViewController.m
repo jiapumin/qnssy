@@ -8,8 +8,9 @@
 
 #import "BSUserRegisterStepOneViewController.h"
 #import "BSValidatePhoneNumberViewController.h"
-
 #import "TPKeyboardAvoidingScrollView.h"
+#import "ValidatePhoneRequestVo.h"
+#import "ValidatePhoneResponseVo.h"
 
 @interface BSUserRegisterStepOneViewController (){
 //    BOOL isTextFieldMoved;
@@ -119,27 +120,34 @@
     
 }
 
+#pragma mark - 点击下一步，开始接收验证码
 - (IBAction)registerNextAction:(id)sender {
+    // 如果没有同意服务条款，则提示用户勾选
     if (isAgreement) {
         NSString *phoneNumber = self.userAccount.text;
         NSString *password = self.userPassword.text;
         BOOL isPhoneNumber = [self isMobileNumber:phoneNumber];
-        if (phoneNumber == nil || phoneNumber.length<11) {
+        if (phoneNumber.length<11) {
             UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"您输入的手机号码不正确" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [alter show];
             [alter release];
             return;
         }
-        if (password == nil || password.length < 6 || password.length > 12) {
+        if (password.length < 6 || password.length > 12) {
             UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"您输入的密码不正确" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [alter show];
             [alter release];
             return;
         }
         if (isPhoneNumber) {
-            BSValidatePhoneNumberViewController *validatePhoneNumber = [[BSValidatePhoneNumberViewController alloc] initWithNibName:@"BSValidatePhoneNumberViewController" bundle:nil];
-            [self.navigationController pushViewController:validatePhoneNumber animated:YES];
-            [validatePhoneNumber release];
+            ValidatePhoneRequestVo *vo = [[ValidatePhoneRequestVo alloc] initWithPhoneNumAndPassword:phoneNumber password:password];
+            [[BSContainer instance].serviceAgent callServletWithObject:self
+                                                           requestDict:vo.mReqDic
+                                                                target:self
+                                                       successCallBack:@selector(validateSucceess:data:)
+                                                          failCallBack:@selector(validateFailed:data:)];
+            [vo release];
+            
         } else {
             UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示信息" message:@"请输入正确的手机号码" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [alter show];
@@ -150,6 +158,32 @@
         [alter show];
         [alter release];
     }
+}
+
+#pragma mark - 服务器回调
+
+- (void) validateSucceess:(id) sender data:(NSDictionary *) dic{
+    ValidatePhoneResponseVo *vo = [[ValidatePhoneResponseVo alloc] initWithDic:dic];
+    // 服务器验证成功后，跳转到验证码验证界面
+    if ([vo.isSuccess isEqualToNumber:[NSNumber numberWithBool:YES]]) {
+        BSValidatePhoneNumberViewController *validatePhoneNumber = [[BSValidatePhoneNumberViewController alloc] initWithNibName:@"BSValidatePhoneNumberViewController" bundle:nil];
+        // 将用户的手机号码、密码保存到下一个界面，以便用户在点击重新发送按钮时，能重新请求服务器
+        validatePhoneNumber.mobile = self.userAccount.text;
+        validatePhoneNumber.password = self.userPassword.text;
+        // 将验证码保存到下一个页面，用来验证
+        validatePhoneNumber.md5code = vo.md5code;
+        [self.navigationController pushViewController:validatePhoneNumber animated:YES];
+        [validatePhoneNumber release];
+    } else {
+    // 服务器验证失败，提示用户
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        [alertView show];
+        [alertView release];
+    }
+}
+
+- (void) validateFailed:(id) sender data:(NSDictionary *) dic{
+    NSLog(@"-----  %@",dic);
 }
 
 - (IBAction)clickBackButton:(id)sender {
