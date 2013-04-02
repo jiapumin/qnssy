@@ -19,7 +19,6 @@
 		5A7891ED170347C800E2B238 /* BSBindUserAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7891EB170347C800E2B238 /* BSBindUserAccountViewController.m */; };
 		5A7891EE170347C800E2B238 /* BSBindUserAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7891EC170347C800E2B238 /* BSBindUserAccountViewController.xib */; };
 		5A7892191704791C00E2B238 /* ValidatePhoneResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7892181704791C00E2B238 /* ValidatePhoneResponseVo.m */; };
-		5A78921D17047B8C00E2B238 /* PBXBuildFile */ = {isa = PBXBuildFile; fileRef = 5A78921C17047B8C00E2B238 /* ValidatePhoneRequestVo.m */; };
 		5AAE6E4F16FAAF79006FDFB7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AAE6E4E16FAAF79006FDFB7 /* area.plist */; };
 		5ABA042316FE03EB0099BA74 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABA042216FE03EB0099BA74 /* TencentOpenAPI.framework */; };
 		5ABA042616FE046C0099BA74 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABA042516FE046C0099BA74 /* libiconv.dylib */; };
@@ -46,6 +45,7 @@
 		5AF21B4A16F8559F00EEB6EA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF21B4916F8559F00EEB6EA /* CoreLocation.framework */; };
 		5AF21B4E16F8581000EEB6EA /* BSUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF21B4C16F8581000EEB6EA /* BSUserInfoViewController.m */; };
 		5AF21B4F16F8581000EEB6EA /* BSUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AF21B4D16F8581000EEB6EA /* BSUserInfoViewController.xib */; };
+		5AFC21D9170AA340001228AB /* ValidatePhoneRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A78921C17047B8C00E2B238 /* ValidatePhoneRequestVo.m */; };
 		D87A04EE16EF639A0052328E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04ED16EF639A0052328E /* UIKit.framework */; };
 		D87A04F016EF639A0052328E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04EF16EF639A0052328E /* Foundation.framework */; };
 		D87A04F216EF639A0052328E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04F116EF639A0052328E /* CoreGraphics.framework */; };
@@ -1581,6 +1581,7 @@
 				5A7892191704791C00E2B238 /* ValidatePhoneResponseVo.m in Sources */,
 				D8ED9B6517080C0900C7FA38 /* DMLazyScrollView.m in Sources */,
 				D8ED9B69170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.m in Sources */,
+				5AFC21D9170AA340001228AB /* ValidatePhoneRequestVo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
