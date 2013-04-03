@@ -18,6 +18,7 @@
 		5A64EBF716F30BAF00F4E576 /* login_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBF616F30BAF00F4E576 /* login_logo.png */; };
 		5A7891ED170347C800E2B238 /* BSBindUserAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7891EB170347C800E2B238 /* BSBindUserAccountViewController.m */; };
 		5A7891EE170347C800E2B238 /* BSBindUserAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7891EC170347C800E2B238 /* BSBindUserAccountViewController.xib */; };
+		5A7892191704791C00E2B238 /* ValidatePhoneResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7892181704791C00E2B238 /* ValidatePhoneResponseVo.m */; };
 		5AAE6E4F16FAAF79006FDFB7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AAE6E4E16FAAF79006FDFB7 /* area.plist */; };
 		5ABA042316FE03EB0099BA74 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABA042216FE03EB0099BA74 /* TencentOpenAPI.framework */; };
 		5ABA042616FE046C0099BA74 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABA042516FE046C0099BA74 /* libiconv.dylib */; };
@@ -44,6 +45,8 @@
 		5AF21B4A16F8559F00EEB6EA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF21B4916F8559F00EEB6EA /* CoreLocation.framework */; };
 		5AF21B4E16F8581000EEB6EA /* BSUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF21B4C16F8581000EEB6EA /* BSUserInfoViewController.m */; };
 		5AF21B4F16F8581000EEB6EA /* BSUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AF21B4D16F8581000EEB6EA /* BSUserInfoViewController.xib */; };
+		5AFC21D9170AA340001228AB /* ValidatePhoneRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A78921C17047B8C00E2B238 /* ValidatePhoneRequestVo.m */; };
+		BB810EC20B6A24D8F5D47213 /* MyMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8103F575D2320537DE2FC9 /* MyMD5.m */; };
 		D87A04EE16EF639A0052328E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04ED16EF639A0052328E /* UIKit.framework */; };
 		D87A04F016EF639A0052328E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04EF16EF639A0052328E /* Foundation.framework */; };
 		D87A04F216EF639A0052328E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04F116EF639A0052328E /* CoreGraphics.framework */; };
@@ -263,6 +266,10 @@
 		5A7891EA170347C800E2B238 /* BSBindUserAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBindUserAccountViewController.h; sourceTree = "<group>"; };
 		5A7891EB170347C800E2B238 /* BSBindUserAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBindUserAccountViewController.m; sourceTree = "<group>"; };
 		5A7891EC170347C800E2B238 /* BSBindUserAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBindUserAccountViewController.xib; sourceTree = "<group>"; };
+		5A7892171704791C00E2B238 /* ValidatePhoneResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidatePhoneResponseVo.h; sourceTree = "<group>"; };
+		5A7892181704791C00E2B238 /* ValidatePhoneResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatePhoneResponseVo.m; sourceTree = "<group>"; };
+		5A78921B17047B8C00E2B238 /* ValidatePhoneRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidatePhoneRequestVo.h; sourceTree = "<group>"; };
+		5A78921C17047B8C00E2B238 /* ValidatePhoneRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatePhoneRequestVo.m; sourceTree = "<group>"; };
 		5AAE6E4E16FAAF79006FDFB7 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		5ABA042216FE03EB0099BA74 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		5ABA042516FE046C0099BA74 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
@@ -293,6 +300,8 @@
 		5AF21B4B16F8580F00EEB6EA /* BSUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserInfoViewController.h; sourceTree = "<group>"; };
 		5AF21B4C16F8581000EEB6EA /* BSUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserInfoViewController.m; sourceTree = "<group>"; };
 		5AF21B4D16F8581000EEB6EA /* BSUserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserInfoViewController.xib; sourceTree = "<group>"; };
+		BB8103F575D2320537DE2FC9 /* MyMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMD5.m; sourceTree = "<group>"; };
+		BB810ACBC2671DB88E54462B /* MyMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMD5.h; sourceTree = "<group>"; };
 		D87A04E916EF639A0052328E /* qnssy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qnssy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87A04ED16EF639A0052328E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D87A04EF16EF639A0052328E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -637,6 +646,15 @@
 			path = customCells;
 			sourceTree = "<group>";
 		};
+		BB8104E8B50AAA6AE0375857 /* MD5 */ = {
+			isa = PBXGroup;
+			children = (
+				BB810ACBC2671DB88E54462B /* MyMD5.h */,
+				BB8103F575D2320537DE2FC9 /* MyMD5.m */,
+			);
+			path = MD5;
+			sourceTree = "<group>";
+		};
 		D87A04DE16EF639A0052328E = {
 			isa = PBXGroup;
 			children = (
@@ -873,6 +891,7 @@
 				D87A052A16EF69700052328E /* DataParseUtil */,
 				D87A052D16EF69700052328E /* image */,
 				D87A053016EF69700052328E /* xmlUtil */,
+				BB8104E8B50AAA6AE0375857 /* MD5 */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -1237,6 +1256,8 @@
 				D8CA7D9816F4B29400B4CE67 /* LoginRequestVo.m */,
 				D8CA7D9416F4B19E00B4CE67 /* SuperRequestVo.h */,
 				D8CA7D9516F4B19E00B4CE67 /* SuperRequestVo.m */,
+				5A78921B17047B8C00E2B238 /* ValidatePhoneRequestVo.h */,
+				5A78921C17047B8C00E2B238 /* ValidatePhoneRequestVo.m */,
 			);
 			path = request;
 			sourceTree = "<group>";
@@ -1246,6 +1267,8 @@
 			children = (
 				D8CA7D9B16F4B3FB00B4CE67 /* LoginResponseVo.h */,
 				D8CA7D9A16F4B3FB00B4CE67 /* LoginResponseVo.m */,
+				5A7892171704791C00E2B238 /* ValidatePhoneResponseVo.h */,
+				5A7892181704791C00E2B238 /* ValidatePhoneResponseVo.m */,
 			);
 			path = response;
 			sourceTree = "<group>";
@@ -1568,8 +1591,11 @@
 				D8FE147B16FEA5E4006405F1 /* BSMyInfoTableCell_iPhone.m in Sources */,
 				D8A706B31701031A00B24213 /* BSSettingViewController_iPhone.m in Sources */,
 				D8A706C11701084900B24213 /* BSPublicTableCell_iPhone.m in Sources */,
+				5A7892191704791C00E2B238 /* ValidatePhoneResponseVo.m in Sources */,
 				D8ED9B6517080C0900C7FA38 /* DMLazyScrollView.m in Sources */,
 				D8ED9B69170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.m in Sources */,
+				5AFC21D9170AA340001228AB /* ValidatePhoneRequestVo.m in Sources */,
+				BB810EC20B6A24D8F5D47213 /* MyMD5.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
