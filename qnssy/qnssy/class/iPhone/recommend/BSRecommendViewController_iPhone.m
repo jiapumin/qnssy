@@ -5,11 +5,10 @@
 //  Created by jpm on 13-3-12.
 //  Copyright (c) 2013年 jpm. All rights reserved.
 //
-#define ARC4RANDOM_MAX	0x100000000
 #import "BSRecommendViewController_iPhone.h"
 #import "BSRecommendImageViewController_iPhone.h"
 
-@interface BSRecommendViewController_iPhone ()<DMLazyScrollViewDelegate>{
+@interface BSRecommendViewController_iPhone ()<DMLazyScrollViewDelegate,BSRecommendImageDelegate>{
     DMLazyScrollView* lazyScrollView;
     NSMutableArray*    viewControllerArray;
 }
@@ -46,7 +45,7 @@
     lazyScrollView.numberOfPages = numberOfPages;
     [lazyScrollView setBounces:NO];
     
-    // lazyScrollView.controlDelegate = self;
+//    lazyScrollView.controlDelegate = self;
     [self.view addSubview:lazyScrollView];
     
 
@@ -64,10 +63,13 @@
     id res = [viewControllerArray objectAtIndex:index];
     if (res == [NSNull null]) {
         BSRecommendImageViewController_iPhone *vc = [[BSRecommendImageViewController_iPhone alloc] initWithNibName:@"BSRecommendImageViewController_iPhone" bundle:nil];
+        vc.delegate = self;
         [viewControllerArray replaceObjectAtIndex:index withObject:vc];
         return vc;
     }
     return res;
 }
-
+- (void)pushViewController:(UIViewController *)vc{
+    [self.navigationController pushViewController:vc animated:YES];
+}
 @end

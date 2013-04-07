@@ -187,6 +187,8 @@
 		D8ED9B6517080C0900C7FA38 /* DMLazyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9B6417080C0900C7FA38 /* DMLazyScrollView.m */; };
 		D8ED9B69170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9B67170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.m */; };
 		D8ED9B6A170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8ED9B68170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.xib */; };
+		D8ED9B6F17083F9100C7FA38 /* BSUserDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9B6D17083F9100C7FA38 /* BSUserDetailInfoViewController.m */; };
+		D8ED9B7017083F9100C7FA38 /* BSUserDetailInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8ED9B6E17083F9100C7FA38 /* BSUserDetailInfoViewController.xib */; };
 		D8F02A3916FD8F660023FB0A /* 7问候@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F02A1A16FD8F660023FB0A /* 7问候@2x.png */; };
 		D8F02A3A16FD8F660023FB0A /* 7写信@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F02A1B16FD8F660023FB0A /* 7写信@2x.png */; };
 		D8F02A3B16FD8F660023FB0A /* 9发送按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F02A1C16FD8F660023FB0A /* 9发送按钮@2x.png */; };
@@ -509,6 +511,9 @@
 		D8ED9B66170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRecommendImageViewController_iPhone.h; sourceTree = "<group>"; };
 		D8ED9B67170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRecommendImageViewController_iPhone.m; sourceTree = "<group>"; };
 		D8ED9B68170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSRecommendImageViewController_iPhone.xib; sourceTree = "<group>"; };
+		D8ED9B6C17083F9100C7FA38 /* BSUserDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoViewController.h; sourceTree = "<group>"; };
+		D8ED9B6D17083F9100C7FA38 /* BSUserDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoViewController.m; sourceTree = "<group>"; };
+		D8ED9B6E17083F9100C7FA38 /* BSUserDetailInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoViewController.xib; sourceTree = "<group>"; };
 		D8F02A1A16FD8F660023FB0A /* 7问候@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7问候@2x.png"; sourceTree = "<group>"; };
 		D8F02A1B16FD8F660023FB0A /* 7写信@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "7写信@2x.png"; sourceTree = "<group>"; };
 		D8F02A1C16FD8F660023FB0A /* 9发送按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "9发送按钮@2x.png"; sourceTree = "<group>"; };
@@ -813,6 +818,7 @@
 		D87A052416EF68A50052328E /* recommend */ = {
 			isa = PBXGroup;
 			children = (
+				D8ED9B6B17083EC000C7FA38 /* subView */,
 				D87A056116EF6D640052328E /* BSRecommendViewController_iPhone.h */,
 				D87A056216EF6D640052328E /* BSRecommendViewController_iPhone.m */,
 				D87A056316EF6D640052328E /* BSRecommendViewController_iPhone.xib */,
@@ -1268,6 +1274,16 @@
 			path = DMLazyScrollView;
 			sourceTree = "<group>";
 		};
+		D8ED9B6B17083EC000C7FA38 /* subView */ = {
+			isa = PBXGroup;
+			children = (
+				D8ED9B6C17083F9100C7FA38 /* BSUserDetailInfoViewController.h */,
+				D8ED9B6D17083F9100C7FA38 /* BSUserDetailInfoViewController.m */,
+				D8ED9B6E17083F9100C7FA38 /* BSUserDetailInfoViewController.xib */,
+			);
+			path = subView;
+			sourceTree = "<group>";
+		};
 		D8FE147316FEA282006405F1 /* SignIn */ = {
 			isa = PBXGroup;
 			children = (
@@ -1490,6 +1506,7 @@
 				D8A706B41701031A00B24213 /* BSSettingViewController_iPhone.xib in Resources */,
 				D8A706C21701084900B24213 /* BSPublicTableCell_iPhone.xib in Resources */,
 				D8ED9B6A170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.xib in Resources */,
+				D8ED9B7017083F9100C7FA38 /* BSUserDetailInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1570,6 +1587,7 @@
 				D8A706C11701084900B24213 /* BSPublicTableCell_iPhone.m in Sources */,
 				D8ED9B6517080C0900C7FA38 /* DMLazyScrollView.m in Sources */,
 				D8ED9B69170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.m in Sources */,
+				D8ED9B6F17083F9100C7FA38 /* BSUserDetailInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

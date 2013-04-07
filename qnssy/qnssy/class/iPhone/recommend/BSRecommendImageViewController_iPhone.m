@@ -7,6 +7,7 @@
 //
 
 #import "BSRecommendImageViewController_iPhone.h"
+#import "BSUserDetailInfoViewController.h"
 
 @interface BSRecommendImageViewController_iPhone ()
 
@@ -46,5 +47,14 @@
     [self setSpaceLabel:nil];
     [self setNeixindubaiLabel:nil];
     [super viewDidUnload];
+}
+- (IBAction)clickInfoButton:(id)sender {
+    
+    
+    if ([self.delegate respondsToSelector:@selector(pushViewController:)]) {
+        BSUserDetailInfoViewController *vc = [[[BSUserDetailInfoViewController alloc] init] autorelease];
+         [self.delegate pushViewController:vc];
+    }
+   
 }
 @end
