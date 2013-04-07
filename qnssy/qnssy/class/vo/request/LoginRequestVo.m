@@ -25,8 +25,8 @@
         [method setObject:@"login" forKey:@"c"];
         [self.mReqDic setObject:method forKey:@"method"];
         [data release];
+        [method release];
 
-       
     }
     return self;
 }

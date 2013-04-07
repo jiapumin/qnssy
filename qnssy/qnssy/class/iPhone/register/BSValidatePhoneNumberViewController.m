@@ -8,6 +8,9 @@
 
 #import "BSValidatePhoneNumberViewController.h"
 #import "BSUserInfoViewController.h"
+#import "ValidatePhoneRequestVo.h"
+#import "ValidatePhoneResponseVo.h"
+#import "MyMD5.h"
 
 @interface BSValidatePhoneNumberViewController (){
     int second;
@@ -37,11 +40,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-//    [self hiddenKeyBoardFromView];
     [self.resendButton setEnabled:NO];
     [self beginTimer];
     //头部nav背景
     [self.myNavigationBar setBackgroundImage:[UIImage imageNamed:@"2顶部条状背景"] forBarMetrics:UIBarMetricsDefault];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    self.userMobileLabel.text = self.mobile;
 }
 
 - (void) beginTimer {
@@ -65,18 +71,10 @@
     [super didReceiveMemoryWarning];
 }
 
-//- (void) hiddenKeyBoardFromView{
-//    self.view.userInteractionEnabled = YES;
-//    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddenKeyBoard:)];
-//    [self.view addGestureRecognizer:tapGesture];
-//}
-//
-//- (void) hiddenKeyBoard:(id) sender{
-//    [self.validateNumber resignFirstResponder];
-//}
 - (void)viewDidUnload {
     [self setResendButton:nil];
     [self setMyNavigationBar:nil];
+    [self setUserMobileLabel:nil];
     [super viewDidUnload];
 }
 - (IBAction)resendAction:(id)sender {
@@ -84,22 +82,63 @@
     second = 60;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(handlerTimer:) userInfo:nil repeats:YES];
     [self.resendButton setEnabled: NO];
+
+    ValidatePhoneRequestVo *requestVo = [[ValidatePhoneRequestVo alloc] initWithPhoneNumAndPassword:self.mobile password:self.password];
+    [[BSContainer instance].serviceAgent callServletWithObject:self
+                                                   requestDict:requestVo.mReqDic
+                                                        target:self
+                                               successCallBack:@selector(validateSucceess:data:)
+                                                  failCallBack:@selector(validateFailed:data:)];
+    [requestVo release];
 }
 
 #pragma mark - 提交注册
 - (IBAction)submitAction:(id)sender {
     QRootElement *root = [[QRootElement alloc] init];
-    
-    BSUserInfoViewController *userInfoController = (BSUserInfoViewController *)[[BSUserInfoViewController alloc] initWithRoot:root];
-    [self.navigationController pushViewController:userInfoController animated:YES];
+    // 如果用户填写了验证码，则将用户填写的验证码进行MD5加密，并和服务器返回的MD5验证码做比对
+    if ([[MyMD5 md5:self.validateNumber.text] isEqualToString:self.md5code]) {
+        BSUserInfoViewController *userInfoController = (BSUserInfoViewController *)[[BSUserInfoViewController alloc] initWithRoot:root];
+        [self.navigationController pushViewController:userInfoController animated:YES];
+        [userInfoController release];
+    } else {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"验证码输入不正确" delegate:self cancelButtonTitle:@"重新输入" otherButtonTitles:nil];
+        [alertView show];
+        [alertView release];
+    }
 }
+
+#pragma mark - 服务器回调
+
+- (void) validateSucceess:(id) sender data:(NSDictionary *) dic{
+    ValidatePhoneResponseVo *vo = [[ValidatePhoneResponseVo alloc] initWithDic:dic];
+    // 服务器验证成功后，跳转到验证码验证界面
+    if ([vo.isSuccess isEqualToNumber:[NSNumber numberWithBool:YES]]) {
+        self.md5code = vo.md5code;
+    } else {
+        // 服务器验证失败，提示用户
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil];
+        [alertView show];
+        [alertView release];
+    }
+}
+
+- (void) validateFailed:(id) sender data:(NSDictionary *) dic{
+    NSLog(@"-----  %@",dic);
+}
+
+// 返回按钮
 - (IBAction)clickBackButton:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
 }
+
 - (void) dealloc {
     [_validateNumber release];
     [_resendButton release];
     [_myNavigationBar release];
+    [_md5code release];
+    [_mobile release];
+    [_password release];
+    [_userMobileLabel release];
     [super dealloc];
 }
 
