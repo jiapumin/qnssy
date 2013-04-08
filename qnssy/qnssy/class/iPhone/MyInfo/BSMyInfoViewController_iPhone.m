@@ -12,6 +12,8 @@
 #import "BSMyInfoTableCell_iPhone.h"
 #import "BSSettingViewController_iPhone.h"
 
+#import "SignInResponseVo.h"
+
 @interface BSMyInfoViewController_iPhone ()
 
 @end
@@ -268,11 +270,24 @@
 
 - (void)signInSucceess:(id)sender data:(NSDictionary *)dic {
     
+    SignInResponseVo *vo = [[SignInResponseVo alloc] initWithDic:dic];
+
+    if (vo.status == 0) {
+        //今天禁用按钮
+        //？？
+    }
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
+    
 }
 
 
 - (void)signInFailed:(id)sender data:(NSDictionary *)dic {
-
+    NSLog(@"签到失败");
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"网络异常，请检查网络连接后重试" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
 }
 
 @end

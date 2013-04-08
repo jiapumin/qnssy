@@ -53,7 +53,7 @@
     LoginResponseVo *vo = [[LoginResponseVo alloc] initWithDic:dic];
     
     
-    NSLog(@"用户id:%@--登录消息:%@",vo.userId,vo.message);
+    NSLog(@"用户id:%@--登录消息:%@",vo.userInfo.userId,vo.message);
 }
 
 - (void)loginFailed:(id)sender data:(NSDictionary *)dic {

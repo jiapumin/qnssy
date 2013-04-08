@@ -166,6 +166,8 @@
 		D8A706B41701031A00B24213 /* BSSettingViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A706B21701031A00B24213 /* BSSettingViewController_iPhone.xib */; };
 		D8A706C11701084900B24213 /* BSPublicTableCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A706BF1701084900B24213 /* BSPublicTableCell_iPhone.m */; };
 		D8A706C21701084900B24213 /* BSPublicTableCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A706C01701084900B24213 /* BSPublicTableCell_iPhone.xib */; };
+		D8B40EB41712FB8000849F81 /* MyInfo341RequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B40EB31712FB8000849F81 /* MyInfo341RequestVo.m */; };
+		D8B40EB71712FF1600849F81 /* SignInResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B40EB61712FF1600849F81 /* SignInResponseVo.m */; };
 		D8CA7D4C16F4083200B4CE67 /* BSContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D4616F4083200B4CE67 /* BSContainer.m */; };
 		D8CA7D4D16F4083200B4CE67 /* BSHttpAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D4816F4083200B4CE67 /* BSHttpAgent.m */; };
 		D8CA7D4E16F4083200B4CE67 /* BSServiceAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D4B16F4083200B4CE67 /* BSServiceAgent.m */; };
@@ -470,6 +472,10 @@
 		D8A706BE1701084900B24213 /* BSPublicTableCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPublicTableCell_iPhone.h; sourceTree = "<group>"; };
 		D8A706BF1701084900B24213 /* BSPublicTableCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPublicTableCell_iPhone.m; sourceTree = "<group>"; };
 		D8A706C01701084900B24213 /* BSPublicTableCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSPublicTableCell_iPhone.xib; sourceTree = "<group>"; };
+		D8B40EB21712FB8000849F81 /* MyInfo341RequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfo341RequestVo.h; sourceTree = "<group>"; };
+		D8B40EB31712FB8000849F81 /* MyInfo341RequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfo341RequestVo.m; sourceTree = "<group>"; };
+		D8B40EB51712FF1600849F81 /* SignInResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInResponseVo.h; sourceTree = "<group>"; };
+		D8B40EB61712FF1600849F81 /* SignInResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInResponseVo.m; sourceTree = "<group>"; };
 		D8CA7D4516F4083200B4CE67 /* BSContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSContainer.h; sourceTree = "<group>"; };
 		D8CA7D4616F4083200B4CE67 /* BSContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSContainer.m; sourceTree = "<group>"; };
 		D8CA7D4716F4083200B4CE67 /* BSHttpAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHttpAgent.h; sourceTree = "<group>"; };
@@ -1264,6 +1270,8 @@
 				D8CA7D9516F4B19E00B4CE67 /* SuperRequestVo.m */,
 				5A78921B17047B8C00E2B238 /* ValidatePhoneRequestVo.h */,
 				5A78921C17047B8C00E2B238 /* ValidatePhoneRequestVo.m */,
+				D8B40EB21712FB8000849F81 /* MyInfo341RequestVo.h */,
+				D8B40EB31712FB8000849F81 /* MyInfo341RequestVo.m */,
 			);
 			path = request;
 			sourceTree = "<group>";
@@ -1275,6 +1283,8 @@
 				D8CA7D9A16F4B3FB00B4CE67 /* LoginResponseVo.m */,
 				5A7892171704791C00E2B238 /* ValidatePhoneResponseVo.h */,
 				5A7892181704791C00E2B238 /* ValidatePhoneResponseVo.m */,
+				D8B40EB51712FF1600849F81 /* SignInResponseVo.h */,
+				D8B40EB61712FF1600849F81 /* SignInResponseVo.m */,
 			);
 			path = response;
 			sourceTree = "<group>";
@@ -1611,12 +1621,11 @@
 				5A7892191704791C00E2B238 /* ValidatePhoneResponseVo.m in Sources */,
 				D8ED9B6517080C0900C7FA38 /* DMLazyScrollView.m in Sources */,
 				D8ED9B69170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.m in Sources */,
-<<<<<<< HEAD
 				D8ED9B6F17083F9100C7FA38 /* BSUserDetailInfoViewController.m in Sources */,
-=======
 				5AFC21D9170AA340001228AB /* ValidatePhoneRequestVo.m in Sources */,
 				BB810EC20B6A24D8F5D47213 /* MyMD5.m in Sources */,
->>>>>>> 650026b1320060c1f806ca6fd845caa2b200ca6b
+				D8B40EB41712FB8000849F81 /* MyInfo341RequestVo.m in Sources */,
+				D8B40EB71712FF1600849F81 /* SignInResponseVo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

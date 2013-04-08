@@ -1,15 +1,14 @@
 //
-//  ZSKSearchResponseVo.m
-//  BSMobileSale
+//  SignInResponseVo.m
+//  qnssy
 //
-//  Created by jpm on 12-11-2.
-//
+//  Created by jpm on 13-4-8.
+//  Copyright (c) 2013年 jpm. All rights reserved.
 //
 
-#import "LoginResponseVo.h"
+#import "SignInResponseVo.h"
 
-@implementation LoginResponseVo
-
+@implementation SignInResponseVo
 - (id)initWithDic:(NSDictionary *)result{
     self = [super init];
     if (self) {
@@ -21,17 +20,13 @@
             int resCode = [[data objectForKey:@"ResCode"] intValue];
             //服务器返回数据正确
             if (resCode == 0) {
-                self.userInfo = [[[UserInfo alloc] init] autorelease];
                 NSDictionary *ResData = [data objectForKey:@"ResData"];
-                self.message = [ResData objectForKey:@"Message"];
-                self.userInfo.userId = [ResData objectForKey:@"userid"];
-                self.userInfo.vipLevel = [ResData objectForKey:@"vipLevel"];
-                self.userInfo.nickName = [ResData objectForKey:@"nickname"];
-                self.userInfo.imageUrl = [ResData objectForKey:@"imageUrl"];
-
-                self.loginStatus = [[ResData objectForKey:@"loginStatus"] intValue];
+                self.message = [ResData objectForKey:@"ResMessage"];
+                self.status = [[ResData objectForKey:@"ResCode"] intValue];
+                
             }else{
                 NSLog(@"%@",[data objectForKey:@"ResMessage"]);
+                self.status = -1;
             }
             
         }
@@ -43,7 +38,6 @@
 
 - (void)dealloc{
     [_message release];
-    [_userInfo release];
     [super dealloc];
 }
 @end

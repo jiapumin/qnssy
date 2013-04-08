@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "UserInfo.h"
 
 @interface LoginResponseVo : NSObject
-
-@property (nonatomic, retain) NSString *userId;
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic) int loginStatus;
+
+@property (retain, nonatomic)  UserInfo *userInfo;
 
 
 - (id)initWithDic:(NSDictionary *)result;

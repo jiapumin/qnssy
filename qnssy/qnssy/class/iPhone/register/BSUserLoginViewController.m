@@ -12,6 +12,7 @@
 #import "LoginRequestVo.h"
 #import "LoginResponseVo.h"
 #import "BSBindUserAccountViewController.h"
+#import "UserInfo.h"
 
 @interface BSUserLoginViewController (){
     BOOL isTextFieldMoved;
@@ -233,10 +234,10 @@
     LoginResponseVo *vo = [[LoginResponseVo alloc] initWithDic:dic];
     
     
-    NSLog(@"用户id:%@--登录消息:%@",vo.userId,vo.message);
+    NSLog(@"用户id:%@--登录消息:%@",vo.userInfo.userId,vo.message);
     //登录成功，保存用户信息
-    
-    
+    [BSContainer instance].userInfo = vo.userInfo;
+
     //进入主界面
 //    [self.view addSubview:app.revealSideViewController.view];
     app.window.rootViewController = app.revealSideViewController;

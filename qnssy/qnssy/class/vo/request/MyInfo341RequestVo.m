@@ -1,24 +1,22 @@
 //
-//  SignInRequestVo.m
+//  MyInfo341RequestVo.m
 //  qnssy
 //
-//  Created by jpm on 13-3-24.
+//  Created by jpm on 13-4-8.
 //  Copyright (c) 2013年 jpm. All rights reserved.
 //
 
-#import "SignInRequestVo.h"
+#import "MyInfo341RequestVo.h"
 
-@implementation SignInRequestVo
-
+@implementation MyInfo341RequestVo
 - (id)init
 {
     self=[super init];
     if(self){
         NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
         //此处设置参数及参数所需要的key-value
-        //        [data setObject:username forKey:@"username"];
-        //        [data setObject:password forKey:@"password"];
-        [data setObject:[BSContainer instance].userInfo.userId forKey:@"userid"];
+//        [data setObject:username forKey:@"username"];
+//        [data setObject:password forKey:@"password"];
         [self.mReqDic setObject:data forKey:@"data"];
         
         
@@ -33,4 +31,5 @@
     }
     return self;
 }
+
 @end

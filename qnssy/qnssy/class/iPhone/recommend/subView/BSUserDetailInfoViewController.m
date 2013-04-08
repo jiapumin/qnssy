@@ -76,34 +76,34 @@
 //    
 //    cell.bgImage.image = [UIImage imageNamed:cell.noSelectedBgImageName];
     
-    return cell;
+//    return cell;
 }
 
 #pragma mark - Table view delegate
-- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    BSRootLeftTableCell_iPhone *cell = (BSRootLeftTableCell_iPhone *)[tableView cellForRowAtIndexPath:indexPath];
-    cell.bgImage.image = [UIImage imageNamed:cell.selectedBgImageName];
-    cell.leftImage.image = [UIImage imageNamed:cell.selectedLeftImageName];
-    cell.menuLabel.textColor = [UIColor colorWithRed:223.f/255 green:42.f/255 blue:106.f/255 alpha:1.f];
-    
-    return indexPath;
-    
-}
-- (NSIndexPath *)tableView:(UITableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
-    BSRootLeftTableCell_iPhone *cell = (BSRootLeftTableCell_iPhone *)[tableView cellForRowAtIndexPath:indexPath];
-    cell.bgImage.image = [UIImage imageNamed:cell.noSelectedBgImageName];
-    cell.leftImage.image = [UIImage imageNamed:cell.noSelectedLeftImageName];
-    cell.menuLabel.textColor = [UIColor blackColor];
-    return indexPath;
-}
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UIViewController *vc = [self.vcArrays objectAtIndex:indexPath.row];
-    
-    [self.revealSideViewController popViewControllerWithNewCenterController:vc
-                                                                   animated:YES];
-    
-}
+//- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    BSRootLeftTableCell_iPhone *cell = (BSRootLeftTableCell_iPhone *)[tableView cellForRowAtIndexPath:indexPath];
+//    cell.bgImage.image = [UIImage imageNamed:cell.selectedBgImageName];
+//    cell.leftImage.image = [UIImage imageNamed:cell.selectedLeftImageName];
+//    cell.menuLabel.textColor = [UIColor colorWithRed:223.f/255 green:42.f/255 blue:106.f/255 alpha:1.f];
+//    
+//    return indexPath;
+//    
+//}
+//- (NSIndexPath *)tableView:(UITableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+//    BSRootLeftTableCell_iPhone *cell = (BSRootLeftTableCell_iPhone *)[tableView cellForRowAtIndexPath:indexPath];
+//    cell.bgImage.image = [UIImage imageNamed:cell.noSelectedBgImageName];
+//    cell.leftImage.image = [UIImage imageNamed:cell.noSelectedLeftImageName];
+//    cell.menuLabel.textColor = [UIColor blackColor];
+//    return indexPath;
+//}
+//
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    UIViewController *vc = [self.vcArrays objectAtIndex:indexPath.row];
+//    
+//    [self.revealSideViewController popViewControllerWithNewCenterController:vc
+//                                                                   animated:YES];
+//    
+//}
 
 @end
