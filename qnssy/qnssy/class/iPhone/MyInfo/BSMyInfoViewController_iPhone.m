@@ -12,6 +12,13 @@
 #import "BSMyInfoTableCell_iPhone.h"
 #import "BSSettingViewController_iPhone.h"
 
+#import "SDWebImageRootViewController.h"
+#import "BSMyAttentionViewController_iPhone.h"
+#import "BSLookedMeViewController_iPhone.h"
+
+
+#import "BSBaseInfoViewController_iPhone.h"
+
 #import "SignInResponseVo.h"
 
 @interface BSMyInfoViewController_iPhone ()
@@ -248,10 +255,51 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    UIViewController *vc = [self.vcArrays objectAtIndex:indexPath.row];
-//    
-//    [self.revealSideViewController popViewControllerWithNewCenterController:vc
-//                                                                   animated:YES];
+    if (indexPath.section == 0) {
+        if (indexPath.row == 0) {
+            //我的说说
+            BSBaseInfoViewController_iPhone *vc = [[BSBaseInfoViewController_iPhone alloc] initWithNibName:@"BSBaseInfoViewController_iPhone" bundle:nil];
+            [self.navigationController pushViewController:vc animated:YES];
+            [vc release];
+        }else if (indexPath.row == 1) {
+            //我的照片
+            SDWebImageRootViewController *sdivc = [[SDWebImageRootViewController alloc] initWithNibName:@"SDWebImageRootViewController" bundle:nil];
+            [self.navigationController pushViewController:sdivc animated:YES];
+            [sdivc release];
+        }else if (indexPath.row == 2){
+            //我的关注
+            BSMyAttentionViewController_iPhone *mavc = [[BSMyAttentionViewController_iPhone alloc] initWithNibName:@"BSMyAttentionViewController_iPhone" bundle:nil];
+            [self.navigationController pushViewController:mavc animated:YES];
+            [mavc release];
+        }else if(indexPath.row == 3){
+            //看过我的
+            BSLookedMeViewController_iPhone *lmvc = [[BSLookedMeViewController_iPhone alloc] initWithNibName:@"BSLookedMeViewController_iPhone" bundle:nil];
+            [self.navigationController pushViewController:lmvc animated:YES];
+            [lmvc release];
+        }
+    }else if(indexPath.section == 1){
+        if (indexPath.row == 0) {
+            //基本资料
+            BSBaseInfoViewController_iPhone *vc = [[BSBaseInfoViewController_iPhone alloc] initWithNibName:@"BSBaseInfoViewController_iPhone" bundle:nil];
+            [self.navigationController pushViewController:vc animated:YES];
+            [vc release];
+        }else if (indexPath.row == 1) {
+            //我的照片
+            SDWebImageRootViewController *sdivc = [[SDWebImageRootViewController alloc] initWithNibName:@"SDWebImageRootViewController" bundle:nil];
+            [self.navigationController pushViewController:sdivc animated:YES];
+            [sdivc release];
+        }else if (indexPath.row == 2){
+            //我的关注
+            BSMyAttentionViewController_iPhone *mavc = [[BSMyAttentionViewController_iPhone alloc] initWithNibName:@"BSMyAttentionViewController_iPhone" bundle:nil];
+            [self.navigationController pushViewController:mavc animated:YES];
+            [mavc release];
+        }else if(indexPath.row == 3){
+            BSLookedMeViewController_iPhone *lmvc = [[BSLookedMeViewController_iPhone alloc] initWithNibName:@"BSLookedMeViewController_iPhone" bundle:nil];
+            [self.navigationController pushViewController:lmvc animated:YES];
+            [lmvc release];
+        }
+    }
+    
     
 }
 
