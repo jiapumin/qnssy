@@ -47,6 +47,8 @@
 		5AF21B4F16F8581000EEB6EA /* BSUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AF21B4D16F8581000EEB6EA /* BSUserInfoViewController.xib */; };
 		5AFC21D9170AA340001228AB /* ValidatePhoneRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A78921C17047B8C00E2B238 /* ValidatePhoneRequestVo.m */; };
 		BB810EC20B6A24D8F5D47213 /* MyMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8103F575D2320537DE2FC9 /* MyMD5.m */; };
+		D83BD506171AE38C00E230FF /* RecommendImageListRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83BD505171AE38C00E230FF /* RecommendImageListRequestVo.m */; };
+		D83BD50A171AE43C00E230FF /* RecommendImageListResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83BD509171AE43C00E230FF /* RecommendImageListResponseVo.m */; };
 		D85B6625171A949100581B00 /* BSMyAttentionViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D85B6623171A949100581B00 /* BSMyAttentionViewController_iPhone.m */; };
 		D85B6626171A949100581B00 /* BSMyAttentionViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85B6624171A949100581B00 /* BSMyAttentionViewController_iPhone.xib */; };
 		D85B6629171A960700581B00 /* MyAttentionRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D85B6628171A960700581B00 /* MyAttentionRequestVo.m */; };
@@ -338,6 +340,10 @@
 		5AF21B4D16F8581000EEB6EA /* BSUserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserInfoViewController.xib; sourceTree = "<group>"; };
 		BB8103F575D2320537DE2FC9 /* MyMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMD5.m; sourceTree = "<group>"; };
 		BB810ACBC2671DB88E54462B /* MyMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMD5.h; sourceTree = "<group>"; };
+		D83BD504171AE38C00E230FF /* RecommendImageListRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendImageListRequestVo.h; sourceTree = "<group>"; };
+		D83BD505171AE38C00E230FF /* RecommendImageListRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendImageListRequestVo.m; sourceTree = "<group>"; };
+		D83BD508171AE43C00E230FF /* RecommendImageListResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendImageListResponseVo.h; sourceTree = "<group>"; };
+		D83BD509171AE43C00E230FF /* RecommendImageListResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendImageListResponseVo.m; sourceTree = "<group>"; };
 		D85B6622171A949100581B00 /* BSMyAttentionViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMyAttentionViewController_iPhone.h; sourceTree = "<group>"; };
 		D85B6623171A949100581B00 /* BSMyAttentionViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMyAttentionViewController_iPhone.m; sourceTree = "<group>"; };
 		D85B6624171A949100581B00 /* BSMyAttentionViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMyAttentionViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -751,6 +757,24 @@
 				BB8103F575D2320537DE2FC9 /* MyMD5.m */,
 			);
 			path = MD5;
+			sourceTree = "<group>";
+		};
+		D83BD503171AE38C00E230FF /* recommend */ = {
+			isa = PBXGroup;
+			children = (
+				D83BD504171AE38C00E230FF /* RecommendImageListRequestVo.h */,
+				D83BD505171AE38C00E230FF /* RecommendImageListRequestVo.m */,
+			);
+			path = recommend;
+			sourceTree = "<group>";
+		};
+		D83BD507171AE43C00E230FF /* Recommend */ = {
+			isa = PBXGroup;
+			children = (
+				D83BD508171AE43C00E230FF /* RecommendImageListResponseVo.h */,
+				D83BD509171AE43C00E230FF /* RecommendImageListResponseVo.m */,
+			);
+			path = Recommend;
 			sourceTree = "<group>";
 		};
 		D85B6621171A946000581B00 /* MyAttention */ = {
@@ -1447,6 +1471,7 @@
 		D8CA7D9116F4B15E00B4CE67 /* request */ = {
 			isa = PBXGroup;
 			children = (
+				D83BD503171AE38C00E230FF /* recommend */,
 				D8E21F031719038600A90FB3 /* MyInfo */,
 				D8FE147316FEA282006405F1 /* SignIn */,
 				D8CA7D9716F4B29400B4CE67 /* LoginRequestVo.h */,
@@ -1464,6 +1489,7 @@
 		D8CA7D9216F4B15E00B4CE67 /* response */ = {
 			isa = PBXGroup;
 			children = (
+				D83BD507171AE43C00E230FF /* Recommend */,
 				D8E21F071719054D00A90FB3 /* MyPhoto */,
 				D8CA7D9B16F4B3FB00B4CE67 /* LoginResponseVo.h */,
 				D8CA7D9A16F4B3FB00B4CE67 /* LoginResponseVo.m */,
@@ -1870,6 +1896,8 @@
 				D85B664A171AA66B00581B00 /* BSBaseInfoViewController_iPhone.m in Sources */,
 				D85B664E171AA6CD00581B00 /* BaseInfoRequestVo.m in Sources */,
 				D85B6651171AA76600581B00 /* BaseInfoResponseVo.m in Sources */,
+				D83BD506171AE38C00E230FF /* RecommendImageListRequestVo.m in Sources */,
+				D83BD50A171AE43C00E230FF /* RecommendImageListResponseVo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

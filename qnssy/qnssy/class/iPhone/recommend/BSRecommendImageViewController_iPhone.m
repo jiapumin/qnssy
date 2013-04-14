@@ -28,6 +28,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    
+    [self requestMyImage:[self.imageVo objectForKey:@"userimg"]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -37,15 +40,19 @@
 }
 
 - (void)dealloc {
+    [_imageVo release];
     [_nickNameLabel release];
     [_spaceLabel release];
     [_neixindubaiLabel release];
+    [_bgImageView release];
     [super dealloc];
 }
 - (void)viewDidUnload {
+    [self setImageVo:nil];
     [self setNickNameLabel:nil];
     [self setSpaceLabel:nil];
     [self setNeixindubaiLabel:nil];
+    [self setBgImageView:nil];
     [super viewDidUnload];
 }
 - (IBAction)clickInfoButton:(id)sender {
@@ -56,5 +63,51 @@
          [self.delegate pushViewController:vc];
     }
    
+}
+#pragma mark - 请求图片
+- (void)requestMyImage:(NSString *)imageUrl{
+    NSArray *tempArray = [imageUrl componentsSeparatedByString:@"/"];
+    NSString *imageName = [tempArray lastObject];
+    
+    NSString *filePath = [[[KBBreakpointTransmission instance] getTargetFloderPath:IMAGE_PATH] stringByAppendingPathComponent:imageName];
+    UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+    
+    if (image != nil){
+        //当前显示那张图片
+        self.bgImageView.image = image;
+    }else{
+        //先设置默认图就是加载中的图片
+        UIImage *loadingImage = [UIImage imageNamed:@"5暂无照片头像"];
+        
+        [self.bgImageView setImage:loadingImage];
+        //异步加载图片 并保存到本地
+        KBBTFileInfoVo *vo = [[[KBBTFileInfoVo alloc] init] autorelease];
+        NSLog(@"urlStr==%@",imageUrl);
+        //主键作为文件名保存
+        vo.fileName = imageName;
+        vo.fileURL = imageUrl;
+        vo.fileSize = @"123";
+        vo.sender = @"image";
+        vo.filePath = IMAGE_PATH;
+        [[KBBreakpointTransmission instance] loadDataWithDelegate:self
+                                                          success:@selector(imageDownloadFinish:)
+                                                             fail:nil
+                                                            start:nil
+                                                         progress:nil
+                                                         fileInfo:vo];
+    }
+}
+
+#pragma mark - 异步请求数据成功
+
+- (void)finishedDownload:(KBBTFileInfoVo *)vo{
+    //获取本地已经下载完成图片的路径
+    NSString *filePath = [[[KBBreakpointTransmission instance] getTargetFloderPath:vo.filePath] stringByAppendingPathComponent:vo.fileName];
+    NSLog(@"加载路径图片目录：%@",filePath);
+    UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+    
+    if (image == nil) return;
+    
+    [self.bgImageView setImage:image];
 }
 @end

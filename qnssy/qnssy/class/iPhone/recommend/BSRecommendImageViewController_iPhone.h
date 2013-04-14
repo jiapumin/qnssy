@@ -15,10 +15,14 @@
 
 @interface BSRecommendImageViewController_iPhone : UIViewController
 
+@property (retain, nonatomic) IBOutlet UIImageView *bgImageView;
 @property (retain, nonatomic) IBOutlet UILabel *nickNameLabel;
 @property (retain, nonatomic) IBOutlet UILabel *spaceLabel;
 @property (retain, nonatomic) IBOutlet UILabel *neixindubaiLabel;
 @property (nonatomic, assign)   id<BSRecommendImageDelegate>    delegate;
+
+
+@property (retain,nonatomic) NSDictionary *imageVo;
 - (IBAction)clickInfoButton:(id)sender;
 
 @end
