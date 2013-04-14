@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SuperResponseVo.h"
 
-@interface LookedMeResponseVo : NSObject
+@interface LookedMeResponseVo : SuperResponseVo
 
 @end

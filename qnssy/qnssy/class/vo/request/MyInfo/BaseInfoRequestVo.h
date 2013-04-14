@@ -6,8 +6,8 @@
 //  Copyright (c) 2013年 jpm. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "SuperRequestVo.h"
 
-@interface BaseInfoRequestVo : NSObject
+@interface BaseInfoRequestVo : SuperRequestVo
 
 @end

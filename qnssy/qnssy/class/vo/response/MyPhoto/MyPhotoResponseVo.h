@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SuperResponseVo.h"
 
-@interface MyPhotoResponseVo : NSObject
+@interface MyPhotoResponseVo : SuperResponseVo
+
+@property (retain, nonatomic) NSMutableArray *imageList;
+
 
 @end

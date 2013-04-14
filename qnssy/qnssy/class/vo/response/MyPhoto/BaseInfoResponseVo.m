@@ -10,4 +10,9 @@
 
 @implementation BaseInfoResponseVo
 
+- (void)analysisData:(NSDictionary *)ResData{
+    
+    NSLog(@"要解析的数据：%@",ResData);
+}
+
 @end
