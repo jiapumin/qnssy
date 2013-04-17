@@ -10,6 +10,8 @@
 #import "KTPhotoView+SDWebImage.h"
 #import "KTThumbView+SDWebImage.h"
 
+#import "KTThumbsViewController.h"
+
 #define FULL_SIZE_INDEX 0
 #define THUMBNAIL_INDEX 1
 
@@ -110,5 +112,16 @@
    [thumbView setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"photoDefault.png"]];
 }
 
-
+- (NSArray *)imageList{
+    return self.images_;
+}
+- (void)deleteImageAtIndex:(NSInteger)index thumbVC:(KTThumbsViewController *)vc{
+    //删除第几张图片
+    [self.images_ removeObjectAtIndex:index];
+    [vc reloadThumbs];
+}
+//- (void)deleteImageAtIndex:(NSInteger)index{
+//    //删除第几张图片
+//    [self.images_ removeObjectAtIndex:index];
+//}
 @end

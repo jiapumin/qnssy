@@ -202,6 +202,8 @@
 		D8A706C21701084900B24213 /* BSPublicTableCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A706C01701084900B24213 /* BSPublicTableCell_iPhone.xib */; };
 		D8B40EB41712FB8000849F81 /* MyInfo341RequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B40EB31712FB8000849F81 /* MyInfo341RequestVo.m */; };
 		D8B40EB71712FF1600849F81 /* SignInResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B40EB61712FF1600849F81 /* SignInResponseVo.m */; };
+		D8C76E59171E764F00815457 /* DelMyPhotoRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C76E58171E764F00815457 /* DelMyPhotoRequestVo.m */; };
+		D8C76E5C171E76DF00815457 /* DelMyPhotoResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C76E5B171E76DF00815457 /* DelMyPhotoResponseVo.m */; };
 		D8CA7D4C16F4083200B4CE67 /* BSContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D4616F4083200B4CE67 /* BSContainer.m */; };
 		D8CA7D4D16F4083200B4CE67 /* BSHttpAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D4816F4083200B4CE67 /* BSHttpAgent.m */; };
 		D8CA7D4E16F4083200B4CE67 /* BSServiceAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D4B16F4083200B4CE67 /* BSServiceAgent.m */; };
@@ -575,6 +577,10 @@
 		D8B40EB31712FB8000849F81 /* MyInfo341RequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfo341RequestVo.m; sourceTree = "<group>"; };
 		D8B40EB51712FF1600849F81 /* SignInResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInResponseVo.h; sourceTree = "<group>"; };
 		D8B40EB61712FF1600849F81 /* SignInResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInResponseVo.m; sourceTree = "<group>"; };
+		D8C76E57171E764F00815457 /* DelMyPhotoRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelMyPhotoRequestVo.h; sourceTree = "<group>"; };
+		D8C76E58171E764F00815457 /* DelMyPhotoRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DelMyPhotoRequestVo.m; sourceTree = "<group>"; };
+		D8C76E5A171E76DF00815457 /* DelMyPhotoResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelMyPhotoResponseVo.h; sourceTree = "<group>"; };
+		D8C76E5B171E76DF00815457 /* DelMyPhotoResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DelMyPhotoResponseVo.m; sourceTree = "<group>"; };
 		D8CA7D4516F4083200B4CE67 /* BSContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSContainer.h; sourceTree = "<group>"; };
 		D8CA7D4616F4083200B4CE67 /* BSContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSContainer.m; sourceTree = "<group>"; };
 		D8CA7D4716F4083200B4CE67 /* BSHttpAgent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSHttpAgent.h; sourceTree = "<group>"; };
@@ -1523,6 +1529,8 @@
 				D85B662E171A999200581B00 /* LookedMeRequestVo.m */,
 				D85B664C171AA6CC00581B00 /* BaseInfoRequestVo.h */,
 				D85B664D171AA6CD00581B00 /* BaseInfoRequestVo.m */,
+				D8C76E57171E764F00815457 /* DelMyPhotoRequestVo.h */,
+				D8C76E58171E764F00815457 /* DelMyPhotoRequestVo.m */,
 			);
 			path = MyInfo;
 			sourceTree = "<group>";
@@ -1538,6 +1546,8 @@
 				D85B6631171A99D700581B00 /* LookedMeResponseVo.m */,
 				D85B664F171AA76500581B00 /* BaseInfoResponseVo.h */,
 				D85B6650171AA76600581B00 /* BaseInfoResponseVo.m */,
+				D8C76E5A171E76DF00815457 /* DelMyPhotoResponseVo.h */,
+				D8C76E5B171E76DF00815457 /* DelMyPhotoResponseVo.m */,
 			);
 			path = MyPhoto;
 			sourceTree = "<group>";
@@ -1898,6 +1908,8 @@
 				D85B6651171AA76600581B00 /* BaseInfoResponseVo.m in Sources */,
 				D83BD506171AE38C00E230FF /* RecommendImageListRequestVo.m in Sources */,
 				D83BD50A171AE43C00E230FF /* RecommendImageListResponseVo.m in Sources */,
+				D8C76E59171E764F00815457 /* DelMyPhotoRequestVo.m in Sources */,
+				D8C76E5C171E76DF00815457 /* DelMyPhotoResponseVo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1990,8 +2002,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E3FAB381-E165-45F8-853B-B6E8C25AA675";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "E3FAB381-E165-45F8-853B-B6E8C25AA675";
+				PROVISIONING_PROFILE = "6655C971-805A-49E2-BD4C-2D3628BFD6B7";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6655C971-805A-49E2-BD4C-2D3628BFD6B7";
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/QuickDialog/**";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2014,8 +2026,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7CDDAE5A-8E5B-4BC1-A0D9-33B5F816C30B";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7CDDAE5A-8E5B-4BC1-A0D9-33B5F816C30B";
+				PROVISIONING_PROFILE = "A7E483FA-FEC2-4B8A-A620-4271F0C60BEB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A7E483FA-FEC2-4B8A-A620-4271F0C60BEB";
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/QuickDialog/**";
 				WRAPPER_EXTENSION = app;
 			};

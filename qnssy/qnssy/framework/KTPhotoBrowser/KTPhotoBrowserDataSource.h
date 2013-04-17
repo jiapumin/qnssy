@@ -10,6 +10,7 @@
 
 @class KTPhotoView;
 @class KTThumbView;
+@class KTThumbsViewController;
 
 @protocol KTPhotoBrowserDataSource <NSObject>
 @required
@@ -26,11 +27,15 @@
 - (void)thumbImageAtIndex:(NSInteger)index thumbView:(KTThumbView *)thumbView;
 
 - (void)deleteImageAtIndex:(NSInteger)index;
+- (void)deleteImageAtIndex:(NSInteger)index thumbVC:(KTThumbsViewController *)vc;
+
 - (void)exportImageAtIndex:(NSInteger)index;
 
 - (CGSize)thumbSize;
 - (NSInteger)thumbsPerRow;
 - (BOOL)thumbsHaveBorder;
 - (UIColor *)imageBackgroundColor;
+
+- (NSArray *)imageList;
 
 @end

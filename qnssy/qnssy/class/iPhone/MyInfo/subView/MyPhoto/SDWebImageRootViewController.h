@@ -11,7 +11,7 @@
 
 @class SDWebImageDataSource;
 
-@interface SDWebImageRootViewController : KTThumbsViewController 
+@interface SDWebImageRootViewController : KTThumbsViewController<UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 {
 @private
    SDWebImageDataSource *images_;

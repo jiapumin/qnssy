@@ -31,7 +31,7 @@
                     }
                     
                 }
-                self.message = [ResData objectForKey:@"ResMessage"];
+                self.message = [ResData objectForKey:@"Message"];
                 self.status = resCode2;
             
             }else{

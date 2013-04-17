@@ -11,6 +11,9 @@
 #import "KTThumbView.h"
 #import "KTPhotoScrollViewController.h"
 
+#import "DelMyPhotoRequestVo.h"
+#import "DelMyPhotoResponseVo.h"
+
 
 @interface KTThumbsViewController (Private)
 @end
@@ -61,6 +64,9 @@
    
    // Release the local scroll view reference.
    [scrollView release];
+    
+    //初始化加载框
+    [self initHUDView];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -114,12 +120,60 @@
 }
 
 - (void)didSelectThumbAtIndex:(NSUInteger)index {
+    if (self.isEdit) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您确认要删除此照片吗"
+                                                        message:nil
+                                                       delegate:self
+                                              cancelButtonTitle:@"取消"
+                                              otherButtonTitles:@"确认", nil];
+        [alert show];
+        alert.tag = index;
+        [alert release];
+        
+        return;
+    }
    KTPhotoScrollViewController *newController = [[KTPhotoScrollViewController alloc] 
                                                         initWithDataSource:dataSource_ 
                                                   andStartWithPhotoAtIndex:index];
   
    [[self navigationController] pushViewController:newController animated:YES];
    [newController release];
+}
+- (void)initHUDView{
+    //-------加载框
+    self.progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
+    
+    [self.view addSubview:self.progressHUD];
+    
+    self.progressHUD.labelText = @"数据加载中...";
+    
+}
+#pragma mark - 回调方法
+
+- (void)requestDelMyPhotoSucceess:(id)sender data:(NSDictionary *)dic {
+    
+    DelMyPhotoResponseVo *vo = [[DelMyPhotoResponseVo alloc] initWithDic:dic];
+    
+    if (vo.status == 0) {
+        int index = [sender intValue];
+        //删除成功
+        [dataSource_ deleteImageAtIndex:index thumbVC:self];
+    }
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
+    [self.progressHUD hide:YES];
+    
+    [vo release];
+}
+
+
+- (void)requestDelMyPhotoFailed:(id)sender data:(NSDictionary *)dic {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"网络异常，请检查网络连接后重试" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
+    [self.progressHUD hide:YES];
 }
 
 
@@ -152,6 +206,22 @@
    
    return thumbView;
 }
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 1) {
+        int index = alertView.tag;
+        NSString *id = [[[dataSource_ imageList] objectAtIndex:index] objectForKey:@"imageid"];
+        DelMyPhotoRequestVo *vo = [[DelMyPhotoRequestVo alloc] initWithPhotoId:id];
+        [[BSContainer instance].serviceAgent callServletWithObject:[NSString stringWithFormat:@"%d",index]
+                                                       requestDict:vo.mReqDic
+                                                            target:self
+                                                   successCallBack:@selector(requestDelMyPhotoSucceess:data:)
+                                                      failCallBack:@selector(requestDelMyPhotoFailed:data:)];
+        
+        [vo release];
+        
 
+    }
+}
 
 @end

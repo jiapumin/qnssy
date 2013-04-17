@@ -12,7 +12,7 @@
 
 @class KTThumbsView;
 
-@interface KTThumbsViewController : UIViewController <KTThumbsViewDataSource>
+@interface KTThumbsViewController : UIViewController <KTThumbsViewDataSource,UIAlertViewDelegate>
 {
 @private
    id <KTPhotoBrowserDataSource> dataSource_;
@@ -20,6 +20,10 @@
    BOOL viewDidAppearOnce_;
    BOOL navbarWasTranslucent_;
 }
+@property (nonatomic) BOOL isEdit;
+
+@property (nonatomic, retain) MBProgressHUD *progressHUD;
+
 
 @property (nonatomic, retain) id <KTPhotoBrowserDataSource> dataSource;
 

@@ -14,7 +14,7 @@
 #import "MyPhotoResponseVo.h"
 
 @interface SDWebImageRootViewController (){
-    MBProgressHUD *progressHUD;
+    UIButton *topRightDelButton;
 }
 - (void)showActivityIndicator;
 - (void)hideActivityIndicator;
@@ -38,8 +38,7 @@
    images_ = [[SDWebImageDataSource alloc] init];
    [self setDataSource:images_];
     
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(edit)];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(edit)];
+    [self initNavRightBar];
     
     
     //返回按钮
@@ -63,23 +62,47 @@
     self.view.backgroundColor = publicColor;
     
     
-    //初始化加载框
-    [self initHUDView];
+
     [self loadServiceData];
     
 }
 
-- (void)initHUDView{
-    //-------加载框
-    progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
+- (void)initNavRightBar{
+    NSMutableArray *itemArray = [[NSMutableArray alloc] init];
+    UIButton *topRightButton1 = [UIButton buttonWithType:UIButtonTypeCustom];
+    //按钮大小
+    CGRect btnFrame1 = CGRectMake(0.0, 0.0, 29.0, 25.0);
+    topRightButton1.frame =btnFrame1;
+    [topRightButton1 setImage:[UIImage imageNamed:@"5菜单列表图片"]
+                   forState:UIControlStateNormal];
+    [topRightButton1 addTarget:self
+                      action:@selector(addPhoto)
+            forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem * topRightBarButtonItem1 = [[UIBarButtonItem alloc] initWithCustomView:topRightButton1];
+    [itemArray addObject:topRightBarButtonItem1];
+    [topRightBarButtonItem1 release];
     
-    [self.view addSubview:progressHUD];
+    topRightDelButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    //按钮大小
+    CGRect btnFrame2 = CGRectMake(0.0, 0.0, 29.0, 25.0);
+    topRightDelButton.frame =btnFrame2;
+    [topRightDelButton setImage:[UIImage imageNamed:@"5菜单列表图片"]
+                     forState:UIControlStateNormal];
+    [topRightDelButton addTarget:self
+                        action:@selector(delPhoto)
+              forControlEvents:UIControlEventTouchUpInside];
+    UIBarButtonItem * topRightBarButtonItem2 = [[UIBarButtonItem alloc] initWithCustomView:topRightDelButton];
+    [itemArray addObject:topRightBarButtonItem2];
+    [topRightBarButtonItem2 release];
     
-    progressHUD.labelText = @"数据加载中...";
-    
+
+    [self.navigationItem setRightBarButtonItems:itemArray animated:YES];
+    [itemArray release];
+   
 }
+
 - (void)loadServiceData{
-    [progressHUD show:YES];
+    [self.progressHUD show:YES];
     MyPhotoRequestVo *vo = [[MyPhotoRequestVo alloc] initWithPageNum:@"0" pageCount:@"10"];
     [[BSContainer instance].serviceAgent callServletWithObject:self
                                                    requestDict:vo.mReqDic
@@ -89,8 +112,28 @@
     
     [vo release];
 }
-- (void)edit{
+- (void)addPhoto{
     
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"选择照片来源"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"取消"
+                                               destructiveButtonTitle:@"相册"
+                                                    otherButtonTitles:@"拍照", nil];
+    [actionSheet showInView:self.view];
+    [actionSheet release];
+    
+}
+- (void)delPhoto{
+    if (self.isEdit) {
+        [topRightDelButton setImage:[UIImage imageNamed:@"5菜单列表图片"]
+                           forState:UIControlStateNormal];
+    }else{
+        [topRightDelButton setImage:[UIImage imageNamed:@"10未读邮件ico"]
+                           forState:UIControlStateNormal];
+    }
+
+    self.isEdit = !self.isEdit;
+        
 }
 
 /*
@@ -167,7 +210,7 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
     [alert release];
-    [progressHUD hide:YES];
+    [self.progressHUD hide:YES];
     
     [vo release];
 }
@@ -177,10 +220,99 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"网络异常，请检查网络连接后重试" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
     [alert release];
-    [progressHUD hide:YES];
+    [self.progressHUD hide:YES];
 }
 #pragma mark - pop
 - (void)popViewContoller{
     [self.navigationController popViewControllerAnimated:YES];
 }
+#pragma mark - UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {//相册
+        [self selectPhotoFromLiabary];
+    }else if(buttonIndex == 1){//相机
+        [self pickerPhoto];
+    }
+}
+#pragma mark - 相机
+- (IBAction)selectPhotoFromLiabary{
+    //从相册中选取
+	UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+	if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+		imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+		imagePicker.allowsEditing = YES;
+        imagePicker.delegate = self;
+        [self presentModalViewController:imagePicker animated:YES];
+
+	}else {
+		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"打开相册异常,请重试"
+                                                            message:@""
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"确认"
+                                                  otherButtonTitles:nil];
+		[alertView show];
+		[alertView release];
+	}
+	[imagePicker release];
+}
+
+- (IBAction)pickerPhoto{
+    
+    //拍照
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+	if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+		imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+		imagePicker.allowsEditing = YES;
+		imagePicker.delegate = self;
+		[self presentModalViewController:imagePicker animated:YES];
+		
+	}else {
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"相机不可用" message:@""
+                                                       delegate:nil
+                                              cancelButtonTitle:@"关闭"
+                                              otherButtonTitles:nil];
+		[alert show];
+		[alert release];
+	}
+    [imagePicker release];
+}
+#pragma mark -
+#pragma mark UIImagePickerControllerDelegate method
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+	[picker dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    UIImage *original_image;
+    if (picker.sourceType == UIImagePickerControllerSourceTypeCamera)
+    {
+        //如果是 来自照相机的image，那么先保存
+        original_image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+        UIImageWriteToSavedPhotosAlbum(original_image,
+                                       self,
+                                       @selector(image:didFinishSavingWithError:contextInfo:),
+                                       nil);
+        
+    }else if (picker.sourceType == UIImagePickerControllerSourceTypePhotoLibrary) {
+        //来自相册图片 当需要提交服务器原图时取消此注释
+        //        original_image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    }
+    //获得编辑过的图片
+    UIImage* image = [info objectForKey: @"UIImagePickerControllerEditedImage"];
+
+    
+    //请求服务器上传图片
+//    [self requestService:image fileType:[NSString stringWithFormat:@"%d",selectImageFileType]];
+    
+        [picker dismissModalViewControllerAnimated:YES];
+    
+    
+}
+- (void)image:(UIImageView*)image didFinishSavingWithError:(NSString*)error contextInfo:(NSString*)context{
+    NSLog(@"保存完成！");
+}
+
 @end
