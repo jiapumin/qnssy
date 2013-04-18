@@ -90,8 +90,9 @@
         
         [self.left removeFromSuperview];
         [self.right removeFromSuperview];
-        app.viewController = [[[DefaultLoadViewController_iPhone alloc] initWithNibName:@"DefaultLoadViewController_iPhone" bundle:nil] autorelease];
-        app.window.rootViewController = app.viewController;
+//        app.viewController = [[[DefaultLoadViewController_iPhone alloc] initWithNibName:@"DefaultLoadViewController_iPhone" bundle:nil] autorelease];
+        app.window.rootViewController =  app.loginNav;
+
 //        [self presentModalViewController:self.defaultViewController animated:YES];
     }
 }

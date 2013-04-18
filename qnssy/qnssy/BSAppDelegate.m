@@ -8,7 +8,6 @@
 
 #import "BSAppDelegate.h"
 #import "BSRootLeftViewController_iPhone.h"
-#import "DefaultLoadViewController_iPhone.h"
 #import "ViewController.h"
 #import "BSUserLoginViewController.h"
 

@@ -106,7 +106,7 @@
 #pragma mark - 请求图片
 - (void)requestMyImage:(NSString *)imageUrl{
     NSArray *tempArray = [imageUrl componentsSeparatedByString:@"/"];
-    NSString *imageName = [tempArray lastObject];
+    NSString *imageName = [NSString stringWithFormat:@"%@_%@",[tempArray objectAtIndex:(tempArray.count -2)],[tempArray lastObject]];
     
     NSString *filePath = [[[KBBreakpointTransmission instance] getTargetFloderPath:IMAGE_PATH] stringByAppendingPathComponent:imageName];
     UIImage *image = [UIImage imageWithContentsOfFile:filePath];

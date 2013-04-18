@@ -26,7 +26,7 @@
 
 @property (retain, nonatomic) IBOutlet UIToolbar *toolBar;
 
-- (IBAction)clickLogOut:(id)sender;
+@property (retain, nonatomic) IBOutlet UIButton *myTopPhoto;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil
                   vcs:(NSMutableArray *)vcs
@@ -34,5 +34,7 @@
 selectedLeftImageArray:(NSMutableArray *)select
 noSelectedLeftImageArray:(NSMutableArray *)noSelected;
 - (IBAction)clickTopMyInfo:(id)sender;
+
+- (void)requestMyImage:(NSString *)imageUrl imageId:(NSString *)imageId;
 
 @end

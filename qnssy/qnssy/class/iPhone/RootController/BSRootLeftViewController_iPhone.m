@@ -29,6 +29,7 @@
     [_navBar release];
     [_toolBar release];
     [_navItem release];
+    [_myTopPhoto release];
     [super dealloc];
 }
 - (void)viewDidUnload {
@@ -41,6 +42,7 @@
     [self setNavBar:nil];
     [self setToolBar:nil];
     [self setNavItem:nil];
+    [self setMyTopPhoto:nil];
     [super viewDidUnload];
 }
 
@@ -76,13 +78,20 @@ noSelectedLeftImageArray:(NSMutableArray *)noSelected
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.view.backgroundColor = [UIColor colorWithRed:247.f/255 green:232.f/255 blue:232.f/255 alpha:1.f];
-    
+    //加载头像图片
+    NSString *imageUrl = [BSContainer instance].userInfo.imageUrl;
+    [self requestMyImage:imageUrl imageId:nil];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+
 }
 #pragma mark - Table view data source
 
@@ -147,7 +156,50 @@ noSelectedLeftImageArray:(NSMutableArray *)noSelected
 
 }
 
-- (IBAction)clickLogOut:(id)sender {
-    app.window.rootViewController = app.loginNav;
+#pragma mark - 请求图片
+- (void)requestMyImage:(NSString *)imageUrl imageId:(NSString *)imageId{
+    NSArray *tempArray = [imageUrl componentsSeparatedByString:@"/"];
+//    NSString *imageName = [tempArray lastObject];
+    NSString *imageName = [NSString stringWithFormat:@"%@_%@",[tempArray objectAtIndex:(tempArray.count -2)],[tempArray lastObject]];
+    
+    NSString *filePath = [[[KBBreakpointTransmission instance] getTargetFloderPath:IMAGE_PATH] stringByAppendingPathComponent:imageName];
+    UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+    
+    if (image != nil){
+        //当前显示那张图片
+        [self.myTopPhoto setImage:image forState:UIControlStateNormal];
+    }else{
+        //先设置默认图就是加载中的图片
+        UIImage *loadingImage = [UIImage imageNamed:@"5暂无照片头像"];
+        [self.myTopPhoto setImage:loadingImage forState:UIControlStateNormal];
+        //异步加载图片 并保存到本地
+        KBBTFileInfoVo *vo = [[[KBBTFileInfoVo alloc] init] autorelease];
+        NSLog(@"urlStr==%@",imageUrl);
+        //主键作为文件名保存
+        vo.fileName = imageName;
+        vo.fileURL = imageUrl;
+        vo.fileSize = @"123";
+        vo.sender = @"image";
+        vo.filePath = IMAGE_PATH;
+        [[KBBreakpointTransmission instance] loadDataWithDelegate:self
+                                                          success:@selector(imageDownloadFinish:)
+                                                             fail:nil
+                                                            start:nil
+                                                         progress:nil
+                                                         fileInfo:vo];
+    }
+}
+
+#pragma mark - 异步请求数据成功
+
+- (void)imageDownloadFinish:(KBBTFileInfoVo *)vo{
+    //获取本地已经下载完成图片的路径
+    NSString *filePath = [[[KBBreakpointTransmission instance] getTargetFloderPath:vo.filePath] stringByAppendingPathComponent:vo.fileName];
+    NSLog(@"加载路径图片目录：%@",filePath);
+    UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+    
+    if (image == nil) return;
+    
+    [self.myTopPhoto setImage:image forState:UIControlStateNormal];
 }
 @end

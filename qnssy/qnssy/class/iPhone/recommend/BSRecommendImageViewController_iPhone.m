@@ -30,7 +30,7 @@
     // Do any additional setup after loading the view from its nib.
     
     
-    [self requestMyImage:[self.imageVo objectForKey:@"userimg"]];
+    [self requestMyImage:[self.imageVo objectForKey:@"userimg"] imageId:[self.imageVo objectForKey:@"imageId"]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -65,9 +65,9 @@
    
 }
 #pragma mark - 请求图片
-- (void)requestMyImage:(NSString *)imageUrl{
+- (void)requestMyImage:(NSString *)imageUrl imageId:(NSString *)imageId{
     NSArray *tempArray = [imageUrl componentsSeparatedByString:@"/"];
-    NSString *imageName = [tempArray lastObject];
+    NSString *imageName = [NSString stringWithFormat:@"%@_%@",imageId,[tempArray lastObject]];
     
     NSString *filePath = [[[KBBreakpointTransmission instance] getTargetFloderPath:IMAGE_PATH] stringByAppendingPathComponent:imageName];
     UIImage *image = [UIImage imageWithContentsOfFile:filePath];
@@ -100,7 +100,7 @@
 
 #pragma mark - 异步请求数据成功
 
-- (void)finishedDownload:(KBBTFileInfoVo *)vo{
+- (void)imageDownloadFinish:(KBBTFileInfoVo *)vo{
     //获取本地已经下载完成图片的路径
     NSString *filePath = [[[KBBreakpointTransmission instance] getTargetFloderPath:vo.filePath] stringByAppendingPathComponent:vo.fileName];
     NSLog(@"加载路径图片目录：%@",filePath);

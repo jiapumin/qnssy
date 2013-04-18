@@ -13,6 +13,7 @@
 #import "LoginResponseVo.h"
 #import "BSBindUserAccountViewController.h"
 #import "UserInfo.h"
+#import "BSRootLeftViewController_iPhone.h"
 
 @interface BSUserLoginViewController (){
     BOOL isTextFieldMoved;
@@ -240,6 +241,8 @@
 
     //进入主界面
 //    [self.view addSubview:app.revealSideViewController.view];
+
+    
     app.window.rootViewController = app.revealSideViewController;
     
     [progressHUD hide:YES];

@@ -84,8 +84,6 @@
 		D87A055116EF69DE0052328E /* BSRootLeftViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87A054C16EF69DE0052328E /* BSRootLeftViewController_iPhone.xib */; };
 		D87A055316EF6A7A0052328E /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A055216EF6A7A0052328E /* libxml2.dylib */; };
 		D87A055516EF6A970052328E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A055416EF6A970052328E /* MobileCoreServices.framework */; };
-		D87A055A16EF6B660052328E /* DefaultLoadViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A055816EF6B660052328E /* DefaultLoadViewController_iPhone.m */; };
-		D87A055B16EF6B660052328E /* DefaultLoadViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87A055916EF6B660052328E /* DefaultLoadViewController_iPhone.xib */; };
 		D87A055F16EF6D3C0052328E /* BSMyInfoViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A055D16EF6D3C0052328E /* BSMyInfoViewController_iPhone.m */; };
 		D87A056016EF6D3C0052328E /* BSMyInfoViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87A055E16EF6D3C0052328E /* BSMyInfoViewController_iPhone.xib */; };
 		D87A056416EF6D640052328E /* BSRecommendViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A056216EF6D640052328E /* BSRecommendViewController_iPhone.m */; };
@@ -408,9 +406,6 @@
 		D87A054E16EF69DE0052328E /* BSSuperCentreViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSuperCentreViewController_iPhone.h; sourceTree = "<group>"; };
 		D87A055216EF6A7A0052328E /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		D87A055416EF6A970052328E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		D87A055716EF6B660052328E /* DefaultLoadViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DefaultLoadViewController_iPhone.h; sourceTree = "<group>"; };
-		D87A055816EF6B660052328E /* DefaultLoadViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DefaultLoadViewController_iPhone.m; sourceTree = "<group>"; };
-		D87A055916EF6B660052328E /* DefaultLoadViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DefaultLoadViewController_iPhone.xib; sourceTree = "<group>"; };
 		D87A055C16EF6D3C0052328E /* BSMyInfoViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMyInfoViewController_iPhone.h; sourceTree = "<group>"; };
 		D87A055D16EF6D3C0052328E /* BSMyInfoViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMyInfoViewController_iPhone.m; sourceTree = "<group>"; };
 		D87A055E16EF6D3C0052328E /* BSMyInfoViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMyInfoViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -918,7 +913,6 @@
 			children = (
 				5AD6530816F447BB00FD80D8 /* UserGuid */,
 				5A64EBE216F2F8EF00F4E576 /* register */,
-				D87A055616EF6B660052328E /* LoadView */,
 				D87A052516EF68A50052328E /* RootController */,
 				D87A052316EF68A50052328E /* MyInfo */,
 				D87A052416EF68A50052328E /* recommend */,
@@ -1107,16 +1101,6 @@
 				D87A054016EF69700052328E /* PPRevealSideViewController.m */,
 			);
 			path = PPRevealSideviewController;
-			sourceTree = "<group>";
-		};
-		D87A055616EF6B660052328E /* LoadView */ = {
-			isa = PBXGroup;
-			children = (
-				D87A055716EF6B660052328E /* DefaultLoadViewController_iPhone.h */,
-				D87A055816EF6B660052328E /* DefaultLoadViewController_iPhone.m */,
-				D87A055916EF6B660052328E /* DefaultLoadViewController_iPhone.xib */,
-			);
-			path = LoadView;
 			sourceTree = "<group>";
 		};
 		D87A059016EF77F80052328E /* Resource */ = {
@@ -1666,7 +1650,6 @@
 				D87A050216EF639A0052328E /* Default@2x.png in Resources */,
 				D87A050416EF639A0052328E /* Default-568h@2x.png in Resources */,
 				D87A055116EF69DE0052328E /* BSRootLeftViewController_iPhone.xib in Resources */,
-				D87A055B16EF6B660052328E /* DefaultLoadViewController_iPhone.xib in Resources */,
 				D87A056016EF6D3C0052328E /* BSMyInfoViewController_iPhone.xib in Resources */,
 				D87A056516EF6D640052328E /* BSRecommendViewController_iPhone.xib in Resources */,
 				D87A056A16EF6D950052328E /* BSMessageViewController_iPhone.xib in Resources */,
@@ -1816,7 +1799,6 @@
 				D87A054816EF69700052328E /* PPRevealSideViewController.m in Sources */,
 				D87A054F16EF69DE0052328E /* BSRootLeftViewController_iPhone.m in Sources */,
 				D87A055016EF69DE0052328E /* BSSuperCentreViewController_iPhone.m in Sources */,
-				D87A055A16EF6B660052328E /* DefaultLoadViewController_iPhone.m in Sources */,
 				D87A055F16EF6D3C0052328E /* BSMyInfoViewController_iPhone.m in Sources */,
 				D87A056416EF6D640052328E /* BSRecommendViewController_iPhone.m in Sources */,
 				D87A056916EF6D950052328E /* BSMessageViewController_iPhone.m in Sources */,
