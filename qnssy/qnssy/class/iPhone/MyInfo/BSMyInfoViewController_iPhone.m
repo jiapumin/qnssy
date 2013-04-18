@@ -136,48 +136,7 @@
                                                          fileInfo:vo];
     }
 
-//    //开始加载图片
-//    //图片名字这个名字是从服务器获得
-//    NSString *imageName = [NSString stringWithFormat:@"%@",@"index2.jpg"];
-//    NSString *servieURL = @"http://www.qnssy.com/app/static/images/";
-//    //此处获得图片本地路径
-//    NSString *filePath = [[[KBBreakpointTransmission instance] getTargetFloderPath:@"image"] stringByAppendingPathComponent:imageName];
-//
-//    UIImage *image = [UIImage imageWithContentsOfFile:filePath];
-//    //如果本地存在图片就加载本地录图片
-//    if (image != nil) {
-//
-//        [self.testImgeView setImage:image];
-//
-//    }else{
-//        //先设置默认图就是加载中的图片
-//        UIImage *loadingImage = [UIImage imageNamed:@"zsk_img_loading.png"];
-//
-//        [self.testImgeView setImage:loadingImage];
-//        //异步加载图片 并保存到本地
-//        NSString *urlStr = [NSString stringWithFormat:@"%@index2.jpg",servieURL];
-//        //创建一个要下载数据的vo
-//        KBBTFileInfoVo *vo = [[[KBBTFileInfoVo alloc] init] autorelease];
-//
-//        NSLog(@"urlStr==%@",urlStr);
-//        //下载后要保存的文件名字
-//        vo.fileName = imageName;
-//        //下载文件的完整url地址
-//        vo.fileURL = urlStr;
-//        //下载文件的大小，默认随便写个数字
-//        vo.fileSize = @"123";
-//        //下载文件的唯一id,下载完成图片时使用
-//        vo.fileID = imageName;
-//        //文件要下载到哪个路径下
-//        vo.filePath = @"image";
-//        //开始下载，finishedDownload是完成下载后的回调函数
-//        [[KBBreakpointTransmission instance] loadDataWithDelegate:self
-//                                                          success:@selector(finishedDownload:)
-//                                                             fail:nil
-//                                                            start:nil
-//                                                         progress:nil
-//                                                         fileInfo:vo];
-//    }
+
 }
 - (IBAction)clickRegister:(id)sender {
     SignInRequestVo *vo = [[SignInRequestVo alloc] init];
@@ -305,7 +264,7 @@
 
 #pragma mark - 异步请求数据成功
 
-- (void)finishedDownload:(KBBTFileInfoVo *)vo{
+- (void)imageDownloadFinish:(KBBTFileInfoVo *)vo{
     //获取本地已经下载完成图片的路径
     NSString *filePath = [[[KBBreakpointTransmission instance] getTargetFloderPath:vo.filePath] stringByAppendingPathComponent:vo.fileName];
     NSLog(@"加载路径图片目录：%@",filePath);

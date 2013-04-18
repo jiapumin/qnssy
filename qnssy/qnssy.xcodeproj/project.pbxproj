@@ -62,6 +62,9 @@
 		D85B664B171AA66B00581B00 /* BSBaseInfoViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85B6649171AA66B00581B00 /* BSBaseInfoViewController_iPhone.xib */; };
 		D85B664E171AA6CD00581B00 /* BaseInfoRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D85B664D171AA6CD00581B00 /* BaseInfoRequestVo.m */; };
 		D85B6651171AA76600581B00 /* BaseInfoResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D85B6650171AA76600581B00 /* BaseInfoResponseVo.m */; };
+		D870C49A171F9EC4000D8286 /* SignInResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D870C499171F9EC4000D8286 /* SignInResponseVo.m */; };
+		D870C49D171F9F51000D8286 /* SignInRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D870C49C171F9F51000D8286 /* SignInRequestVo.m */; };
+		D870C4A0171FA1F6000D8286 /* UpdateMyPhotoRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D870C49F171FA1F5000D8286 /* UpdateMyPhotoRequestVo.m */; };
 		D87A04EE16EF639A0052328E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04ED16EF639A0052328E /* UIKit.framework */; };
 		D87A04F016EF639A0052328E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04EF16EF639A0052328E /* Foundation.framework */; };
 		D87A04F216EF639A0052328E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04F116EF639A0052328E /* CoreGraphics.framework */; };
@@ -199,7 +202,6 @@
 		D8A706C11701084900B24213 /* BSPublicTableCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A706BF1701084900B24213 /* BSPublicTableCell_iPhone.m */; };
 		D8A706C21701084900B24213 /* BSPublicTableCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A706C01701084900B24213 /* BSPublicTableCell_iPhone.xib */; };
 		D8B40EB41712FB8000849F81 /* MyInfo341RequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B40EB31712FB8000849F81 /* MyInfo341RequestVo.m */; };
-		D8B40EB71712FF1600849F81 /* SignInResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B40EB61712FF1600849F81 /* SignInResponseVo.m */; };
 		D8C76E59171E764F00815457 /* DelMyPhotoRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C76E58171E764F00815457 /* DelMyPhotoRequestVo.m */; };
 		D8C76E5C171E76DF00815457 /* DelMyPhotoResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C76E5B171E76DF00815457 /* DelMyPhotoResponseVo.m */; };
 		D8CA7D4C16F4083200B4CE67 /* BSContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D4616F4083200B4CE67 /* BSContainer.m */; };
@@ -259,7 +261,6 @@
 		D8F02A5516FD8F660023FB0A /* 26红娘服务按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F02A3616FD8F660023FB0A /* 26红娘服务按钮@2x.png */; };
 		D8F02A5616FD8F660023FB0A /* 28签到背景@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F02A3716FD8F660023FB0A /* 28签到背景@2x.png */; };
 		D8F02A5716FD8F660023FB0A /* 28设置按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F02A3816FD8F660023FB0A /* 28设置按钮@2x.png */; };
-		D8FE147616FEA283006405F1 /* SignInRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE147516FEA283006405F1 /* SignInRequestVo.m */; };
 		D8FE147B16FEA5E4006405F1 /* BSMyInfoTableCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE147816FEA5E3006405F1 /* BSMyInfoTableCell_iPhone.m */; };
 		D8FE147C16FEA5E4006405F1 /* BSMyInfoTableCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FE147916FEA5E3006405F1 /* BSMyInfoTableCell_iPhone.xib */; };
 /* End PBXBuildFile section */
@@ -367,6 +368,12 @@
 		D85B664D171AA6CD00581B00 /* BaseInfoRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfoRequestVo.m; sourceTree = "<group>"; };
 		D85B664F171AA76500581B00 /* BaseInfoResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInfoResponseVo.h; sourceTree = "<group>"; };
 		D85B6650171AA76600581B00 /* BaseInfoResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfoResponseVo.m; sourceTree = "<group>"; };
+		D870C498171F9EC4000D8286 /* SignInResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInResponseVo.h; sourceTree = "<group>"; };
+		D870C499171F9EC4000D8286 /* SignInResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInResponseVo.m; sourceTree = "<group>"; };
+		D870C49B171F9F51000D8286 /* SignInRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInRequestVo.h; sourceTree = "<group>"; };
+		D870C49C171F9F51000D8286 /* SignInRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInRequestVo.m; sourceTree = "<group>"; };
+		D870C49E171FA1F5000D8286 /* UpdateMyPhotoRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateMyPhotoRequestVo.h; sourceTree = "<group>"; };
+		D870C49F171FA1F5000D8286 /* UpdateMyPhotoRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateMyPhotoRequestVo.m; sourceTree = "<group>"; };
 		D87A04E916EF639A0052328E /* qnssy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qnssy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87A04ED16EF639A0052328E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D87A04EF16EF639A0052328E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -570,8 +577,6 @@
 		D8A706C01701084900B24213 /* BSPublicTableCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSPublicTableCell_iPhone.xib; sourceTree = "<group>"; };
 		D8B40EB21712FB8000849F81 /* MyInfo341RequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfo341RequestVo.h; sourceTree = "<group>"; };
 		D8B40EB31712FB8000849F81 /* MyInfo341RequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfo341RequestVo.m; sourceTree = "<group>"; };
-		D8B40EB51712FF1600849F81 /* SignInResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInResponseVo.h; sourceTree = "<group>"; };
-		D8B40EB61712FF1600849F81 /* SignInResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInResponseVo.m; sourceTree = "<group>"; };
 		D8C76E57171E764F00815457 /* DelMyPhotoRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelMyPhotoRequestVo.h; sourceTree = "<group>"; };
 		D8C76E58171E764F00815457 /* DelMyPhotoRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DelMyPhotoRequestVo.m; sourceTree = "<group>"; };
 		D8C76E5A171E76DF00815457 /* DelMyPhotoResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelMyPhotoResponseVo.h; sourceTree = "<group>"; };
@@ -661,8 +666,6 @@
 		D8F02A3616FD8F660023FB0A /* 26红娘服务按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "26红娘服务按钮@2x.png"; sourceTree = "<group>"; };
 		D8F02A3716FD8F660023FB0A /* 28签到背景@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "28签到背景@2x.png"; sourceTree = "<group>"; };
 		D8F02A3816FD8F660023FB0A /* 28设置按钮@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "28设置按钮@2x.png"; sourceTree = "<group>"; };
-		D8FE147416FEA283006405F1 /* SignInRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInRequestVo.h; sourceTree = "<group>"; };
-		D8FE147516FEA283006405F1 /* SignInRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInRequestVo.m; sourceTree = "<group>"; };
 		D8FE147716FEA5E2006405F1 /* BSMyInfoTableCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMyInfoTableCell_iPhone.h; sourceTree = "<group>"; };
 		D8FE147816FEA5E3006405F1 /* BSMyInfoTableCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMyInfoTableCell_iPhone.m; sourceTree = "<group>"; };
 		D8FE147916FEA5E3006405F1 /* BSMyInfoTableCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMyInfoTableCell_iPhone.xib; sourceTree = "<group>"; };
@@ -1463,7 +1466,6 @@
 			children = (
 				D83BD503171AE38C00E230FF /* recommend */,
 				D8E21F031719038600A90FB3 /* MyInfo */,
-				D8FE147316FEA282006405F1 /* SignIn */,
 				D8CA7D9716F4B29400B4CE67 /* LoginRequestVo.h */,
 				D8CA7D9816F4B29400B4CE67 /* LoginRequestVo.m */,
 				D8CA7D9416F4B19E00B4CE67 /* SuperRequestVo.h */,
@@ -1485,8 +1487,6 @@
 				D8CA7D9A16F4B3FB00B4CE67 /* LoginResponseVo.m */,
 				5A7892171704791C00E2B238 /* ValidatePhoneResponseVo.h */,
 				5A7892181704791C00E2B238 /* ValidatePhoneResponseVo.m */,
-				D8B40EB51712FF1600849F81 /* SignInResponseVo.h */,
-				D8B40EB61712FF1600849F81 /* SignInResponseVo.m */,
 				D85B6633171A99FB00581B00 /* SuperResponseVo.h */,
 				D85B6634171A99FC00581B00 /* SuperResponseVo.m */,
 			);
@@ -1505,6 +1505,8 @@
 		D8E21F031719038600A90FB3 /* MyInfo */ = {
 			isa = PBXGroup;
 			children = (
+				D870C49B171F9F51000D8286 /* SignInRequestVo.h */,
+				D870C49C171F9F51000D8286 /* SignInRequestVo.m */,
 				D8E21F04171903B200A90FB3 /* MyPhotoRequestVo.h */,
 				D8E21F05171903B200A90FB3 /* MyPhotoRequestVo.m */,
 				D85B6627171A960700581B00 /* MyAttentionRequestVo.h */,
@@ -1515,6 +1517,8 @@
 				D85B664D171AA6CD00581B00 /* BaseInfoRequestVo.m */,
 				D8C76E57171E764F00815457 /* DelMyPhotoRequestVo.h */,
 				D8C76E58171E764F00815457 /* DelMyPhotoRequestVo.m */,
+				D870C49E171FA1F5000D8286 /* UpdateMyPhotoRequestVo.h */,
+				D870C49F171FA1F5000D8286 /* UpdateMyPhotoRequestVo.m */,
 			);
 			path = MyInfo;
 			sourceTree = "<group>";
@@ -1522,6 +1526,8 @@
 		D8E21F071719054D00A90FB3 /* MyPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				D870C498171F9EC4000D8286 /* SignInResponseVo.h */,
+				D870C499171F9EC4000D8286 /* SignInResponseVo.m */,
 				D8E21F081719056400A90FB3 /* MyPhotoResponseVo.h */,
 				D8E21F091719056400A90FB3 /* MyPhotoResponseVo.m */,
 				D85B662A171A965D00581B00 /* MyAttentionResponseVo.h */,
@@ -1543,15 +1549,6 @@
 				D8ED9B6417080C0900C7FA38 /* DMLazyScrollView.m */,
 			);
 			path = DMLazyScrollView;
-			sourceTree = "<group>";
-		};
-		D8FE147316FEA282006405F1 /* SignIn */ = {
-			isa = PBXGroup;
-			children = (
-				D8FE147416FEA283006405F1 /* SignInRequestVo.h */,
-				D8FE147516FEA283006405F1 /* SignInRequestVo.m */,
-			);
-			path = SignIn;
 			sourceTree = "<group>";
 		};
 		D8FE147A16FEA5E4006405F1 /* subView */ = {
@@ -1850,7 +1847,6 @@
 				D8A687B016FD6465005245C8 /* BSOnePackageServiceViewController_iPhone.m in Sources */,
 				D8A687B416FD85F5005245C8 /* UserInfo.m in Sources */,
 				5A7891ED170347C800E2B238 /* BSBindUserAccountViewController.m in Sources */,
-				D8FE147616FEA283006405F1 /* SignInRequestVo.m in Sources */,
 				D8FE147B16FEA5E4006405F1 /* BSMyInfoTableCell_iPhone.m in Sources */,
 				D8A706B31701031A00B24213 /* BSSettingViewController_iPhone.m in Sources */,
 				D8A706C11701084900B24213 /* BSPublicTableCell_iPhone.m in Sources */,
@@ -1860,7 +1856,6 @@
 				5AFC21D9170AA340001228AB /* ValidatePhoneRequestVo.m in Sources */,
 				BB810EC20B6A24D8F5D47213 /* MyMD5.m in Sources */,
 				D8B40EB41712FB8000849F81 /* MyInfo341RequestVo.m in Sources */,
-				D8B40EB71712FF1600849F81 /* SignInResponseVo.m in Sources */,
 				D88EBF86171822CE003F8EA6 /* KTPhotoBrowserGlobal.m in Sources */,
 				D88EBF87171822CE003F8EA6 /* KTPhotoScrollViewController.m in Sources */,
 				D88EBF88171822CE003F8EA6 /* KTPhotoView.m in Sources */,
@@ -1892,6 +1887,9 @@
 				D83BD50A171AE43C00E230FF /* RecommendImageListResponseVo.m in Sources */,
 				D8C76E59171E764F00815457 /* DelMyPhotoRequestVo.m in Sources */,
 				D8C76E5C171E76DF00815457 /* DelMyPhotoResponseVo.m in Sources */,
+				D870C49A171F9EC4000D8286 /* SignInResponseVo.m in Sources */,
+				D870C49D171F9F51000D8286 /* SignInRequestVo.m in Sources */,
+				D870C4A0171FA1F6000D8286 /* UpdateMyPhotoRequestVo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

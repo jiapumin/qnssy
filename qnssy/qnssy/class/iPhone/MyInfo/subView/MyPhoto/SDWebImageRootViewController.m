@@ -314,5 +314,21 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 - (void)image:(UIImageView*)image didFinishSavingWithError:(NSString*)error contextInfo:(NSString*)context{
     NSLog(@"保存完成！");
 }
+- (void)updateMyPhoto{
+    NSString *filePath = [[[KBBreakpointTransmission instance] getTargetFloderPath:@"image"] stringByAppendingPathComponent:@"index2.jpg"];
+    
+    NSString *url = @"http://demo2.qnssy.com/demo/upload_demo.php";
+    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL: [NSURL URLWithString: url]];
+    [request setPostValue: @"true" forKey: @"is_phone"];
+    [request setPostValue:@"true" forKey:@"do_upload_file"];
+    [request setFile: filePath forKey: @"uploadedfile"];
+    [request buildRequestHeaders];
+    [request setDefaultResponseEncoding:NSUTF8StringEncoding];
+    NSLog(@"header: %@", request.requestHeaders);
+    [request startSynchronous];
+    NSLog(@"responseString = %@", request.responseString);
+
+}
+
 
 @end
