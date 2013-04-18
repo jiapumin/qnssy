@@ -47,6 +47,11 @@
 		5AF21B4F16F8581000EEB6EA /* BSUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AF21B4D16F8581000EEB6EA /* BSUserInfoViewController.xib */; };
 		5AFC21D9170AA340001228AB /* ValidatePhoneRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A78921C17047B8C00E2B238 /* ValidatePhoneRequestVo.m */; };
 		BB810EC20B6A24D8F5D47213 /* MyMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8103F575D2320537DE2FC9 /* MyMD5.m */; };
+		D8306364171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8306362171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.m */; };
+		D8306365171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8306363171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib */; };
+		D830636A171FD6FB006A256F /* BSUserDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8306368171FD6FB006A256F /* BSUserDetailInfoViewController.m */; };
+		D830636B171FD6FB006A256F /* BSUserDetailInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8306369171FD6FB006A256F /* BSUserDetailInfoViewController.xib */; };
+		D830636E171FD71B006A256F /* BSSuperCentreViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D830636D171FD71B006A256F /* BSSuperCentreViewController_iPhone.m */; };
 		D83BD506171AE38C00E230FF /* RecommendImageListRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83BD505171AE38C00E230FF /* RecommendImageListRequestVo.m */; };
 		D83BD50A171AE43C00E230FF /* RecommendImageListResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83BD509171AE43C00E230FF /* RecommendImageListResponseVo.m */; };
 		D85B6625171A949100581B00 /* BSMyAttentionViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D85B6623171A949100581B00 /* BSMyAttentionViewController_iPhone.m */; };
@@ -83,7 +88,6 @@
 		D87A054716EF69700052328E /* FTUtils+UIGestureRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A053C16EF69700052328E /* FTUtils+UIGestureRecognizer.m */; };
 		D87A054816EF69700052328E /* PPRevealSideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A054016EF69700052328E /* PPRevealSideViewController.m */; };
 		D87A054F16EF69DE0052328E /* BSRootLeftViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A054A16EF69DE0052328E /* BSRootLeftViewController_iPhone.m */; };
-		D87A055016EF69DE0052328E /* BSSuperCentreViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87A054B16EF69DE0052328E /* BSSuperCentreViewController_iPhone.m */; };
 		D87A055116EF69DE0052328E /* BSRootLeftViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87A054C16EF69DE0052328E /* BSRootLeftViewController_iPhone.xib */; };
 		D87A055316EF6A7A0052328E /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A055216EF6A7A0052328E /* libxml2.dylib */; };
 		D87A055516EF6A970052328E /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A055416EF6A970052328E /* MobileCoreServices.framework */; };
@@ -139,8 +143,6 @@
 		D88EBFBC1718245B003F8EA6 /* photoDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = D88EBFB51718245B003F8EA6 /* photoDefault.png */; };
 		D88EBFBD1718245B003F8EA6 /* SDWebImageDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D88EBFB71718245B003F8EA6 /* SDWebImageDataSource.m */; };
 		D88EBFBE1718245B003F8EA6 /* SDWebImageRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D88EBFB91718245B003F8EA6 /* SDWebImageRootViewController.m */; };
-		D88EBFC317182466003F8EA6 /* BSUserDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D88EBFC117182466003F8EA6 /* BSUserDetailInfoViewController.m */; };
-		D88EBFC417182466003F8EA6 /* BSUserDetailInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D88EBFC217182466003F8EA6 /* BSUserDetailInfoViewController.xib */; };
 		D8A6874916FD3D92005245C8 /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8CEEF5616F8C15E00E7C63F /* libQuickDialog.a */; };
 		D8A6877716FD41E7005245C8 /* 1背景+logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6874C16FD41E7005245C8 /* 1背景+logo@2x.png */; };
 		D8A6877816FD41E7005245C8 /* 1登录背景@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6874D16FD41E7005245C8 /* 1登录背景@2x.png */; };
@@ -341,6 +343,14 @@
 		5AF21B4D16F8581000EEB6EA /* BSUserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserInfoViewController.xib; sourceTree = "<group>"; };
 		BB8103F575D2320537DE2FC9 /* MyMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMD5.m; sourceTree = "<group>"; };
 		BB810ACBC2671DB88E54462B /* MyMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMD5.h; sourceTree = "<group>"; };
+		D8306361171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMyAttentionTableViewCell_iPhone.h; sourceTree = "<group>"; };
+		D8306362171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMyAttentionTableViewCell_iPhone.m; sourceTree = "<group>"; };
+		D8306363171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMyAttentionTableViewCell_iPhone.xib; sourceTree = "<group>"; };
+		D8306367171FD6FB006A256F /* BSUserDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoViewController.h; sourceTree = "<group>"; };
+		D8306368171FD6FB006A256F /* BSUserDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoViewController.m; sourceTree = "<group>"; };
+		D8306369171FD6FB006A256F /* BSUserDetailInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoViewController.xib; sourceTree = "<group>"; };
+		D830636C171FD71B006A256F /* BSSuperCentreViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSuperCentreViewController_iPhone.h; sourceTree = "<group>"; };
+		D830636D171FD71B006A256F /* BSSuperCentreViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSuperCentreViewController_iPhone.m; sourceTree = "<group>"; };
 		D83BD504171AE38C00E230FF /* RecommendImageListRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendImageListRequestVo.h; sourceTree = "<group>"; };
 		D83BD505171AE38C00E230FF /* RecommendImageListRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendImageListRequestVo.m; sourceTree = "<group>"; };
 		D83BD508171AE43C00E230FF /* RecommendImageListResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendImageListResponseVo.h; sourceTree = "<group>"; };
@@ -407,10 +417,8 @@
 		D87A054016EF69700052328E /* PPRevealSideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PPRevealSideViewController.m; sourceTree = "<group>"; };
 		D87A054916EF69DE0052328E /* AppConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppConstants.h; sourceTree = "<group>"; };
 		D87A054A16EF69DE0052328E /* BSRootLeftViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRootLeftViewController_iPhone.m; sourceTree = "<group>"; };
-		D87A054B16EF69DE0052328E /* BSSuperCentreViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSuperCentreViewController_iPhone.m; sourceTree = "<group>"; };
 		D87A054C16EF69DE0052328E /* BSRootLeftViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSRootLeftViewController_iPhone.xib; sourceTree = "<group>"; };
 		D87A054D16EF69DE0052328E /* BSRootLeftViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRootLeftViewController_iPhone.h; sourceTree = "<group>"; };
-		D87A054E16EF69DE0052328E /* BSSuperCentreViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSuperCentreViewController_iPhone.h; sourceTree = "<group>"; };
 		D87A055216EF6A7A0052328E /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		D87A055416EF6A970052328E /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		D87A055C16EF6D3C0052328E /* BSMyInfoViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMyInfoViewController_iPhone.h; sourceTree = "<group>"; };
@@ -508,9 +516,6 @@
 		D88EBFB71718245B003F8EA6 /* SDWebImageDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDataSource.m; sourceTree = "<group>"; };
 		D88EBFB81718245B003F8EA6 /* SDWebImageRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageRootViewController.h; sourceTree = "<group>"; };
 		D88EBFB91718245B003F8EA6 /* SDWebImageRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageRootViewController.m; sourceTree = "<group>"; };
-		D88EBFC017182466003F8EA6 /* BSUserDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoViewController.h; sourceTree = "<group>"; };
-		D88EBFC117182466003F8EA6 /* BSUserDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoViewController.m; sourceTree = "<group>"; };
-		D88EBFC217182466003F8EA6 /* BSUserDetailInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoViewController.xib; sourceTree = "<group>"; };
 		D8A6874C16FD41E7005245C8 /* 1背景+logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1背景+logo@2x.png"; sourceTree = "<group>"; };
 		D8A6874D16FD41E7005245C8 /* 1登录背景@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1登录背景@2x.png"; sourceTree = "<group>"; };
 		D8A6874E16FD41E7005245C8 /* 1复选框未选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1复选框未选中@2x.png"; sourceTree = "<group>"; };
@@ -763,6 +768,28 @@
 			path = MD5;
 			sourceTree = "<group>";
 		};
+		D8306360171FCBB0006A256F /* BSMyAttentionTableViewCell_iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				D8306361171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.h */,
+				D8306362171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.m */,
+				D8306363171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib */,
+			);
+			path = BSMyAttentionTableViewCell_iPhone;
+			sourceTree = "<group>";
+		};
+		D8306366171FD6FB006A256F /* PubliicViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D830636C171FD71B006A256F /* BSSuperCentreViewController_iPhone.h */,
+				D830636D171FD71B006A256F /* BSSuperCentreViewController_iPhone.m */,
+				D8306367171FD6FB006A256F /* BSUserDetailInfoViewController.h */,
+				D8306368171FD6FB006A256F /* BSUserDetailInfoViewController.m */,
+				D8306369171FD6FB006A256F /* BSUserDetailInfoViewController.xib */,
+			);
+			path = PubliicViewController;
+			sourceTree = "<group>";
+		};
 		D83BD503171AE38C00E230FF /* recommend */ = {
 			isa = PBXGroup;
 			children = (
@@ -787,6 +814,7 @@
 				D85B6622171A949100581B00 /* BSMyAttentionViewController_iPhone.h */,
 				D85B6623171A949100581B00 /* BSMyAttentionViewController_iPhone.m */,
 				D85B6624171A949100581B00 /* BSMyAttentionViewController_iPhone.xib */,
+				D8306360171FCBB0006A256F /* BSMyAttentionTableViewCell_iPhone */,
 			);
 			path = MyAttention;
 			sourceTree = "<group>";
@@ -987,7 +1015,6 @@
 		D87A052416EF68A50052328E /* recommend */ = {
 			isa = PBXGroup;
 			children = (
-				D88EBFBF17182466003F8EA6 /* subView */,
 				D87A056116EF6D640052328E /* BSRecommendViewController_iPhone.h */,
 				D87A056216EF6D640052328E /* BSRecommendViewController_iPhone.m */,
 				D87A056316EF6D640052328E /* BSRecommendViewController_iPhone.xib */,
@@ -1001,6 +1028,7 @@
 		D87A052516EF68A50052328E /* RootController */ = {
 			isa = PBXGroup;
 			children = (
+				D8306366171FD6FB006A256F /* PubliicViewController */,
 				D87A054916EF69DE0052328E /* AppConstants.h */,
 				D87A054D16EF69DE0052328E /* BSRootLeftViewController_iPhone.h */,
 				D87A054A16EF69DE0052328E /* BSRootLeftViewController_iPhone.m */,
@@ -1008,8 +1036,6 @@
 				D8A687A216FD4EE8005245C8 /* BSRootLeftTableCell_iPhone.h */,
 				D8A687A316FD4EE8005245C8 /* BSRootLeftTableCell_iPhone.m */,
 				D8A687A416FD4EE9005245C8 /* BSRootLeftTableCell_iPhone.xib */,
-				D87A054E16EF69DE0052328E /* BSSuperCentreViewController_iPhone.h */,
-				D87A054B16EF69DE0052328E /* BSSuperCentreViewController_iPhone.m */,
 				D8A706BD1701084900B24213 /* PublicCell */,
 			);
 			path = RootController;
@@ -1352,16 +1378,6 @@
 				D88EBFB91718245B003F8EA6 /* SDWebImageRootViewController.m */,
 			);
 			path = MyPhoto;
-			sourceTree = "<group>";
-		};
-		D88EBFBF17182466003F8EA6 /* subView */ = {
-			isa = PBXGroup;
-			children = (
-				D88EBFC017182466003F8EA6 /* BSUserDetailInfoViewController.h */,
-				D88EBFC117182466003F8EA6 /* BSUserDetailInfoViewController.m */,
-				D88EBFC217182466003F8EA6 /* BSUserDetailInfoViewController.xib */,
-			);
-			path = subView;
 			sourceTree = "<group>";
 		};
 		D8A687AC16FD642A005245C8 /* onePackageService */ = {
@@ -1770,10 +1786,11 @@
 				D88EBF84171822CE003F8EA6 /* KTPhotoBrowser.bundle in Resources */,
 				D88EBF85171822CE003F8EA6 /* KTPhotoBrowser.xcworkspace in Resources */,
 				D88EBFBC1718245B003F8EA6 /* photoDefault.png in Resources */,
-				D88EBFC417182466003F8EA6 /* BSUserDetailInfoViewController.xib in Resources */,
 				D85B6626171A949100581B00 /* BSMyAttentionViewController_iPhone.xib in Resources */,
 				D85B6645171AA06C00581B00 /* BSLookedMeViewController_iPhone.xib in Resources */,
 				D85B664B171AA66B00581B00 /* BSBaseInfoViewController_iPhone.xib in Resources */,
+				D8306365171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib in Resources */,
+				D830636B171FD6FB006A256F /* BSUserDetailInfoViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1795,7 +1812,6 @@
 				D87A054716EF69700052328E /* FTUtils+UIGestureRecognizer.m in Sources */,
 				D87A054816EF69700052328E /* PPRevealSideViewController.m in Sources */,
 				D87A054F16EF69DE0052328E /* BSRootLeftViewController_iPhone.m in Sources */,
-				D87A055016EF69DE0052328E /* BSSuperCentreViewController_iPhone.m in Sources */,
 				D87A055F16EF6D3C0052328E /* BSMyInfoViewController_iPhone.m in Sources */,
 				D87A056416EF6D640052328E /* BSRecommendViewController_iPhone.m in Sources */,
 				D87A056916EF6D950052328E /* BSMessageViewController_iPhone.m in Sources */,
@@ -1870,7 +1886,6 @@
 				D88EBFBB1718245B003F8EA6 /* KTThumbView+SDWebImage.m in Sources */,
 				D88EBFBD1718245B003F8EA6 /* SDWebImageDataSource.m in Sources */,
 				D88EBFBE1718245B003F8EA6 /* SDWebImageRootViewController.m in Sources */,
-				D88EBFC317182466003F8EA6 /* BSUserDetailInfoViewController.m in Sources */,
 				D8E21F06171903B200A90FB3 /* MyPhotoRequestVo.m in Sources */,
 				D8E21F0A1719056400A90FB3 /* MyPhotoResponseVo.m in Sources */,
 				D85B6625171A949100581B00 /* BSMyAttentionViewController_iPhone.m in Sources */,
@@ -1890,6 +1905,9 @@
 				D870C49A171F9EC4000D8286 /* SignInResponseVo.m in Sources */,
 				D870C49D171F9F51000D8286 /* SignInRequestVo.m in Sources */,
 				D870C4A0171FA1F6000D8286 /* UpdateMyPhotoRequestVo.m in Sources */,
+				D8306364171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.m in Sources */,
+				D830636A171FD6FB006A256F /* BSUserDetailInfoViewController.m in Sources */,
+				D830636E171FD71B006A256F /* BSSuperCentreViewController_iPhone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

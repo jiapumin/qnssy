@@ -8,6 +8,8 @@
 
 #import "BSMyAttentionViewController_iPhone.h"
 
+#import "BSMyAttentionTableViewCell_iPhone.h"
+
 #import "MyAttentionRequestVo.h"
 #import "MyAttentionResponseVo.h"
 
@@ -87,5 +89,65 @@
     [alert release];
     [progressHUD hide:YES];
 }
+#pragma mark - Table view data source
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return 12;//[self.dataArray count];
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 62.f;
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    static NSString *CellIdentifier = @"Cell";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BSMyAttentionTableViewCell_iPhone" owner:tableView options:nil];
+    BSMyAttentionTableViewCell_iPhone *cell = [nib objectAtIndex:0];
+    
+    //加载左边图片
+    
+    //赋值用户信息
+    
+    
+
+    
+    return cell;
+}
+
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     [detailViewController release];
+     */
+}
+- (void)dealloc {
+    [_dataArray release];
+    [_myTableView release];
+    [super dealloc];
+}
+- (void)viewDidUnload {
+    [self setDataArray:nil];
+    [self setMyTableView:nil];
+    [super viewDidUnload];
+}
 @end

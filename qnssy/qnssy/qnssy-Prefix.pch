@@ -16,7 +16,6 @@
     #import "AppConstants.h"
     #import "UIImage+Scale.h"
     #import "PPRevealSideViewController.h"
-    #import "BSSuperCentreViewController_iPhone.h"
     #import "FTAnimation.h"
     #import "KBBreakpointTransmission.h"
     #import "BSNetWork.h"

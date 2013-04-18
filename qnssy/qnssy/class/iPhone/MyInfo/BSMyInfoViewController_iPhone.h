@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 jpm. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BSSuperCentreViewController_iPhone.h"
 
 @interface BSMyInfoViewController_iPhone : BSSuperCentreViewController_iPhone<UITableViewDataSource,UITableViewDelegate>
 @property (retain, nonatomic) IBOutlet UIImageView *testImgeView;

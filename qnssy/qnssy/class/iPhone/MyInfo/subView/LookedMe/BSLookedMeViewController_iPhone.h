@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 jpm. All rights reserved.
 //
 
-#import "BSLookedMeViewController_iPhone.h"
+#import "BSSuperCentreViewController_iPhone.h"
 
 @interface BSLookedMeViewController_iPhone : BSSuperCentreViewController_iPhone
 

@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 jpm. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "BSSuperCentreViewController_iPhone.h"
 
 @interface BSUserDetailInfoViewController : BSSuperCentreViewController_iPhone<UITableViewDataSource,UITableViewDelegate>
 
