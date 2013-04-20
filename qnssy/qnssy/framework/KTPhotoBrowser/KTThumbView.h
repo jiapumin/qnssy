@@ -18,9 +18,14 @@
 
 @property (nonatomic, assign) KTThumbsViewController *controller;
 
+//@property (retain, nonatomic) UIImageView *deleteView;
+
 - (id)initWithFrame:(CGRect)frame;
 - (void)setThumbImage:(UIImage *)newImage;
 - (void)setHasBorder:(BOOL)hasBorder;
+//- (void)setIsEdit:(BOOL)isEdit;
+
+
 
 @end
 

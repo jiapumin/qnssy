@@ -22,7 +22,7 @@
         
         NSMutableDictionary *method = [[NSMutableDictionary alloc] init];
         //设置请求服务器的方法名
-        [method setObject:@"attention" forKey:@"c"];
+        [method setObject:@"user" forKey:@"c"];
         [method setObject:@"attention" forKey:@"a"];
         [self.mReqDic setObject:method forKey:@"method"];
         [data release];

@@ -1,27 +1,25 @@
 //
-//  MyTableViewCell.m
-//  ContactDocFilesManage
+//  BSUserDetailInfoTableViewCell1_iPhone.m
+//  qnssy
 //
-//  Created by Sophie Sun on 12-4-26.
-//  Copyright (c) 2012年 baosight. All rights reserved.
+//  Created by jpm on 13-4-19.
+//  Copyright (c) 2013年 jpm. All rights reserved.
 //
 
-#import "BSMyAttentionTableViewCell_iPhone.h"
+#import "BSUserDetailInfoTableViewCell1_iPhone.h"
 
-@implementation BSMyAttentionTableViewCell_iPhone
+@implementation BSUserDetailInfoTableViewCell1_iPhone
 
 - (void)reloadData:(NSDictionary *)dic{
     
     self.userVo = dic;
     
-    self.nickname.text = [dic objectForKey:@"username"];
-    
-    self.income.text = [dic objectForKey:@"salary"];
+    self.locationLabel.text = [dic objectForKey:@"cityname"];
     
     
-    self.myInfo.text = [NSString stringWithFormat:@"已婚|165cm|大专|24岁"];
+    self.myInfoLabel.text = [NSString stringWithFormat:@"已婚|165cm|大专|24岁"];
     
-    [self requestMyImage:[self.userVo objectForKey:@"imageurl"]];
+    [self requestMyImage:[self.userVo objectForKey:@"userimg"]];
 }
 
 #pragma mark - 请求图片
@@ -77,9 +75,8 @@
 - (void)dealloc {
     [_userVo release];
     [_leftImageView release];
-    [_nickname release];
-    [_myInfo release];
-    [_income release];
+    [_myInfoLabel release];
+    [_locationLabel release];
     [super dealloc];
 }
 @end

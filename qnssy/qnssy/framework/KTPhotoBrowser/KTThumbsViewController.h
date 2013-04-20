@@ -16,14 +16,14 @@
 {
 @private
    id <KTPhotoBrowserDataSource> dataSource_;
-   KTThumbsView *scrollView_;
+//   KTThumbsView *scrollView_;
    BOOL viewDidAppearOnce_;
    BOOL navbarWasTranslucent_;
 }
 @property (nonatomic) BOOL isEdit;
 
 @property (nonatomic, retain) MBProgressHUD *progressHUD;
-
+@property (nonatomic, retain) KTThumbsView *scrollView;
 
 @property (nonatomic, retain) id <KTPhotoBrowserDataSource> dataSource;
 

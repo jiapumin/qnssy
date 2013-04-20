@@ -13,4 +13,6 @@
 + (NSArray *)getArrayBySemicolon:(NSString *)string;
 + (NSArray *)getArrayByComma:(NSString *)string;
 
++ (NSArray *)myInfoData:(NSString *)key;
+
 @end

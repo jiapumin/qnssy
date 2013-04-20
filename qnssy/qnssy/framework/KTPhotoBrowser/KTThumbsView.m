@@ -30,7 +30,7 @@
    self = [super initWithFrame:frame];
    if (self) {
       // Set default values.
-      thumbsHaveBorder_ = YES;
+      self.thumbsHaveBorder = YES;
       thumbsPerRow_ = NSIntegerMin; // Forces caluation because on view size.
       thumbSize_ = CGSizeMake(75, 75);
       
@@ -58,6 +58,8 @@
       // deallocated when removed form the set.
       [[thumbView retain] autorelease];
       [reusableThumbViews_ removeObject:thumbView];
+//       [thumbView setIsEdit:self.controller.isEdit];
+//    [thumbView setHasBorder:self.thumbsHaveBorder];
    }
    return thumbView;
 }
@@ -172,7 +174,7 @@
          // find it later.
          [thumbView setTag:index];
          
-         [thumbView setHasBorder:thumbsHaveBorder_];
+         [thumbView setHasBorder:self.thumbsHaveBorder];
          
          [self addSubview:thumbView];
       }

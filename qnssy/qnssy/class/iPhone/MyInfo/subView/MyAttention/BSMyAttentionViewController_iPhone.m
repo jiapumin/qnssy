@@ -10,6 +10,8 @@
 
 #import "BSMyAttentionTableViewCell_iPhone.h"
 
+#import "BSUserDetailInfoViewController.h"
+
 #import "MyAttentionRequestVo.h"
 #import "MyAttentionResponseVo.h"
 
@@ -73,6 +75,9 @@
     
     MyAttentionResponseVo *vo = [[MyAttentionResponseVo alloc] initWithDic:dic];
     
+    self.dataArray = vo.userList;
+    
+    
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
@@ -80,6 +85,8 @@
     [progressHUD hide:YES];
     
     [vo release];
+    
+    [self.myTableView reloadData];
 }
 
 
@@ -100,7 +107,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 12;//[self.dataArray count];
+    return [self.dataArray count];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -116,10 +123,9 @@
     NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BSMyAttentionTableViewCell_iPhone" owner:tableView options:nil];
     BSMyAttentionTableViewCell_iPhone *cell = [nib objectAtIndex:0];
     
-    //加载左边图片
     
     //赋值用户信息
-    
+    [cell reloadData:[self.dataArray objectAtIndex:indexPath.row]];
     
 
     
@@ -139,6 +145,13 @@
      [self.navigationController pushViewController:detailViewController animated:YES];
      [detailViewController release];
      */
+    
+    
+    BSUserDetailInfoViewController *udivc = [[BSUserDetailInfoViewController alloc] initWithNibName:@"BSUserDetailInfoViewController" bundle:nil];
+    [self.navigationController pushViewController:udivc animated:YES];
+    [udivc release];
+    
+    
 }
 - (void)dealloc {
     [_dataArray release];
@@ -150,4 +163,5 @@
     [self setMyTableView:nil];
     [super viewDidUnload];
 }
+
 @end

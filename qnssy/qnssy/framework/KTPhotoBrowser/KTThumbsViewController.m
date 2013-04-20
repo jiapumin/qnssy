@@ -24,7 +24,7 @@
 @synthesize dataSource = dataSource_;
 
 - (void)dealloc {
-   [scrollView_ release], scrollView_ = nil;
+    [_scrollView release];
    
    [super dealloc];
 }
@@ -59,11 +59,13 @@
    [self setView:scrollView];
    
    // Retain a reference to the scroll view.
-   scrollView_ = scrollView;
-   [scrollView_ retain];
-   
-   // Release the local scroll view reference.
-   [scrollView release];
+   self.scrollView = scrollView;
+    
+    [scrollView release];
+//   [scrollView_ retain];
+//   
+//   // Release the local scroll view reference.
+//   [scrollView release];
     
     //初始化加载框
     [self initHUDView];
@@ -110,7 +112,7 @@
 
 - (void)reloadThumbs {
    [self willLoadThumbs];
-   [scrollView_ reloadData];
+   [self.scrollView reloadData];
    [self didLoadThumbs];
 }
 

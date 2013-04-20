@@ -33,7 +33,15 @@
 	//    return result == NSOrderedAscending;  // 降序
 }
 
++ (NSArray *)myInfoData:(NSString *)key{
 
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"myInfoData" ofType:@"plist"];
+//    NSArray *array = [[NSArray alloc] initWithContentsOfFile:plistPath];
+    NSDictionary *data = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+
+        return [data objectForKey:key];
+
+}
 
 
 @end

@@ -71,9 +71,9 @@
     NSMutableArray *itemArray = [[NSMutableArray alloc] init];
     UIButton *topRightButton1 = [UIButton buttonWithType:UIButtonTypeCustom];
     //按钮大小
-    CGRect btnFrame1 = CGRectMake(0.0, 0.0, 29.0, 25.0);
+    CGRect btnFrame1 = CGRectMake(0.0, 0.0, 43.0, 29.0);
     topRightButton1.frame =btnFrame1;
-    [topRightButton1 setImage:[UIImage imageNamed:@"5菜单列表图片"]
+    [topRightButton1 setImage:[UIImage imageNamed:@"添加照片"]
                    forState:UIControlStateNormal];
     [topRightButton1 addTarget:self
                       action:@selector(addPhoto)
@@ -84,9 +84,9 @@
     
     topRightDelButton = [UIButton buttonWithType:UIButtonTypeCustom];
     //按钮大小
-    CGRect btnFrame2 = CGRectMake(0.0, 0.0, 29.0, 25.0);
+    CGRect btnFrame2 = CGRectMake(0.0, 0.0, 43.0, 29.0);
     topRightDelButton.frame =btnFrame2;
-    [topRightDelButton setImage:[UIImage imageNamed:@"5菜单列表图片"]
+    [topRightDelButton setImage:[UIImage imageNamed:@"删除照片"]
                      forState:UIControlStateNormal];
     [topRightDelButton addTarget:self
                         action:@selector(delPhoto)
@@ -125,14 +125,20 @@
 }
 - (void)delPhoto{
     if (self.isEdit) {
-        [topRightDelButton setImage:[UIImage imageNamed:@"5菜单列表图片"]
+        [topRightDelButton setImage:[UIImage imageNamed:@"删除照片"]
                            forState:UIControlStateNormal];
+        
     }else{
-        [topRightDelButton setImage:[UIImage imageNamed:@"10未读邮件ico"]
+        [topRightDelButton setImage:[UIImage imageNamed:@"删除照片"]
                            forState:UIControlStateNormal];
+        
     }
 
     self.isEdit = !self.isEdit;
+
+    self.scrollView.thumbsHaveBorder = !self.isEdit;
+    
+    [self reloadThumbs];
         
 }
 

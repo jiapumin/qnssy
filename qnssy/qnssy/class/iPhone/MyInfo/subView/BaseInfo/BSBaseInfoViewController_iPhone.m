@@ -8,6 +8,8 @@
 
 #import "BSBaseInfoViewController_iPhone.h"
 
+#import "BaseInfoTableViewCell_iPhone.h"
+
 #import "BaseInfoRequestVo.h"
 #import "BaseInfoResponseVo.h"
 
@@ -39,11 +41,19 @@
     [self loadServiceData];
     
 }
-
+- (void)dealloc{
+    [_myBaseInfo release];
+    [_myTableView release];
+    [super dealloc];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (void)viewDidUnload {
+    [self setMyTableView:nil];
+    [super viewDidUnload];
 }
 - (void)initHUDView{
     //-------加载框
@@ -71,6 +81,9 @@
     
     BaseInfoResponseVo *vo = [[BaseInfoResponseVo alloc] initWithDic:dic];
     
+    self.myBaseInfo = vo.myBaseInfo;
+    
+    self.myBaseInfoKey = [self.myBaseInfo allKeys];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
@@ -79,6 +92,7 @@
     [progressHUD hide:YES];
     
     [vo release];
+    [self.myTableView reloadData];
 }
 
 
@@ -89,4 +103,73 @@
     [progressHUD hide:YES];
 }
 
+#pragma mark - Table view data source
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return [self.myBaseInfoKey count];
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 44.f;
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    static NSString *CellIdentifier = @"Cell";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BaseInfoTableViewCell_iPhone" owner:tableView options:nil];
+    BaseInfoTableViewCell_iPhone *cell = [nib objectAtIndex:0];
+
+    NSString *key = [self.myBaseInfoKey objectAtIndex:indexPath.row];
+
+    NSArray * infoArray = [DataParseUtil myInfoData:key];
+    //赋值用户信息
+    cell.leftLabel.text = [infoArray objectAtIndex:0];
+    
+    NSDictionary *infoDesDic = [infoArray objectAtIndex:1];
+    
+    if (infoDesDic && infoDesDic.count != 0) {
+        
+        cell.rightLabel.text = [infoDesDic objectForKey:[self.myBaseInfo objectForKey:key]];
+    }else{
+        
+        cell.rightLabel.text = [self.myBaseInfo objectForKey:key];
+    }
+    
+    
+    
+    return cell;
+}
+
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     [detailViewController release];
+     */
+    
+    
+//    BSUserDetailInfoViewController *udivc = [[BSUserDetailInfoViewController alloc] initWithNibName:@"BSUserDetailInfoViewController" bundle:nil];
+//    [self.navigationController pushViewController:udivc animated:YES];
+//    [udivc release];
+    
+    
+}
 @end

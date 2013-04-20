@@ -197,6 +197,8 @@ const CGFloat ktkDefaultToolbarHeight = 44;
    for (int i=0; i < photoCount_; i++) {
       [photoViews_ addObject:[NSNull null]];
    }
+    
+    
 }
 
 - (void)didReceiveMemoryWarning 
@@ -474,14 +476,14 @@ const CGFloat ktkDefaultToolbarHeight = 44;
       [UIView setAnimationDuration:0.4];
    }
    
-   if ( ! [self isStatusbarHidden] ) {     
-     if ([[UIApplication sharedApplication] respondsToSelector:@selector(setStatusBarHidden:withAnimation:)]) {
-       [[UIApplication sharedApplication] setStatusBarHidden:hide withAnimation:NO];
-     } else {  // Deprecated in iOS 3.2+.
-       id sharedApp = [UIApplication sharedApplication];  // Get around deprecation warnings.
-       [sharedApp setStatusBarHidden:hide animated:NO];
-     }
-   }
+//   if ( ! [self isStatusbarHidden] ) {     
+//     if ([[UIApplication sharedApplication] respondsToSelector:@selector(setStatusBarHidden:withAnimation:)]) {
+//       [[UIApplication sharedApplication] setStatusBarHidden:hide withAnimation:YES];
+//     } else {  // Deprecated in iOS 3.2+.
+//       id sharedApp = [UIApplication sharedApplication];  // Get around deprecation warnings.
+//       [sharedApp setStatusBarHidden:hide animated:YES];
+//     }
+//   }
 
    CGFloat alpha = hide ? 0.0 : 1.0;
    

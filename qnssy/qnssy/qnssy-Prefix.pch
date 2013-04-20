@@ -22,4 +22,5 @@
     #import "SBJson.h"
     #import "MBProgressHUD.h"
     #import <QuickDialog/QuickDialog.h>
+    #import "DataParseUtil.h"
 #endif

@@ -10,4 +10,6 @@
 
 @interface BaseInfoResponseVo : SuperResponseVo
 
+@property (retain, nonatomic) NSDictionary *myBaseInfo;
+
 @end

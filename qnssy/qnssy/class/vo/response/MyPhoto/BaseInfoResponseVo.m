@@ -13,6 +13,14 @@
 - (void)analysisData:(NSDictionary *)ResData{
     
     NSLog(@"要解析的数据：%@",ResData);
+    
+    self.myBaseInfo = [ResData objectForKey:@"myBaseInfo"];
+    
+}
+
+- (void)dealloc{
+    [_myBaseInfo release];
+    [super dealloc];
 }
 
 @end

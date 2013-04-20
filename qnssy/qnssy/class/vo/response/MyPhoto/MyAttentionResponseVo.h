@@ -12,7 +12,7 @@
 @interface MyAttentionResponseVo : SuperResponseVo
 
 
-@property (retain, nonatomic) NSMutableArray *imageList;
+@property (retain, nonatomic) NSMutableArray *userList;
 
 
 @end

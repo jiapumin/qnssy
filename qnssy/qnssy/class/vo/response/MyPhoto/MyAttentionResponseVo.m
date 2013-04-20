@@ -15,12 +15,12 @@
     
     NSLog(@"要解析的数据：%@",ResData);
     
-    self.imageList = [ResData objectForKey:@"imageUrlList"];
+    self.userList = [ResData objectForKey:@"userList"];
 
 }
 
 - (void)dealloc{
-    [_imageList release];
+    [_userList release];
     [super dealloc];
 }
 

@@ -10,4 +10,11 @@
 
 @interface BSBaseInfoViewController_iPhone : BSSuperCentreViewController_iPhone
 
+@property (retain, nonatomic) IBOutlet UITableView *myTableView;
+
+
+@property (retain, nonatomic) NSDictionary *myBaseInfo;
+
+@property (retain, nonatomic) NSArray *myBaseInfoKey;
+
 @end

@@ -10,8 +10,9 @@
 
 @class KTPhotoViewController;
 @protocol KTPhotoBrowserDataSource;
+#import "BSSuperCentreViewController_iPhone.h"
 
-@interface KTPhotoScrollViewController : UIViewController<UIScrollViewDelegate, UIActionSheetDelegate> 
+@interface KTPhotoScrollViewController : BSSuperCentreViewController_iPhone<UIScrollViewDelegate, UIActionSheetDelegate> 
 {
    id <KTPhotoBrowserDataSource> dataSource_;
    UIScrollView *scrollView_;

@@ -8,6 +8,8 @@
 
 #import "BSUserDetailInfoViewController.h"
 
+#import "BSUserDetailInfoTableViewCell1_iPhone.h"
+
 @interface BSUserDetailInfoViewController (){
 
     UITableView *myTableView;
@@ -59,9 +61,13 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-//    NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BSRootLeftTableCell_iPhone" owner:tableView options:nil];
-//    BSRootLeftTableCell_iPhone *cell = [nib objectAtIndex:0];
-//    
+    if (indexPath.row == 0) {
+        NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BSUserDetailInfoTableViewCell1_iPhone" owner:tableView options:nil];
+        BSUserDetailInfoTableViewCell1_iPhone *cell = [nib objectAtIndex:0];
+        
+    }
+
+//
 //    cell.menuLabel.text = [self.vcNameArrays objectAtIndex:indexPath.row];
 //    
 //    cell.noSelectedLeftImageName = [self.noSelectedLeftImageArrays objectAtIndex:indexPath.row];

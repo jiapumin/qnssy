@@ -70,6 +70,11 @@
 		D870C49A171F9EC4000D8286 /* SignInResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D870C499171F9EC4000D8286 /* SignInResponseVo.m */; };
 		D870C49D171F9F51000D8286 /* SignInRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D870C49C171F9F51000D8286 /* SignInRequestVo.m */; };
 		D870C4A0171FA1F6000D8286 /* UpdateMyPhotoRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D870C49F171FA1F5000D8286 /* UpdateMyPhotoRequestVo.m */; };
+		D871CE3D1722E243006EE28A /* 删除照片.png in Resources */ = {isa = PBXBuildFile; fileRef = D871CE391722E243006EE28A /* 删除照片.png */; };
+		D871CE3E1722E243006EE28A /* 删除照片@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D871CE3A1722E243006EE28A /* 删除照片@2x.png */; };
+		D871CE3F1722E243006EE28A /* 添加照片.png in Resources */ = {isa = PBXBuildFile; fileRef = D871CE3B1722E243006EE28A /* 添加照片.png */; };
+		D871CE401722E243006EE28A /* 添加照片@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D871CE3C1722E243006EE28A /* 添加照片@2x.png */; };
+		D871CE421722EA12006EE28A /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = D871CE411722EA02006EE28A /* delete.png */; };
 		D87A04EE16EF639A0052328E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04ED16EF639A0052328E /* UIKit.framework */; };
 		D87A04F016EF639A0052328E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04EF16EF639A0052328E /* Foundation.framework */; };
 		D87A04F216EF639A0052328E /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A04F116EF639A0052328E /* CoreGraphics.framework */; };
@@ -229,6 +234,11 @@
 		D8CA7D9C16F4B3FB00B4CE67 /* LoginResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D9A16F4B3FB00B4CE67 /* LoginResponseVo.m */; };
 		D8E21F06171903B200A90FB3 /* MyPhotoRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E21F05171903B200A90FB3 /* MyPhotoRequestVo.m */; };
 		D8E21F0A1719056400A90FB3 /* MyPhotoResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E21F091719056400A90FB3 /* MyPhotoResponseVo.m */; };
+		D8E62969172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E62968172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.m */; };
+		D8E6296E172109EA005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E6296C172109EA005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.xib */; };
+		D8E6297317211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E6297117211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.m */; };
+		D8E6297417211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E6297217211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.xib */; };
+		D8E62980172135F5005CD0E0 /* myInfoData.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8E6297F172135F5005CD0E0 /* myInfoData.plist */; };
 		D8ED9B6517080C0900C7FA38 /* DMLazyScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9B6417080C0900C7FA38 /* DMLazyScrollView.m */; };
 		D8ED9B69170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8ED9B67170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.m */; };
 		D8ED9B6A170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8ED9B68170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.xib */; };
@@ -384,6 +394,11 @@
 		D870C49C171F9F51000D8286 /* SignInRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInRequestVo.m; sourceTree = "<group>"; };
 		D870C49E171FA1F5000D8286 /* UpdateMyPhotoRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateMyPhotoRequestVo.h; sourceTree = "<group>"; };
 		D870C49F171FA1F5000D8286 /* UpdateMyPhotoRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateMyPhotoRequestVo.m; sourceTree = "<group>"; };
+		D871CE391722E243006EE28A /* 删除照片.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "删除照片.png"; sourceTree = "<group>"; };
+		D871CE3A1722E243006EE28A /* 删除照片@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "删除照片@2x.png"; sourceTree = "<group>"; };
+		D871CE3B1722E243006EE28A /* 添加照片.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "添加照片.png"; sourceTree = "<group>"; };
+		D871CE3C1722E243006EE28A /* 添加照片@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "添加照片@2x.png"; sourceTree = "<group>"; };
+		D871CE411722EA02006EE28A /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		D87A04E916EF639A0052328E /* qnssy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qnssy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87A04ED16EF639A0052328E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D87A04EF16EF639A0052328E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -635,6 +650,13 @@
 		D8E21F05171903B200A90FB3 /* MyPhotoRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPhotoRequestVo.m; sourceTree = "<group>"; };
 		D8E21F081719056400A90FB3 /* MyPhotoResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPhotoResponseVo.h; sourceTree = "<group>"; };
 		D8E21F091719056400A90FB3 /* MyPhotoResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPhotoResponseVo.m; sourceTree = "<group>"; };
+		D8E62967172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoTableViewCell1_iPhone.h; sourceTree = "<group>"; };
+		D8E62968172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoTableViewCell1_iPhone.m; sourceTree = "<group>"; };
+		D8E6296C172109EA005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoTableViewCell1_iPhone.xib; sourceTree = "<group>"; };
+		D8E6297017211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInfoTableViewCell_iPhone.h; sourceTree = "<group>"; };
+		D8E6297117211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfoTableViewCell_iPhone.m; sourceTree = "<group>"; };
+		D8E6297217211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseInfoTableViewCell_iPhone.xib; sourceTree = "<group>"; };
+		D8E6297F172135F5005CD0E0 /* myInfoData.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = myInfoData.plist; sourceTree = "<group>"; };
 		D8ED9B6317080C0900C7FA38 /* DMLazyScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMLazyScrollView.h; sourceTree = "<group>"; };
 		D8ED9B6417080C0900C7FA38 /* DMLazyScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMLazyScrollView.m; sourceTree = "<group>"; };
 		D8ED9B66170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRecommendImageViewController_iPhone.h; sourceTree = "<group>"; };
@@ -786,6 +808,7 @@
 				D8306367171FD6FB006A256F /* BSUserDetailInfoViewController.h */,
 				D8306368171FD6FB006A256F /* BSUserDetailInfoViewController.m */,
 				D8306369171FD6FB006A256F /* BSUserDetailInfoViewController.xib */,
+				D8E6296617210930005CD0E0 /* UserDetailInfoTableViewCell */,
 			);
 			path = PubliicViewController;
 			sourceTree = "<group>";
@@ -832,6 +855,7 @@
 		D85B6646171AA66A00581B00 /* BaseInfo */ = {
 			isa = PBXGroup;
 			children = (
+				D8E6296F17211B6F005CD0E0 /* BaseInfoTableViewCell */,
 				D85B6647171AA66B00581B00 /* BSBaseInfoViewController_iPhone.h */,
 				D85B6648171AA66B00581B00 /* BSBaseInfoViewController_iPhone.m */,
 				D85B6649171AA66B00581B00 /* BSBaseInfoViewController_iPhone.xib */,
@@ -1152,6 +1176,11 @@
 		D87A059216EF77F90052328E /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				D871CE411722EA02006EE28A /* delete.png */,
+				D871CE391722E243006EE28A /* 删除照片.png */,
+				D871CE3A1722E243006EE28A /* 删除照片@2x.png */,
+				D871CE3B1722E243006EE28A /* 添加照片.png */,
+				D871CE3C1722E243006EE28A /* 添加照片@2x.png */,
 				D8F02A2016FD8F660023FB0A /* 10未读邮件ico@2x.png */,
 				D8F02A2116FD8F660023FB0A /* 11收件箱ico@2x.png */,
 				D8F02A2216FD8F660023FB0A /* 12发件箱ico@2x.png */,
@@ -1505,6 +1534,7 @@
 				5A7892181704791C00E2B238 /* ValidatePhoneResponseVo.m */,
 				D85B6633171A99FB00581B00 /* SuperResponseVo.h */,
 				D85B6634171A99FC00581B00 /* SuperResponseVo.m */,
+				D8E6297F172135F5005CD0E0 /* myInfoData.plist */,
 			);
 			path = response;
 			sourceTree = "<group>";
@@ -1556,6 +1586,26 @@
 				D8C76E5B171E76DF00815457 /* DelMyPhotoResponseVo.m */,
 			);
 			path = MyPhoto;
+			sourceTree = "<group>";
+		};
+		D8E6296617210930005CD0E0 /* UserDetailInfoTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D8E62967172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.h */,
+				D8E62968172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.m */,
+				D8E6296C172109EA005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.xib */,
+			);
+			path = UserDetailInfoTableViewCell;
+			sourceTree = "<group>";
+		};
+		D8E6296F17211B6F005CD0E0 /* BaseInfoTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D8E6297017211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.h */,
+				D8E6297117211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.m */,
+				D8E6297217211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.xib */,
+			);
+			path = BaseInfoTableViewCell;
 			sourceTree = "<group>";
 		};
 		D8ED9B6217080C0900C7FA38 /* DMLazyScrollView */ = {
@@ -1791,6 +1841,14 @@
 				D85B664B171AA66B00581B00 /* BSBaseInfoViewController_iPhone.xib in Resources */,
 				D8306365171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib in Resources */,
 				D830636B171FD6FB006A256F /* BSUserDetailInfoViewController.xib in Resources */,
+				D8E6296E172109EA005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.xib in Resources */,
+				D8E6297417211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.xib in Resources */,
+				D8E62980172135F5005CD0E0 /* myInfoData.plist in Resources */,
+				D871CE3D1722E243006EE28A /* 删除照片.png in Resources */,
+				D871CE3E1722E243006EE28A /* 删除照片@2x.png in Resources */,
+				D871CE3F1722E243006EE28A /* 添加照片.png in Resources */,
+				D871CE401722E243006EE28A /* 添加照片@2x.png in Resources */,
+				D871CE421722EA12006EE28A /* delete.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1908,6 +1966,8 @@
 				D8306364171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.m in Sources */,
 				D830636A171FD6FB006A256F /* BSUserDetailInfoViewController.m in Sources */,
 				D830636E171FD71B006A256F /* BSSuperCentreViewController_iPhone.m in Sources */,
+				D8E62969172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.m in Sources */,
+				D8E6297317211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

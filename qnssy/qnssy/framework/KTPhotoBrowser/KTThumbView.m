@@ -17,6 +17,7 @@
 
 - (void)dealloc 
 {
+//    [_deleteView release];
    [super dealloc];
 }
 
@@ -33,6 +34,7 @@
       // If the thumbnail needs to be scaled, it should mantain its aspect
       // ratio.
       [[self imageView] setContentMode:UIViewContentModeScaleAspectFill];
+
    }
    return self;
 }
@@ -55,9 +57,33 @@
       self.layer.borderColor = [UIColor colorWithWhite:0.85 alpha:1.0].CGColor;
       self.layer.borderWidth = 1;
    } else {
-      self.layer.borderColor = nil;
+//      self.layer.borderColor = nil;
+       
+       self.layer.borderColor = [UIColor redColor].CGColor;
+       self.layer.borderWidth = 3;
    }
 }
-
-
+//- (void)setIsEdit:(BOOL)isEdit
+//{
+//    if (isEdit){
+////        self.deleteView.hidden = NO;
+//        UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"delete"]];
+//        //       imageView.frame = CGRectMake(self.frame.size.width-10, -10, 30, 30);
+//        [self addSubview:self.deleteView];
+//        self.deleteView = imageView;
+//        //       self.deleteView.hidden = YES;
+//        [[self imageView] addSubview:imageView];
+//        [imageView release];
+//
+////        [self.deleteView setNeedsLayout];
+//    } else {
+////        self.deleteView.hidden = YES;
+//    }
+//}
+//- (void)drawRect:(CGRect)rect{
+//    
+//    [super drawRect:rect];
+//    
+//    
+//}
 @end

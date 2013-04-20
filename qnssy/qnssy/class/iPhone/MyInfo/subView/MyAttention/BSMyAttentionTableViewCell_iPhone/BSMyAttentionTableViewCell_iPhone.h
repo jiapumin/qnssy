@@ -10,10 +10,13 @@
 
 @interface BSMyAttentionTableViewCell_iPhone : UITableViewCell
 
+@property (retain, nonatomic) NSDictionary *userVo;
+
 @property (retain, nonatomic) IBOutlet UIImageView *leftImageView;
 @property (retain, nonatomic) IBOutlet UILabel *nickname;
 @property (retain, nonatomic) IBOutlet UILabel *myInfo;
 @property (retain, nonatomic) IBOutlet UILabel *income;
 
+- (void)reloadData:(NSDictionary *)dic;
 
 @end

@@ -17,7 +17,7 @@
 @private
    id <KTThumbsViewDataSource> dataSource_;
    KTThumbsViewController *controller_;
-   BOOL thumbsHaveBorder_;
+//   BOOL thumbsHaveBorder_;
    NSInteger thumbsPerRow_;
    CGSize thumbSize_;
    
