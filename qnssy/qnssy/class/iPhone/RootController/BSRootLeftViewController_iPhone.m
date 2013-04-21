@@ -158,6 +158,11 @@ noSelectedLeftImageArray:(NSMutableArray *)noSelected
 
 #pragma mark - 请求图片
 - (void)requestMyImage:(NSString *)imageUrl imageId:(NSString *)imageId{
+    
+    if ([imageUrl isEqualToString:@""] || imageUrl == nil) {
+        return;
+    }
+    
     NSArray *tempArray = [imageUrl componentsSeparatedByString:@"/"];
 //    NSString *imageName = [tempArray lastObject];
     NSString *imageName = [NSString stringWithFormat:@"%@_%@",[tempArray objectAtIndex:(tempArray.count -2)],[tempArray lastObject]];

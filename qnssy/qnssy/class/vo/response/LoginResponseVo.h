@@ -11,8 +11,6 @@
 #import "SuperResponseVo.h"
 
 @interface LoginResponseVo : SuperResponseVo
-//@property (nonatomic, retain) NSString *message;
-//@property (nonatomic) int loginStatus;
 
 @property (retain, nonatomic)  UserInfo *userInfo;
 

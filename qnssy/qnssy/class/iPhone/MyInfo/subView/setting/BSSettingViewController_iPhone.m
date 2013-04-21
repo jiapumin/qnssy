@@ -10,6 +10,10 @@
 
 #import "BSPublicTableCell_iPhone.h"
 
+#import "BSAboutViewController_iPhone.h"
+
+#import "BSPasswordViewController_iPhone.h"
+
 @interface BSSettingViewController_iPhone ()
 
 @end
@@ -143,11 +147,19 @@
     if (indexPath.section != 0) return;
     if (indexPath.row == 0) {
         //进入修改密码页面
+        
+        BSPasswordViewController_iPhone *password = [[BSPasswordViewController_iPhone alloc] initWithNibName:@"BSPasswordViewController_iPhone" bundle:nil];
+        [self.navigationController pushViewController:password animated:YES];
+        [password release];
     }else if (indexPath.row == 1) {
         //进入关于千千页面
+        BSAboutViewController_iPhone *about = [[BSAboutViewController_iPhone alloc] initWithNibName:@"BSAboutViewController_iPhone" bundle:nil];
+        [self.navigationController pushViewController:about animated:YES];
+        [about release];
     }else if (indexPath.row == 2) {
         //退出登录，返回登录界面
         app.window.rootViewController = app.loginNav;
+        [BSContainer instance].userInfo = nil;
     }
     
 }

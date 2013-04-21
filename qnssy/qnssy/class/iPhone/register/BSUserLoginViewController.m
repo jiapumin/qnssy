@@ -242,16 +242,28 @@
     //进入主界面
 //    [self.view addSubview:app.revealSideViewController.view];
 
-    
-    app.window.rootViewController = app.revealSideViewController;
+    if (vo.status == 0) {
+        //加载界面
+        if (app.revealSideViewController == nil) {
+            [app viewUpdate];
+        }
+        app.window.rootViewController = app.revealSideViewController;
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+    }
     
     [progressHUD hide:YES];
 }
 
 - (void)loginFailed:(id)sender data:(NSDictionary *)dic {
     //登录失败，取消加载框
-    NSLog(@"%@",dic);
-    //???
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"网络异常，请检查网络连接后重试" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
+    [alert release];
+    
     [progressHUD hide:YES];
 }
 - (IBAction)autoLogin:(id)sender {

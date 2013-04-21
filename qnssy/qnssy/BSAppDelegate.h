@@ -28,4 +28,6 @@
 
 @property (retain, nonatomic) UINavigationController *loginNav;
 
+- (void)viewUpdate;
+
 @end

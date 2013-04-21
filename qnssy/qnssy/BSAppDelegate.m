@@ -27,8 +27,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
-    //加载界面
-    [self viewUpdate];
     
     BSUserLoginViewController *userLoginView = [[[BSUserLoginViewController alloc] initWithNibName:@"BSUserLoginViewController" bundle:nil] autorelease];
     
