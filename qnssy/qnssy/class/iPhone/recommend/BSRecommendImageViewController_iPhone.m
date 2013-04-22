@@ -31,6 +31,14 @@
     
     
     [self requestMyImage:[self.imageVo objectForKey:@"userimg"] imageId:[self.imageVo objectForKey:@"imageId"]];
+    
+    self.nickNameLabel.text = [self.imageVo objectForKey:@"username"];
+    
+    self.spaceLabel.text = [self.imageVo objectForKey:@"city"];
+    
+    self.neixindubaiLabel.text = [self.imageVo objectForKey:@"infelt"];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning

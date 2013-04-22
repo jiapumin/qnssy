@@ -246,6 +246,10 @@
 		D8E21F0A1719056400A90FB3 /* MyPhotoResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E21F091719056400A90FB3 /* MyPhotoResponseVo.m */; };
 		D8E548D01724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E548CE1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.m */; };
 		D8E548D11724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E548CF1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.xib */; };
+		D8E548E0172540E300EF4CC9 /* EveryDayMiaiListRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E548DF172540E300EF4CC9 /* EveryDayMiaiListRequestVo.m */; };
+		D8E548E61725414C00EF4CC9 /* EveryDayMiaiListrResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E548E51725414C00EF4CC9 /* EveryDayMiaiListrResponseVo.m */; };
+		D8E548EB172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E548E9172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.m */; };
+		D8E548EC172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E548EA172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.xib */; };
 		D8E62969172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E62968172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.m */; };
 		D8E6296E172109EA005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E6296C172109EA005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.xib */; };
 		D8E6297317211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E6297117211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.m */; };
@@ -682,6 +686,13 @@
 		D8E548CD1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSLookedMeTableViewCell_iPhone.h; sourceTree = "<group>"; };
 		D8E548CE1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSLookedMeTableViewCell_iPhone.m; sourceTree = "<group>"; };
 		D8E548CF1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSLookedMeTableViewCell_iPhone.xib; sourceTree = "<group>"; };
+		D8E548DE172540E300EF4CC9 /* EveryDayMiaiListRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryDayMiaiListRequestVo.h; sourceTree = "<group>"; };
+		D8E548DF172540E300EF4CC9 /* EveryDayMiaiListRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryDayMiaiListRequestVo.m; sourceTree = "<group>"; };
+		D8E548E41725414C00EF4CC9 /* EveryDayMiaiListrResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryDayMiaiListrResponseVo.h; sourceTree = "<group>"; };
+		D8E548E51725414C00EF4CC9 /* EveryDayMiaiListrResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryDayMiaiListrResponseVo.m; sourceTree = "<group>"; };
+		D8E548E8172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEveryDayMiaiTableViewCell_iPhone.h; sourceTree = "<group>"; };
+		D8E548E9172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEveryDayMiaiTableViewCell_iPhone.m; sourceTree = "<group>"; };
+		D8E548EA172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSEveryDayMiaiTableViewCell_iPhone.xib; sourceTree = "<group>"; };
 		D8E62967172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoTableViewCell1_iPhone.h; sourceTree = "<group>"; };
 		D8E62968172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoTableViewCell1_iPhone.m; sourceTree = "<group>"; };
 		D8E6296C172109EA005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoTableViewCell1_iPhone.xib; sourceTree = "<group>"; };
@@ -1074,6 +1085,7 @@
 				D87A057A16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.h */,
 				D87A057B16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.m */,
 				D87A057C16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.xib */,
+				D8E548E7172545DC00EF4CC9 /* BSEveryDayMiaiTableViewCell */,
 			);
 			path = everyDayMiai;
 			sourceTree = "<group>";
@@ -1585,6 +1597,7 @@
 		D8CA7D9116F4B15E00B4CE67 /* request */ = {
 			isa = PBXGroup;
 			children = (
+				D8E548DC1725409F00EF4CC9 /* everyDayMiai */,
 				D83BD503171AE38C00E230FF /* recommend */,
 				D8E21F031719038600A90FB3 /* MyInfo */,
 				D8CA7D9716F4B29400B4CE67 /* LoginRequestVo.h */,
@@ -1602,6 +1615,7 @@
 		D8CA7D9216F4B15E00B4CE67 /* response */ = {
 			isa = PBXGroup;
 			children = (
+				D8E548DD172540A600EF4CC9 /* everyDayMiai */,
 				D83BD507171AE43C00E230FF /* Recommend */,
 				D8E21F071719054D00A90FB3 /* MyPhoto */,
 				D8CA7D9B16F4B3FB00B4CE67 /* LoginResponseVo.h */,
@@ -1680,6 +1694,34 @@
 				D8E548CF1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.xib */,
 			);
 			path = BSLookedMeTableViewCell_iPhone;
+			sourceTree = "<group>";
+		};
+		D8E548DC1725409F00EF4CC9 /* everyDayMiai */ = {
+			isa = PBXGroup;
+			children = (
+				D8E548DE172540E300EF4CC9 /* EveryDayMiaiListRequestVo.h */,
+				D8E548DF172540E300EF4CC9 /* EveryDayMiaiListRequestVo.m */,
+			);
+			path = everyDayMiai;
+			sourceTree = "<group>";
+		};
+		D8E548DD172540A600EF4CC9 /* everyDayMiai */ = {
+			isa = PBXGroup;
+			children = (
+				D8E548E41725414C00EF4CC9 /* EveryDayMiaiListrResponseVo.h */,
+				D8E548E51725414C00EF4CC9 /* EveryDayMiaiListrResponseVo.m */,
+			);
+			path = everyDayMiai;
+			sourceTree = "<group>";
+		};
+		D8E548E7172545DC00EF4CC9 /* BSEveryDayMiaiTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D8E548E8172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.h */,
+				D8E548E9172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.m */,
+				D8E548EA172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.xib */,
+			);
+			path = BSEveryDayMiaiTableViewCell;
 			sourceTree = "<group>";
 		};
 		D8E6296617210930005CD0E0 /* UserDetailInfoTableViewCell */ = {
@@ -1945,6 +1987,7 @@
 				D8768B8617241C8100A407DC /* AboutTableCell_iPhone.xib in Resources */,
 				D8768B9617241FEA00A407DC /* BSPasswordViewController_iPhone.xib in Resources */,
 				D8E548D11724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.xib in Resources */,
+				D8E548EC172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2072,6 +2115,9 @@
 				D8768B9E172420EE00A407DC /* AmendPasswordRequestVo.m in Sources */,
 				D8768BA11724215F00A407DC /* AmendPasswordResponseVo.m in Sources */,
 				D8E548D01724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.m in Sources */,
+				D8E548E0172540E300EF4CC9 /* EveryDayMiaiListRequestVo.m in Sources */,
+				D8E548E61725414C00EF4CC9 /* EveryDayMiaiListrResponseVo.m in Sources */,
+				D8E548EB172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
