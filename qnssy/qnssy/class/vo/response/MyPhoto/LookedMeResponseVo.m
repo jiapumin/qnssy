@@ -11,8 +11,17 @@
 @implementation LookedMeResponseVo
 
 
+//子类必须实现的方法
 - (void)analysisData:(NSDictionary *)ResData{
-
+    
     NSLog(@"要解析的数据：%@",ResData);
+    
+    self.userList = [ResData objectForKey:@"userList"];
+    
+}
+
+- (void)dealloc{
+    [_userList release];
+    [super dealloc];
 }
 @end

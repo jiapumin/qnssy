@@ -6,9 +6,9 @@
 //  Copyright (c) 2012年 baosight. All rights reserved.
 //
 
-#import "BSMyAttentionTableViewCell_iPhone.h"
+#import "BSLookedMeTableViewCell_iPhone.h"
 
-@implementation BSMyAttentionTableViewCell_iPhone
+@implementation BSLookedMeTableViewCell_iPhone
 
 - (IBAction)clickAskMeButton:(id)sender {
     

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BSSettingViewController_iPhone : UIViewController
+@interface BSSettingViewController_iPhone : UIViewController<UIAlertViewDelegate>
 @property (retain, nonatomic) IBOutlet UITableView *myTableView;
 
 @property (retain, nonatomic) NSArray *textNameArrays;

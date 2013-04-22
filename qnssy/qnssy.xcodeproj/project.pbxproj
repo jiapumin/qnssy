@@ -244,6 +244,8 @@
 		D8CA7D9C16F4B3FB00B4CE67 /* LoginResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D9A16F4B3FB00B4CE67 /* LoginResponseVo.m */; };
 		D8E21F06171903B200A90FB3 /* MyPhotoRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E21F05171903B200A90FB3 /* MyPhotoRequestVo.m */; };
 		D8E21F0A1719056400A90FB3 /* MyPhotoResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E21F091719056400A90FB3 /* MyPhotoResponseVo.m */; };
+		D8E548D01724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E548CE1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.m */; };
+		D8E548D11724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E548CF1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.xib */; };
 		D8E62969172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E62968172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.m */; };
 		D8E6296E172109EA005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E6296C172109EA005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.xib */; };
 		D8E6297317211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E6297117211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.m */; };
@@ -677,6 +679,9 @@
 		D8E21F05171903B200A90FB3 /* MyPhotoRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPhotoRequestVo.m; sourceTree = "<group>"; };
 		D8E21F081719056400A90FB3 /* MyPhotoResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPhotoResponseVo.h; sourceTree = "<group>"; };
 		D8E21F091719056400A90FB3 /* MyPhotoResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPhotoResponseVo.m; sourceTree = "<group>"; };
+		D8E548CD1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSLookedMeTableViewCell_iPhone.h; sourceTree = "<group>"; };
+		D8E548CE1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSLookedMeTableViewCell_iPhone.m; sourceTree = "<group>"; };
+		D8E548CF1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSLookedMeTableViewCell_iPhone.xib; sourceTree = "<group>"; };
 		D8E62967172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoTableViewCell1_iPhone.h; sourceTree = "<group>"; };
 		D8E62968172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoTableViewCell1_iPhone.m; sourceTree = "<group>"; };
 		D8E6296C172109EA005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoTableViewCell1_iPhone.xib; sourceTree = "<group>"; };
@@ -875,6 +880,7 @@
 				D85B6641171AA06C00581B00 /* BSLookedMeViewController_iPhone.h */,
 				D85B6642171AA06C00581B00 /* BSLookedMeViewController_iPhone.m */,
 				D85B6643171AA06C00581B00 /* BSLookedMeViewController_iPhone.xib */,
+				D8E548CC1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone */,
 			);
 			path = LookedMe;
 			sourceTree = "<group>";
@@ -1666,6 +1672,16 @@
 			path = MyPhoto;
 			sourceTree = "<group>";
 		};
+		D8E548CC1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				D8E548CD1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.h */,
+				D8E548CE1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.m */,
+				D8E548CF1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.xib */,
+			);
+			path = BSLookedMeTableViewCell_iPhone;
+			sourceTree = "<group>";
+		};
 		D8E6296617210930005CD0E0 /* UserDetailInfoTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -1928,6 +1944,7 @@
 				D8768B7A1724192C00A407DC /* BSAboutViewController_iPhone.xib in Resources */,
 				D8768B8617241C8100A407DC /* AboutTableCell_iPhone.xib in Resources */,
 				D8768B9617241FEA00A407DC /* BSPasswordViewController_iPhone.xib in Resources */,
+				D8E548D11724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2054,6 +2071,7 @@
 				D8768B9517241FEA00A407DC /* BSPasswordViewController_iPhone.m in Sources */,
 				D8768B9E172420EE00A407DC /* AmendPasswordRequestVo.m in Sources */,
 				D8768BA11724215F00A407DC /* AmendPasswordResponseVo.m in Sources */,
+				D8E548D01724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

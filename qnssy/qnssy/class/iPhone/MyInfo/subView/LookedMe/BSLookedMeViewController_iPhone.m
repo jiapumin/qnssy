@@ -11,6 +11,8 @@
 #import "LookedMeRequestVo.h"
 #import "LookedMeResponseVo.h"
 
+#import "BSLookedMeTableViewCell_iPhone.h"
+
 @interface BSLookedMeViewController_iPhone (){
     MBProgressHUD *progressHUD;
 }
@@ -71,6 +73,7 @@
     
     LookedMeResponseVo *vo = [[LookedMeResponseVo alloc] initWithDic:dic];
     
+    self.dataArray = vo.userList;
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
@@ -79,6 +82,8 @@
     [progressHUD hide:YES];
     
     [vo release];
+    
+    [self.myTableView reloadData];
 }
 
 
@@ -88,5 +93,64 @@
     [alert release];
     [progressHUD hide:YES];
 }
+#pragma mark - Table view data source
 
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    // Return the number of sections.
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    // Return the number of rows in the section.
+    return [self.dataArray count];
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    return 76.f;
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //    static NSString *CellIdentifier = @"Cell";
+    //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BSLookedMeTableViewCell_iPhone" owner:tableView options:nil];
+    BSLookedMeTableViewCell_iPhone *cell = [nib objectAtIndex:0];
+    
+    
+    //赋值用户信息
+    [cell reloadData:[self.dataArray objectAtIndex:indexPath.row]];
+    
+    
+    
+    return cell;
+}
+
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    
+    
+    //    BSUserDetailInfoViewController *udivc = [[BSUserDetailInfoViewController alloc] initWithNibName:@"BSUserDetailInfoViewController" bundle:nil];
+    //    [self.navigationController pushViewController:udivc animated:YES];
+    //    [udivc release];
+    
+    
+}
+- (void)dealloc {
+    [_dataArray release];
+    [_myTableView release];
+    [super dealloc];
+}
+- (void)viewDidUnload {
+    [self setDataArray:nil];
+    [self setMyTableView:nil];
+    [super viewDidUnload];
+}
 @end

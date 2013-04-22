@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BSMyAttentionTableViewCell_iPhone : UITableViewCell
+@interface BSLookedMeTableViewCell_iPhone : UITableViewCell
 
 @property (retain, nonatomic) NSDictionary *userVo;
 

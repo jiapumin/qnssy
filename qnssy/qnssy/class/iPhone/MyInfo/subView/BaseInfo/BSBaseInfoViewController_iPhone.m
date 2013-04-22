@@ -83,7 +83,15 @@
     
     self.myBaseInfo = vo.myBaseInfo;
     
-    self.myBaseInfoKey = [self.myBaseInfo allKeys];
+    self.myBaseInfoKey = [NSMutableArray arrayWithArray:[self.myBaseInfo allKeys]];
+    //areaid、areaname、cityname、nationalprovincename、provincename、userimg、username
+    [self.myBaseInfoKey removeObject:@"areaid"];
+    [self.myBaseInfoKey removeObject:@"areaname"];
+    [self.myBaseInfoKey removeObject:@"cityid"];
+    [self.myBaseInfoKey removeObject:@"nationalprovincename"];
+    [self.myBaseInfoKey removeObject:@"provinceid"];
+    [self.myBaseInfoKey removeObject:@"userimg"];
+    [self.myBaseInfoKey removeObject:@"username"];
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
@@ -113,8 +121,9 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return [self.myBaseInfoKey count];
+    // 去掉areaid、areaname、cityname、nationalprovincename、provincename、userimg、username
+    int num = [self.myBaseInfoKey count];
+    return num;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -131,6 +140,12 @@
     BaseInfoTableViewCell_iPhone *cell = [nib objectAtIndex:0];
 
     NSString *key = [self.myBaseInfoKey objectAtIndex:indexPath.row];
+    
+    if ([key isEqualToString:@"cityname"]) {
+        cell.leftLabel.text = @"所在地";
+        cell.rightLabel.text = [self.myBaseInfo objectForKey:key];
+        return cell;
+    }
 
     NSArray * infoArray = [DataParseUtil myInfoData:key];
     //赋值用户信息

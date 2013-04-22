@@ -4,7 +4,7 @@
 <dict>
 	<key>sex</key>
 	<array>
-		<string>性别：</string>
+		<string>性别</string>
 		<dict>
 			<key>1</key>
 			<string>男</string>
@@ -14,132 +14,791 @@
 	</array>
 	<key>email</key>
 	<array>
-		<string>邮箱：</string>
+		<string>邮箱</string>
 		<dict/>
 	</array>
-	<key>sex - 3</key>
+	<key>age</key>
 	<array>
-		<string>性别：</string>
+		<string>年龄</string>
+		<dict/>
+	</array>
+	<key>height</key>
+	<array>
+		<string>身高</string>
+		<dict/>
+	</array>
+	<key>education</key>
+	<array>
+		<string>教育程度</string>
 		<dict>
+			<key>0</key>
+			<string></string>
 			<key>1</key>
-			<string>男</string>
+			<string>中专以下学历</string>
+			<key>3</key>
+			<string>大专</string>
 			<key>2</key>
-			<string>女</string>
+			<string>中专</string>
+			<key>4</key>
+			<string>本科</string>
+			<key>5</key>
+			<string>硕士</string>
+			<key>6</key>
+			<string>博士</string>
 		</dict>
 	</array>
-	<key>sex - 4</key>
+	<key>username</key>
 	<array>
-		<string>性别：</string>
+		<string>昵称</string>
+		<dict/>
+	</array>
+	<key>marrystatus</key>
+	<array>
+		<string>婚姻状态</string>
 		<dict>
+			<key>0</key>
+			<string></string>
 			<key>1</key>
-			<string>男</string>
+			<string>未婚</string>
 			<key>2</key>
-			<string>女</string>
+			<string>离异</string>
+			<key>3</key>
+			<string>丧偶</string>
 		</dict>
 	</array>
-	<key>sex - 5</key>
+	<key>blood</key>
 	<array>
-		<string>性别：</string>
+		<string>血型</string>
 		<dict>
+			<key>0</key>
+			<string></string>
 			<key>1</key>
-			<string>男</string>
+			<string>A型</string>
 			<key>2</key>
-			<string>女</string>
+			<string>B型</string>
+			<key>3</key>
+			<string>O型</string>
+			<key>4</key>
+			<string>AB型</string>
+			<key>5</key>
+			<string>其他</string>
 		</dict>
 	</array>
-	<key>sex - 6</key>
+	<key>childrenstatus</key>
 	<array>
-		<string>性别：</string>
+		<string>有无子女</string>
 		<dict>
+			<key>0</key>
+			<string></string>
 			<key>1</key>
-			<string>男</string>
+			<string>无小孩</string>
 			<key>2</key>
-			<string>女</string>
+			<string>有，和我住在一起</string>
+			<key>3</key>
+			<string>有，有时候和我住在一起</string>
+			<key>4</key>
+			<string>有：不和我住在一起</string>
 		</dict>
 	</array>
-	<key>sex - 7</key>
+	<key>nationality</key>
 	<array>
-		<string>性别：</string>
+		<string>国籍</string>
 		<dict>
+			<key>0</key>
+			<string></string>
 			<key>1</key>
-			<string>男</string>
+			<string>中国大陆</string>
 			<key>2</key>
-			<string>女</string>
+			<string>中国台湾</string>
+			<key>3</key>
+			<string>中国香港</string>
+			<key>4</key>
+			<string>中国澳门</string>
+			<key>5</key>
+			<string>其他</string>
 		</dict>
 	</array>
-	<key>sex - 8</key>
+	<key>nationalprovinceid</key>
 	<array>
-		<string>性别：</string>
+		<string>户籍 省</string>
 		<dict>
+			<key>0</key>
+			<string></string>
 			<key>1</key>
-			<string>男</string>
-			<key>2</key>
-			<string>女</string>
+			<string>北京</string>
+			<key>3</key>
+			<string>天津</string>
+			<key>5</key>
+			<string>上海</string>
+			<key>7</key>
+			<string>重庆</string>
+			<key>9</key>
+			<string>广东</string>
+			<key>33</key>
+			<string>江苏</string>
+			<key>57</key>
+			<string>浙江</string>
+			<key>85</key>
+			<string>福建</string>
+			<key>98</key>
+			<string>湖南</string>
+			<key>122</key>
+			<string>湖北</string>
+			<key>152</key>
+			<string>山东</string>
+			<key>177</key>
+			<string>辽宁</string>
+			<key>198</key>
+			<string>吉林</string>
+			<key>218</key>
+			<string>云南</string>
+			<key>233</key>
+			<string>四川</string>
+			<key>252</key>
+			<string>安徽</string>
+			<key>271</key>
+			<string>江西</string>
+			<key>286</key>
+			<string>黑龙江</string>
+			<key>306</key>
+			<string>河北</string>
+			<key>326</key>
+			<string>陕西</string>
+			<key>336</key>
+			<string>海南</string>
+			<key>342</key>
+			<string>河南</string>
+			<key>362</key>
+			<string>山西</string>
+			<key>374</key>
+			<string>内蒙古</string>
+			<key>392</key>
+			<string>广西</string>
+			<key>405</key>
+			<string>贵州</string>
+			<key>416</key>
+			<string>宁夏</string>
+			<key>421</key>
+			<string>青海</string>
+			<key>427</key>
+			<string>新疆</string>
+			<key>445</key>
+			<string>西藏</string>
+			<key>449</key>
+			<string>甘肃</string>
+			<key>463</key>
+			<string>台湾</string>
+			<key>469</key>
+			<string>香港</string>
+			<key>471</key>
+			<string>澳门</string>
+			<key>473</key>
+			<string>国外</string>
+			<key>475</key>
+			<string>其他</string>
 		</dict>
 	</array>
-	<key>sex - 9</key>
+	<key>nationalprovincename</key>
 	<array>
-		<string>性别：</string>
+		<string>户籍 省</string>
+		<dict/>
+	</array>
+	<key>nationalcityid</key>
+	<array>
+		<string>户籍 市</string>
+		<dict/>
+	</array>
+	<key>provinceid</key>
+	<array>
+		<string>所在地区 省</string>
 		<dict>
+			<key>0</key>
+			<string></string>
 			<key>1</key>
-			<string>男</string>
-			<key>2</key>
-			<string>女</string>
+			<string>北京</string>
+			<key>3</key>
+			<string>天津</string>
+			<key>5</key>
+			<string>上海</string>
+			<key>7</key>
+			<string>重庆</string>
+			<key>9</key>
+			<string>广东</string>
+			<key>33</key>
+			<string>江苏</string>
+			<key>57</key>
+			<string>浙江</string>
+			<key>85</key>
+			<string>福建</string>
+			<key>98</key>
+			<string>湖南</string>
+			<key>122</key>
+			<string>湖北</string>
+			<key>152</key>
+			<string>山东</string>
+			<key>177</key>
+			<string>辽宁</string>
+			<key>198</key>
+			<string>吉林</string>
+			<key>218</key>
+			<string>云南</string>
+			<key>233</key>
+			<string>四川</string>
+			<key>252</key>
+			<string>安徽</string>
+			<key>271</key>
+			<string>江西</string>
+			<key>286</key>
+			<string>黑龙江</string>
+			<key>306</key>
+			<string>河北</string>
+			<key>326</key>
+			<string>陕西</string>
+			<key>336</key>
+			<string>海南</string>
+			<key>342</key>
+			<string>河南</string>
+			<key>362</key>
+			<string>山西</string>
+			<key>374</key>
+			<string>内蒙古</string>
+			<key>392</key>
+			<string>广西</string>
+			<key>405</key>
+			<string>贵州</string>
+			<key>416</key>
+			<string>宁夏</string>
+			<key>421</key>
+			<string>青海</string>
+			<key>427</key>
+			<string>新疆</string>
+			<key>445</key>
+			<string>西藏</string>
+			<key>449</key>
+			<string>甘肃</string>
+			<key>463</key>
+			<string>台湾</string>
+			<key>469</key>
+			<string>香港</string>
+			<key>471</key>
+			<string>澳门</string>
+			<key>473</key>
+			<string>国外</string>
+			<key>475</key>
+			<string>其他</string>
 		</dict>
 	</array>
-	<key>sex - 10</key>
+	<key>provincename</key>
 	<array>
-		<string>性别：</string>
+		<string>所在地区 省</string>
+		<dict/>
+	</array>
+	<key>cityid</key>
+	<array>
+		<string>所在地区 市</string>
 		<dict>
-			<key>1</key>
-			<string>男</string>
-			<key>2</key>
-			<string>女</string>
+			<key>0</key>
+			<string></string>
+			<key>6</key>
+			<string>黄浦</string>
+			<key>514</key>
+			<string>南区</string>
+			<key>515</key>
+			<string>卢湾</string>
+			<key>516</key>
+			<string>徐汇</string>
+			<key>517</key>
+			<string>长宁</string>
+			<key>518</key>
+			<string>静安</string>
+			<key>519</key>
+			<string>普陀</string>
+			<key>520</key>
+			<string>闸北</string>
+			<key>521</key>
+			<string>虹口</string>
+			<key>522</key>
+			<string>杨浦</string>
+			<key>523</key>
+			<string>闵行</string>
+			<key>524</key>
+			<string>宝山</string>
+			<key>525</key>
+			<string>嘉定</string>
+			<key>526</key>
+			<string>浦东新区</string>
+			<key>527</key>
+			<string>金山</string>
+			<key>528</key>
+			<string>松江</string>
+			<key>529</key>
+			<string>南汇</string>
+			<key>530</key>
+			<string>奉贤</string>
+			<key>531</key>
+			<string>青浦</string>
+			<key>532</key>
+			<string>崇明</string>
 		</dict>
 	</array>
-	<key>sex - 11</key>
+	<key>cityname</key>
 	<array>
-		<string>性别：</string>
+		<string>所在地区 市</string>
+		<dict/>
+	</array>
+	<key>areaid</key>
+	<array>
+		<string>所在地区 区</string>
+		<dict/>
+	</array>
+	<key>lovekind</key>
+	<array>
+		<string>交友类型</string>
 		<dict>
-			<key>1</key>
-			<string>男</string>
-			<key>2</key>
-			<string>女</string>
+			<key>0</key>
+			<string></string>
+			<key>3</key>
+			<string>恋爱</string>
+			<key>4</key>
+			<string>结婚</string>
 		</dict>
 	</array>
-	<key>sex - 12</key>
+	<key>personality</key>
 	<array>
-		<string>性别：</string>
+		<string>个性</string>
 		<dict>
+			<key>0</key>
+			<string></string>
 			<key>1</key>
-			<string>男</string>
+			<string>浪漫迷人</string>
 			<key>2</key>
-			<string>女</string>
+			<string>成熟稳重</string>
+			<key>3</key>
+			<string>风趣幽默</string>
+			<key>4</key>
+			<string>乐天达观</string>
+			<key>5</key>
+			<string>活泼可爱</string>
+			<key>6</key>
+			<string>忠厚老实</string>
+			<key>7</key>
+			<string>淳朴害羞</string>
+			<key>8</key>
+			<string>温柔体贴</string>
+			<key>9</key>
+			<string>多愁善感</string>
+			<key>10</key>
+			<string>新潮时尚</string>
+			<key>11</key>
+			<string>热辣动感</string>
+			<key>12</key>
+			<string>豪放不羁</string>
 		</dict>
 	</array>
-	<key>sex - 13</key>
+	<key>national</key>
 	<array>
-		<string>性别：</string>
+		<string>民族</string>
 		<dict>
+			<key>0</key>
+			<string></string>
 			<key>1</key>
-			<string>男</string>
+			<string>汉族</string>
 			<key>2</key>
-			<string>女</string>
+			<string>藏族</string>
+			<key>3</key>
+			<string>朝鲜族</string>
+			<key>4</key>
+			<string>蒙古族</string>
+			<key>5</key>
+			<string>回族</string>
+			<key>6</key>
+			<string>满族</string>
+			<key>7</key>
+			<string>维吾尔族</string>
+			<key>8</key>
+			<string>壮族</string>
+			<key>9</key>
+			<string>彝族</string>
+			<key>10</key>
+			<string>苗族</string>
+			<key>11</key>
+			<string>其他民族</string>
 		</dict>
 	</array>
-	<key>sex - 14</key>
+	<key>jobs</key>
 	<array>
-		<string>性别：</string>
+		<string>所在行业</string>
 		<dict>
+			<key>0</key>
+			<string></string>
 			<key>1</key>
-			<string>男</string>
+			<string>在校学生</string>
 			<key>2</key>
-			<string>女</string>
+			<string>计算机/互联网</string>
+			<key>3</key>
+			<string>电子/半导体</string>
+			<key>4</key>
+			<string>通信技术</string>
+			<key>5</key>
+			<string>销售</string>
+			<key>6</key>
+			<string>市场拓展</string>
+			<key>7</key>
+			<string>公关/商务</string>
+			<key>8</key>
+			<string>采购</string>
+			<key>9</key>
+			<string>客户服务/技术支持</string>
+			<key>10</key>
+			<string>人力资源/行政管理</string>
+			<key>11</key>
+			<string>高级管理</string>
+			<key>12</key>
+			<string>生产/加工/制造</string>
+			<key>13</key>
+			<string>质控/安检</string>
+			<key>14</key>
+			<string>工程机械</string>
+			<key>15</key>
+			<string>技工</string>
+			<key>16</key>
+			<string>会计/审计/统计</string>
+			<key>17</key>
+			<string>金融/证券/投资</string>
+			<key>18</key>
+			<string>房地产/装修/物业</string>
+			<key>19</key>
+			<string>仓储/物流</string>
+			<key>20</key>
+			<string>交通/运输</string>
+			<key>21</key>
+			<string>普通劳动力/家政服务</string>
+			<key>22</key>
+			<string>普通服务行业</string>
+			<key>23</key>
+			<string>航空服务行业</string>
+			<key>24</key>
+			<string>教育/培训</string>
+			<key>25</key>
+			<string>咨询/顾问</string>
+			<key>26</key>
+			<string>学术/科研</string>
+			<key>27</key>
+			<string>法律</string>
+			<key>28</key>
+			<string>设计/创意</string>
+			<key>29</key>
+			<string>文学/传媒/影视</string>
+			<key>30</key>
+			<string>餐饮/旅游</string>
+			<key>31</key>
+			<string>化工</string>
+			<key>32</key>
+			<string>能源/地质勘查</string>
+			<key>33</key>
+			<string>医疗/护理</string>
+			<key>34</key>
+			<string>保健/美容</string>
+			<key>35</key>
+			<string>生物/制药/医疗器械</string>
+			<key>36</key>
+			<string>体育工作者</string>
+			<key>37</key>
+			<string>翻译</string>
+			<key>38</key>
+			<string>公务员/国家干部</string>
+			<key>39</key>
+			<string>私营业主</string>
+			<key>40</key>
+			<string>农/林/牧/渔业</string>
+			<key>41</key>
+			<string>警察/其他</string>
+			<key>42</key>
+			<string>自由职业者</string>
+			<key>43</key>
+			<string>其他</string>
 		</dict>
 	</array>
-	<key>New item - 2</key>
-	<string></string>
-	<key>New item</key>
-	<string></string>
+	<key>salary</key>
+	<array>
+		<string>月薪</string>
+		<dict>
+			<key>0</key>
+			<string></string>
+			<key>1</key>
+			<string>2000元以下</string>
+			<key>2</key>
+			<string>2000~5000元</string>
+			<key>3</key>
+			<string>5000~10000元</string>
+			<key>4</key>
+			<string>10000~20000元</string>
+			<key>5</key>
+			<string>20000元以上</string>
+		</dict>
+	</array>
+	<key>housing</key>
+	<array>
+		<string>居住情况</string>
+		<dict>
+			<key>0</key>
+			<string></string>
+			<key>1</key>
+			<string>暂未购房</string>
+			<key>2</key>
+			<string>需要时置房</string>
+			<key>3</key>
+			<string>已购住房</string>
+			<key>4</key>
+			<string>与人合租</string>
+			<key>5</key>
+			<string>独自租房</string>
+			<key>6</key>
+			<string>与父母同住</string>
+			<key>7</key>
+			<string>住亲朋家</string>
+			<key>8</key>
+			<string>住单位房</string>
+		</dict>
+	</array>
+	<key>caring</key>
+	<array>
+		<string>购车情况</string>
+		<dict>
+			<key>0</key>
+			<string></string>
+			<key>1</key>
+			<string>暂未购车</string>
+			<key>2</key>
+			<string>已经购车</string>
+		</dict>
+	</array>
+	<key>weight</key>
+	<array>
+		<string>体重</string>
+		<dict/>
+	</array>
+	<key>profile</key>
+	<array>
+		<string>外貌自评</string>
+		<dict>
+			<key>0</key>
+			<string></string>
+			<key>1</key>
+			<string>文质彬彬型</string>
+			<key>2</key>
+			<string>西部牛仔型</string>
+			<key>3</key>
+			<string>阳光帅气型</string>
+			<key>4</key>
+			<string>风度翩翩型</string>
+			<key>5</key>
+			<string>成熟魅力型</string>
+			<key>6</key>
+			<string>朴实无华型</string>
+			<key>7</key>
+			<string>朴实无华型</string>
+			<key>8</key>
+			<string>内敛酷男型</string>
+			<key>9</key>
+			<string>秀外慧中</string>
+			<key>10</key>
+			<string>眉清目秀</string>
+			<key>11</key>
+			<string>明眸善睐</string>
+			<key>12</key>
+			<string>娇小依人</string>
+			<key>13</key>
+			<string>青春活泼</string>
+			<key>14</key>
+			<string>成熟魅力</string>
+			<key>15</key>
+			<string>雍容华贵</string>
+			<key>16</key>
+			<string>淡雅如菊</string>
+		</dict>
+	</array>
+	<key>charmparts</key>
+	<array>
+		<string>魅力部位</string>
+		<dict>
+			<key>0</key>
+			<string></string>
+			<key>1</key>
+			<string>笑容</string>
+			<key>2</key>
+			<string>眉毛</string>
+			<key>3</key>
+			<string>眼睛</string>
+			<key>4</key>
+			<string>头发</string>
+			<key>5</key>
+			<string>鼻梁</string>
+			<key>6</key>
+			<string>嘴唇</string>
+			<key>7</key>
+			<string>牙齿</string>
+			<key>8</key>
+			<string>颈部</string>
+			<key>9</key>
+			<string>耳朵</string>
+			<key>10</key>
+			<string>手</string>
+			<key>11</key>
+			<string>胳膊</string>
+			<key>12</key>
+			<string>胸部</string>
+			<key>13</key>
+			<string>腰部</string>
+			<key>14</key>
+			<string>臀部</string>
+			<key>15</key>
+			<string>腿</string>
+			<key>16</key>
+			<string>脚</string>
+			<key>17</key>
+			<string>没有太特别的</string>
+		</dict>
+	</array>
+	<key>hairstyle</key>
+	<array>
+		<string>发型</string>
+		<dict>
+			<key>0</key>
+			<string></string>
+			<key>1</key>
+			<string>顺直长发</string>
+			<key>2</key>
+			<string>卷曲长发</string>
+			<key>3</key>
+			<string>中等长度</string>
+			<key>4</key>
+			<string>短发</string>
+			<key>5</key>
+			<string>很短</string>
+			<key>6</key>
+			<string>光头</string>
+			<key>7</key>
+			<string>其他</string>
+		</dict>
+	</array>
+	<key>haircolor</key>
+	<array>
+		<string>发色</string>
+		<dict>
+			<key>0</key>
+			<string></string>
+			<key>1</key>
+			<string>黑色</string>
+			<key>2</key>
+			<string>金色</string>
+			<key>3</key>
+			<string>褐色</string>
+			<key>4</key>
+			<string>栗色</string>
+			<key>5</key>
+			<string>灰色</string>
+			<key>6</key>
+			<string>红色</string>
+			<key>7</key>
+			<string>白色</string>
+			<key>8</key>
+			<string>挑染</string>
+			<key>9</key>
+			<string>光头</string>
+			<key>10</key>
+			<string>其他</string>
+		</dict>
+	</array>
+	<key>facestyle</key>
+	<array>
+		<string>脸型</string>
+		<dict>
+			<key>0</key>
+			<string></string>
+			<key>1</key>
+			<string>圆脸型</string>
+			<key>2</key>
+			<string>方脸型</string>
+			<key>3</key>
+			<string>长脸型</string>
+			<key>4</key>
+			<string>瓜子脸型</string>
+			<key>5</key>
+			<string>鸭蛋脸型</string>
+			<key>6</key>
+			<string>国字脸型</string>
+			<key>7</key>
+			<string>三角脸型</string>
+			<key>8</key>
+			<string>菱形脸型</string>
+		</dict>
+	</array>
+	<key>bodystyle</key>
+	<array>
+		<string>体型</string>
+		<dict>
+			<key>0</key>
+			<string></string>
+			<key>1</key>
+			<string>瘦</string>
+			<key>2</key>
+			<string>较瘦</string>
+			<key>3</key>
+			<string>匀称</string>
+			<key>4</key>
+			<string>苗条</string>
+			<key>5</key>
+			<string>高挑</string>
+			<key>6</key>
+			<string>丰满</string>
+			<key>7</key>
+			<string>健壮</string>
+			<key>8</key>
+			<string>魁梧</string>
+			<key>9</key>
+			<string>胖</string>
+			<key>10</key>
+			<string>较胖</string>
+		</dict>
+	</array>
+	<key>profile - 7</key>
+	<array>
+		<string>外貌自评</string>
+		<dict>
+			<key>1</key>
+			<string>文质彬彬型</string>
+			<key>2</key>
+			<string>西部牛仔型</string>
+			<key>3</key>
+			<string>阳光帅气型</string>
+			<key>4</key>
+			<string>风度翩翩型</string>
+			<key>5</key>
+			<string>成熟魅力型</string>
+			<key>6</key>
+			<string>朴实无华型</string>
+			<key>7</key>
+			<string>朴实无华型</string>
+			<key>8</key>
+			<string>内敛酷男型</string>
+			<key>9</key>
+			<string>秀外慧中</string>
+			<key>10</key>
+			<string>眉清目秀</string>
+			<key>11</key>
+			<string>明眸善睐</string>
+			<key>12</key>
+			<string>娇小依人</string>
+			<key>13</key>
+			<string>青春活泼</string>
+			<key>14</key>
+			<string>成熟魅力</string>
+			<key>15</key>
+			<string>雍容华贵</string>
+			<key>16</key>
+			<string>淡雅如菊</string>
+		</dict>
+	</array>
 </dict>
 </plist>

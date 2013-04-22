@@ -158,14 +158,25 @@
         [about release];
     }else if (indexPath.row == 2) {
         //退出登录，返回登录界面
-        app.window.rootViewController = app.loginNav;
-        [BSContainer instance].userInfo = nil;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"您确认要注销登录吗" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"确定", nil];
+        [alert show];
+        alert.tag = 199;
+        [alert release];
     }
     
 }
 #pragma mark - pop
 - (void)popViewContoller{
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+#pragma mark - UIAlertViewDelegate
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+
+    if (alertView.tag == 199 && buttonIndex == 1) {
+        app.window.rootViewController = app.loginNav;
+        [BSContainer instance].userInfo = nil;
+    }
 }
 
 @end

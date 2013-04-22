@@ -11,4 +11,6 @@
 
 @interface LookedMeResponseVo : SuperResponseVo
 
+@property (retain, nonatomic) NSMutableArray *userList;
+
 @end

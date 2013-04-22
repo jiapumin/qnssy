@@ -15,6 +15,6 @@
 
 @property (retain, nonatomic) NSDictionary *myBaseInfo;
 
-@property (retain, nonatomic) NSArray *myBaseInfoKey;
+@property (retain, nonatomic) NSMutableArray *myBaseInfoKey;
 
 @end

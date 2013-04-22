@@ -8,6 +8,9 @@
 
 #import "BSSuperCentreViewController_iPhone.h"
 
-@interface BSLookedMeViewController_iPhone : BSSuperCentreViewController_iPhone
+@interface BSLookedMeViewController_iPhone : BSSuperCentreViewController_iPhone<UITableViewDataSource,UITableViewDelegate>
+@property (retain, nonatomic) IBOutlet UITableView *myTableView;
+
+@property (retain, nonatomic) NSMutableArray *dataArray;
 
 @end
