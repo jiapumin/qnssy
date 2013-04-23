@@ -54,6 +54,16 @@
 		D830636E171FD71B006A256F /* BSSuperCentreViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D830636D171FD71B006A256F /* BSSuperCentreViewController_iPhone.m */; };
 		D83BD506171AE38C00E230FF /* RecommendImageListRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83BD505171AE38C00E230FF /* RecommendImageListRequestVo.m */; };
 		D83BD50A171AE43C00E230FF /* RecommendImageListResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83BD509171AE43C00E230FF /* RecommendImageListResponseVo.m */; };
+		D83DC862172617B700614BD4 /* BSEveryDayMiaiDetailViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC860172617B700614BD4 /* BSEveryDayMiaiDetailViewController_iPhone.m */; };
+		D83DC863172617B700614BD4 /* BSEveryDayMiaiDetailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83DC861172617B700614BD4 /* BSEveryDayMiaiDetailViewController_iPhone.xib */; };
+		D83DC878172642BD00614BD4 /* EveryDayMiaiDetailRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC877172642BD00614BD4 /* EveryDayMiaiDetailRequestVo.m */; };
+		D83DC87B1726435900614BD4 /* EveryDayMiaiDetailResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC87A1726435900614BD4 /* EveryDayMiaiDetailResponseVo.m */; };
+		D83DC8881726494000614BD4 /* BSEveryDayMiaiDetailTableViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8861726494000614BD4 /* BSEveryDayMiaiDetailTableViewCell_iPhone.m */; };
+		D83DC8891726494000614BD4 /* BSEveryDayMiaiDetailTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8871726494000614BD4 /* BSEveryDayMiaiDetailTableViewCell_iPhone.xib */; };
+		D83DC88D17266C2600614BD4 /* BSApplyViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC88B17266C2600614BD4 /* BSApplyViewController_iPhone.m */; };
+		D83DC88E17266C2600614BD4 /* BSApplyViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83DC88C17266C2600614BD4 /* BSApplyViewController_iPhone.xib */; };
+		D83DC89B17266FC600614BD4 /* MiaiApplyRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC89A17266FC600614BD4 /* MiaiApplyRequestVo.m */; };
+		D83DC89E1726704A00614BD4 /* MiaiApplyResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC89D1726704A00614BD4 /* MiaiApplyResponseVo.m */; };
 		D85B6625171A949100581B00 /* BSMyAttentionViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D85B6623171A949100581B00 /* BSMyAttentionViewController_iPhone.m */; };
 		D85B6626171A949100581B00 /* BSMyAttentionViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85B6624171A949100581B00 /* BSMyAttentionViewController_iPhone.xib */; };
 		D85B6629171A960700581B00 /* MyAttentionRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D85B6628171A960700581B00 /* MyAttentionRequestVo.m */; };
@@ -381,6 +391,23 @@
 		D83BD505171AE38C00E230FF /* RecommendImageListRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendImageListRequestVo.m; sourceTree = "<group>"; };
 		D83BD508171AE43C00E230FF /* RecommendImageListResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendImageListResponseVo.h; sourceTree = "<group>"; };
 		D83BD509171AE43C00E230FF /* RecommendImageListResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendImageListResponseVo.m; sourceTree = "<group>"; };
+		D83DC85F172617B700614BD4 /* BSEveryDayMiaiDetailViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEveryDayMiaiDetailViewController_iPhone.h; sourceTree = "<group>"; };
+		D83DC860172617B700614BD4 /* BSEveryDayMiaiDetailViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEveryDayMiaiDetailViewController_iPhone.m; sourceTree = "<group>"; };
+		D83DC861172617B700614BD4 /* BSEveryDayMiaiDetailViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSEveryDayMiaiDetailViewController_iPhone.xib; sourceTree = "<group>"; };
+		D83DC876172642BD00614BD4 /* EveryDayMiaiDetailRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryDayMiaiDetailRequestVo.h; sourceTree = "<group>"; };
+		D83DC877172642BD00614BD4 /* EveryDayMiaiDetailRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryDayMiaiDetailRequestVo.m; sourceTree = "<group>"; };
+		D83DC8791726435900614BD4 /* EveryDayMiaiDetailResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EveryDayMiaiDetailResponseVo.h; sourceTree = "<group>"; };
+		D83DC87A1726435900614BD4 /* EveryDayMiaiDetailResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EveryDayMiaiDetailResponseVo.m; sourceTree = "<group>"; };
+		D83DC8851726494000614BD4 /* BSEveryDayMiaiDetailTableViewCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEveryDayMiaiDetailTableViewCell_iPhone.h; sourceTree = "<group>"; };
+		D83DC8861726494000614BD4 /* BSEveryDayMiaiDetailTableViewCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEveryDayMiaiDetailTableViewCell_iPhone.m; sourceTree = "<group>"; };
+		D83DC8871726494000614BD4 /* BSEveryDayMiaiDetailTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSEveryDayMiaiDetailTableViewCell_iPhone.xib; sourceTree = "<group>"; };
+		D83DC88A17266C2500614BD4 /* BSApplyViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSApplyViewController_iPhone.h; sourceTree = "<group>"; };
+		D83DC88B17266C2600614BD4 /* BSApplyViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSApplyViewController_iPhone.m; sourceTree = "<group>"; };
+		D83DC88C17266C2600614BD4 /* BSApplyViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSApplyViewController_iPhone.xib; sourceTree = "<group>"; };
+		D83DC89917266FC500614BD4 /* MiaiApplyRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiaiApplyRequestVo.h; sourceTree = "<group>"; };
+		D83DC89A17266FC600614BD4 /* MiaiApplyRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiaiApplyRequestVo.m; sourceTree = "<group>"; };
+		D83DC89C1726704A00614BD4 /* MiaiApplyResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiaiApplyResponseVo.h; sourceTree = "<group>"; };
+		D83DC89D1726704A00614BD4 /* MiaiApplyResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiaiApplyResponseVo.m; sourceTree = "<group>"; };
 		D85B6622171A949100581B00 /* BSMyAttentionViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMyAttentionViewController_iPhone.h; sourceTree = "<group>"; };
 		D85B6623171A949100581B00 /* BSMyAttentionViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMyAttentionViewController_iPhone.m; sourceTree = "<group>"; };
 		D85B6624171A949100581B00 /* BSMyAttentionViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMyAttentionViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -874,6 +901,30 @@
 			path = Recommend;
 			sourceTree = "<group>";
 		};
+		D83DC85E1726174D00614BD4 /* subView */ = {
+			isa = PBXGroup;
+			children = (
+				D83DC8841726494000614BD4 /* BSEveryDayMiaiDetailTableViewCell_iPhone */,
+				D83DC85F172617B700614BD4 /* BSEveryDayMiaiDetailViewController_iPhone.h */,
+				D83DC860172617B700614BD4 /* BSEveryDayMiaiDetailViewController_iPhone.m */,
+				D83DC861172617B700614BD4 /* BSEveryDayMiaiDetailViewController_iPhone.xib */,
+				D83DC88A17266C2500614BD4 /* BSApplyViewController_iPhone.h */,
+				D83DC88B17266C2600614BD4 /* BSApplyViewController_iPhone.m */,
+				D83DC88C17266C2600614BD4 /* BSApplyViewController_iPhone.xib */,
+			);
+			path = subView;
+			sourceTree = "<group>";
+		};
+		D83DC8841726494000614BD4 /* BSEveryDayMiaiDetailTableViewCell_iPhone */ = {
+			isa = PBXGroup;
+			children = (
+				D83DC8851726494000614BD4 /* BSEveryDayMiaiDetailTableViewCell_iPhone.h */,
+				D83DC8861726494000614BD4 /* BSEveryDayMiaiDetailTableViewCell_iPhone.m */,
+				D83DC8871726494000614BD4 /* BSEveryDayMiaiDetailTableViewCell_iPhone.xib */,
+			);
+			path = BSEveryDayMiaiDetailTableViewCell_iPhone;
+			sourceTree = "<group>";
+		};
 		D85B6621171A946000581B00 /* MyAttention */ = {
 			isa = PBXGroup;
 			children = (
@@ -1085,6 +1136,7 @@
 				D87A057A16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.h */,
 				D87A057B16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.m */,
 				D87A057C16EF6DF50052328E /* BSEveryDayMiaiViewController_iPhone.xib */,
+				D83DC85E1726174D00614BD4 /* subView */,
 				D8E548E7172545DC00EF4CC9 /* BSEveryDayMiaiTableViewCell */,
 			);
 			path = everyDayMiai;
@@ -1701,6 +1753,10 @@
 			children = (
 				D8E548DE172540E300EF4CC9 /* EveryDayMiaiListRequestVo.h */,
 				D8E548DF172540E300EF4CC9 /* EveryDayMiaiListRequestVo.m */,
+				D83DC876172642BD00614BD4 /* EveryDayMiaiDetailRequestVo.h */,
+				D83DC877172642BD00614BD4 /* EveryDayMiaiDetailRequestVo.m */,
+				D83DC89917266FC500614BD4 /* MiaiApplyRequestVo.h */,
+				D83DC89A17266FC600614BD4 /* MiaiApplyRequestVo.m */,
 			);
 			path = everyDayMiai;
 			sourceTree = "<group>";
@@ -1710,6 +1766,10 @@
 			children = (
 				D8E548E41725414C00EF4CC9 /* EveryDayMiaiListrResponseVo.h */,
 				D8E548E51725414C00EF4CC9 /* EveryDayMiaiListrResponseVo.m */,
+				D83DC8791726435900614BD4 /* EveryDayMiaiDetailResponseVo.h */,
+				D83DC87A1726435900614BD4 /* EveryDayMiaiDetailResponseVo.m */,
+				D83DC89C1726704A00614BD4 /* MiaiApplyResponseVo.h */,
+				D83DC89D1726704A00614BD4 /* MiaiApplyResponseVo.m */,
 			);
 			path = everyDayMiai;
 			sourceTree = "<group>";
@@ -1988,6 +2048,9 @@
 				D8768B9617241FEA00A407DC /* BSPasswordViewController_iPhone.xib in Resources */,
 				D8E548D11724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.xib in Resources */,
 				D8E548EC172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.xib in Resources */,
+				D83DC863172617B700614BD4 /* BSEveryDayMiaiDetailViewController_iPhone.xib in Resources */,
+				D83DC8891726494000614BD4 /* BSEveryDayMiaiDetailTableViewCell_iPhone.xib in Resources */,
+				D83DC88E17266C2600614BD4 /* BSApplyViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2118,6 +2181,13 @@
 				D8E548E0172540E300EF4CC9 /* EveryDayMiaiListRequestVo.m in Sources */,
 				D8E548E61725414C00EF4CC9 /* EveryDayMiaiListrResponseVo.m in Sources */,
 				D8E548EB172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.m in Sources */,
+				D83DC862172617B700614BD4 /* BSEveryDayMiaiDetailViewController_iPhone.m in Sources */,
+				D83DC878172642BD00614BD4 /* EveryDayMiaiDetailRequestVo.m in Sources */,
+				D83DC87B1726435900614BD4 /* EveryDayMiaiDetailResponseVo.m in Sources */,
+				D83DC8881726494000614BD4 /* BSEveryDayMiaiDetailTableViewCell_iPhone.m in Sources */,
+				D83DC88D17266C2600614BD4 /* BSApplyViewController_iPhone.m in Sources */,
+				D83DC89B17266FC600614BD4 /* MiaiApplyRequestVo.m in Sources */,
+				D83DC89E1726704A00614BD4 /* MiaiApplyResponseVo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

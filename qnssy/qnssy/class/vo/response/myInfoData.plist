@@ -6,6 +6,8 @@
 	<array>
 		<string>性别</string>
 		<dict>
+			<key>0</key>
+			<string></string>
 			<key>1</key>
 			<string>男</string>
 			<key>2</key>
@@ -798,6 +800,38 @@
 			<string>雍容华贵</string>
 			<key>16</key>
 			<string>淡雅如菊</string>
+		</dict>
+	</array>
+	<key>fee</key>
+	<array>
+		<string>费用预算</string>
+		<dict>
+			<key>0</key>
+			<string></string>
+			<key>1</key>
+			<string>100元以下</string>
+			<key>2</key>
+			<string>100-300元</string>
+			<key>3</key>
+			<string>300-500元</string>
+			<key>4</key>
+			<string>500元以上</string>
+		</dict>
+	</array>
+	<key>whopay</key>
+	<array>
+		<string>付款方式</string>
+		<dict>
+			<key>0</key>
+			<string></string>
+			<key>1</key>
+			<string>发起人买单</string>
+			<key>2</key>
+			<string>应约人买单</string>
+			<key>3</key>
+			<string>AA制</string>
+			<key>10</key>
+			<string>较胖</string>
 		</dict>
 	</array>
 </dict>

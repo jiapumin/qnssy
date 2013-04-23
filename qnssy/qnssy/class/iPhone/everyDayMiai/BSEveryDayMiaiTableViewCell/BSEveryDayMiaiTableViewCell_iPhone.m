@@ -11,7 +11,10 @@
 @implementation BSEveryDayMiaiTableViewCell_iPhone
 
 - (IBAction)clickBaoMingButton:(id)sender{
-    
+
+    if (self.delegate && [self.delegate respondsToSelector:@selector(pushViewController:)]) {
+        [self.delegate performSelector:@selector(pushViewController:) withObject:[self.userVo objectForKey:@"datingid"]];
+    }
 }
 
 - (void)reloadData:(NSDictionary *)dic{
@@ -43,8 +46,9 @@
     NSDate *date =[dateFormat dateFromString:dataStr];
     NSDate *newDate = [NSDate date];
     if ([newDate laterDate:date]) {
-        status = NO;
+        status = YES;
     }
+
     
     
     self.status.text = status ? @"进行中" : @"已结束";
@@ -123,7 +127,6 @@
     [_personNum release];
     [_place release];
     [_status release];
-    [_personNum release];
     [super dealloc];
 }
 @end

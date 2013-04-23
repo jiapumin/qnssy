@@ -10,6 +10,8 @@
 
 @interface BSEveryDayMiaiTableViewCell_iPhone : UITableViewCell
 
+@property (nonatomic, assign) id delegate;
+
 @property (retain, nonatomic) NSDictionary *userVo;
 
 @property (retain, nonatomic) IBOutlet UIImageView *leftImageView;

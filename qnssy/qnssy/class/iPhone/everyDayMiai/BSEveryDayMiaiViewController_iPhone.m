@@ -11,6 +11,8 @@
 #import "EveryDayMiaiListRequestVo.h"
 #import "EveryDayMiaiListrResponseVo.h"
 
+#import "BSEveryDayMiaiDetailViewController_iPhone.h"
+#import "BSApplyViewController_iPhone.h"
 #import "BSEveryDayMiaiTableViewCell_iPhone.h"
 
 @interface BSEveryDayMiaiViewController_iPhone (){
@@ -46,6 +48,19 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)dealloc {
+    [_dataArray release];
+    [_myTableView release];
+    [super dealloc];
+}
+- (void)viewDidUnload {
+    [self setDataArray:nil];
+    [self setMyTableView:nil];
+    [super viewDidUnload];
+}
+
+
 - (void)initHUDView{
     //-------加载框
     progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
@@ -74,9 +89,11 @@
     
     self.dataArray = vo.userList;
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-    [alert show];
-    [alert release];
+    if (vo.status != 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+    }
     
     [progressHUD hide:YES];
     
@@ -119,6 +136,7 @@
     NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BSEveryDayMiaiTableViewCell_iPhone" owner:tableView options:nil];
     BSEveryDayMiaiTableViewCell_iPhone *cell = [nib objectAtIndex:0];
     
+    cell.delegate = self;
     
     //赋值用户信息
     [cell reloadData:[self.dataArray objectAtIndex:indexPath.row]];
@@ -136,21 +154,17 @@
     
     
     
-    //    BSUserDetailInfoViewController *udivc = [[BSUserDetailInfoViewController alloc] initWithNibName:@"BSUserDetailInfoViewController" bundle:nil];
-    //    [self.navigationController pushViewController:udivc animated:YES];
-    //    [udivc release];
+    BSEveryDayMiaiDetailViewController_iPhone *edmd = [[BSEveryDayMiaiDetailViewController_iPhone alloc] initWithNibName:@"BSEveryDayMiaiDetailViewController_iPhone" bundle:nil];
+    edmd.topDataDic = [self.dataArray objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:edmd animated:YES];
+    [edmd release];
     
     
 }
-- (void)dealloc {
-    [_dataArray release];
-    [_myTableView release];
-    [super dealloc];
+- (void)pushViewController:(NSString *)id{
+    BSApplyViewController_iPhone *avc = [[BSApplyViewController_iPhone alloc] initWithNibName:@"BSApplyViewController_iPhone" bundle:nil];
+    avc.datingid = id;
+    [self.navigationController pushViewController:avc animated:YES];
+    [avc release];
 }
-- (void)viewDidUnload {
-    [self setDataArray:nil];
-    [self setMyTableView:nil];
-    [super viewDidUnload];
-}
-
 @end

@@ -35,12 +35,13 @@
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">274</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUITableView" id="158899890">
+					<object class="IBUITableView" id="3153893">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">274</int>
 						<string key="NSFrameSize">{320, 460}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -60,6 +61,7 @@
 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView" ref="3153893"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
@@ -89,14 +91,14 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">myTableView</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="158899890"/>
+						<reference key="destination" ref="3153893"/>
 					</object>
 					<int key="connectionID">7</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">dataSource</string>
-						<reference key="source" ref="158899890"/>
+						<reference key="source" ref="3153893"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">5</int>
@@ -104,7 +106,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">delegate</string>
-						<reference key="source" ref="158899890"/>
+						<reference key="source" ref="3153893"/>
 						<reference key="destination" ref="372490531"/>
 					</object>
 					<int key="connectionID">6</int>
@@ -122,7 +124,7 @@
 						<int key="objectID">1</int>
 						<reference key="object" ref="191373211"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="158899890"/>
+							<reference ref="3153893"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -139,13 +141,13 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">4</int>
-						<reference key="object" ref="158899890"/>
+						<reference key="object" ref="3153893"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
-				<string key="-1.CustomClassName">BSEveryDayMiaiViewController_iPhone</string>
+				<string key="-1.CustomClassName">BSEveryDayMiaiDetailViewController_iPhone</string>
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -161,7 +163,7 @@
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
 				<object class="IBPartialClassDescription">
-					<string key="className">BSEveryDayMiaiViewController_iPhone</string>
+					<string key="className">BSEveryDayMiaiDetailViewController_iPhone</string>
 					<string key="superclassName">BSSuperCentreViewController_iPhone</string>
 					<object class="NSMutableDictionary" key="outlets">
 						<string key="NS.key.0">myTableView</string>
@@ -176,7 +178,7 @@
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/BSEveryDayMiaiViewController_iPhone.h</string>
+						<string key="minorKey">./Classes/BSEveryDayMiaiDetailViewController_iPhone.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
