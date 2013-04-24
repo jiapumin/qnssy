@@ -48,13 +48,13 @@
 
 - (void)dealloc {
     [_oldPasswordText release];
-    [_newPasswordText release];
+    [_passwordTextNew release];
     [_changePasswordButton release];
     [super dealloc];
 }
 - (void)viewDidUnload {
     [self setOldPasswordText:nil];
-    [self setNewPasswordText:nil];
+    [self setPasswordTextNew:nil];
     [self setChangePasswordButton:nil];
     [super viewDidUnload];
 }
@@ -70,7 +70,7 @@
 }
 - (void)loadServiceData{
     [progressHUD show:YES];
-    AmendPasswordRequestVo *vo = [[AmendPasswordRequestVo alloc] initWithNewPassord:self.newPasswordText.text oldPassword:self.oldPasswordText.text];
+    AmendPasswordRequestVo *vo = [[AmendPasswordRequestVo alloc] initWithNewPassord:self.passwordTextNew.text oldPassword:self.oldPasswordText.text];
     [[BSContainer instance].serviceAgent callServletWithObject:self
                                                    requestDict:vo.mReqDic
                                                         target:self
@@ -114,9 +114,9 @@
         message = @"请输入旧密码";
         [self.oldPasswordText becomeFirstResponder];
 
-    }else if([self.newPasswordText.text isEqualToString:@""]){
+    }else if([self.passwordTextNew.text isEqualToString:@""]){
         message = @"请输入新密码";
-        [self.newPasswordText becomeFirstResponder];
+        [self.passwordTextNew becomeFirstResponder];
 
     }else{
         [self loadServiceData];
@@ -132,8 +132,8 @@
 - (BOOL)textFieldShouldReturn:(UITextField *)textField{
     
     if (textField == self.oldPasswordText) {
-        [self.newPasswordText becomeFirstResponder];
-    }else if(textField == self.newPasswordText){
+        [self.passwordTextNew becomeFirstResponder];
+    }else if(textField == self.passwordTextNew){
         [self clickChangeButton:nil];
     }
     

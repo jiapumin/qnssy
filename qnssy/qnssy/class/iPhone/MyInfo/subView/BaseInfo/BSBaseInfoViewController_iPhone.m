@@ -93,9 +93,11 @@
     [self.myBaseInfoKey removeObject:@"userimg"];
     [self.myBaseInfoKey removeObject:@"username"];
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-    [alert show];
-    [alert release];
+    if (vo.status != 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+    }
     
     [progressHUD hide:YES];
     
@@ -154,8 +156,8 @@
     NSDictionary *infoDesDic = [infoArray objectAtIndex:1];
     
     if (infoDesDic && infoDesDic.count != 0) {
-        
-        cell.rightLabel.text = [infoDesDic objectForKey:[self.myBaseInfo objectForKey:key]];
+        NSString *content = [infoDesDic objectForKey:[self.myBaseInfo objectForKey:key]];
+        cell.rightLabel.text = [content isEqualToString:@""] ? @"无" : content;
     }else{
         
         cell.rightLabel.text = [self.myBaseInfo objectForKey:key];

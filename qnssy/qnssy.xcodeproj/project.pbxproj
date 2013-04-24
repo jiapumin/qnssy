@@ -64,6 +64,22 @@
 		D83DC88E17266C2600614BD4 /* BSApplyViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83DC88C17266C2600614BD4 /* BSApplyViewController_iPhone.xib */; };
 		D83DC89B17266FC600614BD4 /* MiaiApplyRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC89A17266FC600614BD4 /* MiaiApplyRequestVo.m */; };
 		D83DC89E1726704A00614BD4 /* MiaiApplyResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC89D1726704A00614BD4 /* MiaiApplyResponseVo.m */; };
+		D83DC8A51727684500614BD4 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = D83DC89F1727684500614BD4 /* Icon-72.png */; };
+		D83DC8A61727684500614BD4 /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8A01727684500614BD4 /* Icon-Small-50.png */; };
+		D83DC8A71727684500614BD4 /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8A11727684500614BD4 /* Icon-Small.png */; };
+		D83DC8A81727684500614BD4 /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8A21727684500614BD4 /* Icon-Small@2x.png */; };
+		D83DC8A91727684500614BD4 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8A31727684500614BD4 /* Icon.png */; };
+		D83DC8AA1727684500614BD4 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8A41727684500614BD4 /* Icon@2x.png */; };
+		D83DC8AD172773AC00614BD4 /* RecommendInfoRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8AC172773AB00614BD4 /* RecommendInfoRequestVo.m */; };
+		D83DC8B01727751800614BD4 /* RecommendInfoResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8AF1727751800614BD4 /* RecommendInfoResponseVo.m */; };
+		D83DC8BA17277E9B00614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8B217277E9700614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.m */; };
+		D83DC8BB17277E9B00614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8B317277E9700614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.xib */; };
+		D83DC8BC17277E9B00614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8B517277E9800614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.m */; };
+		D83DC8BD17277E9B00614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8B617277E9900614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.xib */; };
+		D83DC8BE17277E9B00614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8B817277E9900614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.m */; };
+		D83DC8BF17277E9B00614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8B917277E9900614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.xib */; };
+		D83DC8C3172792F800614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8C1172792F000614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.m */; };
+		D83DC8C4172792F800614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8C2172792F200614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.xib */; };
 		D85B6625171A949100581B00 /* BSMyAttentionViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D85B6623171A949100581B00 /* BSMyAttentionViewController_iPhone.m */; };
 		D85B6626171A949100581B00 /* BSMyAttentionViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85B6624171A949100581B00 /* BSMyAttentionViewController_iPhone.xib */; };
 		D85B6629171A960700581B00 /* MyAttentionRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D85B6628171A960700581B00 /* MyAttentionRequestVo.m */; };
@@ -408,6 +424,28 @@
 		D83DC89A17266FC600614BD4 /* MiaiApplyRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiaiApplyRequestVo.m; sourceTree = "<group>"; };
 		D83DC89C1726704A00614BD4 /* MiaiApplyResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MiaiApplyResponseVo.h; sourceTree = "<group>"; };
 		D83DC89D1726704A00614BD4 /* MiaiApplyResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MiaiApplyResponseVo.m; sourceTree = "<group>"; };
+		D83DC89F1727684500614BD4 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		D83DC8A01727684500614BD4 /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50.png"; sourceTree = "<group>"; };
+		D83DC8A11727684500614BD4 /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
+		D83DC8A21727684500614BD4 /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small@2x.png"; sourceTree = "<group>"; };
+		D83DC8A31727684500614BD4 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		D83DC8A41727684500614BD4 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		D83DC8AB172773AB00614BD4 /* RecommendInfoRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendInfoRequestVo.h; sourceTree = "<group>"; };
+		D83DC8AC172773AB00614BD4 /* RecommendInfoRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendInfoRequestVo.m; sourceTree = "<group>"; };
+		D83DC8AE1727751800614BD4 /* RecommendInfoResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendInfoResponseVo.h; sourceTree = "<group>"; };
+		D83DC8AF1727751800614BD4 /* RecommendInfoResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendInfoResponseVo.m; sourceTree = "<group>"; };
+		D83DC8B117277E9600614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoTableViewCell2_iPhone.h; sourceTree = "<group>"; };
+		D83DC8B217277E9700614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoTableViewCell2_iPhone.m; sourceTree = "<group>"; };
+		D83DC8B317277E9700614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoTableViewCell2_iPhone.xib; sourceTree = "<group>"; };
+		D83DC8B417277E9700614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoTableViewCell3_iPhone.h; sourceTree = "<group>"; };
+		D83DC8B517277E9800614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoTableViewCell3_iPhone.m; sourceTree = "<group>"; };
+		D83DC8B617277E9900614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoTableViewCell3_iPhone.xib; sourceTree = "<group>"; };
+		D83DC8B717277E9900614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoTableViewCell4_iPhone.h; sourceTree = "<group>"; };
+		D83DC8B817277E9900614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoTableViewCell4_iPhone.m; sourceTree = "<group>"; };
+		D83DC8B917277E9900614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoTableViewCell4_iPhone.xib; sourceTree = "<group>"; };
+		D83DC8C0172792ED00614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoTableViewCell5_iPhone.h; sourceTree = "<group>"; };
+		D83DC8C1172792F000614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoTableViewCell5_iPhone.m; sourceTree = "<group>"; };
+		D83DC8C2172792F200614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoTableViewCell5_iPhone.xib; sourceTree = "<group>"; };
 		D85B6622171A949100581B00 /* BSMyAttentionViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMyAttentionViewController_iPhone.h; sourceTree = "<group>"; };
 		D85B6623171A949100581B00 /* BSMyAttentionViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMyAttentionViewController_iPhone.m; sourceTree = "<group>"; };
 		D85B6624171A949100581B00 /* BSMyAttentionViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMyAttentionViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -888,6 +926,8 @@
 			children = (
 				D83BD504171AE38C00E230FF /* RecommendImageListRequestVo.h */,
 				D83BD505171AE38C00E230FF /* RecommendImageListRequestVo.m */,
+				D83DC8AB172773AB00614BD4 /* RecommendInfoRequestVo.h */,
+				D83DC8AC172773AB00614BD4 /* RecommendInfoRequestVo.m */,
 			);
 			path = recommend;
 			sourceTree = "<group>";
@@ -897,6 +937,8 @@
 			children = (
 				D83BD508171AE43C00E230FF /* RecommendImageListResponseVo.h */,
 				D83BD509171AE43C00E230FF /* RecommendImageListResponseVo.m */,
+				D83DC8AE1727751800614BD4 /* RecommendInfoResponseVo.h */,
+				D83DC8AF1727751800614BD4 /* RecommendInfoResponseVo.m */,
 			);
 			path = Recommend;
 			sourceTree = "<group>";
@@ -1424,6 +1466,12 @@
 		D87A059416EF77F90052328E /* Public */ = {
 			isa = PBXGroup;
 			children = (
+				D83DC89F1727684500614BD4 /* Icon-72.png */,
+				D83DC8A01727684500614BD4 /* Icon-Small-50.png */,
+				D83DC8A11727684500614BD4 /* Icon-Small.png */,
+				D83DC8A21727684500614BD4 /* Icon-Small@2x.png */,
+				D83DC8A31727684500614BD4 /* Icon.png */,
+				D83DC8A41727684500614BD4 /* Icon@2x.png */,
 				5AAE6E4E16FAAF79006FDFB7 /* area.plist */,
 			);
 			path = Public;
@@ -1790,6 +1838,18 @@
 				D8E62967172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.h */,
 				D8E62968172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.m */,
 				D8E6296C172109EA005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.xib */,
+				D83DC8B117277E9600614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.h */,
+				D83DC8B217277E9700614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.m */,
+				D83DC8B317277E9700614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.xib */,
+				D83DC8B417277E9700614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.h */,
+				D83DC8B517277E9800614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.m */,
+				D83DC8B617277E9900614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.xib */,
+				D83DC8B717277E9900614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.h */,
+				D83DC8B817277E9900614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.m */,
+				D83DC8B917277E9900614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.xib */,
+				D83DC8C0172792ED00614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.h */,
+				D83DC8C1172792F000614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.m */,
+				D83DC8C2172792F200614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.xib */,
 			);
 			path = UserDetailInfoTableViewCell;
 			sourceTree = "<group>";
@@ -2051,6 +2111,16 @@
 				D83DC863172617B700614BD4 /* BSEveryDayMiaiDetailViewController_iPhone.xib in Resources */,
 				D83DC8891726494000614BD4 /* BSEveryDayMiaiDetailTableViewCell_iPhone.xib in Resources */,
 				D83DC88E17266C2600614BD4 /* BSApplyViewController_iPhone.xib in Resources */,
+				D83DC8A51727684500614BD4 /* Icon-72.png in Resources */,
+				D83DC8A61727684500614BD4 /* Icon-Small-50.png in Resources */,
+				D83DC8A71727684500614BD4 /* Icon-Small.png in Resources */,
+				D83DC8A81727684500614BD4 /* Icon-Small@2x.png in Resources */,
+				D83DC8A91727684500614BD4 /* Icon.png in Resources */,
+				D83DC8AA1727684500614BD4 /* Icon@2x.png in Resources */,
+				D83DC8BB17277E9B00614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.xib in Resources */,
+				D83DC8BD17277E9B00614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.xib in Resources */,
+				D83DC8BF17277E9B00614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.xib in Resources */,
+				D83DC8C4172792F800614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2188,6 +2258,12 @@
 				D83DC88D17266C2600614BD4 /* BSApplyViewController_iPhone.m in Sources */,
 				D83DC89B17266FC600614BD4 /* MiaiApplyRequestVo.m in Sources */,
 				D83DC89E1726704A00614BD4 /* MiaiApplyResponseVo.m in Sources */,
+				D83DC8AD172773AC00614BD4 /* RecommendInfoRequestVo.m in Sources */,
+				D83DC8B01727751800614BD4 /* RecommendInfoResponseVo.m in Sources */,
+				D83DC8BA17277E9B00614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.m in Sources */,
+				D83DC8BC17277E9B00614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.m in Sources */,
+				D83DC8BE17277E9B00614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.m in Sources */,
+				D83DC8C3172792F800614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

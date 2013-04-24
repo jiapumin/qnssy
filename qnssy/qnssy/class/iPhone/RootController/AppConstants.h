@@ -1,17 +1,4 @@
 
-//测试环境
-//#define  MBSHTTPURL @"http://202.101.47.84/iPlatMBS/AgentService"
-//#define  MBSHTTPSURL @"http://202.101.47.84/iPlatMBS/LoginService"
-//#define UPDATEWITHURL @"http://202.101.47.84/iPlatMBS/appstore/release/iPadCoOffice/iPadCoOffice.plist"
-//#define IPLAT4M_URL @"http://202.101.47.84/iPlatMBS/appstore/release/iPlat4M_iPad/iPlat4M_iPad.plist" //基座应用更新下载地址
-
-//正式环境
-//#define  MBSHTTPURL @"http://mobile.baosteel.com/iPlatMBS/AgentService"
-//#define  MBSHTTPSURL @"http://mobile.baosteel.com/iPlatMBS/LoginService"
-//#define UPDATEWITHURL @"http://mobile.baosteel.com/iPlatMBS/appstore/release/iPadCoOffice/iPadCoOffice.plist"
-//#define IPLAT4M_URL @"http://mobile.baosteel.com/iPlatMBS/appstore/release/iPlat4M_iPad/iPlat4M_iPad.plist" //基座应用更新下载地址
-
-//============================================================================================
 
 #define app ((BSAppDelegate *)[[UIApplication sharedApplication] delegate])
 
@@ -51,9 +38,4 @@
 
 #define IMAGE_PATH @"image"
 
-//#define SYSTEM_IP @"http://10.30.91.12/data1/release/mobile/" //正式环境
-//#define APP_TITLE @"国际管理在线"//正式环境
-
-#define SYSTEM_IP @"http://10.30.91.12/data1/test/mobile/" //测试环境
-#define APP_TITLE @"国际管理在线  测试" //测试环境
 

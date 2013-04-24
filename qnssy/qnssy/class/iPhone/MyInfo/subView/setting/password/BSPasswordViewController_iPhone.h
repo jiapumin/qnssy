@@ -11,7 +11,7 @@
 @interface BSPasswordViewController_iPhone : BSSuperCentreViewController_iPhone<UITextFieldDelegate>
 
 @property (retain, nonatomic) IBOutlet UITextField *oldPasswordText;
-@property (retain, nonatomic) IBOutlet UITextField *newPasswordText;
+@property (retain, nonatomic) IBOutlet UITextField *passwordTextNew;
 @property (retain, nonatomic) IBOutlet UIButton *changePasswordButton;
 - (IBAction)clickChangeButton:(id)sender;
 

@@ -68,6 +68,7 @@
     
     if ([self.delegate respondsToSelector:@selector(pushViewController:)]) {
         BSUserDetailInfoViewController *vc = [[[BSUserDetailInfoViewController alloc] init] autorelease];
+        vc.userId = [self.imageVo objectForKey:@"userid"];
          [self.delegate pushViewController:vc];
     }
    

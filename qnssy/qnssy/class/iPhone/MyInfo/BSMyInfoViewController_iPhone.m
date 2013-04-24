@@ -94,14 +94,16 @@
 #pragma mark - 初始化数据
 - (void)initData{
     self.textNameArrays = [NSArray arrayWithObjects:
-                           [NSArray arrayWithObjects:@"我的说说",@"我的照片",@"我的关注",@"看过我的", nil],
-                           [NSArray arrayWithObjects:@"基本资料",@"高级资料",@"择偶条件",@"自我介绍", nil], nil];
+                           [NSArray arrayWithObjects:@"我的说说",@"我的照片",@"我的关注",@"看过我的",@"基本资料", nil],nil];
+                           
+//                           ,[NSArray arrayWithObjects:@"基本资料",@"高级资料",@"择偶条件",@"自我介绍", nil], 
     self.selectedLeftImageArrays =  [NSArray arrayWithObjects:
-                                    [NSArray arrayWithObjects:@"28我的说说",@"28我的照片",@"28我的关注",@"28看过我的", nil],
-                                    [NSArray arrayWithObjects:@"28基本资料",@"28高级资料",@"28择偶条件",@"28自我介绍", nil], nil];
+                                    [NSArray arrayWithObjects:@"28我的说说",@"28我的照片",@"28我的关注",@"28看过我的",@"28基本资料", nil], nil];
+                           
+//                           ,[NSArray arrayWithObjects:@"28基本资料",@"28高级资料",@"28择偶条件",@"28自我介绍", nil]
     self.noSelectedLeftImageArrays = [NSArray arrayWithObjects:
-                                      [NSArray arrayWithObjects:@"28我的说说",@"28我的照片",@"28我的关注",@"28看过我的", nil],
-                                      [NSArray arrayWithObjects:@"28基本资料",@"28高级资料",@"28择偶条件",@"28自我介绍", nil], nil];
+                                      [NSArray arrayWithObjects:@"28我的说说",@"28我的照片",@"28我的关注",@"28看过我的",@"28基本资料", nil], nil];
+//                           ,[NSArray arrayWithObjects:,@"28高级资料",@"28择偶条件",@"28自我介绍", nil]
 }
 #pragma mark - 请求图片
 - (void)requestMyImage:(NSString *)imageUrl{
@@ -159,13 +161,13 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 2;
+    return [self.textNameArrays count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 4;
+    return [[self.textNameArrays objectAtIndex:section] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -235,6 +237,11 @@
             BSLookedMeViewController_iPhone *lmvc = [[BSLookedMeViewController_iPhone alloc] initWithNibName:@"BSLookedMeViewController_iPhone" bundle:nil];
             [self.navigationController pushViewController:lmvc animated:YES];
             [lmvc release];
+        }else if (indexPath.row == 4) {
+            //基本资料
+            BSBaseInfoViewController_iPhone *vc = [[BSBaseInfoViewController_iPhone alloc] initWithNibName:@"BSBaseInfoViewController_iPhone" bundle:nil];
+            [self.navigationController pushViewController:vc animated:YES];
+            [vc release];
         }
     }else if(indexPath.section == 1){
         if (indexPath.row == 0) {

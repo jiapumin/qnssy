@@ -6,9 +6,9 @@
 //  Copyright (c) 2013年 jpm. All rights reserved.
 //
 
-#import "BSUserDetailInfoTableViewCell1_iPhone.h"
+#import "BSUserDetailInfoTableViewCell3_iPhone.h"
 
-@implementation BSUserDetailInfoTableViewCell1_iPhone
+@implementation BSUserDetailInfoTableViewCell3_iPhone
 
 - (void)reloadData:(NSDictionary *)dic{
     
