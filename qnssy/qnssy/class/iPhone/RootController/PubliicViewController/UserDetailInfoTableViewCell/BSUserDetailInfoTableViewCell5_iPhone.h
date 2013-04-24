@@ -9,12 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface BSUserDetailInfoTableViewCell5_iPhone : UITableViewCell
-@property (retain, nonatomic) IBOutlet UIImageView *leftImageView;
-@property (retain, nonatomic) IBOutlet UILabel *myInfoLabel;
-@property (retain, nonatomic) IBOutlet UILabel *locationLabel;
 
-@property (retain, nonatomic) NSDictionary *userVo;
-
-- (void)reloadData:(NSDictionary *)dic;
+@property (retain, nonatomic) IBOutlet UILabel *leftLabel;
+@property (retain, nonatomic) IBOutlet UILabel *rightLabel;
 
 @end

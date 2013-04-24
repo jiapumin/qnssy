@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface BSUserDetailInfoTableViewCell3_iPhone : UITableViewCell
-@property (retain, nonatomic) IBOutlet UIImageView *leftImageView;
-@property (retain, nonatomic) IBOutlet UILabel *myInfoLabel;
-@property (retain, nonatomic) IBOutlet UILabel *locationLabel;
 
 @property (retain, nonatomic) NSDictionary *userVo;
 
-- (void)reloadData:(NSDictionary *)dic;
+- (IBAction)clickGZButton:(id)sender;
+- (IBAction)clickXXButton:(id)sender;
+- (IBAction)clickTJButton:(id)sender;
+- (IBAction)clickWHButton:(id)sender;
 
 @end

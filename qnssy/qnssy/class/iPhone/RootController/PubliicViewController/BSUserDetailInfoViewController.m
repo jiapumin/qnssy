@@ -37,6 +37,8 @@
 {
     [super viewDidLoad];
     
+    [self initHUDView];
+    
     [self loadServiceData];
     
 }
@@ -114,7 +116,7 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     // Return the number of sections.
-    return 1;
+    return 4;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
@@ -122,28 +124,86 @@
             return 75.f;
         }else if (indexPath.row == 1){
             return 100.f;
+        }else if (indexPath.row == 2){
+            return 75.f;
         }
     }else if (indexPath.section == 1){
-        return 1;
-    }else if (indexPath.section == 2){
-        return 1;
+        if (indexPath.row == 0) {
+            NSString *title = [self.userInfoDic objectForKey:@"infelt"];
+            CGSize textSize = [title
+                               sizeWithFont:[UIFont systemFontOfSize:14.f]
+                               constrainedToSize:CGSizeMake(280, CGFLOAT_MAX)
+                               lineBreakMode:UILineBreakModeCharacterWrap];
+            return textSize.height + 20;
+        }
+        
+    }else if (indexPath.section == 2 ||indexPath.section == 3){
+        return 44.f;
     }
     return 0;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if (section == 0) {
+        return 0;
+    }else if (section == 1){
+        return 36;
+        
+    }else if (section == 2){
+        return 36;
+    }
+    else if (section == 3){
+        return 36;
+    }
+    return 0;
+}
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    NSString *title = @"";
+    if (section == 0) {
+        UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
+        headView.backgroundColor = [UIColor redColor];
+        return headView;
+    }else if (section == 1){
+        title = @"内心独白";
+        
+    }else if (section == 2){
+        title = @"基本资料";
+    }
+    else if (section == 3){
+        title = @"择偶条件";
+    }
+
+    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 36)];
+    headView.backgroundColor = [UIColor clearColor];
+    UIImageView *headBgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"7标题背景"]];
+    headBgImageView.frame = CGRectMake(10, 3, 300, 30);
+    [headView addSubview:headBgImageView];
+    
+    UILabel *headLabel = [[UILabel alloc] initWithFrame:CGRectMake(23, 3, 280, 30)];
+    headLabel.backgroundColor = [UIColor clearColor];
+    UIColor *color1 = [UIColor colorWithRed:198/255.f green:21/255.f blue:73/277.f alpha:1.f];
+    headLabel.textColor = color1;
+    headLabel.font = [UIFont systemFontOfSize:16.f];
+    headLabel.text = title;
+     [headView addSubview:headLabel];
+    return headView;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0) {
-        return 2;
+        return 3;
     }else if (section == 1){
         return 1;
     }else if (section == 2){
-        return 1;
+        return 5;
+    }else if (section == 3){
+        return 4;
     }
     return 0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     if (indexPath.section == 0) {
         if (indexPath.row == 0) {
             NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BSUserDetailInfoTableViewCell1_iPhone" owner:tableView options:nil];
@@ -161,66 +221,116 @@
             
             
             return cell;
-        }else if(indexPath.row == 1){
+        }else if(indexPath.row == 2){
             NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BSUserDetailInfoTableViewCell3_iPhone" owner:tableView options:nil];
             BSUserDetailInfoTableViewCell3_iPhone *cell = [nib objectAtIndex:0];
             
-            [cell reloadData:self.userInfoDic];
-            
+            cell.userVo = self.userInfoDic;
             
             return cell;
         }
     }else if (indexPath.section == 1){
-        
+        if (indexPath.row == 0) {
+            NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BSUserDetailInfoTableViewCell4_iPhone" owner:tableView options:nil];
+            BSUserDetailInfoTableViewCell4_iPhone *cell = [nib objectAtIndex:0];
+            
+            cell.myInfoLabel.text = [self.userInfoDic objectForKey:@"infelt"];
+            CGSize textSize = [cell.myInfoLabel.text
+                               sizeWithFont:cell.myInfoLabel.font
+                               constrainedToSize:CGSizeMake(cell.myInfoLabel.frame.size.width, CGFLOAT_MAX)
+                               lineBreakMode:UILineBreakModeCharacterWrap];
+            [cell.myInfoLabel setFrame:CGRectMake(cell.myInfoLabel.frame.origin.x, cell.myInfoLabel.frame.origin.y, cell.myInfoLabel.frame.size.width, textSize.height)];
+            
+            return cell;
+        }
     }else if (indexPath.section == 2){
         
+        NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BSUserDetailInfoTableViewCell5_iPhone" owner:tableView options:nil];
+        BSUserDetailInfoTableViewCell5_iPhone *cell = [nib objectAtIndex:0];
+        UIColor *color1 = [UIColor colorWithRed:198/255.f green:21/255.f blue:73/277.f alpha:1.f];
+        cell.rightLabel.textColor = color1;
+        NSDictionary *baseinfoDic = [self.userInfoDic objectForKey:@"baseinfo"];
+        if (indexPath.row == 0) {
+            cell.leftLabel.text = @"佳缘ID";
+            cell.rightLabel.text = [baseinfoDic objectForKey:@"userid"];
+        }else if(indexPath.row == 1){
+            cell.leftLabel.text = @"学历";
+            NSString *str = [self valueDicForKey:@"education" key:[baseinfoDic objectForKey:@"education"]];
+            cell.rightLabel.text = str;
+        }else if(indexPath.row == 2){
+            cell.leftLabel.text = @"婚姻状况";
+            NSString *str = [self valueDicForKey:@"marriageState" key:[baseinfoDic objectForKey:@"marriageState"]];
+            cell.rightLabel.text = str;
+            
+        }else if(indexPath.row == 3){
+            cell.leftLabel.text = @"月薪";
+            NSString *str = [self valueDicForKey:@"wages" key:[baseinfoDic objectForKey:@"wages"]];
+            cell.rightLabel.text = str;
+        }else if(indexPath.row == 4){
+            cell.leftLabel.text = @"住房情况";
+            NSString *str = [self valueDicForKey:@"house" key:[baseinfoDic objectForKey:@"house"]];
+            cell.rightLabel.text = str;
+        }else if(indexPath.row == 5){
+            cell.leftLabel.text = @"买车情况";
+            NSString *str = [self valueDicForKey:@"car" key:[baseinfoDic objectForKey:@"car"]];
+            cell.rightLabel.text = str;
+        }
+        
+        
+        return cell;
+
+    }else if (indexPath.section == 3){
+        
+        NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BSUserDetailInfoTableViewCell5_iPhone" owner:tableView options:nil];
+        BSUserDetailInfoTableViewCell5_iPhone *cell = [nib objectAtIndex:0];
+        UIColor *color1 = [UIColor colorWithRed:198/255.f green:21/255.f blue:73/277.f alpha:1.f];
+        cell.rightLabel.textColor = color1;
+        NSDictionary *spouseDic = [self.userInfoDic objectForKey:@"spouse"];
+        if (indexPath.row == 0) {
+            cell.leftLabel.text = @"年龄范围";
+            NSString *str = [NSString stringWithFormat:@"%@岁-%@岁",[spouseDic objectForKey:@"startage"],[spouseDic objectForKey:@"endage"]];
+            cell.rightLabel.text = str;
+        }else if(indexPath.row == 1){
+            cell.leftLabel.text = @"身高范围";
+            NSString *str = [NSString stringWithFormat:@"%@厘米-%@厘米",[spouseDic objectForKey:@"startheight"],[spouseDic objectForKey:@"endheight"]];
+            cell.rightLabel.text = str;
+        }else if(indexPath.row == 2){
+            cell.leftLabel.text = @"学历";
+            NSString *str = [self valueDicForKey:@"education" key:[spouseDic objectForKey:@"education"]];
+            cell.rightLabel.text = str;
+            
+        }else if(indexPath.row == 3){
+            cell.leftLabel.text = @"所在地";
+            NSString *str = [NSString stringWithFormat:@"%@ %@",[spouseDic objectForKey:@"taprovice"],[spouseDic objectForKey:@"tacity"]];
+            cell.rightLabel.text = str;
+        }
+        
+        return cell;
+        
+    }else {
+        static NSString *CellIdentifier = @"Cell";
+        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+        if (cell == nil) {
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        }
+        
+        return cell;
     }
     
-
-//
-//    cell.menuLabel.text = [self.vcNameArrays objectAtIndex:indexPath.row];
-//    
-//    cell.noSelectedLeftImageName = [self.noSelectedLeftImageArrays objectAtIndex:indexPath.row];
-//    
-//    cell.selectedLeftImageName =[self.selectedLeftImageArrays objectAtIndex:indexPath.row];
-//    
-//    cell.noSelectedBgImageName = @"5其他选项未选中背景";
-//    
-//    cell.selectedBgImageName = @"5其他选项选中背景";
-//    
-//    cell.leftImage.image = [UIImage imageNamed:cell.noSelectedLeftImageName];
-//    
-//    cell.bgImage.image = [UIImage imageNamed:cell.noSelectedBgImageName];
-    
-//    return cell;
+}
+- (NSString *)valueDicForKey:(NSString *)key key:(NSString *)key1{
+    NSDictionary *educationDic = [[DataParseUtil myInfoData:@"key"] objectAtIndex:1];
+    NSString *str = [educationDic objectForKey:@"key1"];
+    str = (str||[str isEqualToString:@""]) ? str : @"无";
+    return str;
 }
 
 #pragma mark - Table view delegate
-//- (NSIndexPath *)tableView:(UITableView *)tableView willSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    BSRootLeftTableCell_iPhone *cell = (BSRootLeftTableCell_iPhone *)[tableView cellForRowAtIndexPath:indexPath];
-//    cell.bgImage.image = [UIImage imageNamed:cell.selectedBgImageName];
-//    cell.leftImage.image = [UIImage imageNamed:cell.selectedLeftImageName];
-//    cell.menuLabel.textColor = [UIColor colorWithRed:223.f/255 green:42.f/255 blue:106.f/255 alpha:1.f];
-//    
-//    return indexPath;
-//    
-//}
-//- (NSIndexPath *)tableView:(UITableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
-//    BSRootLeftTableCell_iPhone *cell = (BSRootLeftTableCell_iPhone *)[tableView cellForRowAtIndexPath:indexPath];
-//    cell.bgImage.image = [UIImage imageNamed:cell.noSelectedBgImageName];
-//    cell.leftImage.image = [UIImage imageNamed:cell.noSelectedLeftImageName];
-//    cell.menuLabel.textColor = [UIColor blackColor];
-//    return indexPath;
-//}
-//
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    UIViewController *vc = [self.vcArrays objectAtIndex:indexPath.row];
-//    
-//    [self.revealSideViewController popViewControllerWithNewCenterController:vc
-//                                                                   animated:YES];
-//    
-//}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+
+}
 
 
 @end
