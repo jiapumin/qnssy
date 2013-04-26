@@ -9,5 +9,10 @@
 #import "BSSuperCentreViewController_iPhone.h"
 
 @interface BSMessageViewController_iPhone : BSSuperCentreViewController_iPhone
+@property (retain, nonatomic) IBOutlet UISegmentedControl *topSegmented;
 
+@property (retain, nonatomic) NSArray *mailArray;
+
+@property (retain, nonatomic) IBOutlet UITableView *myTableView;
+- (IBAction)clickTopSegmented:(id)sender;
 @end

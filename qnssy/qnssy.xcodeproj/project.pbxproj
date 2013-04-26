@@ -80,6 +80,8 @@
 		D83DC8BF17277E9B00614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8B917277E9900614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.xib */; };
 		D83DC8C3172792F800614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8C1172792F000614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.m */; };
 		D83DC8C4172792F800614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8C2172792F200614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.xib */; };
+		D84CB73B172A706D009C2BB9 /* MessageUnreadRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84CB73A172A706D009C2BB9 /* MessageUnreadRequestVo.m */; };
+		D84CB73E172A70B0009C2BB9 /* MessageUnreadResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84CB73D172A70B0009C2BB9 /* MessageUnreadResponseVo.m */; };
 		D85B6625171A949100581B00 /* BSMyAttentionViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D85B6623171A949100581B00 /* BSMyAttentionViewController_iPhone.m */; };
 		D85B6626171A949100581B00 /* BSMyAttentionViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85B6624171A949100581B00 /* BSMyAttentionViewController_iPhone.xib */; };
 		D85B6629171A960700581B00 /* MyAttentionRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D85B6628171A960700581B00 /* MyAttentionRequestVo.m */; };
@@ -446,6 +448,10 @@
 		D83DC8C0172792ED00614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoTableViewCell5_iPhone.h; sourceTree = "<group>"; };
 		D83DC8C1172792F000614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoTableViewCell5_iPhone.m; sourceTree = "<group>"; };
 		D83DC8C2172792F200614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoTableViewCell5_iPhone.xib; sourceTree = "<group>"; };
+		D84CB739172A706D009C2BB9 /* MessageUnreadRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageUnreadRequestVo.h; sourceTree = "<group>"; };
+		D84CB73A172A706D009C2BB9 /* MessageUnreadRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageUnreadRequestVo.m; sourceTree = "<group>"; };
+		D84CB73C172A70B0009C2BB9 /* MessageUnreadResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageUnreadResponseVo.h; sourceTree = "<group>"; };
+		D84CB73D172A70B0009C2BB9 /* MessageUnreadResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageUnreadResponseVo.m; sourceTree = "<group>"; };
 		D85B6622171A949100581B00 /* BSMyAttentionViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMyAttentionViewController_iPhone.h; sourceTree = "<group>"; };
 		D85B6623171A949100581B00 /* BSMyAttentionViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMyAttentionViewController_iPhone.m; sourceTree = "<group>"; };
 		D85B6624171A949100581B00 /* BSMyAttentionViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMyAttentionViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -965,6 +971,24 @@
 				D83DC8871726494000614BD4 /* BSEveryDayMiaiDetailTableViewCell_iPhone.xib */,
 			);
 			path = BSEveryDayMiaiDetailTableViewCell_iPhone;
+			sourceTree = "<group>";
+		};
+		D84CB737172A701E009C2BB9 /* message */ = {
+			isa = PBXGroup;
+			children = (
+				D84CB739172A706D009C2BB9 /* MessageUnreadRequestVo.h */,
+				D84CB73A172A706D009C2BB9 /* MessageUnreadRequestVo.m */,
+			);
+			path = message;
+			sourceTree = "<group>";
+		};
+		D84CB738172A702D009C2BB9 /* message */ = {
+			isa = PBXGroup;
+			children = (
+				D84CB73C172A70B0009C2BB9 /* MessageUnreadResponseVo.h */,
+				D84CB73D172A70B0009C2BB9 /* MessageUnreadResponseVo.m */,
+			);
+			path = message;
 			sourceTree = "<group>";
 		};
 		D85B6621171A946000581B00 /* MyAttention */ = {
@@ -1697,6 +1721,7 @@
 		D8CA7D9116F4B15E00B4CE67 /* request */ = {
 			isa = PBXGroup;
 			children = (
+				D84CB737172A701E009C2BB9 /* message */,
 				D8E548DC1725409F00EF4CC9 /* everyDayMiai */,
 				D83BD503171AE38C00E230FF /* recommend */,
 				D8E21F031719038600A90FB3 /* MyInfo */,
@@ -1715,6 +1740,7 @@
 		D8CA7D9216F4B15E00B4CE67 /* response */ = {
 			isa = PBXGroup;
 			children = (
+				D84CB738172A702D009C2BB9 /* message */,
 				D8E548DD172540A600EF4CC9 /* everyDayMiai */,
 				D83BD507171AE43C00E230FF /* Recommend */,
 				D8E21F071719054D00A90FB3 /* MyPhoto */,
@@ -2264,6 +2290,8 @@
 				D83DC8BC17277E9B00614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.m in Sources */,
 				D83DC8BE17277E9B00614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.m in Sources */,
 				D83DC8C3172792F800614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.m in Sources */,
+				D84CB73B172A706D009C2BB9 /* MessageUnreadRequestVo.m in Sources */,
+				D84CB73E172A70B0009C2BB9 /* MessageUnreadResponseVo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

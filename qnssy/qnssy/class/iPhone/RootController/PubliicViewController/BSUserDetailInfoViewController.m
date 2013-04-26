@@ -307,17 +307,17 @@
         
         return cell;
         
-    }else {
-        static NSString *CellIdentifier = @"Cell";
-        UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-        if (cell == nil) {
-            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        }
-        
-        return cell;
+    }
+    static NSString *CellIdentifier = @"Cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
+    return cell;
+    
 }
+
 - (NSString *)valueDicForKey:(NSString *)key key:(NSString *)key1{
     NSDictionary *educationDic = [[DataParseUtil myInfoData:@"key"] objectAtIndex:1];
     NSString *str = [educationDic objectForKey:@"key1"];
