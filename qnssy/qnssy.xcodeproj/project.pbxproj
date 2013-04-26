@@ -12,6 +12,7 @@
 		5A3DD28116F3461200D91786 /* login_btn_bkimg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3DD28016F3461200D91786 /* login_btn_bkimg2.png */; };
 		5A3DD28316F3467200D91786 /* login_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3DD28216F3467200D91786 /* login_selected.png */; };
 		5A3DD28C16F3551D00D91786 /* BSUserRegisterStepOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3DD28A16F3551D00D91786 /* BSUserRegisterStepOneViewController.m */; };
+		5A423507172A296400256FFE /* RegisterRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A423506172A296400256FFE /* RegisterRequestVo.m */; };
 		5A4CCBA116FD6A7D002FA2E5 /* BSUserLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A4CCBA016FD6A7D002FA2E5 /* BSUserLoginViewController.xib */; };
 		5A64EBE616F2F93400F4E576 /* BSUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */; };
 		5A64EBED16F3091B00F4E576 /* login_input.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBEC16F3091B00F4E576 /* login_input.png */; };
@@ -351,6 +352,8 @@
 		5A3DD28216F3467200D91786 /* login_selected.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_selected.png; sourceTree = "<group>"; };
 		5A3DD28916F3551D00D91786 /* BSUserRegisterStepOneViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserRegisterStepOneViewController.h; sourceTree = "<group>"; };
 		5A3DD28A16F3551D00D91786 /* BSUserRegisterStepOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserRegisterStepOneViewController.m; sourceTree = "<group>"; };
+		5A423505172A296400256FFE /* RegisterRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterRequestVo.h; sourceTree = "<group>"; };
+		5A423506172A296400256FFE /* RegisterRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterRequestVo.m; sourceTree = "<group>"; };
 		5A4CCBA016FD6A7D002FA2E5 /* BSUserLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserLoginViewController.xib; sourceTree = "<group>"; };
 		5A64EBE316F2F93400F4E576 /* BSUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserLoginViewController.h; sourceTree = "<group>"; };
 		5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserLoginViewController.m; sourceTree = "<group>"; };
@@ -834,6 +837,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A423504172A296400256FFE /* register */ = {
+			isa = PBXGroup;
+			children = (
+				5A423505172A296400256FFE /* RegisterRequestVo.h */,
+				5A423506172A296400256FFE /* RegisterRequestVo.m */,
+			);
+			path = register;
+			sourceTree = "<group>";
+		};
 		5A64EBE216F2F8EF00F4E576 /* register */ = {
 			isa = PBXGroup;
 			children = (
@@ -1697,6 +1709,7 @@
 		D8CA7D9116F4B15E00B4CE67 /* request */ = {
 			isa = PBXGroup;
 			children = (
+				5A423504172A296400256FFE /* register */,
 				D8E548DC1725409F00EF4CC9 /* everyDayMiai */,
 				D83BD503171AE38C00E230FF /* recommend */,
 				D8E21F031719038600A90FB3 /* MyInfo */,
@@ -2264,6 +2277,7 @@
 				D83DC8BC17277E9B00614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.m in Sources */,
 				D83DC8BE17277E9B00614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.m in Sources */,
 				D83DC8C3172792F800614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.m in Sources */,
+				5A423507172A296400256FFE /* RegisterRequestVo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
