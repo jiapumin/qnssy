@@ -19,9 +19,24 @@
     NSString *selectedProvince;
 }
 
+// params begin
+@property (retain, nonatomic) NSString *userName;
+@property (retain, nonatomic) NSString *mobile;
+@property (nonatomic, retain) NSString *password;
+@property (nonatomic, retain) NSString *sex;
+@property (nonatomic, retain) NSString *height;
+@property (nonatomic, retain) NSString *year;
+@property (nonatomic, retain) NSString *month;
+@property (nonatomic, retain) NSString *day;
+@property (nonatomic, retain) NSString *marrystatus;
+@property (nonatomic, retain) NSString *lovekind;
+@property (nonatomic, retain) NSString *education;
+@property (nonatomic, retain) NSString *salary;
+@property (nonatomic, retain) NSString *provinceid;
+@property (nonatomic, retain) NSString *cityid;
+// params end
 @property (nonatomic, retain) QRootElement * root;
 @property (nonatomic, retain) QuickDialogTableView *quickDialogTableView;
-@property (retain, nonatomic) IBOutlet UINavigationBar *myNavigationBar;
+//@property (retain, nonatomic) IBOutlet UINavigationBar *myNavigationBar;
 
-- (IBAction)clickBackButton:(id)sender;
 @end
