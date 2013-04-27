@@ -12,8 +12,8 @@
 
 - (IBAction)clickBaoMingButton:(id)sender{
 
-    if (self.delegate && [self.delegate respondsToSelector:@selector(pushViewController:)]) {
-        [self.delegate performSelector:@selector(pushViewController:) withObject:[self.userVo objectForKey:@"datingid"]];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(pushViewControllerForId:subject:)]) {
+        [self.delegate performSelector:@selector(pushViewControllerForId:subject:) withObject:[self.userVo objectForKey:@"datingid"] withObject:[self.userVo objectForKey:@"subject"]];
     }
 }
 
