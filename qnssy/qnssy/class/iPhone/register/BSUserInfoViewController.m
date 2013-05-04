@@ -79,6 +79,7 @@
         cell.textLabel.textColor = [UIColor whiteColor];
         cell.textLabel.font = [UIFont fontWithName:@"" size:14];
         cell.backgroundView = imageView;
+        [imageView release];
     }
 }
 

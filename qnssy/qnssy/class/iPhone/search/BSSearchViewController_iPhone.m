@@ -16,37 +16,73 @@
 
 @interface BSSearchViewController_iPhone () {
     int selectedRow;
-    NSString *provinceName;
-    NSString *cityName;
     int provinceId;
     int cityId;
-    NSString *startAge;
-    NSString *endAge;
-    NSString *startHeight;
-    NSString *endHeight;
-    NSString *education;
-    NSString *salary;
-    NSString *marryStatus;
-    NSString *housing;
-    NSString *caring;
-    NSString *children;
-    NSString *lovekind;
-    NSString *havepic;
-    NSString *searchID;
-    NSString *searchNickName;
 }
 
 @property (assign, nonatomic) int searchType;
+@property (retain, nonatomic) NSArray *searchCriteria;
+@property (retain, nonatomic) UISegmentedControl *sexControl;
+@property (retain, nonatomic) UIView *areaView;
+
+
+@property (retain, nonatomic) NSString *provinceName;
+@property (retain, nonatomic) NSString *cityName;
+@property (retain, nonatomic) NSString *startAge;
+@property (retain, nonatomic) NSString *endAge;
+@property (retain, nonatomic) NSString *startHeight;
+@property (retain, nonatomic) NSString *endHeight;
+@property (retain, nonatomic) NSString *education;
+@property (retain, nonatomic) NSString *salary;
+@property (retain, nonatomic) NSString *marryStatus;
+@property (retain, nonatomic) NSString *housing;
+@property (retain, nonatomic) NSString *caring;
+@property (retain, nonatomic) NSString *children;
+@property (retain, nonatomic) NSString *lovekind;
+@property (retain, nonatomic) NSString *havepic;
+@property (retain, nonatomic) NSString *searchID;
+@property (retain, nonatomic) NSString *searchNickName;
 
 @end
 
 @implementation BSSearchViewController_iPhone
 
+- (void)dealloc {
+    [_searchCriteria release];
+    [_sexControl release];
+    [_searchTypeControl release];
+    [_areaView release];
+    
+    [_provinceName release];
+    [_cityName release];
+    [_startAge release];
+    [_endAge release];
+    [_startHeight release];
+    [_endHeight release];
+    [_education release];
+    [_salary release];
+    [_marryStatus release];
+    [_housing release];
+    [_caring release];
+    [_children release];
+    [_lovekind release];
+    [_havepic release];
+    [_searchID release];
+    [_searchNickName release];
+    [super dealloc];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        @autoreleasepool {
+            self.searchCriteria = @[@"性别", ];
+            self.sexControl = [[[UISegmentedControl alloc] initWithItems:@[@"男性", @"女性"]] autorelease];
+            self.sexControl.segmentedControlStyle = UISegmentedControlStyleBar;
+            self.sexControl.selectedSegmentIndex = 0;
+            self.sexControl.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+        }
     }
     return self;
 }
@@ -62,19 +98,6 @@
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
     self.searchType = 0;
-    startAge = @"0";
-    endAge = @"0";
-    startHeight = @"0";
-    endHeight = @"0";
-    education = @"0";
-    salary = @"0";
-    marryStatus = @"0";
-    housing = @"0";
-    caring = @"0";
-    lovekind = @"0";
-    children = @"0";
-    havepic = @"0";
-
     
     // province and citry array
     self.provinceArray = [[AreaDatabase database] getProvince];
@@ -125,17 +148,28 @@
     self.havepicArray = [NSArray arrayWithObjects:@"不限", @"有", @"无", nil];
     
     // default data
-    provinceName = [[self.provinceArray objectAtIndex:0] areaName];
-    cityName = [[self.cityArray objectAtIndex:0] areaName];
+    self.provinceName = [[self.provinceArray objectAtIndex:0] areaName];
+    self.cityName = [[self.cityArray objectAtIndex:0] areaName];
     //省、市
     provinceId = [[self.provinceArray objectAtIndex:0] areaId];
     cityId = [[self.cityArray objectAtIndex:0] areaId];
     //年龄范围
-    startAge = [self.startAgeArray objectAtIndex:0];
-    endAge = [self.endAgeArray objectAtIndex:0];
+    self.startAge = [self.startAgeArray objectAtIndex:0];
+    self.endAge = [self.endAgeArray objectAtIndex:0];
     //身高范围
-    startHeight = [self.startHeightArray objectAtIndex:0];
-    endHeight = [self.endHeightArray objectAtIndex:0];
+    self.startHeight = [self.startHeightArray objectAtIndex:0];
+    self.endHeight = [self.endHeightArray objectAtIndex:0];
+    
+    
+    UIButton *searchButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 280, 44)];
+    [searchButton setTitle:@"搜索" forState:UIControlStateNormal];
+    [searchButton setBackgroundImage:[UIImage imageNamed:@"2下一步背景@2x.png"] forState:UIControlStateNormal];
+    // add search action
+    [searchButton addTarget:self action:@selector(searchAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.tableView setTableFooterView:searchButton];
+    
+    [searchButton release];
 }
 
 #pragma mark - UITableView Datasource
@@ -146,177 +180,236 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     if (self.searchType == 0) {
-        return 13;
+        return 12;
     }
-    return 2;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString *segmentIdentifier = @"SegmentCellID";
-//    static NSString *labelIdentifier = @"LabelCellID";
-    
-    SegmentCell *segmentCell = (SegmentCell *)[tableView dequeueReusableCellWithIdentifier:segmentIdentifier];
-//    LabelCell *labelCell = [(LabelCell *) [tableView dequeueReusableCellWithIdentifier:labelIdentifier] autorelease];
-    LabelCell *labelCell = (LabelCell *)[tableView cellForRowAtIndexPath:indexPath];
-    if (segmentCell == nil) {
-        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"SegmentCell" owner:self options:nil];
-        segmentCell = [array objectAtIndex:0];
-        [segmentCell setSelectionStyle:UITableViewCellSelectionStyleNone];
+     NSString *CellIdentifier = [self.searchTypeControl titleForSegmentAtIndex:self.searchTypeControl.selectedSegmentIndex];
+    if (self.searchTypeControl.selectedSegmentIndex == 0 && indexPath.row == 0) {
+        CellIdentifier = [CellIdentifier stringByAppendingString:@"sex"];
     }
-    
-    if (labelCell == nil) {
-        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"LabelCell" owner:self options:nil];
-        labelCell = [array objectAtIndex:0];
-        [labelCell setSelectionStyle:UITableViewCellSelectionStyleNone];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    if (cell == nil) {
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
     }
-    
-    UIButton *searchButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 280, 44)];
-    [searchButton setTitle:@"搜索" forState:UIControlStateNormal];
-    [searchButton setBackgroundImage:[UIImage imageNamed:@"2下一步背景@2x.png"] forState:UIControlStateNormal];
-    // add search action
-    [searchButton addTarget:self action:@selector(searchAction:) forControlEvents:UIControlEventTouchUpInside];
     
     if (self.searchType == 0) {
-        if (indexPath.row == 0) {
-            return segmentCell;
-        }
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        
         switch (indexPath.row) {
-            case 0:
-                return segmentCell;
+            case 0: {
+                cell.textLabel.text = @"性别";
+                CGSize contentSize = cell.contentView.bounds.size;
+                CGSize size = self.sexControl.frame.size;
+                CGRect rect;
+                rect.origin = CGPointMake(contentSize.width-size.width,
+                                          (contentSize.height - size.height) / 2.f);
+                rect.size = size;
+                self.sexControl.frame = rect;
+                
+                [self.sexControl removeFromSuperview];
+                [cell.contentView addSubview:self.sexControl];
+                
+                cell.accessoryType = UITableViewCellAccessoryNone;
                 break;
+            }
             case 1:
-                labelCell.leftLabel.text = @"所在地区";
-//                labelCell.rightLabel.text = [NSString stringWithFormat:@"%@ %@",provinceName, cityName];
+                cell.textLabel.text = @"所在地区";
+                if (self.provinceName && self.cityName) {
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@",self.provinceName, self.cityName];
+                }
+                
                 break;
             case 2:
-                labelCell.leftLabel.text = @"年龄范围";
-//                labelCell.rightLabel.text = [NSString stringWithFormat:@"%@ - %@",startAge, endAge];
+                cell.textLabel.text = @"年龄范围";
+                if (self.startAge && self.endAge) {
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@",self.startAge, self.endAge];
+                }
+                
                 break;
             case 3:
-                labelCell.leftLabel.text = @"身高范围";
-//                labelCell.rightLabel.text = [NSString stringWithFormat:@"%@ - %@",startHeight, endHeight];
+                cell.textLabel.text = @"身高范围";
+                if (self.startHeight && self.endHeight) {
+                    cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ - %@",self.startHeight, self.endHeight];
+                }
+                
                 break;
             case 4:
-                labelCell.leftLabel.text = @"学历";
-//                labelCell.rightLabel.text = education;
+                cell.textLabel.text = @"学历";
+                if (self.education) {
+                    cell.detailTextLabel.text = self.education;
+                }
+                
                 break;
             case 5:
-                labelCell.leftLabel.text = @"月薪";
-//                labelCell.rightLabel.text = salary;
+                cell.textLabel.text = @"月薪";
+                if (self.salary) {
+                    cell.detailTextLabel.text = self.salary;
+                }
+                
                 break;
             case 6:
-                labelCell.leftLabel.text = @"婚姻状况";
-//                labelCell.rightLabel.text = marryStatus;
+                cell.textLabel.text = @"婚姻状况";
+                if (self.marryStatus) {
+                    cell.detailTextLabel.text = self.marryStatus;
+                }
+                
                 break;
             case 7:
-                labelCell.leftLabel.text = @"住房情况";
-//                labelCell.rightLabel.text = housing;
+                cell.textLabel.text = @"住房情况";
+                if (self.housing) {
+                    cell.detailTextLabel.text = self.housing;
+                }
+                
                 break;
             case 8:
-                labelCell.leftLabel.text = @"购车情况";
-//                labelCell.rightLabel.text = caring;
+                cell.textLabel.text = @"购车情况";
+                if (self.caring) {
+                    cell.detailTextLabel.text = self.caring;
+                }
+                
                 break;
             case 9:
-                labelCell.leftLabel.text = @"有无子女";
-//                labelCell.rightLabel.text = children;
+                cell.textLabel.text = @"有无子女";
+                if (self.children) {
+                    cell.detailTextLabel.text = self.children;
+                }
+
                 break;
             case 10:
-                labelCell.leftLabel.text = @"交友类型";
-//                labelCell.rightLabel.text = lovekind;
+                cell.textLabel.text = @"交友类型";
+                if (self.lovekind) {
+                    cell.detailTextLabel.text = self.lovekind;
+                }
+                
                 break;
             case 11:
-                labelCell.leftLabel.text = @"照片";
-//                labelCell.rightLabel.text = havepic;
+                cell.textLabel.text = @"照片";
+                if (self.havepic) {
+                    cell.detailTextLabel.text = self.havepic;
+                }
+                
                 break;
             default:
                 break;
         }
-        if (indexPath.row == 12) {
-            for (UILabel *label in labelCell.subviews) {
-                [label removeFromSuperview];
-            }
-            labelCell.accessoryType = UITableViewCellAccessoryNone;
-            [labelCell addSubview:searchButton];
-            [searchButton release];
-        }
-        return labelCell;
+        
     } else if(self.searchType == 1){
         if (indexPath.row == 0) {
-            self.idField = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 280, 34)];
+            UITextField *field =[[UITextField alloc] initWithFrame:CGRectMake(0, 5, 280, 34)];
+            self.idField = field;
             self.idField.placeholder = @"请输入您要搜索的千千缘ID";
             self.idField.borderStyle = UITextBorderStyleRoundedRect;
             self.idField.delegate = self;
-            for (UILabel *label in labelCell.subviews) {
-                [label removeFromSuperview];
-            }
-            labelCell.accessoryType = UITableViewCellAccessoryNone;
-            [labelCell addSubview:self.idField];
-            [self.idField release];
+            
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            [cell addSubview:self.idField];
+            [field release];
         }
         if (indexPath.row == 1) {
-            for (UILabel *label in labelCell.subviews) {
+            for (UILabel *label in cell.subviews) {
                 [label removeFromSuperview];
             }
-            labelCell.accessoryType = UITableViewCellAccessoryNone;
-            [labelCell addSubview:searchButton];
-            [searchButton release];
+            cell.accessoryType = UITableViewCellAccessoryNone;
+//            [cell addSubview:searchButton];
+//            [searchButton release];
         }
-        return labelCell;
+//        return cell;
     } else {
         if (indexPath.row == 0) {
-            self.nickField = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 280, 34)];
+            UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 280, 34)];
+            self.nickField = field;
             self.nickField.placeholder = @"请输入您要搜索的千千缘昵称";
             self.nickField.borderStyle = UITextBorderStyleRoundedRect;
             self.nickField.delegate = self;
-            for (UILabel *label in labelCell.subviews) {
+            for (UILabel *label in cell.subviews) {
                 [label removeFromSuperview];
             }
-            labelCell.accessoryType = UITableViewCellAccessoryNone;
-            [labelCell addSubview:self.nickField];
-            [self.nickField release];
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            [cell addSubview:self.nickField];
+            [field release];
         }
         if (indexPath.row == 1) {
-            for (UILabel *label in labelCell.subviews) {
+            for (UILabel *label in cell.subviews) {
                 [label removeFromSuperview];
             }
-            labelCell.accessoryType = UITableViewCellAccessoryNone;
-            [labelCell addSubview:searchButton];
-            [searchButton release];
+            cell.accessoryType = UITableViewCellAccessoryNone;
+//            [cell addSubview:searchButton];
+//            [searchButton release];
         }
-        return labelCell;
+        return cell;
     }
+    
+    return cell;
 }
 
 -(void) getAreaPicker {
-    UIView *viewForAreaPicker = [[UIView alloc] initWithFrame:CGRectMake(0, 200, 280, 250)];
-    UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
-    toolBar.barStyle = UIBarStyleBlackTranslucent;
+    [self doneBtnPressToGetArea];
     
-    UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneBtnPressToGetArea)];
+    if (self.areaView == nil) {
+        UIView *viewForAreaPicker = [[UIView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, 320, 250)];
+        self.areaView = viewForAreaPicker;
+        
+        UIToolbar *toolBar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 40)];
+        toolBar.barStyle = UIBarStyleBlackTranslucent;
+        
+        UIBarButtonItem *btn = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneBtnPressToGetArea)];
+        
+        [toolBar setItems:[NSArray arrayWithObject:btn]];
+        [viewForAreaPicker addSubview:toolBar];
+        
+        UIPickerView *picker = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 40, 320, 210)];
+        self.areaPickerView = picker;
+        picker.delegate=self;
+        picker.dataSource=self;
+        picker.showsSelectionIndicator=YES;
+        
+        [viewForAreaPicker addSubview:self.areaPickerView];
+        
+        [self.view addSubview:viewForAreaPicker];
+        
+        [picker release];
+        [btn release];
+        [toolBar release];
+        [viewForAreaPicker release];
+    }
     
-    [toolBar setItems:[NSArray arrayWithObject:btn]];
-    [viewForAreaPicker addSubview:toolBar];
+    [UIView beginAnimations:@"showSearchView" context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationDuration:0.3f];
+    [UIView setAnimationRepeatCount:1];
+    [UIView setAnimationRepeatAutoreverses:NO];
+    [UIView setAnimationDelegate:self.areaPickerView];
+    [UIView setAnimationDidStopSelector:@selector(reloadAllComponents)];
     
-    self.areaPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 44, 320, 200)];
-    self.areaPickerView.delegate=self;
-    self.areaPickerView.dataSource=self;
-    self.areaPickerView.showsSelectionIndicator=YES;
+    CGPoint point = self.areaView.center;
+    point.y = self.navigationController.view.frame.size.height-(self.areaView.frame.size.height/2)-10;
+    self.areaView.center = point;
     
-    [viewForAreaPicker addSubview:self.areaPickerView];
-    [self.view addSubview:viewForAreaPicker];
-    
-    [self.areaPickerView release];
+    [UIView commitAnimations];
 }
 
 -(void) doneBtnPressToGetArea {
-    [self.areaPickerView.superview removeFromSuperview];
+    [UIView beginAnimations:@"showSearchView" context:nil];
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseInOut];
+    [UIView setAnimationDuration:0.3f];
+    [UIView setAnimationRepeatCount:1];
+    [UIView setAnimationRepeatAutoreverses:NO];
+    
+    CGPoint point = self.areaView.center;
+    point.y = self.navigationController.view.frame.size.height + (self.areaView.frame.size.height/2);
+    self.areaView.center = point;
+    
+    [UIView commitAnimations];
 }
 
 #pragma mark - UITableView Delegate methods
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     selectedRow = indexPath.row;
-    if (self.searchType == 0) {
+    if (self.searchType == 0 && selectedRow > 0) {
         [self getAreaPicker];
     }
 }
@@ -449,123 +542,123 @@
     if (selectedRow == 1) {
         if (component == 0) {
             int areaid = [[self.provinceArray objectAtIndex:row] areaId];
-            provinceName = [[self.provinceArray objectAtIndex:row] areaName];
+            self.provinceName = [[self.provinceArray objectAtIndex:row] areaName];
             self.cityArray = [[AreaDatabase database] getCityWithProvinceId:areaid];
-            cityName = [[self.cityArray objectAtIndex:0] areaName];
+            self.cityName = [[self.cityArray objectAtIndex:0] areaName];
             provinceId = [[self.provinceArray objectAtIndex:row] areaId];
             cityId = [[self.cityArray objectAtIndex:0] areaId];
             [self.areaPickerView reloadComponent:1];
         } else {
-            cityName = [[self.cityArray objectAtIndex:row] areaName];
+            self.cityName = [[self.cityArray objectAtIndex:row] areaName];
             cityId = [[self.cityArray objectAtIndex:row] areaId];
         }
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:1 inSection:0];
         LabelCell *cell = (LabelCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-        cell.rightLabel.text = [NSString stringWithFormat:@"%@ %@",provinceName,cityName];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ %@",self.provinceName,self.cityName];
     }
     if (selectedRow == 2) {
         if (component == 0) {
-            startAge = [self.startAgeArray objectAtIndex:row];
+            self.startAge = [self.startAgeArray objectAtIndex:row];
         } else {
-            endAge = [self.endAgeArray objectAtIndex:row];
+            self.endAge = [self.endAgeArray objectAtIndex:row];
         }
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:2 inSection:0];
         LabelCell *cell = (LabelCell *)[self.tableView cellForRowAtIndexPath:indexPath];
         if (row == 0) {
-            cell.rightLabel.text = [NSString stringWithFormat:@"%@ 到 %@",startAge, endAge];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ 到 %@",self.startAge, self.endAge];
         } else {
-            cell.rightLabel.text = [NSString stringWithFormat:@"%@ 到 %@ 岁",startAge, endAge];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ 到 %@ 岁",self.startAge, self.endAge];
         }
     }
     if (selectedRow == 3) {
         if (component == 0) {
-            startHeight = [self.startHeightArray objectAtIndex:row];
+            self.startHeight = [self.startHeightArray objectAtIndex:row];
         } else {
-            endHeight = [self.endHeightArray objectAtIndex:row];
+            self.endHeight = [self.endHeightArray objectAtIndex:row];
         }
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
         LabelCell *cell = (LabelCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-        cell.rightLabel.text = [NSString stringWithFormat:@"%@ 到 %@ 厘米",startHeight, endHeight];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ 到 %@ 厘米",self.startHeight, self.endHeight];
     }
     if (selectedRow == 4) {
         if (row == 0) {
-            education = @"0";
+            self.education = @"0";
         } else {
-            education = [NSString stringWithFormat:@"%d",row];
+            self.education = [NSString stringWithFormat:@"%d",row];
         }
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:4 inSection:0];
         LabelCell *cell = (LabelCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-        cell.rightLabel.text = [self.educationArray objectAtIndex:row];
+        cell.detailTextLabel.text = [self.educationArray objectAtIndex:row];
     }
     if (selectedRow == 5) {
         if (row == 0) {
-            salary = @"0";
+            self.salary = @"0";
         } else {
-            salary = [NSString stringWithFormat:@"%d",row];
+            self.salary = [NSString stringWithFormat:@"%d",row];
         }
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:5 inSection:0];
         LabelCell *cell = (LabelCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-        cell.rightLabel.text = [self.salaryArray objectAtIndex:row];
+        cell.detailTextLabel.text = [self.salaryArray objectAtIndex:row];
     }
     if (selectedRow == 6) {
         if (row == 0) {
-            marryStatus = @"0";
+            self.marryStatus = @"0";
         } else {
-            marryStatus = [NSString stringWithFormat:@"%d",row];
+            self.marryStatus = [NSString stringWithFormat:@"%d",row];
         }
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:6 inSection:0];
         LabelCell *cell = (LabelCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-        cell.rightLabel.text = [self.marryStatusArray objectAtIndex:row];
+        cell.detailTextLabel.text = [self.marryStatusArray objectAtIndex:row];
     }
     if (selectedRow == 7) {
         if (row == 0) {
-            housing = @"0";
+            self.housing = @"0";
         } else {
-            housing = [NSString stringWithFormat:@"%d",row];
+            self.housing = [NSString stringWithFormat:@"%d",row];
         }
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:7 inSection:0];
         LabelCell *cell = (LabelCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-        cell.rightLabel.text = [self.housingArray objectAtIndex:row];
+        cell.detailTextLabel.text = [self.housingArray objectAtIndex:row];
     }
     if (selectedRow == 8) {
         if (row == 0) {
-            caring = @"0";
+            self.caring = @"0";
         } else {
-            caring = [NSString stringWithFormat:@"%d",row];
+            self.caring = [NSString stringWithFormat:@"%d",row];
         }
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:8 inSection:0];
         LabelCell *cell = (LabelCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-        cell.rightLabel.text = [self.caringArray objectAtIndex:row];
+        cell.detailTextLabel.text = [self.caringArray objectAtIndex:row];
     }
     if (selectedRow == 9) {
         if (row == 0) {
-            children = @"0";
+            self.children = @"0";
         } else {
-            children = [NSString stringWithFormat:@"%d",row];
+            self.children = [NSString stringWithFormat:@"%d",row];
         }
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:9 inSection:0];
         LabelCell *cell = (LabelCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-        cell.rightLabel.text = [self.childrenArray objectAtIndex:row];
+        cell.detailTextLabel.text = [self.childrenArray objectAtIndex:row];
     }
     if (selectedRow == 10) {
         if (row == 0) {
-            lovekind = @"0";
+            self.lovekind = @"0";
         } else {
-            lovekind = [NSString stringWithFormat:@"%d",row];
+            self.lovekind = [NSString stringWithFormat:@"%d",row];
         }
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:10 inSection:0];
         LabelCell *cell = (LabelCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-        cell.rightLabel.text = [self.lovekinkArray objectAtIndex:row];
+        cell.detailTextLabel.text = [self.lovekinkArray objectAtIndex:row];
     }
     if (selectedRow == 11) {
         if (row == 0) {
-            havepic = @"0";
+            self.havepic = @"0";
         } else {
-            havepic = [NSString stringWithFormat:@"%d",row];
+            self.havepic = [NSString stringWithFormat:@"%d",row];
         }
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:11 inSection:0];
         LabelCell *cell = (LabelCell *)[self.tableView cellForRowAtIndexPath:indexPath];
-        cell.rightLabel.text = [self.havepicArray objectAtIndex:row];
+        cell.detailTextLabel.text = [self.havepicArray objectAtIndex:row];
     }
 }
 
@@ -577,20 +670,20 @@
     if (self.searchType == 0) {
         dict = [NSMutableDictionary dictionary];
         [dict setObject:[NSNumber numberWithInt:self.searchType] forKey:@"searchtype"];
-        [dict setObject:startAge forKey:@"startage"];
-        [dict setObject:endAge forKey:@"endage"];
-        [dict setObject:startHeight forKey:@"startheight"];
-        [dict setObject:endHeight forKey:@"endheight"];
+        [dict setObject:self.startAge forKey:@"startage"];
+        [dict setObject:self.endAge forKey:@"endage"];
+        [dict setObject:self.startHeight forKey:@"startheight"];
+        [dict setObject:self.endHeight forKey:@"endheight"];
         [dict setObject:[NSNumber numberWithInt:provinceId] forKey:@"provinceid"];
         [dict setObject:[NSNumber numberWithInt:cityId] forKey:@"cityid"];
-        [dict setObject:education forKey:@"education"];
-        [dict setObject:salary forKey:@"salary"];
-        [dict setObject:marryStatus forKey:@"marrystatus"];
-        [dict setObject:housing forKey:@"housing"];
-        [dict setObject:caring forKey:@"caring"];
-        [dict setObject:children forKey:@"children"];
-        [dict setObject:lovekind forKey:@"lovekind"];
-        [dict setObject:havepic forKey:@"havepic"];
+        [dict setObject:self.education forKey:@"education"];
+        [dict setObject:self.salary forKey:@"salary"];
+        [dict setObject:self.marryStatus forKey:@"marrystatus"];
+        [dict setObject:self.housing forKey:@"housing"];
+        [dict setObject:self.caring forKey:@"caring"];
+        [dict setObject:self.children forKey:@"children"];
+        [dict setObject:self.lovekind forKey:@"lovekind"];
+        [dict setObject:self.havepic forKey:@"havepic"];
     } else if (self.searchType == 1) {
         dict = [NSMutableDictionary dictionary];
         [dict setObject:[NSNumber numberWithInt:self.searchType] forKey:@"searchtype"];
@@ -652,11 +745,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-- (void)dealloc {
-    [super dealloc];
-}
 - (void)viewDidUnload {
+    [self setSearchTypeControl:nil];
     [super viewDidUnload];
 }
 @end
