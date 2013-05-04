@@ -10,6 +10,7 @@
 
 @interface BSSearchViewController_iPhone : BSSuperCentreViewController_iPhone <UITableViewDataSource, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate>
 
+@property (retain, nonatomic) IBOutlet UISegmentedControl *searchTypeControl;
 @property (nonatomic, retain) NSArray *provinceArray;
 @property (nonatomic, retain) NSArray *cityArray;
 @property (nonatomic, retain) NSMutableArray *startAgeArray;

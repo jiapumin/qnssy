@@ -49,10 +49,6 @@
 		5ADA5261172EB48D00D2EEA4 /* AreaDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA5260172EB48D00D2EEA4 /* AreaDatabase.m */; };
 		5ADA5267172EB70800D2EEA4 /* AreaInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA5266172EB70800D2EEA4 /* AreaInfo.m */; };
 		5ADA5269172EBBBD00D2EEA4 /* area.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 5ADA5268172EBBBD00D2EEA4 /* area.sqlite */; };
-		5ADA5271172F9E2100D2EEA4 /* SegmentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA5270172F9E2100D2EEA4 /* SegmentCell.m */; };
-		5ADA5274172F9E4900D2EEA4 /* SegmentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ADA5273172F9E4900D2EEA4 /* SegmentCell.xib */; };
-		5ADA5277172F9EAD00D2EEA4 /* LabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA5276172F9EAD00D2EEA4 /* LabelCell.m */; };
-		5ADA5279172F9EBA00D2EEA4 /* LabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ADA5278172F9EBA00D2EEA4 /* LabelCell.xib */; };
 		5ADA52841730E76B00D2EEA4 /* SearchRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA52831730E76B00D2EEA4 /* SearchRequestVo.m */; };
 		5AF21B4816F8559900EEB6EA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF21B4716F8559900EEB6EA /* MapKit.framework */; };
 		5AF21B4A16F8559F00EEB6EA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF21B4916F8559F00EEB6EA /* CoreLocation.framework */; };
@@ -416,12 +412,6 @@
 		5ADA5265172EB70800D2EEA4 /* AreaInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaInfo.h; sourceTree = "<group>"; };
 		5ADA5266172EB70800D2EEA4 /* AreaInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaInfo.m; sourceTree = "<group>"; };
 		5ADA5268172EBBBD00D2EEA4 /* area.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = area.sqlite; sourceTree = "<group>"; };
-		5ADA526F172F9E2100D2EEA4 /* SegmentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SegmentCell.h; path = ../SegmentCell.h; sourceTree = "<group>"; };
-		5ADA5270172F9E2100D2EEA4 /* SegmentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SegmentCell.m; path = ../SegmentCell.m; sourceTree = "<group>"; };
-		5ADA5273172F9E4900D2EEA4 /* SegmentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SegmentCell.xib; sourceTree = "<group>"; };
-		5ADA5275172F9EAD00D2EEA4 /* LabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelCell.h; sourceTree = "<group>"; };
-		5ADA5276172F9EAD00D2EEA4 /* LabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelCell.m; sourceTree = "<group>"; };
-		5ADA5278172F9EBA00D2EEA4 /* LabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabelCell.xib; sourceTree = "<group>"; };
 		5ADA52821730E76B00D2EEA4 /* SearchRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchRequestVo.h; sourceTree = "<group>"; };
 		5ADA52831730E76B00D2EEA4 /* SearchRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchRequestVo.m; sourceTree = "<group>"; };
 		5AF21B4716F8559900EEB6EA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -951,12 +941,6 @@
 		5ADA5272172F9E3900D2EEA4 /* CustomCell */ = {
 			isa = PBXGroup;
 			children = (
-				5ADA526F172F9E2100D2EEA4 /* SegmentCell.h */,
-				5ADA5270172F9E2100D2EEA4 /* SegmentCell.m */,
-				5ADA5273172F9E4900D2EEA4 /* SegmentCell.xib */,
-				5ADA5275172F9EAD00D2EEA4 /* LabelCell.h */,
-				5ADA5276172F9EAD00D2EEA4 /* LabelCell.m */,
-				5ADA5278172F9EBA00D2EEA4 /* LabelCell.xib */,
 				5A3AE87317323A7B00B73E86 /* UserCell.h */,
 				5A3AE87417323A7B00B73E86 /* UserCell.m */,
 				5A3AE87617323A8A00B73E86 /* UserCell.xib */,
@@ -2236,8 +2220,6 @@
 				D83DC8BF17277E9B00614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.xib in Resources */,
 				D83DC8C4172792F800614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.xib in Resources */,
 				5ADA5269172EBBBD00D2EEA4 /* area.sqlite in Resources */,
-				5ADA5274172F9E4900D2EEA4 /* SegmentCell.xib in Resources */,
-				5ADA5279172F9EBA00D2EEA4 /* LabelCell.xib in Resources */,
 				5A3AE87717323A8A00B73E86 /* UserCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2387,8 +2369,6 @@
 				5A423507172A296400256FFE /* RegisterRequestVo.m in Sources */,
 				5ADA5261172EB48D00D2EEA4 /* AreaDatabase.m in Sources */,
 				5ADA5267172EB70800D2EEA4 /* AreaInfo.m in Sources */,
-				5ADA5271172F9E2100D2EEA4 /* SegmentCell.m in Sources */,
-				5ADA5277172F9EAD00D2EEA4 /* LabelCell.m in Sources */,
 				5ADA52841730E76B00D2EEA4 /* SearchRequestVo.m in Sources */,
 				5A3AE87117323A4700B73E86 /* BSSearchResultViewController.m in Sources */,
 				5A3AE87517323A7B00B73E86 /* UserCell.m in Sources */,
@@ -2471,7 +2451,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: jia pumin (M3N7ERC736)";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jia pumin (M3N7ERC736)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2484,8 +2464,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "6655C971-805A-49E2-BD4C-2D3628BFD6B7";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "6655C971-805A-49E2-BD4C-2D3628BFD6B7";
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/QuickDialog/**";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2495,7 +2473,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: BAOSTEEL GROUP CORPORATION";
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BAOSTEEL GROUP CORPORATION";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2508,8 +2486,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "A7E483FA-FEC2-4B8A-A620-4271F0C60BEB";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A7E483FA-FEC2-4B8A-A620-4271F0C60BEB";
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/QuickDialog/**";
 				WRAPPER_EXTENSION = app;
 			};
