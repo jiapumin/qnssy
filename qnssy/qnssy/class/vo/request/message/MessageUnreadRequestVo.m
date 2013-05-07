@@ -16,13 +16,14 @@
         NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
         //此处设置参数及参数所需要的key-value
         [data setObject:[BSContainer instance].userInfo.userId forKey:@"userid"];
+        [data setObject:[NSNumber numberWithInt:0] forKey:@"mailType"];
         [self.mReqDic setObject:data forKey:@"data"];
         
         
         NSMutableDictionary *method = [[NSMutableDictionary alloc] init];
         //设置请求服务器的方法名
-        [method setObject:@"everydaymiai" forKey:@"c"];
-        [method setObject:@"everydaymiai" forKey:@"a"];
+        [method setObject:@"myemaillist" forKey:@"c"];
+        [method setObject:@"email" forKey:@"a"];
         [self.mReqDic setObject:method forKey:@"method"];
         [data release];
         [method release];

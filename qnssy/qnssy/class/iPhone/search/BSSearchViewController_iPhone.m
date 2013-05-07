@@ -125,27 +125,35 @@
     
     // education array
     self.educationArray = [NSArray arrayWithObjects:@"不限", @"中专以下学历", @"中专" , @"大专", @"本科", @"硕士", @"博士", nil];
+    self.education = @"0";
     
     // salary array
     self.salaryArray = [NSArray arrayWithObjects:@"不限", @"2000元以下", @"2000~5000元", @"5000~10000元", @"10000~20000元", @"20000元以上", nil];
+    self.salary = @"0";
     
     // marry status array
     self.marryStatusArray = [NSArray arrayWithObjects:@"不限", @"未婚", @"离异", @"丧偶", nil];
+    self.marryStatus = @"0";
     
     // housing array
     self.housingArray = [NSArray arrayWithObjects:@"不限", @"暂未购房", @"需要时置房", @"已购住房", @"与人合租", @"独自租房", @"与父母同住", @"住亲朋家", @"住单位房", nil];
+    self.housing = @"0";
     
     // caring array
     self.caringArray = [NSArray arrayWithObjects:@"不限", @"暂未购车", @"已经购车", nil];
+    self.caring = @"0";
     
     // children array
     self.childrenArray = [NSArray arrayWithObjects:@"不限", @"无小孩", @"有,和我住一起", @"有,有时和我住一起", @"有,不和我住一起", nil];
+    self.children = @"0";
     
     // love kind array
     self.lovekinkArray = [NSArray arrayWithObjects:@"不限", @"恋爱", @"结婚", nil];
+    self.lovekind = @"0";
     
     // have pic aray
     self.havepicArray = [NSArray arrayWithObjects:@"不限", @"有", @"无", nil];
+    self.havepic = @"0";
     
     // default data
     self.provinceName = [[self.provinceArray objectAtIndex:0] areaName];
@@ -193,6 +201,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:CellIdentifier] autorelease];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.detailTextLabel.textColor = [UIColor colorWithRed:187./255 green:19./255 blue:64./255 alpha:1];
+        cell.textLabel.textColor = [UIColor colorWithRed:74./255 green:74./255 blue:74./255 alpha:1];
     }
     
     if (self.searchType == 0) {
@@ -207,6 +218,7 @@
                 rect.origin = CGPointMake(contentSize.width-size.width,
                                           (contentSize.height - size.height) / 2.f);
                 rect.size = size;
+                rect.origin.x -= 10;
                 self.sexControl.frame = rect;
                 
                 [self.sexControl removeFromSuperview];
@@ -239,56 +251,72 @@
             case 4:
                 cell.textLabel.text = @"学历";
                 if (self.education) {
-                    cell.detailTextLabel.text = self.education;
+                    cell.detailTextLabel.text = [self.educationArray objectAtIndex:self.education.integerValue];
+                } else {
+                    cell.detailTextLabel.text = [self.educationArray objectAtIndex:0];
                 }
                 
                 break;
             case 5:
                 cell.textLabel.text = @"月薪";
                 if (self.salary) {
-                    cell.detailTextLabel.text = self.salary;
+                    cell.detailTextLabel.text = [self.salaryArray objectAtIndex:self.salary.integerValue];
+                } else {
+                    cell.detailTextLabel.text = [self.salaryArray objectAtIndex:0];
                 }
                 
                 break;
             case 6:
                 cell.textLabel.text = @"婚姻状况";
                 if (self.marryStatus) {
-                    cell.detailTextLabel.text = self.marryStatus;
+                    cell.detailTextLabel.text = [self.marryStatusArray objectAtIndex:self.marryStatus.integerValue];
+                } else {
+                    cell.detailTextLabel.text = [self.marryStatusArray objectAtIndex:0];
                 }
                 
                 break;
             case 7:
                 cell.textLabel.text = @"住房情况";
                 if (self.housing) {
-                    cell.detailTextLabel.text = self.housing;
+                    cell.detailTextLabel.text = [self.housingArray objectAtIndex:self.housing.integerValue];
+                } else {
+                    cell.detailTextLabel.text = [self.housingArray objectAtIndex:0];
                 }
                 
                 break;
             case 8:
                 cell.textLabel.text = @"购车情况";
                 if (self.caring) {
-                    cell.detailTextLabel.text = self.caring;
+                    cell.detailTextLabel.text = [self.caringArray objectAtIndex:self.caring.integerValue];
+                } else {
+                    cell.detailTextLabel.text = [self.caringArray objectAtIndex:0];
                 }
                 
                 break;
             case 9:
                 cell.textLabel.text = @"有无子女";
                 if (self.children) {
-                    cell.detailTextLabel.text = self.children;
+                    cell.detailTextLabel.text = [self.childrenArray objectAtIndex:self.children.integerValue];
+                } else {
+                    cell.detailTextLabel.text = [self.childrenArray objectAtIndex:0];
                 }
 
                 break;
             case 10:
                 cell.textLabel.text = @"交友类型";
                 if (self.lovekind) {
-                    cell.detailTextLabel.text = self.lovekind;
+                    cell.detailTextLabel.text = [self.lovekinkArray objectAtIndex:self.lovekind.integerValue];
+                } else {
+                    cell.detailTextLabel.text = [self.lovekinkArray objectAtIndex:0];
                 }
                 
                 break;
             case 11:
                 cell.textLabel.text = @"照片";
                 if (self.havepic) {
-                    cell.detailTextLabel.text = self.havepic;
+                    cell.detailTextLabel.text = [self.havepicArray objectAtIndex:self.havepic.integerValue];
+                } else {
+                    cell.detailTextLabel.text = [self.havepicArray objectAtIndex:0];
                 }
                 
                 break;
@@ -313,10 +341,7 @@
                 [label removeFromSuperview];
             }
             cell.accessoryType = UITableViewCellAccessoryNone;
-//            [cell addSubview:searchButton];
-//            [searchButton release];
         }
-//        return cell;
     } else {
         if (indexPath.row == 0) {
             UITextField *field = [[UITextField alloc] initWithFrame:CGRectMake(0, 5, 280, 34)];
@@ -336,8 +361,6 @@
                 [label removeFromSuperview];
             }
             cell.accessoryType = UITableViewCellAccessoryNone;
-//            [cell addSubview:searchButton];
-//            [searchButton release];
         }
         return cell;
     }
@@ -381,14 +404,21 @@
     [UIView setAnimationDuration:0.3f];
     [UIView setAnimationRepeatCount:1];
     [UIView setAnimationRepeatAutoreverses:NO];
-    [UIView setAnimationDelegate:self.areaPickerView];
-    [UIView setAnimationDidStopSelector:@selector(reloadAllComponents)];
+    [UIView setAnimationDelegate:self];
+    [UIView setAnimationDidStopSelector:@selector(reloadPickerView)];
     
     CGPoint point = self.areaView.center;
     point.y = self.navigationController.view.frame.size.height-(self.areaView.frame.size.height/2)-10;
     self.areaView.center = point;
     
     [UIView commitAnimations];
+}
+
+- (void)reloadPickerView
+{
+    [self.areaPickerView reloadAllComponents];
+    
+    [self.areaPickerView selectRow:0 inComponent:0 animated:NO];
 }
 
 -(void) doneBtnPressToGetArea {
@@ -492,7 +522,7 @@
             if (row == 0) {
                 return [NSString stringWithFormat:@"%@",[self.endAgeArray objectAtIndex:row]];
             } else {
-                return [NSString stringWithFormat:@"从 %@ 岁",[self.endAgeArray objectAtIndex:row]];
+                return [NSString stringWithFormat:@"到 %@ 岁",[self.endAgeArray objectAtIndex:row]];
             }
         }
     }
@@ -507,7 +537,7 @@
             if (row == 0) {
                 return [NSString stringWithFormat:@"%@",[self.endHeightArray objectAtIndex:row]];
             } else {
-                return [NSString stringWithFormat:@"从 %@ 厘米",[self.endHeightArray objectAtIndex:row]];
+                return [NSString stringWithFormat:@"到 %@ 厘米",[self.endHeightArray objectAtIndex:row]];
             }
         }
     }
@@ -558,9 +588,17 @@
     }
     if (selectedRow == 2) {
         if (component == 0) {
-            self.startAge = [self.startAgeArray objectAtIndex:row];
+            if (row == 0) {
+                self.startAge = @"0";
+            } else {
+                self.startAge = [self.startAgeArray objectAtIndex:row];
+            }
         } else {
-            self.endAge = [self.endAgeArray objectAtIndex:row];
+            if (row == 0) {
+                self.endAge = @"0";
+            } else {
+                self.endAge = [self.endAgeArray objectAtIndex:row];
+            }
         }
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:2 inSection:0];
         LabelCell *cell = (LabelCell *)[self.tableView cellForRowAtIndexPath:indexPath];
@@ -572,9 +610,17 @@
     }
     if (selectedRow == 3) {
         if (component == 0) {
-            self.startHeight = [self.startHeightArray objectAtIndex:row];
+            if (row == 0) {
+                self.startHeight = @"";
+            } else {
+                self.startHeight = [self.startHeightArray objectAtIndex:row];
+            }
         } else {
-            self.endHeight = [self.endHeightArray objectAtIndex:row];
+            if (row == 0) {
+                self.endHeight = @"";
+            } else {
+                self.endHeight = [self.endHeightArray objectAtIndex:row];
+            }
         }
         NSIndexPath *indexPath = [NSIndexPath indexPathForRow:3 inSection:0];
         LabelCell *cell = (LabelCell *)[self.tableView cellForRowAtIndexPath:indexPath];
@@ -703,11 +749,17 @@
 }
 
 - (void) searchSucceess:(id) sender data:(NSDictionary *) dic {
-    NSLog(@"search result: %@",dic);
-    BSSearchResultViewController *searchResultViewController = [[BSSearchResultViewController alloc] init];
-    searchResultViewController.userInfoDict = dic;
-    [self.navigationController pushViewController:searchResultViewController animated:YES];
-    [searchResultViewController release];
+    if ([[[[dic objectForKey:@"data"] objectForKey:@"ResData"] objectForKey:@"ResData"] isEqual:@""]) {
+        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:[[[dic objectForKey:@"data"] objectForKey:@"ResData"] objectForKey:@"Message"] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alter show];
+        [alter release];
+    } else {
+        BSSearchResultViewController *searchResultViewController = [[BSSearchResultViewController alloc] init];
+        searchResultViewController.userInfoDict = dic;
+        [self.navigationController pushViewController:searchResultViewController animated:YES];
+        [searchResultViewController release];
+    }
+    
 }
 
 - (void) searchFailed:(id) sender data:(NSDictionary *) dic{

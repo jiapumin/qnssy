@@ -40,6 +40,7 @@
     [self.topSegmented setTitle:@"聊天" forSegmentAtIndex:3];
     [self.topSegmented setTitle:@"系统" forSegmentAtIndex:4];
     
+    [self loadServiceData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -62,8 +63,11 @@
 }
 
 
-- (IBAction)clickTopSegmented:(id)sender {
+- (IBAction)clickTopSegmented:(UISegmentedControl *)segmented {
     
+    if (segmented.selectedSegmentIndex == 0) {
+        [self loadServiceData];
+    }
     
 }
 - (void)initHUDView{
