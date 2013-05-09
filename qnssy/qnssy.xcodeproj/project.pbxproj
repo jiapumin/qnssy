@@ -23,6 +23,8 @@
 		5A7891ED170347C800E2B238 /* BSBindUserAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7891EB170347C800E2B238 /* BSBindUserAccountViewController.m */; };
 		5A7891EE170347C800E2B238 /* BSBindUserAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7891EC170347C800E2B238 /* BSBindUserAccountViewController.xib */; };
 		5A7892191704791C00E2B238 /* ValidatePhoneResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7892181704791C00E2B238 /* ValidatePhoneResponseVo.m */; };
+		5A7AED5C173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7AED5A173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.m */; };
+		5A7AED5D173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7AED5B173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.xib */; };
 		5AAE6E4F16FAAF79006FDFB7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AAE6E4E16FAAF79006FDFB7 /* area.plist */; };
 		5ABA042316FE03EB0099BA74 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABA042216FE03EB0099BA74 /* TencentOpenAPI.framework */; };
 		5ABA042616FE046C0099BA74 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABA042516FE046C0099BA74 /* libiconv.dylib */; };
@@ -45,6 +47,9 @@
 		5AD6533316F4BF1F00FD80D8 /* navbkimg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6533116F4BF1F00FD80D8 /* navbkimg@2x.png */; };
 		5AD6533616F4BF4E00FD80D8 /* backbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6533416F4BF4E00FD80D8 /* backbtn.png */; };
 		5AD6533716F4BF4E00FD80D8 /* backbtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6533516F4BF4E00FD80D8 /* backbtn@2x.png */; };
+		5AD8996A173A3A6100F1332F /* BSMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD89969173A3A6100F1332F /* BSMessageCell.m */; };
+		5AD8996C173A3A7300F1332F /* BSMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AD8996B173A3A7300F1332F /* BSMessageCell.xib */; };
+		5AD89972173A43EE00F1332F /* MessageReadedRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD89971173A43ED00F1332F /* MessageReadedRequestVo.m */; };
 		5ADA525D172E862500D2EEA4 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A33A17D172E2D9900FF5159 /* libsqlite3.dylib */; };
 		5ADA5261172EB48D00D2EEA4 /* AreaDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA5260172EB48D00D2EEA4 /* AreaDatabase.m */; };
 		5ADA5267172EB70800D2EEA4 /* AreaInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA5266172EB70800D2EEA4 /* AreaInfo.m */; };
@@ -382,6 +387,9 @@
 		5A7892181704791C00E2B238 /* ValidatePhoneResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatePhoneResponseVo.m; sourceTree = "<group>"; };
 		5A78921B17047B8C00E2B238 /* ValidatePhoneRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidatePhoneRequestVo.h; sourceTree = "<group>"; };
 		5A78921C17047B8C00E2B238 /* ValidatePhoneRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatePhoneRequestVo.m; sourceTree = "<group>"; };
+		5A7AED59173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMessageDetailsViewController_iPhone.h; sourceTree = "<group>"; };
+		5A7AED5A173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMessageDetailsViewController_iPhone.m; sourceTree = "<group>"; };
+		5A7AED5B173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMessageDetailsViewController_iPhone.xib; sourceTree = "<group>"; };
 		5AAE6E4E16FAAF79006FDFB7 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
 		5ABA042216FE03EB0099BA74 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		5ABA042516FE046C0099BA74 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
@@ -407,6 +415,11 @@
 		5AD6533116F4BF1F00FD80D8 /* navbkimg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navbkimg@2x.png"; path = "UserGuidImage/navbkimg@2x.png"; sourceTree = "<group>"; };
 		5AD6533416F4BF4E00FD80D8 /* backbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbtn.png; sourceTree = "<group>"; };
 		5AD6533516F4BF4E00FD80D8 /* backbtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbtn@2x.png"; sourceTree = "<group>"; };
+		5AD89968173A3A6100F1332F /* BSMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMessageCell.h; sourceTree = "<group>"; };
+		5AD89969173A3A6100F1332F /* BSMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMessageCell.m; sourceTree = "<group>"; };
+		5AD8996B173A3A7300F1332F /* BSMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMessageCell.xib; sourceTree = "<group>"; };
+		5AD89970173A43ED00F1332F /* MessageReadedRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageReadedRequestVo.h; sourceTree = "<group>"; };
+		5AD89971173A43ED00F1332F /* MessageReadedRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageReadedRequestVo.m; sourceTree = "<group>"; };
 		5ADA525F172EB48D00D2EEA4 /* AreaDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaDatabase.h; sourceTree = "<group>"; };
 		5ADA5260172EB48D00D2EEA4 /* AreaDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AreaDatabase.m; sourceTree = "<group>"; };
 		5ADA5265172EB70800D2EEA4 /* AreaInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AreaInfo.h; sourceTree = "<group>"; };
@@ -929,6 +942,16 @@
 			path = customCells;
 			sourceTree = "<group>";
 		};
+		5AD89966173A3A4700F1332F /* CustomeCell */ = {
+			isa = PBXGroup;
+			children = (
+				5AD89968173A3A6100F1332F /* BSMessageCell.h */,
+				5AD89969173A3A6100F1332F /* BSMessageCell.m */,
+				5AD8996B173A3A7300F1332F /* BSMessageCell.xib */,
+			);
+			path = CustomeCell;
+			sourceTree = "<group>";
+		};
 		5ADA525E172EB45400D2EEA4 /* DataBaseUtil */ = {
 			isa = PBXGroup;
 			children = (
@@ -1040,6 +1063,8 @@
 			children = (
 				D84CB739172A706D009C2BB9 /* MessageUnreadRequestVo.h */,
 				D84CB73A172A706D009C2BB9 /* MessageUnreadRequestVo.m */,
+				5AD89970173A43ED00F1332F /* MessageReadedRequestVo.h */,
+				5AD89971173A43ED00F1332F /* MessageReadedRequestVo.m */,
 			);
 			path = message;
 			sourceTree = "<group>";
@@ -1274,9 +1299,13 @@
 		D87A052116EF68A50052328E /* massage */ = {
 			isa = PBXGroup;
 			children = (
+				5AD89966173A3A4700F1332F /* CustomeCell */,
 				D87A056616EF6D950052328E /* BSMessageViewController_iPhone.h */,
 				D87A056716EF6D950052328E /* BSMessageViewController_iPhone.m */,
 				D87A056816EF6D950052328E /* BSMessageViewController_iPhone.xib */,
+				5A7AED59173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.h */,
+				5A7AED5A173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.m */,
+				5A7AED5B173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.xib */,
 			);
 			path = massage;
 			sourceTree = "<group>";
@@ -2221,6 +2250,8 @@
 				D83DC8C4172792F800614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.xib in Resources */,
 				5ADA5269172EBBBD00D2EEA4 /* area.sqlite in Resources */,
 				5A3AE87717323A8A00B73E86 /* UserCell.xib in Resources */,
+				5AD8996C173A3A7300F1332F /* BSMessageCell.xib in Resources */,
+				5A7AED5D173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2372,6 +2403,9 @@
 				5ADA52841730E76B00D2EEA4 /* SearchRequestVo.m in Sources */,
 				5A3AE87117323A4700B73E86 /* BSSearchResultViewController.m in Sources */,
 				5A3AE87517323A7B00B73E86 /* UserCell.m in Sources */,
+				5AD8996A173A3A6100F1332F /* BSMessageCell.m in Sources */,
+				5AD89972173A43EE00F1332F /* MessageReadedRequestVo.m in Sources */,
+				5A7AED5C173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

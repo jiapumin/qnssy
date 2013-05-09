@@ -10,6 +10,9 @@
 
 #import "MessageUnreadRequestVo.h"
 #import "MessageUnreadResponseVo.h"
+#import "MessageReadedRequestVo.h"
+#import "BSMessageDetailsViewController_iPhone.h"
+#import "BSMessageCell.h"
 
 @interface BSMessageViewController_iPhone (){
         MBProgressHUD *progressHUD;
@@ -40,7 +43,7 @@
     [self.topSegmented setTitle:@"聊天" forSegmentAtIndex:3];
     [self.topSegmented setTitle:@"系统" forSegmentAtIndex:4];
     
-    [self loadServiceData];
+    [self loadServiceData:@"0"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -66,7 +69,9 @@
 - (IBAction)clickTopSegmented:(UISegmentedControl *)segmented {
     
     if (segmented.selectedSegmentIndex == 0) {
-        [self loadServiceData];
+        [self loadServiceData:@"0"];
+    } else if (segmented.selectedSegmentIndex == 1){
+        [self loadServiceData:@"1"];
     }
     
 }
@@ -79,9 +84,9 @@
     progressHUD.labelText = @"数据加载中...";
     
 }
-- (void)loadServiceData{
+- (void)loadServiceData:(NSString *)mailType{
     [progressHUD show:YES];
-    MessageUnreadRequestVo *vo = [[MessageUnreadRequestVo alloc] init];
+    MessageUnreadRequestVo *vo = [[MessageUnreadRequestVo alloc] initWithMailType:mailType];
     [[BSContainer instance].serviceAgent callServletWithObject:self
                                                    requestDict:vo.mReqDic
                                                         target:self
@@ -96,7 +101,7 @@
     
     MessageUnreadResponseVo *vo = [[MessageUnreadResponseVo alloc] initWithDic:dic];
     
-  
+    self.mailArray = vo.mailList;
     
     if (vo.status != 0) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
@@ -134,69 +139,67 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 44.f;
+    return 80.f;
     
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //    static NSString *CellIdentifier = @"Cell";
-    //    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-//    NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BaseInfoTableViewCell_iPhone" owner:tableView options:nil];
-//    BaseInfoTableViewCell_iPhone *cell = [nib objectAtIndex:0];
-//    
-//    NSString *key = [self.myBaseInfoKey objectAtIndex:indexPath.row];
-//    
-//    if ([key isEqualToString:@"cityname"]) {
-//        cell.leftLabel.text = @"所在地";
-//        cell.rightLabel.text = [self.myBaseInfo objectForKey:key];
-//        return cell;
-//    }
-//    
-//    NSArray * infoArray = [DataParseUtil myInfoData:key];
-//    //赋值用户信息
-//    cell.leftLabel.text = [infoArray objectAtIndex:0];
-//    
-//    NSDictionary *infoDesDic = [infoArray objectAtIndex:1];
-//    
-//    if (infoDesDic && infoDesDic.count != 0) {
-//        NSString *content = [infoDesDic objectForKey:[self.myBaseInfo objectForKey:key]];
-//        cell.rightLabel.text = [content isEqualToString:@""] ? @"无" : content;
-//    }else{
-//        
-//        cell.rightLabel.text = [self.myBaseInfo objectForKey:key];
-//    }
-    
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"MessageIdentifier";
+    BSMessageCell *cell = (BSMessageCell *)[tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        NSArray *array = [[NSBundle mainBundle] loadNibNamed:@"BSMessageCell" owner:self options:nil];
+        cell = [array objectAtIndex:0];
+        [cell setSelectionStyle:UITableViewCellSelectionStyleGray];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    NSString *sendName = [[[self.mailArray objectAtIndex:indexPath.row] objectForKey:@"sendname"] isEqual:[NSNull null]]?@"匿名":[[self.mailArray objectAtIndex:indexPath.row] objectForKey:@"sendname"];
+    cell.messageTitleLabel.text = sendName;
+
+    cell.messageDetailsLabel.text = [[self.mailArray objectAtIndex:indexPath.row] objectForKey:@"emailcontent"];
+    
+    NSString *readStatus = [[self.mailArray objectAtIndex:indexPath.row] objectForKey:@"readstatus"];
+    if ([readStatus isEqualToString:@"1"]) {
+        cell.messageImageView.image = [UIImage imageNamed:@"9邮件为空时显示图片@2x.png"];
+    } else {
+        cell.messageImageView.image = [UIImage imageNamed:@"10未读邮件ico@2x.png"];
     }
 
-    
     return cell;
 }
 
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
+    BSMessageDetailsViewController_iPhone *messageDetailsViewController = [[BSMessageDetailsViewController_iPhone alloc] initWithNibName:@"BSMessageDetailsViewController_iPhone" bundle:nil];
+    NSString *sender = [[self.mailArray objectAtIndex:indexPath.row] objectForKey:@"sendname"];
+    messageDetailsViewController.senderLabel.text = [sender isEqual:[NSNull null]]?@"匿名":sender;
+    NSString *sendDate = [[self.mailArray objectAtIndex:indexPath.row] objectForKey:@"emaildate"];
+    messageDetailsViewController.dateLabel.text = sendDate;
+    NSString *sendContent = [[self.mailArray objectAtIndex:indexPath.row] objectForKey:@"emailcontent"];
+    messageDetailsViewController.textView.text = sendContent;
+    [self.navigationController pushViewController:messageDetailsViewController animated:YES];
+    [messageDetailsViewController release];
     
-    //    BSUserDetailInfoViewController *udivc = [[BSUserDetailInfoViewController alloc] initWithNibName:@"BSUserDetailInfoViewController" bundle:nil];
-    //    [self.navigationController pushViewController:udivc animated:YES];
-    //    [udivc release];
+    NSString *messageId = [[self.mailArray objectAtIndex:indexPath.row] objectForKey:@"msgid"];
+    MessageReadedRequestVo *vo = [[MessageReadedRequestVo alloc] initWithMessageId:messageId];
+    [[BSContainer instance].serviceAgent callServletWithObject:self
+                                                   requestDict:vo.mReqDic
+                                                        target:self
+                                               successCallBack:@selector(readRequestSucceess:data:)
+                                                  failCallBack:@selector(readRequestFailed:data:)];
     
-    
+    [vo release];
+}
+
+- (void)readRequestSucceess:(id)sender data:(NSDictionary *)dic {
+    [_myTableView reloadData];
+}
+
+-(void)readRequestFailed:(id)sender data:(NSDictionary *)dic {
+    NSLog(@"set had readed message faild.");
 }
 @end
