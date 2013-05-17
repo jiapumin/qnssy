@@ -33,6 +33,7 @@
     if (self) {
         // Custom initialization
         [self initData];
+        self.title = @"我的资料";
     }
     return self;
 }
@@ -60,9 +61,8 @@
     [topRightButton addTarget:self
                       action:@selector(rightSetting)
             forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:topRightButton] ;
+    self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithCustomView:topRightButton] autorelease];
     
-    self.title = @"我的资料";
     
 }
 

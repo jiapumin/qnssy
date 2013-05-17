@@ -10,4 +10,6 @@
 
 @interface MessageUnreadRequestVo : SuperRequestVo
 
+-(id) initWithMailType:(NSString *) mailType;
+
 @end

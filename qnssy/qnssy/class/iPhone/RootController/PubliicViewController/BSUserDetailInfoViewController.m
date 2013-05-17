@@ -159,7 +159,7 @@
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     NSString *title = @"";
     if (section == 0) {
-        UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)];
+        UIView *headView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 1)] autorelease];
         headView.backgroundColor = [UIColor redColor];
         return headView;
     }else if (section == 1){
@@ -172,11 +172,12 @@
         title = @"择偶条件";
     }
 
-    UIView *headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 36)];
+    UIView *headView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 36)] autorelease];
     headView.backgroundColor = [UIColor clearColor];
     UIImageView *headBgImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"7标题背景"]];
     headBgImageView.frame = CGRectMake(10, 3, 300, 30);
     [headView addSubview:headBgImageView];
+    [headBgImageView release];
     
     UILabel *headLabel = [[UILabel alloc] initWithFrame:CGRectMake(23, 3, 280, 30)];
     headLabel.backgroundColor = [UIColor clearColor];
@@ -185,6 +186,8 @@
     headLabel.font = [UIFont systemFontOfSize:16.f];
     headLabel.text = title;
      [headView addSubview:headLabel];
+    [headLabel release];
+    
     return headView;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

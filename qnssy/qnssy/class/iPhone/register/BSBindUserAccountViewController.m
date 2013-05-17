@@ -7,6 +7,7 @@
 //
 
 #import "BSBindUserAccountViewController.h"
+#import "BSUserRegisterStepOneViewController.h"
 
 @interface BSBindUserAccountViewController ()
 
@@ -90,7 +91,9 @@
 
 //注册账号
 - (void) registerAccount:(id) sender {
-    
+    BSUserRegisterStepOneViewController *registerViewController = [[BSUserRegisterStepOneViewController alloc] initWithNibName:@"BSUserRegisterStepOneViewController" bundle:nil];
+    [self.navigationController pushViewController:registerViewController animated:YES];
+    [registerViewController release];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -14,7 +14,7 @@
     
     NSLog(@"要解析的数据：%@",ResData);
     
-    self.mailList = [ResData objectForKey:@"miailist"];
+    self.mailList = [ResData objectForKey:@"maillist"];
     
 }
 
