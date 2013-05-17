@@ -244,9 +244,9 @@
 
    if (vo.status == 0) {
        //加载界面
-        if (app.revealSideViewController == nil) {
+//        if (app.revealSideViewController == nil) {
                 [app viewUpdate];
-        }
+//        }
         app.window.rootViewController = app.revealSideViewController;
     }else{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];

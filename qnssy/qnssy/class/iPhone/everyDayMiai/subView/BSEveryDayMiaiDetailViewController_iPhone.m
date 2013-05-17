@@ -294,9 +294,11 @@
     
 }
 
-- (void)pushViewController:(NSString *)id{
+
+- (void)pushViewControllerForId:(NSString *)id subject:(NSString *)subject{
     BSApplyViewController_iPhone *avc = [[BSApplyViewController_iPhone alloc] initWithNibName:@"BSApplyViewController_iPhone" bundle:nil];
     avc.datingid = id;
+    avc.subject = subject;
     [self.navigationController pushViewController:avc animated:YES];
     [avc release];
 }

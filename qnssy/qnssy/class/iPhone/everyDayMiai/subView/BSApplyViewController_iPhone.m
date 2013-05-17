@@ -37,11 +37,21 @@
     
     [self initHUDView];
     
-    self.navigationItem.rightBarButtonItem =
-    [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"24报名按钮"]
-                                     style:UIBarButtonItemStyleDone
-                                    target:self
-                                    action:@selector(loadServiceData)];
+    self.titleLabel.text = self.subject;
+    UIColor *color1 = [UIColor colorWithRed:198/255.f green:21/255.f blue:73/277.f alpha:1.f];
+    self.titleLabel.textColor = color1;
+    
+//    UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+////    rightButton.frame = CGRectMake(0, 0, 73, 25);
+//    rightButton.frame = CGRectMake(0, 0, 89, 41);
+////    [rightButton setImage:[UIImage imageNamed:@"1登录背景"] forState:UIControlStateNormal];
+//    [rightButton setBackgroundImage:[UIImage imageNamed:@"1登录背景"] forState:UIControlStateNormal];
+//    [rightButton setTitle:@"报名" forState:UIControlStateNormal];
+//    [rightButton addTarget:self action:@selector(loadServiceData) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    self.navigationItem.rightBarButtonItem =
+//    [[[UIBarButtonItem alloc] initWithCustomView:rightButton] autorelease];
+    
     
 }
 
@@ -52,19 +62,23 @@
 }
 
 - (void)dealloc {
+    [_subject release];
     [_datingid release];
     [_myTableView release];
     [_titleLabel release];
     [_phoneText release];
     [_contentText release];
+    [_hideLabel release];
     [super dealloc];
 }
 - (void)viewDidUnload {
+    [self setSubject:nil];
     [self setDatingid:nil];
     [self setMyTableView:nil];
     [self setTitleLabel:nil];
     [self setPhoneText:nil];
     [self setContentText:nil];
+    [self setHideLabel:nil];
     [super viewDidUnload];
 }
 
@@ -124,42 +138,17 @@
     [alert release];
     [progressHUD hide:YES];
 }
-//#pragma mark - Table view data source
-//
-//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-//{
-//    // Return the number of sections.
-//    return 1;
-//}
-//
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    // Return the number of rows in the section.
-//    return 3;
-//}
-//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    
-//    return 113.f;
-//    
-//}
-//
-//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    static NSString *CellIdentifier = @"Cell";
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    if (cell == nil) {
-//        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-//    }
-//    
-//    return cell;
-//}
-//
-//
-//#pragma mark - Table view delegate
-//
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    
-//}
 
+- (IBAction)clickSubmitButton:(id)sender {
+    [self loadServiceData];
+}
+-(void)textViewDidChange:(UITextView *)textView
+{
+    self.contentText.text =  textView.text;
+    if (textView.text.length == 0) {
+        self.hideLabel.text = @"请输入留言内容...";
+    }else{
+        self.hideLabel.text = @"";
+    }
+}
 @end

@@ -260,6 +260,8 @@
 		D8A706AF1700FF4B00B24213 /* 28自我介绍@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A706A61700FF4B00B24213 /* 28自我介绍@2x.png */; };
 		D8A706C11701084900B24213 /* BSPublicTableCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8A706BF1701084900B24213 /* BSPublicTableCell_iPhone.m */; };
 		D8A706C21701084900B24213 /* BSPublicTableCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A706C01701084900B24213 /* BSPublicTableCell_iPhone.xib */; };
+		D8AECECF172B622C00872F57 /* 我要报名bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D8AECECD172B622C00872F57 /* 我要报名bg.png */; };
+		D8AECED0172B622C00872F57 /* 我要报名bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8AECECE172B622C00872F57 /* 我要报名bg@2x.png */; };
 		D8B40EB41712FB8000849F81 /* MyInfo341RequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B40EB31712FB8000849F81 /* MyInfo341RequestVo.m */; };
 		D8C76E59171E764F00815457 /* DelMyPhotoRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C76E58171E764F00815457 /* DelMyPhotoRequestVo.m */; };
 		D8C76E5C171E76DF00815457 /* DelMyPhotoResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C76E5B171E76DF00815457 /* DelMyPhotoResponseVo.m */; };
@@ -736,6 +738,8 @@
 		D8A706BE1701084900B24213 /* BSPublicTableCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSPublicTableCell_iPhone.h; sourceTree = "<group>"; };
 		D8A706BF1701084900B24213 /* BSPublicTableCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSPublicTableCell_iPhone.m; sourceTree = "<group>"; };
 		D8A706C01701084900B24213 /* BSPublicTableCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSPublicTableCell_iPhone.xib; sourceTree = "<group>"; };
+		D8AECECD172B622C00872F57 /* 我要报名bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我要报名bg.png"; sourceTree = "<group>"; };
+		D8AECECE172B622C00872F57 /* 我要报名bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我要报名bg@2x.png"; sourceTree = "<group>"; };
 		D8B40EB21712FB8000849F81 /* MyInfo341RequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfo341RequestVo.h; sourceTree = "<group>"; };
 		D8B40EB31712FB8000849F81 /* MyInfo341RequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfo341RequestVo.m; sourceTree = "<group>"; };
 		D8C76E57171E764F00815457 /* DelMyPhotoRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelMyPhotoRequestVo.h; sourceTree = "<group>"; };
@@ -1478,6 +1482,8 @@
 		D87A059216EF77F90052328E /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				D8AECECD172B622C00872F57 /* 我要报名bg.png */,
+				D8AECECE172B622C00872F57 /* 我要报名bg@2x.png */,
 				D871CE411722EA02006EE28A /* delete.png */,
 				D871CE391722E243006EE28A /* 删除照片.png */,
 				D871CE3A1722E243006EE28A /* 删除照片@2x.png */,
@@ -2248,6 +2254,8 @@
 				D83DC8BD17277E9B00614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.xib in Resources */,
 				D83DC8BF17277E9B00614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.xib in Resources */,
 				D83DC8C4172792F800614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.xib in Resources */,
+				D8AECECF172B622C00872F57 /* 我要报名bg.png in Resources */,
+				D8AECED0172B622C00872F57 /* 我要报名bg@2x.png in Resources */,
 				5ADA5269172EBBBD00D2EEA4 /* area.sqlite in Resources */,
 				5A3AE87717323A8A00B73E86 /* UserCell.xib in Resources */,
 				5AD8996C173A3A7300F1332F /* BSMessageCell.xib in Resources */,
