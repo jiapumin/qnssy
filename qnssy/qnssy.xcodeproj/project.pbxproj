@@ -2254,15 +2254,12 @@
 				D83DC8BD17277E9B00614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.xib in Resources */,
 				D83DC8BF17277E9B00614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.xib in Resources */,
 				D83DC8C4172792F800614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.xib in Resources */,
-<<<<<<< HEAD
 				D8AECECF172B622C00872F57 /* 我要报名bg.png in Resources */,
 				D8AECED0172B622C00872F57 /* 我要报名bg@2x.png in Resources */,
-=======
 				5ADA5269172EBBBD00D2EEA4 /* area.sqlite in Resources */,
 				5A3AE87717323A8A00B73E86 /* UserCell.xib in Resources */,
 				5AD8996C173A3A7300F1332F /* BSMessageCell.xib in Resources */,
 				5A7AED5D173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.xib in Resources */,
->>>>>>> 81e599b751266f241d01b83f63803216a6953dfd
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
