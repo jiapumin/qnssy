@@ -38,7 +38,7 @@
     self.personNum.text = [NSString stringWithFormat:@"当前报名%@人",[dic objectForKey:@"datingnum"]];
     self.personNum.textColor = color1;
     
-    BOOL status = YES;
+    BOOL status = NO;
     NSString *dataStr = [dic objectForKey:@"datingdate"];
 //    dataStr = @"2013.04.23";
     NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];
