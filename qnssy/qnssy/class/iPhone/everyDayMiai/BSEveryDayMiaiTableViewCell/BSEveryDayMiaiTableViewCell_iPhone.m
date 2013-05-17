@@ -45,7 +45,8 @@
     [dateFormat setDateFormat:@"yyyy.MM.dd"];//设定时间格式,这里可以设置成自己需要的格式
     NSDate *date =[dateFormat dateFromString:dataStr];
     NSDate *newDate = [NSDate date];
-    if ([newDate laterDate:date]) {
+    NSDate *chaDate = [newDate laterDate:date];
+    if ([chaDate isEqualToDate:date]) {
         status = YES;
     }
 
