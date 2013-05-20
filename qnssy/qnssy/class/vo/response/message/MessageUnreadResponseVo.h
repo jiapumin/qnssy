@@ -10,4 +10,6 @@
 
 @interface MessageUnreadResponseVo : SuperResponseVo
 @property (retain, nonatomic) NSMutableArray *mailList;
+@property (nonatomic, retain) NSMutableArray *unReadMailList;
+@property (nonatomic, retain) NSMutableArray *readedMailList;
 @end

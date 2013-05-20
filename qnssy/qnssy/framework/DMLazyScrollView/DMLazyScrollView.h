@@ -33,8 +33,8 @@ typedef UIViewController*(^DMLazyScrollViewDataSource)(NSUInteger index);
 @property (copy)                DMLazyScrollViewDataSource      dataSource;
 @property (nonatomic, assign)   id<DMLazyScrollViewDelegate>    controlDelegate;
 
-@property (nonatomic,assign)    NSUInteger                      numberOfPages;
-@property (readonly)            NSUInteger                      currentPage;
+@property (nonatomic,assign)    NSInteger                      numberOfPages;
+@property (readonly)            NSInteger                      currentPage;
 
 - (void) reloadData;
 
