@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5A046AB916F9AE7F00782A83 /* BSSexElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A046AB816F9AE7F00782A83 /* BSSexElement.m */; };
+		5A1AE22A1747832100B4DF80 /* 一站式服务1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A1AE2271747832100B4DF80 /* 一站式服务1@2x.png */; };
+		5A1AE22B1747832100B4DF80 /* 一站式服务2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A1AE2281747832100B4DF80 /* 一站式服务2@2x.png */; };
+		5A1AE22C1747832100B4DF80 /* 一站式服务3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A1AE2291747832100B4DF80 /* 一站式服务3@2x.png */; };
 		5A3AE87117323A4700B73E86 /* BSSearchResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3AE87017323A4700B73E86 /* BSSearchResultViewController.m */; };
 		5A3AE87517323A7B00B73E86 /* UserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3AE87417323A7B00B73E86 /* UserCell.m */; };
 		5A3AE87717323A8A00B73E86 /* UserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A3AE87617323A8A00B73E86 /* UserCell.xib */; };
@@ -364,6 +367,9 @@
 /* Begin PBXFileReference section */
 		5A046AB716F9AE7F00782A83 /* BSSexElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSexElement.h; sourceTree = "<group>"; };
 		5A046AB816F9AE7F00782A83 /* BSSexElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSexElement.m; sourceTree = "<group>"; };
+		5A1AE2271747832100B4DF80 /* 一站式服务1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "一站式服务1@2x.png"; sourceTree = "<group>"; };
+		5A1AE2281747832100B4DF80 /* 一站式服务2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "一站式服务2@2x.png"; sourceTree = "<group>"; };
+		5A1AE2291747832100B4DF80 /* 一站式服务3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "一站式服务3@2x.png"; sourceTree = "<group>"; };
 		5A33A17D172E2D9900FF5159 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		5A3AE86F17323A4700B73E86 /* BSSearchResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSearchResultViewController.h; sourceTree = "<group>"; };
 		5A3AE87017323A4700B73E86 /* BSSearchResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSearchResultViewController.m; sourceTree = "<group>"; };
@@ -1484,6 +1490,9 @@
 			children = (
 				D8AECECD172B622C00872F57 /* 我要报名bg.png */,
 				D8AECECE172B622C00872F57 /* 我要报名bg@2x.png */,
+				5A1AE2271747832100B4DF80 /* 一站式服务1@2x.png */,
+				5A1AE2281747832100B4DF80 /* 一站式服务2@2x.png */,
+				5A1AE2291747832100B4DF80 /* 一站式服务3@2x.png */,
 				D871CE411722EA02006EE28A /* delete.png */,
 				D871CE391722E243006EE28A /* 删除照片.png */,
 				D871CE3A1722E243006EE28A /* 删除照片@2x.png */,
@@ -2260,6 +2269,9 @@
 				5A3AE87717323A8A00B73E86 /* UserCell.xib in Resources */,
 				5AD8996C173A3A7300F1332F /* BSMessageCell.xib in Resources */,
 				5A7AED5D173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.xib in Resources */,
+				5A1AE22A1747832100B4DF80 /* 一站式服务1@2x.png in Resources */,
+				5A1AE22B1747832100B4DF80 /* 一站式服务2@2x.png in Resources */,
+				5A1AE22C1747832100B4DF80 /* 一站式服务3@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
