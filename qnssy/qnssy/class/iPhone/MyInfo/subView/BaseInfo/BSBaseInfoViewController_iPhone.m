@@ -160,7 +160,7 @@
         cell.rightLabel.text = [content isEqualToString:@""] ? @"无" : content;
     }else{
         
-        cell.rightLabel.text = [self.myBaseInfo objectForKey:key];
+        cell.rightLabel.text = @"无";
     }
     
     
