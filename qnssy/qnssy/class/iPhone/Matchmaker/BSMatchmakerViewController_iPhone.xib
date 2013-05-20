@@ -90,7 +90,6 @@
 						<string key="NSFrame">{{20, 88}, {288, 440}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -99,6 +98,7 @@
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<bool key="IBUIMultipleTouchEnabled">YES</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
+						<bool key="IBUIEditable">NO</bool>
 						<string key="IBUIText">千年上上缘网是由南京万尚广告传媒有限公司倾力打造的江苏省首家从注册到结婚一站式婚恋相亲服务网站。网站以同曦·万尚城为相亲基地，以“加入上上缘，求得好姻缘”（加入上上缘，幸福在眼前）为广告语，以万尚城馨园茶饮吧为独家爱情加油站，首创“同城之恋-天天相亲-门当户对-高效婚配”的服务模式，精心为会员提供完善的交友和婚恋服务。</string>
 						<object class="NSColor" key="IBUITextColor">
 							<int key="NSColorSpace">1</int>

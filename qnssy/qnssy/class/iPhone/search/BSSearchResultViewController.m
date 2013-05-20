@@ -33,11 +33,27 @@
     self.userInfoArray = [[[[self.userInfoDict objectForKey:@"data"] objectForKey:@"ResData"] objectForKey:@"ResData"] objectForKey:@"userinfo"];
     NSLog(@"%d",self.userInfoArray.count);
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    UIButton *topLeftButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    //按钮大小
+    CGRect btnFrame = CGRectMake(0.0, 4.0, 29.0, 25.0);
+    topLeftButton.frame =btnFrame;
+    
+    //设置返回按钮图片和方法
+    [topLeftButton setImage:[UIImage imageNamed:@"2向左返回箭头"]
+                   forState:UIControlStateNormal];
+    
+    [topLeftButton addTarget:self
+                      action:@selector(popViewContoller)
+            forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem * topLeftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:topLeftButton];
+    self.navigationItem.leftBarButtonItem = topLeftBarButtonItem;
+    [topLeftBarButtonItem release];
+}
+
+#pragma mark - pop
+- (void)popViewContoller{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 #pragma mark - UITableView Datasource
