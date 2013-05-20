@@ -731,10 +731,22 @@
         [dict setObject:self.lovekind forKey:@"lovekind"];
         [dict setObject:self.havepic forKey:@"havepic"];
     } else if (self.searchType == 1) {
+        if (self.idField.text.length <= 0) {
+            UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"搜索ID不能为空" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alter show];
+            [alter release];
+            return;
+        }
         dict = [NSMutableDictionary dictionary];
         [dict setObject:[NSNumber numberWithInt:self.searchType] forKey:@"searchtype"];
         [dict setObject:self.idField.text forKey:@"userid"];
     } else {
+        if (self.nickField.text.length <= 0) {
+            UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:@"搜索昵称不能为空" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alter show];
+            [alter release];
+            return;
+        }
         dict = [NSMutableDictionary dictionary];
         [dict setObject:[NSNumber numberWithInt:self.searchType] forKey:@"searchtype"];
         [dict setObject:self.nickField.text forKey:@"username"];

@@ -64,6 +64,7 @@
 		5AF21B4F16F8581000EEB6EA /* BSUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AF21B4D16F8581000EEB6EA /* BSUserInfoViewController.xib */; };
 		5AFC21D9170AA340001228AB /* ValidatePhoneRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A78921C17047B8C00E2B238 /* ValidatePhoneRequestVo.m */; };
 		BB810EC20B6A24D8F5D47213 /* MyMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8103F575D2320537DE2FC9 /* MyMD5.m */; };
+		D80B235C1749FDF5002CB786 /* UpdateMyPhotoResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B235B1749FDF5002CB786 /* UpdateMyPhotoResponseVo.m */; };
 		D8306364171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8306362171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.m */; };
 		D8306365171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8306363171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib */; };
 		D830636A171FD6FB006A256F /* BSUserDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8306368171FD6FB006A256F /* BSUserDetailInfoViewController.m */; };
@@ -442,6 +443,9 @@
 		5AF21B4D16F8581000EEB6EA /* BSUserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserInfoViewController.xib; sourceTree = "<group>"; };
 		BB8103F575D2320537DE2FC9 /* MyMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMD5.m; sourceTree = "<group>"; };
 		BB810ACBC2671DB88E54462B /* MyMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMD5.h; sourceTree = "<group>"; };
+		D80B23581749F849002CB786 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		D80B235A1749FDF5002CB786 /* UpdateMyPhotoResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpdateMyPhotoResponseVo.h; sourceTree = "<group>"; };
+		D80B235B1749FDF5002CB786 /* UpdateMyPhotoResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpdateMyPhotoResponseVo.m; sourceTree = "<group>"; };
 		D8306361171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMyAttentionTableViewCell_iPhone.h; sourceTree = "<group>"; };
 		D8306362171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMyAttentionTableViewCell_iPhone.m; sourceTree = "<group>"; };
 		D8306363171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMyAttentionTableViewCell_iPhone.xib; sourceTree = "<group>"; };
@@ -1924,6 +1928,8 @@
 				D8768B7F17241A3500A407DC /* AboutResponseVo.m */,
 				D8768B9F1724215E00A407DC /* AmendPasswordResponseVo.h */,
 				D8768BA01724215F00A407DC /* AmendPasswordResponseVo.m */,
+				D80B235A1749FDF5002CB786 /* UpdateMyPhotoResponseVo.h */,
+				D80B235B1749FDF5002CB786 /* UpdateMyPhotoResponseVo.m */,
 			);
 			path = MyPhoto;
 			sourceTree = "<group>";
@@ -2064,6 +2070,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				"zh-Hans",
 			);
 			mainGroup = D87A04DE16EF639A0052328E;
 			productRefGroup = D87A04EA16EF639A0052328E /* Products */;
@@ -2426,6 +2433,7 @@
 				5AD8996A173A3A6100F1332F /* BSMessageCell.m in Sources */,
 				5AD89972173A43EE00F1332F /* MessageReadedRequestVo.m in Sources */,
 				5A7AED5C173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.m in Sources */,
+				D80B235C1749FDF5002CB786 /* UpdateMyPhotoResponseVo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2444,6 +2452,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D87A04F716EF639A0052328E /* en */,
+				D80B23581749F849002CB786 /* zh-Hans */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
