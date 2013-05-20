@@ -12,8 +12,8 @@
 #define kDMLazyScrollViewTransitionDuration     0.4
 
 @interface DMLazyScrollView() <UIScrollViewDelegate> {
-    NSUInteger      numberOfPages;
-    NSUInteger      currentPage;
+    NSInteger      numberOfPages;
+    NSInteger      currentPage;
     BOOL            isManualAnimating;
 }
 
@@ -86,11 +86,12 @@
         [self setContentOffset: CGPointMake((self.frame.size.width*2), 0)];
     
     NSInteger newPageIndex = currentPage;
-    if (scrollView.contentOffset.x <= (self.frame.size.width))
+    if (scrollView.contentOffset.x <= (self.frame.size.width)){
         newPageIndex = [self pageIndexByAdding:-1 from:currentPage];
-    else if (scrollView.contentOffset.x >= (self.frame.size.width*3))
+    }
+    else if (scrollView.contentOffset.x >= (self.frame.size.width*3)){
         newPageIndex = [self pageIndexByAdding:+1 from:currentPage];
-    
+    }
     [self setCurrentViewController:newPageIndex];
     
     // alert delegate
@@ -142,7 +143,20 @@
 }
 
 - (NSInteger) pageIndexByAdding:(NSInteger) offset from:(NSInteger) index {
-    return (numberOfPages+index+(offset%numberOfPages))%numberOfPages;
+    int a = index + offset;
+    if (a >= numberOfPages) {
+        a = 0;
+    }
+    if (a < 0) {
+        a = numberOfPages-1;
+    }
+    return a;
+    
+//    NSInteger a = offset%numberOfPages;
+//    NSInteger b= numberOfPages+index+a;
+//    NSInteger c = b%numberOfPages;
+//    return c;
+//    return (numberOfPages+index+(offset%numberOfPages))%numberOfPages;
 }
 
 - (void) moveByPages:(NSInteger) offset animated:(BOOL) animated {
