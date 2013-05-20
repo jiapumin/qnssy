@@ -16,6 +16,7 @@
 
 @interface BSMessageViewController_iPhone (){
         MBProgressHUD *progressHUD;
+    int mailType;
 }
 
 @end
@@ -69,9 +70,14 @@
 - (IBAction)clickTopSegmented:(UISegmentedControl *)segmented {
     
     if (segmented.selectedSegmentIndex == 0) {
+        mailType = 0;
         [self loadServiceData:@"0"];
     } else if (segmented.selectedSegmentIndex == 1){
+        mailType = 1;
         [self loadServiceData:@"1"];
+    } else if (segmented.selectedSegmentIndex == 2){
+        mailType = 2;
+        [self loadServiceData:@"0"];
     }
     
 }
@@ -84,9 +90,9 @@
     progressHUD.labelText = @"数据加载中...";
     
 }
-- (void)loadServiceData:(NSString *)mailType{
+- (void)loadServiceData:(NSString *)mailTypeParams{
     [progressHUD show:YES];
-    MessageUnreadRequestVo *vo = [[MessageUnreadRequestVo alloc] initWithMailType:mailType];
+    MessageUnreadRequestVo *vo = [[MessageUnreadRequestVo alloc] initWithMailType:mailTypeParams];
     [[BSContainer instance].serviceAgent callServletWithObject:self
                                                    requestDict:vo.mReqDic
                                                         target:self
@@ -100,8 +106,12 @@
 - (void)requestSucceess:(id)sender data:(NSDictionary *)dic {
     
     MessageUnreadResponseVo *vo = [[MessageUnreadResponseVo alloc] initWithDic:dic];
-    
-    self.mailArray = vo.mailList;
+    if (mailType == 0) {
+        self.mailArray = vo.unReadMailList;
+    } else {
+        self.mailArray = vo.mailList;
+    }
+//    self.mailArray = vo.mailList;
     
     if (vo.status != 0) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
@@ -160,12 +170,16 @@
     cell.messageDetailsLabel.text = [[self.mailArray objectAtIndex:indexPath.row] objectForKey:@"emailcontent"];
     
     NSString *readStatus = [[self.mailArray objectAtIndex:indexPath.row] objectForKey:@"readstatus"];
-    if ([readStatus isEqualToString:@"1"]) {
-        cell.messageImageView.image = [UIImage imageNamed:@"9邮件为空时显示图片@2x.png"];
-    } else {
+    if (mailType == 1) {
         cell.messageImageView.image = [UIImage imageNamed:@"10未读邮件ico@2x.png"];
+    } else {
+        if ([readStatus isEqualToString:@"1"]) {
+            cell.messageImageView.image = [UIImage imageNamed:@"9邮件为空时显示图片@2x.png"];
+        } else {
+            cell.messageImageView.image = [UIImage imageNamed:@"10未读邮件ico@2x.png"];
+        }
     }
-
+    
     return cell;
 }
 
