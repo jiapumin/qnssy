@@ -12,12 +12,14 @@
 #import "SegmentCell.h"
 #import "LabelCell.h"
 #import "SearchRequestVo.h"
-#import "BSSearchResultViewController.h"
+#import "SearchResponseVo.h"
+#import "BSSearchResultViewController_iPhone.h"
 
 @interface BSSearchViewController_iPhone () {
     int selectedRow;
     int provinceId;
     int cityId;
+    MBProgressHUD *progressHUD;
 }
 
 @property (assign, nonatomic) int searchType;
@@ -178,8 +180,20 @@
     [self.tableView setTableFooterView:searchButton];
     
     [searchButton release];
-}
+    
+//初始化加载框
+    [self initHUDView];
 
+}
+- (void)initHUDView{
+    //-------加载框
+    progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
+
+    [self.view addSubview:progressHUD];
+
+    progressHUD.labelText = @"数据加载中...";
+
+}
 #pragma mark - UITableView Datasource
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -753,6 +767,7 @@
         [dict setObject:[NSNumber numberWithInt:self.searchType] forKey:@"searchtype"];
         [dict setObject:self.nickField.text forKey:@"username"];
     }
+    [progressHUD show:YES];
     SearchRequestVo *requestVo = [[SearchRequestVo alloc] initWithParams:dict];
     [[BSContainer instance].serviceAgent callServletWithObject:self
                                                    requestDict:requestVo.mReqDic
@@ -763,21 +778,44 @@
 }
 
 - (void) searchSucceess:(id) sender data:(NSDictionary *) dic {
-    if ([[[[dic objectForKey:@"data"] objectForKey:@"ResData"] objectForKey:@"ResData"] isEqual:@""]) {
+    
+    SearchResponseVo *vo = [[SearchResponseVo alloc] initWithDic:dic];
+    if (vo.status == 1) {
         UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:[[[dic objectForKey:@"data"] objectForKey:@"ResData"] objectForKey:@"Message"] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alter show];
         [alter release];
-    } else {
-        BSSearchResultViewController *searchResultViewController = [[BSSearchResultViewController alloc] init];
-        searchResultViewController.userInfoDict = dic;
+
+    }else{
+        BSSearchResultViewController_iPhone *searchResultViewController = [[BSSearchResultViewController_iPhone alloc] init];
+        searchResultViewController.dataArray = vo.searchList;
+        [searchResultViewController.myTableView reloadData];
         [self.navigationController pushViewController:searchResultViewController animated:YES];
         [searchResultViewController release];
     }
+    [progressHUD hide:YES];
+//
+    [vo release];
+//    if ([[[[dic objectForKey:@"data"] objectForKey:@"ResData"] objectForKey:@"ResData"] isEqual:@""]) {
+//        UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:[[[dic objectForKey:@"data"] objectForKey:@"ResData"] objectForKey:@"Message"] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//        [alter show];
+//        [alter release];
+//    } else {
+//        
+//        BSSearchResultViewController_iPhone *searchResultViewController = [[BSSearchResultViewController_iPhone alloc] init];
+////        searchResultViewController.userInfoDict = dic;
+//        searchResultViewController.
+//        [searchResultViewController.myTableView reloadData];
+//        [self.navigationController pushViewController:searchResultViewController animated:YES];
+//        [searchResultViewController release];
+//    }
     
 }
 
 - (void) searchFailed:(id) sender data:(NSDictionary *) dic{
-    NSLog(@"搜索出错了。");
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"网络异常，请检查网络连接后重试" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
+    [progressHUD hide:YES];
 }
 
 //- (void)update{
