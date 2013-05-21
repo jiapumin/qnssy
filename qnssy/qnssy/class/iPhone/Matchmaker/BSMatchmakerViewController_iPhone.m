@@ -35,4 +35,7 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)calllingAction:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel://4000920999"]];
+}
 @end
