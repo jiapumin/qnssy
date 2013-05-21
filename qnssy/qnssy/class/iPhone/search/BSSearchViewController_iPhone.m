@@ -726,6 +726,8 @@
 #pragma mark search action
 
 -(void) searchAction:(id) sender {
+    [self.idField resignFirstResponder];
+    [self.nickField resignFirstResponder];
     NSMutableDictionary *dict;
     if (self.searchType == 0) {
         dict = [NSMutableDictionary dictionary];
