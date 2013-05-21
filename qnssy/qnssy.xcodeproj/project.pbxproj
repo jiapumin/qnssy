@@ -23,6 +23,7 @@
 		5A64EBE616F2F93400F4E576 /* BSUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */; };
 		5A64EBED16F3091B00F4E576 /* login_input.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBEC16F3091B00F4E576 /* login_input.png */; };
 		5A64EBF716F30BAF00F4E576 /* login_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBF616F30BAF00F4E576 /* login_logo.png */; };
+		5A6962C6174A3F6700BCC251 /* 红娘热线@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A6962C5174A3F6700BCC251 /* 红娘热线@2x.png */; };
 		5A7891ED170347C800E2B238 /* BSBindUserAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7891EB170347C800E2B238 /* BSBindUserAccountViewController.m */; };
 		5A7891EE170347C800E2B238 /* BSBindUserAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7891EC170347C800E2B238 /* BSBindUserAccountViewController.xib */; };
 		5A7892191704791C00E2B238 /* ValidatePhoneResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7892181704791C00E2B238 /* ValidatePhoneResponseVo.m */; };
@@ -388,6 +389,7 @@
 		5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserLoginViewController.m; sourceTree = "<group>"; };
 		5A64EBEC16F3091B00F4E576 /* login_input.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_input.png; sourceTree = "<group>"; };
 		5A64EBF616F30BAF00F4E576 /* login_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_logo.png; sourceTree = "<group>"; };
+		5A6962C5174A3F6700BCC251 /* 红娘热线@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "红娘热线@2x.png"; sourceTree = "<group>"; };
 		5A7891EA170347C800E2B238 /* BSBindUserAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBindUserAccountViewController.h; sourceTree = "<group>"; };
 		5A7891EB170347C800E2B238 /* BSBindUserAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBindUserAccountViewController.m; sourceTree = "<group>"; };
 		5A7891EC170347C800E2B238 /* BSBindUserAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBindUserAccountViewController.xib; sourceTree = "<group>"; };
@@ -1488,6 +1490,7 @@
 		D87A059216EF77F90052328E /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				5A6962C5174A3F6700BCC251 /* 红娘热线@2x.png */,
 				D8AECECD172B622C00872F57 /* 我要报名bg.png */,
 				D8AECECE172B622C00872F57 /* 我要报名bg@2x.png */,
 				5A1AE2271747832100B4DF80 /* 一站式服务1@2x.png */,
@@ -2272,6 +2275,7 @@
 				5A1AE22A1747832100B4DF80 /* 一站式服务1@2x.png in Resources */,
 				5A1AE22B1747832100B4DF80 /* 一站式服务2@2x.png in Resources */,
 				5A1AE22C1747832100B4DF80 /* 一站式服务3@2x.png in Resources */,
+				5A6962C6174A3F6700BCC251 /* 红娘热线@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
