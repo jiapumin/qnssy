@@ -314,30 +314,38 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 
     
     //请求服务器上传图片
+    [self updateMyPhotoImage:image];
 //    [self requestService:image fileType:[NSString stringWithFormat:@"%d",selectImageFileType]];
     
-        [picker dismissModalViewControllerAnimated:YES];
+    [picker dismissModalViewControllerAnimated:YES];
     
     
 }
 - (void)image:(UIImageView*)image didFinishSavingWithError:(NSString*)error contextInfo:(NSString*)context{
     NSLog(@"保存完成！");
 }
-- (void)updateMyPhoto{
-    NSString *filePath = [[[KBBreakpointTransmission instance] getTargetFloderPath:@"image"] stringByAppendingPathComponent:@"index2.jpg"];
+- (void)updateMyPhotoImage:(UIImage *)image{
+//    NSString *filePath = [[[KBBreakpointTransmission instance] getTargetFloderPath:@"image"] stringByAppendingPathComponent:@"index2.jpg"];
     
     NSString *url = @"http://demo2.qnssy.com/demo/upload_demo.php";
     ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL: [NSURL URLWithString: url]];
     [request setPostValue: @"true" forKey: @"is_phone"];
     [request setPostValue:@"true" forKey:@"do_upload_file"];
-    [request setFile: filePath forKey: @"uploadedfile"];
+//    [request setFile:filePath forKey: @"uploadedfile"];
+    NSData *imageData = UIImagePNGRepresentation(image);
+    [request setData:imageData forKey:@"uploadedfile"];
     [request buildRequestHeaders];
     [request setDefaultResponseEncoding:NSUTF8StringEncoding];
     NSLog(@"header: %@", request.requestHeaders);
-    [request startSynchronous];
-    NSLog(@"responseString = %@", request.responseString);
+    [request setTimeOutSeconds:60];
+    [request setDidFinishSelector:@selector(asySuccess:)];
+    [request setDidFailSelector:@selector(asyFail:)];
+    [request startAsynchronous];
+
 
 }
-
+- (void)asySuccess:(ASIFormDataRequest *)request{
+        NSLog(@"responseString = %@", request.responseString);
+}
 
 @end
