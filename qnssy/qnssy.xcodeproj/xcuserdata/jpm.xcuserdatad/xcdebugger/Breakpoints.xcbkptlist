@@ -7,19 +7,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "qnssy/class/iPhone/LoadView/DefaultLoadViewController_iPhone.m"
-         timestampString = "385574786.295209"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "171"
-         endingLineNumber = "171"
-         landmarkName = "-loadRootViewConfig:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "qnssy/class/iPhone/buy/BSBuyViewController_iPhone.m"
          timestampString = "385136451.484142"
          startingColumnNumber = "9223372036854775807"
@@ -33,25 +20,12 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "qnssy/class/vo/response/LoginResponseVo.m"
-         timestampString = "385136459.435938"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "17"
-         endingLineNumber = "17"
-         landmarkName = "-initWithDic:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "qnssy/class/iPhone/MyInfo/BSMyInfoViewController_iPhone.m"
-         timestampString = "387121358.79438"
+         timestampString = "387622987.184595"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "89"
-         endingLineNumber = "89"
+         startingLineNumber = "96"
+         endingLineNumber = "96"
          landmarkName = "-initData"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,51 +34,207 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "qnssy/class/iPhone/MyInfo/BSMyInfoViewController_iPhone.m"
-         timestampString = "387121358.79438"
+         timestampString = "388421787.736851"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "207"
-         endingLineNumber = "207"
+         startingLineNumber = "175"
+         endingLineNumber = "175"
          landmarkName = "-tableView:cellForRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "qnssy/class/iPhone/MyInfo/subView/BaseInfo/BSBaseInfoViewController_iPhone.m"
+         timestampString = "388421787.736851"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "128"
+         endingLineNumber = "128"
+         landmarkName = "-tableView:numberOfRowsInSection:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "qnssy/class/iPhone/MyInfo/subView/BaseInfo/BSBaseInfoViewController_iPhone.m"
+         timestampString = "388421787.736851"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "121"
+         endingLineNumber = "121"
+         landmarkName = "-numberOfSectionsInTableView:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "qnssy/class/iPhone/MyInfo/subView/MyPhoto/SDWebImageRootViewController.m"
+         timestampString = "388166310.054645"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "127"
+         endingLineNumber = "127"
+         landmarkName = "-delPhoto"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "qnssy/framework/KTPhotoBrowser/KTPhotoScrollViewController.m"
+         timestampString = "388167708.751137"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "468"
+         endingLineNumber = "468"
+         landmarkName = "-toggleChromeDisplay"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "qnssy/framework/KTPhotoBrowser/KTPhotoScrollViewController.m"
+         timestampString = "388167708.751137"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "473"
+         endingLineNumber = "473"
+         landmarkName = "-toggleChrome:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "qnssy/class/iPhone/everyDayMiai/subView/BSEveryDayMiaiDetailViewController_iPhone.m"
+         timestampString = "388395229.330596"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "259"
+         endingLineNumber = "259"
+         landmarkName = "-yueHuiDuiXiang"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "qnssy/class/vo/response/everyDayMiai/EveryDayMiaiDetailResponseVo.m"
+         timestampString = "388392406.663034"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "19"
+         endingLineNumber = "19"
+         landmarkName = "-analysisData:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "qnssy/class/iPhone/everyDayMiai/subView/BSEveryDayMiaiDetailViewController_iPhone.m"
+         timestampString = "388395229.330596"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "270"
+         endingLineNumber = "270"
+         landmarkName = "-yueHuiDuiXiang"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "qnssy/class/iPhone/everyDayMiai/subView/BSEveryDayMiaiDetailViewController_iPhone.m"
+         timestampString = "388395229.330596"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "269"
+         endingLineNumber = "269"
+         landmarkName = "-yueHuiDuiXiang"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "Yes"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "qnssy/class/iPhone/MyInfo/BSMyInfoViewController_iPhone.m"
-         timestampString = "387121358.79438"
+         filePath = "qnssy/class/vo/response/everyDayMiai/MiaiApplyResponseVo.m"
+         timestampString = "388395099.80981"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "262"
-         endingLineNumber = "262"
-         landmarkName = "-finishedDownload:"
+         startingLineNumber = "16"
+         endingLineNumber = "16"
+         landmarkName = "-analysisData:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "qnssy/class/iPhone/register/BSUserLoginViewController.m"
+         timestampString = "388660169.174802"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "193"
+         endingLineNumber = "193"
+         landmarkName = "-tencentDidLogin"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "qnssy/class/iPhone/recommend/BSRecommendImageViewController_iPhone.m"
-         timestampString = "386418653.985513"
+         filePath = "qnssy/framework/DMLazyScrollView/DMLazyScrollView.m"
+         timestampString = "390706961.559269"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
-         landmarkName = "-clickInfoButton:"
+         startingLineNumber = "89"
+         endingLineNumber = "89"
+         landmarkName = "-scrollViewDidScroll:"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "qnssy/class/vo/response/LoginResponseVo.m"
-         timestampString = "387119745.18957"
+         filePath = "qnssy/framework/DMLazyScrollView/DMLazyScrollView.m"
+         timestampString = "390708212.718452"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "20"
-         endingLineNumber = "20"
-         landmarkName = "-initWithDic:"
+         startingLineNumber = "103"
+         endingLineNumber = "103"
+         landmarkName = "-setCurrentViewController:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "qnssy/framework/DMLazyScrollView/DMLazyScrollView.m"
+         timestampString = "390720243.767189"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "146"
+         endingLineNumber = "146"
+         landmarkName = "-pageIndexByAdding:from:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "qnssy/class/iPhone/MyInfo/subView/MyPhoto/SDWebImageRootViewController.m"
+         timestampString = "390727207.666198"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "298"
+         endingLineNumber = "298"
+         landmarkName = "-imagePickerController:didFinishPickingMediaWithInfo:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
