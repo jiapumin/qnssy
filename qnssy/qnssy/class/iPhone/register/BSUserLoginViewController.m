@@ -14,6 +14,7 @@
 #import "BSBindUserAccountViewController.h"
 #import "UserInfo.h"
 #import "BSRootLeftViewController_iPhone.h"
+#import "UserInfoDao.h"
 
 @interface BSUserLoginViewController (){
     BOOL isTextFieldMoved;
@@ -52,12 +53,37 @@
     self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width, CGRectGetMaxY(contentRect)+10);
     //出事化加载框
     [self initHUDView];
-    //此处检测本地是否自动登录，如果自动登录则请求服务器进行登录，否则进入登录界面
-    isAutoLogin = NO;
+//    //此处检测本地是否自动登录，如果自动登录则请求服务器进行登录，否则进入登录界面
+//    isAutoLogin = NO;
+//    if (isAutoLogin) {
+//        
+//        [self loginRequestData];
+//        
+//    }
+//    
+    //此处获取是否保存用户名密码
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    BOOL isRememberPassword = [[defaults objectForKey:@"kIsRemberPassword"] isEqualToString:@"ON"];
+    NSDictionary *loginInfo = [UserInfoDao loginInfoForFile];
+    isAutoLogin = [[loginInfo objectForKey:@"isRemember"] isEqualToString:@"true"];
     if (isAutoLogin) {
+        //设置选中状态
+        isAutoLogin = NO;
+        [self autoLogin:nil];
         
-        [self loginRequestData];
+        //读取记忆的用户名和密码
+        if (loginInfo != nil) {
+            [self.userAccount setText:[loginInfo valueForKey:USERNAME_USERINFO]];
+            [self.userPassword setText:[loginInfo valueForKey:USERPARD_USERINFO]];
+            [self loginRequestData];
+        }
         
+    }else{
+        //读取记忆的用户名
+        if (loginInfo != nil) {
+            [self.userAccount setText:[loginInfo valueForKey:USERNAME_USERINFO]];
+//            [self.userPassword setText:[loginInfo valueForKey:USERPARD_USERINFO]];
+        }
     }
     
     //腾讯登录服务
@@ -155,6 +181,7 @@
     [_scrollView release];
     [_loginButton release];
     [_loginQQButton release];
+    [_autoButton release];
     [super dealloc];
 }
 - (void)viewDidUnload {
@@ -164,6 +191,7 @@
     [self setScrollView:nil];
     [self setLoginButton:nil];
     [self setLoginQQButton:nil];
+    [self setAutoButton:nil];
     [super viewDidUnload];
 }
 
@@ -234,15 +262,30 @@
 - (void)loginSucceess:(id)sender data:(NSDictionary *)dic {
     LoginResponseVo *vo = [[LoginResponseVo alloc] initWithDic:dic];
     
-    
     NSLog(@"用户id:%@--登录消息:%@",vo.userInfo.userId,vo.message);
     //登录成功，保存用户信息
     [BSContainer instance].userInfo = vo.userInfo;
 
-    //进入主界面
-//    [self.view addSubview:app.revealSideViewController.view];
-
    if (vo.status == 0) {
+       //处理记住密码
+       NSString *username = self.userAccount.text;
+       NSString *password = self.userPassword.text;
+       //获取是否保存用户名密码
+//       NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//       BOOL isRememberPassword = [[defaults objectForKey:@"kIsRemberPassword"] isEqualToString:@"ON"];
+       if (isAutoLogin) {
+           //保存用户名和密码
+           [UserInfoDao saveLoginInfoUsername:username
+                                     password:password
+                                   isRemember:1];
+       }else{
+           //保存用户名
+           [UserInfoDao saveLoginInfoUsername:username
+                                     password:password
+                                   isRemember:0];
+       }
+       
+       
        //加载界面
 //        if (app.revealSideViewController == nil) {
                 [app viewUpdate];
@@ -270,10 +313,10 @@
 - (IBAction)autoLogin:(id)sender {
     if (!isAutoLogin) {
         isAutoLogin = YES;
-        [sender setBackgroundImage:[UIImage imageNamed:@"1复选框选中@2x.png"] forState:UIControlStateNormal];
+        [self.autoButton setBackgroundImage:[UIImage imageNamed:@"1复选框选中@2x.png"] forState:UIControlStateNormal];
     } else {
         isAutoLogin = NO;
-        [sender setBackgroundImage:[UIImage imageNamed:@"1复选框未选中@2x.png"] forState:UIControlStateNormal];
+        [self.autoButton setBackgroundImage:[UIImage imageNamed:@"1复选框未选中@2x.png"] forState:UIControlStateNormal];
     }
 }
 @end

@@ -34,6 +34,7 @@
 @property (retain, nonatomic) IBOutlet UIButton *loginQQButton;
 
 @property (retain, nonatomic) IBOutlet UIView *loginBackgroundView;
+@property (retain, nonatomic) IBOutlet UIButton *autoButton;
 
 - (IBAction)autoLogin:(id)sender;
 - (IBAction)toRegister:(id)sender;

@@ -13,6 +13,9 @@
 #import "MyPhotoRequestVo.h"
 #import "MyPhotoResponseVo.h"
 
+#import "UpdateMyPhotoRequestVo.h"
+#import "UpdateMyPhotoResponseVo.h"
+
 @interface SDWebImageRootViewController (){
     UIButton *topRightDelButton;
 }
@@ -326,26 +329,29 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 }
 - (void)updateMyPhotoImage:(UIImage *)image{
 //    NSString *filePath = [[[KBBreakpointTransmission instance] getTargetFloderPath:@"image"] stringByAppendingPathComponent:@"index2.jpg"];
-    
-    NSString *url = @"http://demo2.qnssy.com/demo/upload_demo.php";
-    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL: [NSURL URLWithString: url]];
-    [request setPostValue: @"true" forKey: @"is_phone"];
-    [request setPostValue:@"true" forKey:@"do_upload_file"];
-//    [request setFile:filePath forKey: @"uploadedfile"];
-    NSData *imageData = UIImagePNGRepresentation(image);
-    [request setData:imageData forKey:@"uploadedfile"];
-    [request buildRequestHeaders];
-    [request setDefaultResponseEncoding:NSUTF8StringEncoding];
-    NSLog(@"header: %@", request.requestHeaders);
-    [request setTimeOutSeconds:60];
-    [request setDidFinishSelector:@selector(asySuccess:)];
-    [request setDidFailSelector:@selector(asyFail:)];
-    [request startAsynchronous];
-
-
+//    
+//    NSString *url = @"http://demo2.qnssy.com/demo/upload_demo.php";
+//    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL: [NSURL URLWithString: url]];
+//    [request setPostValue: @"true" forKey: @"is_phone"];
+//    [request setPostValue:@"true" forKey:@"do_upload_file"];
+////    [request setFile:filePath forKey: @"uploadedfile"];
+//    NSData *imageData = UIImagePNGRepresentation(image);
+//    [request setData:imageData forKey:@"uploadedfile"];
+//    [request buildRequestHeaders];
+//    [request setDefaultResponseEncoding:NSUTF8StringEncoding];
+//    NSLog(@"header: %@", request.requestHeaders);
+//    [request setTimeOutSeconds:60];
+//    [request setDidFinishSelector:@selector(asySuccess:)];
+//    [request setDidFailSelector:@selector(asyFail:)];
+//    [request startAsynchronous];
+    [self.progressHUD show:YES];
+    UpdateMyPhotoRequestVo *vo = [[UpdateMyPhotoRequestVo alloc] initWithPhotoImage:image delegate:self];
+    [vo release];
 }
 - (void)asySuccess:(ASIFormDataRequest *)request{
+        [self.progressHUD hide:YES];
         NSLog(@"responseString = %@", request.responseString);
+    
 }
 
 @end
