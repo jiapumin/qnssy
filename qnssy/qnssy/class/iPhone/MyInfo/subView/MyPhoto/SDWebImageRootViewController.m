@@ -315,10 +315,21 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     //获得编辑过的图片
     UIImage* image = [info objectForKey: @"UIImagePickerControllerEditedImage"];
 
+    //保存编辑过的图片
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *filePath  = [[KBBreakpointTransmission instance] getTargetFloderPath:IMAGE_PATH];
+    NSData *data;
+    if (UIImagePNGRepresentation(image) == nil) {
+        data = UIImageJPEGRepresentation(image, 1);
+    } else {
+        data = UIImagePNGRepresentation(image);
+    }
+    [fileManager createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];
+    [fileManager createFileAtPath:[filePath stringByAppendingString:@"/image1.png"] contents:data attributes:nil];
     
     //请求服务器上传图片
-    [self updateMyPhotoImage:image];
-//    [self requestService:image fileType:[NSString stringWithFormat:@"%d",selectImageFileType]];
+    [self updateMyPhotoImage:[NSString stringWithFormat:@"%@/%@",filePath,@"image1.png"]];
     
     [picker dismissModalViewControllerAnimated:YES];
     
@@ -327,31 +338,21 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 - (void)image:(UIImageView*)image didFinishSavingWithError:(NSString*)error contextInfo:(NSString*)context{
     NSLog(@"保存完成！");
 }
-- (void)updateMyPhotoImage:(UIImage *)image{
-//    NSString *filePath = [[[KBBreakpointTransmission instance] getTargetFloderPath:@"image"] stringByAppendingPathComponent:@"index2.jpg"];
-//    
-//    NSString *url = @"http://demo2.qnssy.com/demo/upload_demo.php";
-//    ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL: [NSURL URLWithString: url]];
-//    [request setPostValue: @"true" forKey: @"is_phone"];
-//    [request setPostValue:@"true" forKey:@"do_upload_file"];
-////    [request setFile:filePath forKey: @"uploadedfile"];
-//    NSData *imageData = UIImagePNGRepresentation(image);
-//    [request setData:imageData forKey:@"uploadedfile"];
-//    [request buildRequestHeaders];
-//    [request setDefaultResponseEncoding:NSUTF8StringEncoding];
-//    NSLog(@"header: %@", request.requestHeaders);
-//    [request setTimeOutSeconds:60];
-//    [request setDidFinishSelector:@selector(asySuccess:)];
-//    [request setDidFailSelector:@selector(asyFail:)];
-//    [request startAsynchronous];
+- (void)updateMyPhotoImage:(NSString *)filePath{
+
     [self.progressHUD show:YES];
-    UpdateMyPhotoRequestVo *vo = [[UpdateMyPhotoRequestVo alloc] initWithPhotoImage:image delegate:self];
+    UpdateMyPhotoRequestVo *vo = [[UpdateMyPhotoRequestVo alloc] initWithPhotoFilePath:filePath delegate:self];
     [vo release];
 }
 - (void)asySuccess:(ASIFormDataRequest *)request{
-        [self.progressHUD hide:YES];
-        NSLog(@"responseString = %@", request.responseString);
+    [self.progressHUD hide:YES];
+    NSLog(@"responseString = %@", request.responseString);
     
 }
-
+- (void)asyFail:(ASIFormDataRequest *)request{
+    [self.progressHUD hide:YES];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"网络异常，请检查网络连接后重试" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
+}
 @end

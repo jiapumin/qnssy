@@ -10,7 +10,7 @@
 
 @implementation UpdateMyPhotoRequestVo
 
-- (id)initWithPhotoImage:(UIImage *)image delegate:(UIViewController *)vc{
+- (id)initWithPhotoFilePath:(NSString *)filePath delegate:(UIViewController *)vc{
     
     self=[super init];
     if(self){
@@ -19,9 +19,9 @@
         ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL: [NSURL URLWithString:url]];
         [request setPostValue: @"true" forKey: @"is_phone"];
         [request setPostValue:@"true" forKey:@"do_upload_file"];
-        //    [request setFile:filePath forKey: @"uploadedfile"];
-        NSData *imageData = UIImagePNGRepresentation(image);
-        [request setData:imageData forKey:@"uploadedfile"];
+        [request setFile:filePath forKey: @"uploadedfile"];
+//        NSData *imageData = UIImagePNGRepresentation(image);
+//        [request setData:imageData forKey:@"uploadedfile"];
         [request buildRequestHeaders];
         [request setPostValue:[BSContainer instance].userInfo.userId forKey:@"userid"];
         [request setDefaultResponseEncoding:NSUTF8StringEncoding];
@@ -33,6 +33,7 @@
     
     }
     return self;
+//    http://demo2.qnssy.com/demo/upload_demo.php
 //    NSString *filePath = [[[KBBreakpointTransmission instance] getTargetFloderPath:@"image"] stringByAppendingPathComponent:@"index2.jpg"];
 //    
 //    NSString *url = @"http://demo2.qnssy.com/app/app.php?c=user&a=addphoto";
