@@ -13,5 +13,11 @@
 - (void)analysisData:(NSDictionary *)ResData{
     
     NSLog(@"要解析的数据：%@",ResData);
+    self.dataDic = ResData;
+}
+- (void)dealloc{
+    
+    [_dataDic release];
+    [super dealloc];
 }
 @end

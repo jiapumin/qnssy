@@ -140,10 +140,17 @@
 {
 
     
+    BSUserDetailInfoViewController *udivc = [[BSUserDetailInfoViewController alloc] initWithNibName:@"BSUserDetailInfoViewController" bundle:nil];
     
-//    BSUserDetailInfoViewController *udivc = [[BSUserDetailInfoViewController alloc] initWithNibName:@"BSUserDetailInfoViewController" bundle:nil];
-//    [self.navigationController pushViewController:udivc animated:YES];
-//    [udivc release];
+    NSDictionary *dic = [self.dataArray objectAtIndex:indexPath.row];
+    
+    udivc.userId = [dic objectForKey:@"userid"];
+    
+    udivc.title = [dic objectForKey:@"username"];
+    
+    [self.navigationController pushViewController:udivc animated:YES];
+    [udivc release];
+    
     
     
 }

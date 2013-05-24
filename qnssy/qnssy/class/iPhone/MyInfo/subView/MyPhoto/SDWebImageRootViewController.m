@@ -346,6 +346,19 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 }
 - (void)asySuccess:(ASIFormDataRequest *)request{
     [self.progressHUD hide:YES];
+    NSString *dataStr = request.responseString;
+    NSDictionary *dataDic = [dataStr JSONValue];
+    
+    //成功将数据返回
+     NSMutableDictionary *resultDict = [[[NSMutableDictionary alloc] init] autorelease];
+    [resultDict setObject:[NSNumber numberWithInt:IPLAT4M_STATUS_SUCCESS] forKey:@"status"];
+    [resultDict setObject:dataDic forKey:@"data"];
+    
+    UpdateMyPhotoResponseVo *vo = [[UpdateMyPhotoResponseVo alloc] initWithDic:resultDict];
+    
+    [images_.images_ addObject:vo.dataDic];
+    [vo release];
+    [self setDataSource:images_];
     NSLog(@"responseString = %@", request.responseString);
     
 }
