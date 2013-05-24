@@ -15,6 +15,7 @@
 #import "UserInfo.h"
 #import "BSRootLeftViewController_iPhone.h"
 #import "UserInfoDao.h"
+#import "BSForgetPasswordViewController_iPhone.h"
 
 @interface BSUserLoginViewController (){
     BOOL isTextFieldMoved;
@@ -54,16 +55,7 @@
     //出事化加载框
     [self initHUDView];
 //    //此处检测本地是否自动登录，如果自动登录则请求服务器进行登录，否则进入登录界面
-//    isAutoLogin = NO;
-//    if (isAutoLogin) {
-//        
-//        [self loginRequestData];
-//        
-//    }
-//    
     //此处获取是否保存用户名密码
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    BOOL isRememberPassword = [[defaults objectForKey:@"kIsRemberPassword"] isEqualToString:@"ON"];
     NSDictionary *loginInfo = [UserInfoDao loginInfoForFile];
     isAutoLogin = [[loginInfo objectForKey:@"isRemember"] isEqualToString:@"true"];
     if (isAutoLogin) {
@@ -271,8 +263,6 @@
        NSString *username = self.userAccount.text;
        NSString *password = self.userPassword.text;
        //获取是否保存用户名密码
-//       NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//       BOOL isRememberPassword = [[defaults objectForKey:@"kIsRemberPassword"] isEqualToString:@"ON"];
        if (isAutoLogin) {
            //保存用户名和密码
            [UserInfoDao saveLoginInfoUsername:username
@@ -310,6 +300,12 @@
     //???
     [progressHUD hide:YES];
 }
+- (IBAction)clickForgetPassword:(id)sender {
+    BSForgetPasswordViewController_iPhone *fpvc = [[BSForgetPasswordViewController_iPhone alloc] initWithNibName:@"BSForgetPasswordViewController_iPhone" bundle:nil];
+    [self.navigationController pushViewController:fpvc animated:YES];
+    
+}
+
 - (IBAction)autoLogin:(id)sender {
     if (!isAutoLogin) {
         isAutoLogin = YES;

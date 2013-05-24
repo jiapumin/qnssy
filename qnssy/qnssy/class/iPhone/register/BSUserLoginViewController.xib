@@ -106,6 +106,7 @@
 								<string key="NSFrame">{{221, 400}, {88, 44}}</string>
 								<reference key="NSSuperview" ref="42989776"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<object class="NSColor" key="IBUIBackgroundColor" id="124684991">
 									<int key="NSColorSpace">1</int>
@@ -192,17 +193,9 @@
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
 								<int key="IBUIContentVerticalAlignment">0</int>
-								<object class="NSColor" key="IBUITintColor">
-									<int key="NSColorSpace">1</int>
-									<bytes key="NSRGB">MC45Njg2Mjc0NTEgMC44MDc4NDMxMzczIDAuODMxMzcyNTQ5AA</bytes>
-								</object>
 								<string key="IBUINormalTitle">忘记密码？</string>
 								<reference key="IBUIHighlightedTitleColor" ref="861298575"/>
 								<reference key="IBUINormalTitleColor" ref="861298575"/>
-								<object class="NSColor" key="IBUINormalTitleShadowColor">
-									<int key="NSColorSpace">3</int>
-									<bytes key="NSWhite">MCAwAA</bytes>
-								</object>
 								<reference key="IBUIFontDescription" ref="262037817"/>
 								<reference key="IBUIFont" ref="878506841"/>
 							</object>
@@ -503,6 +496,15 @@
 					</object>
 					<int key="connectionID">196</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">clickForgetPassword:</string>
+						<reference key="source" ref="693999453"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">205</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -648,7 +650,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">204</int>
+			<int key="maxID">205</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -657,6 +659,7 @@
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="actions">
 						<string key="autoLogin:">id</string>
+						<string key="clickForgetPassword:">id</string>
 						<string key="clickLoginButton:">id</string>
 						<string key="clickQQLoginButton:">id</string>
 						<string key="toRegister:">id</string>
@@ -664,6 +667,10 @@
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
 						<object class="IBActionInfo" key="autoLogin:">
 							<string key="name">autoLogin:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="clickForgetPassword:">
+							<string key="name">clickForgetPassword:</string>
 							<string key="candidateClassName">id</string>
 						</object>
 						<object class="IBActionInfo" key="clickLoginButton:">

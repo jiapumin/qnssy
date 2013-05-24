@@ -35,6 +35,7 @@
 
 @property (retain, nonatomic) IBOutlet UIView *loginBackgroundView;
 @property (retain, nonatomic) IBOutlet UIButton *autoButton;
+- (IBAction)clickForgetPassword:(id)sender;
 
 - (IBAction)autoLogin:(id)sender;
 - (IBAction)toRegister:(id)sender;
