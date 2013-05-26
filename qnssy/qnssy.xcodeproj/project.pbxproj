@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		5A046AB916F9AE7F00782A83 /* BSSexElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A046AB816F9AE7F00782A83 /* BSSexElement.m */; };
+		5A1542E11750FDC700218363 /* AbstractActionSheetPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1542D51750FDC700218363 /* AbstractActionSheetPicker.m */; };
+		5A1542E21750FDC700218363 /* ActionSheetCustomPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1542D71750FDC700218363 /* ActionSheetCustomPicker.m */; };
+		5A1542E31750FDC700218363 /* ActionSheetDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1542DA1750FDC700218363 /* ActionSheetDatePicker.m */; };
+		5A1542E41750FDC700218363 /* ActionSheetDistancePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1542DC1750FDC700218363 /* ActionSheetDistancePicker.m */; };
+		5A1542E51750FDC700218363 /* ActionSheetStringPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1542DE1750FDC700218363 /* ActionSheetStringPicker.m */; };
+		5A1542E61750FDC700218363 /* DistancePickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1542E01750FDC700218363 /* DistancePickerView.m */; };
+		5A1542EB1750FF6C00218363 /* WorkAreaPickerViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1542EA1750FF6C00218363 /* WorkAreaPickerViewDelegate.m */; };
 		5A1AE22A1747832100B4DF80 /* 一站式服务1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A1AE2271747832100B4DF80 /* 一站式服务1@2x.png */; };
 		5A1AE22B1747832100B4DF80 /* 一站式服务2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A1AE2281747832100B4DF80 /* 一站式服务2@2x.png */; };
 		5A1AE22C1747832100B4DF80 /* 一站式服务3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A1AE2291747832100B4DF80 /* 一站式服务3@2x.png */; };
@@ -51,6 +58,8 @@
 		5AD6533316F4BF1F00FD80D8 /* navbkimg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6533116F4BF1F00FD80D8 /* navbkimg@2x.png */; };
 		5AD6533616F4BF4E00FD80D8 /* backbtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6533416F4BF4E00FD80D8 /* backbtn.png */; };
 		5AD6533716F4BF4E00FD80D8 /* backbtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6533516F4BF4E00FD80D8 /* backbtn@2x.png */; };
+		5AD801E5174DF83100B0A0B7 /* BSUserBasicInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD801E3174DF83100B0A0B7 /* BSUserBasicInfoViewController.m */; };
+		5AD801E6174DF83100B0A0B7 /* BSUserBasicInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AD801E4174DF83100B0A0B7 /* BSUserBasicInfoViewController.xib */; };
 		5AD8996A173A3A6100F1332F /* BSMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD89969173A3A6100F1332F /* BSMessageCell.m */; };
 		5AD8996C173A3A7300F1332F /* BSMessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AD8996B173A3A7300F1332F /* BSMessageCell.xib */; };
 		5AD89972173A43EE00F1332F /* MessageReadedRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD89971173A43ED00F1332F /* MessageReadedRequestVo.m */; };
@@ -383,6 +392,22 @@
 /* Begin PBXFileReference section */
 		5A046AB716F9AE7F00782A83 /* BSSexElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSexElement.h; sourceTree = "<group>"; };
 		5A046AB816F9AE7F00782A83 /* BSSexElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSexElement.m; sourceTree = "<group>"; };
+		5A1542D41750FDC700218363 /* AbstractActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbstractActionSheetPicker.h; sourceTree = "<group>"; };
+		5A1542D51750FDC700218363 /* AbstractActionSheetPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AbstractActionSheetPicker.m; sourceTree = "<group>"; };
+		5A1542D61750FDC700218363 /* ActionSheetCustomPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPicker.h; sourceTree = "<group>"; };
+		5A1542D71750FDC700218363 /* ActionSheetCustomPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetCustomPicker.m; sourceTree = "<group>"; };
+		5A1542D81750FDC700218363 /* ActionSheetCustomPickerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetCustomPickerDelegate.h; sourceTree = "<group>"; };
+		5A1542D91750FDC700218363 /* ActionSheetDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDatePicker.h; sourceTree = "<group>"; };
+		5A1542DA1750FDC700218363 /* ActionSheetDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDatePicker.m; sourceTree = "<group>"; };
+		5A1542DB1750FDC700218363 /* ActionSheetDistancePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetDistancePicker.h; sourceTree = "<group>"; };
+		5A1542DC1750FDC700218363 /* ActionSheetDistancePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetDistancePicker.m; sourceTree = "<group>"; };
+		5A1542DD1750FDC700218363 /* ActionSheetStringPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetStringPicker.h; sourceTree = "<group>"; };
+		5A1542DE1750FDC700218363 /* ActionSheetStringPicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActionSheetStringPicker.m; sourceTree = "<group>"; };
+		5A1542DF1750FDC700218363 /* DistancePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DistancePickerView.h; sourceTree = "<group>"; };
+		5A1542E01750FDC700218363 /* DistancePickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DistancePickerView.m; sourceTree = "<group>"; };
+		5A1542E91750FF6C00218363 /* WorkAreaPickerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkAreaPickerViewDelegate.h; sourceTree = "<group>"; };
+		5A1542EA1750FF6C00218363 /* WorkAreaPickerViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkAreaPickerViewDelegate.m; sourceTree = "<group>"; };
+		5A1542EC1750FF9F00218363 /* ActionSheetPicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionSheetPicker.h; sourceTree = "<group>"; };
 		5A1AE2271747832100B4DF80 /* 一站式服务1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "一站式服务1@2x.png"; sourceTree = "<group>"; };
 		5A1AE2281747832100B4DF80 /* 一站式服务2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "一站式服务2@2x.png"; sourceTree = "<group>"; };
 		5A1AE2291747832100B4DF80 /* 一站式服务3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "一站式服务3@2x.png"; sourceTree = "<group>"; };
@@ -440,6 +465,9 @@
 		5AD6533116F4BF1F00FD80D8 /* navbkimg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "navbkimg@2x.png"; path = "UserGuidImage/navbkimg@2x.png"; sourceTree = "<group>"; };
 		5AD6533416F4BF4E00FD80D8 /* backbtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backbtn.png; sourceTree = "<group>"; };
 		5AD6533516F4BF4E00FD80D8 /* backbtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "backbtn@2x.png"; sourceTree = "<group>"; };
+		5AD801E2174DF83100B0A0B7 /* BSUserBasicInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserBasicInfoViewController.h; sourceTree = "<group>"; };
+		5AD801E3174DF83100B0A0B7 /* BSUserBasicInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserBasicInfoViewController.m; sourceTree = "<group>"; };
+		5AD801E4174DF83100B0A0B7 /* BSUserBasicInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserBasicInfoViewController.xib; sourceTree = "<group>"; };
 		5AD89968173A3A6100F1332F /* BSMessageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMessageCell.h; sourceTree = "<group>"; };
 		5AD89969173A3A6100F1332F /* BSMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMessageCell.m; sourceTree = "<group>"; };
 		5AD8996B173A3A7300F1332F /* BSMessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMessageCell.xib; sourceTree = "<group>"; };
@@ -932,6 +960,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5A1542D31750FDC700218363 /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				5A1542EC1750FF9F00218363 /* ActionSheetPicker.h */,
+				5A1542D41750FDC700218363 /* AbstractActionSheetPicker.h */,
+				5A1542D51750FDC700218363 /* AbstractActionSheetPicker.m */,
+				5A1542D61750FDC700218363 /* ActionSheetCustomPicker.h */,
+				5A1542D71750FDC700218363 /* ActionSheetCustomPicker.m */,
+				5A1542D81750FDC700218363 /* ActionSheetCustomPickerDelegate.h */,
+				5A1542D91750FDC700218363 /* ActionSheetDatePicker.h */,
+				5A1542DA1750FDC700218363 /* ActionSheetDatePicker.m */,
+				5A1542DB1750FDC700218363 /* ActionSheetDistancePicker.h */,
+				5A1542DC1750FDC700218363 /* ActionSheetDistancePicker.m */,
+				5A1542DD1750FDC700218363 /* ActionSheetStringPicker.h */,
+				5A1542DE1750FDC700218363 /* ActionSheetStringPicker.m */,
+				5A1542DF1750FDC700218363 /* DistancePickerView.h */,
+				5A1542E01750FDC700218363 /* DistancePickerView.m */,
+			);
+			path = Pickers;
+			sourceTree = "<group>";
+		};
+		5A1542E81750FF4700218363 /* PickerviewDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				5A1542E91750FF6C00218363 /* WorkAreaPickerViewDelegate.h */,
+				5A1542EA1750FF6C00218363 /* WorkAreaPickerViewDelegate.m */,
+			);
+			name = PickerviewDelegate;
+			path = ../Pickers/PickerviewDelegate;
+			sourceTree = "<group>";
+		};
 		5A423504172A296400256FFE /* register */ = {
 			isa = PBXGroup;
 			children = (
@@ -944,6 +1003,7 @@
 		5A64EBE216F2F8EF00F4E576 /* register */ = {
 			isa = PBXGroup;
 			children = (
+				5A1542D31750FDC700218363 /* Pickers */,
 				5AD6533D16F58D1000FD80D8 /* customCells */,
 				5A64EBE316F2F93400F4E576 /* BSUserLoginViewController.h */,
 				5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */,
@@ -960,6 +1020,9 @@
 				5A7891EA170347C800E2B238 /* BSBindUserAccountViewController.h */,
 				5A7891EB170347C800E2B238 /* BSBindUserAccountViewController.m */,
 				5A7891EC170347C800E2B238 /* BSBindUserAccountViewController.xib */,
+				5AD801E2174DF83100B0A0B7 /* BSUserBasicInfoViewController.h */,
+				5AD801E3174DF83100B0A0B7 /* BSUserBasicInfoViewController.m */,
+				5AD801E4174DF83100B0A0B7 /* BSUserBasicInfoViewController.xib */,
 				D8B06C83174F26B3009F6EFF /* BSForgetPasswordViewController_iPhone.h */,
 				D8B06C84174F26B4009F6EFF /* BSForgetPasswordViewController_iPhone.m */,
 				D8B06C85174F26B4009F6EFF /* BSForgetPasswordViewController_iPhone.xib */,
@@ -995,6 +1058,7 @@
 			children = (
 				5A046AB716F9AE7F00782A83 /* BSSexElement.h */,
 				5A046AB816F9AE7F00782A83 /* BSSexElement.m */,
+				5A1542E81750FF4700218363 /* PickerviewDelegate */,
 			);
 			path = customCells;
 			sourceTree = "<group>";
@@ -2372,6 +2436,7 @@
 				5A6962C6174A3F6700BCC251 /* 红娘热线@2x.png in Resources */,
 				D8185E37174B40B900995CAE /* BSSearchResultViewController_iPhone.xib in Resources */,
 				D8185E3D174B41F600995CAE /* BSSearchResultTableViewCell_iPhone.xib in Resources */,
+				5AD801E6174DF83100B0A0B7 /* BSUserBasicInfoViewController.xib in Resources */,
 				D8B06C87174F26B4009F6EFF /* BSForgetPasswordViewController_iPhone.xib in Resources */,
 				D88885F7174F4B2D002C0567 /* BSSendMailViewController_iPhone.xib in Resources */,
 			);
@@ -2532,6 +2597,14 @@
 				D8185E36174B40B900995CAE /* BSSearchResultViewController_iPhone.m in Sources */,
 				D8185E3C174B41F600995CAE /* BSSearchResultTableViewCell_iPhone.m in Sources */,
 				D8185E41174B438300995CAE /* SearchResponseVo.m in Sources */,
+				5AD801E5174DF83100B0A0B7 /* BSUserBasicInfoViewController.m in Sources */,
+				5A1542E11750FDC700218363 /* AbstractActionSheetPicker.m in Sources */,
+				5A1542E21750FDC700218363 /* ActionSheetCustomPicker.m in Sources */,
+				5A1542E31750FDC700218363 /* ActionSheetDatePicker.m in Sources */,
+				5A1542E41750FDC700218363 /* ActionSheetDistancePicker.m in Sources */,
+				5A1542E51750FDC700218363 /* ActionSheetStringPicker.m in Sources */,
+				5A1542E61750FDC700218363 /* DistancePickerView.m in Sources */,
+				5A1542EB1750FF6C00218363 /* WorkAreaPickerViewDelegate.m in Sources */,
 				D8B06C82174E51AC009F6EFF /* UserInfoDao.m in Sources */,
 				D8B06C86174F26B4009F6EFF /* BSForgetPasswordViewController_iPhone.m in Sources */,
 				D88C6011174F471500B75D6C /* AddAttentionRequestVo.m in Sources */,
