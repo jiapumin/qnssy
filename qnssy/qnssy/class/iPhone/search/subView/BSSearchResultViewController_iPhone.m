@@ -13,6 +13,8 @@
 
 #import "BSSearchResultTableViewCell_iPhone.h"
 
+#import "BSUserDetailInfoViewController.h"
+
 @interface BSSearchResultViewController_iPhone (){
 //    MBProgressHUD *progressHUD;
 }
@@ -138,11 +140,17 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
+
+    BSUserDetailInfoViewController *udivc = [[BSUserDetailInfoViewController alloc] initWithNibName:@"BSUserDetailInfoViewController" bundle:nil];
     
+    NSDictionary *dic = [self.dataArray objectAtIndex:indexPath.row];
     
-    //    BSUserDetailInfoViewController *udivc = [[BSUserDetailInfoViewController alloc] initWithNibName:@"BSUserDetailInfoViewController" bundle:nil];
-    //    [self.navigationController pushViewController:udivc animated:YES];
-    //    [udivc release];
+    udivc.userId = [dic objectForKey:@"userid"];
+    
+    udivc.title = [dic objectForKey:@"username"];
+    
+    [self.navigationController pushViewController:udivc animated:YES];
+    [udivc release];
     
     
 }

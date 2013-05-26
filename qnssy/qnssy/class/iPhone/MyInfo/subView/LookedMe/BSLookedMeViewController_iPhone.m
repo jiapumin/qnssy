@@ -13,6 +13,8 @@
 
 #import "BSLookedMeTableViewCell_iPhone.h"
 
+#import "BSUserDetailInfoViewController.h"
+
 @interface BSLookedMeViewController_iPhone (){
     MBProgressHUD *progressHUD;
 }
@@ -140,9 +142,16 @@
     
     
     
-    //    BSUserDetailInfoViewController *udivc = [[BSUserDetailInfoViewController alloc] initWithNibName:@"BSUserDetailInfoViewController" bundle:nil];
-    //    [self.navigationController pushViewController:udivc animated:YES];
-    //    [udivc release];
+    BSUserDetailInfoViewController *udivc = [[BSUserDetailInfoViewController alloc] initWithNibName:@"BSUserDetailInfoViewController" bundle:nil];
+    
+    NSDictionary *dic = [self.dataArray objectAtIndex:indexPath.row];
+    
+    udivc.userId = [dic objectForKey:@"userid"];
+    
+    udivc.title = [dic objectForKey:@"username"];
+    
+    [self.navigationController pushViewController:udivc animated:YES];
+    [udivc release];
     
     
 }

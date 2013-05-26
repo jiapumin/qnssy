@@ -9,5 +9,6 @@
 #import "SuperRequestVo.h"
 
 @interface UpdateMyPhotoRequestVo : SuperRequestVo
-- (id)initWithPhotoPath:(NSString *)path;
+- (id)initWithPhotoFilePath:(NSString *)filePath delegate:(UIViewController *)vc;
+
 @end

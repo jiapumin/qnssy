@@ -10,4 +10,5 @@
 
 @interface UpdateMyPhotoResponseVo : SuperResponseVo
 
+@property (retain,nonatomic) NSDictionary *dataDic;
 @end

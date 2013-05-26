@@ -281,6 +281,9 @@
 		D8A706C21701084900B24213 /* BSPublicTableCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8A706C01701084900B24213 /* BSPublicTableCell_iPhone.xib */; };
 		D8AECECF172B622C00872F57 /* 我要报名bg.png in Resources */ = {isa = PBXBuildFile; fileRef = D8AECECD172B622C00872F57 /* 我要报名bg.png */; };
 		D8AECED0172B622C00872F57 /* 我要报名bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8AECECE172B622C00872F57 /* 我要报名bg@2x.png */; };
+		D8B06C82174E51AC009F6EFF /* UserInfoDao.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B06C81174E51AC009F6EFF /* UserInfoDao.m */; };
+		D8B06C86174F26B4009F6EFF /* BSForgetPasswordViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B06C84174F26B4009F6EFF /* BSForgetPasswordViewController_iPhone.m */; };
+		D8B06C87174F26B4009F6EFF /* BSForgetPasswordViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8B06C85174F26B4009F6EFF /* BSForgetPasswordViewController_iPhone.xib */; };
 		D8B40EB41712FB8000849F81 /* MyInfo341RequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8B40EB31712FB8000849F81 /* MyInfo341RequestVo.m */; };
 		D8C76E59171E764F00815457 /* DelMyPhotoRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C76E58171E764F00815457 /* DelMyPhotoRequestVo.m */; };
 		D8C76E5C171E76DF00815457 /* DelMyPhotoResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8C76E5B171E76DF00815457 /* DelMyPhotoResponseVo.m */; };
@@ -793,6 +796,11 @@
 		D8A706C01701084900B24213 /* BSPublicTableCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSPublicTableCell_iPhone.xib; sourceTree = "<group>"; };
 		D8AECECD172B622C00872F57 /* 我要报名bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我要报名bg.png"; sourceTree = "<group>"; };
 		D8AECECE172B622C00872F57 /* 我要报名bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我要报名bg@2x.png"; sourceTree = "<group>"; };
+		D8B06C80174E51AC009F6EFF /* UserInfoDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoDao.h; sourceTree = "<group>"; };
+		D8B06C81174E51AC009F6EFF /* UserInfoDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoDao.m; sourceTree = "<group>"; };
+		D8B06C83174F26B3009F6EFF /* BSForgetPasswordViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSForgetPasswordViewController_iPhone.h; sourceTree = "<group>"; };
+		D8B06C84174F26B4009F6EFF /* BSForgetPasswordViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSForgetPasswordViewController_iPhone.m; sourceTree = "<group>"; };
+		D8B06C85174F26B4009F6EFF /* BSForgetPasswordViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSForgetPasswordViewController_iPhone.xib; sourceTree = "<group>"; };
 		D8B40EB21712FB8000849F81 /* MyInfo341RequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfo341RequestVo.h; sourceTree = "<group>"; };
 		D8B40EB31712FB8000849F81 /* MyInfo341RequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyInfo341RequestVo.m; sourceTree = "<group>"; };
 		D8C76E57171E764F00815457 /* DelMyPhotoRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DelMyPhotoRequestVo.h; sourceTree = "<group>"; };
@@ -998,6 +1006,9 @@
 				5AD801E2174DF83100B0A0B7 /* BSUserBasicInfoViewController.h */,
 				5AD801E3174DF83100B0A0B7 /* BSUserBasicInfoViewController.m */,
 				5AD801E4174DF83100B0A0B7 /* BSUserBasicInfoViewController.xib */,
+				D8B06C83174F26B3009F6EFF /* BSForgetPasswordViewController_iPhone.h */,
+				D8B06C84174F26B4009F6EFF /* BSForgetPasswordViewController_iPhone.m */,
+				D8B06C85174F26B4009F6EFF /* BSForgetPasswordViewController_iPhone.xib */,
 			);
 			path = register;
 			sourceTree = "<group>";
@@ -1945,6 +1956,8 @@
 				D8A687B316FD85F5005245C8 /* UserInfo.m */,
 				5ADA5265172EB70800D2EEA4 /* AreaInfo.h */,
 				5ADA5266172EB70800D2EEA4 /* AreaInfo.m */,
+				D8B06C80174E51AC009F6EFF /* UserInfoDao.h */,
+				D8B06C81174E51AC009F6EFF /* UserInfoDao.m */,
 			);
 			path = vo;
 			sourceTree = "<group>";
@@ -2396,6 +2409,7 @@
 				D8185E37174B40B900995CAE /* BSSearchResultViewController_iPhone.xib in Resources */,
 				D8185E3D174B41F600995CAE /* BSSearchResultTableViewCell_iPhone.xib in Resources */,
 				5AD801E6174DF83100B0A0B7 /* BSUserBasicInfoViewController.xib in Resources */,
+				D8B06C87174F26B4009F6EFF /* BSForgetPasswordViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2562,6 +2576,8 @@
 				5A1542E51750FDC700218363 /* ActionSheetStringPicker.m in Sources */,
 				5A1542E61750FDC700218363 /* DistancePickerView.m in Sources */,
 				5A1542EB1750FF6C00218363 /* WorkAreaPickerViewDelegate.m in Sources */,
+				D8B06C82174E51AC009F6EFF /* UserInfoDao.m in Sources */,
+				D8B06C86174F26B4009F6EFF /* BSForgetPasswordViewController_iPhone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2648,7 +2664,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: jia pumin (M3N7ERC736)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jia pumin (M3N7ERC736)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2661,6 +2677,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C2D74EA1-0BA0-478F-B928-ADC19E3818A0";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C2D74EA1-0BA0-478F-B928-ADC19E3818A0";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/QuickDialog/**";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2670,7 +2689,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: jia pumin (M3N7ERC736)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BAOSTEEL GROUP CORPORATION";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2683,6 +2702,9 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C2D74EA1-0BA0-478F-B928-ADC19E3818A0";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A7E483FA-FEC2-4B8A-A620-4271F0C60BEB";
+				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/QuickDialog/**";
 				WRAPPER_EXTENSION = app;
 			};
