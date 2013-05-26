@@ -29,7 +29,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-
+    self.title = @"忘记密码";
+    
+    
     [self initHUDView];
     self.navigationController.navigationBarHidden = NO;
     self.myWebView.scalesPageToFit = YES;

@@ -25,7 +25,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.validateNumber = [[UITextField alloc] initWithFrame:CGRectMake(20, 97, 170, 40)];
+        self.validateNumber = [[UITextField alloc] initWithFrame:CGRectMake(20, 61, 170, 40)];
         self.validateNumber.borderStyle = UITextBorderStyleRoundedRect;
         self.validateNumber.placeholder = @"请输入验证码";
         self.validateNumber.keyboardType = UIKeyboardTypePhonePad;
@@ -43,8 +43,9 @@
     // Do any additional setup after loading the view from its nib.
     [self.resendButton setEnabled:NO];
     [self beginTimer];
-    //头部nav背景
-    [self.myNavigationBar setBackgroundImage:[UIImage imageNamed:@"2顶部条状背景"] forBarMetrics:UIBarMetricsDefault];
+    
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    self.title = @"验证码激活";
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -133,11 +134,6 @@
 
 - (void) validateFailed:(id) sender data:(NSDictionary *) dic{
     NSLog(@"-----  %@",dic);
-}
-
-// 返回按钮
-- (IBAction)clickBackButton:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void) dealloc {

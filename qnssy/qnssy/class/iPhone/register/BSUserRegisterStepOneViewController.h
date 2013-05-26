@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 @class TPKeyboardAvoidingScrollView;
 
-@interface BSUserRegisterStepOneViewController : UIViewController <UITextFieldDelegate>
+#import "BSSuperCentreViewController_iPhone.h"
+
+@interface BSUserRegisterStepOneViewController : BSSuperCentreViewController_iPhone <UITextFieldDelegate>
 @property (retain, nonatomic) UITextField *userAccount;
 @property (retain, nonatomic) UITextField *userPassword;
 @property (retain, nonatomic) IBOutlet UINavigationBar *myNavigationBar;

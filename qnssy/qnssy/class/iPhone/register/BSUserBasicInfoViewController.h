@@ -7,10 +7,11 @@
 //
 
 #import "WorkAreaPickerViewDelegate.h"
+#import "BSSuperCentreViewController_iPhone.h"
 
 @class TPKeyboardAvoidingScrollView;
 
-@interface BSUserBasicInfoViewController : UIViewController <UIActionSheetDelegate, UIScrollViewDelegate, UIAlertViewDelegate> {
+@interface BSUserBasicInfoViewController : BSSuperCentreViewController_iPhone <UIActionSheetDelegate, UIScrollViewDelegate, UIAlertViewDelegate> {
 }
 
 //@property (retain, nonatomic) UIView *areaView;
