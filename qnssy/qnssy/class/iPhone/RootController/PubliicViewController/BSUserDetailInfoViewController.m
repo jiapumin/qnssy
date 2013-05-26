@@ -228,6 +228,8 @@
             NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BSUserDetailInfoTableViewCell3_iPhone" owner:tableView options:nil];
             BSUserDetailInfoTableViewCell3_iPhone *cell = [nib objectAtIndex:0];
             
+            cell.delegate = self;
+            
             cell.userVo = self.userInfoDic;
             
             return cell;

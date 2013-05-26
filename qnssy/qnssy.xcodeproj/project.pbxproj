@@ -180,6 +180,10 @@
 		D87A058D16EF75A20052328E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A058C16EF75A10052328E /* CFNetwork.framework */; };
 		D87A058F16EF75AB0052328E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A058E16EF75AA0052328E /* SystemConfiguration.framework */; };
 		D87A059516EF77F90052328E /* 左栏_button_03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D87A059316EF77F90052328E /* 左栏_button_03@2x.png */; };
+		D88885F6174F4B2D002C0567 /* BSSendMailViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D88885F4174F4B2D002C0567 /* BSSendMailViewController_iPhone.m */; };
+		D88885F7174F4B2D002C0567 /* BSSendMailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D88885F5174F4B2D002C0567 /* BSSendMailViewController_iPhone.xib */; };
+		D88885FA174F513F002C0567 /* SendMailResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D88885F9174F513F002C0567 /* SendMailResponseVo.m */; };
+		D88885FD174F5169002C0567 /* SendMailRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D88885FC174F5169002C0567 /* SendMailRequestVo.m */; };
 		D8888FA816F34E7A00C14922 /* KBBreakpointTransmission.m in Sources */ = {isa = PBXBuildFile; fileRef = D8888FA516F34E7A00C14922 /* KBBreakpointTransmission.m */; };
 		D8888FA916F34E7A00C14922 /* KBBTFileInfoVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8888FA716F34E7A00C14922 /* KBBTFileInfoVo.m */; };
 		D8888FC516F34EEB00C14922 /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = D8888FAE16F34EEB00C14922 /* ASIAuthenticationDialog.m */; };
@@ -195,6 +199,8 @@
 		D8888FD216F34FF800C14922 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8888FD116F34FF800C14922 /* MessageUI.framework */; };
 		D8888FD416F3500A00C14922 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8888FD316F3500A00C14922 /* ImageIO.framework */; };
 		D8888FD816F3504B00C14922 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D8888FD716F3504A00C14922 /* libz.1.2.5.dylib */; };
+		D88C6011174F471500B75D6C /* AddAttentionRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D88C6010174F471500B75D6C /* AddAttentionRequestVo.m */; };
+		D88C6014174F47A000B75D6C /* AddAttentionResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D88C6013174F47A000B75D6C /* AddAttentionResponseVo.m */; };
 		D88EBF84171822CE003F8EA6 /* KTPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D88EBF69171822CE003F8EA6 /* KTPhotoBrowser.bundle */; };
 		D88EBF85171822CE003F8EA6 /* KTPhotoBrowser.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = D88EBF6A171822CE003F8EA6 /* KTPhotoBrowser.xcworkspace */; };
 		D88EBF86171822CE003F8EA6 /* KTPhotoBrowserGlobal.m in Sources */ = {isa = PBXBuildFile; fileRef = D88EBF6D171822CE003F8EA6 /* KTPhotoBrowserGlobal.m */; };
@@ -639,6 +645,13 @@
 		D87A058C16EF75A10052328E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		D87A058E16EF75AA0052328E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D87A059316EF77F90052328E /* 左栏_button_03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "左栏_button_03@2x.png"; sourceTree = "<group>"; };
+		D88885F3174F4B2D002C0567 /* BSSendMailViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSendMailViewController_iPhone.h; sourceTree = "<group>"; };
+		D88885F4174F4B2D002C0567 /* BSSendMailViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSendMailViewController_iPhone.m; sourceTree = "<group>"; };
+		D88885F5174F4B2D002C0567 /* BSSendMailViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSSendMailViewController_iPhone.xib; sourceTree = "<group>"; };
+		D88885F8174F513F002C0567 /* SendMailResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendMailResponseVo.h; sourceTree = "<group>"; };
+		D88885F9174F513F002C0567 /* SendMailResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMailResponseVo.m; sourceTree = "<group>"; };
+		D88885FB174F5169002C0567 /* SendMailRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendMailRequestVo.h; sourceTree = "<group>"; };
+		D88885FC174F5169002C0567 /* SendMailRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMailRequestVo.m; sourceTree = "<group>"; };
 		D8888FA416F34E7A00C14922 /* KBBreakpointTransmission.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBBreakpointTransmission.h; sourceTree = "<group>"; };
 		D8888FA516F34E7A00C14922 /* KBBreakpointTransmission.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KBBreakpointTransmission.m; sourceTree = "<group>"; };
 		D8888FA616F34E7A00C14922 /* KBBTFileInfoVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KBBTFileInfoVo.h; sourceTree = "<group>"; };
@@ -670,6 +683,10 @@
 		D8888FD316F3500A00C14922 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		D8888FD516F3502200C14922 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		D8888FD716F3504A00C14922 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
+		D88C600F174F471500B75D6C /* AddAttentionRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAttentionRequestVo.h; sourceTree = "<group>"; };
+		D88C6010174F471500B75D6C /* AddAttentionRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAttentionRequestVo.m; sourceTree = "<group>"; };
+		D88C6012174F47A000B75D6C /* AddAttentionResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAttentionResponseVo.h; sourceTree = "<group>"; };
+		D88C6013174F47A000B75D6C /* AddAttentionResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAttentionResponseVo.m; sourceTree = "<group>"; };
 		D88EBF69171822CE003F8EA6 /* KTPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = KTPhotoBrowser.bundle; sourceTree = "<group>"; };
 		D88EBF6A171822CE003F8EA6 /* KTPhotoBrowser.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = KTPhotoBrowser.xcworkspace; sourceTree = "<group>"; };
 		D88EBF6B171822CE003F8EA6 /* KTPhotoBrowserDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTPhotoBrowserDataSource.h; sourceTree = "<group>"; };
@@ -1072,6 +1089,9 @@
 		D8306366171FD6FB006A256F /* PubliicViewController */ = {
 			isa = PBXGroup;
 			children = (
+				D88885F3174F4B2D002C0567 /* BSSendMailViewController_iPhone.h */,
+				D88885F4174F4B2D002C0567 /* BSSendMailViewController_iPhone.m */,
+				D88885F5174F4B2D002C0567 /* BSSendMailViewController_iPhone.xib */,
 				D830636C171FD71B006A256F /* BSSuperCentreViewController_iPhone.h */,
 				D830636D171FD71B006A256F /* BSSuperCentreViewController_iPhone.m */,
 				D8306367171FD6FB006A256F /* BSUserDetailInfoViewController.h */,
@@ -1085,6 +1105,10 @@
 		D83BD503171AE38C00E230FF /* recommend */ = {
 			isa = PBXGroup;
 			children = (
+				D88885FB174F5169002C0567 /* SendMailRequestVo.h */,
+				D88885FC174F5169002C0567 /* SendMailRequestVo.m */,
+				D88C600F174F471500B75D6C /* AddAttentionRequestVo.h */,
+				D88C6010174F471500B75D6C /* AddAttentionRequestVo.m */,
 				D83BD504171AE38C00E230FF /* RecommendImageListRequestVo.h */,
 				D83BD505171AE38C00E230FF /* RecommendImageListRequestVo.m */,
 				D83DC8AB172773AB00614BD4 /* RecommendInfoRequestVo.h */,
@@ -1096,6 +1120,10 @@
 		D83BD507171AE43C00E230FF /* Recommend */ = {
 			isa = PBXGroup;
 			children = (
+				D88885F8174F513F002C0567 /* SendMailResponseVo.h */,
+				D88885F9174F513F002C0567 /* SendMailResponseVo.m */,
+				D88C6012174F47A000B75D6C /* AddAttentionResponseVo.h */,
+				D88C6013174F47A000B75D6C /* AddAttentionResponseVo.m */,
 				D83BD508171AE43C00E230FF /* RecommendImageListResponseVo.h */,
 				D83BD509171AE43C00E230FF /* RecommendImageListResponseVo.m */,
 				D83DC8AE1727751800614BD4 /* RecommendInfoResponseVo.h */,
@@ -2345,6 +2373,7 @@
 				D8185E37174B40B900995CAE /* BSSearchResultViewController_iPhone.xib in Resources */,
 				D8185E3D174B41F600995CAE /* BSSearchResultTableViewCell_iPhone.xib in Resources */,
 				D8B06C87174F26B4009F6EFF /* BSForgetPasswordViewController_iPhone.xib in Resources */,
+				D88885F7174F4B2D002C0567 /* BSSendMailViewController_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2505,6 +2534,11 @@
 				D8185E41174B438300995CAE /* SearchResponseVo.m in Sources */,
 				D8B06C82174E51AC009F6EFF /* UserInfoDao.m in Sources */,
 				D8B06C86174F26B4009F6EFF /* BSForgetPasswordViewController_iPhone.m in Sources */,
+				D88C6011174F471500B75D6C /* AddAttentionRequestVo.m in Sources */,
+				D88C6014174F47A000B75D6C /* AddAttentionResponseVo.m in Sources */,
+				D88885F6174F4B2D002C0567 /* BSSendMailViewController_iPhone.m in Sources */,
+				D88885FA174F513F002C0567 /* SendMailResponseVo.m in Sources */,
+				D88885FD174F5169002C0567 /* SendMailRequestVo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

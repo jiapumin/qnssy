@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BSUserDetailInfoViewController.h"
 
 @interface BSUserDetailInfoTableViewCell3_iPhone : UITableViewCell
 
 @property (retain, nonatomic) NSDictionary *userVo;
+@property (assign, nonatomic) BSUserDetailInfoViewController *delegate;
+
 
 - (IBAction)clickGZButton:(id)sender;
 - (IBAction)clickXXButton:(id)sender;
