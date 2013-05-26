@@ -11,6 +11,7 @@
 #import "ValidatePhoneRequestVo.h"
 #import "ValidatePhoneResponseVo.h"
 #import "MyMD5.h"
+#import "BSUserBasicInfoViewController.h"
 
 @interface BSValidatePhoneNumberViewController (){
     int second;
@@ -94,19 +95,25 @@
 
 #pragma mark - 提交注册-进行MD5验证
 - (IBAction)submitAction:(id)sender {
-    QRootElement *root = [[QRootElement alloc] init];
-    // 如果用户填写了验证码，则将用户填写的验证码进行MD5加密，并和服务器返回的MD5验证码做比对
-//    if ([[MyMD5 md5:self.validateNumber.text] isEqualToString:self.md5code]) {
-        BSUserInfoViewController *userInfoController = (BSUserInfoViewController *)[[BSUserInfoViewController alloc] initWithRoot:root];
-    userInfoController.mobile = self.mobile;
-    userInfoController.password = self.password;
-        [self.navigationController pushViewController:userInfoController animated:YES];
-        [userInfoController release];
+//    QRootElement *root = [[QRootElement alloc] init];
+//    // 如果用户填写了验证码，则将用户填写的验证码进行MD5加密，并和服务器返回的MD5验证码做比对
+////    if ([[MyMD5 md5:self.validateNumber.text] isEqualToString:self.md5code]) {
+//        BSUserInfoViewController *userInfoController = (BSUserInfoViewController *)[[BSUserInfoViewController alloc] initWithRoot:root];
+//    userInfoController.mobile = self.mobile;
+//    userInfoController.password = self.password;
+//        [self.navigationController pushViewController:userInfoController animated:YES];
+//        [userInfoController release];
 //    } else {
 //        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"提示" message:@"验证码输入不正确" delegate:self cancelButtonTitle:@"重新输入" otherButtonTitles:nil];
 //        [alertView show];
 //        [alertView release];
 //    }
+    
+    BSUserBasicInfoViewController *basicInfoViewController = [[BSUserBasicInfoViewController alloc] initWithNibName:@"BSUserBasicInfoViewController" bundle:nil];
+    basicInfoViewController.mobile = self.mobile;
+    basicInfoViewController.password = self.password;
+    [self.navigationController pushViewController:basicInfoViewController animated:YES];
+    [basicInfoViewController release];
 }
 
 #pragma mark - 服务器回调
