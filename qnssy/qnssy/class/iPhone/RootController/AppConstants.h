@@ -39,3 +39,8 @@
 #define IMAGE_PATH @"image"
 
 
+
+#define DEFAULT_PAGE_NUMBER 1
+#define PAGE_COUNT          10
+
+

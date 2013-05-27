@@ -12,7 +12,9 @@
 
 @property (retain, nonatomic) IBOutlet UISegmentedControl *topSegmented;
 
-@property (retain, nonatomic) NSArray *mailArray;
+@property (retain, nonatomic) NSMutableArray *mySendedArray;
+@property (retain, nonatomic) NSMutableArray *unReadArray;
+@property (retain, nonatomic) NSMutableArray *myMailArray;
 
 @property (retain, nonatomic) IBOutlet UITableView *myTableView;
 

@@ -54,29 +54,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    self.view.backgroundColor = [UIColor colorWithRed:247.f/255 green:232.f/255 blue:232.f/255 alpha:1.f];
-    
-    UIButton *topLeftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    //按钮大小
-    CGRect btnFrame = CGRectMake(0.0, 4.0, 29.0, 25.0);
-    topLeftButton.frame =btnFrame;
-    
-    //设置返回按钮图片和方法
-    [topLeftButton setImage:[UIImage imageNamed:@"2向左返回箭头"]
-                   forState:UIControlStateNormal];
-    
-    [topLeftButton addTarget:self
-                      action:@selector(popViewContoller)
-            forControlEvents:UIControlEventTouchUpInside];
-    
-    UIBarButtonItem * topLeftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:topLeftButton];
-    self.navigationItem.leftBarButtonItem = topLeftBarButtonItem;
-    [topLeftBarButtonItem release];
-}
 
-- (void)popViewContoller{
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning

@@ -106,6 +106,12 @@
 		D83DC8B01727751800614BD4 /* RecommendInfoResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8AF1727751800614BD4 /* RecommendInfoResponseVo.m */; };
 		D84CB73B172A706D009C2BB9 /* MessageUnreadRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84CB73A172A706D009C2BB9 /* MessageUnreadRequestVo.m */; };
 		D84CB73E172A70B0009C2BB9 /* MessageUnreadResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84CB73D172A70B0009C2BB9 /* MessageUnreadResponseVo.m */; };
+		D84F59401753AB4300498C21 /* BSRecommendUserRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F593F1753AB4300498C21 /* BSRecommendUserRequestVo.m */; };
+		D84F59431753AC8000498C21 /* BSRecommendUserResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F59421753AC8000498C21 /* BSRecommendUserResponseVo.m */; };
+		D84F59461753B83F00498C21 /* BSMyMailRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F59451753B83F00498C21 /* BSMyMailRequestVo.m */; };
+		D84F59491753B85700498C21 /* BSMySendedMailRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F59481753B85700498C21 /* BSMySendedMailRequestVo.m */; };
+		D84F594C1753BAF400498C21 /* BSMyMailResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F594B1753BAF400498C21 /* BSMyMailResponseVo.m */; };
+		D84F594F1753BB4000498C21 /* BSMySendedMailResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F594E1753BB4000498C21 /* BSMySendedMailResponseVo.m */; };
 		D85B6625171A949100581B00 /* BSMyAttentionViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D85B6623171A949100581B00 /* BSMyAttentionViewController_iPhone.m */; };
 		D85B6626171A949100581B00 /* BSMyAttentionViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D85B6624171A949100581B00 /* BSMyAttentionViewController_iPhone.xib */; };
 		D85B6629171A960700581B00 /* MyAttentionRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D85B6628171A960700581B00 /* MyAttentionRequestVo.m */; };
@@ -546,6 +552,18 @@
 		D84CB73A172A706D009C2BB9 /* MessageUnreadRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageUnreadRequestVo.m; sourceTree = "<group>"; };
 		D84CB73C172A70B0009C2BB9 /* MessageUnreadResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageUnreadResponseVo.h; sourceTree = "<group>"; };
 		D84CB73D172A70B0009C2BB9 /* MessageUnreadResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageUnreadResponseVo.m; sourceTree = "<group>"; };
+		D84F593E1753AB4300498C21 /* BSRecommendUserRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRecommendUserRequestVo.h; sourceTree = "<group>"; };
+		D84F593F1753AB4300498C21 /* BSRecommendUserRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRecommendUserRequestVo.m; sourceTree = "<group>"; };
+		D84F59411753AC8000498C21 /* BSRecommendUserResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRecommendUserResponseVo.h; sourceTree = "<group>"; };
+		D84F59421753AC8000498C21 /* BSRecommendUserResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRecommendUserResponseVo.m; sourceTree = "<group>"; };
+		D84F59441753B83F00498C21 /* BSMyMailRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMyMailRequestVo.h; sourceTree = "<group>"; };
+		D84F59451753B83F00498C21 /* BSMyMailRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMyMailRequestVo.m; sourceTree = "<group>"; };
+		D84F59471753B85700498C21 /* BSMySendedMailRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMySendedMailRequestVo.h; sourceTree = "<group>"; };
+		D84F59481753B85700498C21 /* BSMySendedMailRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMySendedMailRequestVo.m; sourceTree = "<group>"; };
+		D84F594A1753BAF400498C21 /* BSMyMailResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMyMailResponseVo.h; sourceTree = "<group>"; };
+		D84F594B1753BAF400498C21 /* BSMyMailResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMyMailResponseVo.m; sourceTree = "<group>"; };
+		D84F594D1753BB4000498C21 /* BSMySendedMailResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMySendedMailResponseVo.h; sourceTree = "<group>"; };
+		D84F594E1753BB4000498C21 /* BSMySendedMailResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMySendedMailResponseVo.m; sourceTree = "<group>"; };
 		D85B6622171A949100581B00 /* BSMyAttentionViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMyAttentionViewController_iPhone.h; sourceTree = "<group>"; };
 		D85B6623171A949100581B00 /* BSMyAttentionViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMyAttentionViewController_iPhone.m; sourceTree = "<group>"; };
 		D85B6624171A949100581B00 /* BSMyAttentionViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMyAttentionViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -1188,6 +1206,8 @@
 				D83BD505171AE38C00E230FF /* RecommendImageListRequestVo.m */,
 				D83DC8AB172773AB00614BD4 /* RecommendInfoRequestVo.h */,
 				D83DC8AC172773AB00614BD4 /* RecommendInfoRequestVo.m */,
+				D84F593E1753AB4300498C21 /* BSRecommendUserRequestVo.h */,
+				D84F593F1753AB4300498C21 /* BSRecommendUserRequestVo.m */,
 			);
 			path = recommend;
 			sourceTree = "<group>";
@@ -1203,6 +1223,8 @@
 				D83BD509171AE43C00E230FF /* RecommendImageListResponseVo.m */,
 				D83DC8AE1727751800614BD4 /* RecommendInfoResponseVo.h */,
 				D83DC8AF1727751800614BD4 /* RecommendInfoResponseVo.m */,
+				D84F59411753AC8000498C21 /* BSRecommendUserResponseVo.h */,
+				D84F59421753AC8000498C21 /* BSRecommendUserResponseVo.m */,
 			);
 			path = Recommend;
 			sourceTree = "<group>";
@@ -1238,6 +1260,10 @@
 				D84CB73A172A706D009C2BB9 /* MessageUnreadRequestVo.m */,
 				5AD89970173A43ED00F1332F /* MessageReadedRequestVo.h */,
 				5AD89971173A43ED00F1332F /* MessageReadedRequestVo.m */,
+				D84F59441753B83F00498C21 /* BSMyMailRequestVo.h */,
+				D84F59451753B83F00498C21 /* BSMyMailRequestVo.m */,
+				D84F59471753B85700498C21 /* BSMySendedMailRequestVo.h */,
+				D84F59481753B85700498C21 /* BSMySendedMailRequestVo.m */,
 			);
 			path = message;
 			sourceTree = "<group>";
@@ -1247,6 +1273,10 @@
 			children = (
 				D84CB73C172A70B0009C2BB9 /* MessageUnreadResponseVo.h */,
 				D84CB73D172A70B0009C2BB9 /* MessageUnreadResponseVo.m */,
+				D84F594A1753BAF400498C21 /* BSMyMailResponseVo.h */,
+				D84F594B1753BAF400498C21 /* BSMyMailResponseVo.m */,
+				D84F594D1753BB4000498C21 /* BSMySendedMailResponseVo.h */,
+				D84F594E1753BB4000498C21 /* BSMySendedMailResponseVo.m */,
 			);
 			path = message;
 			sourceTree = "<group>";
@@ -2658,6 +2688,12 @@
 				D87BD959175340290004E1F6 /* BSUserDetailInfoTableViewCell4_iPhone.m in Sources */,
 				D87BD95B175340290004E1F6 /* BSUserDetailInfoTableViewCell5_iPhone.m in Sources */,
 				D87BD961175342EF0004E1F6 /* BSGreetingsTableViewCell_iPhone.m in Sources */,
+				D84F59401753AB4300498C21 /* BSRecommendUserRequestVo.m in Sources */,
+				D84F59431753AC8000498C21 /* BSRecommendUserResponseVo.m in Sources */,
+				D84F59461753B83F00498C21 /* BSMyMailRequestVo.m in Sources */,
+				D84F59491753B85700498C21 /* BSMySendedMailRequestVo.m in Sources */,
+				D84F594C1753BAF400498C21 /* BSMyMailResponseVo.m in Sources */,
+				D84F594F1753BB4000498C21 /* BSMySendedMailResponseVo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
