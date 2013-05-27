@@ -283,6 +283,27 @@
     [_birthdayButton release];
     [_scrollView release];
     [_nickNameField release];
+    [_mobile release];
+    [_password release];
+    [_selectedDate release];
+    [_nickName release];
+    [_sex release];
+    [_birthday release];
+    [_province release];
+    [_city release];
+    [_marryStatus release];
+    [_education release];
+    [_loveKind release];
+    [_salary release];
+    [_height release];
+    [_marryStatusArray release];
+    [_educationArray release];
+    [_loveKindArray release];
+    [_year release];
+    [_month release];
+    [_day release];
+    [_salaryArray release];
+    [_heightArray release];
     [super dealloc];
 }
 - (void)viewDidUnload {
