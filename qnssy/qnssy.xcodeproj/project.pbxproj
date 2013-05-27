@@ -26,6 +26,7 @@
 		5A3DD28316F3467200D91786 /* login_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A3DD28216F3467200D91786 /* login_selected.png */; };
 		5A3DD28C16F3551D00D91786 /* BSUserRegisterStepOneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A3DD28A16F3551D00D91786 /* BSUserRegisterStepOneViewController.m */; };
 		5A423507172A296400256FFE /* RegisterRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A423506172A296400256FFE /* RegisterRequestVo.m */; };
+		5A4AA2111752E66B00EB55B1 /* NSDate+TCUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4AA2101752E66B00EB55B1 /* NSDate+TCUtils.m */; };
 		5A4CCBA116FD6A7D002FA2E5 /* BSUserLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A4CCBA016FD6A7D002FA2E5 /* BSUserLoginViewController.xib */; };
 		5A64EBE616F2F93400F4E576 /* BSUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */; };
 		5A64EBED16F3091B00F4E576 /* login_input.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBEC16F3091B00F4E576 /* login_input.png */; };
@@ -418,6 +419,8 @@
 		5A3DD28A16F3551D00D91786 /* BSUserRegisterStepOneViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserRegisterStepOneViewController.m; sourceTree = "<group>"; };
 		5A423505172A296400256FFE /* RegisterRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterRequestVo.h; sourceTree = "<group>"; };
 		5A423506172A296400256FFE /* RegisterRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterRequestVo.m; sourceTree = "<group>"; };
+		5A4AA20F1752E66B00EB55B1 /* NSDate+TCUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TCUtils.h"; sourceTree = "<group>"; };
+		5A4AA2101752E66B00EB55B1 /* NSDate+TCUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TCUtils.m"; sourceTree = "<group>"; };
 		5A4CCBA016FD6A7D002FA2E5 /* BSUserLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserLoginViewController.xib; sourceTree = "<group>"; };
 		5A64EBE316F2F93400F4E576 /* BSUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserLoginViewController.h; sourceTree = "<group>"; };
 		5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserLoginViewController.m; sourceTree = "<group>"; };
@@ -946,6 +949,8 @@
 		5A1542D31750FDC700218363 /* Pickers */ = {
 			isa = PBXGroup;
 			children = (
+				5A4AA20F1752E66B00EB55B1 /* NSDate+TCUtils.h */,
+				5A4AA2101752E66B00EB55B1 /* NSDate+TCUtils.m */,
 				5A1542EC1750FF9F00218363 /* ActionSheetPicker.h */,
 				5A1542D41750FDC700218363 /* AbstractActionSheetPicker.h */,
 				5A1542D51750FDC700218363 /* AbstractActionSheetPicker.m */,
@@ -2578,6 +2583,7 @@
 				5A1542EB1750FF6C00218363 /* WorkAreaPickerViewDelegate.m in Sources */,
 				D8B06C82174E51AC009F6EFF /* UserInfoDao.m in Sources */,
 				D8B06C86174F26B4009F6EFF /* BSForgetPasswordViewController_iPhone.m in Sources */,
+				5A4AA2111752E66B00EB55B1 /* NSDate+TCUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

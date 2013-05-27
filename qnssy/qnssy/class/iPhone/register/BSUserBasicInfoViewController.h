@@ -19,6 +19,8 @@
 
 @property (retain, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
 @property (nonatomic, retain) WorkAreaPickerViewDelegate *workAreaPickerViewDelegate;
+@property (nonatomic, retain) AbstractActionSheetPicker *actionSheetPicker;
+@property (nonatomic, strong) NSDate *selectedDate;
 @property (retain, nonatomic) IBOutlet UITextField *nickNameField;
 
 @property (nonatomic, retain) NSString *nickName;
