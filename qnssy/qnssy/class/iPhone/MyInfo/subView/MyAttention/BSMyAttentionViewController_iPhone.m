@@ -10,7 +10,7 @@
 
 #import "BSMyAttentionTableViewCell_iPhone.h"
 
-#import "BSUserDetailInfoViewController.h"
+#import "BSUserDetailInfoViewController_iPhone.h"
 
 #import "MyAttentionRequestVo.h"
 #import "MyAttentionResponseVo.h"
@@ -140,7 +140,7 @@
 {
 
     
-    BSUserDetailInfoViewController *udivc = [[BSUserDetailInfoViewController alloc] initWithNibName:@"BSUserDetailInfoViewController" bundle:nil];
+    BSUserDetailInfoViewController_iPhone *udivc = [[BSUserDetailInfoViewController_iPhone alloc] initWithNibName:@"BSUserDetailInfoViewController_iPhone" bundle:nil];
     
     NSDictionary *dic = [self.dataArray objectAtIndex:indexPath.row];
     

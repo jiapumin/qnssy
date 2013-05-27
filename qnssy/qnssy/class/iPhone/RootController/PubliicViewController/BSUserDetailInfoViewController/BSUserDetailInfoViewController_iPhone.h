@@ -8,7 +8,7 @@
 
 #import "BSSuperCentreViewController_iPhone.h"
 
-@interface BSUserDetailInfoViewController : BSSuperCentreViewController_iPhone<UITableViewDataSource,UITableViewDelegate>
+@interface BSUserDetailInfoViewController_iPhone : BSSuperCentreViewController_iPhone<UITableViewDataSource,UITableViewDelegate>
 @property (retain, nonatomic) IBOutlet UITableView *myTableView;
 
 @property (retain,nonatomic) NSDictionary *userInfoDic;

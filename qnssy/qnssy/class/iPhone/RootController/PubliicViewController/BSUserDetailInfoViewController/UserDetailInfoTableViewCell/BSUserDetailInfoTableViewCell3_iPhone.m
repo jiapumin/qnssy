@@ -13,6 +13,8 @@
 
 #import "BSSendMailViewController_iPhone.h"
 
+#import "BSGreetingsViewController_iPhone.h"
+
 @implementation BSUserDetailInfoTableViewCell3_iPhone
 
 
@@ -41,6 +43,12 @@
 
 - (IBAction)clickWHButton:(id)sender {
         NSLog(@"问候");
+    NSLog(@"写信");
+    NSString *userid = [self.userVo objectForKey:@"userid"];
+    BSGreetingsViewController_iPhone *gvc = [[BSGreetingsViewController_iPhone alloc] initWithNibName:@"BSGreetingsViewController_iPhone" userid:userid];
+    
+    
+    [self.delegate.navigationController pushViewController:gvc animated:YES];
 }
 
 #pragma mark - request

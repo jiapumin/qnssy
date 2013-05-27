@@ -22,7 +22,6 @@
 }
 
 -(void) dealloc {
-    self.areaId = nil;
     self.areaName = nil;
     [super dealloc];
 }

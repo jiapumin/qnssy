@@ -13,7 +13,7 @@
 
 #import "BSLookedMeTableViewCell_iPhone.h"
 
-#import "BSUserDetailInfoViewController.h"
+#import "BSUserDetailInfoViewController_iPhone.h"
 
 @interface BSLookedMeViewController_iPhone (){
     MBProgressHUD *progressHUD;
@@ -142,7 +142,7 @@
     
     
     
-    BSUserDetailInfoViewController *udivc = [[BSUserDetailInfoViewController alloc] initWithNibName:@"BSUserDetailInfoViewController" bundle:nil];
+    BSUserDetailInfoViewController_iPhone *udivc = [[BSUserDetailInfoViewController_iPhone alloc] initWithNibName:@"BSUserDetailInfoViewController_iPhone" bundle:nil];
     
     NSDictionary *dic = [self.dataArray objectAtIndex:indexPath.row];
     
