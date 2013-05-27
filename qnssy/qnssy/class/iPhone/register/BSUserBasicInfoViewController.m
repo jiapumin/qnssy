@@ -6,6 +6,7 @@
 //  Copyright (c) 2013年 jpm. All rights reserved.
 //
 #import "TPKeyboardAvoidingScrollView.h"
+#import "NSDate+TCUtils.h"
 #import "BSUserBasicInfoViewController.h"
 #import "RegisterRequestVo.h"
 #import "LoginResponseVo.h"
@@ -68,6 +69,7 @@
     self.sex = @"1";
     self.province = @"0";
     self.city = @"0";
+    self.selectedDate = [NSDate date];
     // setup marrystatus data
     self.marryStatusArray = [NSArray arrayWithObjects:@"请选择", @"未婚", @"离异", @"丧偶", nil];
     // setup education data
@@ -79,7 +81,7 @@
     
     // setup height data
     NSMutableArray *tempHeightArray = [NSMutableArray array];
-    for (int i=130; i<=160; i++) {
+    for (int i=130; i<=260; i++) {
         [tempHeightArray addObject:[NSString stringWithFormat:@"%d",i]];
     }
     self.heightArray = tempHeightArray;
@@ -105,7 +107,9 @@
 }
 
 - (IBAction)birthdayAction:(UIButton *)sender {
-    [self DatePickerView];
+    _actionSheetPicker = [[ActionSheetDatePicker alloc] initWithTitle:@"生日" datePickerMode:UIDatePickerModeDate selectedDate:self.selectedDate target:self action:@selector(dateWasSelected:element:) origin:sender];
+    self.actionSheetPicker.hideCancel = YES;
+    [self.actionSheetPicker showActionSheetPicker];
 }
 
 - (IBAction)workAreaAction:(UIButton *)sender {
@@ -207,63 +211,12 @@
     [params release];
 }
 
-#pragma mark DatePickerView
-UIImagePickerController* imagePickerController;
-UIDatePicker *theDatePicker;
-UIToolbar* pickerToolbar;
-UIActionSheet* pickerViewDate;
--(void)DatePickerView
-{
-    pickerViewDate = [[UIActionSheet alloc] initWithTitle:@"How many?"
-                                                 delegate:self
-                                        cancelButtonTitle:nil
-                                   destructiveButtonTitle:nil
-                                        otherButtonTitles:nil];
-    
-    theDatePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0.0, 44.0, 0.0, 0.0)];
-    theDatePicker.datePickerMode = UIDatePickerModeDate;
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-    [dateFormatter setLocale:[[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"]autorelease]];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-    
-    [theDatePicker addTarget:self action:@selector(birthdayChanged:) forControlEvents:UIControlEventValueChanged];
-    
-    
-    pickerToolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
-    pickerToolbar.barStyle=UIBarStyleBlackOpaque;
-    [pickerToolbar sizeToFit];
-    NSMutableArray *barItems = [[NSMutableArray alloc] init];
-    UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(DatePickerDoneClick)];
-    [barItems addObject:flexSpace];
-    
-    [pickerToolbar setItems:barItems animated:YES];
-    [pickerViewDate addSubview:pickerToolbar];
-    [pickerViewDate addSubview:theDatePicker];
-    [pickerViewDate  showInView:self.view];
-    [pickerViewDate setBounds:CGRectMake(0,0,320, 418)];
-}
-
--(BOOL)closeDatePicker:(id)sender{
-    [pickerViewDate dismissWithClickedButtonIndex:0 animated:YES];
-    [pickerToolbar release];
-    [pickerViewDate release];
-    
-    
-    return YES;
-}
-
--(void)DatePickerDoneClick{
-    [self closeDatePicker:self];
-}
-
 #pragma mark -
-#pragma mark changed action
+#pragma mark birthday picker view selected action
 
--(void)birthdayChanged:(UIDatePicker *) dataPicker{
-    
-    NSString *tempDates = [NSString stringWithFormat:@"%@",dataPicker.date];
+- (void)dateWasSelected:(NSDate *)selectedDate element:(id)element {
+    self.selectedDate = selectedDate;
+    NSString *tempDates = [NSString stringWithFormat:@"%@",selectedDate];
     NSArray *data = [tempDates componentsSeparatedByString:@" "];
     NSString *riqi = [data objectAtIndex:0];
     NSArray *dates = [riqi componentsSeparatedByString:@"-"];
@@ -273,6 +226,7 @@ UIActionSheet* pickerViewDate;
     self.day = [dates objectAtIndex:2];
     
     [self.birthdayButton setTitle:[NSString stringWithFormat:@"%@-%@-%@",self.year, self.month, self.day] forState:UIControlStateNormal];
+    
 }
 
 #pragma mark - 服务器回调
