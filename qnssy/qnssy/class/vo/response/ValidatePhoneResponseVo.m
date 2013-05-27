@@ -14,7 +14,7 @@
     self = [super init];
     if (self) {
         NSArray *resultData = [result objectForKey:@"ResData"];
-        int status = [resultData valueForKey:@"status"];
+        int status = [[resultData valueForKey:@"status"] intValue];
         if (status == 0) {
             self.md5code = [resultData valueForKey:@"code"];
             self.isSuccess = [NSNumber numberWithBool:YES];

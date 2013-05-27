@@ -14,7 +14,7 @@
     self = [super init];
     if (self) {
         NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
-        [data setObject:[NSNumber numberWithInt:messageId] forKey:@"msgid"];
+        [data setObject:messageId forKey:@"msgid"];
         [self.mReqDic setObject:data forKey:@"data"];
         
         

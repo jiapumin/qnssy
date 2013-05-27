@@ -6,7 +6,7 @@
 //  Copyright (c) 2013年 jpm. All rights reserved.
 //
 
-#import "BSUserDetailInfoViewController.h"
+#import "BSUserDetailInfoViewController_iPhone.h"
 
 #import "BSUserDetailInfoTableViewCell1_iPhone.h"
 #import "BSUserDetailInfoTableViewCell2_iPhone.h"
@@ -17,12 +17,12 @@
 #import "RecommendInfoResponseVo.h"
 #import "RecommendInfoRequestVo.h"
 
-@interface BSUserDetailInfoViewController (){
+@interface BSUserDetailInfoViewController_iPhone (){
     MBProgressHUD *progressHUD;
 }
 @end
 
-@implementation BSUserDetailInfoViewController
+@implementation BSUserDetailInfoViewController_iPhone
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

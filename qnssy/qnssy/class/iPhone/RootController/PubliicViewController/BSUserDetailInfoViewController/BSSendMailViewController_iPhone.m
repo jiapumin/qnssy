@@ -8,9 +8,6 @@
 
 #import "BSSendMailViewController_iPhone.h"
 
-#import "MiaiApplyRequestVo.h"
-#import "MiaiApplyResponseVo.h"
-
 @interface BSSendMailViewController_iPhone (){
      MBProgressHUD *progressHUD;
 }

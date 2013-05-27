@@ -13,7 +13,7 @@
 
 #import "BSSearchResultTableViewCell_iPhone.h"
 
-#import "BSUserDetailInfoViewController.h"
+#import "BSUserDetailInfoViewController_iPhone.h"
 
 @interface BSSearchResultViewController_iPhone (){
 //    MBProgressHUD *progressHUD;
@@ -141,7 +141,7 @@
 {
     
 
-    BSUserDetailInfoViewController *udivc = [[BSUserDetailInfoViewController alloc] initWithNibName:@"BSUserDetailInfoViewController" bundle:nil];
+    BSUserDetailInfoViewController_iPhone *udivc = [[BSUserDetailInfoViewController_iPhone alloc] initWithNibName:@"BSUserDetailInfoViewController_iPhone" bundle:nil];
     
     NSDictionary *dic = [self.dataArray objectAtIndex:indexPath.row];
     

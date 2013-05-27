@@ -83,8 +83,6 @@
 		D8185E41174B438300995CAE /* SearchResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8185E40174B438300995CAE /* SearchResponseVo.m */; };
 		D8306364171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8306362171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.m */; };
 		D8306365171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8306363171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib */; };
-		D830636A171FD6FB006A256F /* BSUserDetailInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8306368171FD6FB006A256F /* BSUserDetailInfoViewController.m */; };
-		D830636B171FD6FB006A256F /* BSUserDetailInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8306369171FD6FB006A256F /* BSUserDetailInfoViewController.xib */; };
 		D830636E171FD71B006A256F /* BSSuperCentreViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D830636D171FD71B006A256F /* BSSuperCentreViewController_iPhone.m */; };
 		D83BD506171AE38C00E230FF /* RecommendImageListRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83BD505171AE38C00E230FF /* RecommendImageListRequestVo.m */; };
 		D83BD50A171AE43C00E230FF /* RecommendImageListResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83BD509171AE43C00E230FF /* RecommendImageListResponseVo.m */; };
@@ -106,14 +104,6 @@
 		D83DC8AA1727684500614BD4 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8A41727684500614BD4 /* Icon@2x.png */; };
 		D83DC8AD172773AC00614BD4 /* RecommendInfoRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8AC172773AB00614BD4 /* RecommendInfoRequestVo.m */; };
 		D83DC8B01727751800614BD4 /* RecommendInfoResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8AF1727751800614BD4 /* RecommendInfoResponseVo.m */; };
-		D83DC8BA17277E9B00614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8B217277E9700614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.m */; };
-		D83DC8BB17277E9B00614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8B317277E9700614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.xib */; };
-		D83DC8BC17277E9B00614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8B517277E9800614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.m */; };
-		D83DC8BD17277E9B00614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8B617277E9900614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.xib */; };
-		D83DC8BE17277E9B00614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8B817277E9900614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.m */; };
-		D83DC8BF17277E9B00614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8B917277E9900614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.xib */; };
-		D83DC8C3172792F800614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8C1172792F000614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.m */; };
-		D83DC8C4172792F800614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8C2172792F200614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.xib */; };
 		D84CB73B172A706D009C2BB9 /* MessageUnreadRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84CB73A172A706D009C2BB9 /* MessageUnreadRequestVo.m */; };
 		D84CB73E172A70B0009C2BB9 /* MessageUnreadResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84CB73D172A70B0009C2BB9 /* MessageUnreadResponseVo.m */; };
 		D85B6625171A949100581B00 /* BSMyAttentionViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D85B6623171A949100581B00 /* BSMyAttentionViewController_iPhone.m */; };
@@ -190,8 +180,25 @@
 		D87A058D16EF75A20052328E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A058C16EF75A10052328E /* CFNetwork.framework */; };
 		D87A058F16EF75AB0052328E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D87A058E16EF75AA0052328E /* SystemConfiguration.framework */; };
 		D87A059516EF77F90052328E /* 左栏_button_03@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D87A059316EF77F90052328E /* 左栏_button_03@2x.png */; };
-		D88885F6174F4B2D002C0567 /* BSSendMailViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D88885F4174F4B2D002C0567 /* BSSendMailViewController_iPhone.m */; };
-		D88885F7174F4B2D002C0567 /* BSSendMailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D88885F5174F4B2D002C0567 /* BSSendMailViewController_iPhone.xib */; };
+		D87BD93117533A2E0004E1F6 /* Greetings.plist in Resources */ = {isa = PBXBuildFile; fileRef = D87BD93017533A2E0004E1F6 /* Greetings.plist */; };
+		D87BD94D175340290004E1F6 /* BSGreetingsViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BD935175340290004E1F6 /* BSGreetingsViewController_iPhone.m */; };
+		D87BD94E175340290004E1F6 /* BSGreetingsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87BD936175340290004E1F6 /* BSGreetingsViewController_iPhone.xib */; };
+		D87BD94F175340290004E1F6 /* BSSendMailViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BD938175340290004E1F6 /* BSSendMailViewController_iPhone.m */; };
+		D87BD950175340290004E1F6 /* BSSendMailViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87BD939175340290004E1F6 /* BSSendMailViewController_iPhone.xib */; };
+		D87BD951175340290004E1F6 /* BSUserDetailInfoViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BD93B175340290004E1F6 /* BSUserDetailInfoViewController_iPhone.m */; };
+		D87BD952175340290004E1F6 /* BSUserDetailInfoViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87BD93C175340290004E1F6 /* BSUserDetailInfoViewController_iPhone.xib */; };
+		D87BD953175340290004E1F6 /* BSUserDetailInfoTableViewCell1_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BD93F175340290004E1F6 /* BSUserDetailInfoTableViewCell1_iPhone.m */; };
+		D87BD954175340290004E1F6 /* BSUserDetailInfoTableViewCell1_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87BD940175340290004E1F6 /* BSUserDetailInfoTableViewCell1_iPhone.xib */; };
+		D87BD955175340290004E1F6 /* BSUserDetailInfoTableViewCell2_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BD942175340290004E1F6 /* BSUserDetailInfoTableViewCell2_iPhone.m */; };
+		D87BD956175340290004E1F6 /* BSUserDetailInfoTableViewCell2_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87BD943175340290004E1F6 /* BSUserDetailInfoTableViewCell2_iPhone.xib */; };
+		D87BD957175340290004E1F6 /* BSUserDetailInfoTableViewCell3_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BD945175340290004E1F6 /* BSUserDetailInfoTableViewCell3_iPhone.m */; };
+		D87BD958175340290004E1F6 /* BSUserDetailInfoTableViewCell3_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87BD946175340290004E1F6 /* BSUserDetailInfoTableViewCell3_iPhone.xib */; };
+		D87BD959175340290004E1F6 /* BSUserDetailInfoTableViewCell4_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BD948175340290004E1F6 /* BSUserDetailInfoTableViewCell4_iPhone.m */; };
+		D87BD95A175340290004E1F6 /* BSUserDetailInfoTableViewCell4_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87BD949175340290004E1F6 /* BSUserDetailInfoTableViewCell4_iPhone.xib */; };
+		D87BD95B175340290004E1F6 /* BSUserDetailInfoTableViewCell5_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BD94B175340290004E1F6 /* BSUserDetailInfoTableViewCell5_iPhone.m */; };
+		D87BD95C175340290004E1F6 /* BSUserDetailInfoTableViewCell5_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87BD94C175340290004E1F6 /* BSUserDetailInfoTableViewCell5_iPhone.xib */; };
+		D87BD961175342EF0004E1F6 /* BSGreetingsTableViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D87BD95F175342EF0004E1F6 /* BSGreetingsTableViewCell_iPhone.m */; };
+		D87BD962175342EF0004E1F6 /* BSGreetingsTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D87BD960175342EF0004E1F6 /* BSGreetingsTableViewCell_iPhone.xib */; };
 		D88885FA174F513F002C0567 /* SendMailResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D88885F9174F513F002C0567 /* SendMailResponseVo.m */; };
 		D88885FD174F5169002C0567 /* SendMailRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D88885FC174F5169002C0567 /* SendMailRequestVo.m */; };
 		D8888FA816F34E7A00C14922 /* KBBreakpointTransmission.m in Sources */ = {isa = PBXBuildFile; fileRef = D8888FA516F34E7A00C14922 /* KBBreakpointTransmission.m */; };
@@ -323,8 +330,6 @@
 		D8E548E61725414C00EF4CC9 /* EveryDayMiaiListrResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E548E51725414C00EF4CC9 /* EveryDayMiaiListrResponseVo.m */; };
 		D8E548EB172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E548E9172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.m */; };
 		D8E548EC172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E548EA172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.xib */; };
-		D8E62969172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E62968172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.m */; };
-		D8E6296E172109EA005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E6296C172109EA005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.xib */; };
 		D8E6297317211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E6297117211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.m */; };
 		D8E6297417211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E6297217211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.xib */; };
 		D8E62980172135F5005CD0E0 /* myInfoData.plist in Resources */ = {isa = PBXBuildFile; fileRef = D8E6297F172135F5005CD0E0 /* myInfoData.plist */; };
@@ -504,9 +509,6 @@
 		D8306361171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMyAttentionTableViewCell_iPhone.h; sourceTree = "<group>"; };
 		D8306362171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMyAttentionTableViewCell_iPhone.m; sourceTree = "<group>"; };
 		D8306363171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMyAttentionTableViewCell_iPhone.xib; sourceTree = "<group>"; };
-		D8306367171FD6FB006A256F /* BSUserDetailInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoViewController.h; sourceTree = "<group>"; };
-		D8306368171FD6FB006A256F /* BSUserDetailInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoViewController.m; sourceTree = "<group>"; };
-		D8306369171FD6FB006A256F /* BSUserDetailInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoViewController.xib; sourceTree = "<group>"; };
 		D830636C171FD71B006A256F /* BSSuperCentreViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSuperCentreViewController_iPhone.h; sourceTree = "<group>"; };
 		D830636D171FD71B006A256F /* BSSuperCentreViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSuperCentreViewController_iPhone.m; sourceTree = "<group>"; };
 		D83BD504171AE38C00E230FF /* RecommendImageListRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendImageListRequestVo.h; sourceTree = "<group>"; };
@@ -540,18 +542,6 @@
 		D83DC8AC172773AB00614BD4 /* RecommendInfoRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendInfoRequestVo.m; sourceTree = "<group>"; };
 		D83DC8AE1727751800614BD4 /* RecommendInfoResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendInfoResponseVo.h; sourceTree = "<group>"; };
 		D83DC8AF1727751800614BD4 /* RecommendInfoResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendInfoResponseVo.m; sourceTree = "<group>"; };
-		D83DC8B117277E9600614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoTableViewCell2_iPhone.h; sourceTree = "<group>"; };
-		D83DC8B217277E9700614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoTableViewCell2_iPhone.m; sourceTree = "<group>"; };
-		D83DC8B317277E9700614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoTableViewCell2_iPhone.xib; sourceTree = "<group>"; };
-		D83DC8B417277E9700614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoTableViewCell3_iPhone.h; sourceTree = "<group>"; };
-		D83DC8B517277E9800614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoTableViewCell3_iPhone.m; sourceTree = "<group>"; };
-		D83DC8B617277E9900614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoTableViewCell3_iPhone.xib; sourceTree = "<group>"; };
-		D83DC8B717277E9900614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoTableViewCell4_iPhone.h; sourceTree = "<group>"; };
-		D83DC8B817277E9900614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoTableViewCell4_iPhone.m; sourceTree = "<group>"; };
-		D83DC8B917277E9900614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoTableViewCell4_iPhone.xib; sourceTree = "<group>"; };
-		D83DC8C0172792ED00614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoTableViewCell5_iPhone.h; sourceTree = "<group>"; };
-		D83DC8C1172792F000614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoTableViewCell5_iPhone.m; sourceTree = "<group>"; };
-		D83DC8C2172792F200614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoTableViewCell5_iPhone.xib; sourceTree = "<group>"; };
 		D84CB739172A706D009C2BB9 /* MessageUnreadRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageUnreadRequestVo.h; sourceTree = "<group>"; };
 		D84CB73A172A706D009C2BB9 /* MessageUnreadRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageUnreadRequestVo.m; sourceTree = "<group>"; };
 		D84CB73C172A70B0009C2BB9 /* MessageUnreadResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageUnreadResponseVo.h; sourceTree = "<group>"; };
@@ -676,9 +666,34 @@
 		D87A058C16EF75A10052328E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		D87A058E16EF75AA0052328E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D87A059316EF77F90052328E /* 左栏_button_03@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "左栏_button_03@2x.png"; sourceTree = "<group>"; };
-		D88885F3174F4B2D002C0567 /* BSSendMailViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSendMailViewController_iPhone.h; sourceTree = "<group>"; };
-		D88885F4174F4B2D002C0567 /* BSSendMailViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSendMailViewController_iPhone.m; sourceTree = "<group>"; };
-		D88885F5174F4B2D002C0567 /* BSSendMailViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSSendMailViewController_iPhone.xib; sourceTree = "<group>"; };
+		D87BD93017533A2E0004E1F6 /* Greetings.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Greetings.plist; sourceTree = "<group>"; };
+		D87BD934175340290004E1F6 /* BSGreetingsViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSGreetingsViewController_iPhone.h; sourceTree = "<group>"; };
+		D87BD935175340290004E1F6 /* BSGreetingsViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSGreetingsViewController_iPhone.m; sourceTree = "<group>"; };
+		D87BD936175340290004E1F6 /* BSGreetingsViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSGreetingsViewController_iPhone.xib; sourceTree = "<group>"; };
+		D87BD937175340290004E1F6 /* BSSendMailViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSendMailViewController_iPhone.h; sourceTree = "<group>"; };
+		D87BD938175340290004E1F6 /* BSSendMailViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSendMailViewController_iPhone.m; sourceTree = "<group>"; };
+		D87BD939175340290004E1F6 /* BSSendMailViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSSendMailViewController_iPhone.xib; sourceTree = "<group>"; };
+		D87BD93A175340290004E1F6 /* BSUserDetailInfoViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoViewController_iPhone.h; sourceTree = "<group>"; };
+		D87BD93B175340290004E1F6 /* BSUserDetailInfoViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoViewController_iPhone.m; sourceTree = "<group>"; };
+		D87BD93C175340290004E1F6 /* BSUserDetailInfoViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoViewController_iPhone.xib; sourceTree = "<group>"; };
+		D87BD93E175340290004E1F6 /* BSUserDetailInfoTableViewCell1_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoTableViewCell1_iPhone.h; sourceTree = "<group>"; };
+		D87BD93F175340290004E1F6 /* BSUserDetailInfoTableViewCell1_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoTableViewCell1_iPhone.m; sourceTree = "<group>"; };
+		D87BD940175340290004E1F6 /* BSUserDetailInfoTableViewCell1_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoTableViewCell1_iPhone.xib; sourceTree = "<group>"; };
+		D87BD941175340290004E1F6 /* BSUserDetailInfoTableViewCell2_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoTableViewCell2_iPhone.h; sourceTree = "<group>"; };
+		D87BD942175340290004E1F6 /* BSUserDetailInfoTableViewCell2_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoTableViewCell2_iPhone.m; sourceTree = "<group>"; };
+		D87BD943175340290004E1F6 /* BSUserDetailInfoTableViewCell2_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoTableViewCell2_iPhone.xib; sourceTree = "<group>"; };
+		D87BD944175340290004E1F6 /* BSUserDetailInfoTableViewCell3_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoTableViewCell3_iPhone.h; sourceTree = "<group>"; };
+		D87BD945175340290004E1F6 /* BSUserDetailInfoTableViewCell3_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoTableViewCell3_iPhone.m; sourceTree = "<group>"; };
+		D87BD946175340290004E1F6 /* BSUserDetailInfoTableViewCell3_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoTableViewCell3_iPhone.xib; sourceTree = "<group>"; };
+		D87BD947175340290004E1F6 /* BSUserDetailInfoTableViewCell4_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoTableViewCell4_iPhone.h; sourceTree = "<group>"; };
+		D87BD948175340290004E1F6 /* BSUserDetailInfoTableViewCell4_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoTableViewCell4_iPhone.m; sourceTree = "<group>"; };
+		D87BD949175340290004E1F6 /* BSUserDetailInfoTableViewCell4_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoTableViewCell4_iPhone.xib; sourceTree = "<group>"; };
+		D87BD94A175340290004E1F6 /* BSUserDetailInfoTableViewCell5_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoTableViewCell5_iPhone.h; sourceTree = "<group>"; };
+		D87BD94B175340290004E1F6 /* BSUserDetailInfoTableViewCell5_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoTableViewCell5_iPhone.m; sourceTree = "<group>"; };
+		D87BD94C175340290004E1F6 /* BSUserDetailInfoTableViewCell5_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoTableViewCell5_iPhone.xib; sourceTree = "<group>"; };
+		D87BD95E175342EF0004E1F6 /* BSGreetingsTableViewCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSGreetingsTableViewCell_iPhone.h; sourceTree = "<group>"; };
+		D87BD95F175342EF0004E1F6 /* BSGreetingsTableViewCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSGreetingsTableViewCell_iPhone.m; sourceTree = "<group>"; };
+		D87BD960175342EF0004E1F6 /* BSGreetingsTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSGreetingsTableViewCell_iPhone.xib; sourceTree = "<group>"; };
 		D88885F8174F513F002C0567 /* SendMailResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendMailResponseVo.h; sourceTree = "<group>"; };
 		D88885F9174F513F002C0567 /* SendMailResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendMailResponseVo.m; sourceTree = "<group>"; };
 		D88885FB174F5169002C0567 /* SendMailRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendMailRequestVo.h; sourceTree = "<group>"; };
@@ -886,9 +901,6 @@
 		D8E548E8172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSEveryDayMiaiTableViewCell_iPhone.h; sourceTree = "<group>"; };
 		D8E548E9172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSEveryDayMiaiTableViewCell_iPhone.m; sourceTree = "<group>"; };
 		D8E548EA172545DD00EF4CC9 /* BSEveryDayMiaiTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSEveryDayMiaiTableViewCell_iPhone.xib; sourceTree = "<group>"; };
-		D8E62967172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserDetailInfoTableViewCell1_iPhone.h; sourceTree = "<group>"; };
-		D8E62968172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserDetailInfoTableViewCell1_iPhone.m; sourceTree = "<group>"; };
-		D8E6296C172109EA005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserDetailInfoTableViewCell1_iPhone.xib; sourceTree = "<group>"; };
 		D8E6297017211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseInfoTableViewCell_iPhone.h; sourceTree = "<group>"; };
 		D8E6297117211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseInfoTableViewCell_iPhone.m; sourceTree = "<group>"; };
 		D8E6297217211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BaseInfoTableViewCell_iPhone.xib; sourceTree = "<group>"; };
@@ -1158,15 +1170,9 @@
 		D8306366171FD6FB006A256F /* PubliicViewController */ = {
 			isa = PBXGroup;
 			children = (
-				D88885F3174F4B2D002C0567 /* BSSendMailViewController_iPhone.h */,
-				D88885F4174F4B2D002C0567 /* BSSendMailViewController_iPhone.m */,
-				D88885F5174F4B2D002C0567 /* BSSendMailViewController_iPhone.xib */,
+				D87BD932175340280004E1F6 /* BSUserDetailInfoViewController */,
 				D830636C171FD71B006A256F /* BSSuperCentreViewController_iPhone.h */,
 				D830636D171FD71B006A256F /* BSSuperCentreViewController_iPhone.m */,
-				D8306367171FD6FB006A256F /* BSUserDetailInfoViewController.h */,
-				D8306368171FD6FB006A256F /* BSUserDetailInfoViewController.m */,
-				D8306369171FD6FB006A256F /* BSUserDetailInfoViewController.xib */,
-				D8E6296617210930005CD0E0 /* UserDetailInfoTableViewCell */,
 			);
 			path = PubliicViewController;
 			sourceTree = "<group>";
@@ -1770,8 +1776,59 @@
 				D83DC8A31727684500614BD4 /* Icon.png */,
 				D83DC8A41727684500614BD4 /* Icon@2x.png */,
 				5AAE6E4E16FAAF79006FDFB7 /* area.plist */,
+				D87BD93017533A2E0004E1F6 /* Greetings.plist */,
 			);
 			path = Public;
+			sourceTree = "<group>";
+		};
+		D87BD932175340280004E1F6 /* BSUserDetailInfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D87BD93A175340290004E1F6 /* BSUserDetailInfoViewController_iPhone.h */,
+				D87BD93B175340290004E1F6 /* BSUserDetailInfoViewController_iPhone.m */,
+				D87BD93C175340290004E1F6 /* BSUserDetailInfoViewController_iPhone.xib */,
+				D87BD934175340290004E1F6 /* BSGreetingsViewController_iPhone.h */,
+				D87BD935175340290004E1F6 /* BSGreetingsViewController_iPhone.m */,
+				D87BD936175340290004E1F6 /* BSGreetingsViewController_iPhone.xib */,
+				D87BD937175340290004E1F6 /* BSSendMailViewController_iPhone.h */,
+				D87BD938175340290004E1F6 /* BSSendMailViewController_iPhone.m */,
+				D87BD939175340290004E1F6 /* BSSendMailViewController_iPhone.xib */,
+				D87BD95D175342EE0004E1F6 /* BSGreetingsTableViewCell */,
+				D87BD93D175340290004E1F6 /* UserDetailInfoTableViewCell */,
+			);
+			path = BSUserDetailInfoViewController;
+			sourceTree = "<group>";
+		};
+		D87BD93D175340290004E1F6 /* UserDetailInfoTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D87BD93E175340290004E1F6 /* BSUserDetailInfoTableViewCell1_iPhone.h */,
+				D87BD93F175340290004E1F6 /* BSUserDetailInfoTableViewCell1_iPhone.m */,
+				D87BD940175340290004E1F6 /* BSUserDetailInfoTableViewCell1_iPhone.xib */,
+				D87BD941175340290004E1F6 /* BSUserDetailInfoTableViewCell2_iPhone.h */,
+				D87BD942175340290004E1F6 /* BSUserDetailInfoTableViewCell2_iPhone.m */,
+				D87BD943175340290004E1F6 /* BSUserDetailInfoTableViewCell2_iPhone.xib */,
+				D87BD944175340290004E1F6 /* BSUserDetailInfoTableViewCell3_iPhone.h */,
+				D87BD945175340290004E1F6 /* BSUserDetailInfoTableViewCell3_iPhone.m */,
+				D87BD946175340290004E1F6 /* BSUserDetailInfoTableViewCell3_iPhone.xib */,
+				D87BD947175340290004E1F6 /* BSUserDetailInfoTableViewCell4_iPhone.h */,
+				D87BD948175340290004E1F6 /* BSUserDetailInfoTableViewCell4_iPhone.m */,
+				D87BD949175340290004E1F6 /* BSUserDetailInfoTableViewCell4_iPhone.xib */,
+				D87BD94A175340290004E1F6 /* BSUserDetailInfoTableViewCell5_iPhone.h */,
+				D87BD94B175340290004E1F6 /* BSUserDetailInfoTableViewCell5_iPhone.m */,
+				D87BD94C175340290004E1F6 /* BSUserDetailInfoTableViewCell5_iPhone.xib */,
+			);
+			path = UserDetailInfoTableViewCell;
+			sourceTree = "<group>";
+		};
+		D87BD95D175342EE0004E1F6 /* BSGreetingsTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D87BD95E175342EF0004E1F6 /* BSGreetingsTableViewCell_iPhone.h */,
+				D87BD95F175342EF0004E1F6 /* BSGreetingsTableViewCell_iPhone.m */,
+				D87BD960175342EF0004E1F6 /* BSGreetingsTableViewCell_iPhone.xib */,
+			);
+			path = BSGreetingsTableViewCell;
 			sourceTree = "<group>";
 		};
 		D8888FA316F34E7A00C14922 /* BreakpointTransmission */ = {
@@ -2140,28 +2197,6 @@
 			path = BSEveryDayMiaiTableViewCell;
 			sourceTree = "<group>";
 		};
-		D8E6296617210930005CD0E0 /* UserDetailInfoTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				D8E62967172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.h */,
-				D8E62968172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.m */,
-				D8E6296C172109EA005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.xib */,
-				D83DC8B117277E9600614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.h */,
-				D83DC8B217277E9700614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.m */,
-				D83DC8B317277E9700614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.xib */,
-				D83DC8B417277E9700614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.h */,
-				D83DC8B517277E9800614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.m */,
-				D83DC8B617277E9900614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.xib */,
-				D83DC8B717277E9900614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.h */,
-				D83DC8B817277E9900614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.m */,
-				D83DC8B917277E9900614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.xib */,
-				D83DC8C0172792ED00614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.h */,
-				D83DC8C1172792F000614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.m */,
-				D83DC8C2172792F200614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.xib */,
-			);
-			path = UserDetailInfoTableViewCell;
-			sourceTree = "<group>";
-		};
 		D8E6296F17211B6F005CD0E0 /* BaseInfoTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -2401,8 +2436,6 @@
 				D85B6645171AA06C00581B00 /* BSLookedMeViewController_iPhone.xib in Resources */,
 				D85B664B171AA66B00581B00 /* BSBaseInfoViewController_iPhone.xib in Resources */,
 				D8306365171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib in Resources */,
-				D830636B171FD6FB006A256F /* BSUserDetailInfoViewController.xib in Resources */,
-				D8E6296E172109EA005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.xib in Resources */,
 				D8E6297417211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.xib in Resources */,
 				D8E62980172135F5005CD0E0 /* myInfoData.plist in Resources */,
 				D871CE3D1722E243006EE28A /* 删除照片.png in Resources */,
@@ -2425,10 +2458,6 @@
 				D83DC8A81727684500614BD4 /* Icon-Small@2x.png in Resources */,
 				D83DC8A91727684500614BD4 /* Icon.png in Resources */,
 				D83DC8AA1727684500614BD4 /* Icon@2x.png in Resources */,
-				D83DC8BB17277E9B00614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.xib in Resources */,
-				D83DC8BD17277E9B00614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.xib in Resources */,
-				D83DC8BF17277E9B00614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.xib in Resources */,
-				D83DC8C4172792F800614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.xib in Resources */,
 				D8AECECF172B622C00872F57 /* 我要报名bg.png in Resources */,
 				D8AECED0172B622C00872F57 /* 我要报名bg@2x.png in Resources */,
 				5ADA5269172EBBBD00D2EEA4 /* area.sqlite in Resources */,
@@ -2443,7 +2472,16 @@
 				D8185E3D174B41F600995CAE /* BSSearchResultTableViewCell_iPhone.xib in Resources */,
 				5AD801E6174DF83100B0A0B7 /* BSUserBasicInfoViewController.xib in Resources */,
 				D8B06C87174F26B4009F6EFF /* BSForgetPasswordViewController_iPhone.xib in Resources */,
-				D88885F7174F4B2D002C0567 /* BSSendMailViewController_iPhone.xib in Resources */,
+				D87BD93117533A2E0004E1F6 /* Greetings.plist in Resources */,
+				D87BD94E175340290004E1F6 /* BSGreetingsViewController_iPhone.xib in Resources */,
+				D87BD950175340290004E1F6 /* BSSendMailViewController_iPhone.xib in Resources */,
+				D87BD952175340290004E1F6 /* BSUserDetailInfoViewController_iPhone.xib in Resources */,
+				D87BD954175340290004E1F6 /* BSUserDetailInfoTableViewCell1_iPhone.xib in Resources */,
+				D87BD956175340290004E1F6 /* BSUserDetailInfoTableViewCell2_iPhone.xib in Resources */,
+				D87BD958175340290004E1F6 /* BSUserDetailInfoTableViewCell3_iPhone.xib in Resources */,
+				D87BD95A175340290004E1F6 /* BSUserDetailInfoTableViewCell4_iPhone.xib in Resources */,
+				D87BD95C175340290004E1F6 /* BSUserDetailInfoTableViewCell5_iPhone.xib in Resources */,
+				D87BD962175342EF0004E1F6 /* BSGreetingsTableViewCell_iPhone.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2558,9 +2596,7 @@
 				D870C49D171F9F51000D8286 /* SignInRequestVo.m in Sources */,
 				D870C4A0171FA1F6000D8286 /* UpdateMyPhotoRequestVo.m in Sources */,
 				D8306364171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.m in Sources */,
-				D830636A171FD6FB006A256F /* BSUserDetailInfoViewController.m in Sources */,
 				D830636E171FD71B006A256F /* BSSuperCentreViewController_iPhone.m in Sources */,
-				D8E62969172109B4005CD0E0 /* BSUserDetailInfoTableViewCell1_iPhone.m in Sources */,
 				D8E6297317211B70005CD0E0 /* BaseInfoTableViewCell_iPhone.m in Sources */,
 				D8768B72172418AC00A407DC /* BSSettingViewController_iPhone.m in Sources */,
 				D8768B791724192C00A407DC /* BSAboutViewController_iPhone.m in Sources */,
@@ -2583,10 +2619,6 @@
 				D83DC89E1726704A00614BD4 /* MiaiApplyResponseVo.m in Sources */,
 				D83DC8AD172773AC00614BD4 /* RecommendInfoRequestVo.m in Sources */,
 				D83DC8B01727751800614BD4 /* RecommendInfoResponseVo.m in Sources */,
-				D83DC8BA17277E9B00614BD4 /* BSUserDetailInfoTableViewCell2_iPhone.m in Sources */,
-				D83DC8BC17277E9B00614BD4 /* BSUserDetailInfoTableViewCell3_iPhone.m in Sources */,
-				D83DC8BE17277E9B00614BD4 /* BSUserDetailInfoTableViewCell4_iPhone.m in Sources */,
-				D83DC8C3172792F800614BD4 /* BSUserDetailInfoTableViewCell5_iPhone.m in Sources */,
 				D84CB73B172A706D009C2BB9 /* MessageUnreadRequestVo.m in Sources */,
 				D84CB73E172A70B0009C2BB9 /* MessageUnreadResponseVo.m in Sources */,
 				5A423507172A296400256FFE /* RegisterRequestVo.m in Sources */,
@@ -2615,9 +2647,17 @@
 				5A4AA2111752E66B00EB55B1 /* NSDate+TCUtils.m in Sources */,
 				D88C6011174F471500B75D6C /* AddAttentionRequestVo.m in Sources */,
 				D88C6014174F47A000B75D6C /* AddAttentionResponseVo.m in Sources */,
-				D88885F6174F4B2D002C0567 /* BSSendMailViewController_iPhone.m in Sources */,
 				D88885FA174F513F002C0567 /* SendMailResponseVo.m in Sources */,
 				D88885FD174F5169002C0567 /* SendMailRequestVo.m in Sources */,
+				D87BD94D175340290004E1F6 /* BSGreetingsViewController_iPhone.m in Sources */,
+				D87BD94F175340290004E1F6 /* BSSendMailViewController_iPhone.m in Sources */,
+				D87BD951175340290004E1F6 /* BSUserDetailInfoViewController_iPhone.m in Sources */,
+				D87BD953175340290004E1F6 /* BSUserDetailInfoTableViewCell1_iPhone.m in Sources */,
+				D87BD955175340290004E1F6 /* BSUserDetailInfoTableViewCell2_iPhone.m in Sources */,
+				D87BD957175340290004E1F6 /* BSUserDetailInfoTableViewCell3_iPhone.m in Sources */,
+				D87BD959175340290004E1F6 /* BSUserDetailInfoTableViewCell4_iPhone.m in Sources */,
+				D87BD95B175340290004E1F6 /* BSUserDetailInfoTableViewCell5_iPhone.m in Sources */,
+				D87BD961175342EF0004E1F6 /* BSGreetingsTableViewCell_iPhone.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

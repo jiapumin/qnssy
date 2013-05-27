@@ -22,5 +22,4 @@
 - (IBAction)zhengceAction:(id)sender;
 - (IBAction)registerNextAction:(id)sender;
 
-- (IBAction)clickBackButton:(id)sender;
 @end
