@@ -51,8 +51,8 @@
         contentRect = CGRectUnion(contentRect, subview.frame);
     }
     self.scrollView.contentSize = CGSizeMake(self.scrollView.bounds.size.width, CGRectGetMaxY(contentRect)+10);
-    //头部nav背景
-    [self.myNavigationBar setBackgroundImage:[UIImage imageNamed:@"2顶部条状背景"] forBarMetrics:UIBarMetricsDefault];
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    self.title = @"注册";
 
     //初始化控件
     self.userAccount = [[UITextField alloc] initWithFrame:CGRectMake(20, 20, 280, 40)];
@@ -184,10 +184,6 @@
 
 - (void) validateFailed:(id) sender data:(NSDictionary *) dic{
     NSLog(@"-----  %@",dic);
-}
-
-- (IBAction)clickBackButton:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
 }
 
 // 正则判断手机号码地址格式

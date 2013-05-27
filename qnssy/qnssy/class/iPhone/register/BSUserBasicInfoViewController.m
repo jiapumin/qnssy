@@ -50,7 +50,7 @@
     }
     self.scrollView.contentSize = CGSizeMake(self.view.frame.size.width, 790);
     
-    [self configureNavigationController];
+//    [self configureNavigationController];
     self.view.backgroundColor = publicColor;
     
     // setup data
@@ -87,36 +87,6 @@
     self.heightArray = tempHeightArray;
 }
 
-#pragma mark -
-#pragma mark configure navigation controller
-
--(void) configureNavigationController {
-    [self.navigationController setNavigationBarHidden:NO animated:NO];
-    UIButton *topLeftButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    //按钮大小
-    CGRect btnFrame = CGRectMake(0.0, 4.0, 29.0, 25.0);
-    topLeftButton.frame =btnFrame;
-    
-    //设置返回按钮图片和方法
-    [topLeftButton setImage:[UIImage imageNamed:@"2向左返回箭头"]
-                   forState:UIControlStateNormal];
-    
-    [topLeftButton addTarget:self
-                      action:@selector(popViewContoller)
-            forControlEvents:UIControlEventTouchUpInside];
-    
-    UIBarButtonItem * topLeftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:topLeftButton];
-    self.navigationItem.leftBarButtonItem = topLeftBarButtonItem;
-    [topLeftBarButtonItem release];
-    //设置背景图片
-    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"2顶部条状背景"] forBarMetrics:UIBarMetricsDefault];
-}
-
-#pragma mark pop
-- (void)popViewContoller{
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
-    [self.navigationController popViewControllerAnimated:YES];
-}
 
 #pragma mark -
 #pragma mark Actions

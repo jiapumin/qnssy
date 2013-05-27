@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BSSuperCentreViewController_iPhone.h"
 
-@interface BSValidatePhoneNumberViewController : UIViewController
+@interface BSValidatePhoneNumberViewController : BSSuperCentreViewController_iPhone
 
 @property (retain, nonatomic) IBOutlet UILabel *userMobileLabel;
 @property (retain, nonatomic) UITextField *validateNumber;
