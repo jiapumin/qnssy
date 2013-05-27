@@ -186,29 +186,39 @@
     self.nickName = self.nickNameField.text;
     self.province = self.workAreaPickerViewDelegate.provinceId;
     self.city = self.workAreaPickerViewDelegate.cityId;
-    [params setObject:self.nickName forKey:@"username"];
-    [params setObject:self.mobile forKey:@"mobile"];
-    [params setObject:self.password forKey:@"password"];
-    [params setObject:self.sex forKey:@"sex"];
-    [params setObject:self.height forKey:@"height"];
-    [params setObject:self.year forKey:@"year"];
-    [params setObject:self.month forKey:@"month"];
-    [params setObject:self.day forKey:@"day"];
-    [params setObject:self.marryStatus forKey:@"marrystatus"];
-    [params setObject:self.loveKind forKey:@"lovekind"];
-    [params setObject:self.education forKey:@"education"];
-    [params setObject:self.salary forKey:@"salary"];
-    [params setObject:self.province forKey:@"provinceid"];
-    [params setObject:self.city forKey:@"cityid"];
-    
-    RegisterRequestVo *requestVo = [[RegisterRequestVo alloc] initWithParams:params];
-    [[BSContainer instance].serviceAgent callServletWithObject:self
-                                                   requestDict:requestVo.mReqDic
-                                                        target:self
-                                               successCallBack:@selector(validateSucceess:data:)
-                                                  failCallBack:@selector(validateFailed:data:)];
-    [requestVo release];
-    [params release];
+    if ([self.nickName isEqual:[NSNull null]] || [self.mobile isEqual:[NSNull null]] || [self.password isEqual:[NSNull null]] || [self.sex isEqual:[NSNull null]] || [self.height isEqual:[NSNull null]] || [self.year isEqual:[NSNull null]] || [self.month isEqual:[NSNull null]] || [self.day isEqual:[NSNull null]] || [self.marryStatus isEqual:[NSNull null]] || [self.loveKind isEqual:[NSNull null]] || [self.education isEqual:[NSNull null]] || [self.salary isEqual:[NSNull null]] || [self.province isEqual:[NSNull null]] || [self.city isEqual:[NSNull null]]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"资料似乎不完整" delegate:self cancelButtonTitle:@"检查" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+    } else if(self.nickName.length < 2){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"昵称太短了，要大于2个哦" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+    } else {
+        [params setObject:self.nickName forKey:@"username"];
+        [params setObject:self.mobile forKey:@"mobile"];
+        [params setObject:self.password forKey:@"password"];
+        [params setObject:self.sex forKey:@"sex"];
+        [params setObject:self.height forKey:@"height"];
+        [params setObject:self.year forKey:@"year"];
+        [params setObject:self.month forKey:@"month"];
+        [params setObject:self.day forKey:@"day"];
+        [params setObject:self.marryStatus forKey:@"marrystatus"];
+        [params setObject:self.loveKind forKey:@"lovekind"];
+        [params setObject:self.education forKey:@"education"];
+        [params setObject:self.salary forKey:@"salary"];
+        [params setObject:self.province forKey:@"provinceid"];
+        [params setObject:self.city forKey:@"cityid"];
+        
+        RegisterRequestVo *requestVo = [[RegisterRequestVo alloc] initWithParams:params];
+        [[BSContainer instance].serviceAgent callServletWithObject:self
+                                                       requestDict:requestVo.mReqDic
+                                                            target:self
+                                                   successCallBack:@selector(validateSucceess:data:)
+                                                      failCallBack:@selector(validateFailed:data:)];
+        [requestVo release];
+        [params release];
+    }
 }
 
 #pragma mark -
@@ -273,6 +283,27 @@
     [_birthdayButton release];
     [_scrollView release];
     [_nickNameField release];
+    [_mobile release];
+    [_password release];
+    [_selectedDate release];
+    [_nickName release];
+    [_sex release];
+    [_birthday release];
+    [_province release];
+    [_city release];
+    [_marryStatus release];
+    [_education release];
+    [_loveKind release];
+    [_salary release];
+    [_height release];
+    [_marryStatusArray release];
+    [_educationArray release];
+    [_loveKindArray release];
+    [_year release];
+    [_month release];
+    [_day release];
+    [_salaryArray release];
+    [_heightArray release];
     [super dealloc];
 }
 - (void)viewDidUnload {
