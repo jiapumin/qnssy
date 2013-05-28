@@ -104,8 +104,6 @@
 		D83DC8AA1727684500614BD4 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8A41727684500614BD4 /* Icon@2x.png */; };
 		D83DC8AD172773AC00614BD4 /* RecommendInfoRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8AC172773AB00614BD4 /* RecommendInfoRequestVo.m */; };
 		D83DC8B01727751800614BD4 /* RecommendInfoResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8AF1727751800614BD4 /* RecommendInfoResponseVo.m */; };
-		D84CB73B172A706D009C2BB9 /* MessageUnreadRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84CB73A172A706D009C2BB9 /* MessageUnreadRequestVo.m */; };
-		D84CB73E172A70B0009C2BB9 /* MessageUnreadResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84CB73D172A70B0009C2BB9 /* MessageUnreadResponseVo.m */; };
 		D84F59401753AB4300498C21 /* BSRecommendUserRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F593F1753AB4300498C21 /* BSRecommendUserRequestVo.m */; };
 		D84F59431753AC8000498C21 /* BSRecommendUserResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F59421753AC8000498C21 /* BSRecommendUserResponseVo.m */; };
 		D84F59461753B83F00498C21 /* BSMyMailRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F59451753B83F00498C21 /* BSMyMailRequestVo.m */; };
@@ -553,10 +551,6 @@
 		D83DC8AC172773AB00614BD4 /* RecommendInfoRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendInfoRequestVo.m; sourceTree = "<group>"; };
 		D83DC8AE1727751800614BD4 /* RecommendInfoResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendInfoResponseVo.h; sourceTree = "<group>"; };
 		D83DC8AF1727751800614BD4 /* RecommendInfoResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendInfoResponseVo.m; sourceTree = "<group>"; };
-		D84CB739172A706D009C2BB9 /* MessageUnreadRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageUnreadRequestVo.h; sourceTree = "<group>"; };
-		D84CB73A172A706D009C2BB9 /* MessageUnreadRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageUnreadRequestVo.m; sourceTree = "<group>"; };
-		D84CB73C172A70B0009C2BB9 /* MessageUnreadResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageUnreadResponseVo.h; sourceTree = "<group>"; };
-		D84CB73D172A70B0009C2BB9 /* MessageUnreadResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageUnreadResponseVo.m; sourceTree = "<group>"; };
 		D84F593E1753AB4300498C21 /* BSRecommendUserRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRecommendUserRequestVo.h; sourceTree = "<group>"; };
 		D84F593F1753AB4300498C21 /* BSRecommendUserRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRecommendUserRequestVo.m; sourceTree = "<group>"; };
 		D84F59411753AC8000498C21 /* BSRecommendUserResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRecommendUserResponseVo.h; sourceTree = "<group>"; };
@@ -1269,8 +1263,6 @@
 		D84CB737172A701E009C2BB9 /* message */ = {
 			isa = PBXGroup;
 			children = (
-				D84CB739172A706D009C2BB9 /* MessageUnreadRequestVo.h */,
-				D84CB73A172A706D009C2BB9 /* MessageUnreadRequestVo.m */,
 				5AD89970173A43ED00F1332F /* MessageReadedRequestVo.h */,
 				5AD89971173A43ED00F1332F /* MessageReadedRequestVo.m */,
 				D84F59441753B83F00498C21 /* BSMyMailRequestVo.h */,
@@ -1286,8 +1278,6 @@
 		D84CB738172A702D009C2BB9 /* message */ = {
 			isa = PBXGroup;
 			children = (
-				D84CB73C172A70B0009C2BB9 /* MessageUnreadResponseVo.h */,
-				D84CB73D172A70B0009C2BB9 /* MessageUnreadResponseVo.m */,
 				D84F594A1753BAF400498C21 /* BSMyMailResponseVo.h */,
 				D84F594B1753BAF400498C21 /* BSMyMailResponseVo.m */,
 				D84F594D1753BB4000498C21 /* BSMySendedMailResponseVo.h */,
@@ -2672,8 +2662,6 @@
 				D83DC89E1726704A00614BD4 /* MiaiApplyResponseVo.m in Sources */,
 				D83DC8AD172773AC00614BD4 /* RecommendInfoRequestVo.m in Sources */,
 				D83DC8B01727751800614BD4 /* RecommendInfoResponseVo.m in Sources */,
-				D84CB73B172A706D009C2BB9 /* MessageUnreadRequestVo.m in Sources */,
-				D84CB73E172A70B0009C2BB9 /* MessageUnreadResponseVo.m in Sources */,
 				5A423507172A296400256FFE /* RegisterRequestVo.m in Sources */,
 				5ADA5261172EB48D00D2EEA4 /* AreaDatabase.m in Sources */,
 				5ADA5267172EB70800D2EEA4 /* AreaInfo.m in Sources */,

@@ -26,7 +26,7 @@
                 if (resCode2 == 0) {
                     //用户操作成功（服务器执行命令成功）
                     NSDictionary *ResData2 = [ResData objectForKey:@"ResData"];
-                    if (ResData2 != nil) {
+                    if (ResData2 != nil && ![ResData2 isEqual:@""]) {
                         [self analysisData:ResData2];
                     }
                     

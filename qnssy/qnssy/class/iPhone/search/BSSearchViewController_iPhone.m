@@ -780,7 +780,7 @@
 - (void) searchSucceess:(id) sender data:(NSDictionary *) dic {
     
     SearchResponseVo *vo = [[SearchResponseVo alloc] initWithDic:dic];
-    if (vo.status == 1) {
+    if (vo.status == 1 || vo.searchList == nil) {
         UIAlertView *alter = [[UIAlertView alloc] initWithTitle:@"提示" message:[[[dic objectForKey:@"data"] objectForKey:@"ResData"] objectForKey:@"Message"] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alter show];
         [alter release];

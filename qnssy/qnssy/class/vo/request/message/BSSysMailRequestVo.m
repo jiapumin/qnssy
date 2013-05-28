@@ -17,9 +17,9 @@
         NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
         //此处设置参数及参数所需要的key-value
         [data setObject:[BSContainer instance].userInfo.userId forKey:@"userid"];
-        [data setObject:@"2" forKey:@"mailType"];
-        [data setObject:[NSNumber numberWithInt:DEFAULT_PAGE_NUMBER] forKey:@"pageNum"];
-        [data setObject:[NSNumber numberWithInt:PAGE_COUNT] forKey:@"pageCount"];
+        [data setObject:@"2" forKey:@"mailtype"];
+        [data setObject:[NSNumber numberWithInt:DEFAULT_PAGE_NUMBER] forKey:@"pagenum"];
+        [data setObject:[NSNumber numberWithInt:PAGE_COUNT] forKey:@"pagecount"];
         [self.mReqDic setObject:data forKey:@"data"];
         
         

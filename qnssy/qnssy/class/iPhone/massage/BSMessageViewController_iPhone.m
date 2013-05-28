@@ -129,9 +129,9 @@
     [progressHUD show:YES];
     SuperRequestVo *vo;
     if (type == 1) {
-        vo = [[BSMyMailRequestVo alloc] init];
-    }else if(type ==0 ||type == 2){
         vo = [[BSMySendedMailRequestVo alloc] init];
+    }else if(type ==0 ||type == 2){
+        vo = [[BSMyMailRequestVo alloc] init];
     }else if(type == 4){
         vo = [[BSSysMailRequestVo alloc] init];
     }
@@ -216,7 +216,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    return 80.f;
+    return 60.f;
     
 }
 
