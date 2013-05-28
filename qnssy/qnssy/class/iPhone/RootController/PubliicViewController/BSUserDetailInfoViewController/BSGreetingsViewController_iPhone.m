@@ -53,9 +53,9 @@
     
     //右上角发送按钮
     UIButton *topRightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    CGRect btnFrame = CGRectMake(0.0, 0.0, 40.0, 27.0);
+    CGRect btnFrame = CGRectMake(0.0, 0.0, 43.0, 28.0);
     topRightButton.frame =btnFrame;
-    [topRightButton setImage:[UIImage imageNamed:@"28设置按钮"]
+    [topRightButton setImage:[UIImage imageNamed:@"发送"]
                     forState:UIControlStateNormal];
     [topRightButton addTarget:self
                        action:@selector(clickSubmitButton:)

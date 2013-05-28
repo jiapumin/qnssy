@@ -13,6 +13,12 @@
 #import "BSMySendedMailResponseVo.h"
 #import "BSMyMailResponseVo.h"
 
+#import "MessageReadedRequestVo.h"
+#import "MessageReadedResponseVo.h"
+
+#import "BSSysMailResponseVo.h"
+#import "BSSysMailRequestVo.h"
+
 #import "BSMessageDetailsViewController_iPhone.h"
 #import "BSMessageCell.h"
 
@@ -38,6 +44,7 @@
 {
     [super viewDidLoad];
 
+    [self initHUDView];
 
     self.topSegmented.tintColor = [UIColor colorWithRed:243/255.f green:77/255.f blue:134/255.f alpha:1.0];
     [self.topSegmented setTitle:@"未读邮件" forSegmentAtIndex:0];
@@ -46,7 +53,7 @@
     [self.topSegmented setTitle:@"聊天" forSegmentAtIndex:3];
     [self.topSegmented setTitle:@"系统" forSegmentAtIndex:4];
     
-    [self loadServiceDataIsSendMail:NO];
+    [self loadServiceDataType:0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -59,6 +66,7 @@
     [_mySendedArray release];
     [_unReadArray release];
     [_myMailArray release];
+    [_sysMailArray release];
     [_myTableView release];
     [_topSegmented release];
     [super dealloc];
@@ -68,6 +76,7 @@
     [self setUnReadArray:nil];
     [self setMyMailArray:nil];
     [self setMyTableView:nil];
+    [self setSysMailArray:nil];
     [self setTopSegmented:nil];
     [super viewDidUnload];
 }
@@ -78,27 +87,31 @@
     if (segmented.selectedSegmentIndex == 0) {
         mailType = 0;
         if (self.unReadArray == nil) {
-             [self loadServiceDataIsSendMail:NO];
+             [self loadServiceDataType:mailType];
         }
     
     } else if (segmented.selectedSegmentIndex == 1){
         mailType = 1;
         if (self.mySendedArray == nil) {
-             [self loadServiceDataIsSendMail:YES];
+             [self loadServiceDataType:mailType];
         }
     
     } else if (segmented.selectedSegmentIndex == 2){
         mailType = 2;
         if (self.myMailArray == nil) {
-            [self loadServiceDataIsSendMail:NO];
+            [self loadServiceDataType:mailType];
         }
     
     }else if(segmented.selectedSegmentIndex == 3){
         mailType = 3;
-        //系统邮件
-        //???
+        
     }else if(segmented.selectedSegmentIndex == 4){
         mailType = 4;
+        if (self.sysMailArray == nil) {
+            [self loadServiceDataType:mailType];
+        }
+        //系统邮件
+        //???
     }
     [self.myTableView reloadData];
     
@@ -112,18 +125,17 @@
     progressHUD.labelText = @"数据加载中...";
     
 }
-- (void)loadServiceDataIsSendMail:(BOOL)isSendMail{
+- (void)loadServiceDataType:(int)type{
     [progressHUD show:YES];
     SuperRequestVo *vo;
-    NSString *requestType;
-    if (isSendMail) {
+    if (type == 1) {
         vo = [[BSMyMailRequestVo alloc] init];
-        requestType = @"1";
-    }else{
+    }else if(type ==0 ||type == 2){
         vo = [[BSMySendedMailRequestVo alloc] init];
-        requestType = @"0";
+    }else if(type == 4){
+        vo = [[BSSysMailRequestVo alloc] init];
     }
-    [[BSContainer instance].serviceAgent callServletWithObject:requestType
+    [[BSContainer instance].serviceAgent callServletWithObject:[NSString stringWithFormat:@"%d",type]
                                                    requestDict:vo.mReqDic
                                                         target:self
                                                successCallBack:@selector(requestSucceess:data:)
@@ -143,7 +155,7 @@
             [alert show];
             [alert release];
         }
-    }else{
+    }else if([requestType isEqualToString:@"0"] || [requestType isEqualToString:@"2"]){
         BSMyMailResponseVo *vo = [[[BSMyMailResponseVo alloc] initWithDic:dic] autorelease];
         self.unReadArray = vo.unReadMailList;
         self.myMailArray = vo.myMailList;
@@ -152,17 +164,16 @@
             [alert show];
             [alert release];
         }
+    }else if([requestType isEqualToString:@"4"]){
+        BSSysMailResponseVo *vo = [[[BSSysMailResponseVo alloc] initWithDic:dic] autorelease];
+        self.sysMailArray = vo.mailList;
+        if (vo.status != 0) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+            [alert release];
+        }
     }
     
-//    MessageUnreadResponseVo *vo = [[MessageUnreadResponseVo alloc] initWithDic:dic];
-//    if (mailType == 0) {
-//        self.mailArray = vo.unReadMailList;
-//    } else {
-//        self.mailArray = vo.mailList;
-//    }
-//    self.mailArray = vo.mailList;
-    
-
     
     [progressHUD hide:YES];
     
@@ -196,6 +207,8 @@
         num = [self.mySendedArray count];
     }else if(mailType == 2){
         num = [self.myMailArray count];
+    }else if(mailType == 4){
+        num = [self.sysMailArray count];
     }else{
         num = 0;
     }
@@ -226,6 +239,8 @@
         tempArray = self.mySendedArray;
     }else if(mailType == 2){
         tempArray = self.myMailArray;
+    }else if(mailType == 4){
+        tempArray = self.sysMailArray;
     }else{
         tempArray = [NSMutableArray array];
     }
@@ -236,15 +251,18 @@
     cell.messageDetailsLabel.text = [[tempArray objectAtIndex:indexPath.row] objectForKey:@"emailcontent"];
     
     NSString *readStatus = [[tempArray objectAtIndex:indexPath.row] objectForKey:@"readstatus"];
-    if (mailType == 1) {
-        cell.messageImageView.image = [UIImage imageNamed:@"10未读邮件ico@2x.png"];
-    } else {
+    if (mailType == 0) {
+        cell.messageImageView.image = [UIImage imageNamed:@"10未读邮件ico"];
+    }else if (mailType == 1) {
+        cell.messageImageView.image = [UIImage imageNamed:@"12发件箱ico"];
+    }else if (mailType == 2 || mailType == 4) {
         if ([readStatus isEqualToString:@"1"]) {
-            cell.messageImageView.image = [UIImage imageNamed:@"9邮件为空时显示图片@2x.png"];
+            cell.messageImageView.image = [UIImage imageNamed:@"9邮件为空时显示图片"];
         } else {
-            cell.messageImageView.image = [UIImage imageNamed:@"10未读邮件ico@2x.png"];
+            cell.messageImageView.image = [UIImage imageNamed:@"10未读邮件ico"];
         }
-    }
+
+    } 
     
     return cell;
 }
@@ -276,17 +294,36 @@
     [self.navigationController pushViewController:messageDetailsViewController animated:YES];
     [messageDetailsViewController release];
     
-//    NSString *messageId = [[tempArray objectAtIndex:indexPath.row] objectForKey:@"msgid"];
 
     //如果邮件是未读的邮件则向服务器发送请求告诉服务器设置成已读状态
     //同时将本地的未读重置为已读状态
+    NSString *messageId = [[tempArray objectAtIndex:indexPath.row] objectForKey:@"msgid"];
+    MessageReadedRequestVo *vo = [[MessageReadedRequestVo alloc] initWithMessageId:messageId];
+    [[BSContainer instance].serviceAgent callServletWithObject:messageId
+                                                   requestDict:vo.mReqDic
+                                                        target:self
+                                               successCallBack:@selector(readRequestSucceess:data:)
+                                                  failCallBack:@selector(readRequestFailed:data:)];
+   
+    [vo release];
+    
+    NSMutableDictionary *tempMailDic = [tempArray objectAtIndex:indexPath.row];
+    [tempMailDic setObject:@"1" forKey:@"readstatus"];
+    
+    if (mailType == 0) {//未读
+        [self.myMailArray addObject:tempMailDic];
+        [self.unReadArray removeObjectAtIndex:indexPath.row];
+        
+    }
+        
 }
 
-//- (void)readRequestSucceess:(id)sender data:(NSDictionary *)dic {
-//    [_myTableView reloadData];
-//}
-//
-//-(void)readRequestFailed:(id)sender data:(NSDictionary *)dic {
-//    NSLog(@"set had readed message faild.");
-//}
+- (void)readRequestSucceess:(id)sender data:(NSDictionary *)dic {
+    
+    [_myTableView reloadData];
+}
+
+-(void)readRequestFailed:(id)sender data:(NSDictionary *)dic {
+    NSLog(@"set had readed message faild.");
+}
 @end

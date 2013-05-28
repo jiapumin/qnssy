@@ -15,6 +15,7 @@
 @property (retain, nonatomic) NSMutableArray *mySendedArray;
 @property (retain, nonatomic) NSMutableArray *unReadArray;
 @property (retain, nonatomic) NSMutableArray *myMailArray;
+@property (retain, nonatomic) NSMutableArray *sysMailArray;
 
 @property (retain, nonatomic) IBOutlet UITableView *myTableView;
 

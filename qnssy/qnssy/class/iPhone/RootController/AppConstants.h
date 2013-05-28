@@ -41,6 +41,6 @@
 
 
 #define DEFAULT_PAGE_NUMBER 1
-#define PAGE_COUNT          10
+#define PAGE_COUNT          20
 
 
