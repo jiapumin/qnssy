@@ -257,7 +257,7 @@
         cell.messageImageView.image = [UIImage imageNamed:@"12发件箱ico"];
     }else if (mailType == 2 || mailType == 4) {
         if ([readStatus isEqualToString:@"1"]) {
-            cell.messageImageView.image = [UIImage imageNamed:@"9邮件为空时显示图片"];
+            cell.messageImageView.image = [UIImage imageNamed:@"11收件箱ico"];
         } else {
             cell.messageImageView.image = [UIImage imageNamed:@"10未读邮件ico"];
         }
@@ -273,26 +273,36 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     NSMutableArray *tempArray;
+    NSString *title;
     if (mailType == 0) {
         tempArray = self.unReadArray;
+        title = @"未读邮件";
     }else if(mailType == 1)
     {
         tempArray = self.mySendedArray;
+                title = @"发件箱";
     }else if(mailType == 2){
         tempArray = self.myMailArray;
+                title = @"收件箱";
+    }else if(mailType == 4){
+        tempArray = self.sysMailArray;
+                title = @"系统邮件";
     }else{
         tempArray = [NSMutableArray array];
     }
     
-    BSMessageDetailsViewController_iPhone *messageDetailsViewController = [[BSMessageDetailsViewController_iPhone alloc] initWithNibName:@"BSMessageDetailsViewController_iPhone" bundle:nil];
+    BSMessageDetailsViewController_iPhone *md = [[BSMessageDetailsViewController_iPhone alloc] initWithNibName:@"BSMessageDetailsViewController_iPhone" bundle:nil];
     NSString *sender = [[tempArray objectAtIndex:indexPath.row] objectForKey:@"sendname"];
-    messageDetailsViewController.senderLabel.text = [sender isEqual:[NSNull null]]?@"匿名":sender;
+    md.senderLabel.text = [sender isEqual:[NSNull null]]?@"匿名":sender;
     NSString *sendDate = [[tempArray objectAtIndex:indexPath.row] objectForKey:@"emaildate"];
-    messageDetailsViewController.dateLabel.text = sendDate;
+    md.dateLabel.text = sendDate;
     NSString *sendContent = [[tempArray objectAtIndex:indexPath.row] objectForKey:@"emailcontent"];
-    messageDetailsViewController.textView.text = sendContent;
-    [self.navigationController pushViewController:messageDetailsViewController animated:YES];
-    [messageDetailsViewController release];
+    md.textView.text = sendContent;
+    md.title = title;
+    [self.navigationController pushViewController:md animated:YES];
+    
+    [md release];
+    
     
 
     //如果邮件是未读的邮件则向服务器发送请求告诉服务器设置成已读状态
