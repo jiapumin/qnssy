@@ -174,6 +174,7 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
 
     if (alertView.tag == 199 && buttonIndex == 1) {
+        [app.loginNav popToRootViewControllerAnimated:NO];
         app.window.rootViewController = app.loginNav;
         [BSContainer instance].userInfo = nil;
     }

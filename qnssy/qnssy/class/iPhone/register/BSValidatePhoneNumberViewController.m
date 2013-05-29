@@ -15,6 +15,7 @@
 
 @interface BSValidatePhoneNumberViewController (){
     int second;
+    MBProgressHUD *progressHUD;
 }
 
 @end
@@ -46,12 +47,23 @@
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     self.title = @"验证码激活";
+    //初始化加载框
+    [self initHUDView];
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     self.userMobileLabel.text = self.mobile;
 }
-
+- (void)initHUDView{
+    //-------加载框
+    progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
+    
+    [self.view addSubview:progressHUD];
+    
+    progressHUD.labelText = @"数据加载中...";
+    
+}
 - (void) beginTimer {
     second = 60;
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(handlerTimer:) userInfo:nil repeats:YES];
@@ -85,6 +97,7 @@
     self.timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(handlerTimer:) userInfo:nil repeats:YES];
     [self.resendButton setEnabled: NO];
 
+    [progressHUD show:YES];
     ValidatePhoneRequestVo *requestVo = [[ValidatePhoneRequestVo alloc] initWithPhoneNumAndPassword:self.mobile password:self.password];
     [[BSContainer instance].serviceAgent callServletWithObject:self
                                                    requestDict:requestVo.mReqDic
@@ -122,7 +135,7 @@
 - (void) validateSucceess:(id) sender data:(NSDictionary *) dic{
     ValidatePhoneResponseVo *vo = [[ValidatePhoneResponseVo alloc] initWithDic:dic];
     // 服务器验证成功后，跳转到验证码验证界面
-    if ([vo.isSuccess isEqualToNumber:[NSNumber numberWithBool:YES]]) {
+    if (vo.status == 0) {
         self.md5code = vo.md5code;
     } else {
         // 服务器验证失败，提示用户
@@ -130,10 +143,14 @@
         [alertView show];
         [alertView release];
     }
+    [progressHUD hide:YES];
 }
 
 - (void) validateFailed:(id) sender data:(NSDictionary *) dic{
-    NSLog(@"-----  %@",dic);
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"网络异常，请检查网络连接后重试" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
+    [progressHUD hide:YES];
 }
 
 - (void) dealloc {

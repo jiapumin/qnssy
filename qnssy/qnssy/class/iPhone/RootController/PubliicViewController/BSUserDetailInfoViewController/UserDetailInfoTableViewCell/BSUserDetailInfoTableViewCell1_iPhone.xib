@@ -80,7 +80,7 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Label</string>
+								<string key="IBUIText"/>
 								<nil key="IBUITextColor"/>
 								<object class="NSColor" key="IBUIHighlightedColor" id="812042957">
 									<int key="NSColorSpace">3</int>
@@ -111,7 +111,7 @@
 								<int key="IBUIContentMode">7</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-								<string key="IBUIText">Label</string>
+								<string key="IBUIText"/>
 								<nil key="IBUITextColor"/>
 								<reference key="IBUIHighlightedColor" ref="812042957"/>
 								<int key="IBUIBaselineAdjustment">0</int>

@@ -212,7 +212,10 @@
             NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BSUserDetailInfoTableViewCell1_iPhone" owner:tableView options:nil];
             BSUserDetailInfoTableViewCell1_iPhone *cell = [nib objectAtIndex:0];
             
-            [cell reloadData:self.userInfoDic];
+            if (self.userInfoDic != nil) {
+                [cell reloadData:self.userInfoDic];
+            }
+            
             
             
             return cell;
@@ -220,8 +223,9 @@
             NSArray * nib = [[NSBundle mainBundle] loadNibNamed:@"BSUserDetailInfoTableViewCell2_iPhone" owner:tableView options:nil];
             BSUserDetailInfoTableViewCell2_iPhone *cell = [nib objectAtIndex:0];
             
-            [cell reloadData:self.userInfoDic];
-            
+            if (self.userInfoDic != nil) {
+                [cell reloadData:self.userInfoDic];
+            }
             
             return cell;
         }else if(indexPath.row == 2){

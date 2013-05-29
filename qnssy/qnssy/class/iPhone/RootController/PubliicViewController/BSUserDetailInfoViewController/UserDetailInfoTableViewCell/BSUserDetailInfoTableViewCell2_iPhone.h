@@ -12,6 +12,9 @@
 
 @property (retain, nonatomic) NSDictionary *userVo;
 
+@property (retain, nonatomic) NSArray *imageList;
+@property (retain, nonatomic) IBOutlet UIScrollView *myScrollView;
+
 - (void)reloadData:(NSDictionary *)dic;
 
 @end
