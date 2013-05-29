@@ -113,7 +113,7 @@
     [arraySub4 addObject:@"5搜索ico选中"];//选中
     [arraySub4 addObject:@"5搜索ico未选中"];//未选中
     [arraySub4 addObject:@"搜索"];//标题
-    [arraySub4 addObject:@"BSSearchViewController_iPhone"];//类名
+    [arraySub4 addObject:@"BSSearchIndexViewController"];//类名
     
     NSMutableArray *arraySub5 = [[NSMutableArray alloc] init];
     [arraySub5 addObject:@"5购买ico选中"];//选中

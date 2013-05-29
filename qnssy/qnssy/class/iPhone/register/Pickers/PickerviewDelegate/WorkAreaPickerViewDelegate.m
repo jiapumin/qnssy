@@ -51,6 +51,8 @@
 //    NSString *resultMessage = [NSString stringWithFormat:@"%@ %@ selected.", self.selectedKey, self.selectedScale, nil];
 //    
 //    [[[UIAlertView alloc] initWithTitle:@"Success!" message:resultMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
+    [self.cityArray addObject:@"请选择"];
+    [self.cityArray removeAllObjects];
     [origin setTitle:[NSString stringWithFormat:@"%@ - %@",self.provinceName, self.cityName] forState:UIControlStateNormal];
 }
 
@@ -135,6 +137,7 @@
                 [self.cityArray addObjectsFromArray:tempCityArray];
                 self.provinceName = [[self.provinceArray objectAtIndex:row] areaName];
                 self.cityName = [[self.cityArray objectAtIndex:0] areaName];
+                self.cityId = [NSString stringWithFormat:@"%d",[[self.cityArray objectAtIndex:0] areaId]];
             }
             [pickerView reloadComponent:1];
             break;
@@ -145,6 +148,16 @@
         default:
             break;
     }
+}
+
+-(void)dealloc{
+    [_provinceArray release];
+    [_provinceId release];
+    [_provinceName release];
+    [_cityArray release];
+    [_cityId release];
+    [_cityName release];
+    [super dealloc];
 }
 
 @end

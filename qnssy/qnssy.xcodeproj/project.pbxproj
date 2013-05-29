@@ -28,6 +28,8 @@
 		5A423507172A296400256FFE /* RegisterRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A423506172A296400256FFE /* RegisterRequestVo.m */; };
 		5A4AA2111752E66B00EB55B1 /* NSDate+TCUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A4AA2101752E66B00EB55B1 /* NSDate+TCUtils.m */; };
 		5A4CCBA116FD6A7D002FA2E5 /* BSUserLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A4CCBA016FD6A7D002FA2E5 /* BSUserLoginViewController.xib */; };
+		5A57CAF917565619004855CB /* UserHeightPickerViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A57CAF817565619004855CB /* UserHeightPickerViewDelegate.m */; };
+		5A57CAFD175658C8004855CB /* UserAgePickerViewDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A57CAFC175658C8004855CB /* UserAgePickerViewDelegate.m */; };
 		5A64EBE616F2F93400F4E576 /* BSUserLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */; };
 		5A64EBED16F3091B00F4E576 /* login_input.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBEC16F3091B00F4E576 /* login_input.png */; };
 		5A64EBF716F30BAF00F4E576 /* login_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A64EBF616F30BAF00F4E576 /* login_logo.png */; };
@@ -455,6 +457,10 @@
 		5A4AA20F1752E66B00EB55B1 /* NSDate+TCUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+TCUtils.h"; sourceTree = "<group>"; };
 		5A4AA2101752E66B00EB55B1 /* NSDate+TCUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+TCUtils.m"; sourceTree = "<group>"; };
 		5A4CCBA016FD6A7D002FA2E5 /* BSUserLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserLoginViewController.xib; sourceTree = "<group>"; };
+		5A57CAF717565619004855CB /* UserHeightPickerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserHeightPickerViewDelegate.h; sourceTree = "<group>"; };
+		5A57CAF817565619004855CB /* UserHeightPickerViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserHeightPickerViewDelegate.m; sourceTree = "<group>"; };
+		5A57CAFB175658C8004855CB /* UserAgePickerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserAgePickerViewDelegate.h; sourceTree = "<group>"; };
+		5A57CAFC175658C8004855CB /* UserAgePickerViewDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserAgePickerViewDelegate.m; sourceTree = "<group>"; };
 		5A64EBE316F2F93400F4E576 /* BSUserLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserLoginViewController.h; sourceTree = "<group>"; };
 		5A64EBE416F2F93400F4E576 /* BSUserLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserLoginViewController.m; sourceTree = "<group>"; };
 		5A64EBEC16F3091B00F4E576 /* login_input.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login_input.png; sourceTree = "<group>"; };
@@ -1057,6 +1063,10 @@
 			children = (
 				5A1542E91750FF6C00218363 /* WorkAreaPickerViewDelegate.h */,
 				5A1542EA1750FF6C00218363 /* WorkAreaPickerViewDelegate.m */,
+				5A57CAF717565619004855CB /* UserHeightPickerViewDelegate.h */,
+				5A57CAF817565619004855CB /* UserHeightPickerViewDelegate.m */,
+				5A57CAFB175658C8004855CB /* UserAgePickerViewDelegate.h */,
+				5A57CAFC175658C8004855CB /* UserAgePickerViewDelegate.m */,
 			);
 			name = PickerviewDelegate;
 			path = ../Pickers/PickerviewDelegate;
@@ -2774,6 +2784,8 @@
 				D8E4A930175597AC007F8B9E /* BSRecommendUserInfoImageListRequestVo.m in Sources */,
 				D8E4A9331755A5DD007F8B9E /* BSRecommendUserInfoImageListResponseVo.m in Sources */,
 				D8E4A9391755F148007F8B9E /* ValidatePhoneResponseVo.m in Sources */,
+				5A57CAF917565619004855CB /* UserHeightPickerViewDelegate.m in Sources */,
+				5A57CAFD175658C8004855CB /* UserAgePickerViewDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
