@@ -50,9 +50,9 @@
     //自定义头部按钮
     UIButton *topRightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     //按钮大小
-    CGRect btnFrame = CGRectMake(315, 5, 60, 33);
+    CGRect btnFrame = CGRectMake(315, 5, 43, 28);
     topRightButton.frame =btnFrame;
-    [topRightButton setImage:[UIImage imageNamed:@"19搜索按钮@2x.png"]
+    [topRightButton setImage:[UIImage imageNamed:@"19搜索按钮.png"]
                    forState:UIControlStateNormal];
     [topRightButton addTarget:self
                       action:@selector(searchAction)
