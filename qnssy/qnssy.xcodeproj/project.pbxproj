@@ -69,6 +69,8 @@
 		5ADA5267172EB70800D2EEA4 /* AreaInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA5266172EB70800D2EEA4 /* AreaInfo.m */; };
 		5ADA5269172EBBBD00D2EEA4 /* area.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 5ADA5268172EBBBD00D2EEA4 /* area.sqlite */; };
 		5ADA52841730E76B00D2EEA4 /* SearchRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADA52831730E76B00D2EEA4 /* SearchRequestVo.m */; };
+		5ADAABF317558EA8004B5F0A /* BSSearchIndexViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ADAABF117558EA8004B5F0A /* BSSearchIndexViewController.m */; };
+		5ADAABF417558EA8004B5F0A /* BSSearchIndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ADAABF217558EA8004B5F0A /* BSSearchIndexViewController.xib */; };
 		5AF21B4816F8559900EEB6EA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF21B4716F8559900EEB6EA /* MapKit.framework */; };
 		5AF21B4A16F8559F00EEB6EA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF21B4916F8559F00EEB6EA /* CoreLocation.framework */; };
 		5AF21B4E16F8581000EEB6EA /* BSUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF21B4C16F8581000EEB6EA /* BSUserInfoViewController.m */; };
@@ -497,6 +499,9 @@
 		5ADA5268172EBBBD00D2EEA4 /* area.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = area.sqlite; sourceTree = "<group>"; };
 		5ADA52821730E76B00D2EEA4 /* SearchRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchRequestVo.h; sourceTree = "<group>"; };
 		5ADA52831730E76B00D2EEA4 /* SearchRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchRequestVo.m; sourceTree = "<group>"; };
+		5ADAABF017558EA8004B5F0A /* BSSearchIndexViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSearchIndexViewController.h; sourceTree = "<group>"; };
+		5ADAABF117558EA8004B5F0A /* BSSearchIndexViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSearchIndexViewController.m; sourceTree = "<group>"; };
+		5ADAABF217558EA8004B5F0A /* BSSearchIndexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSSearchIndexViewController.xib; sourceTree = "<group>"; };
 		5AF21B4716F8559900EEB6EA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5AF21B4916F8559F00EEB6EA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		5AF21B4B16F8580F00EEB6EA /* BSUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserInfoViewController.h; sourceTree = "<group>"; };
@@ -1597,6 +1602,9 @@
 				D87A057216EF6DC90052328E /* BSSearchViewController_iPhone.xib */,
 				5A3AE86F17323A4700B73E86 /* BSSearchResultViewController.h */,
 				5A3AE87017323A4700B73E86 /* BSSearchResultViewController.m */,
+				5ADAABF017558EA8004B5F0A /* BSSearchIndexViewController.h */,
+				5ADAABF117558EA8004B5F0A /* BSSearchIndexViewController.m */,
+				5ADAABF217558EA8004B5F0A /* BSSearchIndexViewController.xib */,
 			);
 			path = search;
 			sourceTree = "<group>";
@@ -2525,6 +2533,7 @@
 				D87BD962175342EF0004E1F6 /* BSGreetingsTableViewCell_iPhone.xib in Resources */,
 				D8E4A91117546FBD007F8B9E /* 发送.png in Resources */,
 				D8E4A91217546FBD007F8B9E /* 发送@2x.png in Resources */,
+				5ADAABF417558EA8004B5F0A /* BSSearchIndexViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2708,6 +2717,7 @@
 				D8E4A8D6175449A6007F8B9E /* MessageReadedResponseVo.m in Sources */,
 				D8E4A90B17546A14007F8B9E /* BSSysMailRequestVo.m in Sources */,
 				D8E4A90E17546A4E007F8B9E /* BSSysMailResponseVo.m in Sources */,
+				5ADAABF317558EA8004B5F0A /* BSSearchIndexViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

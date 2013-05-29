@@ -17,12 +17,22 @@
     if (self = [super init]) {
         //  read provence and city datas from sqlite file
         //  init provenceArray and cityArray with datas
-        self.provinceArray = [[AreaDatabase database] getProvince];
-        self.cityArray = [[AreaDatabase database] getCityWithProvinceId:1];
-        self.provinceId = [NSString stringWithFormat:@"%d",[[self.provinceArray objectAtIndex:0] areaId]];
-        self.cityId = [NSString stringWithFormat:@"%d",[[self.cityArray objectAtIndex:0] areaId]];
-        self.provinceName = [[self.provinceArray objectAtIndex:0] areaName];
-        self.cityName = [[self.cityArray objectAtIndex:0] areaName];
+        self.provinceArray = [NSMutableArray array];
+        NSArray *tempProvinceArray = [NSArray array];
+        tempProvinceArray = [[AreaDatabase database] getProvince];
+        AreaInfo *provinceInfo = [[AreaInfo alloc] initWithAreaId:0 areaName:@"请选择"];
+        [self.provinceArray addObject:provinceInfo];
+        [provinceInfo release];
+        [self.provinceArray addObjectsFromArray:tempProvinceArray];
+        
+        self.cityArray = [NSMutableArray array];
+        AreaInfo *cityInfo = [[AreaInfo alloc] initWithAreaId:0 areaName:@"请选择"];
+        [self.cityArray addObject:cityInfo];
+        [cityInfo release];
+        self.provinceId = @"";
+        self.cityId = @"";
+        self.provinceName = @"请选择";
+        self.cityName = @"请选择";
     }
     return self;
 }
@@ -109,11 +119,24 @@
     switch (component) {
         case 0:
             areaid = [[self.provinceArray objectAtIndex:row] areaId];
-            self.provinceId = [NSString stringWithFormat:@"%d",areaid];
-            self.cityArray = [[AreaDatabase database] getCityWithProvinceId:areaid];
-            self.provinceName = [[self.provinceArray objectAtIndex:row] areaName];
+            if (areaid == 0) {
+                [self.cityArray removeAllObjects];
+                AreaInfo *cityInfo = [[AreaInfo alloc] initWithAreaId:0 areaName:@"请选择"];
+                [self.cityArray addObject:cityInfo];
+                [cityInfo release];
+                self.provinceId = @"";
+                self.cityId = @"";
+                self.provinceName = @"请选择";
+                self.cityName = @"请选择";
+            } else {
+                [self.cityArray removeAllObjects];
+                self.provinceId = [NSString stringWithFormat:@"%d",areaid];
+                NSArray *tempCityArray = [[AreaDatabase database] getCityWithProvinceId:areaid];
+                [self.cityArray addObjectsFromArray:tempCityArray];
+                self.provinceName = [[self.provinceArray objectAtIndex:row] areaName];
+                self.cityName = [[self.cityArray objectAtIndex:0] areaName];
+            }
             [pickerView reloadComponent:1];
-            self.cityName = [[self.cityArray objectAtIndex:0] areaName];
             break;
         case 1:
             self.cityId = [NSString stringWithFormat:@"%d",[[self.cityArray objectAtIndex:row] areaId]];
