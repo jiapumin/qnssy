@@ -10,8 +10,8 @@
 #import "ActionSheetPicker.h"
 
 @interface WorkAreaPickerViewDelegate : NSObject <ActionSheetCustomPickerDelegate>
-@property (nonatomic, retain) NSArray *provinceArray;
-@property (nonatomic, retain) NSArray *cityArray;
+@property (nonatomic, retain) NSMutableArray *provinceArray;
+@property (nonatomic, retain) NSMutableArray *cityArray;
 
 @property (nonatomic, retain) NSString *provinceId;
 @property (nonatomic, retain) NSString *cityId;
