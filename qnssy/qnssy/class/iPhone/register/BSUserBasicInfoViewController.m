@@ -190,8 +190,8 @@
     self.nickName = self.nickNameField.text;
     self.province = self.workAreaPickerViewDelegate.provinceId;
     self.city = self.workAreaPickerViewDelegate.cityId;
-    if ([self.nickName isEqual:[NSNull null]] || [self.mobile isEqual:[NSNull null]] || [self.password isEqual:[NSNull null]] || [self.sex isEqual:[NSNull null]] || [self.height isEqual:[NSNull null]] || [self.year isEqual:[NSNull null]] || [self.month isEqual:[NSNull null]] || [self.day isEqual:[NSNull null]] || [self.marryStatus isEqual:[NSNull null]] || [self.loveKind isEqual:[NSNull null]] || [self.education isEqual:[NSNull null]] || [self.salary isEqual:[NSNull null]] || [self.province isEqual:[NSNull null]] || [self.city isEqual:[NSNull null]]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"资料似乎不完整" delegate:self cancelButtonTitle:@"检查" otherButtonTitles:nil, nil];
+    if (self.nickName == nil || self.mobile == nil || self.password == nil || self.sex == nil || self.height == nil || self.year  == nil || self.month  == nil || self.day  == nil || self.marryStatus == nil || self.loveKind  == nil || self.education == nil || self.salary == nil || self.province == nil || self.city == nil) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示" message:@"资料不完整" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
         [alert release];
     } else if(self.nickName.length < 2){
@@ -213,8 +213,9 @@
         [params setObject:self.salary forKey:@"salary"];
         [params setObject:self.province forKey:@"provinceid"];
         [params setObject:self.city forKey:@"cityid"];
-
+        
         [progressHUD show:YES];
+        
         RegisterRequestVo *requestVo = [[RegisterRequestVo alloc] initWithParams:params];
         [[BSContainer instance].serviceAgent callServletWithObject:self
                                                        requestDict:requestVo.mReqDic
@@ -225,7 +226,6 @@
         [params release];
     }
 }
-
 #pragma mark -
 #pragma mark birthday picker view selected action
 
