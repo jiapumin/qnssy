@@ -8,12 +8,22 @@
 
 #import "BSSuperCentreViewController_iPhone.h"
 #import "WorkAreaPickerViewDelegate.h"
+#import "UserHeightPickerViewDelegate.h"
+#import "UserAgePickerViewDelegate.h"
+#import "TPKeyboardAvoidingScrollView.h"
 
 @interface BSSearchIndexViewController : BSSuperCentreViewController_iPhone
 
 @property (nonatomic, retain) WorkAreaPickerViewDelegate *workAreaPickerViewDelegate;
+@property (nonatomic, retain) UserHeightPickerViewDelegate *userHeightPickerViewDelegate;
+@property (nonatomic, retain) UserAgePickerViewDelegate *userAgePickerViewDelegate;
 @property (nonatomic, retain) AbstractActionSheetPicker *actionSheetPicker;
 @property (nonatomic, retain) NSDate *selectedDate;
+@property (retain, nonatomic) IBOutlet UIView *searchByIdView;
+@property (retain, nonatomic) IBOutlet UIView *searchByNameView;
+@property (retain, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *defaultView;
+@property (retain, nonatomic) IBOutlet UITextField *idField;
+@property (retain, nonatomic) IBOutlet UITextField *nickNameField;
 
 @property (nonatomic, retain) NSString *sex;
 @property (nonatomic, retain) NSString *provenceId;
@@ -57,4 +67,5 @@
 - (IBAction)loveKindAction:(UIButton *)sender;
 - (IBAction)pictureAction:(UIButton *)sender;
 
+- (IBAction)segmentedAction:(UISegmentedControl *)sender;
 @end
