@@ -255,7 +255,7 @@
 #pragma mark - 服务器回调
 
 - (void) validateSucceess:(id) sender data:(NSDictionary *) dic{
-    LoginResponseVo *vo = [[LoginResponseVo alloc] initWithDic:dic];   
+    LoginResponseVo *vo = [[LoginResponseVo alloc] initWithDic:[dic objectForKey:@"ResData"]];
     
     NSLog(@"用户id:%@--登录消息:%@",vo.userInfo.userId,vo.message);
     //登录成功，保存用户信息
@@ -277,14 +277,6 @@
     [alert show];
     [alert release];
     [progressHUD hide:YES];
-}
-
-#pragma mark alter view delegate
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    if (buttonIndex == 0) {
-//        [self.navigationController popToRootViewControllerAnimated:NO];
-    }
 }
 
 #pragma mark -
