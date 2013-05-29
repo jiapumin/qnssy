@@ -34,7 +34,6 @@
 		5A6962C6174A3F6700BCC251 /* 红娘热线@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5A6962C5174A3F6700BCC251 /* 红娘热线@2x.png */; };
 		5A7891ED170347C800E2B238 /* BSBindUserAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7891EB170347C800E2B238 /* BSBindUserAccountViewController.m */; };
 		5A7891EE170347C800E2B238 /* BSBindUserAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7891EC170347C800E2B238 /* BSBindUserAccountViewController.xib */; };
-		5A7892191704791C00E2B238 /* ValidatePhoneResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7892181704791C00E2B238 /* ValidatePhoneResponseVo.m */; };
 		5A7AED5C173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7AED5A173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.m */; };
 		5A7AED5D173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7AED5B173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.xib */; };
 		5AAE6E4F16FAAF79006FDFB7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AAE6E4E16FAAF79006FDFB7 /* area.plist */; };
@@ -335,6 +334,18 @@
 		D8E4A90E17546A4E007F8B9E /* BSSysMailResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E4A90D17546A4D007F8B9E /* BSSysMailResponseVo.m */; };
 		D8E4A91117546FBD007F8B9E /* 发送.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E4A90F17546FBC007F8B9E /* 发送.png */; };
 		D8E4A91217546FBD007F8B9E /* 发送@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E4A91017546FBC007F8B9E /* 发送@2x.png */; };
+		D8E4A92617559596007F8B9E /* 发件箱.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E4A91E17559596007F8B9E /* 发件箱.png */; };
+		D8E4A92717559596007F8B9E /* 发件箱@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E4A91F17559596007F8B9E /* 发件箱@2x.png */; };
+		D8E4A92817559596007F8B9E /* 收件箱.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E4A92017559596007F8B9E /* 收件箱.png */; };
+		D8E4A92917559596007F8B9E /* 收件箱@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E4A92117559596007F8B9E /* 收件箱@2x.png */; };
+		D8E4A92A17559596007F8B9E /* 未读.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E4A92217559596007F8B9E /* 未读.png */; };
+		D8E4A92B17559596007F8B9E /* 未读@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E4A92317559596007F8B9E /* 未读@2x.png */; };
+		D8E4A92C17559596007F8B9E /* 已读.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E4A92417559596007F8B9E /* 已读.png */; };
+		D8E4A92D17559596007F8B9E /* 已读@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E4A92517559596007F8B9E /* 已读@2x.png */; };
+		D8E4A930175597AC007F8B9E /* BSRecommendUserInfoImageListRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E4A92F175597AC007F8B9E /* BSRecommendUserInfoImageListRequestVo.m */; };
+		D8E4A9331755A5DD007F8B9E /* BSRecommendUserInfoImageListResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E4A9321755A5DD007F8B9E /* BSRecommendUserInfoImageListResponseVo.m */; };
+		D8E4A9351755E897007F8B9E /* 图片加载中.png in Resources */ = {isa = PBXBuildFile; fileRef = D8E4A9341755E897007F8B9E /* 图片加载中.png */; };
+		D8E4A9391755F148007F8B9E /* ValidatePhoneResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E4A9381755F148007F8B9E /* ValidatePhoneResponseVo.m */; };
 		D8E548D01724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E548CE1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.m */; };
 		D8E548D11724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8E548CF1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.xib */; };
 		D8E548E0172540E300EF4CC9 /* EveryDayMiaiListRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E548DF172540E300EF4CC9 /* EveryDayMiaiListRequestVo.m */; };
@@ -452,8 +463,6 @@
 		5A7891EA170347C800E2B238 /* BSBindUserAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBindUserAccountViewController.h; sourceTree = "<group>"; };
 		5A7891EB170347C800E2B238 /* BSBindUserAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBindUserAccountViewController.m; sourceTree = "<group>"; };
 		5A7891EC170347C800E2B238 /* BSBindUserAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSBindUserAccountViewController.xib; sourceTree = "<group>"; };
-		5A7892171704791C00E2B238 /* ValidatePhoneResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidatePhoneResponseVo.h; sourceTree = "<group>"; };
-		5A7892181704791C00E2B238 /* ValidatePhoneResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatePhoneResponseVo.m; sourceTree = "<group>"; };
 		5A78921B17047B8C00E2B238 /* ValidatePhoneRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidatePhoneRequestVo.h; sourceTree = "<group>"; };
 		5A78921C17047B8C00E2B238 /* ValidatePhoneRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatePhoneRequestVo.m; sourceTree = "<group>"; };
 		5A7AED59173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMessageDetailsViewController_iPhone.h; sourceTree = "<group>"; };
@@ -921,6 +930,21 @@
 		D8E4A90D17546A4D007F8B9E /* BSSysMailResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSysMailResponseVo.m; sourceTree = "<group>"; };
 		D8E4A90F17546FBC007F8B9E /* 发送.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "发送.png"; sourceTree = "<group>"; };
 		D8E4A91017546FBC007F8B9E /* 发送@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "发送@2x.png"; sourceTree = "<group>"; };
+		D8E4A91E17559596007F8B9E /* 发件箱.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "发件箱.png"; sourceTree = "<group>"; };
+		D8E4A91F17559596007F8B9E /* 发件箱@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "发件箱@2x.png"; sourceTree = "<group>"; };
+		D8E4A92017559596007F8B9E /* 收件箱.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "收件箱.png"; sourceTree = "<group>"; };
+		D8E4A92117559596007F8B9E /* 收件箱@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "收件箱@2x.png"; sourceTree = "<group>"; };
+		D8E4A92217559596007F8B9E /* 未读.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "未读.png"; sourceTree = "<group>"; };
+		D8E4A92317559596007F8B9E /* 未读@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "未读@2x.png"; sourceTree = "<group>"; };
+		D8E4A92417559596007F8B9E /* 已读.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "已读.png"; sourceTree = "<group>"; };
+		D8E4A92517559596007F8B9E /* 已读@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "已读@2x.png"; sourceTree = "<group>"; };
+		D8E4A92E175597AC007F8B9E /* BSRecommendUserInfoImageListRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRecommendUserInfoImageListRequestVo.h; sourceTree = "<group>"; };
+		D8E4A92F175597AC007F8B9E /* BSRecommendUserInfoImageListRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRecommendUserInfoImageListRequestVo.m; sourceTree = "<group>"; };
+		D8E4A9311755A5DD007F8B9E /* BSRecommendUserInfoImageListResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRecommendUserInfoImageListResponseVo.h; sourceTree = "<group>"; };
+		D8E4A9321755A5DD007F8B9E /* BSRecommendUserInfoImageListResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRecommendUserInfoImageListResponseVo.m; sourceTree = "<group>"; };
+		D8E4A9341755E897007F8B9E /* 图片加载中.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "图片加载中.png"; sourceTree = "<group>"; };
+		D8E4A9371755F148007F8B9E /* ValidatePhoneResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ValidatePhoneResponseVo.h; sourceTree = "<group>"; };
+		D8E4A9381755F148007F8B9E /* ValidatePhoneResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ValidatePhoneResponseVo.m; sourceTree = "<group>"; };
 		D8E548CD1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSLookedMeTableViewCell_iPhone.h; sourceTree = "<group>"; };
 		D8E548CE1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSLookedMeTableViewCell_iPhone.m; sourceTree = "<group>"; };
 		D8E548CF1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSLookedMeTableViewCell_iPhone.xib; sourceTree = "<group>"; };
@@ -1220,6 +1244,8 @@
 				D83DC8AC172773AB00614BD4 /* RecommendInfoRequestVo.m */,
 				D84F593E1753AB4300498C21 /* BSRecommendUserRequestVo.h */,
 				D84F593F1753AB4300498C21 /* BSRecommendUserRequestVo.m */,
+				D8E4A92E175597AC007F8B9E /* BSRecommendUserInfoImageListRequestVo.h */,
+				D8E4A92F175597AC007F8B9E /* BSRecommendUserInfoImageListRequestVo.m */,
 			);
 			path = recommend;
 			sourceTree = "<group>";
@@ -1237,6 +1263,8 @@
 				D83DC8AF1727751800614BD4 /* RecommendInfoResponseVo.m */,
 				D84F59411753AC8000498C21 /* BSRecommendUserResponseVo.h */,
 				D84F59421753AC8000498C21 /* BSRecommendUserResponseVo.m */,
+				D8E4A9311755A5DD007F8B9E /* BSRecommendUserInfoImageListResponseVo.h */,
+				D8E4A9321755A5DD007F8B9E /* BSRecommendUserInfoImageListResponseVo.m */,
 			);
 			path = Recommend;
 			sourceTree = "<group>";
@@ -1701,6 +1729,15 @@
 		D87A059216EF77F90052328E /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				D8E4A9341755E897007F8B9E /* 图片加载中.png */,
+				D8E4A91E17559596007F8B9E /* 发件箱.png */,
+				D8E4A91F17559596007F8B9E /* 发件箱@2x.png */,
+				D8E4A92017559596007F8B9E /* 收件箱.png */,
+				D8E4A92117559596007F8B9E /* 收件箱@2x.png */,
+				D8E4A92217559596007F8B9E /* 未读.png */,
+				D8E4A92317559596007F8B9E /* 未读@2x.png */,
+				D8E4A92417559596007F8B9E /* 已读.png */,
+				D8E4A92517559596007F8B9E /* 已读@2x.png */,
 				D8E4A90F17546FBC007F8B9E /* 发送.png */,
 				D8E4A91017546FBC007F8B9E /* 发送@2x.png */,
 				5A6962C5174A3F6700BCC251 /* 红娘热线@2x.png */,
@@ -2125,6 +2162,7 @@
 		D8CA7D9216F4B15E00B4CE67 /* response */ = {
 			isa = PBXGroup;
 			children = (
+				D8E4A9361755F146007F8B9E /* register */,
 				D8185E3E174B438300995CAE /* search */,
 				D84CB738172A702D009C2BB9 /* message */,
 				D8E548DD172540A600EF4CC9 /* everyDayMiai */,
@@ -2132,8 +2170,6 @@
 				D8E21F071719054D00A90FB3 /* MyPhoto */,
 				D8CA7D9B16F4B3FB00B4CE67 /* LoginResponseVo.h */,
 				D8CA7D9A16F4B3FB00B4CE67 /* LoginResponseVo.m */,
-				5A7892171704791C00E2B238 /* ValidatePhoneResponseVo.h */,
-				5A7892181704791C00E2B238 /* ValidatePhoneResponseVo.m */,
 				D85B6633171A99FB00581B00 /* SuperResponseVo.h */,
 				D85B6634171A99FC00581B00 /* SuperResponseVo.m */,
 				D8E6297F172135F5005CD0E0 /* myInfoData.plist */,
@@ -2198,6 +2234,15 @@
 				D80B235B1749FDF5002CB786 /* UpdateMyPhotoResponseVo.m */,
 			);
 			path = MyPhoto;
+			sourceTree = "<group>";
+		};
+		D8E4A9361755F146007F8B9E /* register */ = {
+			isa = PBXGroup;
+			children = (
+				D8E4A9371755F148007F8B9E /* ValidatePhoneResponseVo.h */,
+				D8E4A9381755F148007F8B9E /* ValidatePhoneResponseVo.m */,
+			);
+			path = register;
 			sourceTree = "<group>";
 		};
 		D8E548CC1724F55200EF4CC9 /* BSLookedMeTableViewCell_iPhone */ = {
@@ -2534,6 +2579,15 @@
 				D8E4A91117546FBD007F8B9E /* 发送.png in Resources */,
 				D8E4A91217546FBD007F8B9E /* 发送@2x.png in Resources */,
 				5ADAABF417558EA8004B5F0A /* BSSearchIndexViewController.xib in Resources */,
+				D8E4A92617559596007F8B9E /* 发件箱.png in Resources */,
+				D8E4A92717559596007F8B9E /* 发件箱@2x.png in Resources */,
+				D8E4A92817559596007F8B9E /* 收件箱.png in Resources */,
+				D8E4A92917559596007F8B9E /* 收件箱@2x.png in Resources */,
+				D8E4A92A17559596007F8B9E /* 未读.png in Resources */,
+				D8E4A92B17559596007F8B9E /* 未读@2x.png in Resources */,
+				D8E4A92C17559596007F8B9E /* 已读.png in Resources */,
+				D8E4A92D17559596007F8B9E /* 已读@2x.png in Resources */,
+				D8E4A9351755E897007F8B9E /* 图片加载中.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2608,7 +2662,6 @@
 				5A7891ED170347C800E2B238 /* BSBindUserAccountViewController.m in Sources */,
 				D8FE147B16FEA5E4006405F1 /* BSMyInfoTableCell_iPhone.m in Sources */,
 				D8A706C11701084900B24213 /* BSPublicTableCell_iPhone.m in Sources */,
-				5A7892191704791C00E2B238 /* ValidatePhoneResponseVo.m in Sources */,
 				D8ED9B6517080C0900C7FA38 /* DMLazyScrollView.m in Sources */,
 				D8ED9B69170811EA00C7FA38 /* BSRecommendImageViewController_iPhone.m in Sources */,
 				5AFC21D9170AA340001228AB /* ValidatePhoneRequestVo.m in Sources */,
@@ -2718,6 +2771,9 @@
 				D8E4A90B17546A14007F8B9E /* BSSysMailRequestVo.m in Sources */,
 				D8E4A90E17546A4E007F8B9E /* BSSysMailResponseVo.m in Sources */,
 				5ADAABF317558EA8004B5F0A /* BSSearchIndexViewController.m in Sources */,
+				D8E4A930175597AC007F8B9E /* BSRecommendUserInfoImageListRequestVo.m in Sources */,
+				D8E4A9331755A5DD007F8B9E /* BSRecommendUserInfoImageListResponseVo.m in Sources */,
+				D8E4A9391755F148007F8B9E /* ValidatePhoneResponseVo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

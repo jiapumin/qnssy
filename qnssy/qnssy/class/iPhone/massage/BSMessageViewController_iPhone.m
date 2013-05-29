@@ -252,14 +252,14 @@
     
     NSString *readStatus = [[tempArray objectAtIndex:indexPath.row] objectForKey:@"readstatus"];
     if (mailType == 0) {
-        cell.messageImageView.image = [UIImage imageNamed:@"10未读邮件ico"];
+        cell.messageImageView.image = [UIImage imageNamed:@"未读"];
     }else if (mailType == 1) {
-        cell.messageImageView.image = [UIImage imageNamed:@"12发件箱ico"];
+        cell.messageImageView.image = [UIImage imageNamed:@"发件箱"];
     }else if (mailType == 2 || mailType == 4) {
         if ([readStatus isEqualToString:@"1"]) {
-            cell.messageImageView.image = [UIImage imageNamed:@"11收件箱ico"];
+            cell.messageImageView.image = [UIImage imageNamed:@"已读"];
         } else {
-            cell.messageImageView.image = [UIImage imageNamed:@"10未读邮件ico"];
+            cell.messageImageView.image = [UIImage imageNamed:@"未读"];
         }
 
     } 

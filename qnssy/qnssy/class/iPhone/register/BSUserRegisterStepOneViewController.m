@@ -15,6 +15,7 @@
 @interface BSUserRegisterStepOneViewController (){
 //    BOOL isTextFieldMoved;
     BOOL isAgreement;//是否同意条款协议
+    MBProgressHUD *progressHUD;
 }
 
 @end
@@ -61,7 +62,7 @@
     self.userAccount.keyboardType = UIKeyboardTypePhonePad;
     self.userAccount.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     self.userAccount.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-    self.userAccount.text = @"15666666666";
+    self.userAccount.text = @"";
     self.userPassword = [[UITextField alloc] initWithFrame:CGRectMake(20, 80, 280, 40)];
     self.userPassword.borderStyle = UITextBorderStyleRoundedRect;
     self.userPassword.placeholder = @"密码（6-20位）";
@@ -76,6 +77,9 @@
     [self.scrollView addSubview:self.userPassword];
     [self.userAccount release];
     [self.userPassword release];
+    
+    //初始化加载框
+    [self initHUDView];
 }
 
 - (IBAction) toggleAgreementButtonStatus:(id) sender {
@@ -119,7 +123,15 @@
 - (IBAction)zhengceAction:(id)sender {
     
 }
-
+- (void)initHUDView{
+    //-------加载框
+    progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
+    
+    [self.view addSubview:progressHUD];
+    
+    progressHUD.labelText = @"数据加载中...";
+    
+}
 #pragma mark - 点击下一步，开始接收验证码
 - (IBAction)registerNextAction:(id)sender {
     // 如果没有同意服务条款，则提示用户勾选
@@ -140,6 +152,7 @@
             return;
         }
         if (isPhoneNumber) {
+            [progressHUD show:YES];
             ValidatePhoneRequestVo *vo = [[ValidatePhoneRequestVo alloc] initWithPhoneNumAndPassword:phoneNumber password:password];
             [[BSContainer instance].serviceAgent callServletWithObject:self
                                                            requestDict:vo.mReqDic
@@ -165,7 +178,8 @@
 - (void) validateSucceess:(id) sender data:(NSDictionary *) dic{
     ValidatePhoneResponseVo *vo = [[ValidatePhoneResponseVo alloc] initWithDic:dic];
     // 服务器验证成功后，跳转到验证码验证界面
-    if ([vo.isSuccess isEqualToNumber:[NSNumber numberWithBool:YES]]) {
+    
+    if (vo.status == 0) {
         BSValidatePhoneNumberViewController *validatePhoneNumber = [[BSValidatePhoneNumberViewController alloc] initWithNibName:@"BSValidatePhoneNumberViewController" bundle:nil];
         // 将用户的手机号码、密码保存到下一个界面，以便用户在点击重新发送按钮时，能重新请求服务器
         validatePhoneNumber.mobile = self.userAccount.text;
@@ -180,10 +194,14 @@
         [alertView show];
         [alertView release];
     }
+    [progressHUD hide:YES];
 }
 
 - (void) validateFailed:(id) sender data:(NSDictionary *) dic{
-    NSLog(@"-----  %@",dic);
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"网络异常，请检查网络连接后重试" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
+    [progressHUD hide:YES];
 }
 
 // 正则判断手机号码地址格式

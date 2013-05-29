@@ -24,7 +24,9 @@
 @property (nonatomic, retain) NSString *day;
 @end
 
-@implementation BSUserBasicInfoViewController
+@implementation BSUserBasicInfoViewController{
+    MBProgressHUD *progressHUD;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -55,6 +57,8 @@
     
     // setup data
     [self setupData];
+    //初始化加载框
+    [self initHUDView];
 }
 
 -(void)hiddenKeyBoard:(id) sender {
@@ -209,7 +213,8 @@
         [params setObject:self.salary forKey:@"salary"];
         [params setObject:self.province forKey:@"provinceid"];
         [params setObject:self.city forKey:@"cityid"];
-        
+
+        [progressHUD show:YES];
         RegisterRequestVo *requestVo = [[RegisterRequestVo alloc] initWithParams:params];
         [[BSContainer instance].serviceAgent callServletWithObject:self
                                                        requestDict:requestVo.mReqDic
@@ -238,7 +243,15 @@
     [self.birthdayButton setTitle:[NSString stringWithFormat:@"%@-%@-%@",self.year, self.month, self.day] forState:UIControlStateNormal];
     
 }
-
+- (void)initHUDView{
+    //-------加载框
+    progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
+    
+    [self.view addSubview:progressHUD];
+    
+    progressHUD.labelText = @"数据加载中...";
+    
+}
 #pragma mark - 服务器回调
 
 - (void) validateSucceess:(id) sender data:(NSDictionary *) dic{
@@ -256,19 +269,15 @@
         [alert show];
         [alert release];
     }
+    [progressHUD hide:YES];
 }
 
 - (void) validateFailed:(id) sender data:(NSDictionary *) dic{
-    NSLog(@"注册出错了。");
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"网络异常，请检查网络连接后重试" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
+    [progressHUD hide:YES];
 }
-
-#pragma mark alter view delegate
-
-//- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-//    if (buttonIndex == 0) {
-//        [self.navigationController popToRootViewControllerAnimated:NO];
-//    }
-//}
 
 #pragma mark -
 #pragma mark Memory Manage

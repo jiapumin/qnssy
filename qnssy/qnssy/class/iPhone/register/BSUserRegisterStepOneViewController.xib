@@ -209,7 +209,7 @@
 								<reference key="IBUIFont" ref="987486198"/>
 							</object>
 						</array>
-						<string key="NSFrameSize">{320, 480}</string>
+						<string key="NSFrameSize">{320, 414}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="360401810"/>
@@ -219,10 +219,9 @@
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 					</object>
 				</array>
-				<string key="NSFrameSize">{320, 480}</string>
+				<string key="NSFrameSize">{320, 414}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">1</int>
 					<bytes key="NSRGB">MC45Njg2Mjc0NTEgMC44Nzg0MzEzNzI1IDAuOTA5ODAzOTIxNgA</bytes>
@@ -404,17 +403,12 @@
 					<string key="className">BSUserRegisterStepOneViewController</string>
 					<string key="superclassName">BSSuperCentreViewController_iPhone</string>
 					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="clickBackButton:">id</string>
 						<string key="registerNextAction:">id</string>
 						<string key="tiaokuanAction:">id</string>
 						<string key="toggleAgreementButtonStatus:">id</string>
 						<string key="zhengceAction:">id</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="clickBackButton:">
-							<string key="name">clickBackButton:</string>
-							<string key="candidateClassName">id</string>
-						</object>
 						<object class="IBActionInfo" key="registerNextAction:">
 							<string key="name">registerNextAction:</string>
 							<string key="candidateClassName">id</string>
