@@ -213,8 +213,9 @@
         [params setObject:self.salary forKey:@"salary"];
         [params setObject:self.province forKey:@"provinceid"];
         [params setObject:self.city forKey:@"cityid"];
-
+        
         [progressHUD show:YES];
+        
         RegisterRequestVo *requestVo = [[RegisterRequestVo alloc] initWithParams:params];
         [[BSContainer instance].serviceAgent callServletWithObject:self
                                                        requestDict:requestVo.mReqDic
@@ -225,7 +226,6 @@
         [params release];
     }
 }
-
 #pragma mark -
 #pragma mark birthday picker view selected action
 
