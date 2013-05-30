@@ -7,11 +7,16 @@
 //
 
 #import "QuickDialogController.h"
+#import "BSSuperCentreViewController_iPhone.h"
 
-@interface BSBindUserAccountViewController : UIViewController
 
-@property (retain, nonatomic) IBOutlet UINavigationBar *myNavigationBar;
+@interface BSBindUserAccountViewController : BSSuperCentreViewController_iPhone<UITextFieldDelegate>
 
-- (IBAction)clickBackButton:(id)sender;
+@property (retain, nonatomic)NSString *openid;
+
+@property (retain, nonatomic) UITextField *accountField;
+
+@property (retain, nonatomic) UITextField *passwordField;
+
 
 @end

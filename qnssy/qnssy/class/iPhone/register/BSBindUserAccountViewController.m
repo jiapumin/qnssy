@@ -8,8 +8,16 @@
 
 #import "BSBindUserAccountViewController.h"
 #import "BSUserRegisterStepOneViewController.h"
+#import "LoginResponseVo.h"
+#import "LoginRequestVo.h"
 
-@interface BSBindUserAccountViewController ()
+#import "UserInfoDao.h"
+
+#import "BSBindQQRequestVo.h"
+
+@interface BSBindUserAccountViewController (){
+    MBProgressHUD *progressHUD;
+}
 
 @end
 
@@ -28,15 +36,24 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [self.myNavigationBar setBackgroundImage:[UIImage imageNamed:@"2顶部条状背景"] forBarMetrics:UIBarMetricsDefault];
-    self.view.backgroundColor = [UIColor colorWithRed:247.f/255 green:232.f/255 blue:232.f/255 alpha:1.f];
+    self.navigationController.navigationBarHidden = NO;
+    self.title = @"绑定账号";
     [self configureElements];
+    [self initHUDView];
 }
-
+- (void)initHUDView{
+    //-------加载框
+    progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
+    
+    [self.view addSubview:progressHUD];
+    
+    progressHUD.labelText = @"数据加载中...";
+    
+}
 // 初始化界面控件
 - (void) configureElements {
     CGFloat marginx = 10;
-    CGFloat marginy = 54;
+    CGFloat marginy = 10;
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(marginx, marginy, self.view.frame.size.width - marginx*2, 24)];
     label.backgroundColor = [UIColor clearColor];
     label.text = @"您还未绑定千千缘账号";
@@ -45,25 +62,23 @@
     
     marginy = label.frame.origin.y + label.frame.size.height + 10;
     
-    UITextField *accountField = [[UITextField alloc] initWithFrame:CGRectMake(marginx, marginy, self.view.frame.size.width - marginx*2, 44)];
-    accountField.borderStyle = UITextBorderStyleRoundedRect;
-    accountField.placeholder = @"请输入您的手机号";
-    accountField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    accountField.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-    [self.view addSubview:accountField];
-    [accountField release];
+    self.accountField = [[[UITextField alloc] initWithFrame:CGRectMake(marginx, marginy, self.view.frame.size.width - marginx*2, 44)] autorelease];
+    self.accountField.borderStyle = UITextBorderStyleRoundedRect;
+    self.accountField.placeholder = @"请输入您的手机号";
+    self.accountField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    self.accountField.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+    [self.view addSubview:self.accountField];
     
-    marginy = accountField.frame.origin.y + accountField.frame.size.height + 10;
+    marginy = self.accountField.frame.origin.y + self.accountField.frame.size.height + 10;
     
-    UITextField *passwordField = [[UITextField alloc] initWithFrame:CGRectMake(marginx, marginy, self.view.frame.size.width - marginx*2, 44)];
-    passwordField.borderStyle = UITextBorderStyleRoundedRect;
-    passwordField.placeholder = @"密码（6-20位）";
-    passwordField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
-    passwordField.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-    [self.view addSubview:passwordField];
-    [passwordField release];
+    self.passwordField = [[[UITextField alloc] initWithFrame:CGRectMake(marginx, marginy, self.view.frame.size.width - marginx*2, 44)] autorelease];
+    self.passwordField.borderStyle = UITextBorderStyleRoundedRect;
+    self.passwordField.placeholder = @"密码（6-20位）";
+    self.passwordField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
+    self.passwordField.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+    [self.view addSubview:self.passwordField];
     
-    marginy = passwordField.frame.origin.y + passwordField.frame.size.height + 10;
+    marginy = self.passwordField.frame.origin.y + self.passwordField.frame.size.height + 10;
     
     UIButton *bindButton = [[UIButton alloc] initWithFrame:CGRectMake(marginx, marginy, self.view.frame.size.width-marginx*2, 44)];
     [bindButton setBackgroundImage:[UIImage imageNamed:@"2下一步背景@2x.png"] forState:UIControlStateNormal];
@@ -87,13 +102,40 @@
 // 绑定账号
 - (void) bindAccount:(id) sender {
     
+    NSString *username = self.accountField.text;
+    NSString *password = self.passwordField.text;
+    
+    if ([username isEqualToString:@""] || username == nil  || [password isEqualToString:@""]||password == nil) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"您输入的信息不完整请输入" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        return;
+    }
+    
+    [progressHUD show:YES];
+    
+    //请求服务器
+    BSBindQQRequestVo *vo = [[BSBindQQRequestVo alloc] initWithId:self.openid
+                                                         username:username
+                                                         password:password];
+    
+    [[BSContainer instance].serviceAgent callServletWithObject:self
+                                                   requestDict:vo.mReqDic
+                                                        target:self
+                                               successCallBack:@selector(BindQQSucceess:data:)
+                                                  failCallBack:@selector(BindQQFailed:data:)];
+    
+    [vo release];
 }
 
 //注册账号
 - (void) registerAccount:(id) sender {
-    BSUserRegisterStepOneViewController *registerViewController = [[BSUserRegisterStepOneViewController alloc] initWithNibName:@"BSUserRegisterStepOneViewController" bundle:nil];
-    [self.navigationController pushViewController:registerViewController animated:YES];
-    [registerViewController release];
+    BSUserRegisterStepOneViewController *rvc = [[BSUserRegisterStepOneViewController alloc] initWithNibName:@"BSUserRegisterStepOneViewController" bundle:nil];
+    
+    rvc.openid = self.openid;
+    
+    [self.navigationController pushViewController:rvc animated:YES];
+    [rvc release];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -102,16 +144,57 @@
 }
 
 - (void)dealloc {
-    [_myNavigationBar release];
+    [_accountField release];
+    [_passwordField release];
+    [_openid release];
     [super dealloc];
 }
 
 - (void)viewDidUnload {
-    [self setMyNavigationBar:nil];
+    [self setAccountField:nil];
+    [self setPasswordField:nil];
+    [self setOpenid:nil];
     [super viewDidUnload];
 }
 
-- (IBAction)clickBackButton:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+#pragma mark - 服务器回调
+- (void)BindQQSucceess:(id)sender data:(NSDictionary *)dic {
+    LoginResponseVo *vo = [[LoginResponseVo alloc] initWithDic:dic];
+    
+    
+    if (vo.status == 0) {
+        //绑定成功并登录成功，保存用户信息
+        [BSContainer instance].userInfo = vo.userInfo;
+        //处理记住密码
+        NSString *username = self.accountField.text;
+        NSString *password = self.passwordField.text;
+        //获取是否保存用户名密码
+        //保存用户名
+        [UserInfoDao saveLoginInfoUsername:username
+                                  password:password
+                                isRemember:0];
+
+        
+        [app viewUpdate];
+        app.window.rootViewController = app.revealSideViewController;
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        
+    }
+    
+    
+    [progressHUD hide:YES];
+}
+
+
+
+- (void)BindQQFailed:(id)sender data:(NSDictionary *)dic {
+    //登录失败，取消加载框
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"网络异常，请检查网络连接后重试" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
+    [progressHUD hide:YES];
 }
 @end

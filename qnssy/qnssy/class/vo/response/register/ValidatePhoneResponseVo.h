@@ -12,9 +12,5 @@
 @interface ValidatePhoneResponseVo : SuperResponseVo
 
 @property (retain, nonatomic) NSString *md5code;
-//@property (retain, nonatomic) NSNumber *isSuccess;
-//@property (retain, nonatomic) NSString *message;
-
-//- (id)initWithDic:(NSDictionary *)result;
 
 @end

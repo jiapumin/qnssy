@@ -99,6 +99,7 @@
 }
 
 - (void)dealloc {
+    [_openid release];
     [_userAccount release];
     [_userPassword release];
     [_scrollView release];
@@ -107,6 +108,7 @@
     [super dealloc];
 }
 - (void)viewDidUnload {
+    [self setOpenid:nil];
     [self setUserAccount:nil];
     [self setUserPassword:nil];
     [self setScrollView:nil];
@@ -184,6 +186,7 @@
         // 将用户的手机号码、密码保存到下一个界面，以便用户在点击重新发送按钮时，能重新请求服务器
         validatePhoneNumber.mobile = self.userAccount.text;
         validatePhoneNumber.password = self.userPassword.text;
+        validatePhoneNumber.openid = self.openid;
         // 将验证码保存到下一个页面，用来验证
         validatePhoneNumber.md5code = vo.md5code;
         [self.navigationController pushViewController:validatePhoneNumber animated:YES];

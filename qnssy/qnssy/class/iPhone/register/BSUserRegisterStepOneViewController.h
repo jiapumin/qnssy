@@ -14,6 +14,8 @@
 @interface BSUserRegisterStepOneViewController : BSSuperCentreViewController_iPhone <UITextFieldDelegate>
 @property (retain, nonatomic) UITextField *userAccount;
 @property (retain, nonatomic) UITextField *userPassword;
+@property (retain, nonatomic) NSString *openid;
+
 @property (retain, nonatomic) IBOutlet UINavigationBar *myNavigationBar;
 @property (retain, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
 @property (retain, nonatomic) IBOutlet UIButton *agreementButton;

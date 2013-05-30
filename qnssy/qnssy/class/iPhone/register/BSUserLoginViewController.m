@@ -17,6 +17,9 @@
 #import "UserInfoDao.h"
 #import "BSForgetPasswordViewController_iPhone.h"
 
+
+#import "BSVerifyBindRequestVo.h"
+
 @interface BSUserLoginViewController (){
     BOOL isTextFieldMoved;
     BOOL isAutoLogin;
@@ -211,13 +214,27 @@
 
 - (void)tencentDidLogin {
     if (_tencentOAuth.accessToken && 0 != [_tencentOAuth.accessToken length]) {
+        
+        //请求服务器是否绑定
+        [progressHUD show:YES];
+        //请求服务器
+        BSVerifyBindRequestVo *vo = [[BSVerifyBindRequestVo alloc] initWithId:_tencentOAuth.openId];
+        
+        [[BSContainer instance].serviceAgent callServletWithObject:self
+                                                       requestDict:vo.mReqDic
+                                                            target:self
+                                                   successCallBack:@selector(VerifyBindSucceess:data:)
+                                                      failCallBack:@selector(loginFailed:data:)];
+        
+        [vo release];
+
         // 记录登录用户的OpenID、Token以及过期时间
         //_labelAccessToken.text = _tencentOAuth.accessToken;
-        QRootElement *root = [[QRootElement alloc] init];
-        root.presentationMode = QPresentationModeNormal;
-        BSBindUserAccountViewController *bindUserAccountVC = [[BSBindUserAccountViewController alloc] initWithNibName:@"BSBindUserAccountViewController" bundle:nil];
-        [self.navigationController pushViewController:bindUserAccountVC animated:YES];
-        [bindUserAccountVC release];
+//        QRootElement *root = [[QRootElement alloc] init];
+//        root.presentationMode = QPresentationModeNormal;
+//        BSBindUserAccountViewController *bindUserAccountVC = [[BSBindUserAccountViewController alloc] initWithNibName:@"BSBindUserAccountViewController" bundle:nil];
+//        [self.navigationController pushViewController:bindUserAccountVC animated:YES];
+//        [bindUserAccountVC release];
     } else {
         //@"登录不成功 没有获取accesstoken";
     }
@@ -251,36 +268,34 @@
 }
 
 #pragma mark - 服务器回调
+- (void)VerifyBindSucceess:(id)sender data:(NSDictionary *)dic {
+    LoginResponseVo *vo = [[LoginResponseVo alloc] initWithDic:dic];
+    
+    
+    if (vo.status == 0) {
+        [self loginSaveData:vo];
+    }else{
+        //验证失败跳转到填写用户信息界面
+        
+        BSBindUserAccountViewController *buavc = [[BSBindUserAccountViewController alloc] initWithNibName:@"BSBindUserAccountViewController" bundle:nil];
+        [self.navigationController pushViewController:buavc animated:YES];
+        [buavc release];
+        
+    }
+    
+    
+    [progressHUD hide:YES];
+}
+
+
 - (void)loginSucceess:(id)sender data:(NSDictionary *)dic {
     LoginResponseVo *vo = [[LoginResponseVo alloc] initWithDic:dic];
     
     NSLog(@"用户id:%@--登录消息:%@",vo.userInfo.userId,vo.message);
-    //登录成功，保存用户信息
-    [BSContainer instance].userInfo = vo.userInfo;
+
 
    if (vo.status == 0) {
-       //处理记住密码
-       NSString *username = self.userAccount.text;
-       NSString *password = self.userPassword.text;
-       //获取是否保存用户名密码
-       if (isAutoLogin) {
-           //保存用户名和密码
-           [UserInfoDao saveLoginInfoUsername:username
-                                     password:password
-                                   isRemember:1];
-       }else{
-           //保存用户名
-           [UserInfoDao saveLoginInfoUsername:username
-                                     password:password
-                                   isRemember:0];
-       }
-       
-       
-       //加载界面
-//        if (app.revealSideViewController == nil) {
-                [app viewUpdate];
-//        }
-        app.window.rootViewController = app.revealSideViewController;
+       [self loginSaveData:vo];
     }else{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
@@ -290,8 +305,32 @@
     
     [progressHUD hide:YES];
 }
-
+- (void)loginSaveData:(LoginResponseVo *)vo{
+    //登录成功，保存用户信息
+    [BSContainer instance].userInfo = vo.userInfo;
+    //处理记住密码
+    NSString *username = self.userAccount.text;
+    NSString *password = self.userPassword.text;
+    //获取是否保存用户名密码
+    if (isAutoLogin) {
+        //保存用户名和密码
+        [UserInfoDao saveLoginInfoUsername:username
+                                  password:password
+                                isRemember:1];
+    }else{
+        //保存用户名
+        [UserInfoDao saveLoginInfoUsername:username
+                                  password:password
+                                isRemember:0];
+    }
+    
+    
+    //加载界面
+    [app viewUpdate];
+    app.window.rootViewController = app.revealSideViewController;
+}
 - (void)loginFailed:(id)sender data:(NSDictionary *)dic {
+    
     //登录失败，取消加载框
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"网络异常，请检查网络连接后重试" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];

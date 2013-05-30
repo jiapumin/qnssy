@@ -13,6 +13,8 @@
 #import "BaseInfoRequestVo.h"
 #import "BaseInfoResponseVo.h"
 
+#import "ActionSheetStringPicker.h"
+
 @interface BSBaseInfoViewController_iPhone (){
     MBProgressHUD *progressHUD;
 }
@@ -143,6 +145,8 @@
 
     NSString *key = [self.myBaseInfoKey objectAtIndex:indexPath.row];
     
+    cell.key = key;
+    
     if ([key isEqualToString:@"cityname"]) {
         cell.leftLabel.text = @"所在地";
         cell.rightLabel.text = [self.myBaseInfo objectForKey:key];
@@ -157,7 +161,7 @@
     
     if (infoDesDic && infoDesDic.count != 0) {
         NSString *content = [infoDesDic objectForKey:[self.myBaseInfo objectForKey:key]];
-        cell.rightLabel.text = [content isEqualToString:@""] ? @"无" : content;
+        cell.rightLabel.text = [content isEqualToString:@""] || content == nil ? @"无" : content;
     }else{
         
         cell.rightLabel.text = @"无";
@@ -187,6 +191,66 @@
 //    [self.navigationController pushViewController:udivc animated:YES];
 //    [udivc release];
     
-    
+    BaseInfoTableViewCell_iPhone *cell = (BaseInfoTableViewCell_iPhone *)[tableView cellForRowAtIndexPath:indexPath];
+    [self cellAction:cell];
+    NSMutableDictionary *aa = [[NSMutableDictionary alloc] init];
+    for (int i = 130; i<261; i++) {
+       [aa setObject:[NSString stringWithFormat:@"%d",i] forKey:[NSString stringWithFormat:@"%d",i]];
+        
+    }
+    NSLog(@"%@",aa);
 }
+
+- (void)cellAction:(BaseInfoTableViewCell_iPhone *)cell {
+    
+    
+    NSString *key = cell.key;
+    
+//    if ([key isEqualToString:@"cityname"]) {
+//        cell.leftLabel.text = @"所在地";
+//        cell.rightLabel.text = [self.myBaseInfo objectForKey:key];
+//        return cell;
+//    }
+    
+    NSArray * infoArray = [DataParseUtil myInfoData:key];
+    //赋值用户信息
+    NSString *title = [infoArray objectAtIndex:0];
+    
+    NSDictionary *infoDesDic = [infoArray objectAtIndex:1];
+    
+    
+//    if (infoDesDic && infoDesDic.count != 0) {
+//        NSString *content = [infoDesDic objectForKey:[self.myBaseInfo objectForKey:key]];
+//        cell.rightLabel.text = [content isEqualToString:@""] ? @"无" : content;
+//    }else{
+//        
+//        cell.rightLabel.text = @"无";
+//    }
+
+    
+    ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
+        cell.rightLabel.text = [NSString stringWithFormat:@"%@",selectedValue];
+        cell.commitValue = [self.myBaseInfo objectForKey:key];
+    };
+    //排序
+    NSMutableArray *dataArray = [NSMutableArray arrayWithArray:[infoDesDic allValues]];
+    [dataArray sortUsingSelector:@selector(compare:)];
+    
+    [ActionSheetStringPicker showPickerWithTitle:title rows:dataArray initialSelection:0 doneBlock:done cancelBlock:nil origin:cell];
+}
+
+
+
+#pragma mark -
+
+//- (NSComparisonResult)compare:(id)inObject {
+//    NSComparisonResult result = [self.name compare:[(MPURLRequestParameter *)inObject name]];
+//	
+//    if (result == NSOrderedSame) {
+//        result = [self.value compare:[(MPURLRequestParameter *)inObject value]];
+//    }
+//    
+//    return result;
+//}
+
 @end

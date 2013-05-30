@@ -86,6 +86,7 @@
 }
 
 - (void)viewDidUnload {
+    [self setOpenid:nil];
     [self setResendButton:nil];
     [self setMyNavigationBar:nil];
     [self setUserMobileLabel:nil];
@@ -116,6 +117,8 @@
             BSUserBasicInfoViewController *basicInfoViewController = [[BSUserBasicInfoViewController alloc] initWithNibName:@"BSUserBasicInfoViewController" bundle:nil];
             basicInfoViewController.mobile = self.mobile;
             basicInfoViewController.password = self.password;
+            basicInfoViewController.openid = self.openid;
+            
             [self.navigationController pushViewController:basicInfoViewController animated:YES];
             [basicInfoViewController release];
             
@@ -151,6 +154,7 @@
 }
 
 - (void) dealloc {
+    [_openid release];
     [_validateNumber release];
     [_resendButton release];
     [_myNavigationBar release];

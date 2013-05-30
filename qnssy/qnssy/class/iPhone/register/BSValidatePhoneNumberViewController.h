@@ -21,6 +21,7 @@
 // 这里定义用户的手机号码和密码，是为了用户在点击重新发送按钮时，能再次请求服务器
 @property (retain, nonatomic) NSString *mobile;
 @property (retain, nonatomic) NSString *password;
+@property (retain, nonatomic) NSString *openid;
 - (IBAction)resendAction:(id)sender;
 - (IBAction)submitAction:(id)sender;
 

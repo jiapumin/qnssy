@@ -12,5 +12,7 @@
 
 @property (retain, nonatomic) IBOutlet UILabel *leftLabel;
 @property (retain, nonatomic) IBOutlet UILabel *rightLabel;
+@property (retain, nonatomic) NSString *key;
+@property (retain, nonatomic) NSString *commitValue;
 
 @end

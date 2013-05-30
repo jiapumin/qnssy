@@ -10,6 +10,8 @@
 #import "BSUserBasicInfoViewController.h"
 #import "RegisterRequestVo.h"
 #import "LoginResponseVo.h"
+#import "UserInfoDao.h"
+#import "BSBindQQRequestVo.h"
 
 @interface BSUserBasicInfoViewController () {
     
@@ -255,21 +257,50 @@
 #pragma mark - 服务器回调
 
 - (void) validateSucceess:(id) sender data:(NSDictionary *) dic{
-    LoginResponseVo *vo = [[LoginResponseVo alloc] initWithDic:[dic objectForKey:@"ResData"]];
-    
-    NSLog(@"用户id:%@--登录消息:%@",vo.userInfo.userId,vo.message);
-    //登录成功，保存用户信息
-    [BSContainer instance].userInfo = vo.userInfo;
-    
-    if (vo.status == 0) {
-        [app viewUpdate];
-        app.window.rootViewController = app.revealSideViewController;
-    }else{
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-        [alert show];
-        [alert release];
+    if (self.openid == nil ) {//不带验证的注册
+        LoginResponseVo *vo = [[LoginResponseVo alloc] initWithDic:[dic objectForKey:@"ResData"]];
+        NSLog(@"用户id:%@--登录消息:%@",vo.userInfo.userId,vo.message);
+        
+        if (vo.status == 0) {
+            //绑定成功并登录成功，保存用户信息
+            [BSContainer instance].userInfo = vo.userInfo;
+            //处理记住密码
+            NSString *username = self.mobile;
+            NSString *password = self.password;
+            //获取是否保存用户名密码
+            //保存用户名
+            [UserInfoDao saveLoginInfoUsername:username
+                                      password:password
+                                    isRemember:0];
+            
+            
+            [app viewUpdate];
+            app.window.rootViewController = app.revealSideViewController;
+        }else{
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+            [alert release];
+        }
+        [progressHUD hide:YES];
+    }else{//带绑定的登录
+        
+        
+        //请求服务器
+        BSBindQQRequestVo *vo = [[BSBindQQRequestVo alloc] initWithId:self.openid
+                                                             username:self.mobile
+                                                             password:self.password];
+        
+        [[BSContainer instance].serviceAgent callServletWithObject:self
+                                                       requestDict:vo.mReqDic
+                                                            target:self
+                                                   successCallBack:@selector(BindQQSucceess:data:)
+                                                      failCallBack:@selector(BindQQFailed:data:)];
+        
+        [vo release];
+
     }
-    [progressHUD hide:YES];
+    
+
 }
 
 - (void) validateFailed:(id) sender data:(NSDictionary *) dic{
@@ -278,7 +309,49 @@
     [alert release];
     [progressHUD hide:YES];
 }
+#pragma mark - 服务器回调
+- (void)BindQQSucceess:(id)sender data:(NSDictionary *)dic {
+    LoginResponseVo *vo = [[LoginResponseVo alloc] initWithDic:dic];
+    
+    
+    if (vo.status == 0) {
+        //绑定成功并登录成功，保存用户信息
+        [BSContainer instance].userInfo = vo.userInfo;
+        //处理记住密码
+        NSString *username = self.mobile;
+        NSString *password = self.password;
+        //获取是否保存用户名密码
+        //保存用户名
+        [UserInfoDao saveLoginInfoUsername:username
+                                  password:password
+                                isRemember:0];
+        
+        
+        [app viewUpdate];
+        app.window.rootViewController = app.revealSideViewController;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"注册并绑定成功" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+    }else{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        
+    }
+    
+    
+    [progressHUD hide:YES];
+}
 
+
+
+- (void)BindQQFailed:(id)sender data:(NSDictionary *)dic {
+    //登录失败，取消加载框
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"网络异常，请检查网络连接后重试" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
+    [progressHUD hide:YES];
+}
 #pragma mark -
 #pragma mark Memory Manage
 
@@ -289,6 +362,7 @@
 }
 
 - (void)dealloc {
+    [_openid release];
     [_birthdayButton release];
     [_scrollView release];
     [_nickNameField release];
@@ -316,6 +390,7 @@
     [super dealloc];
 }
 - (void)viewDidUnload {
+    [self setOpenid:nil];
     [self setBirthdayButton:nil];
     [self setScrollView:nil];
     [self setNickNameField:nil];

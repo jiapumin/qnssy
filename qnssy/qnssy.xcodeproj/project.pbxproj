@@ -330,6 +330,10 @@
 		D8CA7D9616F4B19E00B4CE67 /* SuperRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D9516F4B19E00B4CE67 /* SuperRequestVo.m */; };
 		D8CA7D9916F4B29400B4CE67 /* LoginRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D9816F4B29400B4CE67 /* LoginRequestVo.m */; };
 		D8CA7D9C16F4B3FB00B4CE67 /* LoginResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CA7D9A16F4B3FB00B4CE67 /* LoginResponseVo.m */; };
+		D8CDD34917578EC700C927F4 /* BSVerifyBindRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CDD34817578EC700C927F4 /* BSVerifyBindRequestVo.m */; };
+		D8CDD34C17578F5A00C927F4 /* BSVerifyBindResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CDD34B17578F5A00C927F4 /* BSVerifyBindResponseVo.m */; };
+		D8CDD34F1757928C00C927F4 /* BSBindQQRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CDD34E1757928C00C927F4 /* BSBindQQRequestVo.m */; };
+		D8CDD3521757930800C927F4 /* BSBindQQResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8CDD3511757930700C927F4 /* BSBindQQResponseVo.m */; };
 		D8E21F06171903B200A90FB3 /* MyPhotoRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E21F05171903B200A90FB3 /* MyPhotoRequestVo.m */; };
 		D8E21F0A1719056400A90FB3 /* MyPhotoResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E21F091719056400A90FB3 /* MyPhotoResponseVo.m */; };
 		D8E4A8D6175449A6007F8B9E /* MessageReadedResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8E4A8D5175449A6007F8B9E /* MessageReadedResponseVo.m */; };
@@ -925,6 +929,14 @@
 		D8CA7D9816F4B29400B4CE67 /* LoginRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginRequestVo.m; sourceTree = "<group>"; };
 		D8CA7D9A16F4B3FB00B4CE67 /* LoginResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginResponseVo.m; sourceTree = "<group>"; };
 		D8CA7D9B16F4B3FB00B4CE67 /* LoginResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginResponseVo.h; sourceTree = "<group>"; };
+		D8CDD34717578EC700C927F4 /* BSVerifyBindRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSVerifyBindRequestVo.h; sourceTree = "<group>"; };
+		D8CDD34817578EC700C927F4 /* BSVerifyBindRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSVerifyBindRequestVo.m; sourceTree = "<group>"; };
+		D8CDD34A17578F5A00C927F4 /* BSVerifyBindResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSVerifyBindResponseVo.h; sourceTree = "<group>"; };
+		D8CDD34B17578F5A00C927F4 /* BSVerifyBindResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSVerifyBindResponseVo.m; sourceTree = "<group>"; };
+		D8CDD34D1757928C00C927F4 /* BSBindQQRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBindQQRequestVo.h; sourceTree = "<group>"; };
+		D8CDD34E1757928C00C927F4 /* BSBindQQRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBindQQRequestVo.m; sourceTree = "<group>"; };
+		D8CDD3501757930700C927F4 /* BSBindQQResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSBindQQResponseVo.h; sourceTree = "<group>"; };
+		D8CDD3511757930700C927F4 /* BSBindQQResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSBindQQResponseVo.m; sourceTree = "<group>"; };
 		D8CEEF4A16F8C15E00E7C63F /* QuickDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuickDialog.xcodeproj; path = QuickDialog/QuickDialog.xcodeproj; sourceTree = "<group>"; };
 		D8E21F04171903B200A90FB3 /* MyPhotoRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyPhotoRequestVo.h; sourceTree = "<group>"; };
 		D8E21F05171903B200A90FB3 /* MyPhotoRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyPhotoRequestVo.m; sourceTree = "<group>"; };
@@ -1079,6 +1091,10 @@
 			children = (
 				5A423505172A296400256FFE /* RegisterRequestVo.h */,
 				5A423506172A296400256FFE /* RegisterRequestVo.m */,
+				D8CDD34717578EC700C927F4 /* BSVerifyBindRequestVo.h */,
+				D8CDD34817578EC700C927F4 /* BSVerifyBindRequestVo.m */,
+				D8CDD34D1757928C00C927F4 /* BSBindQQRequestVo.h */,
+				D8CDD34E1757928C00C927F4 /* BSBindQQRequestVo.m */,
 			);
 			path = register;
 			sourceTree = "<group>";
@@ -2254,6 +2270,10 @@
 			children = (
 				D8E4A9371755F148007F8B9E /* ValidatePhoneResponseVo.h */,
 				D8E4A9381755F148007F8B9E /* ValidatePhoneResponseVo.m */,
+				D8CDD34A17578F5A00C927F4 /* BSVerifyBindResponseVo.h */,
+				D8CDD34B17578F5A00C927F4 /* BSVerifyBindResponseVo.m */,
+				D8CDD3501757930700C927F4 /* BSBindQQResponseVo.h */,
+				D8CDD3511757930700C927F4 /* BSBindQQResponseVo.m */,
 			);
 			path = register;
 			sourceTree = "<group>";
@@ -2790,6 +2810,10 @@
 				D8E4A9391755F148007F8B9E /* ValidatePhoneResponseVo.m in Sources */,
 				5A57CAF917565619004855CB /* UserHeightPickerViewDelegate.m in Sources */,
 				5A57CAFD175658C8004855CB /* UserAgePickerViewDelegate.m in Sources */,
+				D8CDD34917578EC700C927F4 /* BSVerifyBindRequestVo.m in Sources */,
+				D8CDD34C17578F5A00C927F4 /* BSVerifyBindResponseVo.m in Sources */,
+				D8CDD34F1757928C00C927F4 /* BSBindQQRequestVo.m in Sources */,
+				D8CDD3521757930800C927F4 /* BSBindQQResponseVo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

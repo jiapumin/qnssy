@@ -17,6 +17,7 @@
 //@property (retain, nonatomic) UIView *areaView;
 @property (retain, nonatomic) NSString *mobile;
 @property (nonatomic, retain) NSString *password;
+@property (retain, nonatomic) NSString *openid;
 
 @property (retain, nonatomic) IBOutlet TPKeyboardAvoidingScrollView *scrollView;
 @property (nonatomic, retain) WorkAreaPickerViewDelegate *workAreaPickerViewDelegate;
