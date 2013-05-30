@@ -160,6 +160,7 @@
 }
 
 - (IBAction)sexAction:(UISegmentedControl *)sender {
+    self.sex = [NSString stringWithFormat:@"%d",sender.selectedSegmentIndex+1];
 }
 
 - (IBAction)areaAction:(UIButton *)sender {
@@ -274,14 +275,20 @@
     if (!self.defaultView.hidden) {
         self.provenceId = self.workAreaPickerViewDelegate.provinceId;
         self.cityId = self.workAreaPickerViewDelegate.cityId;
+        self.startAge = self.userAgePickerViewDelegate.startAge;
+        self.endAge = self.userAgePickerViewDelegate.endAge;
+        self.startHeight = self.userHeightPickerViewDelegate.startHeight;
+        self.endHeight = self.userHeightPickerViewDelegate.endHeight;
+
         dict = [NSMutableDictionary dictionary];
         [dict setObject:[NSNumber numberWithInt:0] forKey:@"searchtype"];
         [dict setObject:self.startAge forKey:@"startage"];
+        [dict setObject:self.sex forKey:@"sex"];
         [dict setObject:self.endAge forKey:@"endage"];
         [dict setObject:self.startHeight forKey:@"startheight"];
         [dict setObject:self.endHeight forKey:@"endheight"];
-        [dict setObject:[NSNumber numberWithInt:self.provenceId] forKey:@"provinceid"];
-        [dict setObject:[NSNumber numberWithInt:self.cityId] forKey:@"cityid"];
+        [dict setObject:self.provenceId forKey:@"provinceid"];
+        [dict setObject:self.cityId forKey:@"cityid"];
         [dict setObject:self.education forKey:@"education"];
         [dict setObject:self.salary forKey:@"salary"];
         [dict setObject:self.marryStatus forKey:@"marrystatus"];
