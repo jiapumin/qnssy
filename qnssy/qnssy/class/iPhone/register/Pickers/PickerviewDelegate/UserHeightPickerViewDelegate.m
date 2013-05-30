@@ -18,8 +18,8 @@
         self.startHeightArray = [NSMutableArray array];
         self.endHeightArray = [NSMutableArray array];
         
-        self.startHeight = @"请选择";
-        self.endHeight = @"请选择";
+        self.startHeight = @"";
+        self.endHeight = @"";
         
         [self.startHeightArray addObject:@"请选择"];
         [self.endHeightArray addObject:@"请选择"];
@@ -48,6 +48,12 @@
     //
     //    [[[UIAlertView alloc] initWithTitle:@"Success!" message:resultMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
     [origin setTitle:[NSString stringWithFormat:@"%@ - %@",self.startHeight, self.endHeight] forState:UIControlStateNormal];
+    if ([self.startHeight isEqualToString:@"请选择"]) {
+        self.startHeight = @"";
+    }
+    if ([self.endHeight isEqualToString:@"请选择"]) {
+        self.endHeight = @"";
+    }
 }
 
 /////////////////////////////////////////////////////////////////////////

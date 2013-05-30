@@ -18,8 +18,8 @@
         self.startAgeArray = [NSMutableArray array];
         self.endAgeArray = [NSMutableArray array];
         
-        self.startAge = @"请选择";
-        self.endAge = @"请选择";
+        self.startAge = @"";
+        self.endAge = @"";
         
         [self.startAgeArray addObject:@"请选择"];
         [self.endAgeArray addObject:@"请选择"];
@@ -48,6 +48,12 @@
     //
     //    [[[UIAlertView alloc] initWithTitle:@"Success!" message:resultMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
     [origin setTitle:[NSString stringWithFormat:@"%@ - %@",self.startAge, self.endAge] forState:UIControlStateNormal];
+    if ([self.startAge isEqualToString:@"请选择"]) {
+        self.startAge = @"";
+    }
+    if([self.endAge isEqualToString:@"请选择"]){
+        self.endAge = @"";
+    }
 }
 
 /////////////////////////////////////////////////////////////////////////
