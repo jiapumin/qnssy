@@ -59,7 +59,7 @@
             forControlEvents:UIControlEventTouchUpInside];
     
     
-    UIBarButtonItem * topRightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:topRightButton];
+    UIBarButtonItem * topRightBarButtonItem = [[[UIBarButtonItem alloc] initWithCustomView:topRightButton] autorelease];
     
     self.navigationItem.rightBarButtonItem = topRightBarButtonItem;
     

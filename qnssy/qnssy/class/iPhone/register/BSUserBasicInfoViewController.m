@@ -225,8 +225,9 @@
                                                    successCallBack:@selector(validateSucceess:data:)
                                                       failCallBack:@selector(validateFailed:data:)];
         [requestVo release];
-        [params release];
+
     }
+    [params release];
 }
 #pragma mark -
 #pragma mark birthday picker view selected action
@@ -281,6 +282,7 @@
             [alert show];
             [alert release];
         }
+        [vo release];
         [progressHUD hide:YES];
     }else{//带绑定的登录
         
@@ -338,7 +340,7 @@
         [alert release];
         
     }
-    
+    [vo release];
     
     [progressHUD hide:YES];
 }

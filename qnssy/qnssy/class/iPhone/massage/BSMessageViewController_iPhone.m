@@ -127,13 +127,15 @@
 }
 - (void)loadServiceDataType:(int)type{
     [progressHUD show:YES];
-    SuperRequestVo *vo;
+    SuperRequestVo *vo = nil;
     if (type == 1) {
         vo = [[BSMySendedMailRequestVo alloc] init];
     }else if(type ==0 ||type == 2){
         vo = [[BSMyMailRequestVo alloc] init];
     }else if(type == 4){
         vo = [[BSSysMailRequestVo alloc] init];
+    }else{
+        return;
     }
     [[BSContainer instance].serviceAgent callServletWithObject:[NSString stringWithFormat:@"%d",type]
                                                    requestDict:vo.mReqDic
@@ -272,8 +274,8 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSMutableArray *tempArray;
-    NSString *title;
+    NSMutableArray *tempArray = nil;
+    NSString *title = nil;
     if (mailType == 0) {
         tempArray = self.unReadArray;
         title = @"未读邮件";

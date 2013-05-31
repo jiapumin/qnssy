@@ -56,14 +56,14 @@
     self.title = @"注册";
 
     //初始化控件
-    self.userAccount = [[UITextField alloc] initWithFrame:CGRectMake(20, 20, 280, 40)];
+    self.userAccount = [[[UITextField alloc] initWithFrame:CGRectMake(20, 20, 280, 40)] autorelease];
     self.userAccount.borderStyle = UITextBorderStyleRoundedRect;
     self.userAccount.placeholder = @"请输入您的手机号码";
     self.userAccount.keyboardType = UIKeyboardTypePhonePad;
     self.userAccount.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     self.userAccount.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
     self.userAccount.text = @"";
-    self.userPassword = [[UITextField alloc] initWithFrame:CGRectMake(20, 80, 280, 40)];
+    self.userPassword = [[[UITextField alloc] initWithFrame:CGRectMake(20, 80, 280, 40)] autorelease];
     self.userPassword.borderStyle = UITextBorderStyleRoundedRect;
     self.userPassword.placeholder = @"密码（6-20位）";
     self.userPassword.keyboardType = UIKeyboardTypeDefault;
@@ -75,8 +75,7 @@
     
     [self.scrollView addSubview:self.userAccount];
     [self.scrollView addSubview:self.userPassword];
-    [self.userAccount release];
-    [self.userPassword release];
+
     
     //初始化加载框
     [self initHUDView];
@@ -197,6 +196,7 @@
         [alertView show];
         [alertView release];
     }
+    [vo release];
     [progressHUD hide:YES];
 }
 

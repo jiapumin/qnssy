@@ -11,9 +11,9 @@
 @implementation ViewController
 @synthesize gotoMainViewBtn = _gotoMainViewBtn;
 
-@synthesize imageView;
-@synthesize left = _left;
-@synthesize right = _right;
+//@synthesize imageView;
+//@synthesize left = _left;
+//@synthesize right = _right;
 @synthesize pageScroll;
 @synthesize pageControl;
 
@@ -50,9 +50,9 @@
 {   
     [_gotoMainViewBtn release];
 //    [_defaultViewController release];
-    [self.imageView release];
-    [self.left release];
-    [self.right release];
+    [_imageView release];
+    [_left release];
+    [_right release];
     [super dealloc];
 }
 - (void)viewWillAppear:(BOOL)animated
@@ -102,8 +102,8 @@
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"firstLaunch"];
     [self.gotoMainViewBtn setHidden:YES];
     NSArray *array = [UIImage splitImageIntoTwoParts:self.imageView.image];
-    self.left = [[UIImageView alloc] initWithImage:[array objectAtIndex:0]];
-    self.right = [[UIImageView alloc] initWithImage:[array objectAtIndex:1]];
+    self.left = [[[UIImageView alloc] initWithImage:[array objectAtIndex:0]] autorelease];
+    self.right = [[[UIImageView alloc] initWithImage:[array objectAtIndex:1]] autorelease];
     [self.view addSubview:self.left];
     [self.view addSubview:self.right];
     [self.pageScroll setHidden:YES];

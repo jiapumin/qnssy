@@ -30,7 +30,7 @@
     
     BSUserLoginViewController *userLoginView = [[[BSUserLoginViewController alloc] initWithNibName:@"BSUserLoginViewController" bundle:nil] autorelease];
     
-    self.loginNav = [[UINavigationController alloc] initWithRootViewController:userLoginView];
+    self.loginNav = [[[UINavigationController alloc] initWithRootViewController:userLoginView] autorelease];
 
     self.window.backgroundColor = publicColor;
 

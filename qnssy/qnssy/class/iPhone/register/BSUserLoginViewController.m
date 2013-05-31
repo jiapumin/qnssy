@@ -282,6 +282,7 @@
         [buavc release];
         
     }
+    [vo release];
     
     
     [progressHUD hide:YES];
@@ -301,7 +302,7 @@
         [alert show];
         [alert release];
     }
-    
+    [vo release];
     
     [progressHUD hide:YES];
 }
@@ -342,6 +343,7 @@
 - (IBAction)clickForgetPassword:(id)sender {
     BSForgetPasswordViewController_iPhone *fpvc = [[BSForgetPasswordViewController_iPhone alloc] initWithNibName:@"BSForgetPasswordViewController_iPhone" bundle:nil];
     [self.navigationController pushViewController:fpvc animated:YES];
+    [fpvc release];
     
 }
 

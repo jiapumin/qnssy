@@ -14,8 +14,8 @@
 
 - (UITableViewCell *)getCellForTableView:(QuickDialogTableView *)tableView controller:(QuickDialogController *)controller {
     _controller = controller;
-    QTableViewCell *cell = [[QTableViewCell alloc] init];
-    cell.backgroundView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
+    QTableViewCell *cell = [[[QTableViewCell alloc] init] autorelease];
+    cell.backgroundView = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)] autorelease];
     cell.backgroundColor = [UIColor clearColor];
     
     NSMutableArray * item = [NSMutableArray arrayWithArray:_items];

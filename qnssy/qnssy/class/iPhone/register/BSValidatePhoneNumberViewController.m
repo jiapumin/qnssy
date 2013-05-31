@@ -26,7 +26,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.validateNumber = [[UITextField alloc] initWithFrame:CGRectMake(20, 61, 170, 40)];
+        self.validateNumber = [[[UITextField alloc] initWithFrame:CGRectMake(20, 61, 170, 40)] autorelease];
         self.validateNumber.borderStyle = UITextBorderStyleRoundedRect;
         self.validateNumber.placeholder = @"请输入验证码";
         self.validateNumber.keyboardType = UIKeyboardTypePhonePad;
@@ -144,6 +144,7 @@
         [alertView release];
     }
     [progressHUD hide:YES];
+    [vo release];
 }
 
 - (void) validateFailed:(id) sender data:(NSDictionary *) dic{

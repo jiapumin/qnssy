@@ -41,7 +41,7 @@
     BOOL status = NO;
     NSString *dataStr = [dic objectForKey:@"datingdate"];
 //    dataStr = @"2013.04.23";
-    NSDateFormatter* dateFormat = [[NSDateFormatter alloc] init];
+    NSDateFormatter* dateFormat = [[[NSDateFormatter alloc] init] autorelease];
     [dateFormat setDateFormat:@"yyyy.MM.dd"];//设定时间格式,这里可以设置成自己需要的格式
     NSDate *date =[dateFormat dateFromString:dataStr];
     NSDate *newDate = [NSDate date];

@@ -38,6 +38,7 @@
 
     
     [self.delegate.navigationController pushViewController:smvc animated:YES];
+    [smvc release];
 }
 
 - (IBAction)clickTJButton:(id)sender {
@@ -53,6 +54,7 @@
     
     
     [self.delegate.navigationController pushViewController:gvc animated:YES];
+    [gvc release];
 }
 
 #pragma mark - request

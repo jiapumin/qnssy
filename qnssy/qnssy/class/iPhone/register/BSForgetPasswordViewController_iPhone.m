@@ -36,7 +36,7 @@
     self.navigationController.navigationBarHidden = NO;
     self.myWebView.scalesPageToFit = YES;
     NSURL *url = [NSURL URLWithString:@"http://www.qnssy.com/m/passport.php?mod=forget"];
-    NSURLRequest *request = [[NSURLRequest alloc] initWithURL:url];
+    NSURLRequest *request = [[[NSURLRequest alloc] initWithURL:url] autorelease];
     [self.myWebView loadRequest:request];
 }
 - (void)initHUDView{

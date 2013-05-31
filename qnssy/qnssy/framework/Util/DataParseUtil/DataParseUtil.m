@@ -37,9 +37,9 @@
 
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"myInfoData" ofType:@"plist"];
 //    NSArray *array = [[NSArray alloc] initWithContentsOfFile:plistPath];
-    NSDictionary *data = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    NSDictionary *data = [[[NSDictionary alloc] initWithContentsOfFile:plistPath] autorelease];
 
-        return [data objectForKey:key];
+    return [data objectForKey:key];
 
 }
 

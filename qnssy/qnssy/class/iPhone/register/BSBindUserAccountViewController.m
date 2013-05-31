@@ -183,7 +183,7 @@
         [alert release];
         
     }
-    
+    [vo release];
     
     [progressHUD hide:YES];
 }

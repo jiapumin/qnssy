@@ -34,7 +34,7 @@
 //            [tempServiceAgent release];
 //        }
 //        if (self.userInfo == nil) {
-            self.userInfo = [[UserInfo alloc]init];
+        self.userInfo = [[[UserInfo alloc]init] autorelease];
 //            self.userInfo = tempUserInfo;
 //            [tempUserInfo release];
 //        }

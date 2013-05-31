@@ -290,10 +290,11 @@
         //今天禁用按钮
         //？？
     }
+    
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
     [alert release];
-    
+    [vo release];
 }
 
 

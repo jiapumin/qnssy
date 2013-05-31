@@ -45,6 +45,7 @@
     UIBarButtonItem * topLeftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:topLeftButton];
     
     self.navigationItem.leftBarButtonItem = topLeftBarButtonItem;
+    [topLeftBarButtonItem release];
 
     selectedProvince = [province objectAtIndex: 0];
     self.wantsFullScreenLayout = YES;
@@ -114,7 +115,7 @@
             self.userName = nickEntry.textValue;
         };
         //性别
-        BSSexElement *sexEntry = [[BSSexElement alloc] initWithItems:[[NSArray alloc] initWithObjects:@"男", @"女", nil] selected:0 title:@"性别"];
+        BSSexElement *sexEntry = [[BSSexElement alloc] initWithItems:[NSArray arrayWithObjects:@"男", @"女", nil] selected:0 title:@"性别"];
         sexEntry.appearance = appearance;
         self.sex = @"1";
         sexEntry.onValueChanged = ^(QRootElement *el){
@@ -188,10 +189,10 @@
         
         [nickEntry release];
         [sexEntry release];
-        [birthdayPicker release];
-        [eduElement release];
-        [moneyElement release];
-        [heightElement release];
+//        [birthdayPicker release];
+//        [eduElement release];
+//        [moneyElement release];
+        [buttonElement release];
         [loveKindElement release];
         
         [appearance release];
@@ -215,6 +216,7 @@
         [section6 release];
         [section7 release];
         [section8 release];
+        [section9 release];
         [section10 release];
     }
     return self;

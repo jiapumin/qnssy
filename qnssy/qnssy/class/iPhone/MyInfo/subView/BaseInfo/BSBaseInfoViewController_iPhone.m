@@ -147,9 +147,16 @@
     
     cell.key = key;
     
-    if ([key isEqualToString:@"cityname"]) {
+    if ([key isEqualToString:@"cityname"] ) {
         cell.leftLabel.text = @"所在地";
         cell.rightLabel.text = [self.myBaseInfo objectForKey:key];
+        return cell;
+    }
+    if ( [key isEqualToString:@"email"]) {
+        cell.leftLabel.text = @"邮箱";
+        cell.rightLabel.text = [self.myBaseInfo objectForKey:key];
+        [cell setAccessoryType:UITableViewCellAccessoryNone];
+        //此行不可编辑
         return cell;
     }
 
@@ -192,13 +199,16 @@
 //    [udivc release];
     
     BaseInfoTableViewCell_iPhone *cell = (BaseInfoTableViewCell_iPhone *)[tableView cellForRowAtIndexPath:indexPath];
+    
+    if ( [cell.key isEqualToString:@"email"]) return;//此行不可编辑
+    
     [self cellAction:cell];
-    NSMutableDictionary *aa = [[NSMutableDictionary alloc] init];
-    for (int i = 130; i<261; i++) {
-       [aa setObject:[NSString stringWithFormat:@"%d",i] forKey:[NSString stringWithFormat:@"%d",i]];
-        
-    }
-    NSLog(@"%@",aa);
+//    NSMutableDictionary *aa = [[NSMutableDictionary alloc] init];
+//    for (int i = 18; i<100; i++) {
+//       [aa setObject:[NSString stringWithFormat:@"%d",i] forKey:[NSString stringWithFormat:@"%d",i]];
+//        
+//    }
+//    NSLog(@"%@",aa);
 }
 
 - (void)cellAction:(BaseInfoTableViewCell_iPhone *)cell {
@@ -232,25 +242,18 @@
         cell.rightLabel.text = [NSString stringWithFormat:@"%@",selectedValue];
         cell.commitValue = [self.myBaseInfo objectForKey:key];
     };
-    //排序
-    NSMutableArray *dataArray = [NSMutableArray arrayWithArray:[infoDesDic allValues]];
-    [dataArray sortUsingSelector:@selector(compare:)];
     
-    [ActionSheetStringPicker showPickerWithTitle:title rows:dataArray initialSelection:0 doneBlock:done cancelBlock:nil origin:cell];
+    //排序
+    NSMutableArray *keyArray = [NSMutableArray arrayWithArray:[infoDesDic allKeys]];
+    [keyArray sortUsingSelector:@selector(compare:)];
+    NSMutableArray *dataArray = [[NSMutableArray alloc] initWithCapacity:keyArray.count];
+    for (NSString *key in  [keyArray objectEnumerator]) {
+        [dataArray addObject:[infoDesDic objectForKey:key]];
+    }
+    
+    
+    [ActionSheetStringPicker showPickerWithTitle:title rows:dataArray initialSelection:dataArray.count/2 doneBlock:done cancelBlock:nil origin:cell];
+    [dataArray release];
 }
-
-
-
-#pragma mark -
-
-//- (NSComparisonResult)compare:(id)inObject {
-//    NSComparisonResult result = [self.name compare:[(MPURLRequestParameter *)inObject name]];
-//	
-//    if (result == NSOrderedSame) {
-//        result = [self.value compare:[(MPURLRequestParameter *)inObject value]];
-//    }
-//    
-//    return result;
-//}
 
 @end

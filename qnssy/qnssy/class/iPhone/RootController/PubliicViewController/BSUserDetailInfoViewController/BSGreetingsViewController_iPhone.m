@@ -30,7 +30,7 @@
         self.userid = userid;
         
         NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"Greetings" ofType:@"plist"];
-        NSArray *array = [[NSArray alloc] initWithContentsOfFile:plistPath];
+        NSArray *array = [[[NSArray alloc] initWithContentsOfFile:plistPath] autorelease];
 //        NSDictionary *data = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
         self.dataArray = array;
     }

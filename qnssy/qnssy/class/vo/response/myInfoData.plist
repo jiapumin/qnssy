@@ -7,7 +7,7 @@
 		<string>性别</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>男</string>
 			<key>2</key>
@@ -22,12 +22,181 @@
 	<key>age</key>
 	<array>
 		<string>年龄</string>
-		<dict/>
+		<dict>
+			<key>0</key>
+			<string>无</string>
+			<key>19</key>
+			<string>19岁</string>
+			<key>20</key>
+			<string>20岁</string>
+			<key>18</key>
+			<string>18岁</string>
+			<key>21</key>
+			<string>21岁</string>
+			<key>22</key>
+			<string>22岁</string>
+			<key>23</key>
+			<string>23岁</string>
+			<key>24</key>
+			<string>24岁</string>
+			<key>25</key>
+			<string>25岁</string>
+			<key>26</key>
+			<string>26岁</string>
+			<key>27</key>
+			<string>27岁</string>
+			<key>28</key>
+			<string>28岁</string>
+			<key>29</key>
+			<string>29岁</string>
+			<key>30</key>
+			<string>30岁</string>
+			<key>31</key>
+			<string>31岁</string>
+			<key>32</key>
+			<string>32岁</string>
+			<key>33</key>
+			<string>33岁</string>
+			<key>34</key>
+			<string>34岁</string>
+			<key>35</key>
+			<string>35岁</string>
+			<key>36</key>
+			<string>36岁</string>
+			<key>37</key>
+			<string>37岁</string>
+			<key>38</key>
+			<string>38岁</string>
+			<key>39</key>
+			<string>39岁</string>
+			<key>40</key>
+			<string>40岁</string>
+			<key>41</key>
+			<string>41岁</string>
+			<key>42</key>
+			<string>42岁</string>
+			<key>43</key>
+			<string>43岁</string>
+			<key>44</key>
+			<string>44岁</string>
+			<key>45</key>
+			<string>45岁</string>
+			<key>46</key>
+			<string>46岁</string>
+			<key>47</key>
+			<string>47岁</string>
+			<key>48</key>
+			<string>48岁</string>
+			<key>49</key>
+			<string>49岁</string>
+			<key>50</key>
+			<string>50岁</string>
+			<key>51</key>
+			<string>51岁</string>
+			<key>52</key>
+			<string>52岁</string>
+			<key>53</key>
+			<string>53岁</string>
+			<key>54</key>
+			<string>54岁</string>
+			<key>55</key>
+			<string>55岁</string>
+			<key>56</key>
+			<string>56岁</string>
+			<key>57</key>
+			<string>57岁</string>
+			<key>58</key>
+			<string>58岁</string>
+			<key>59</key>
+			<string>59岁</string>
+			<key>60</key>
+			<string>60岁</string>
+			<key>61</key>
+			<string>61岁</string>
+			<key>62</key>
+			<string>62岁</string>
+			<key>63</key>
+			<string>63岁</string>
+			<key>64</key>
+			<string>64岁</string>
+			<key>65</key>
+			<string>65岁</string>
+			<key>66</key>
+			<string>66岁</string>
+			<key>67</key>
+			<string>67岁</string>
+			<key>68</key>
+			<string>68岁</string>
+			<key>69</key>
+			<string>69岁</string>
+			<key>70</key>
+			<string>70岁</string>
+			<key>71</key>
+			<string>71岁</string>
+			<key>72</key>
+			<string>72岁</string>
+			<key>73</key>
+			<string>73岁</string>
+			<key>74</key>
+			<string>74岁</string>
+			<key>75</key>
+			<string>75岁</string>
+			<key>76</key>
+			<string>76岁</string>
+			<key>77</key>
+			<string>77岁</string>
+			<key>78</key>
+			<string>78岁</string>
+			<key>79</key>
+			<string>79岁</string>
+			<key>80</key>
+			<string>80岁</string>
+			<key>81</key>
+			<string>81岁</string>
+			<key>82</key>
+			<string>82岁</string>
+			<key>83</key>
+			<string>83岁</string>
+			<key>84</key>
+			<string>84岁</string>
+			<key>85</key>
+			<string>85岁</string>
+			<key>86</key>
+			<string>86岁</string>
+			<key>87</key>
+			<string>87岁</string>
+			<key>88</key>
+			<string>88岁</string>
+			<key>89</key>
+			<string>89岁</string>
+			<key>90</key>
+			<string>90岁</string>
+			<key>91</key>
+			<string>91岁</string>
+			<key>92</key>
+			<string>92岁</string>
+			<key>93</key>
+			<string>93岁</string>
+			<key>94</key>
+			<string>94岁</string>
+			<key>95</key>
+			<string>95岁</string>
+			<key>96</key>
+			<string>96岁</string>
+			<key>97</key>
+			<string>97岁</string>
+			<key>98</key>
+			<string>98岁</string>
+			<key>99</key>
+			<string>99岁</string>
+		</dict>
 	</array>
 	<key>height</key>
 	<array>
 		<string>身高</string>
 		<dict>
+			<key>0</key>
+			<string>无</string>
 			<key>130</key>
 			<string>130CM</string>
 			<key>131</key>
@@ -297,7 +466,7 @@
 		<string>教育程度</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>中专以下学历</string>
 			<key>3</key>
@@ -322,7 +491,7 @@
 		<string>婚姻状态</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>未婚</string>
 			<key>2</key>
@@ -336,7 +505,7 @@
 		<string>血型</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>A型</string>
 			<key>2</key>
@@ -354,7 +523,7 @@
 		<string>有无子女</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>无小孩</string>
 			<key>2</key>
@@ -370,7 +539,7 @@
 		<string>国籍</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>中国大陆</string>
 			<key>2</key>
@@ -388,7 +557,7 @@
 		<string>户籍 省</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>北京</string>
 			<key>3</key>
@@ -478,7 +647,7 @@
 		<string>所在地区 省</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>北京</string>
 			<key>3</key>
@@ -563,7 +732,7 @@
 		<string>所在地区 市</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>6</key>
 			<string>黄浦</string>
 			<key>514</key>
@@ -621,7 +790,7 @@
 		<string>交友类型</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>3</key>
 			<string>恋爱</string>
 			<key>4</key>
@@ -633,7 +802,7 @@
 		<string>个性</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>浪漫迷人</string>
 			<key>2</key>
@@ -665,7 +834,7 @@
 		<string>民族</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>汉族</string>
 			<key>2</key>
@@ -695,7 +864,7 @@
 		<string>所在行业</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>在校学生</string>
 			<key>2</key>
@@ -789,7 +958,7 @@
 		<string>月薪</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>2000元以下</string>
 			<key>2</key>
@@ -807,7 +976,7 @@
 		<string>居住情况</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>暂未购房</string>
 			<key>2</key>
@@ -831,7 +1000,7 @@
 		<string>购车情况</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>暂未购车</string>
 			<key>2</key>
@@ -842,10 +1011,8 @@
 	<array>
 		<string>体重</string>
 		<dict>
-			<key>30</key>
-			<string>30</string>
-			<key>31</key>
-			<string>31</string>
+			<key>0</key>
+			<string>无</string>
 			<key>30</key>
 			<string>30公斤</string>
 			<key>31</key>
@@ -1195,7 +1362,7 @@
 		<string>外貌自评</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>文质彬彬型</string>
 			<key>2</key>
@@ -1235,7 +1402,7 @@
 		<string>魅力部位</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>笑容</string>
 			<key>2</key>
@@ -1277,7 +1444,7 @@
 		<string>发型</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>顺直长发</string>
 			<key>2</key>
@@ -1299,7 +1466,7 @@
 		<string>发色</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>黑色</string>
 			<key>2</key>
@@ -1327,7 +1494,7 @@
 		<string>脸型</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>圆脸型</string>
 			<key>2</key>
@@ -1351,7 +1518,7 @@
 		<string>体型</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>瘦</string>
 			<key>2</key>
@@ -1379,7 +1546,7 @@
 		<string>费用预算</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>100元以下</string>
 			<key>2</key>
@@ -1395,7 +1562,7 @@
 		<string>付款方式</string>
 		<dict>
 			<key>0</key>
-			<string></string>
+			<string>无</string>
 			<key>1</key>
 			<string>发起人买单</string>
 			<key>2</key>

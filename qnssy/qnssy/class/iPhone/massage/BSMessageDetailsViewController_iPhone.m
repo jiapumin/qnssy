@@ -24,11 +24,11 @@
         sender.backgroundColor = [UIColor clearColor];
         [self.view addSubview:sender];
         [sender release];
-        self.senderLabel = [[UILabel alloc] initWithFrame:CGRectMake(103, 20, 197, 21)];
+        self.senderLabel = [[[UILabel alloc] initWithFrame:CGRectMake(103, 20, 197, 21)] autorelease];
         self.senderLabel.textColor = [UIColor colorWithRed:61./255 green:59./255 blue:55./255 alpha:1];
         self.senderLabel.backgroundColor = [UIColor clearColor];
         [self.view addSubview:self.senderLabel];
-        [self.senderLabel release];
+
         
         UILabel *date = [[UILabel alloc] initWithFrame:CGRectMake(20, 49, 85, 21)];
         date.text = @"发送日期：";
@@ -36,17 +36,15 @@
         date.backgroundColor = [UIColor clearColor];
         [self.view addSubview:date];
         [date release];
-        self.dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(103, 49, 197, 21)];
+        self.dateLabel = [[[UILabel alloc] initWithFrame:CGRectMake(103, 49, 197, 21)] autorelease];
         self.dateLabel.textColor = [UIColor colorWithRed:61./255 green:59./255 blue:55./255 alpha:1];
         self.dateLabel.backgroundColor = [UIColor clearColor];
         [self.view addSubview:self.dateLabel];
-        [self.dateLabel release];
         
-        self.textView = [[UITextView alloc] initWithFrame:CGRectMake(20, 78, 280, 450)];
+        self.textView = [[[UITextView alloc] initWithFrame:CGRectMake(20, 78, 280, 450)] autorelease];
         self.textView.textColor = [UIColor colorWithRed:61./255 green:59./255 blue:55./255 alpha:1];
         self.textView.backgroundColor = [UIColor clearColor];
         [self.view addSubview:self.textView];
-        [self.textView release];
     }
     return self;
 }
@@ -64,6 +62,9 @@
 }
 
 - (void)dealloc {
+    [_textView release];
+    [_senderLabel release];
+    [_dateLabel release];
     [super dealloc];
 }
 - (void)viewDidUnload {
