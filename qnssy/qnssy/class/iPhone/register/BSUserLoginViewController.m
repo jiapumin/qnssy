@@ -278,7 +278,9 @@
         //验证失败跳转到填写用户信息界面
         
         BSBindUserAccountViewController *buavc = [[BSBindUserAccountViewController alloc] initWithNibName:@"BSBindUserAccountViewController" bundle:nil];
+        buavc.openid = _tencentOAuth.openId;
         [self.navigationController pushViewController:buavc animated:YES];
+        
         [buavc release];
         
     }
