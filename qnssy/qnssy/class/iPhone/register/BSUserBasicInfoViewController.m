@@ -261,7 +261,7 @@
 
 - (void) validateSucceess:(id) sender data:(NSDictionary *) dic{
 //    if (self.openid == nil ) {//不带验证的注册
-        LoginResponseVo *vo = [[LoginResponseVo alloc] initWithDic:[dic objectForKey:@"ResData"]];
+        LoginResponseVo *vo = [[LoginResponseVo alloc] initWithDic:dic];
         NSLog(@"用户id:%@--登录消息:%@",vo.userInfo.userId,vo.message);
         
         if (vo.status == 0) {
