@@ -215,6 +215,8 @@
         [params setObject:self.salary forKey:@"salary"];
         [params setObject:self.province forKey:@"provinceid"];
         [params setObject:self.city forKey:@"cityid"];
+        self.openid = self.openid == nil ? @"" : self.openid;
+        [params setObject:self.openid forKey:@"openid"];
         
         [progressHUD show:YES];
         
@@ -258,7 +260,7 @@
 #pragma mark - 服务器回调
 
 - (void) validateSucceess:(id) sender data:(NSDictionary *) dic{
-    if (self.openid == nil ) {//不带验证的注册
+//    if (self.openid == nil ) {//不带验证的注册
         LoginResponseVo *vo = [[LoginResponseVo alloc] initWithDic:[dic objectForKey:@"ResData"]];
         NSLog(@"用户id:%@--登录消息:%@",vo.userInfo.userId,vo.message);
         
@@ -277,11 +279,11 @@
             
             [app viewUpdate];
             app.window.rootViewController = app.revealSideViewController;
-        }else{
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-            [alert show];
-            [alert release];
-        }
+//        }else{
+//            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+//            [alert show];
+//            [alert release];
+//        }
         [vo release];
         [progressHUD hide:YES];
     }else{//带绑定的登录

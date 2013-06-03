@@ -64,7 +64,7 @@
     
     self.accountField = [[[UITextField alloc] initWithFrame:CGRectMake(marginx, marginy, self.view.frame.size.width - marginx*2, 44)] autorelease];
     self.accountField.borderStyle = UITextBorderStyleRoundedRect;
-    self.accountField.placeholder = @"请输入您的手机号";
+    self.accountField.placeholder = @"请输入您千千账号";
     self.accountField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     self.accountField.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
     [self.view addSubview:self.accountField];
@@ -76,6 +76,7 @@
     self.passwordField.placeholder = @"密码（6-20位）";
     self.passwordField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     self.passwordField.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+    self.passwordField.secureTextEntry = YES;
     [self.view addSubview:self.passwordField];
     
     marginy = self.passwordField.frame.origin.y + self.passwordField.frame.size.height + 10;

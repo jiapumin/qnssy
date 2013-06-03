@@ -69,6 +69,7 @@
     self.userPassword.keyboardType = UIKeyboardTypeDefault;
     self.userPassword.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     self.userPassword.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+    self.userPassword.secureTextEntry = YES;
     
     self.userAccount.delegate = self;
     self.userPassword.delegate = self;
