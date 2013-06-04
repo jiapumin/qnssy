@@ -16,6 +16,7 @@
     [_key release];
     [_leftLabel release];
     [_rightLabel release];
+    [_username release];
     [super dealloc];
 }
 @end

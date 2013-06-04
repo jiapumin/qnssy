@@ -14,5 +14,6 @@
 @property (retain, nonatomic) IBOutlet UILabel *rightLabel;
 @property (retain, nonatomic) NSString *key;
 @property (retain, nonatomic) NSString *commitValue;
+@property (retain, nonatomic) IBOutlet UITextField *username;
 
 @end

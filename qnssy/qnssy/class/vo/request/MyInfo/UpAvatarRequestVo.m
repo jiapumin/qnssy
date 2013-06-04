@@ -24,7 +24,7 @@
 //        NSLog(@"%@",str);
 //        [request setPostValue: @"true" forKey: @"is_phone"];
 //        [request setPostValue:@"true" forKey:@"do_upload_file"];
-        [request setFile:filePath forKey: @"avatar"];
+        [request setFile:filePath forKey:@"avatar"];
         [request buildRequestHeaders];
         [request setPostValue:[BSContainer instance].userInfo.userId forKey:@"userid"];
         [request setDefaultResponseEncoding:NSUTF8StringEncoding];

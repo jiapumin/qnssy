@@ -18,6 +18,10 @@
 
 #import "ActionSheetStringPicker.h"
 
+#import "WorkAreaPickerViewDelegate.h"
+
+#import "ActionSheetCustomPicker.h"
+
 @interface BSBaseInfoViewController_iPhone (){
     MBProgressHUD *progressHUD;
 }
@@ -31,6 +35,36 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        self.commitData = [[[NSMutableDictionary alloc] init] autorelease];
+        [self.commitData setObject:@"0" forKey:@"email"];
+        [self.commitData setObject:@"0" forKey:@"username"];
+        [self.commitData setObject:@"0" forKey:@"sex"];
+        [self.commitData setObject:@"0" forKey:@"age"];
+        [self.commitData setObject:@"0" forKey:@"marrystatus"];
+        [self.commitData setObject:@"0" forKey:@"height"];
+        [self.commitData setObject:@"0" forKey:@"blood"];
+        [self.commitData setObject:@"0" forKey:@"childrenstatus"];
+        [self.commitData setObject:@"0" forKey:@"nationality"];
+        [self.commitData setObject:@"0" forKey:@"nationalprovinceid"];
+        [self.commitData setObject:@"0" forKey:@"nationalcityid"];
+        [self.commitData setObject:@"0" forKey:@"provinceid"];
+        [self.commitData setObject:@"0" forKey:@"cityid"];
+        [self.commitData setObject:@"0" forKey:@"areaid"];
+        [self.commitData setObject:@"0" forKey:@"lovekind"];
+        [self.commitData setObject:@"0" forKey:@"personality"];
+        [self.commitData setObject:@"0" forKey:@"national"];
+        [self.commitData setObject:@"0" forKey:@"jobs"];
+        [self.commitData setObject:@"0" forKey:@"salary"];
+        [self.commitData setObject:@"0" forKey:@"housing"];
+        [self.commitData setObject:@"0" forKey:@"caring"];
+        [self.commitData setObject:@"0" forKey:@"weight"];
+        [self.commitData setObject:@"0" forKey:@"profile"];
+        [self.commitData setObject:@"0" forKey:@"charmparts"];
+        [self.commitData setObject:@"0" forKey:@"hairstyle"];
+        [self.commitData setObject:@"0" forKey:@"haircolor"];
+        [self.commitData setObject:@"0" forKey:@"facestyle"];
+        [self.commitData setObject:@"0" forKey:@"bodystyle"];
+        [self.commitData setObject:@"0" forKey:@"education"];
     }
     return self;
 }
@@ -41,15 +75,14 @@
     // Do any additional setup after loading the view from its nib.
     self.title = @"基本资料";
     
-    self.commitData = [[[NSMutableDictionary alloc] initWithCapacity:25] autorelease];
     
     
     UIButton *topRightButton = [UIButton buttonWithType:UIButtonTypeCustom];
     //按钮大小
-    CGRect btnFrame = CGRectMake(0.0, 4.0, 29.0, 25.0);
+    CGRect btnFrame = CGRectMake(0.0, 4.0, 42, 27.0);
     topRightButton.frame = btnFrame;
     
-    [topRightButton setImage:[UIImage imageNamed:@"5菜单列表图片"]
+    [topRightButton setImage:[UIImage imageNamed:@"saveUserInfo"]
                    forState:UIControlStateNormal];
     
     [topRightButton addTarget:self
@@ -68,6 +101,9 @@
     
 }
 - (void)dealloc{
+    [_tempWorkArea1 release];
+    [_tempWorkArea2 release];
+    [_usernameTextField release];
     [_commitData release];
     [_myBaseInfo release];
     [_myTableView release];
@@ -109,18 +145,18 @@
     
     BaseInfoResponseVo *vo = [[BaseInfoResponseVo alloc] initWithDic:dic];
     
-    self.myBaseInfo = vo.myBaseInfo;
+    self.myBaseInfo = [NSMutableDictionary dictionaryWithDictionary:vo.myBaseInfo];
     
     self.myBaseInfoKey = [NSMutableArray arrayWithArray:[self.myBaseInfo allKeys]];
-    //areaid、areaname、cityname、nationalprovincename、provincename、userimg、username
-    [self.myBaseInfoKey removeObject:@"areaid"];
-//    [self.myBaseInfoKey removeObject:@"areaname"];
-    [self.myBaseInfoKey removeObject:@"cityid"];
-//    [self.myBaseInfoKey removeObject:@"nationalprovincename"];
-    [self.myBaseInfoKey removeObject:@"provinceid"];
-    [self.myBaseInfoKey removeObject:@"userimg"];
-//    [self.myBaseInfoKey removeObject:@"username"];
-    
+//    //areaid、areaname、cityname、nationalprovincename、provincename、userimg、username
+//    [self.myBaseInfoKey removeObject:@"areaid"];
+////    [self.myBaseInfoKey removeObject:@"areaname"];
+//    [self.myBaseInfoKey removeObject:@"cityid"];
+////    [self.myBaseInfoKey removeObject:@"nationalprovincename"];
+//    [self.myBaseInfoKey removeObject:@"provinceid"];
+//    [self.myBaseInfoKey removeObject:@"userimg"];
+////    [self.myBaseInfoKey removeObject:@"username"];
+//    
     if (vo.status != 0) {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
@@ -153,7 +189,10 @@
 {
     // 去掉areaid、areaname、cityname、nationalprovincename、provincename、userimg、username
 //    int num = [self.myBaseInfoKey count];
-    return 25;
+    if (self.myBaseInfoKey == nil) {
+        return 0;
+    }
+    return 26;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -173,104 +212,144 @@
     if (indexPath.section == 0 && indexPath.row == 0) {
         cell.leftLabel.text = @"登录邮箱";
         cell.rightLabel.text = [self.myBaseInfo objectForKey:@"email"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"email"] forKey:@"email"];
         cell.key = @"email";
         [cell setAccessoryType:UITableViewCellAccessoryNone];
     }else if (indexPath.section == 0 && indexPath.row == 1) {
         cell.leftLabel.text = @"会员名称";
-        cell.rightLabel.text = [self.myBaseInfo objectForKey:@"username"];//单独处理
+        cell.rightLabel.hidden = YES;
+        cell.username.hidden = NO;
+        cell.username.text = [self.myBaseInfo objectForKey:@"username"];//单独处理
+        cell.username.delegate = self;
+        self.usernameTextField = cell.username;
+        
+//        cell.rightLabel.text = [self.myBaseInfo objectForKey:@"username"];//单独处理
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"username"] forKey:@"username"];
+        [cell setAccessoryType:UITableViewCellAccessoryNone];
         cell.key = @"username";
     }else if (indexPath.section == 0 && indexPath.row == 2) {
         cell.leftLabel.text = @"性别";
         cell.rightLabel.text = [self stringFormat:@"sex"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"sex"] forKey:@"sex"];
         cell.key = @"sex";
     }else if (indexPath.section == 0 && indexPath.row == 3) {
         cell.leftLabel.text = @"年龄";
         cell.rightLabel.text = [self stringFormat:@"age"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"age"] forKey:@"age"];
         cell.key = @"age";
     }else if (indexPath.section == 0 && indexPath.row == 4) {
         cell.leftLabel.text = @"婚姻状态";
         cell.rightLabel.text = [self stringFormat:@"marrystatus"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"marrystatus"] forKey:@"marrystatus"];
         cell.key = @"marrystatus";
     }else if (indexPath.section == 0 && indexPath.row == 5) {
         cell.leftLabel.text = @"身高";
         cell.rightLabel.text = [self stringFormat:@"height"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"height"] forKey:@"height"];
         cell.key = @"height";
     }else if (indexPath.section == 0 && indexPath.row == 6) {
         cell.leftLabel.text = @"血型";
         cell.rightLabel.text = [self stringFormat:@"blood"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"blood"] forKey:@"blood"];
         cell.key = @"blood";
     }else if (indexPath.section == 0 && indexPath.row == 7) {
         cell.leftLabel.text = @"有无子女";
         cell.rightLabel.text = [self stringFormat:@"childrenstatus"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"childrenstatus"] forKey:@"childrenstatus"];
         cell.key = @"childrenstatus";
     }else if (indexPath.section == 0 && indexPath.row == 8) {
         cell.leftLabel.text = @"国籍";
         cell.rightLabel.text = [self stringFormat:@"nationality"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"nationality"] forKey:@"nationality"];
         cell.key = @"nationality";
     }else if (indexPath.section == 0 && indexPath.row == 9) {
         cell.leftLabel.text = @"户籍";
         cell.rightLabel.text = [NSString stringWithFormat:@"%@-%@",[self stringFormat:@"nationalprovinceid"],[self stringFormat:@"nationalcityid"]];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"nationalprovinceid"] forKey:@"nationalprovinceid"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"nationalcityid"] forKey:@"nationalcityid"];
         cell.key = @"nationalprovinceid";
     }else if (indexPath.section == 0 && indexPath.row == 10) {
         cell.leftLabel.text = @"所在地区";
         cell.rightLabel.text = [NSString stringWithFormat:@"%@-%@-%@",[self stringFormat:@"provinceid"],[self stringFormat:@"cityid"],[self stringFormat:@"areaid"]];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"provinceid"] forKey:@"provinceid"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"cityid"] forKey:@"cityid"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"areaid"] forKey:@"areaid"];
         cell.key = @"provinceid";
     }else if (indexPath.section == 0 && indexPath.row == 11) {
         cell.leftLabel.text = @"交友类型";
         cell.rightLabel.text = [self stringFormat:@"lovekind"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"lovekind"] forKey:@"lovekind"];
         cell.key = @"lovekind";
     }else if (indexPath.section == 0 && indexPath.row == 12) {
         cell.leftLabel.text = @"个性";
         cell.rightLabel.text = [self stringFormat:@"personality"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"personality"] forKey:@"personality"];
         cell.key = @"personality";
     }else if (indexPath.section == 0 && indexPath.row == 13) {
         cell.leftLabel.text = @"民族";
         cell.rightLabel.text = [self stringFormat:@"national"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"national"] forKey:@"national"];
         cell.key = @"national";
     }else if (indexPath.section == 0 && indexPath.row == 14) {
         cell.leftLabel.text = @"所在行业";
         cell.rightLabel.text = [self stringFormat:@"jobs"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"jobs"] forKey:@"jobs"];
         cell.key = @"jobs";
     }else if (indexPath.section == 0 && indexPath.row == 15) {
         cell.leftLabel.text = @"月薪";
         cell.rightLabel.text = [self stringFormat:@"salary"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"salary"] forKey:@"salary"];
         cell.key = @"salary";
     }else if (indexPath.section == 0 && indexPath.row == 16) {
         cell.leftLabel.text = @"居住情况";
         cell.rightLabel.text = [self stringFormat:@"housing"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"housing"] forKey:@"housing"];
         cell.key = @"housing";
     }else if (indexPath.section == 0 && indexPath.row == 17) {
         cell.leftLabel.text = @"购车情况";
         cell.rightLabel.text = [self stringFormat:@"caring"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"caring"] forKey:@"caring"];
         cell.key = @"caring";
     }else if (indexPath.section == 0 && indexPath.row == 18) {
         cell.leftLabel.text = @"体重";
         cell.rightLabel.text = [self stringFormat:@"weight"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"weight"] forKey:@"weight"];
         cell.key = @"weight";
     }else if (indexPath.section == 0 && indexPath.row == 19) {
         cell.leftLabel.text = @"外貌自评";
         cell.rightLabel.text = [self stringFormat:@"profile"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"profile"] forKey:@"profile"];
         cell.key = @"profile";
     }else if (indexPath.section == 0 && indexPath.row == 20) {
         cell.leftLabel.text = @"魅力部位";
         cell.rightLabel.text = [self stringFormat:@"charmparts"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"charmparts"] forKey:@"charmparts"];
         cell.key = @"charmparts";
     }else if (indexPath.section == 0 && indexPath.row == 21) {
         cell.leftLabel.text = @"发型";
         cell.rightLabel.text = [self stringFormat:@"hairstyle"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"hairstyle"] forKey:@"hairstyle"];
         cell.key = @"hairstyle";
     }else if (indexPath.section == 0 && indexPath.row == 22) {
         cell.leftLabel.text = @"发色";
         cell.rightLabel.text = [self stringFormat:@"haircolor"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"haircolor"] forKey:@"haircolor"];
         cell.key = @"haircolor";
     }else if (indexPath.section == 0 && indexPath.row == 23) {
         cell.leftLabel.text = @"脸型";
         cell.rightLabel.text = [self stringFormat:@"facestyle"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"facestyle"] forKey:@"facestyle"];
         cell.key = @"facestyle";
     }else if (indexPath.section == 0 && indexPath.row == 24) {
         cell.leftLabel.text = @"体型";
         cell.rightLabel.text = [self stringFormat:@"bodystyle"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"bodystyle"] forKey:@"bodystyle"];
         cell.key = @"bodystyle";
+    }else if (indexPath.section == 0 && indexPath.row == 25) {
+        cell.leftLabel.text = @"教育程度";
+        cell.rightLabel.text = [self stringFormat:@"education"];
+        [self.commitData setObject:[self.myBaseInfo objectForKey:@"education"] forKey:@"education"];
+        cell.key = @"education";
     }
 
 //    NSString *key = [self.myBaseInfoKey objectAtIndex:indexPath.row];
@@ -329,36 +408,30 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     [detailViewController release];
-     */
-    
+
     
     BaseInfoTableViewCell_iPhone *cell = (BaseInfoTableViewCell_iPhone *)[tableView cellForRowAtIndexPath:indexPath];
     
-    if ( [cell.key isEqualToString:@"email"]) return;//此行不可编辑
+    if ([cell.key isEqualToString:@"email"]) return;//此行不可编辑
     
     if ([cell.key isEqualToString:@"username"]) {//用户名
         
         return;
     }
     if ([cell.key isEqualToString:@"nationalprovinceid"]) {//户籍
-        
+        self.tempWorkArea1 = [[WorkAreaPickerViewDelegate alloc] init];
+        [ActionSheetCustomPicker showPickerWithTitle:@"户籍" delegate:self.tempWorkArea1 showCancelButton:NO origin:cell];
         return;
     }
     if ([cell.key isEqualToString:@"provinceid"]) {//所在地
-        
+        self.tempWorkArea2 = [[WorkAreaPickerViewDelegate alloc] init];
+        [ActionSheetCustomPicker showPickerWithTitle:@"所在地" delegate:self.tempWorkArea2 showCancelButton:NO origin:cell];
         return;
     }
     
     [self cellAction:cell];
-    
-    
+    //用户名键盘失去焦点
+    [self.usernameTextField resignFirstResponder];
     
 //    NSMutableDictionary *aa = [[NSMutableDictionary alloc] init];
 //    for (int i = 18; i<100; i++) {
@@ -382,7 +455,8 @@
     ActionStringDoneBlock done = ^(ActionSheetStringPicker *picker, NSInteger selectedIndex, id selectedValue) {
         cell.rightLabel.text = [NSString stringWithFormat:@"%@",selectedValue];
         NSString *tempValue = [NSString stringWithFormat:@"%d",selectedIndex];
-        [self.commitData setObject:tempValue forKey:key];
+        [self.commitData setObject:tempValue forKey:key];//要提交的数据
+        [self.myBaseInfo setObject:tempValue forKey:key];//表格刷新的时候使用
     };
     
     //排序
@@ -398,6 +472,30 @@
     [dataArray release];
 }
 - (void)commitChange{
+    NSString *username = self.usernameTextField.text;
+    if (username==nil || [username isEqualToString:@""]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"请输入用户名" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
+        return;
+    }
+    [self.commitData setObject:username forKey:@"username"];
+    
+    if (self.tempWorkArea1) {
+        NSString *str1 = self.tempWorkArea1.provinceId;
+        NSString *str2 =   self.tempWorkArea1.cityId;
+        [self.commitData setObject:str1 forKey:@"nationalprovinceid"];
+        [self.commitData setObject:str2 forKey:@"nationalcityid"];
+    }
+    
+    if (self.tempWorkArea2) {
+        NSString *str1 = self.tempWorkArea2.provinceId;
+        NSString *str2 =   self.tempWorkArea2.cityId;
+        [self.commitData setObject:str1 forKey:@"provinceid"];
+        [self.commitData setObject:str2 forKey:@"cityid"];
+    }
+    
+    
     [progressHUD show:YES];
     ChangeBaseInfoRequestVo *vo = [[ChangeBaseInfoRequestVo alloc] initWithData:self.commitData];
     [[BSContainer instance].serviceAgent callServletWithObject:self
@@ -415,16 +513,18 @@
     ChangeBaseInfoResponseVo *vo = [[ChangeBaseInfoResponseVo alloc] initWithDic:dic];
     
 
-    if (vo.status != 0) {
+    if (vo.status == 0) {
+        [self.myTableView reloadData];
+    }else{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
         [alert show];
         [alert release];
     }
     
     [progressHUD hide:YES];
-    
+
     [vo release];
-    [self.myTableView reloadData];
+    
 }
 
 
@@ -434,5 +534,7 @@
     [alert release];
     [progressHUD hide:YES];
 }
-
+- (void)textFieldDidEndEditing:(UITextField *)textField{
+    [self.myBaseInfo setObject:textField.text forKey:@"username"];
+}
 @end

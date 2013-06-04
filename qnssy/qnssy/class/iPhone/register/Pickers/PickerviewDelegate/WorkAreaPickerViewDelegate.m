@@ -10,6 +10,8 @@
 #import "AreaDatabase.h"
 #import "AreaInfo.h"
 
+#import "BaseInfoTableViewCell_iPhone.h"
+
 @implementation WorkAreaPickerViewDelegate
 
 - (id)init
@@ -53,7 +55,13 @@
 //    [[[UIAlertView alloc] initWithTitle:@"Success!" message:resultMessage delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil] show];
     [self.cityArray addObject:@"请选择"];
     [self.cityArray removeAllObjects];
-    [origin setTitle:[NSString stringWithFormat:@"%@ - %@",self.provinceName, self.cityName] forState:UIControlStateNormal];
+    if ([[origin class] isSubclassOfClass:[UIButton class]]) {
+        [origin setTitle:[NSString stringWithFormat:@"%@ - %@",self.provinceName, self.cityName] forState:UIControlStateNormal];
+    }else if([[origin class] isSubclassOfClass:[UITableViewCell class]]){
+        BaseInfoTableViewCell_iPhone *cell = (BaseInfoTableViewCell_iPhone *)origin;
+        cell.rightLabel.text = [NSString stringWithFormat:@"%@-%@",self.provinceName, self.cityName];
+    }
+
 }
 
 /////////////////////////////////////////////////////////////////////////

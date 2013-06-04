@@ -22,7 +22,12 @@
             //服务器返回数据成功
             if (resCode == 0) {
                 NSDictionary *ResData = [data objectForKey:@"ResData"];
-                int resCode2 = [[ResData objectForKey:@"ResCode"] intValue];
+                NSString *strCode = [ResData objectForKey:@"ResCode"];
+                //此判断是为了适应服务器状态不统一  应该统一成 ResCode  服务器现在可能是ResCode 也可能是status
+                if (!strCode) {
+                    strCode = [ResData objectForKey:@"status"];
+                }
+                int resCode2 = [strCode intValue];
                 if (resCode2 == 0) {
                     //用户操作成功（服务器执行命令成功）
                     NSDictionary *ResData2 = [ResData objectForKey:@"ResData"];

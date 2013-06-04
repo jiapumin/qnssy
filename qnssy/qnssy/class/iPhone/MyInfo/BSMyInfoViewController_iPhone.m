@@ -16,14 +16,19 @@
 #import "BSMyAttentionViewController_iPhone.h"
 #import "BSLookedMeViewController_iPhone.h"
 
+#import "BSRootLeftViewController_iPhone.h"
+
 
 #import "BSBaseInfoViewController_iPhone.h"
 
 #import "SignInResponseVo.h"
 
-#import "UpAvatarRequestVo.h"//add by Hanrea
-@interface BSMyInfoViewController_iPhone ()
+#import "UpdateMyPhotoResponseVo.h"
 
+#import "UpAvatarRequestVo.h"//add by Hanrea
+@interface BSMyInfoViewController_iPhone (){
+    MBProgressHUD *progressHUD;
+}
 @end
 
 @implementation BSMyInfoViewController_iPhone
@@ -64,7 +69,7 @@
             forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.rightBarButtonItem = [[[UIBarButtonItem alloc] initWithCustomView:topRightButton] autorelease];
     
-    
+    [self initHUDView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -94,6 +99,15 @@
     [self setAvatarImgButton:nil];
     [super viewDidUnload];
 }
+- (void)initHUDView{
+    //-------加载框
+    progressHUD = [[MBProgressHUD alloc] initWithView:self.view];
+    
+    [self.view addSubview:progressHUD];
+    
+    progressHUD.labelText = @"数据加载中...";
+    
+}
 #pragma mark - 初始化数据
 - (void)initData{
     self.textNameArrays = [NSArray arrayWithObjects:
@@ -118,13 +132,12 @@
     
     if (image != nil){
         //当前显示那张图片
-        [self.avatarImgButton setBackgroundImage:image forState:UIControlStateNormal];
+        [self.avatarImgButton setImage:image forState:UIControlStateNormal];
     }else{
         //先设置默认图就是加载中的图片
         UIImage *loadingImage = [UIImage imageNamed:@"5暂无照片头像"];
 
-        [self.avatarImgButton setBackgroundImage:loadingImage forState:UIControlStateNormal];
-//        [self.testImgeView setImage:loadingImage];
+        [self.avatarImgButton setImage:loadingImage forState:UIControlStateNormal];
         //异步加载图片 并保存到本地
         KBBTFileInfoVo *vo = [[[KBBTFileInfoVo alloc] init] autorelease];
         NSLog(@"urlStr==%@",imageUrl);
@@ -270,7 +283,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 }
 - (void)updateMyAvatarImage:(NSString *)filePath{
     
-   // [self.progressHUD show:YES];
+    [progressHUD show:YES];
     //UpdateMyPhotoRequestVo *vo = [[UpdateMyPhotoRequestVo alloc] initWithPhotoFilePath:filePath delegate:self];
     UpAvatarRequestVo *vo = [[UpAvatarRequestVo alloc] initWithAvatarFilePath:filePath delegate:self];
     [vo release];
@@ -406,7 +419,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
     
     if (image == nil) return;
     
-    [self.avatarImgButton setBackgroundImage:image forState:UIControlStateNormal];
+    [self.avatarImgButton setImage:image forState:UIControlStateNormal];
 }
 
 - (void)signInSucceess:(id)sender data:(NSDictionary *)dic {
@@ -436,30 +449,51 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info{
 - (void)UpAvatarSuccess:(ASIFormDataRequest *)request
 {
     NSLog(@"upAcatarSuccess");
-   // [self.progressHUD hide:YES];
+    [progressHUD hide:YES];
     NSString *dataStr = request.responseString;
     NSDictionary *dataDic = [dataStr JSONValue];
+
+//成功将数据返回
+    NSMutableDictionary *resultDict = [[[NSMutableDictionary alloc] init] autorelease];
+    [resultDict setObject:[NSNumber numberWithInt:IPLAT4M_STATUS_SUCCESS] forKey:@"status"];
+    [resultDict setObject:dataDic forKey:@"data"];
     
-    //成功将数据返回
-//    NSMutableDictionary *resultDict = [[[NSMutableDictionary alloc] init] autorelease];
-//    [resultDict setObject:[NSNumber numberWithInt:IPLAT4M_STATUS_SUCCESS] forKey:@"status"];
-//    [resultDict setObject:dataDic forKey:@"data"];
-//    
-//    UpdateMyPhotoResponseVo *vo = [[UpdateMyPhotoResponseVo alloc] initWithDic:resultDict];
-//    
-//    [images_.images_ addObject:vo.dataDic];
-//    [vo release];
-//    [self setDataSource:images_];
-    NSLog(@"responseString = %@", request.responseString);
+    UpdateMyPhotoResponseVo *vo = [[UpdateMyPhotoResponseVo alloc] initWithDic:resultDict];
+    
+    NSString *filePath = [[[KBBreakpointTransmission instance] getTargetFloderPath:IMAGE_PATH] stringByAppendingPathComponent:@"Avatar.png"];
+    UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+    [self.avatarImgButton setImage:image forState:UIControlStateNormal];
+    
+    //更新左边头像
+    [app.leftvc.myTopPhoto setImage:image forState:UIControlStateNormal];
+    
+    //保存图片到对应的头像文件
+    NSString *oldFilePath = [[KBBreakpointTransmission instance] getTargetFloderPath:IMAGE_PATH];
+    NSArray *tempArray = [[vo.dataDic objectForKey:@"imageUrl"] componentsSeparatedByString:@"/"];
+    NSString *imageName = [NSString stringWithFormat:@"%@_%@",[tempArray objectAtIndex:(tempArray.count -2)],[tempArray lastObject]];
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSData *data;
+    if (UIImagePNGRepresentation(image) == nil) {
+        data = UIImageJPEGRepresentation(image, 1);
+    } else {
+        data = UIImagePNGRepresentation(image);
+    }
+    [fileManager createDirectoryAtPath:oldFilePath withIntermediateDirectories:YES attributes:nil error:nil];
+    oldFilePath = [oldFilePath stringByAppendingString:[NSString stringWithFormat:@"/%@",imageName]];
+    [fileManager createFileAtPath:oldFilePath contents:data attributes:nil];
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+     [alert show];
+     [alert release];
+    [vo release];
 }
 - (void)UpAvatarFail:(ASIFormDataRequest *)request
 {
     NSLog(@"UpAvatarFail");
-//    [self.progressHUD hide:YES];
+    [progressHUD hide:YES];
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"网络异常，请检查网络连接后重试" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alert show];
     [alert release];
-     NSLog(@"responseString = %@", request.responseString);
 }
 
 

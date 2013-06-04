@@ -83,6 +83,8 @@
 		D8185E3C174B41F600995CAE /* BSSearchResultTableViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8185E3A174B41F600995CAE /* BSSearchResultTableViewCell_iPhone.m */; };
 		D8185E3D174B41F600995CAE /* BSSearchResultTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8185E3B174B41F600995CAE /* BSSearchResultTableViewCell_iPhone.xib */; };
 		D8185E41174B438300995CAE /* SearchResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D8185E40174B438300995CAE /* SearchResponseVo.m */; };
+		D8232B86175E3DA70075BC9A /* saveUserInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = D8232B84175E3DA70075BC9A /* saveUserInfo.png */; };
+		D8232B87175E3DA70075BC9A /* saveUserInfo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8232B85175E3DA70075BC9A /* saveUserInfo@2x.png */; };
 		D8306364171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8306362171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.m */; };
 		D8306365171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8306363171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib */; };
 		D830636E171FD71B006A256F /* BSSuperCentreViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D830636D171FD71B006A256F /* BSSuperCentreViewController_iPhone.m */; };
@@ -539,6 +541,8 @@
 		D8185E3B174B41F600995CAE /* BSSearchResultTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSSearchResultTableViewCell_iPhone.xib; sourceTree = "<group>"; };
 		D8185E3F174B438300995CAE /* SearchResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResponseVo.h; sourceTree = "<group>"; };
 		D8185E40174B438300995CAE /* SearchResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResponseVo.m; sourceTree = "<group>"; };
+		D8232B84175E3DA70075BC9A /* saveUserInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = saveUserInfo.png; sourceTree = "<group>"; };
+		D8232B85175E3DA70075BC9A /* saveUserInfo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "saveUserInfo@2x.png"; sourceTree = "<group>"; };
 		D8306361171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMyAttentionTableViewCell_iPhone.h; sourceTree = "<group>"; };
 		D8306362171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMyAttentionTableViewCell_iPhone.m; sourceTree = "<group>"; };
 		D8306363171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMyAttentionTableViewCell_iPhone.xib; sourceTree = "<group>"; };
@@ -1758,6 +1762,8 @@
 		D87A059216EF77F90052328E /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				D8232B84175E3DA70075BC9A /* saveUserInfo.png */,
+				D8232B85175E3DA70075BC9A /* saveUserInfo@2x.png */,
 				D8E4A9341755E897007F8B9E /* 图片加载中.png */,
 				D8E4A91E17559596007F8B9E /* 发件箱.png */,
 				D8E4A91F17559596007F8B9E /* 发件箱@2x.png */,
@@ -2628,6 +2634,8 @@
 				D8E4A92D17559596007F8B9E /* 已读@2x.png in Resources */,
 				D8E4A9351755E897007F8B9E /* 图片加载中.png in Resources */,
 				5A57CAFF17566E7A004855CB /* 19搜索按钮.png in Resources */,
+				D8232B86175E3DA70075BC9A /* saveUserInfo.png in Resources */,
+				D8232B87175E3DA70075BC9A /* saveUserInfo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2856,8 +2864,8 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: jia pumin (M3N7ERC736)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: jia pumin (M3N7ERC736)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2872,8 +2880,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "C2D74EA1-0BA0-478F-B928-ADC19E3818A0";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C2D74EA1-0BA0-478F-B928-ADC19E3818A0";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -2887,8 +2895,8 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: BAOSTEEL GROUP CORPORATION";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BAOSTEEL GROUP CORPORATION";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -2896,8 +2904,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "A7E483FA-FEC2-4B8A-A620-4271F0C60BEB";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A7E483FA-FEC2-4B8A-A620-4271F0C60BEB";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
