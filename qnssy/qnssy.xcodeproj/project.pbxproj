@@ -398,6 +398,7 @@
 		D8F02A5716FD8F660023FB0A /* 28设置按钮@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8F02A3816FD8F660023FB0A /* 28设置按钮@2x.png */; };
 		D8FE147B16FEA5E4006405F1 /* BSMyInfoTableCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8FE147816FEA5E3006405F1 /* BSMyInfoTableCell_iPhone.m */; };
 		D8FE147C16FEA5E4006405F1 /* BSMyInfoTableCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8FE147916FEA5E3006405F1 /* BSMyInfoTableCell_iPhone.xib */; };
+		FB01BC1B175C4CA50088C5F3 /* UpAvatarRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = FB01BC1A175C4CA50088C5F3 /* UpAvatarRequestVo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1018,6 +1019,8 @@
 		D8FE147716FEA5E2006405F1 /* BSMyInfoTableCell_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSMyInfoTableCell_iPhone.h; sourceTree = "<group>"; };
 		D8FE147816FEA5E3006405F1 /* BSMyInfoTableCell_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMyInfoTableCell_iPhone.m; sourceTree = "<group>"; };
 		D8FE147916FEA5E3006405F1 /* BSMyInfoTableCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMyInfoTableCell_iPhone.xib; sourceTree = "<group>"; };
+		FB01BC19175C4CA50088C5F3 /* UpAvatarRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UpAvatarRequestVo.h; sourceTree = "<group>"; };
+		FB01BC1A175C4CA50088C5F3 /* UpAvatarRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UpAvatarRequestVo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2232,6 +2235,8 @@
 				D8C76E58171E764F00815457 /* DelMyPhotoRequestVo.m */,
 				D870C49E171FA1F5000D8286 /* UpdateMyPhotoRequestVo.h */,
 				D870C49F171FA1F5000D8286 /* UpdateMyPhotoRequestVo.m */,
+				FB01BC19175C4CA50088C5F3 /* UpAvatarRequestVo.h */,
+				FB01BC1A175C4CA50088C5F3 /* UpAvatarRequestVo.m */,
 				D8768B7B172419E400A407DC /* AboutRequestVo.h */,
 				D8768B7C172419E400A407DC /* AboutRequestVo.m */,
 				D8768B9C172420EE00A407DC /* AmendPasswordRequestVo.h */,
@@ -2814,6 +2819,7 @@
 				D8CDD34C17578F5A00C927F4 /* BSVerifyBindResponseVo.m in Sources */,
 				D8CDD34F1757928C00C927F4 /* BSBindQQRequestVo.m in Sources */,
 				D8CDD3521757930800C927F4 /* BSBindQQResponseVo.m in Sources */,
+				FB01BC1B175C4CA50088C5F3 /* UpAvatarRequestVo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
