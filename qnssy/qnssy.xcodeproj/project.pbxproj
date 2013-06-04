@@ -75,8 +75,6 @@
 		5ADAABF417558EA8004B5F0A /* BSSearchIndexViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ADAABF217558EA8004B5F0A /* BSSearchIndexViewController.xib */; };
 		5AF21B4816F8559900EEB6EA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF21B4716F8559900EEB6EA /* MapKit.framework */; };
 		5AF21B4A16F8559F00EEB6EA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF21B4916F8559F00EEB6EA /* CoreLocation.framework */; };
-		5AF21B4E16F8581000EEB6EA /* BSUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF21B4C16F8581000EEB6EA /* BSUserInfoViewController.m */; };
-		5AF21B4F16F8581000EEB6EA /* BSUserInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AF21B4D16F8581000EEB6EA /* BSUserInfoViewController.xib */; };
 		5AFC21D9170AA340001228AB /* ValidatePhoneRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A78921C17047B8C00E2B238 /* ValidatePhoneRequestVo.m */; };
 		BB810EC20B6A24D8F5D47213 /* MyMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8103F575D2320537DE2FC9 /* MyMD5.m */; };
 		D80B235C1749FDF5002CB786 /* UpdateMyPhotoResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D80B235B1749FDF5002CB786 /* UpdateMyPhotoResponseVo.m */; };
@@ -108,6 +106,8 @@
 		D83DC8AA1727684500614BD4 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D83DC8A41727684500614BD4 /* Icon@2x.png */; };
 		D83DC8AD172773AC00614BD4 /* RecommendInfoRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8AC172773AB00614BD4 /* RecommendInfoRequestVo.m */; };
 		D83DC8B01727751800614BD4 /* RecommendInfoResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC8AF1727751800614BD4 /* RecommendInfoResponseVo.m */; };
+		D84A8B5D175CCADF00917FA9 /* ChangeBaseInfoRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84A8B5C175CCADF00917FA9 /* ChangeBaseInfoRequestVo.m */; };
+		D84A8B60175CCB2900917FA9 /* ChangeBaseInfoResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84A8B5F175CCB2900917FA9 /* ChangeBaseInfoResponseVo.m */; };
 		D84F59401753AB4300498C21 /* BSRecommendUserRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F593F1753AB4300498C21 /* BSRecommendUserRequestVo.m */; };
 		D84F59431753AC8000498C21 /* BSRecommendUserResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F59421753AC8000498C21 /* BSRecommendUserResponseVo.m */; };
 		D84F59461753B83F00498C21 /* BSMyMailRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D84F59451753B83F00498C21 /* BSMyMailRequestVo.m */; };
@@ -525,9 +525,6 @@
 		5ADAABF217558EA8004B5F0A /* BSSearchIndexViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSSearchIndexViewController.xib; sourceTree = "<group>"; };
 		5AF21B4716F8559900EEB6EA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		5AF21B4916F8559F00EEB6EA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		5AF21B4B16F8580F00EEB6EA /* BSUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSUserInfoViewController.h; sourceTree = "<group>"; };
-		5AF21B4C16F8581000EEB6EA /* BSUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSUserInfoViewController.m; sourceTree = "<group>"; };
-		5AF21B4D16F8581000EEB6EA /* BSUserInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserInfoViewController.xib; sourceTree = "<group>"; };
 		BB8103F575D2320537DE2FC9 /* MyMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMD5.m; sourceTree = "<group>"; };
 		BB810ACBC2671DB88E54462B /* MyMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMD5.h; sourceTree = "<group>"; };
 		D80B23581749F849002CB786 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
@@ -577,6 +574,10 @@
 		D83DC8AC172773AB00614BD4 /* RecommendInfoRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendInfoRequestVo.m; sourceTree = "<group>"; };
 		D83DC8AE1727751800614BD4 /* RecommendInfoResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendInfoResponseVo.h; sourceTree = "<group>"; };
 		D83DC8AF1727751800614BD4 /* RecommendInfoResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendInfoResponseVo.m; sourceTree = "<group>"; };
+		D84A8B5B175CCADF00917FA9 /* ChangeBaseInfoRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeBaseInfoRequestVo.h; sourceTree = "<group>"; };
+		D84A8B5C175CCADF00917FA9 /* ChangeBaseInfoRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeBaseInfoRequestVo.m; sourceTree = "<group>"; };
+		D84A8B5E175CCB2900917FA9 /* ChangeBaseInfoResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeBaseInfoResponseVo.h; sourceTree = "<group>"; };
+		D84A8B5F175CCB2900917FA9 /* ChangeBaseInfoResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeBaseInfoResponseVo.m; sourceTree = "<group>"; };
 		D84F593E1753AB4300498C21 /* BSRecommendUserRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRecommendUserRequestVo.h; sourceTree = "<group>"; };
 		D84F593F1753AB4300498C21 /* BSRecommendUserRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSRecommendUserRequestVo.m; sourceTree = "<group>"; };
 		D84F59411753AC8000498C21 /* BSRecommendUserResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSRecommendUserResponseVo.h; sourceTree = "<group>"; };
@@ -1113,9 +1114,6 @@
 				5AD6532516F4AAAB00FD80D8 /* BSValidatePhoneNumberViewController.h */,
 				5AD6532616F4AAAB00FD80D8 /* BSValidatePhoneNumberViewController.m */,
 				5AD6532716F4AAAB00FD80D8 /* BSValidatePhoneNumberViewController.xib */,
-				5AF21B4B16F8580F00EEB6EA /* BSUserInfoViewController.h */,
-				5AF21B4C16F8581000EEB6EA /* BSUserInfoViewController.m */,
-				5AF21B4D16F8581000EEB6EA /* BSUserInfoViewController.xib */,
 				5A7891EA170347C800E2B238 /* BSBindUserAccountViewController.h */,
 				5A7891EB170347C800E2B238 /* BSBindUserAccountViewController.m */,
 				5A7891EC170347C800E2B238 /* BSBindUserAccountViewController.xib */,
@@ -2236,6 +2234,8 @@
 				D8768B7C172419E400A407DC /* AboutRequestVo.m */,
 				D8768B9C172420EE00A407DC /* AmendPasswordRequestVo.h */,
 				D8768B9D172420EE00A407DC /* AmendPasswordRequestVo.m */,
+				D84A8B5B175CCADF00917FA9 /* ChangeBaseInfoRequestVo.h */,
+				D84A8B5C175CCADF00917FA9 /* ChangeBaseInfoRequestVo.m */,
 			);
 			path = MyInfo;
 			sourceTree = "<group>";
@@ -2261,6 +2261,8 @@
 				D8768BA01724215F00A407DC /* AmendPasswordResponseVo.m */,
 				D80B235A1749FDF5002CB786 /* UpdateMyPhotoResponseVo.h */,
 				D80B235B1749FDF5002CB786 /* UpdateMyPhotoResponseVo.m */,
+				D84A8B5E175CCB2900917FA9 /* ChangeBaseInfoResponseVo.h */,
+				D84A8B5F175CCB2900917FA9 /* ChangeBaseInfoResponseVo.m */,
 			);
 			path = MyPhoto;
 			sourceTree = "<group>";
@@ -2465,7 +2467,6 @@
 				5AD6533316F4BF1F00FD80D8 /* navbkimg@2x.png in Resources */,
 				5AD6533616F4BF4E00FD80D8 /* backbtn.png in Resources */,
 				5AD6533716F4BF4E00FD80D8 /* backbtn@2x.png in Resources */,
-				5AF21B4F16F8581000EEB6EA /* BSUserInfoViewController.xib in Resources */,
 				5AAE6E4F16FAAF79006FDFB7 /* area.plist in Resources */,
 				D8A6877716FD41E7005245C8 /* 1背景+logo@2x.png in Resources */,
 				D8A6877816FD41E7005245C8 /* 1登录背景@2x.png in Resources */,
@@ -2688,7 +2689,6 @@
 				D8CA7D9616F4B19E00B4CE67 /* SuperRequestVo.m in Sources */,
 				D8CA7D9916F4B29400B4CE67 /* LoginRequestVo.m in Sources */,
 				D8CA7D9C16F4B3FB00B4CE67 /* LoginResponseVo.m in Sources */,
-				5AF21B4E16F8581000EEB6EA /* BSUserInfoViewController.m in Sources */,
 				5A046AB916F9AE7F00782A83 /* BSSexElement.m in Sources */,
 				D8A687A516FD4EE9005245C8 /* BSRootLeftTableCell_iPhone.m in Sources */,
 				D8A687B016FD6465005245C8 /* BSOnePackageServiceViewController_iPhone.m in Sources */,
@@ -2814,6 +2814,8 @@
 				D8CDD34C17578F5A00C927F4 /* BSVerifyBindResponseVo.m in Sources */,
 				D8CDD34F1757928C00C927F4 /* BSBindQQRequestVo.m in Sources */,
 				D8CDD3521757930800C927F4 /* BSBindQQResponseVo.m in Sources */,
+				D84A8B5D175CCADF00917FA9 /* ChangeBaseInfoRequestVo.m in Sources */,
+				D84A8B60175CCB2900917FA9 /* ChangeBaseInfoResponseVo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

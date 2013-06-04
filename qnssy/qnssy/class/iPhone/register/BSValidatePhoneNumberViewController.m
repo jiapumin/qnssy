@@ -7,7 +7,6 @@
 //
 
 #import "BSValidatePhoneNumberViewController.h"
-#import "BSUserInfoViewController.h"
 #import "ValidatePhoneRequestVo.h"
 #import "ValidatePhoneResponseVo.h"
 #import "MyMD5.h"

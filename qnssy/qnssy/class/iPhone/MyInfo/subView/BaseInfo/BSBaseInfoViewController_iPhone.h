@@ -17,4 +17,6 @@
 
 @property (retain, nonatomic) NSMutableArray *myBaseInfoKey;
 
+@property (retain, nonatomic) NSMutableDictionary *commitData;
+
 @end
