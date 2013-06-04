@@ -21,6 +21,7 @@
 
 #import "SignInResponseVo.h"
 
+#import "UpAvatarRequestVo.h"//add by Hanrea
 @interface BSMyInfoViewController_iPhone ()
 
 @end
@@ -76,19 +77,21 @@
     [_textNameArrays release];
     [_noSelectedLeftImageArrays release];
     [_selectedLeftImageArrays release];
-    [_testImgeView release];
-    [_headImage release];
+//    [_testImgeView release];
+//    [_headImage release];
     [_nickname release];
     [_myInfo release];
     [_contextTableView release];
+    [_avatarImgButton release];
     [super dealloc];
 }
 - (void)viewDidUnload {
-    [self setTestImgeView:nil];
-    [self setHeadImage:nil];
+//    [self setTestImgeView:nil];
+//    [self setHeadImage:nil];
     [self setNickname:nil];
     [self setMyInfo:nil];
     [self setContextTableView:nil];
+    [self setAvatarImgButton:nil];
     [super viewDidUnload];
 }
 #pragma mark - 初始化数据
@@ -115,12 +118,13 @@
     
     if (image != nil){
         //当前显示那张图片
-        self.headImage.image = image;
+        [self.avatarImgButton setBackgroundImage:image forState:UIControlStateNormal];
     }else{
         //先设置默认图就是加载中的图片
         UIImage *loadingImage = [UIImage imageNamed:@"5暂无照片头像"];
 
-        [self.testImgeView setImage:loadingImage];
+        [self.avatarImgButton setBackgroundImage:loadingImage forState:UIControlStateNormal];
+//        [self.testImgeView setImage:loadingImage];
         //异步加载图片 并保存到本地
         KBBTFileInfoVo *vo = [[[KBBTFileInfoVo alloc] init] autorelease];
         NSLog(@"urlStr==%@",imageUrl);
@@ -151,6 +155,129 @@
     [vo release];
     
 }
+//更换头像 Created by Hanrea
+- (IBAction)changeAvatar:(id)sender
+{
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"选择照片来源"
+                                                             delegate:self
+                                                    cancelButtonTitle:@"取消"
+                                               destructiveButtonTitle:@"相册"
+                                                    otherButtonTitles:@"拍照", nil];
+    [actionSheet showInView:self.view];
+    [actionSheet release];
+}
+#pragma mark - UIActionSheetDelegate
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {//相册
+        [self selectPhotoFromLiabary];
+    }else if(buttonIndex == 1){//相机
+        [self pickerPhoto];
+    }
+}
+#pragma mark - 相机
+- (IBAction)selectPhotoFromLiabary{
+    //从相册中选取
+	UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+	if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+		imagePicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+		imagePicker.allowsEditing = YES;
+        imagePicker.delegate = self;
+        [self presentModalViewController:imagePicker animated:YES];
+        
+	}else {
+		UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"打开相册异常,请重试"
+                                                            message:@""
+                                                           delegate:nil
+                                                  cancelButtonTitle:@"确认"
+                                                  otherButtonTitles:nil];
+		[alertView show];
+		[alertView release];
+	}
+	[imagePicker release];
+}
+
+- (IBAction)pickerPhoto{
+    
+    //拍照
+    UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];
+	if([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]){
+		imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+		imagePicker.allowsEditing = YES;
+		imagePicker.delegate = self;
+		[self presentModalViewController:imagePicker animated:YES];
+		
+	}else {
+		UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"相机不可用" message:@""
+                                                       delegate:nil
+                                              cancelButtonTitle:@"关闭"
+                                              otherButtonTitles:nil];
+		[alert show];
+		[alert release];
+	}
+    [imagePicker release];
+}
+#pragma mark -
+#pragma mark UIImagePickerControllerDelegate method
+
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{
+	[picker dismissModalViewControllerAnimated:YES];
+}
+
+#pragma mark - UIImagePickerControllerDelegate
+- (void)imagePickerController:(UIImagePickerController *)picker
+didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    UIImage *original_image;
+    if (picker.sourceType == UIImagePickerControllerSourceTypeCamera)
+    {
+        //如果是 来自照相机的image，那么先保存
+        original_image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+        UIImageWriteToSavedPhotosAlbum(original_image,
+                                       self,
+                                       @selector(image:didFinishSavingWithError:contextInfo:),
+                                       nil);
+        
+    }else if (picker.sourceType == UIImagePickerControllerSourceTypePhotoLibrary) {
+        //来自相册图片 当需要提交服务器原图时取消此注释
+        //        original_image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    }
+    //获得编辑过的图片
+    UIImage* image = [info objectForKey: @"UIImagePickerControllerEditedImage"];
+    
+    //保存编辑过的图片
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSString *filePath  = [[KBBreakpointTransmission instance] getTargetFloderPath:IMAGE_PATH];
+    NSData *data;
+    if (UIImagePNGRepresentation(image) == nil) {
+        data = UIImageJPEGRepresentation(image, 1);
+    } else {
+        data = UIImagePNGRepresentation(image);
+    }
+    [fileManager createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:nil];
+    [fileManager createFileAtPath:[filePath stringByAppendingString:@"/Avatar.png"] contents:data attributes:nil];
+    NSData *img = [NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@/%@",filePath,@"Avatar.png"]];
+    NSLog(@"%d",img.length);
+    //请求服务器上传图片
+    [self updateMyAvatarImage:[NSString stringWithFormat:@"%@/%@",filePath,@"Avatar.png"]];
+    
+    [picker dismissModalViewControllerAnimated:YES];
+    
+    
+}
+- (void)image:(UIImageView*)image didFinishSavingWithError:(NSString*)error contextInfo:(NSString*)context{
+    NSLog(@"保存完成！");
+}
+- (void)updateMyAvatarImage:(NSString *)filePath{
+    
+   // [self.progressHUD show:YES];
+    //UpdateMyPhotoRequestVo *vo = [[UpdateMyPhotoRequestVo alloc] initWithPhotoFilePath:filePath delegate:self];
+    UpAvatarRequestVo *vo = [[UpAvatarRequestVo alloc] initWithAvatarFilePath:filePath delegate:self];
+    [vo release];
+   // [vo release];
+}
+
+////
 - (void)rightSetting{
     
     BSSettingViewController_iPhone *svc = [[[BSSettingViewController_iPhone alloc] initWithNibName:@"BSSettingViewController_iPhone" bundle:nil] autorelease];
@@ -279,7 +406,7 @@
     
     if (image == nil) return;
     
-    [self.headImage setImage:image];
+    [self.avatarImgButton setBackgroundImage:image forState:UIControlStateNormal];
 }
 
 - (void)signInSucceess:(id)sender data:(NSDictionary *)dic {
@@ -304,5 +431,36 @@
     [alert show];
     [alert release];
 }
+
+
+- (void)UpAvatarSuccess:(ASIFormDataRequest *)request
+{
+    NSLog(@"upAcatarSuccess");
+   // [self.progressHUD hide:YES];
+    NSString *dataStr = request.responseString;
+    NSDictionary *dataDic = [dataStr JSONValue];
+    
+    //成功将数据返回
+//    NSMutableDictionary *resultDict = [[[NSMutableDictionary alloc] init] autorelease];
+//    [resultDict setObject:[NSNumber numberWithInt:IPLAT4M_STATUS_SUCCESS] forKey:@"status"];
+//    [resultDict setObject:dataDic forKey:@"data"];
+//    
+//    UpdateMyPhotoResponseVo *vo = [[UpdateMyPhotoResponseVo alloc] initWithDic:resultDict];
+//    
+//    [images_.images_ addObject:vo.dataDic];
+//    [vo release];
+//    [self setDataSource:images_];
+    NSLog(@"responseString = %@", request.responseString);
+}
+- (void)UpAvatarFail:(ASIFormDataRequest *)request
+{
+    NSLog(@"UpAvatarFail");
+//    [self.progressHUD hide:YES];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"网络异常，请检查网络连接后重试" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+    [alert show];
+    [alert release];
+     NSLog(@"responseString = %@", request.responseString);
+}
+
 
 @end
