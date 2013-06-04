@@ -8,9 +8,10 @@
 
 #import "BSSuperCentreViewController_iPhone.h"
 
-@interface BSMyInfoViewController_iPhone : BSSuperCentreViewController_iPhone<UITableViewDataSource,UITableViewDelegate>
-@property (retain, nonatomic) IBOutlet UIImageView *testImgeView;
-@property (retain, nonatomic) IBOutlet UIImageView *headImage;
+@interface BSMyInfoViewController_iPhone : BSSuperCentreViewController_iPhone<UITableViewDataSource,UITableViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate>
+//@property (retain, nonatomic) IBOutlet UIImageView *testImgeView;
+//@property (retain, nonatomic) IBOutlet UIImageView *headImage;
+@property (retain, nonatomic) IBOutlet UIButton *avatarImgButton;
 @property (retain, nonatomic) IBOutlet UILabel *nickname;
 @property (retain, nonatomic) IBOutlet UILabel *myInfo;
 @property (retain, nonatomic) IBOutlet UITableView *contextTableView;
@@ -20,5 +21,6 @@
 @property (retain, nonatomic) NSArray *selectedLeftImageArrays;
 
 - (IBAction)clickRegister:(id)sender;
+- (IBAction)changeAvatar:(id)sender;
 
 @end
