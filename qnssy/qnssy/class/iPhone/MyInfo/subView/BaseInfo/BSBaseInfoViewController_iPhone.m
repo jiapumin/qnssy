@@ -423,12 +423,12 @@
         return;
     }
     if ([cell.key isEqualToString:@"nationalprovinceid"]) {//户籍
-        self.tempWorkArea1 = [[WorkAreaPickerViewDelegate alloc] init];
+        self.tempWorkArea1 = [[[WorkAreaPickerViewDelegate alloc] init] autorelease];
         [ActionSheetCustomPicker showPickerWithTitle:@"户籍" delegate:self.tempWorkArea1 showCancelButton:NO origin:cell];
         return;
     }
     if ([cell.key isEqualToString:@"provinceid"]) {//所在地
-        self.tempWorkArea2 = [[WorkAreaPickerViewDelegate alloc] init];
+        self.tempWorkArea2 = [[[WorkAreaPickerViewDelegate alloc] init] autorelease];
         [ActionSheetCustomPicker showPickerWithTitle:@"所在地" delegate:self.tempWorkArea2 showCancelButton:NO origin:cell];
         return;
     }

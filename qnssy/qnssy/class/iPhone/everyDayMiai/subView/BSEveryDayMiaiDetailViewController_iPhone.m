@@ -257,7 +257,7 @@
     NSDictionary *dasexDic = [[DataParseUtil myInfoData:@"sex"] objectAtIndex:1];
     NSString *dasexKey = [self.dataDic objectForKey:@"dasex"];
     NSString *dasexStr = [dasexDic objectForKey:dasexKey];
-    dasexStr = (dasexStr||[dasexStr isEqualToString:@""]) ? dasexStr : @"不限";
+    dasexStr = (!dasexStr||[dasexStr isEqualToString:@"无"]) ? @"不限" : dasexStr;
     
     NSString *dastartage = [[self.dataDic objectForKey:@"dastartage"] isEqualToString:@"0"] ? @"不限" : [self.dataDic objectForKey:@"dastartage"];
     
@@ -269,21 +269,16 @@
     
     NSDictionary *damarrystatusDic = [[DataParseUtil myInfoData:@"marrystatus"] objectAtIndex:1];
     NSString *damarrystatus = [damarrystatusDic objectForKey:[self.dataDic objectForKey:@"damarrystatus"]];
-    damarrystatus = (damarrystatus||[damarrystatus isEqualToString:@""])  ? damarrystatus : @"不限";
+    damarrystatus = (!damarrystatus||[damarrystatus isEqualToString:@"无"])  ?  @"不限" :damarrystatus;
     
     NSDictionary *daeducationDic = [[DataParseUtil myInfoData:@"education"] objectAtIndex:1];
     NSString *daeducation = [daeducationDic objectForKey:[self.dataDic objectForKey:@"daeducation"]];
-    daeducation = (daeducation||[daeducation isEqualToString:@""])  ? daeducation : @"不限";
+    daeducation = (!daeducation||[daeducation isEqualToString:@"无"])  ? @"不限" : daeducation;
     
-    NSDictionary *prDic = [[DataParseUtil myInfoData:@"pr"] objectAtIndex:1];
-    NSString *pr = [prDic objectForKey:[self.dataDic objectForKey:@"pr"]];
-    pr = (pr||[pr isEqualToString:@""])  ? pr : @"不限";
+    NSString *pr = [self.dataDic objectForKey:@"pr"];
+    NSString *city = [self.dataDic objectForKey:@"city"];
     
-    NSDictionary *cityDic = [[DataParseUtil myInfoData:@"city"] objectAtIndex:1];
-    NSString *city = [cityDic objectForKey:[self.dataDic objectForKey:@"city"]];
-    city = (city||[city isEqualToString:@""])  ? city : @"不限";
-    
-    return  [NSString stringWithFormat:@"性别：%@ | 年龄：%@-%@ | 身高：%@-%@ | 婚姻状况：%@ | 学历：%@ | 所在地区：%@ %@",dasexStr, dastartage, daendage, dastartheight, daendheight,damarrystatus,@"",pr,city];
+    return  [NSString stringWithFormat:@"性别：%@ | 年龄：%@-%@ | 身高：%@-%@ | 婚姻状况：%@ | 学历：%@ | 所在地区：%@ %@",dasexStr, dastartage, daendage, dastartheight, daendheight,damarrystatus,daeducation,pr,city];
 }
 #pragma mark - Table view delegate
 
