@@ -12,7 +12,8 @@
 
 
 - (void)dealloc {
-    [_commitValue release];
+//    [_commitValue release];
+    [_delegate release];
     [_key release];
     [_leftLabel release];
     [_rightLabel release];

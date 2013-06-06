@@ -7,13 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BSBaseInfoViewController_iPhone.h"
 
 @interface BaseInfoTableViewCell_iPhone : UITableViewCell
 
 @property (retain, nonatomic) IBOutlet UILabel *leftLabel;
 @property (retain, nonatomic) IBOutlet UILabel *rightLabel;
 @property (retain, nonatomic) NSString *key;
-@property (retain, nonatomic) NSString *commitValue;
+//@property (retain, nonatomic) NSString *commitValue;
 @property (retain, nonatomic) IBOutlet UITextField *username;
+
+@property (retain, nonatomic) BSBaseInfoViewController_iPhone *delegate;
 
 @end

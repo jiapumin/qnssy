@@ -30,11 +30,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    pageControl.numberOfPages = 5;
+    pageControl.numberOfPages = 3;
     pageControl.currentPage = 0;
     pageScroll.delegate = self;
     
-    pageScroll.contentSize = CGSizeMake(self.view.frame.size.width * 5, self.view.frame.size.height);
+    pageScroll.contentSize = CGSizeMake(self.view.frame.size.width * 3, self.view.frame.size.height);
     
     
 }

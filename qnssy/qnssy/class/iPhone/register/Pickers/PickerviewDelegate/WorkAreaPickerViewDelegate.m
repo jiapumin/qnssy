@@ -60,6 +60,22 @@
     }else if([[origin class] isSubclassOfClass:[UITableViewCell class]]){
         BaseInfoTableViewCell_iPhone *cell = (BaseInfoTableViewCell_iPhone *)origin;
         cell.rightLabel.text = [NSString stringWithFormat:@"%@-%@",self.provinceName, self.cityName];
+
+        self.provinceId = self.provinceId == nil || [self.provinceId isEqualToString:@""] ? @"1" :self.provinceId;
+        self.cityId = self.cityId == nil || [self.cityId isEqualToString:@""] ? @"1" :self.cityId;
+        if ([cell.key isEqualToString:@"nationalprovinceid"]) {
+            [cell.delegate.commitData setObject:self.provinceId forKey:@"nationalprovinceid"];
+            [cell.delegate.commitData setObject:self.cityId forKey:@"nationalcityid"];
+            [cell.delegate.myBaseInfo setObject:self.provinceId forKey:@"nationalprovinceid"];//表格刷新的时候使用
+            [cell.delegate.myBaseInfo setObject:self.cityId forKey:@"nationalcityid"];//表格刷新的时候使用
+        }else if([cell.key isEqualToString:@"provinceid"]){
+            [cell.delegate.commitData setObject:self.provinceId forKey:@"provinceid"];
+            [cell.delegate.commitData setObject:self.cityId forKey:@"cityid"];
+            [cell.delegate.commitData  setObject:@"1" forKey:@"areaid"];
+            [cell.delegate.myBaseInfo setObject:self.provinceId forKey:@"provinceid"];//表格刷新的时候使用
+            [cell.delegate.myBaseInfo setObject:self.cityId forKey:@"cityid"];//表格刷新的时候使用
+        }
+        
     }
 
 }
