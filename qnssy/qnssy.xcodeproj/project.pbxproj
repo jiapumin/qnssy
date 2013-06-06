@@ -84,6 +84,9 @@
 		D8306364171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D8306362171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.m */; };
 		D8306365171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = D8306363171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib */; };
 		D830636E171FD71B006A256F /* BSSuperCentreViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D830636D171FD71B006A256F /* BSSuperCentreViewController_iPhone.m */; };
+		D83779391760D2ED0020963E /* 1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D83779361760D2ED0020963E /* 1@2x.png */; };
+		D837793A1760D2ED0020963E /* 2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D83779371760D2ED0020963E /* 2@2x.png */; };
+		D837793B1760D2ED0020963E /* 3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D83779381760D2ED0020963E /* 3@2x.png */; };
 		D83BD506171AE38C00E230FF /* RecommendImageListRequestVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83BD505171AE38C00E230FF /* RecommendImageListRequestVo.m */; };
 		D83BD50A171AE43C00E230FF /* RecommendImageListResponseVo.m in Sources */ = {isa = PBXBuildFile; fileRef = D83BD509171AE43C00E230FF /* RecommendImageListResponseVo.m */; };
 		D83DC862172617B700614BD4 /* BSEveryDayMiaiDetailViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = D83DC860172617B700614BD4 /* BSEveryDayMiaiDetailViewController_iPhone.m */; };
@@ -543,6 +546,9 @@
 		D8306363171FCBF6006A256F /* BSMyAttentionTableViewCell_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMyAttentionTableViewCell_iPhone.xib; sourceTree = "<group>"; };
 		D830636C171FD71B006A256F /* BSSuperCentreViewController_iPhone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSSuperCentreViewController_iPhone.h; sourceTree = "<group>"; };
 		D830636D171FD71B006A256F /* BSSuperCentreViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSSuperCentreViewController_iPhone.m; sourceTree = "<group>"; };
+		D83779361760D2ED0020963E /* 1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1@2x.png"; sourceTree = "<group>"; };
+		D83779371760D2ED0020963E /* 2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2@2x.png"; sourceTree = "<group>"; };
+		D83779381760D2ED0020963E /* 3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3@2x.png"; sourceTree = "<group>"; };
 		D83BD504171AE38C00E230FF /* RecommendImageListRequestVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendImageListRequestVo.h; sourceTree = "<group>"; };
 		D83BD505171AE38C00E230FF /* RecommendImageListRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendImageListRequestVo.m; sourceTree = "<group>"; };
 		D83BD508171AE43C00E230FF /* RecommendImageListResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendImageListResponseVo.h; sourceTree = "<group>"; };
@@ -1147,6 +1153,9 @@
 		5AD6531216F4485200FD80D8 /* UserGuidImage */ = {
 			isa = PBXGroup;
 			children = (
+				D83779361760D2ED0020963E /* 1@2x.png */,
+				D83779371760D2ED0020963E /* 2@2x.png */,
+				D83779381760D2ED0020963E /* 3@2x.png */,
 				D8854C57176021D9001B7244 /* 1.png */,
 				D8854C58176021D9001B7244 /* 2.png */,
 				D8854C59176021D9001B7244 /* 3.png */,
@@ -2632,6 +2641,9 @@
 				D8854C5A176021D9001B7244 /* 1.png in Resources */,
 				D8854C5B176021D9001B7244 /* 2.png in Resources */,
 				D8854C5C176021D9001B7244 /* 3.png in Resources */,
+				D83779391760D2ED0020963E /* 1@2x.png in Resources */,
+				D837793A1760D2ED0020963E /* 2@2x.png in Resources */,
+				D837793B1760D2ED0020963E /* 3@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
