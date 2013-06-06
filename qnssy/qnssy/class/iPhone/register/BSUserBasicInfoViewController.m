@@ -284,26 +284,25 @@
 //            [alert show];
 //            [alert release];
 //        }
-        [vo release];
         [progressHUD hide:YES];
     }else{//带绑定的登录
         
         
         //请求服务器
-        BSBindQQRequestVo *vo = [[BSBindQQRequestVo alloc] initWithId:self.openid
+        BSBindQQRequestVo *QQvo = [[BSBindQQRequestVo alloc] initWithId:self.openid
                                                              username:self.mobile
                                                              password:self.password];
         
         [[BSContainer instance].serviceAgent callServletWithObject:self
-                                                       requestDict:vo.mReqDic
+                                                       requestDict:QQvo.mReqDic
                                                             target:self
                                                    successCallBack:@selector(BindQQSucceess:data:)
                                                       failCallBack:@selector(BindQQFailed:data:)];
         
-        [vo release];
+        [QQvo release];
 
     }
-    
+    [vo release];
 
 }
 
