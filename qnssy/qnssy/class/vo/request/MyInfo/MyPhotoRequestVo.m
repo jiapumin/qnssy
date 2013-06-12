@@ -16,8 +16,8 @@
         NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
         //此处设置参数及参数所需要的key-value
         [data setObject:[BSContainer instance].userInfo.userId forKey:@"userid"];
-        [data setObject:pageNum forKey:@"pageNum"];
-        [data setObject:pageCount forKey:@"pageCount"];
+        [data setObject:pageNum forKey:@"pagenum"];
+        [data setObject:pageCount forKey:@"pagecount"];
         [self.mReqDic setObject:data forKey:@"data"];
         
         

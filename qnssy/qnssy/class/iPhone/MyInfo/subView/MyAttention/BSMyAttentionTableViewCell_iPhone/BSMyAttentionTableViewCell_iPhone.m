@@ -17,6 +17,9 @@
 - (void)reloadData:(NSDictionary *)dic{
     
     self.userVo = dic;
+    NSString *username = [dic objectForKey:@"username"];
+    
+    if(!username || [username isEqual:[NSNull null]] ) return;
     
     self.nickname.text = [dic objectForKey:@"username"];
     

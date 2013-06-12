@@ -11,6 +11,8 @@
 #import "LoginRequestVo.h"
 #import "LoginResponseVo.h"
 
+#import "BSBuyInfoViewController_iPhone.h"
+
 @interface BSBuyViewController_iPhone ()
 
 @end
@@ -39,4 +41,39 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)clickButton1:(id)sender {
+    
+    BSBuyInfoViewController_iPhone *bivc = [[BSBuyInfoViewController_iPhone alloc] initWithNibName:@"BSBuyInfoViewController_iPhone" bundle:nil];
+    
+    [self.navigationController pushViewController:bivc animated:YES];
+    [bivc release];
+}
+
+- (IBAction)clickButton2:(id)sender {
+    BSBuyInfoViewController_iPhone *bivc = [[BSBuyInfoViewController_iPhone alloc] initWithNibName:@"BSBuyInfoViewController_iPhone" bundle:nil];
+    
+    [self.navigationController pushViewController:bivc animated:YES];
+    [bivc release];
+}
+
+- (IBAction)clickButton3:(id)sender {
+    BSBuyInfoViewController_iPhone *bivc = [[BSBuyInfoViewController_iPhone alloc] initWithNibName:@"BSBuyInfoViewController_iPhone" bundle:nil];
+    
+    [self.navigationController pushViewController:bivc animated:YES];
+    [bivc release];
+}
+
+- (IBAction)clickButton4:(id)sender {
+    BSBuyInfoViewController_iPhone *bivc = [[BSBuyInfoViewController_iPhone alloc] initWithNibName:@"BSBuyInfoViewController_iPhone" bundle:nil];
+    
+    [self.navigationController pushViewController:bivc animated:YES];
+    [bivc release];
+}
+
+- (IBAction)clickButton5:(id)sender {
+    BSBuyInfoViewController_iPhone *bivc = [[BSBuyInfoViewController_iPhone alloc] initWithNibName:@"BSBuyInfoViewController_iPhone" bundle:nil];
+    
+    [self.navigationController pushViewController:bivc animated:YES];
+    [bivc release];
+}
 @end

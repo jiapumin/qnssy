@@ -19,4 +19,6 @@
 @property (nonatomic, retain) NSString *provinceName;
 @property (nonatomic, retain) NSString *cityName;
 
+- (id)initWithForOne:(int)rowOne two:(int)rowTwo;
+
 @end

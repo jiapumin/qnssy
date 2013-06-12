@@ -13,7 +13,31 @@
 #import "BaseInfoTableViewCell_iPhone.h"
 
 @implementation WorkAreaPickerViewDelegate
-
+- (id)initWithForOne:(int)rowOne two:(int)rowTwo
+{
+    if (self = [super init]) {
+        //  read provence and city datas from sqlite file
+        //  init provenceArray and cityArray with datas
+        
+//        self.provinceArray = [NSMutableArray array];
+//        NSArray *tempProvinceArray = [NSArray array];
+//        tempProvinceArray = [[AreaDatabase database] getProvince];
+//        AreaInfo *provinceInfo = [[AreaInfo alloc] initWithAreaId:rowOne areaName:@"请选择"];
+//        [self.provinceArray addObject:provinceInfo];
+//        [provinceInfo release];
+//        [self.provinceArray addObjectsFromArray:tempProvinceArray];
+//        
+//        self.cityArray = [NSMutableArray array];
+//        AreaInfo *cityInfo = [[AreaInfo alloc] initWithAreaId:rowTwo areaName:@"请选择"];
+//        [self.cityArray addObject:cityInfo];
+//        [cityInfo release];
+//        self.provinceId = @"";
+//        self.cityId = @"";
+//        self.provinceName = @"请选择";
+//        self.cityName = @"请选择";
+    }
+    return self;
+}
 - (id)init
 {
     if (self = [super init]) {
@@ -61,8 +85,8 @@
         BaseInfoTableViewCell_iPhone *cell = (BaseInfoTableViewCell_iPhone *)origin;
         cell.rightLabel.text = [NSString stringWithFormat:@"%@-%@",self.provinceName, self.cityName];
 
-        self.provinceId = self.provinceId == nil || [self.provinceId isEqualToString:@""] ? @"1" :self.provinceId;
-        self.cityId = self.cityId == nil || [self.cityId isEqualToString:@""] ? @"1" :self.cityId;
+        self.provinceId = self.provinceId == nil || [self.provinceId isEqualToString:@""] ? @"" :self.provinceId;
+        self.cityId = self.cityId == nil || [self.cityId isEqualToString:@""] ? @"" :self.cityId;
         if ([cell.key isEqualToString:@"nationalprovinceid"]) {
             [cell.delegate.commitData setObject:self.provinceId forKey:@"nationalprovinceid"];
             [cell.delegate.commitData setObject:self.cityId forKey:@"nationalcityid"];

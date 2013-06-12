@@ -9,7 +9,7 @@
 #import "BSSysMailRequestVo.h"
 
 @implementation BSSysMailRequestVo
-- (id)init{
+- (id)initWithForPagenum:(int)pagenum{
     
     self=[super init];
     
@@ -18,7 +18,7 @@
         //此处设置参数及参数所需要的key-value
         [data setObject:[BSContainer instance].userInfo.userId forKey:@"userid"];
         [data setObject:@"2" forKey:@"mailtype"];
-        [data setObject:[NSNumber numberWithInt:DEFAULT_PAGE_NUMBER] forKey:@"pagenum"];
+        [data setObject:[NSString stringWithFormat:@"%d",pagenum] forKey:@"pagenum"];
         [data setObject:[NSNumber numberWithInt:PAGE_COUNT] forKey:@"pagecount"];
         [self.mReqDic setObject:data forKey:@"data"];
         

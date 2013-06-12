@@ -9,5 +9,5 @@
 #import "SuperRequestVo.h"
 
 @interface BSMyMailRequestVo : SuperRequestVo
-
+- (id)initWithForPagenum:(int)pagenum;
 @end

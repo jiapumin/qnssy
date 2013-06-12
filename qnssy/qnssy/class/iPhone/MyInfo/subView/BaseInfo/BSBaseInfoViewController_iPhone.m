@@ -273,12 +273,19 @@
                 break;
             }
         }
+        if (!sheng || [sheng isEqualToString:@""]) {
+            sheng = @"无";
+        }
+        
         NSString *shi = nil;
         for (AreaInfo *area in [shiArray objectEnumerator]) {
             if (area.areaId == shiValue.intValue) {
                 shi = area.areaName;
                 break;
             }
+        }
+        if (!shi || [shi isEqualToString:@""]) {
+            shi = @"无";
         }
         
         cell.rightLabel.text = [NSString stringWithFormat:@"%@-%@",sheng,shi];
@@ -289,8 +296,8 @@
     }else if (indexPath.section == 0 && indexPath.row == 10) {
         cell.leftLabel.text = @"所在地区";
         
-        NSString *shengValue = [self.myBaseInfo objectForKey:@"nationalprovinceid"];
-        NSString *shiValue = [self.myBaseInfo objectForKey:@"nationalcityid"];
+        NSString *shengValue = [self.myBaseInfo objectForKey:@"provinceid"];
+        NSString *shiValue = [self.myBaseInfo objectForKey:@"cityid"];
         
         NSArray * shengArray =[[AreaDatabase database] getProvince];
         NSArray *shiArray = [[AreaDatabase database] getCityWithProvinceId:shengValue.intValue];
@@ -302,6 +309,9 @@
                 break;
             }
         }
+        if (!sheng || [sheng isEqualToString:@""]) {
+            sheng = @"无";
+        }
         NSString *shi = nil;
         for (AreaInfo *area in [shiArray objectEnumerator]) {
             if (area.areaId == shiValue.intValue) {
@@ -309,6 +319,10 @@
                 break;
             }
         }
+        if (!shi || [shi isEqualToString:@""]) {
+            shi = @"无";
+        }
+
         
         cell.rightLabel.text = [NSString stringWithFormat:@"%@-%@",sheng,shi];
         [self.commitData setObject:[self.myBaseInfo objectForKey:@"provinceid"] forKey:@"provinceid"];
@@ -429,7 +443,7 @@
     }
     if ([cell.key isEqualToString:@"provinceid"]) {//所在地
         self.tempWorkArea2 = [[[WorkAreaPickerViewDelegate alloc] init] autorelease];
-        [ActionSheetCustomPicker showPickerWithTitle:@"所在地" delegate:self.tempWorkArea2 showCancelButton:NO origin:cell];
+        [ActionSheetCustomPicker showPickerWithTitle:@"所在地区" delegate:self.tempWorkArea2 showCancelButton:NO origin:cell];
         return;
     }
     

@@ -21,8 +21,8 @@
     
     BSRecommendUserInfoImageListRequestVo *vo =
     [[BSRecommendUserInfoImageListRequestVo alloc] initWithUserId:[self.userVo objectForKey:@"userid"]
-                                                          pagenum:@"0"
-                                                        pagecount:@"10"];
+                                                          pagenum:@"1"
+                                                        pagecount:@"40"];
     [[BSContainer instance].serviceAgent callServletWithObject:self
                                                    requestDict:vo.mReqDic
                                                         target:self

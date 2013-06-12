@@ -34,7 +34,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.title = @"关于千千";
+    self.title = @"修改密码";
     
     //初始化加载框
     [self initHUDView];
@@ -50,12 +50,14 @@
     [_oldPasswordText release];
     [_passwordTextNew release];
     [_changePasswordButton release];
+    [_passwordTextNew1 release];
     [super dealloc];
 }
 - (void)viewDidUnload {
     [self setOldPasswordText:nil];
     [self setPasswordTextNew:nil];
     [self setChangePasswordButton:nil];
+    [self setPasswordTextNew1:nil];
     [super viewDidUnload];
 }
 
@@ -96,6 +98,11 @@
     
     [self.navigationController popViewControllerAnimated:YES];
     
+    [app.loginNav popToRootViewControllerAnimated:NO];
+    app.window.rootViewController = app.loginNav;
+    [BSContainer instance].userInfo = nil;
+
+    
 }
 
 
@@ -118,6 +125,11 @@
         message = @"请输入新密码";
         [self.passwordTextNew becomeFirstResponder];
 
+    }else if(![self.passwordTextNew.text isEqualToString:self.passwordTextNew1.text]){
+        message = @"两次输入密码不一致，请重新输入";
+        [self.passwordTextNew becomeFirstResponder];
+
+        
     }else{
         [self loadServiceData];
         return;

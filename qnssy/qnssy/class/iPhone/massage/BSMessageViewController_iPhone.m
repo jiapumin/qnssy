@@ -25,6 +25,10 @@
 @interface BSMessageViewController_iPhone (){
     MBProgressHUD *progressHUD;
     int mailType;
+    
+    int pagenum1;
+    int pagenum2;
+    int pagenum3;
 }
 
 @end
@@ -43,6 +47,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.isMore = NO;
+    
+    self.isFirstLoad = YES;
+    
+    mailType = 0;
 
     [self initHUDView];
 
@@ -52,8 +62,9 @@
     [self.topSegmented setTitle:@"收件箱" forSegmentAtIndex:2];
     [self.topSegmented setTitle:@"聊天" forSegmentAtIndex:3];
     [self.topSegmented setTitle:@"系统" forSegmentAtIndex:4];
+
     
-    [self loadServiceDataType:0];
+    [self initRefreshView];
 }
 
 - (void)didReceiveMemoryWarning
@@ -61,7 +72,12 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
+- (void)viewWillAppear:(BOOL)animated {
+	if (self.isFirstLoad) {
+		[self refreshButton:nil];
+		self.isFirstLoad = NO;
+	}
+}
 - (void)dealloc {
     [_mySendedArray release];
     [_unReadArray release];
@@ -81,25 +97,80 @@
     [super viewDidUnload];
 }
 
+- (void)initRefreshView{
+    _refreshView = [[CWRefreshTableView alloc] initWithTableView:self.myTableView pullDirection:CWRefreshTableViewDirectionAll];
+    _refreshView.delegate = self;
+    [self refreshButton:nil];
+	
+    
+}
+#pragma mark - scroll view delegate
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    [_refreshView scrollViewDidScroll:scrollView];
+}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    [_refreshView scrollViewDidEndDragging:scrollView willDecelerate:decelerate];
+}
 
+#pragma mark - scroll view delegate
+- (BOOL)CWRefreshTableViewReloadTableViewDataSource:(CWRefreshTableViewPullType)refreshType{
+//    [self.refreshBarButtonItem setEnabled:NO];
+//	[self.activityIndicatorView startAnimating];
+	switch (refreshType) {
+        case CWRefreshTableViewPullTypeReload:
+//            [self syncDataTop];
+            [self loadServiceDataType:mailType];
+            break;
+        case CWRefreshTableViewPullTypeLoadMore:
+            [self loadServiceDataTypeMore:mailType];
+//            [self syncReadMore];
+            
+            break;
+        default:
+            break;
+    }
+    
+    return YES;
+}
+
+- (void)dataSourceDidFinishedLoading{
+    [self.myTableView reloadData];
+    [_refreshView DataSourceDidFinishedLoading];
+//    [self.refreshBarButtonItem setEnabled:YES];
+//	[self.activityIndicatorView stopAnimating];
+}
+
+
+
+
+- (void)refreshButton:(id)sender{
+    
+//	[self.activityIndicatorView startAnimating];
+    self.myTableView.contentInset = UIEdgeInsetsMake(65.0f, 0.0f, 0.0f, 0.0f);
+    self.myTableView.contentOffset = CGPointMake(0.0f, -65.0f);
+    [_refreshView._headView egoRefreshScrollViewDidEndDragging:self.myTableView];
+}
 - (IBAction)clickTopSegmented:(UISegmentedControl *)segmented {
     
     if (segmented.selectedSegmentIndex == 0) {
         mailType = 0;
         if (self.unReadArray == nil) {
-             [self loadServiceDataType:mailType];
+//             [self loadServiceDataType:mailType];
+            [self refreshButton:nil];
         }
     
     } else if (segmented.selectedSegmentIndex == 1){
         mailType = 1;
         if (self.mySendedArray == nil) {
-             [self loadServiceDataType:mailType];
+            [self refreshButton:nil];
+//             [self loadServiceDataType:mailType];
         }
     
     } else if (segmented.selectedSegmentIndex == 2){
         mailType = 2;
         if (self.myMailArray == nil) {
-            [self loadServiceDataType:mailType];
+            [self refreshButton:nil];
+//            [self loadServiceDataType:mailType];
         }
     
     }else if(segmented.selectedSegmentIndex == 3){
@@ -108,7 +179,8 @@
     }else if(segmented.selectedSegmentIndex == 4){
         mailType = 4;
         if (self.sysMailArray == nil) {
-            [self loadServiceDataType:mailType];
+            [self refreshButton:nil];
+//            [self loadServiceDataType:mailType];
         }
         //系统邮件
         //???
@@ -129,11 +201,14 @@
     [progressHUD show:YES];
     SuperRequestVo *vo = nil;
     if (type == 1) {
-        vo = [[BSMySendedMailRequestVo alloc] init];
+        pagenum1 = 1;
+        vo = [[BSMySendedMailRequestVo alloc] initWithForPagenum:pagenum1];
     }else if(type ==0 ||type == 2){
-        vo = [[BSMyMailRequestVo alloc] init];
+        pagenum2 = 1;
+        vo = [[BSMyMailRequestVo alloc] initWithForPagenum:pagenum2];
     }else if(type == 4){
-        vo = [[BSSysMailRequestVo alloc] init];
+        pagenum3 = 1;
+        vo = [[BSSysMailRequestVo alloc] initWithForPagenum:pagenum3];
     }else{
         return;
     }
@@ -145,11 +220,32 @@
     
     [vo release];
 }
+- (void)loadServiceDataTypeMore:(int)type{
+    [progressHUD show:YES];
+    SuperRequestVo *vo = nil;
+    if (type == 1) {
+        vo = [[BSMySendedMailRequestVo alloc] initWithForPagenum:pagenum1];
+    }else if(type ==0 ||type == 2){
+        vo = [[BSMyMailRequestVo alloc] initWithForPagenum:pagenum2];
+    }else if(type == 4){
+        vo = [[BSSysMailRequestVo alloc] initWithForPagenum:pagenum3];
+    }else{
+        return;
+    }
+    [[BSContainer instance].serviceAgent callServletWithObject:[NSString stringWithFormat:@"%d",type]
+                                                   requestDict:vo.mReqDic
+                                                        target:self
+                                               successCallBack:@selector(requestMoreSucceess:data:)
+                                                  failCallBack:@selector(requestFailed:data:)];
+    
+    [vo release];
+}
 #pragma mark - 回调方法
 
 - (void)requestSucceess:(id)sender data:(NSDictionary *)dic {
     NSString *requestType = (NSString *)sender;
     if ([requestType isEqualToString:@"1"]) {
+        pagenum1 ++;
         BSMySendedMailResponseVo *vo = [[[BSMySendedMailResponseVo alloc] initWithDic:dic] autorelease];
         self.mySendedArray = vo.mailList;
         if (vo.status != 0) {
@@ -158,6 +254,7 @@
             [alert release];
         }
     }else if([requestType isEqualToString:@"0"] || [requestType isEqualToString:@"2"]){
+        pagenum2 ++;
         BSMyMailResponseVo *vo = [[[BSMyMailResponseVo alloc] initWithDic:dic] autorelease];
         self.unReadArray = vo.unReadMailList;
         self.myMailArray = vo.myMailList;
@@ -167,6 +264,7 @@
             [alert release];
         }
     }else if([requestType isEqualToString:@"4"]){
+        pagenum3 ++;
         BSSysMailResponseVo *vo = [[[BSSysMailResponseVo alloc] initWithDic:dic] autorelease];
         self.sysMailArray = vo.mailList;
         if (vo.status != 0) {
@@ -180,6 +278,45 @@
     [progressHUD hide:YES];
     
     [self.myTableView reloadData];
+    [self dataSourceDidFinishedLoading]; 
+}
+- (void)requestMoreSucceess:(id)sender data:(NSDictionary *)dic {
+    NSString *requestType = (NSString *)sender;
+    if ([requestType isEqualToString:@"1"]) {
+        pagenum1 ++;
+        BSMySendedMailResponseVo *vo = [[[BSMySendedMailResponseVo alloc] initWithDic:dic] autorelease];
+//        [self.mySendedArray addObjectsFromArray:vo.mailList];
+        if (vo.status != 0) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+            [alert release];
+        }
+    }else if([requestType isEqualToString:@"0"] || [requestType isEqualToString:@"2"]){
+        pagenum2 ++;
+        BSMyMailResponseVo *vo = [[[BSMyMailResponseVo alloc] initWithDic:dic] autorelease];
+//        [self.unReadArray addObjectsFromArray: vo.unReadMailList];
+//        [self.myMailArray addObjectsFromArray: vo.myMailList];
+        if (vo.status != 0) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+            [alert release];
+        }
+    }else if([requestType isEqualToString:@"4"]){
+        pagenum3 ++;
+        BSSysMailResponseVo *vo = [[[BSSysMailResponseVo alloc] initWithDic:dic] autorelease];
+//        [self.sysMailArray addObjectsFromArray: vo.mailList];
+        if (vo.status != 0) {
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:vo.message delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [alert show];
+            [alert release];
+        }
+    }
+    
+    
+    [progressHUD hide:YES];
+    
+    [self.myTableView reloadData];
+    [self dataSourceDidFinishedLoading];
 }
 
 

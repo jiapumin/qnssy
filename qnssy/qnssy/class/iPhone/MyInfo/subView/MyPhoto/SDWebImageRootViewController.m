@@ -106,7 +106,7 @@
 
 - (void)loadServiceData{
     [self.progressHUD show:YES];
-    MyPhotoRequestVo *vo = [[MyPhotoRequestVo alloc] initWithPageNum:@"0" pageCount:@"10"];
+    MyPhotoRequestVo *vo = [[MyPhotoRequestVo alloc] initWithPageNum:@"1" pageCount:@"40"];
     [[BSContainer instance].serviceAgent callServletWithObject:self
                                                    requestDict:vo.mReqDic
                                                         target:self
