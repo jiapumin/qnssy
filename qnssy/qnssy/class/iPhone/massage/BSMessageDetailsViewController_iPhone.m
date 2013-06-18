@@ -45,6 +45,7 @@
         self.textView.textColor = [UIColor colorWithRed:61./255 green:59./255 blue:55./255 alpha:1];
         self.textView.backgroundColor = [UIColor clearColor];
         [self.view addSubview:self.textView];
+        self.textView.editable = NO;
     }
     return self;
 }

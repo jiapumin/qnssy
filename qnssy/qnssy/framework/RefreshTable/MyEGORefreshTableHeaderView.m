@@ -110,9 +110,9 @@
 		_versionLabel = version;
 		[version release];
 		
-		NSString *currentVer = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
-        NSString *versionStr = [NSString stringWithFormat:@"V%@",[NSString stringWithString:currentVer]];
-		_versionLabel.text = versionStr;
+//		NSString *currentVer = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleVersion"];
+//        NSString *versionStr = [NSString stringWithFormat:@"V%@",[NSString stringWithString:currentVer]];
+//		_versionLabel.text = versionStr;
 		
 		CALayer *layer = [CALayer layer];
 		layer.frame = CGRectMake(25.0f, frame.size.height - 65.0f, 30.0f, 55.0f);

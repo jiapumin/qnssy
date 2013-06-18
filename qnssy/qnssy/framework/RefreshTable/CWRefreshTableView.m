@@ -73,12 +73,15 @@
 //    if (originY < _pullTableView.frame.size.height) {
 //        originY = _pullTableView.frame.size.height;
 //    }
-    CGSize size = _pullTableView.frame.size;
+    CGSize size = _pullTableView.bounds.size;
     CGRect rect = CGRectMake(0.0f, -size.height, size.width, size.height);
     MyEGORefreshTableHeaderView *view = [[MyEGORefreshTableHeaderView alloc] initWithFrame:rect byDirection:EGOOPullRefreshDown];
     view.delegate = self;
     [_pullTableView addSubview:view];
-    view.autoresizingMask = _pullTableView.autoresizingMask;
+//    view.autoresizingMask = _pullTableView.autoresizingMask;
+    view.autoresizingMask =UIViewAutoresizingNone;
+    
+
     _headView = view;
     [view release];
     [_headView refreshLastUpdatedDate];
@@ -101,7 +104,8 @@
     MyEGORefreshTableHeaderView *view = [[MyEGORefreshTableHeaderView alloc] initWithFrame:CGRectMake(originX, originY, fWidth, 60) byDirection:EGOOPullRefreshUp];
     view.delegate = self;
     [_pullTableView addSubview:view];
-    view.autoresizingMask = _pullTableView.autoresizingMask;
+    view.autoresizingMask =UIViewAutoresizingNone;
+//    view.autoresizingMask = _pullTableView.autoresizingMask;
     _footerView = view;
     [view release];
     [_footerView refreshLastUpdatedDate];

@@ -652,7 +652,7 @@
 		D8768B9D172420EE00A407DC /* AmendPasswordRequestVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmendPasswordRequestVo.m; sourceTree = "<group>"; };
 		D8768B9F1724215E00A407DC /* AmendPasswordResponseVo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AmendPasswordResponseVo.h; sourceTree = "<group>"; };
 		D8768BA01724215F00A407DC /* AmendPasswordResponseVo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AmendPasswordResponseVo.m; sourceTree = "<group>"; };
-		D87A04E916EF639A0052328E /* qnssy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = qnssy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D87A04E916EF639A0052328E /* 千年上上缘.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "千年上上缘.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D87A04ED16EF639A0052328E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D87A04EF16EF639A0052328E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D87A04F116EF639A0052328E /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1458,7 +1458,7 @@
 		D87A04EA16EF639A0052328E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D87A04E916EF639A0052328E /* qnssy.app */,
+				D87A04E916EF639A0052328E /* 千年上上缘.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -2409,7 +2409,7 @@
 			);
 			name = qnssy;
 			productName = qnssy;
-			productReference = D87A04E916EF639A0052328E /* qnssy.app */;
+			productReference = D87A04E916EF639A0052328E /* 千年上上缘.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */

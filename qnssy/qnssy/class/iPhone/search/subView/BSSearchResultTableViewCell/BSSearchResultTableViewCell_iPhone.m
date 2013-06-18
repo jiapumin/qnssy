@@ -35,8 +35,12 @@
 
     NSString *marrystatus = [salaryDic objectForKey:[self.userVo objectForKey:@"marrystatus"]];
     
+    NSString *city = [self.userVo objectForKey:@"city"];
     
-    self.myInfo2.text = [NSString stringWithFormat:@"%@ | %@ | %@",@"南京",marrystatus,salary];
+    if (city == nil ) city = @"";
+    
+    
+    self.myInfo2.text = [NSString stringWithFormat:@"%@ | %@ | %@",city,marrystatus,salary];
     self.myInfo2.textColor = [UIColor colorWithRed:78/255.f green:77/255.f blue:80/277.f alpha:1.f];
     
     [self requestMyImage:[self.userVo objectForKey:@"imageurl"]];
