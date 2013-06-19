@@ -21,17 +21,30 @@ typedef enum
 } REPONSE_RESULT;
 
 /**
+ * \brief 增量授权失败原因
+ *
+ * \note 增量授权失败不影响原token的有效性（原token已失效的情况除外）
+ */
+typedef enum
+{
+    kUpdateFailUnknown = 1,  ///< 未知原因
+    kUpdateFailUserCancel,   ///< 用户取消
+    kUpdateFailNetwork,      ///< 网络问题
+} UpdateFailType;
+
+/**
  * \brief 封装服务器返回的结果
  *
  * APIResponse用于封装所有请求的返回结果，包括错误码、错误信息、原始返回数据以及返回数据的json格式字典
  */
-@interface APIResponse : NSObject {
+@interface APIResponse : NSObject<NSCoding> {
     int      _detailRetCode;
 	int		 _retCode;
 	int		 _seq;
 	NSString *_errorMsg;
 	NSDictionary *_jsonResponse;
 	NSString *_message;
+    id       _userData;
 }
 
 /**
@@ -67,8 +80,18 @@ typedef enum
  */
 @property (nonatomic, retain) NSString *message;
 
+/**
+ * 用户保留数据
+ */
+@property (nonatomic, retain) id userData;
+
 @end
 
+
+/**
+ * 用户自定义的保留字段
+ */
+FOUNDATION_EXTERN NSString * const PARAM_USER_DATA;
 
 /**
  * \name 应用邀请参数字段定义
@@ -154,6 +177,9 @@ FOUNDATION_EXTERN NSString * const TCOpenSDKErrorKeyRetCode;
 /** 详细错误信息字典中错误语句的key */
 FOUNDATION_EXTERN NSString * const TCOpenSDKErrorKeyMsg;
 
+/** 不支持的接口 */
+FOUNDATION_EXTERN NSString * const TCOpenSDKErrorMsgUnsupportedAPI;
+
 /** 操作成功 */
 FOUNDATION_EXTERN NSString * const TCOpenSDKErrorMsgSuccess;
 
@@ -207,6 +233,7 @@ FOUNDATION_EXTERN NSString * const TCOpenSDKErrorMsgUserHeadPicLarge;
 typedef enum
 {
     kOpenSDKInvalid = -1,                       ///< 无效的错误码
+    kOpenSDKErrorUnsupportedAPI = -2,                ///< 不支持的接口
     
     /**
      * \name CommonErrorCode
@@ -251,15 +278,6 @@ typedef enum
     kOpenSDKErrorUserHeadPicLarge = 0x010000,   ///< 图片过大 设置头像自定义错误码
     ///@}
 } OpenSDKError;
-
-/**
- * \brief 由openSDKErr错误码取得对应的错误语句
- *
- * \param openSDKErr 详细错误码，具体取值参见\ref OpenSDKError
- * \return 错误码openSDKErr对应的错误语句
- * \note 当找不到与openSDKErr匹配的错误语句时返回nil
- */
-NSString *TCOpenSDKErrorMsgForErrorCode(OpenSDKError openSDKErr);
 
 /**
  * \name SDK版本(v1.3)支持的授权列表常量

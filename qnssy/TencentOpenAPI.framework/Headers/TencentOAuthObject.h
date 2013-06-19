@@ -39,11 +39,21 @@ typedef UIImage *TCOptionalImage;
  */
 typedef NSInteger TCOptionalInt;
 
+/**
+ * 可选的不定类型参数
+ */
+typedef id TCRequiredId;
+
 typedef void TCRequiredVoid;
 typedef void TCOptionalVoid;
 
 
 @interface TCMutableDictionary : NSMutableDictionary
+
+/**
+ * API参数中的保留字段，可以塞入任意字典支持的类型 再调用完成后会带回给调用方
+ */
+@property (nonatomic, retain) TCRequiredId paramUserData;
 
 @end
 
@@ -413,14 +423,11 @@ typedef void TCOptionalVoid;
 @property (nonatomic, retain) TCOptionalStr paramFileName;
 @end
 
-
-
-
 #pragma mark -
 #pragma mark TCListPhotoDic
 
 /**
- * \brief 设置用户头像
+ * \brief 获取用户QQ空间相册中的照片列表
  *
  * 可以直接填写相应参数后将对象当作参数传入API中
  */
@@ -489,5 +496,55 @@ typedef void TCOptionalVoid;
  * 请求个数（1-20）
  */
 @property (nonatomic, retain) TCRequiredStr paramReqnum;
+
+@end
+
+#pragma mark -
+#pragma mark TCSendStoryDic
+/**
+ * \brief QQ空间定向分享的参数字典定义
+ *
+ * 该分享支持@到指定好友，最多支持10个好友。
+ * 其中第三方应用可预传最多5个指定好友的openid，其余好友由用户自行选择。
+ * 该分享形式仅提供跳QZone分享和本地Html5分享两种形式。
+ */
+@interface TCSendStoryDic : TCMutableDictionary
+
+/**
+ * 返回一个对象用来进行API参数的填充
+ *
+ * \note 不用释放，返回的对象是自动释放的
+ */
++ (TCSendStoryDic *) dictionary;
+
+/**
+ * 分享的标题
+ */
+@property (nonatomic, retain) TCRequiredStr paramTitle;
+
+/**
+ * 故事摘要，最多不超过50个汉字，可以为空
+ */
+@property (nonatomic, retain) TCOptionalStr paramSummary;
+
+/**
+ * 默认展示在输入框里的分享理由，最多120个汉字，可以为空
+ */
+@property (nonatomic, retain) TCOptionalStr paramDescription;
+
+/**
+ * 图片url
+ */
+@property (nonatomic, retain) TCOptionalStr paramPics;
+
+/**
+ * 如果不填，则默认为"进入应用"
+ */
+@property (nonatomic, retain) TCRequiredStr paramAct;
+
+/**
+ * 点击分享的Url
+ */
+@property (nonatomic, retain) TCOptionalStr paramShareUrl;
 
 @end

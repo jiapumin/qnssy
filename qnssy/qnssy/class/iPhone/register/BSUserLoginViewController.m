@@ -207,7 +207,7 @@
 
 #pragma mark - QQ登录
 - (IBAction)clickQQLoginButton:(id)sender {
-    [_tencentOAuth authorize:_permissions inSafari:NO];
+    [_tencentOAuth authorize:_permissions inSafari:YES];
 }
 
 #pragma mark - 腾讯登录Delegate
@@ -237,6 +237,9 @@
 //        [bindUserAccountVC release];
     } else {
         //@"登录不成功 没有获取accesstoken";
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"登录不成功 没有获取accesstoken" message:nil delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+        [alert show];
+        [alert release];
     }
 }
 

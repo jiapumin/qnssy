@@ -40,9 +40,7 @@
 		5A7AED5C173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A7AED5A173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.m */; };
 		5A7AED5D173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A7AED5B173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.xib */; };
 		5AAE6E4F16FAAF79006FDFB7 /* area.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5AAE6E4E16FAAF79006FDFB7 /* area.plist */; };
-		5ABA042316FE03EB0099BA74 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABA042216FE03EB0099BA74 /* TencentOpenAPI.framework */; };
 		5ABA042616FE046C0099BA74 /* libiconv.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ABA042516FE046C0099BA74 /* libiconv.dylib */; };
-		5ABA042816FE05160099BA74 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5ABA042716FE05160099BA74 /* TencentOpenApi_IOS_Bundle.bundle */; };
 		5ACDD68116FDB67A00D2885F /* BSUserRegisterStepOneViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ACDD68016FDB67A00D2885F /* BSUserRegisterStepOneViewController.xib */; };
 		5AD6531116F4482600FD80D8 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5AD6531016F4482600FD80D8 /* ViewController.xib */; };
 		5AD6531E16F448D000FD80D8 /* UIImage+SplitImageIntoTwoParts.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AD6530A16F447D200FD80D8 /* UIImage+SplitImageIntoTwoParts.m */; };
@@ -245,6 +243,10 @@
 		D88EBFBC1718245B003F8EA6 /* photoDefault.png in Resources */ = {isa = PBXBuildFile; fileRef = D88EBFB51718245B003F8EA6 /* photoDefault.png */; };
 		D88EBFBD1718245B003F8EA6 /* SDWebImageDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D88EBFB71718245B003F8EA6 /* SDWebImageDataSource.m */; };
 		D88EBFBE1718245B003F8EA6 /* SDWebImageRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D88EBFB91718245B003F8EA6 /* SDWebImageRootViewController.m */; };
+		D898461617714961000FB790 /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D898461517714961000FB790 /* TencentOpenAPI.framework */; };
+		D898461A17714A9C000FB790 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D898461917714A9C000FB790 /* CoreTelephony.framework */; };
+		D898462017714EE9000FB790 /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D898461F17714EE9000FB790 /* TencentOpenApi_IOS_Bundle.bundle */; };
+		D898462217715273000FB790 /* libstdc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D898462117715273000FB790 /* libstdc++.dylib */; };
 		D8A6874916FD3D92005245C8 /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D8CEEF5616F8C15E00E7C63F /* libQuickDialog.a */; };
 		D8A6877716FD41E7005245C8 /* 1背景+logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6874C16FD41E7005245C8 /* 1背景+logo@2x.png */; };
 		D8A6877816FD41E7005245C8 /* 1登录背景@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A6874D16FD41E7005245C8 /* 1登录背景@2x.png */; };
@@ -488,9 +490,7 @@
 		5A7AED5A173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSMessageDetailsViewController_iPhone.m; sourceTree = "<group>"; };
 		5A7AED5B173A7FB7005EE555 /* BSMessageDetailsViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSMessageDetailsViewController_iPhone.xib; sourceTree = "<group>"; };
 		5AAE6E4E16FAAF79006FDFB7 /* area.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = area.plist; sourceTree = "<group>"; };
-		5ABA042216FE03EB0099BA74 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		5ABA042516FE046C0099BA74 /* libiconv.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiconv.dylib; path = usr/lib/libiconv.dylib; sourceTree = SDKROOT; };
-		5ABA042716FE05160099BA74 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		5ACDD68016FDB67A00D2885F /* BSUserRegisterStepOneViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BSUserRegisterStepOneViewController.xib; sourceTree = "<group>"; };
 		5AD6530916F447D200FD80D8 /* UIImage+SplitImageIntoTwoParts.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+SplitImageIntoTwoParts.h"; sourceTree = "<group>"; };
 		5AD6530A16F447D200FD80D8 /* UIImage+SplitImageIntoTwoParts.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+SplitImageIntoTwoParts.m"; sourceTree = "<group>"; };
@@ -820,6 +820,10 @@
 		D88EBFB71718245B003F8EA6 /* SDWebImageDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageDataSource.m; sourceTree = "<group>"; };
 		D88EBFB81718245B003F8EA6 /* SDWebImageRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDWebImageRootViewController.h; sourceTree = "<group>"; };
 		D88EBFB91718245B003F8EA6 /* SDWebImageRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDWebImageRootViewController.m; sourceTree = "<group>"; };
+		D898461517714961000FB790 /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
+		D898461917714A9C000FB790 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		D898461F17714EE9000FB790 /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
+		D898462117715273000FB790 /* libstdc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.dylib"; path = "usr/lib/libstdc++.dylib"; sourceTree = SDKROOT; };
 		D8A6874C16FD41E7005245C8 /* 1背景+logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1背景+logo@2x.png"; sourceTree = "<group>"; };
 		D8A6874D16FD41E7005245C8 /* 1登录背景@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1登录背景@2x.png"; sourceTree = "<group>"; };
 		D8A6874E16FD41E7005245C8 /* 1复选框未选中@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "1复选框未选中@2x.png"; sourceTree = "<group>"; };
@@ -1043,6 +1047,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D898462217715273000FB790 /* libstdc++.dylib in Frameworks */,
+				D898461A17714A9C000FB790 /* CoreTelephony.framework in Frameworks */,
+				D898461617714961000FB790 /* TencentOpenAPI.framework in Frameworks */,
 				5ADA525D172E862500D2EEA4 /* libsqlite3.dylib in Frameworks */,
 				D87A04F216EF639A0052328E /* CoreGraphics.framework in Frameworks */,
 				D87A058F16EF75AB0052328E /* SystemConfiguration.framework in Frameworks */,
@@ -1060,7 +1067,6 @@
 				D87A055316EF6A7A0052328E /* libxml2.dylib in Frameworks */,
 				D87A04EE16EF639A0052328E /* UIKit.framework in Frameworks */,
 				D87A04F016EF639A0052328E /* Foundation.framework in Frameworks */,
-				5ABA042316FE03EB0099BA74 /* TencentOpenAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1466,9 +1472,11 @@
 		D87A04EC16EF639A0052328E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5ABA042716FE05160099BA74 /* TencentOpenApi_IOS_Bundle.bundle */,
+				D898462117715273000FB790 /* libstdc++.dylib */,
+				D898461F17714EE9000FB790 /* TencentOpenApi_IOS_Bundle.bundle */,
+				D898461917714A9C000FB790 /* CoreTelephony.framework */,
+				D898461517714961000FB790 /* TencentOpenAPI.framework */,
 				5ABA042516FE046C0099BA74 /* libiconv.dylib */,
-				5ABA042216FE03EB0099BA74 /* TencentOpenAPI.framework */,
 				D8CEEF4A16F8C15E00E7C63F /* QuickDialog.xcodeproj */,
 				D8888FD716F3504A00C14922 /* libz.1.2.5.dylib */,
 				5AF21B4916F8559F00EEB6EA /* CoreLocation.framework */,
@@ -2468,7 +2476,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5ABA042816FE05160099BA74 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				D898462017714EE9000FB790 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				D87A04F816EF639A0052328E /* InfoPlist.strings in Resources */,
 				D87A050016EF639A0052328E /* Default.png in Resources */,
 				D87A050216EF639A0052328E /* Default@2x.png in Resources */,
@@ -2955,12 +2963,13 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "qnssy/qnssy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "千年上上缘";
 				PROVISIONING_PROFILE = "C2D74EA1-0BA0-478F-B928-ADC19E3818A0";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "C2D74EA1-0BA0-478F-B928-ADC19E3818A0";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/QuickDialog/**";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -2980,12 +2989,13 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = "qnssy/qnssy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = "-fobjc-arc";
 				PRODUCT_NAME = "千年上上缘";
 				PROVISIONING_PROFILE = "A7E483FA-FEC2-4B8A-A620-4271F0C60BEB";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "A7E483FA-FEC2-4B8A-A620-4271F0C60BEB";
 				TARGETED_DEVICE_FAMILY = 1;
 				USER_HEADER_SEARCH_PATHS = "${PROJECT_DIR}/QuickDialog/**";
+				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
